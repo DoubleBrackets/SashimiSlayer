@@ -42,15 +42,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Git Semantic Version
-        uses: paulhatch/semantic-version@v5.4.0
-        id: semantic_version
-        with:
-          # Named version, will be used as suffix for name version tag
-          namespace: ${{ env.PROJ_NAME }}
-          # If enabled, diagnostic information will be added to the action output.
-          debug: true
-
       - name: Library Cache
         uses: actions/cache@v3
         with:
@@ -82,14 +73,13 @@ jobs:
 
       - name: Create paths
         run: |
-          export BUILD_ZIP_PATH=${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{ steps.semantic_version.outputs.version }}.zip
-          echo $BUILD_ZIP_PATH
+          echo "BUILD_ZIP_PATH=${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{ steps.semantic_version.outputs.version }}.zip" >> $GITHUB_ENV
       
       # Zip before uploading to itch isn't required, but lower upload size
       - name: Zip Build
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r $BUILD_ZIP_PATH ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
+          args: zip -qq -r ${{ env.BUILD_ZIP_PATH }} ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
 
       - name: Download Butler
         run: |
@@ -101,7 +91,7 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler push --if-changed $BUILD_ZIP_PATH ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}} 
+          ./butler push $BUILD_ZIP_PATH ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}} 
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
 
