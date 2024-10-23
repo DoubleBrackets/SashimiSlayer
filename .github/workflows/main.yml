@@ -50,6 +50,8 @@ jobs:
           namespace: ${{ env.PROJ_NAME }}
           # If enabled, diagnostic information will be added to the action output.
           debug: true
+          # Small project, automatically bump version
+          bump_each_commit: true
 
       - name: Library Cache
         uses: actions/cache@v3
