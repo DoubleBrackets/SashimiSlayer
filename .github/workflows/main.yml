@@ -1,5 +1,8 @@
 name: Unity-Builder
-run-name: ${{ github.actor }} is building ${{ github.ref_name }}
+
+concurrency:
+  group: ci-${{ github.actor }}-${{ github.ref }}-runner
+  cancel-in-progress: true
 
 env:
   PROJ_DIR: SashimiSlayer
