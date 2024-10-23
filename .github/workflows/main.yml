@@ -99,7 +99,7 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler push $BUILD_ZIP_PATH ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.git_semantic_version.outputs.version}} --if-changed
+          ./butler push $BUILD_ZIP_PATH ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}} --if-changed
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
 
