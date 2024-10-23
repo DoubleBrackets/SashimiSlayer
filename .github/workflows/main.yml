@@ -81,8 +81,10 @@ jobs:
           path: ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
 
       - name: Create paths
-        run: export BUILD_ZIP_PATH=${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{ steps.semantic_version.outputs.version }}.zip
-
+        run: |
+          export BUILD_ZIP_PATH=${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{ steps.semantic_version.outputs.version }}.zip
+          echo $BUILD_ZIP_PATH
+      
       # Zip before uploading to itch isn't required, but lower upload size
       - name: Zip Build
         uses: montudor/action-zip@v1
@@ -99,7 +101,7 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler push $BUILD_ZIP_PATH ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}} --if-changed
+          ./butler push --if-changed $BUILD_ZIP_PATH ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}} 
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
 
