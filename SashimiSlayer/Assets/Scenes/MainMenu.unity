@@ -366,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &472467207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1082,6 +1082,8 @@ GameObject:
   - component: {fileID: 1102916103}
   - component: {fileID: 1102916105}
   - component: {fileID: 1102916104}
+  - component: {fileID: 1102916107}
+  - component: {fileID: 1102916106}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1107,7 +1109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -106}
+  m_AnchoredPosition: {x: 827, y: -349}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1102916103
@@ -1154,6 +1156,65 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1102916106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102916100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc54a89d361880544baf8d03201e11c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationClip: {fileID: 7400000, guid: 8546e6d13195cba4aa2f546ba6656565, type: 2}
+  _animator: {fileID: 1102916105}
+  _playOnAwake: 0
+--- !u!114 &1102916107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102916100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d418287a9354c4ba7efadb09e62094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _protagSliceEvent: {fileID: 11400000, guid: 1fc9d5635b7fb36408b893568c3ada1a, type: 2}
+  _protagSwordStateEvent: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47,
+    type: 2}
+  _buttonSlicedEvent: {fileID: 0}
+  _buttonSlicedUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1102916106}
+        m_TargetAssemblyTypeName: SimpleAnimator, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _buttonSlicedDelayedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _buttonHoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _buttonUnhoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _radius: 5
+  _singleUse: 1
+  _delay: 0.5
+  _isInCanvasSpace: 1
 --- !u!1001 &1398976369
 PrefabInstance:
   m_ObjectHideFlags: 0
