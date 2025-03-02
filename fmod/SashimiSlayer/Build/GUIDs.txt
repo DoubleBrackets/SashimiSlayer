@@ -19,6 +19,7 @@
 {64a7b91f-4da7-4665-b3ab-67543f606052} event:/KrakenLevel/Tentacle/TentacleSpawn
 {e9d73f7f-d77f-4691-9fcd-9fe072bfe256} event:/Menus/ExampleOptionsMusic
 {8b21115d-44cb-450e-9092-5e0c499c2f2e} event:/Menus/FailJingle
+{11dfe8be-38e7-4135-9621-425f60fc5555} event:/Menus/MenuMusic
 {ca15ba1c-05ee-4fd1-a581-b7cbb24d1756} event:/Menus/VictoryJingle
 {0e74f204-1056-4d52-bd96-79b9f31ff580} event:/PlayerSFX/Chargeup
 {b40dd666-e074-491d-8794-cbdb05b77d69} event:/PlayerSFX/PlayerBlock
@@ -34,4 +35,5 @@
 {7288c042-9539-4a35-9c3f-b9e366060968} event:/TutorialLevel/SadFish/SadFishSpawn
 {b3ada565-a8c3-4050-a87d-98901951a23a} event:/TutorialLevel/TutorialMusic
 {2226f63f-2091-43a5-9fea-926ff6c9aed5} parameter:/BlockPose
+{d96e4ff0-ce13-4989-80c9-9deb078c543a} parameter:/SliceTargetCount
 {5c43aea1-4b8e-4ac2-92fb-537701595495} parameter:/SuccessStreak

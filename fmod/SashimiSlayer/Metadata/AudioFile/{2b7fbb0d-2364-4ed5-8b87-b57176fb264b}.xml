@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{2b7fbb0d-2364-4ed5-8b87-b57176fb264b}">
 		<property name="assetPath">
-			<value>Tracks/slice_cue.wav</value>
+			<value>SFX/Cues/ascending_cue.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
