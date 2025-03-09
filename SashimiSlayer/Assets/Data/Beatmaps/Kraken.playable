@@ -17,374 +17,6 @@ MonoBehaviour:
   emitOnce: 0
   emitInEditor: 1
   markerData: EEE
---- !u!114 &-9154038518674239263
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bec0c62f8641e4fb737dce59b1e0b4, type: 3}
-  m_Name: Beat Action Track
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 1
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips:
-  - m_Version: 1
-    m_Start: 7.258181818181819
-    m_ClipIn: 0
-    m_Asset: {fileID: -7690111909398111539}
-    m_Duration: 7.2727272727272725
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9154038518674239263}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: SlapTentacle
-  - m_Version: 1
-    m_Start: 21.803636363636365
-    m_ClipIn: 0
-    m_Asset: {fileID: -5560739892351139910}
-    m_Duration: 7.272727272727273
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9154038518674239263}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: SlapTentacle
-  - m_Version: 1
-    m_Start: 29.076363636363638
-    m_ClipIn: 0
-    m_Asset: {fileID: -8388514373800443950}
-    m_Duration: 7.272727272727266
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9154038518674239263}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: SlapTentacle
-  - m_Version: 1
-    m_Start: 36.349090909090904
-    m_ClipIn: 0
-    m_Asset: {fileID: -5172617692856669106}
-    m_Duration: 7.272727272727273
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9154038518674239263}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: SlapTentacle
-  - m_Version: 1
-    m_Start: 43.62181818181818
-    m_ClipIn: 0
-    m_Asset: {fileID: -2527755611750914924}
-    m_Duration: 7.272727272727273
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9154038518674239263}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: SlapTentacle
-  m_Markers:
-    m_Objects: []
 --- !u!114 &-9037917841157054587
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,62 +55,6 @@ MonoBehaviour:
           Flags: 0
           Positions:
           - {x: 3.9591799, y: -1.0698857}
---- !u!114 &-8961497818919512334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
-    NoteData:
-      StartPosition: {x: 0.7344676, y: -4.8320236}
-      EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 57.95454545454545
-      NoteEndTime: 62.954545454545446
-      NoteBeatCount: 10.999999999999984
-      Interactions:
-      - _beatOffset: 4
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 5
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 6
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 7
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 0
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 1
-          Flags: 0
-          Positions: []
 --- !u!114 &-8869147466658630207
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -497,8 +73,8 @@ MonoBehaviour:
       StartPosition: {x: 3.92979, y: -4.6594105}
       EndPosition: {x: -0.521502, y: -5.2997594}
       NoteStartTime: 10.909090909090907
-      NoteEndTime: 14.545454545454543
-      NoteBeatCount: 8.000000000000002
+      NoteEndTime: 14.545454545454547
+      NoteBeatCount: 8.000000000000009
       Interactions:
       - _beatOffset: 4
         _offsetFromEnd: 0
@@ -538,29 +114,6 @@ MonoBehaviour:
       NoteEndTime: 0
       NoteBeatCount: 0
       Interactions: []
---- !u!114 &-8633048776722204980
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bec0c62f8641e4fb737dce59b1e0b4, type: 3}
-  m_Name: Beat Action Track (7)
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
 --- !u!114 &-8512115521092003961
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,55 +146,6 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 0
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 1
-          Flags: 0
-          Positions: []
---- !u!114 &-8388514373800443950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
-    NoteData:
-      StartPosition: {x: 0.7344676, y: -4.8320236}
-      EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 23.636363636363637
-      NoteEndTime: 30.909090909090903
-      NoteBeatCount: 15.999999999999984
-      Interactions:
-      - _beatOffset: 4
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 8
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 12
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 2
           InteractionType: 0
           Flags: 0
           Positions: []
@@ -711,55 +215,6 @@ MonoBehaviour:
           Flags: 0
           Positions:
           - {x: 6.6600356, y: -1.0698857}
---- !u!114 &-7690111909398111539
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
-    NoteData:
-      StartPosition: {x: 0.7344676, y: -4.8320236}
-      EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 1.8181818181818183
-      NoteEndTime: 9.09090909090909
-      NoteBeatCount: 16
-      Interactions:
-      - _beatOffset: 4
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 8
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 12
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 0
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 1
-          Flags: 0
-          Positions: []
 --- !u!114 &-7634491408669650360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -782,10 +237,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 9.076363636363636
+    m_Start: 9.066363636363636
     m_ClipIn: 0
     m_Asset: {fileID: 6035179135911414988}
-    m_Duration: 7.272727272727272
+    m_Duration: 7.27272727272727
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7634491408669650360}
     m_EaseInDuration: 0
@@ -851,10 +306,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SlapTentacle
   - m_Version: 1
-    m_Start: 19.985454545454544
+    m_Start: 19.975454545454546
     m_ClipIn: 0
     m_Asset: {fileID: 5181581437254009509}
-    m_Duration: 9.090909090909093
+    m_Duration: 9.09090909090909
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7634491408669650360}
     m_EaseInDuration: 0
@@ -920,7 +375,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SlapTentacle
   - m_Version: 1
-    m_Start: 36.349090909090904
+    m_Start: 36.339090909090906
     m_ClipIn: 0
     m_Asset: {fileID: -351262150512002466}
     m_Duration: 9.090909090909093
@@ -989,7 +444,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SlapTentacle
   - m_Version: 1
-    m_Start: 52.71272727272727
+    m_Start: 52.70272727272727
     m_ClipIn: 0
     m_Asset: {fileID: -8512115521092003961}
     m_Duration: 9.090909090909086
@@ -1824,8 +1279,8 @@ MonoBehaviour:
       StartPosition: {x: 4.8943152, y: -4.527832}
       EndPosition: {x: 0.8215811, y: -4.9234033}
       NoteStartTime: 0
-      NoteEndTime: 3.636363636363636
-      NoteBeatCount: 7.999999999999999
+      NoteEndTime: 3.6363636363636367
+      NoteBeatCount: 8.000000000000002
       Interactions:
       - _beatOffset: 4
         _offsetFromEnd: 0
@@ -1977,78 +1432,6 @@ MonoBehaviour:
           InteractionType: 1
           Flags: 0
           Positions: []
---- !u!114 &-5565305200711189879
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bec0c62f8641e4fb737dce59b1e0b4, type: 3}
-  m_Name: Beat Action Track (6)
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
---- !u!114 &-5560739892351139910
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
-    NoteData:
-      StartPosition: {x: 0.7344676, y: -4.8320236}
-      EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 16.363636363636363
-      NoteEndTime: 23.636363636363637
-      NoteBeatCount: 16.000000000000004
-      Interactions:
-      - _beatOffset: 4
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 8
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 12
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 0
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 1
-          Flags: 0
-          Positions: []
 --- !u!114 &-5377015931317620543
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2100,55 +1483,6 @@ MonoBehaviour:
     Path: event:/KrakenLevel/KrakenMusic
   StopType: 0
   Parameters: []
---- !u!114 &-5172617692856669106
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
-    NoteData:
-      StartPosition: {x: 0.7344676, y: -4.8320236}
-      EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 30.909090909090903
-      NoteEndTime: 38.18181818181818
-      NoteBeatCount: 16.000000000000004
-      Interactions:
-      - _beatOffset: 4
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 8
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 12
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 0
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 1
-          Flags: 0
-          Positions: []
 --- !u!114 &-4832713754115137398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2285,29 +1619,6 @@ MonoBehaviour:
     m_Objects: []
   template:
     volume: 1
---- !u!114 &-4301246575501675800
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bec0c62f8641e4fb737dce59b1e0b4, type: 3}
-  m_Name: Beat Action Track (5)
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
 --- !u!114 &-2966064571746256957
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2401,55 +1712,6 @@ MonoBehaviour:
           Flags: 0
           Positions:
           - {x: 5.9057894, y: 2.0491507}
---- !u!114 &-2527755611750914924
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
-    NoteData:
-      StartPosition: {x: 0.7344676, y: -4.8320236}
-      EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 38.18181818181818
-      NoteEndTime: 45.45454545454545
-      NoteBeatCount: 16.000000000000004
-      Interactions:
-      - _beatOffset: 4
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 1
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 8
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 12
-        _offsetFromEnd: 0
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 0
-          Flags: 0
-          Positions: []
-      - _beatOffset: 0
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 2
-          InteractionType: 1
-          Flags: 0
-          Positions: []
 --- !u!114 &-2042112074663296496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2492,6 +1754,35 @@ MonoBehaviour:
       NoteEndTime: 0
       NoteBeatCount: 0
       Interactions: []
+--- !u!114 &-1261016414936058757
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
+  m_Name: BeatNoteClip
+  m_EditorClassIdentifier: 
+  Template:
+    NoteConfig: {fileID: 11400000, guid: 584a2f7f15c14954eb8d6a0212192239, type: 2}
+    NoteData:
+      StartPosition: {x: 3.0722334, y: -12.615962}
+      EndPosition: {x: -0.36256242, y: -12.539806}
+      NoteStartTime: 100
+      NoteEndTime: 127.27272727272725
+      NoteBeatCount: 59.99999999999996
+      Interactions:
+      - _beatOffset: 4
+        _offsetFromEnd: 1
+        InteractionData:
+          BlockPose: 0
+          InteractionType: 1
+          Flags: 0
+          Positions:
+          - {x: 1.5584748, y: -4.318651}
 --- !u!114 &-1123799448097150218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2610,7 +1901,7 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 0.7344676, y: -4.8320236}
       EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 30.909090909090903
+      NoteStartTime: 30.909090909090907
       NoteEndTime: 40
       NoteBeatCount: 20.000000000000007
       Interactions:
@@ -2737,12 +2028,7 @@ MonoBehaviour:
   - {fileID: 1754087978691026967}
   - {fileID: 3688818801659884798}
   - {fileID: 5132914916228530079}
-  - {fileID: -4301246575501675800}
-  - {fileID: -5565305200711189879}
-  - {fileID: -9154038518674239263}
-  - {fileID: 2839535838791464466}
-  - {fileID: -8633048776722204980}
-  - {fileID: 5414836713764880550}
+  - {fileID: 5861960165396905160}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 120
@@ -3013,6 +2299,50 @@ MonoBehaviour:
       NoteEndTime: 0
       NoteBeatCount: 0
       Interactions: []
+--- !u!114 &2255561008245990793
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4631aac3e8958e840855eeec9cd45ec5, type: 3}
+  m_Name: TweenClip(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  startLocation:
+    exposedName: b8b120191e998f042a132c095d27bff6
+    defaultValue: {fileID: 0}
+  endLocation:
+    exposedName: 29a3fea86273d284a87732938ea41fdf
+    defaultValue: {fileID: 0}
+  shouldTweenPosition: 1
+  shouldTweenRotation: 1
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &2731131515676527816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3034,98 +2364,6 @@ MonoBehaviour:
       NoteEndTime: 0
       NoteBeatCount: 0
       Interactions: []
---- !u!114 &2839535838791464466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bec0c62f8641e4fb737dce59b1e0b4, type: 3}
-  m_Name: Beat Action Track (2)
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 1
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips:
-  - m_Version: 1
-    m_Start: 63.38454545454545
-    m_ClipIn: 0
-    m_Asset: {fileID: -8961497818919512334}
-    m_Duration: 4.999999999999993
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 2839535838791464466}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: SlapTentacle
-  m_Markers:
-    m_Objects: []
 --- !u!114 &3202254519558374650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3530,7 +2768,76 @@ MonoBehaviour:
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children: []
-  m_Clips: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 105.43
+    m_ClipIn: 0
+    m_Asset: {fileID: -1261016414936058757}
+    m_Duration: 27.272727272727252
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 5132914916228530079}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: KrakenHead
   m_Markers:
     m_Objects: []
 --- !u!114 &5145844636911831059
@@ -3610,6 +2917,50 @@ MonoBehaviour:
           InteractionType: 1
           Flags: 0
           Positions: []
+--- !u!114 &5174404307868739038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4631aac3e8958e840855eeec9cd45ec5, type: 3}
+  m_Name: TweenClip
+  m_EditorClassIdentifier: 
+  startLocation:
+    exposedName: fb03dd13b530ce649b4ebf630deae672
+    defaultValue: {fileID: 0}
+  endLocation:
+    exposedName: a882f404aaefcfe4daae91c75ef686b8
+    defaultValue: {fileID: 0}
+  shouldTweenPosition: 1
+  shouldTweenRotation: 1
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &5181581437254009509
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3627,9 +2978,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 0.7344676, y: -4.8320236}
       EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 14.545454545454543
+      NoteStartTime: 14.545454545454547
       NoteEndTime: 23.636363636363637
-      NoteBeatCount: 20.000000000000007
+      NoteBeatCount: 19.999999999999996
       Interactions:
       - _beatOffset: 4
         _offsetFromEnd: 0
@@ -3652,29 +3003,6 @@ MonoBehaviour:
           InteractionType: 1
           Flags: 0
           Positions: []
---- !u!114 &5414836713764880550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bec0c62f8641e4fb737dce59b1e0b4, type: 3}
-  m_Name: Beat Action Track (8)
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
 --- !u!114 &5820458967047597235
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3692,8 +3020,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.0631466, y: -3.9972208}
       EndPosition: {x: 0.8215811, y: -4.9234033}
-      NoteStartTime: 27.27272727272727
-      NoteEndTime: 30.909090909090903
+      NoteStartTime: 27.272727272727273
+      NoteEndTime: 30.909090909090907
       NoteBeatCount: 7.999999999999992
       Interactions:
       - _beatOffset: 4
@@ -3734,6 +3062,167 @@ MonoBehaviour:
       NoteEndTime: 0
       NoteBeatCount: 0
       Interactions: []
+--- !u!114 &5861960165396905160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09378b61d40beb649987d80408ad99b2, type: 3}
+  m_Name: Tween Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 100.43
+    m_ClipIn: 0
+    m_Asset: {fileID: 5174404307868739038}
+    m_Duration: 5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 5861960165396905160}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: BGKrakenLeaves
+  - m_Version: 1
+    m_Start: 105.43
+    m_ClipIn: 0
+    m_Asset: {fileID: 2255561008245990793}
+    m_Duration: 28.314995117187493
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 5861960165396905160}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: BGKrakenStaysLeft
+  m_Markers:
+    m_Objects: []
 --- !u!114 &5898022459129549792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3767,9 +3256,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 0.7344676, y: -4.8320236}
       EndPosition: {x: 5.7056737, y: -0.3959039}
-      NoteStartTime: 3.636363636363636
+      NoteStartTime: 3.6363636363636367
       NoteEndTime: 10.909090909090907
-      NoteBeatCount: 15.999999999999998
+      NoteBeatCount: 15.999999999999995
       Interactions:
       - _beatOffset: 4
         _offsetFromEnd: 0
@@ -3893,8 +3382,8 @@ MonoBehaviour:
       StartPosition: {x: 2.217361, y: -4.7317667}
       EndPosition: {x: -0.521502, y: -5.2997594}
       NoteStartTime: 23.636363636363637
-      NoteEndTime: 27.27272727272727
-      NoteBeatCount: 7.999999999999992
+      NoteEndTime: 27.272727272727273
+      NoteBeatCount: 8.000000000000002
       Interactions:
       - _beatOffset: 4
         _offsetFromEnd: 0
@@ -3977,10 +3466,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5.44
+    m_Start: 5.43
     m_ClipIn: 0
     m_Asset: {fileID: -5864128891532757927}
-    m_Duration: 3.636363636363636
+    m_Duration: 3.6363636363636367
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6435859260828590340}
     m_EaseInDuration: 0
@@ -4115,10 +3604,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SquidMissile
   - m_Version: 1
-    m_Start: 29.076363636363638
+    m_Start: 29.066363636363636
     m_ClipIn: 0
     m_Asset: {fileID: 6217209131700525996}
-    m_Duration: 3.636363636363633
+    m_Duration: 3.6363636363636367
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6435859260828590340}
     m_EaseInDuration: 0
@@ -4184,7 +3673,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SquidMissile
   - m_Version: 1
-    m_Start: 45.44
+    m_Start: 45.43
     m_ClipIn: 0
     m_Asset: {fileID: 4022066722371015599}
     m_Duration: 3.636363636363633
@@ -4253,7 +3742,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SquidMissile
   - m_Version: 1
-    m_Start: 49.07636363636363
+    m_Start: 49.06636363636363
     m_ClipIn: 0
     m_Asset: {fileID: 4160103496051672810}
     m_Duration: 3.6363636363636402
@@ -4322,7 +3811,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SquidMissile
   - m_Version: 1
-    m_Start: 32.71272727272727
+    m_Start: 32.70272727272727
     m_ClipIn: 0
     m_Asset: {fileID: 5820458967047597235}
     m_Duration: 3.636363636363633
@@ -4391,10 +3880,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SquidMissile
   - m_Version: 1
-    m_Start: 16.349090909090908
+    m_Start: 16.339090909090906
     m_ClipIn: 0
     m_Asset: {fileID: -8869147466658630207}
-    m_Duration: 3.6363636363636367
+    m_Duration: 3.6363636363636402
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6435859260828590340}
     m_EaseInDuration: 0
@@ -4985,7 +4474,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 21.803636363636365
+    m_Start: 21.793636363636363
     m_ClipIn: 0
     m_Asset: {fileID: 4794022737709250795}
     m_Duration: 7.272727272727273
@@ -5054,7 +4543,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SlapTentacle
   - m_Version: 1
-    m_Start: 38.167272727272724
+    m_Start: 38.157272727272726
     m_ClipIn: 0
     m_Asset: {fileID: 7456551978907676040}
     m_Duration: 7.272727272727273
@@ -5123,7 +4612,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SlapTentacle
   - m_Version: 1
-    m_Start: 54.530909090909084
+    m_Start: 54.520909090909086
     m_ClipIn: 0
     m_Asset: {fileID: 6249258426165484319}
     m_Duration: 7.272727272727273
