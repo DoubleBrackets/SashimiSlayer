@@ -9,10 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BaseScene.unity
     guid: 550ef93d2c2afe94bbc9281d5658faeb
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
-    guid: e26709e352b83104bbcbf35193124584
-  - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 28ecf86c338617649b39dbf37ec24b5e
   - enabled: 1
     path: Assets/Scenes/Levels/Kraken.unity

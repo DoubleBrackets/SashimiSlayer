@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: InteractionFinalResult
   m_EditorClassIdentifier: 
   _description: Emits the final result of each beat interaction
-  _debug: 0
+  _debug: 1

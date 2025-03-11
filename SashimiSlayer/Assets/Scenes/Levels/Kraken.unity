@@ -735,7 +735,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.3948616, g: 0.5657291, b: 0.7610062, a: 0.43529412}
+      maxColor: {r: 0.5766385, g: 0.742842, b: 0.9308176, a: 0.8117647}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -798,9 +798,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.03
-      minScalar: 0.05
+      minMaxState: 0
+      scalar: 0.05
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -851,9 +851,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 2
-      minScalar: 3
+      minMaxState: 0
+      scalar: 3
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -904,7 +904,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5343,12 +5343,12 @@ GameObject:
   - component: {fileID: 2004391619}
   - component: {fileID: 2004391618}
   m_Layer: 0
-  m_Name: BackgroundSky
+  m_Name: BgReference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2004391618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5387,11 +5387,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 988857845
-  m_SortingLayer: -1
-  m_SortingOrder: -50
-  m_Sprite: {fileID: 21300000, guid: ffee6f92276ce804a9d31a148dcb501b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 06843d52b5ae5604eb4f6ca610db35cc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.21176471}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5409,12 +5409,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004391617}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.54, y: -6.5, z: 0}
-  m_LocalScale: {x: 12.100001, y: 12.100001, z: 12.100001}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 686433842880631318}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &686433842880631317
 PrefabInstance:
@@ -5479,18 +5479,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: SeaEnv
       objectReference: {fileID: 0}
-    - target: {fileID: 5743826850056618712, guid: c635741f09b6b634aadbc21c039eb2e8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1137036477318025009, guid: c635741f09b6b634aadbc21c039eb2e8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2004391619}
     - targetCorrespondingSourceObject: {fileID: 1137036477318025009, guid: c635741f09b6b634aadbc21c039eb2e8,
         type: 3}
       insertIndex: -1
@@ -6173,11 +6164,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 859637332695592985, guid: 8cf021acfd3270044b2dd66c98e15d85,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 8398607499953863076, guid: 8cf021acfd3270044b2dd66c98e15d85,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6228,21 +6214,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8630922400868860460, guid: 8cf021acfd3270044b2dd66c98e15d85,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.75294125
-      objectReference: {fileID: 0}
-    - target: {fileID: 8630922400868860460, guid: 8cf021acfd3270044b2dd66c98e15d85,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.6784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 8630922400868860460, guid: 8cf021acfd3270044b2dd66c98e15d85,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.47450984
-      objectReference: {fileID: 0}
     - target: {fileID: 8737702015865640993, guid: 8cf021acfd3270044b2dd66c98e15d85,
         type: 3}
       propertyPath: m_Name
@@ -6266,6 +6237,7 @@ SceneRoots:
   - {fileID: 539709445}
   - {fileID: 6235619905464155080}
   - {fileID: 595073154}
+  - {fileID: 2004391619}
   - {fileID: 686433842880631317}
   - {fileID: 4860245360901928968}
   - {fileID: 806435292}

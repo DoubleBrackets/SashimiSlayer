@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49205a0657c4ad84ca2d353fcc2bf879, type: 3}
   m_Name: BootupConfigSO
   m_EditorClassIdentifier: 
-  <InitialGameLevel>k__BackingField: {fileID: 11400000, guid: 482035a1de3620549917b4a21b8e5e53,
+  <InitialGameLevel>k__BackingField: {fileID: 11400000, guid: 5339086c43da29a4c8e0339a8132dbf0,
     type: 2}
