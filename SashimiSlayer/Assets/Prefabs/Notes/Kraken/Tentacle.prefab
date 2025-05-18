@@ -14882,12 +14882,12 @@ PrefabInstance:
     - target: {fileID: 7690596804962082351, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: Visuals.Array.data[0].Pose
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690596804962082351, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: Visuals.Array.data[1].Pose
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7690596804962082351, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
