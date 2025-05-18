@@ -5730,7 +5730,7 @@ PrefabInstance:
     - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: _pressPose
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -21181,7 +21181,7 @@ PrefabInstance:
     - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: _pressPose
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
