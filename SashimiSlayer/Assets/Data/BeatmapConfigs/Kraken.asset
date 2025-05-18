@@ -30,7 +30,7 @@ MonoBehaviour:
     SlicePitchShift: 1
     StarBlockPitchShift: 1
     ShellBlockPitchShift: 1
-  <PlayerMaxHealth>k__BackingField: 6666
+  <PlayerMaxHealth>k__BackingField: 6665
   <TimingWindowSO>k__BackingField: {fileID: 11400000, guid: 54462036f164d014095fd6aaaee307e5,
     type: 2}
   <ResultsScreenCustomPrefab>k__BackingField: {fileID: 5820484520841906090, guid: 755591dfefab54948bc23495b9dab5ed,
