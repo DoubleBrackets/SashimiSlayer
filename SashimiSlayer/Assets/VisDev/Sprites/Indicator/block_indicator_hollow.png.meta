@@ -113,7 +113,7 @@ TextureImporter:
       name: block_indicator_hollow_mid
       rect:
         serializedVersion: 2
-        x: 0
+        x: 105
         y: 0
         width: 105
         height: 102
@@ -134,7 +134,7 @@ TextureImporter:
       name: block_indicator_hollow_top
       rect:
         serializedVersion: 2
-        x: 105
+        x: 0
         y: 0
         width: 105
         height: 102
