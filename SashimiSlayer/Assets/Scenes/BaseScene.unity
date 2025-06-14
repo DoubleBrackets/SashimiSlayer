@@ -3998,9 +3998,9 @@ MonoBehaviour:
   _titleText: {fileID: 2056106404}
   _fadeInTransform: {fileID: 1490399729}
   _ref: {fileID: 1081883458}
-  _fadeOutTime: 1
-  _fadeInTime: 1
-  _fadeInDelay: 0.4
+  _fadeOutTime: 0.7
+  _fadeInTime: 0.7
+  _fadeInDelay: 0.5
   _margin: 20
 --- !u!1 &1490399728
 GameObject:

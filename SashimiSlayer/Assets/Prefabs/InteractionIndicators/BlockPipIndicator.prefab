@@ -51,6 +51,5 @@ MonoBehaviour:
   _beatPip: {fileID: 0}
   _finalPip: {fileID: 0}
   _delay: 0.02
-  _shakeDuration: 5
-  _shakeStrength: 5
+  _shakeStrength: 4
   _shakeVibrato: 30

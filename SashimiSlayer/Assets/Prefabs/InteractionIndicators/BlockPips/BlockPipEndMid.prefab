@@ -12,12 +12,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 671451721, guid: 011f789d8c49f3141a80051926272310,
+      objectReference: {fileID: 1452775412, guid: 6e518ab9fd5141a4e97349e356e71987,
         type: 3}
     - target: {fileID: 109599311298758673, guid: e1797d42060eb2d4eb3a765f0d57c221,
         type: 3}
       propertyPath: m_Name
       value: BlockPipEndMid
+      objectReference: {fileID: 0}
+    - target: {fileID: 356361437580489210, guid: e1797d42060eb2d4eb3a765f0d57c221,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 356361437580489210, guid: e1797d42060eb2d4eb3a765f0d57c221,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 356361437580489210, guid: e1797d42060eb2d4eb3a765f0d57c221,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3371397100324223062, guid: e1797d42060eb2d4eb3a765f0d57c221,
         type: 3}

@@ -31,6 +31,8 @@ namespace Core.Scene
 
         public GameLevelSO CurrentLevel { get; private set; }
 
+        private readonly bool _isLoading = false;
+
         private string _currentLevelSceneName = string.Empty;
         private GameLevelSO _previousBeatmapLevel;
 
