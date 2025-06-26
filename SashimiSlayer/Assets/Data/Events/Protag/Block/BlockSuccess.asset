@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BlockSuccess
   m_EditorClassIdentifier: 
   _description: 
-  _debug: 1
+  _debug: 0
