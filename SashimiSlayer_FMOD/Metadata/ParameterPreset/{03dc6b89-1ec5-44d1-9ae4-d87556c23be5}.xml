@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="ParameterPreset" id="{e57bd66f-5961-4328-8e0f-0cbbfce924e5}">
+	<object class="ParameterPreset" id="{03dc6b89-1ec5-44d1-9ae4-d87556c23be5}">
 		<property name="note">
-			<value>Early/Late/Perfect timing of interaction</value>
+			<value>Local parameter that's held while playing. Should ALWAYS be automated to match InteractionTimingGlobal, which is used for convenience inside Unity
+
+</value>
 		</property>
 		<property name="name">
-			<value>InteractionTimingGlobal</value>
+			<value>InteractionTimingLocal</value>
 		</property>
 		<relationship name="folder">
 			<destination>{360cf177-3599-424c-ad2e-364694107d0a}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{52547f08-c395-40a8-9553-f4d8760e538a}</destination>
+			<destination>{6bc4dc3a-ed8a-410e-837d-4a2ed93fdadf}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{52547f08-c395-40a8-9553-f4d8760e538a}">
+	<object class="GameParameter" id="{6bc4dc3a-ed8a-410e-837d-4a2ed93fdadf}">
 		<property name="parameterType">
 			<value>2</value>
 		</property>
@@ -26,7 +28,7 @@
 			<value>Perfect</value>
 			<value>Late</value>
 		</property>
-		<property name="isGlobal">
+		<property name="isHeld">
 			<value>true</value>
 		</property>
 		<property name="initialValue">

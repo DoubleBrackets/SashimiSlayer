@@ -3,10 +3,11 @@ using Beatmapping;
 using Beatmapping.Interactions;
 using EditorUtils.BoldHeader;
 using Events.Core;
+using FMOD;
 using FMODUnity;
 using NaughtyAttributes;
-using TMPro;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Core.Audio
 {
@@ -41,8 +42,31 @@ namespace Core.Audio
         [SerializeField]
         private BeatmapEvent _beatmapLoadedEvent;
 
+        [Header("Param Refs")]
+
         [SerializeField]
-        private TMP_Text _streakDebugText;
+        [ParamRef]
+        private string _slicePitchShiftParam;
+
+        [SerializeField]
+        [ParamRef]
+        private string _starBlockPitchShiftParam;
+
+        [SerializeField]
+        [ParamRef]
+        private string _shellBlockPitchShiftParam;
+
+        [SerializeField]
+        [ParamRef]
+        private string _interactionTimingGlobalParam;
+
+        [SerializeField]
+        [ParamRef]
+        private string _successStreakParam;
+
+        [SerializeField]
+        [ParamRef]
+        private string _sliceTargetCountParam;
 
         private int _successfulStreak;
 
@@ -63,11 +87,10 @@ namespace Core.Audio
         private void OnBeatmapLoaded(BeatmapConfigSo beatmap)
         {
             PitchShiftValues pitchShiftValues = beatmap.PitchShiftValues;
-            FMOD.Studio.System studioSystem = RuntimeManager.StudioSystem;
-            studioSystem.setParameterByName("Pitching/SlicePitchShift", pitchShiftValues.SlicePitchShift, true);
-            studioSystem.setParameterByName("Pitching/StarBlockPitchShift", pitchShiftValues.StarBlockPitchShift, true);
-            studioSystem.setParameterByName("Pitching/ShellBlockPitchShift", pitchShiftValues.ShellBlockPitchShift,
-                true);
+
+            SetParamByName(_slicePitchShiftParam, pitchShiftValues.SlicePitchShift);
+            SetParamByName(_starBlockPitchShiftParam, pitchShiftValues.StarBlockPitchShift);
+            SetParamByName(_shellBlockPitchShiftParam, pitchShiftValues.ShellBlockPitchShift);
         }
 
         private void OnNoteInteractionFinalResult(NoteInteraction.FinalResult result)
@@ -95,24 +118,31 @@ namespace Core.Audio
                         break;
                 }
 
-                RuntimeManager.StudioSystem.setParameterByName("InteractionSuccessTiming", timingParamVal,
-                    true);
+                SetParamByName(_interactionTimingGlobalParam, timingParamVal);
             }
             else
             {
                 _successfulStreak = 0;
             }
 
-            _streakDebugText.text = $"{_successfulStreak}";
-
-            RuntimeManager.StudioSystem.setParameterByName("SuccessStreak", _successfulStreak, true);
+            SetParamByName(_successStreakParam, _successfulStreak);
         }
 
         private void OnSliceResult(SliceResultData data)
         {
             if (data.SliceCount > 0)
             {
-                RuntimeManager.StudioSystem.setParameterByName("SliceTargetCount", data.SliceCount, true);
+                SetParamByName(_sliceTargetCountParam, data.SliceCount);
+            }
+        }
+
+        private void SetParamByName(string param, float value)
+        {
+            FMOD.Studio.System studioSystem = RuntimeManager.StudioSystem;
+            RESULT result = studioSystem.setParameterByName(param, value, true);
+            if (result != RESULT.OK)
+            {
+                Debug.Log($"Failed to set FMOD parameter '{param}' to {value}: {result}");
             }
         }
     }
