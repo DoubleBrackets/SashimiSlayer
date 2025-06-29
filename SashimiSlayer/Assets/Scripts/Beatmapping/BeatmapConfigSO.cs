@@ -54,6 +54,11 @@ namespace Beatmapping
         public GameObject ResultsScreenCustomPrefab { get; private set; }
 
         /// <summary>
+        ///     Duration of the beatmap level, in seconds, from the start time
+        /// </summary>
+        public double BeatmapDuration => BeatmapTimeline.duration - StartTime;
+
+        /// <summary>
         ///     Take a time and snap it to the nearest subdivision
         /// </summary>
         /// <param name="rawTime"></param>

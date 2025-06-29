@@ -258,7 +258,7 @@ namespace Beatmapping.Timing
             _previousEventTime = currentEventTime;
 
             // progress
-            _normalizedProgressEvent.Raise((float)(currentBeatmapTime / _currentBeatmap.BeatmapTimeline.duration));
+            _normalizedProgressEvent.Raise((float)(currentBeatmapTime / _currentBeatmap.BeatmapDuration));
         }
 
         public int GetClosestSubdivOfTime(double beatmapTime)

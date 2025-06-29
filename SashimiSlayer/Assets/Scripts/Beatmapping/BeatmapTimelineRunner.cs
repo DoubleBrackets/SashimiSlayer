@@ -9,7 +9,7 @@ using UnityEngine.Playables;
 namespace Beatmapping
 {
     /// <summary>
-    ///     Handles the timeline playback in coordination with the beatmap
+    ///     Handles the timeline playback in step with the beatmap music FMOD event
     /// </summary>
     public class BeatmapTimelineRunner : MonoBehaviour
     {
@@ -59,6 +59,7 @@ namespace Beatmapping
             {
                 _director.time = tickInfo.CurrentLevelTime;
 
+                // Check for end of startup
                 if (_director.time >= _director.duration)
                 {
                     _director.Stop();
