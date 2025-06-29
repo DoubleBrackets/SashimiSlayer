@@ -34,6 +34,13 @@ namespace Core.Scene
         private string _currentLevelSceneName = string.Empty;
         private GameLevelSO _previousBeatmapLevel;
 
+        /// <summary>
+        ///     Queue for levels to be loaded, in case a transition is interrupted by another level load
+        /// </summary>
+        private Queue<GameLevelSO> _levelLoadQueue = new();
+
+        private bool _isLoading;
+
         private void Awake()
         {
             if (Instance == null)
@@ -59,6 +66,15 @@ namespace Core.Scene
 
         public async UniTask LoadLevel(GameLevelSO gameLevel)
         {
+            if (_isLoading)
+            {
+                Debug.Log("Level is already loading, adding to queue");
+                _levelLoadQueue.Enqueue(gameLevel);
+                return;
+            }
+
+            _isLoading = true;
+
             sceneTransitionVisuals.SetTitleText(gameLevel.LevelTitle);
 
             await sceneTransitionVisuals.FadeOut();
@@ -99,6 +115,16 @@ namespace Core.Scene
             }
 
             await sceneTransitionVisuals.FadeIn();
+
+            _isLoading = false;
+
+            // Chain with any queued level loads
+            if (_levelLoadQueue.Count > 0)
+            {
+                GameLevelSO nextLevel = _levelLoadQueue.Dequeue();
+                Debug.Log($"Loading next level from queue: {nextLevel.LevelTitle}");
+                await LoadLevel(nextLevel);
+            }
         }
 
         public void LoadLastBeatmapLevel()
