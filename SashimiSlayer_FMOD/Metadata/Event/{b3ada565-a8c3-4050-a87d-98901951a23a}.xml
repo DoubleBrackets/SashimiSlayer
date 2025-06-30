@@ -194,6 +194,8 @@
 			<destination>{61923108-e738-4f2b-870c-432af7365258}</destination>
 			<destination>{9ccc2355-9dca-462f-972e-1ba99cc8266c}</destination>
 			<destination>{286482a4-5388-4ed0-8091-65884e3b4b8d}</destination>
+			<destination>{62e1fe72-1803-4e39-bb12-2483f714faf9}</destination>
+			<destination>{73ec5947-f867-45a9-ad2f-b1c35b5ea11f}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6c8e9d85-6e04-44de-91a7-ce59036edafc}">
@@ -984,6 +986,37 @@
 			<destination>{9c94cd68-9164-4f9e-b31e-4655c492f351}</destination>
 		</relationship>
 	</object>
+	<object class="LoopRegion" id="{62e1fe72-1803-4e39-bb12-2483f714faf9}">
+		<property name="position">
+			<value>78</value>
+		</property>
+		<property name="length">
+			<value>6</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{ead841fc-7dd1-4c0f-852c-159e90b00444}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{8519bc5c-a85c-4814-8f0d-41ec8f08a3f5}</destination>
+		</relationship>
+		<relationship name="triggerConditions">
+			<destination>{fd0f76b5-680a-4741-a70c-1ccff29d721f}</destination>
+		</relationship>
+	</object>
+	<object class="NamedMarker" id="{73ec5947-f867-45a9-ad2f-b1c35b5ea11f}">
+		<property name="position">
+			<value>82.979357798165125</value>
+		</property>
+		<property name="name">
+			<value>2 I</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{ead841fc-7dd1-4c0f-852c-159e90b00444}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{30092760-9c3c-49db-8bdb-09a1f0e67227}</destination>
+		</relationship>
+	</object>
 	<object class="ADSRModulator" id="{9a2417de-af9a-4ddb-810d-4f0df92c53d1}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
@@ -1257,6 +1290,17 @@
 		</property>
 		<property name="maximum">
 			<value>0</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{5c43aea1-4b8e-4ac2-92fb-537701595495}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{fd0f76b5-680a-4741-a70c-1ccff29d721f}">
+		<property name="minimum">
+			<value>0</value>
+		</property>
+		<property name="maximum">
+			<value>1</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{5c43aea1-4b8e-4ac2-92fb-537701595495}</destination>
