@@ -49,8 +49,9 @@ MonoBehaviour:
   _pipCountOffset: 1
   _centerAngle: 45
   _pipIntervalAngle: 22.54
-  _pipRadius: 2
+  _pipRadius: 2.1
   _pipDirection: -1
+  _centerOffset: {x: 0, y: 0}
   _beatPip: {fileID: 0}
   _finalPip: {fileID: 0}
   _delay: 0.02

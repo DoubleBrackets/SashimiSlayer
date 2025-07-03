@@ -37,6 +37,9 @@ namespace Beatmapping.Indicator
         [SerializeField]
         private int _pipDirection;
 
+        [SerializeField]
+        private Vector2 _centerOffset;
+
         [Header("Indicator")]
 
         [SerializeField]
@@ -141,7 +144,7 @@ namespace Beatmapping.Indicator
                                   startingAngle + i * pipIntervalAngle * direction) *
                               Vector2.up;
 
-                positions.Add(dir * _pipRadius);
+                positions.Add(dir * _pipRadius + _centerOffset);
             }
 
             return positions;

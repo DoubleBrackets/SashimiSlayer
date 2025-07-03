@@ -24550,7 +24550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7685824455717189684}
-  - component: {fileID: 4025805303266664043}
+  - component: {fileID: 6672309759628037319}
   m_Layer: 0
   m_Name: PerfectSlice
   m_TagString: Untagged
@@ -24575,7 +24575,7 @@ Transform:
   - {fileID: 3689431124684111389}
   m_Father: {fileID: 4900994009118314959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4025805303266664043
+--- !u!114 &6672309759628037319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24584,11 +24584,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8240807525263214343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf62355f4a004740a2c5d582d1f45bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 866bc1c51c379b84fb6391b415573ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _visualContainer: {fileID: 7685824455717189684}
   _rotationOffset: 0
+  _protagSwordStateEvent: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47,
+    type: 2}
 --- !u!1 &8974267324422179470
 GameObject:
   m_ObjectHideFlags: 0
