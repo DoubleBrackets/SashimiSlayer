@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SlapTentacle
   m_EditorClassIdentifier: 
   <DamageDealtToPlayer>k__BackingField: 1
-  <HitboxRadius>k__BackingField: 1.4
+  <HitboxRadius>k__BackingField: 2
   <Prefab>k__BackingField: {fileID: 1441247704427616508, guid: ba08684eb424af442a49d501e21a4e6b,
     type: 3}

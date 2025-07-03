@@ -46,11 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _devDesc: 
   _visualContainer: {fileID: 7497753849002471331}
-  _totalDistance: 3
-  _layoutDirection: {x: 0, y: 1}
+  _pipCountOffset: 1
+  _centerAngle: 45
+  _pipIntervalAngle: 22.54
+  _pipRadius: 2
+  _pipDirection: -1
   _beatPip: {fileID: 0}
   _finalPip: {fileID: 0}
   _delay: 0.02
-  _shakeDuration: 5
   _shakeStrength: 5
   _shakeVibrato: 30

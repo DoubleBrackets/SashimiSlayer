@@ -67,8 +67,8 @@ namespace Beatmapping.Indicator
 
         public void SetOn(bool isOn)
         {
-            _onSprite.enabled = isOn;
-            _offSprite.enabled = !isOn;
+            _onSprite.gameObject.SetActive(isOn);
+            _offSprite.gameObject.SetActive(!isOn);
             IsOn = isOn;
         }
 

@@ -19,6 +19,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockPipEndTop
       objectReference: {fileID: 0}
+    - target: {fileID: 2250032060229602988, guid: e1797d42060eb2d4eb3a765f0d57c221,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff,
+        type: 3}
     - target: {fileID: 3371397100324223062, guid: e1797d42060eb2d4eb3a765f0d57c221,
         type: 3}
       propertyPath: m_LocalPosition.x

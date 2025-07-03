@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 249287012447320160, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: m_Name
-      value: BlockPipMiddle
+      value: SlicePip
       objectReference: {fileID: 0}
     - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
         type: 3}
@@ -31,17 +31,17 @@ PrefabInstance:
     - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2028302
+      value: 0.18431373
       objectReference: {fileID: 0}
     - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.6844536
+      value: 0.19607843
       objectReference: {fileID: 0}
     - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.90588236
       objectReference: {fileID: 0}
     - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
         type: 3}

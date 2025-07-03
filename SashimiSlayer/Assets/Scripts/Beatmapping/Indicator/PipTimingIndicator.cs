@@ -23,10 +23,19 @@ namespace Beatmapping.Indicator
         [Header("Layout")]
 
         [SerializeField]
-        private float _totalDistance;
+        private int _pipCountOffset;
 
         [SerializeField]
-        private Vector2 _layoutDirection;
+        private float _centerAngle;
+
+        [SerializeField]
+        private float _pipIntervalAngle;
+
+        [SerializeField]
+        private float _pipRadius;
+
+        [SerializeField]
+        private int _pipDirection;
 
         [Header("Indicator")]
 
@@ -56,23 +65,45 @@ namespace Beatmapping.Indicator
         private int _prevBeatRemaining;
 
         private bool _flashOnNext;
+        private bool _didShake;
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + Vector3.left * _totalDistance);
+            List<Vector2> pipPositions =
+                CalculatePipLocalPositions(_centerAngle, _pipCountOffset + 4, _pipIntervalAngle, _pipDirection);
+
+            Vector2 centerPosition = _visualContainer.position;
+            for (var i = 0; i < pipPositions.Count; i++)
+            {
+                if (i == 0)
+                {
+                    Gizmos.color = Color.green;
+                }
+                else
+                {
+                    Gizmos.color = Color.red;
+                }
+
+                Vector2 position = pipPositions[i];
+                Gizmos.DrawSphere(centerPosition + position, 0.1f);
+            }
         }
 
-        public void FlashOnNext()
+        public void SetupNewInteraction()
         {
             _flashOnNext = true;
+            _didShake = false;
         }
 
         private void Initialize(BeatmapConfigSo beatmapConfigSo)
         {
             int beatsPerMeasure = beatmapConfigSo.BeatsPerMeasure;
 
-            int totalPips = beatsPerMeasure + 1;
+            int totalPips = beatsPerMeasure + _pipCountOffset;
+            float startingAngle = _centerAngle + totalPips * _pipIntervalAngle / 2f * _pipDirection;
+
+            List<Vector2> pipPositions =
+                CalculatePipLocalPositions(_centerAngle, totalPips, _pipIntervalAngle, _pipDirection);
 
             for (var i = 0; i < totalPips; i++)
             {
@@ -80,15 +111,40 @@ namespace Beatmapping.Indicator
                 IndicatorPip pip = Instantiate(prefab, _visualContainer);
                 pip.Setup();
 
-                float t = (float)i / (totalPips - 1);
-
-                pip.transform.localPosition = _layoutDirection.normalized * (_totalDistance * t);
+                pip.transform.localPosition = pipPositions[i];
 
                 pip.SetOn(false);
                 _pips.Add(pip);
             }
 
             _shakeDuration = (float)(1 / beatmapConfigSo.Bpm * 60);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="centerAngle">center angle in degrees</param>
+        /// <param name="totalPips"></param>
+        /// <param name="pipIntervalAngle">interval angle in degrees</param>
+        /// <param name="direction">positive or negative 1</param>
+        /// <returns></returns>
+        private List<Vector2> CalculatePipLocalPositions(float centerAngle, int totalPips, float pipIntervalAngle,
+            int direction)
+        {
+            float startingAngle = centerAngle - (totalPips - 1) * pipIntervalAngle / 2f * direction;
+
+            var positions = new List<Vector2>(totalPips);
+            for (var i = 0; i < totalPips; i++)
+            {
+                Vector2 dir = Quaternion.Euler(
+                                  0,
+                                  0,
+                                  startingAngle + i * pipIntervalAngle * direction) *
+                              Vector2.up;
+
+                positions.Add(dir * _pipRadius);
+            }
+
+            return positions;
         }
 
         public void SetVisible(bool visible)
@@ -131,7 +187,8 @@ namespace Beatmapping.Indicator
 
             for (var i = 0; i < _pips.Count; i++)
             {
-                bool isVisible = i <= beatsRemaining && shouldShowPips;
+                // Counting down; i.e pip index 0 is the final beat
+                bool isVisible = shouldShowPips;
                 _pips[i].SetVisible(isVisible);
 
                 if (!isVisible)
@@ -140,17 +197,18 @@ namespace Beatmapping.Indicator
                     continue;
                 }
 
-                bool isOn = i == beatsRemaining;
+                bool isOn = i <= beatsRemaining;
                 bool wasOn = _pips[i].IsOn;
                 _pips[i].SetOn(isOn);
                 _pips[i].SetAlpha(normalized);
 
-                if (i == 1 && isOn && !wasOn)
+                if (i == 0 && beatsRemaining == 1 && !_didShake)
                 {
+                    _didShake = true;
                     _pips[i].transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, fadeOut: false);
                 }
 
-                if (isOn && !wasOn && _flashOnNext)
+                if (i == 0 && !isOn && _flashOnNext)
                 {
                     _flashOnNext = false;
                     _pips[i].Flash();

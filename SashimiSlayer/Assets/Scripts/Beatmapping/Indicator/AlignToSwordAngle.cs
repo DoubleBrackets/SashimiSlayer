@@ -1,46 +1,19 @@
-using Core.Protag;
-using EditorUtils.BoldHeader;
-using Events.Core;
-using NaughtyAttributes;
 using UnityEngine;
 
 namespace Beatmapping.Indicator
 {
-    /// <summary>
-    ///     Script that aligns a visual container to the sword angle of the protaganist. Intended for pip indicators
-    /// </summary>
     public class AlignToSwordAngle : MonoBehaviour
     {
-        [BoldHeader("Align To Sword Angle")]
-        [InfoBox("Matches a target Transform rotation to the protag's sword angle")]
-        [Header("Depends")]
-
-        [SerializeField]
-        private Transform _visualContainer;
-
-        [Header("Config")]
-
-        [SerializeField]
-        private float _rotationOffset;
-
-        [Header("Event (In)")]
-
-        [SerializeField]
-        private ProtagSwordStateEvent _protagSwordStateEvent;
-
-        private void Awake()
+        // Start is called before the first frame update
+        void Start()
         {
-            _protagSwordStateEvent.AddListener(OnProtagSwordState);
+        
         }
 
-        private void OnDestroy()
+        // Update is called once per frame
+        void Update()
         {
-            _protagSwordStateEvent.RemoveListener(OnProtagSwordState);
-        }
-
-        private void OnProtagSwordState(Protaganist.ProtagSwordState state)
-        {
-            _visualContainer.rotation = Quaternion.AngleAxis(state.SwordAngle + _rotationOffset, Vector3.forward);
+        
         }
     }
 }

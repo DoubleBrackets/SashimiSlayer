@@ -24588,8 +24588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualContainer: {fileID: 7685824455717189684}
-  _protagSwordStateEvent: {fileID: 11400000, guid: c9cd6894bca4a8c43b3f69e78d991d17,
-    type: 2}
+  _rotationOffset: 0
 --- !u!1 &8974267324422179470
 GameObject:
   m_ObjectHideFlags: 0

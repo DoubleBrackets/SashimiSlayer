@@ -84,7 +84,7 @@ namespace Beatmapping.Indicator
                 if (isNewInteraction)
                 {
                     _sliceTimingIndicators.SetVisible(true);
-                    _sliceTimingIndicators.FlashOnNext();
+                    _sliceTimingIndicators.SetupNewInteraction();
                     foreach (PipTimingIndicator blockIndicator in _blockTimingIndicators)
                     {
                         blockIndicator.SetVisible(false);
@@ -119,7 +119,7 @@ namespace Beatmapping.Indicator
             {
                 if (isNewInteraction)
                 {
-                    _blockTimingIndicators[i].FlashOnNext();
+                    _blockTimingIndicators[i].SetupNewInteraction();
                     _blockTimingIndicators[i].SetVisible(i == blockIndex);
                 }
             }
