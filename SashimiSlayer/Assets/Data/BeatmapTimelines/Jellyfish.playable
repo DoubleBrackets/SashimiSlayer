@@ -44,6 +44,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.1338677, y: 1.5063795}
           - {x: 0.21175396, y: 1.3602707}
@@ -74,6 +75,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -104,6 +106,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -155,6 +158,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -185,38 +189,10 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
---- !u!114 &-8513882402138360883
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: ca86d4e60ed23b54c95d4a5eef41c557, type: 2}
-    NoteData:
-      StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -8.3}
-      NoteStartTime: 49.18604651162791
-      NoteEndTime: 51.27906976744186
-      NoteBeatCount: 6
-      Interactions:
-      - _beatOffset: 3
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 1
-          Flags: 0
-          Positions:
-          - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-8424318041118795306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,7 +209,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -4.949991, y: 8.394953}
       NoteStartTime: 25.813953488372093
       NoteEndTime: 27.209302325581397
       NoteBeatCount: 4.000000000000007
@@ -244,6 +220,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -263,7 +240,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.257946, y: 8.258083}
       NoteStartTime: 34.53488372093023
       NoteEndTime: 35.93023255813954
       NoteBeatCount: 4.000000000000007
@@ -274,6 +251,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -304,6 +282,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-8015301746708856105
@@ -425,6 +404,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.1338677, y: 1.5063795}
           - {x: 0.21175396, y: 1.3602707}
@@ -455,6 +435,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-7974124173024059953
@@ -478,6 +459,37 @@ MonoBehaviour:
       NoteEndTime: 0
       NoteBeatCount: 0
       Interactions: []
+--- !u!114 &-7757696090802225582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
+  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  Template:
+    NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
+    NoteData:
+      StartPosition: {x: 5.201916, y: -4.9900446}
+      EndPosition: {x: -4.9157734, y: 8.600256}
+      NoteStartTime: 48.139534883720934
+      NoteEndTime: 49.53488372093023
+      NoteBeatCount: 3.9999999999999867
+      Interactions:
+      - _beatOffset: 3
+        _offsetFromEnd: 0
+        InteractionData:
+          BlockPose: 0
+          InteractionType: 0
+          Flags: 0
+          HideIndicator: 0
+          Positions:
+          - {x: 5.4546857, y: 1.8280971}
+          - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-7724866168912428406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -505,6 +517,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-7634166626675708512
@@ -534,6 +547,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -972,144 +986,6 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
-  - m_Version: 1
-    m_Start: 51.266046511627906
-    m_ClipIn: 0
-    m_Asset: {fileID: -8513882402138360883}
-    m_Duration: 2.0930232558139537
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -7620407122743851986}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: HoldJellyfish
-  - m_Version: 1
-    m_Start: 13.591627906976745
-    m_ClipIn: 0
-    m_Asset: {fileID: 3384881623672924200}
-    m_Duration: 2.0930232558139537
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -7620407122743851986}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: VulnerableJellyfish
   - m_Version: 1
     m_Start: 17.777674418604654
     m_ClipIn: 0
@@ -2559,6 +2435,75 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
+  - m_Version: 1
+    m_Start: 50.56837209302326
+    m_ClipIn: 0
+    m_Asset: {fileID: 8836347594323855946}
+    m_Duration: 1.3953488372092977
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -7620407122743851986}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: AttackingJellyfish
   m_Markers:
     m_Objects: []
 --- !u!114 &-7529975730450443829
@@ -2609,6 +2554,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-7451784235950393978
@@ -2626,8 +2572,8 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: cd8b28387250bc848b9a561fcb3a6f6f, type: 2}
     NoteData:
-      StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -7}
+      StartPosition: {x: 8.158635, y: -6.0713816}
+      EndPosition: {x: -3.219697, y: -7.273738}
       NoteStartTime: 30.34883720930233
       NoteEndTime: 32.44186046511628
       NoteBeatCount: 5.9999999999999805
@@ -2638,8 +2584,9 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
-          - {x: 0.6209483, y: -0.17741346}
+          - {x: 2.2291603, y: -1.7856258}
 --- !u!114 &-7390707095583560657
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2667,6 +2614,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -2718,6 +2666,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -2769,6 +2718,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -2799,6 +2749,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -2873,6 +2824,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -1.5357773}
 --- !u!114 &-6867623466561597635
@@ -2902,6 +2854,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-6814100056674376918
@@ -2931,6 +2884,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -2961,6 +2915,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2141767, y: 0.2742442}
 --- !u!114 &-6430330407143984895
@@ -3000,7 +2955,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.2921634, y: 8.292301}
       NoteStartTime: 24.76744186046512
       NoteEndTime: 26.162790697674424
       NoteBeatCount: 4.000000000000007
@@ -3011,6 +2966,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3030,7 +2986,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.360598, y: 8.086997}
       NoteStartTime: 32.44186046511628
       NoteEndTime: 33.83720930232558
       NoteBeatCount: 4.000000000000007
@@ -3041,6 +2997,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3071,6 +3028,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3101,6 +3059,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3131,6 +3090,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3161,6 +3121,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3191,6 +3152,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.201761, y: 2.6860106}
           - {x: 0.21175396, y: 1.3602707}
@@ -3221,6 +3183,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3240,7 +3203,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.1895123, y: 8.292301}
       NoteStartTime: 38.72093023255814
       NoteEndTime: 40.116279069767444
       NoteBeatCount: 4.000000000000007
@@ -3251,6 +3214,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3281,6 +3245,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3451056, y: -0.53487825}
 --- !u!114 &-5605021235060050008
@@ -3310,6 +3275,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-5418948927007848836
@@ -3339,6 +3305,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3369,6 +3336,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3399,9 +3367,50 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
+--- !u!114 &-4682741125892657753
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
+  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  Template:
+    NoteConfig: {fileID: 11400000, guid: 3d5dae02fba30474c89d9aca4d29bdf8, type: 2}
+    NoteData:
+      StartPosition: {x: 5.201916, y: -4.9900446}
+      EndPosition: {x: -5.223729, y: 6.89398}
+      NoteStartTime: 49.18604651162791
+      NoteEndTime: 51.27906976744186
+      NoteBeatCount: 6
+      Interactions:
+      - _beatOffset: 3
+        _offsetFromEnd: 0
+        InteractionData:
+          BlockPose: 0
+          InteractionType: 0
+          Flags: 0
+          HideIndicator: 0
+          Positions:
+          - {x: 5.4546857, y: 1.8280971}
+          - {x: 1.4885215, y: 0.15190148}
+      - _beatOffset: 0
+        _offsetFromEnd: 1
+        InteractionData:
+          BlockPose: 0
+          InteractionType: 1
+          Flags: 0
+          HideIndicator: 0
+          Positions:
+          - {x: 2.3864431, y: -2.4598472}
 --- !u!114 &-4667836728107191885
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3429,6 +3438,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3448,7 +3458,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.3605986, y: 7.9843454}
       NoteStartTime: 42.55813953488372
       NoteEndTime: 43.95348837209303
       NoteBeatCount: 4.000000000000007
@@ -3459,6 +3469,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3583,6 +3594,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-3947490354361722313
@@ -3612,6 +3624,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -1.5357773}
 --- !u!114 &-3887443167818099376
@@ -3641,6 +3654,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -2.2972074, y: -0.42820615}
 --- !u!114 &-3877539645632603150
@@ -3670,6 +3684,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.65669477, y: 1.4311755}
 --- !u!114 &-3869697036937988120
@@ -3699,6 +3714,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-3838203664956030682
@@ -3728,6 +3744,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3758,6 +3775,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.203561, y: 2.257054}
           - {x: 0.21175396, y: 1.3602707}
@@ -3788,6 +3806,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -0.3799522, y: 2.0388641}
 --- !u!114 &-3454474314357226399
@@ -3806,7 +3825,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.189512, y: 8.56604}
       NoteStartTime: 26.51162790697675
       NoteEndTime: 27.906976744186046
       NoteBeatCount: 3.9999999999999867
@@ -3817,6 +3836,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -3847,6 +3867,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4038,6 +4059,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.1338677, y: 1.5063795}
           - {x: 0.21175396, y: 1.3602707}
@@ -4068,8 +4090,40 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.201761, y: 2.6860106}
+          - {x: 0.21175396, y: 1.3602707}
+--- !u!114 &-2846969537753395196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
+  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  Template:
+    NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
+    NoteData:
+      StartPosition: {x: 5.201916, y: -4.9900446}
+      EndPosition: {x: -4.9157734, y: 8.600256}
+      NoteStartTime: 48.83720930232558
+      NoteEndTime: 50.23255813953489
+      NoteBeatCount: 4.000000000000007
+      Interactions:
+      - _beatOffset: 3
+        _offsetFromEnd: 0
+        InteractionData:
+          BlockPose: 0
+          InteractionType: 0
+          Flags: 0
+          HideIndicator: 0
+          Positions:
+          - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-2805513626004441514
 MonoBehaviour:
@@ -4087,7 +4141,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.257946, y: 7.881694}
       NoteStartTime: 39.76744186046512
       NoteEndTime: 41.16279069767442
       NoteBeatCount: 3.9999999999999867
@@ -4098,6 +4152,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4145,6 +4200,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.8408237, y: 0.3587824}
 --- !u!114 &-2581995691686481134
@@ -4174,6 +4230,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4204,6 +4261,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4234,6 +4292,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4264,6 +4323,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 1.1213983, y: -0.9638347}
 --- !u!114 &-2343653750786743221
@@ -4293,6 +4353,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.444015, y: 0.18005049}
 --- !u!114 &-2203500793983134382
@@ -4322,6 +4383,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3451056, y: -0.53487825}
 --- !u!114 &-2131104746913374843
@@ -4351,6 +4413,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4381,6 +4444,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.201761, y: 2.6860106}
           - {x: 0.21175396, y: 1.3602707}
@@ -4432,6 +4496,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4578,6 +4643,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.201761, y: 2.6860106}
           - {x: 0.21175396, y: 1.3602707}
@@ -4608,6 +4674,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4627,7 +4694,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.052643, y: 7.984346}
       NoteStartTime: 42.2093023255814
       NoteEndTime: 43.6046511627907
       NoteBeatCount: 4.000000000000007
@@ -4638,6 +4705,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4657,7 +4725,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.223729, y: 7.642173}
       NoteStartTime: 41.16279069767442
       NoteEndTime: 42.55813953488372
       NoteBeatCount: 4.000000000000007
@@ -4668,6 +4736,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -4698,6 +4767,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -5433,75 +5503,6 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
-  - m_Version: 1
-    m_Start: 50.21953488372093
-    m_ClipIn: 0
-    m_Asset: {fileID: 5990631037584452807}
-    m_Duration: 2.0930232558139537
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -1017061909413786394}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: HoldJellyfish
   - m_Version: 1
     m_Start: 68.01023255813953
     m_ClipIn: 0
@@ -6744,6 +6745,75 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
+  - m_Version: 1
+    m_Start: 50.21953488372093
+    m_ClipIn: 0
+    m_Asset: {fileID: -7757696090802225582}
+    m_Duration: 1.3953488372092977
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -1017061909413786394}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: AttackingJellyfish
   m_Markers:
     m_Objects: []
 --- !u!114 &-1011440602357633351
@@ -6773,6 +6843,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -6803,6 +6874,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-989754019291438642
@@ -6832,6 +6904,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.65669477, y: 1.4311755}
 --- !u!114 &-957739267921107960
@@ -6882,6 +6955,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3451056, y: -0.53487825}
 --- !u!114 &-802169261663008724
@@ -6932,6 +7006,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.0159578, y: 0.3945291}
 --- !u!114 &-459265962985437290
@@ -6950,7 +7025,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: cd8b28387250bc848b9a561fcb3a6f6f, type: 2}
     NoteData:
       StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -7}
+      EndPosition: {x: -2.5011342, y: -7.8896484}
       NoteStartTime: 20.930232558139537
       NoteEndTime: 23.02325581395349
       NoteBeatCount: 6
@@ -6961,6 +7036,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-360097098816991157
@@ -6990,6 +7066,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 1.4885215, y: 0.15190148}
@@ -6999,6 +7076,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.3864431, y: -2.4598472}
 --- !u!114 &-272128455600839079
@@ -7028,6 +7106,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7058,6 +7137,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7077,7 +7157,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -4.9157734, y: 8.600256}
       NoteStartTime: 44.30232558139535
       NoteEndTime: 45.69767441860465
       NoteBeatCount: 3.9999999999999867
@@ -7088,6 +7168,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7106,8 +7187,8 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: cd8b28387250bc848b9a561fcb3a6f6f, type: 2}
     NoteData:
-      StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -7}
+      StartPosition: {x: 8.329723, y: -6.3109026}
+      EndPosition: {x: -3.2196972, y: -7.9923005}
       NoteStartTime: 21.976744186046517
       NoteEndTime: 24.06976744186047
       NoteBeatCount: 6
@@ -7118,8 +7199,9 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
-          - {x: 0.6209483, y: -0.17741346}
+          - {x: 2.776637, y: 1.8071889}
 --- !u!114 &-86880607777925351
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7136,7 +7218,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: cd8b28387250bc848b9a561fcb3a6f6f, type: 2}
     NoteData:
       StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -7}
+      EndPosition: {x: -2.6722207, y: -8.02652}
       NoteStartTime: 23.02325581395349
       NoteEndTime: 25.116279069767444
       NoteBeatCount: 6
@@ -7147,6 +7229,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &-46753333691182635
@@ -7176,6 +7259,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -1.5357773}
 --- !u!114 &11400000
@@ -7236,6 +7320,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7266,6 +7351,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7285,7 +7371,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.0184255, y: 8.121215}
       NoteStartTime: 35.58139534883721
       NoteEndTime: 36.97674418604651
       NoteBeatCount: 3.9999999999999867
@@ -7296,6 +7382,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7326,6 +7413,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.733585, y: 0.10855746}
 --- !u!114 &732604055230666558
@@ -7355,6 +7443,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7385,6 +7474,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7415,6 +7505,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &1013978437601661781
@@ -7444,6 +7535,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7474,6 +7566,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.4092717, y: -0.43955088}
 --- !u!114 &1099660459232839376
@@ -7503,6 +7596,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.5584574, y: 0.2140938}
 --- !u!114 &1368155096576565596
@@ -7532,6 +7626,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7562,6 +7657,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.201761, y: 2.6860106}
           - {x: 0.21175396, y: 1.3602707}
@@ -7632,6 +7728,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6640737, y: -0.20181006}
 --- !u!114 &1852406361774758454
@@ -7661,6 +7758,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -7754,6 +7852,75 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
+  - m_Version: 1
+    m_Start: 51.266046511627906
+    m_ClipIn: 0
+    m_Asset: {fileID: -4682741125892657753}
+    m_Duration: 2.0930232558139537
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 1888847569116912914}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: AttackingJellyfish
   m_Markers:
     m_Objects: []
 --- !u!114 &1921346909180991624
@@ -8398,6 +8565,75 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
+  - m_Version: 1
+    m_Start: 50.91720930232558
+    m_ClipIn: 0
+    m_Asset: {fileID: -2846969537753395196}
+    m_Duration: 1.3953488372093048
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 1921346909180991624}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: AttackingJellyfish
   m_Markers:
     m_Objects: []
 --- !u!114 &2016438818000222022
@@ -8552,6 +8788,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.8765717, y: 0.03706479}
 --- !u!114 &2145358563145770506
@@ -8602,6 +8839,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.203561, y: 2.257054}
           - {x: 0.21175396, y: 1.3602707}
@@ -8632,6 +8870,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &2421434626244032537
@@ -8661,6 +8900,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &2643359066691088830
@@ -8690,6 +8930,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 1.4885215, y: 0.15190148}
@@ -8699,6 +8940,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.3864431, y: -2.4598472}
 --- !u!114 &2702583879601897541
@@ -8728,6 +8970,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.203561, y: 2.257054}
           - {x: 0.21175396, y: 1.3602707}
@@ -8779,6 +9022,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -8809,6 +9053,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &2983943350887970935
@@ -8838,6 +9083,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.233136, y: 0.7877401}
 --- !u!114 &3241029985881354545
@@ -8884,6 +9130,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &3378594307854756140
@@ -8902,7 +9149,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.2921634, y: 8.497604}
       NoteStartTime: 37.674418604651166
       NoteEndTime: 39.06976744186046
       NoteBeatCount: 3.9999999999999867
@@ -8913,38 +9160,10 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
---- !u!114 &3384881623672924200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: cd8b28387250bc848b9a561fcb3a6f6f, type: 2}
-    NoteData:
-      StartPosition: {x: 7.242791, y: -5.56271}
-      EndPosition: {x: -3.3651648, y: -7}
-      NoteStartTime: 11.511627906976745
-      NoteEndTime: 13.604651162790699
-      NoteBeatCount: 6
-      Interactions:
-      - _beatOffset: 3
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 1
-          Flags: 0
-          Positions:
-          - {x: 1.943566, y: 1.8958793}
 --- !u!114 &3463994994474714524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8961,7 +9180,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.223729, y: 8.18965}
       NoteStartTime: 33.48837209302326
       NoteEndTime: 34.883720930232556
       NoteBeatCount: 3.9999999999999867
@@ -8972,6 +9191,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -8991,7 +9211,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.1895123, y: 7.6421723}
       NoteStartTime: 41.51162790697675
       NoteEndTime: 42.906976744186046
       NoteBeatCount: 3.9999999999999867
@@ -9002,6 +9222,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -11884,6 +12105,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -11914,6 +12136,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -11933,7 +12156,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.223729, y: 8.80556}
       NoteStartTime: 44.651162790697676
       NoteEndTime: 46.04651162790698
       NoteBeatCount: 4.000000000000007
@@ -11944,6 +12167,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -11974,6 +12198,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12025,6 +12250,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12072,6 +12298,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12102,6 +12329,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12132,6 +12360,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12183,6 +12412,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12202,7 +12432,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.1895123, y: 8.18965}
       NoteStartTime: 24.418604651162795
       NoteEndTime: 25.813953488372093
       NoteBeatCount: 3.9999999999999867
@@ -12213,6 +12443,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12243,6 +12474,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &4867084847484009955
@@ -12272,6 +12504,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.2841926, y: -0.061742306}
       - _beatOffset: 12
@@ -12280,6 +12513,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 9
         _offsetFromEnd: 1
@@ -12287,6 +12521,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 6
         _offsetFromEnd: 1
@@ -12294,6 +12529,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &5031856526807017569
 MonoBehaviour:
@@ -12311,7 +12547,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.1552944, y: 8.086998}
       NoteStartTime: 25.46511627906977
       NoteEndTime: 26.860465116279073
       NoteBeatCount: 4.000000000000007
@@ -12322,6 +12558,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12352,6 +12589,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.203561, y: 2.257054}
           - {x: 0.21175396, y: 1.3602707}
@@ -12382,6 +12620,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -1.5357773}
 --- !u!114 &5145844636911831059
@@ -12420,8 +12659,8 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: cd8b28387250bc848b9a561fcb3a6f6f, type: 2}
     NoteData:
-      StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -7}
+      StartPosition: {x: 7.2005515, y: -5.7976427}
+      EndPosition: {x: -3.0486107, y: -7.307956}
       NoteStartTime: 28.255813953488378
       NoteEndTime: 30.34883720930233
       NoteBeatCount: 6
@@ -12432,8 +12671,9 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
-          - {x: 0.6209483, y: -0.17741346}
+          - {x: 2.845072, y: 2.3546653}
 --- !u!114 &5312019141401088678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12461,6 +12701,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12491,6 +12732,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12521,6 +12763,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3451055, y: -0.49913168}
 --- !u!114 &5622409611150673010
@@ -12550,6 +12793,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12617,6 +12861,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &5943690504375631913
@@ -12646,35 +12891,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
-          Positions:
-          - {x: 0.6209483, y: -0.17741346}
---- !u!114 &5990631037584452807
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
-  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  Template:
-    NoteConfig: {fileID: 11400000, guid: ca86d4e60ed23b54c95d4a5eef41c557, type: 2}
-    NoteData:
-      StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -8.3}
-      NoteStartTime: 48.139534883720934
-      NoteEndTime: 50.23255813953489
-      NoteBeatCount: 6
-      Interactions:
-      - _beatOffset: 3
-        _offsetFromEnd: 1
-        InteractionData:
-          BlockPose: 0
-          InteractionType: 1
-          Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &6041291575561676165
@@ -12704,6 +12921,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &6189522424849632830
@@ -12733,6 +12951,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12763,6 +12982,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &6525340059104306318
@@ -12781,7 +13001,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.223729, y: 7.950128}
       NoteStartTime: 43.6046511627907
       NoteEndTime: 45
       NoteBeatCount: 3.9999999999999867
@@ -12792,6 +13012,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12822,6 +13043,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &6612688620607538108
@@ -12851,6 +13073,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &6640569924543703568
@@ -12885,7 +13108,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.1552944, y: 8.258083}
       NoteStartTime: 26.860465116279073
       NoteEndTime: 28.255813953488378
       NoteBeatCount: 4.000000000000007
@@ -12896,6 +13119,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -12926,6 +13150,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &6677544371795869448
@@ -12955,6 +13180,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -0.57027507, y: -0.5150974}
 --- !u!114 &6709694722932851106
@@ -12984,6 +13210,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 1.1213983, y: -0.82084894}
 --- !u!114 &6800105560304901096
@@ -13013,6 +13240,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -13031,8 +13259,8 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: cd8b28387250bc848b9a561fcb3a6f6f, type: 2}
     NoteData:
-      StartPosition: {x: 5.45547, y: -5.4554706}
-      EndPosition: {x: -2.364265, y: -7}
+      StartPosition: {x: 6.858379, y: -6.0371647}
+      EndPosition: {x: -2.6380033, y: -7.7185626}
       NoteStartTime: 29.30232558139535
       NoteEndTime: 31.395348837209305
       NoteBeatCount: 6
@@ -13043,8 +13271,9 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
-          - {x: 0.6209483, y: -0.17741346}
+          - {x: 1.9896396, y: -0.2116307}
 --- !u!114 &7033418643689994645
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13072,6 +13301,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.65669477, y: 1.4311755}
 --- !u!114 &7235921062085775856
@@ -13101,6 +13331,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.8354269, y: -2.1434665}
 --- !u!114 &7344261749886936816
@@ -13130,6 +13361,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &7499143820473506370
@@ -13159,6 +13391,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &7571214735001531191
@@ -13188,6 +13421,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3451055, y: -0.49913168}
 --- !u!114 &7655169594171241362
@@ -13241,6 +13475,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -13260,7 +13495,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.189512, y: 7.8132596}
       NoteStartTime: 43.25581395348837
       NoteEndTime: 44.651162790697676
       NoteBeatCount: 4.000000000000007
@@ -13271,6 +13506,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -13916,75 +14152,6 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
-  - m_Version: 1
-    m_Start: 49.17302325581395
-    m_ClipIn: 0
-    m_Asset: {fileID: 5929968379396403945}
-    m_Duration: 2.0930232558139537
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 8012124692829319110}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: HoldJellyfish
   - m_Version: 1
     m_Start: 54.40558139534884
     m_ClipIn: 0
@@ -16331,6 +16498,75 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
+  - m_Version: 1
+    m_Start: 49.17302325581395
+    m_ClipIn: 0
+    m_Asset: {fileID: 5929968379396403945}
+    m_Duration: 2.0930232558139537
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 8012124692829319110}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: HoldJellyfish
   m_Markers:
     m_Objects: []
 --- !u!114 &8016473814548116386
@@ -16360,6 +16596,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.65669477, y: 1.4311755}
 --- !u!114 &8136078825992358821
@@ -16389,6 +16626,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &8210638582193639167
@@ -16418,6 +16656,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.6209483, y: -0.17741346}
 --- !u!114 &8483025368824293763
@@ -16457,7 +16696,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -5.223729, y: 8.702909}
       NoteStartTime: 36.627906976744185
       NoteEndTime: 38.02325581395349
       NoteBeatCount: 4.000000000000007
@@ -16468,6 +16707,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -16498,6 +16738,38 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
+          Positions:
+          - {x: 5.4546857, y: 1.8280971}
+          - {x: 0.21175396, y: 1.3602707}
+--- !u!114 &8836347594323855946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2de9b37ea4a0b34eb4ac7be3e099645, type: 3}
+  m_Name: BeatNoteClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  Template:
+    NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
+    NoteData:
+      StartPosition: {x: 5.201916, y: -4.9900446}
+      EndPosition: {x: -5.223729, y: 8.80556}
+      NoteStartTime: 48.48837209302326
+      NoteEndTime: 49.883720930232556
+      NoteBeatCount: 3.9999999999999867
+      Interactions:
+      - _beatOffset: 3
+        _offsetFromEnd: 0
+        InteractionData:
+          BlockPose: 0
+          InteractionType: 0
+          Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.4546857, y: 1.8280971}
           - {x: 0.21175396, y: 1.3602707}
@@ -16528,5 +16800,6 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.6942403, y: -1.4285384}
