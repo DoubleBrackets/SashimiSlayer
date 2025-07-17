@@ -105,6 +105,9 @@
 		<property name="length">
 			<value>1.2434013605442178</value>
 		</property>
+		<property name="pitch">
+			<value>6</value>
+		</property>
 		<relationship name="fadeInCurve">
 			<destination>{4eccee5c-45f9-4af7-b007-3be28f970333}</destination>
 		</relationship>
@@ -148,7 +151,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{eac917fe-7dc3-4234-bce3-8b1345d1dba7}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-4</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>

@@ -249,6 +249,9 @@
 		<property name="start">
 			<value>3</value>
 		</property>
+		<property name="volume">
+			<value>3</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{0d2f73dd-4ad6-49d0-aaaf-49c56074c175}</destination>
 		</relationship>
@@ -257,6 +260,9 @@
 		<property name="start">
 			<value>4</value>
 		</property>
+		<property name="volume">
+			<value>3</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{0d2f73dd-4ad6-49d0-aaaf-49c56074c175}</destination>
 		</relationship>
@@ -264,6 +270,9 @@
 	<object class="SingleSound" id="{839cf17a-f8d9-4334-bcae-393659fd1150}">
 		<property name="start">
 			<value>5</value>
+		</property>
+		<property name="volume">
+			<value>3</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{0d2f73dd-4ad6-49d0-aaaf-49c56074c175}</destination>
@@ -455,6 +464,7 @@
 	<object class="MixerBusEffectChain" id="{6eeaf564-5161-4618-92d3-69df131296c8}">
 		<relationship name="effects">
 			<destination>{fe59c3d7-e1e2-4315-8f8a-3931191cbe95}</destination>
+			<destination>{dd344fae-5576-4983-a88c-efae91ced0e8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f8d7dbd6-f311-43c5-a69b-3f205267c012}" />
@@ -617,6 +627,17 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{fe59c3d7-e1e2-4315-8f8a-3931191cbe95}" />
+	<object class="SFXReverbEffect" id="{dd344fae-5576-4983-a88c-efae91ced0e8}">
+		<property name="highCut">
+			<value>1700</value>
+		</property>
+		<property name="wetLevel">
+			<value>-12.5</value>
+		</property>
+		<property name="dryLevel">
+			<value>-3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{c7d4b76f-5fec-4e54-9bc9-8a1c1fa0d385}" />
 	<object class="AutomationPoint" id="{bb3b3f77-e99f-4262-88ed-01f78bfc6513}">
 		<property name="position">
