@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 2231688978798331733, guid: 1848d535dd46d344fab1cee30086be92,
         type: 3}
       propertyPath: m_Name
-      value: GiantBossVisual
+      value: KrakenHeadVisual
       objectReference: {fileID: 0}
     - target: {fileID: 4908051785977100576, guid: 1848d535dd46d344fab1cee30086be92,
         type: 3}
@@ -62,6 +62,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935127741494663707, guid: 1848d535dd46d344fab1cee30086be92,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935127741494663707, guid: 1848d535dd46d344fab1cee30086be92,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.85882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935127741494663707, guid: 1848d535dd46d344fab1cee30086be92,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8862745
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
