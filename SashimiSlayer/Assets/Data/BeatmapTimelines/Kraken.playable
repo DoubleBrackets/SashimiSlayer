@@ -44,6 +44,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.09191, y: 2.9782152}
           - {x: -5.2304816, y: -1.3383707}
@@ -53,6 +54,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -0.28005707, y: 1.7659755}
 --- !u!114 &-9057752935189469045
@@ -82,6 +84,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-8739017720185291674
 MonoBehaviour:
@@ -131,6 +134,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -140,6 +144,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.3922048, y: -2.0564933}
 --- !u!114 &-8655504654891886131
@@ -169,6 +174,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.194473, y: 3.627788}
           - {x: -5.2304816, y: -1.3383707}
@@ -178,6 +184,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -2.442215, y: 4.1190977}
 --- !u!114 &-8379708218387101787
@@ -207,6 +214,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -214,6 +222,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -221,6 +230,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 16
         _offsetFromEnd: 0
@@ -228,6 +238,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -235,6 +246,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-8219319027577594555
 MonoBehaviour:
@@ -263,6 +275,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-8179772712535288864
 MonoBehaviour:
@@ -291,6 +304,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -298,6 +312,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-8032080003995507388
 MonoBehaviour:
@@ -326,6 +341,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.0085464, y: 3.6239314}
           - {x: -4.820513, y: -0.99145305}
@@ -398,6 +414,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -405,6 +422,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -412,6 +430,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -419,6 +438,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-7369884629883795854
 MonoBehaviour:
@@ -447,6 +467,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -454,6 +475,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -461,6 +483,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 16
         _offsetFromEnd: 0
@@ -468,6 +491,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -475,6 +499,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-7327114566219649558
 MonoBehaviour:
@@ -503,6 +528,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.160284, y: 1.9183862}
           - {x: -5.2304816, y: -1.3383707}
@@ -512,6 +538,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -3.5595465, y: 2.5149388}
 --- !u!114 &-7215369108311081076
@@ -1332,7 +1359,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: -2.2398915, y: -4.8320236}
+      StartPosition: {x: -2, y: -4.8320236}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 85.45454545454545
       NoteEndTime: 90
@@ -1344,6 +1371,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -1351,6 +1379,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-6948035949794287735
 MonoBehaviour:
@@ -1400,6 +1429,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-6466579897377756771
 MonoBehaviour:
@@ -1428,6 +1458,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-6430330407143984895
 MonoBehaviour:
@@ -1477,6 +1508,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-6147878118792548830
 MonoBehaviour:
@@ -1505,6 +1537,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-5904405054214312075
 MonoBehaviour:
@@ -1533,6 +1566,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-5682343341425404940
 MonoBehaviour:
@@ -1582,6 +1616,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.194473, y: 3.627788}
           - {x: -5.2304816, y: -1.3383707}
@@ -1591,6 +1626,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.20107, y: -2.488338}
 --- !u!114 &-5377015931317620543
@@ -1671,6 +1707,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-5359301071025204025
 MonoBehaviour:
@@ -1687,7 +1724,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 8.460962, y: -4.8320236}
+      StartPosition: {x: 10, y: -4.8320236}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 85.45454545454545
       NoteEndTime: 90
@@ -1699,6 +1736,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -1706,6 +1744,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-5258819583582218446
 MonoBehaviour:
@@ -1734,6 +1773,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-4832713754115137398
 MonoBehaviour:
@@ -1750,7 +1790,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 8.14667, y: -4.72946}
+      StartPosition: {x: 10, y: -4.72946}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 65.45454545454545
       NoteEndTime: 74.54545454545455
@@ -1762,6 +1802,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 15
         _offsetFromEnd: 0
@@ -1769,6 +1810,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -1776,6 +1818,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-4796442788129323098
 MonoBehaviour:
@@ -1804,6 +1847,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -1813,6 +1857,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.0705853, y: -1.4850392}
 --- !u!114 &-4468069694051999095
@@ -1936,6 +1981,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-4054584842744612469
 MonoBehaviour:
@@ -1964,6 +2010,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-3923887647974106270
 MonoBehaviour:
@@ -2774,6 +2821,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -2781,6 +2829,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-2944459755677598985
 MonoBehaviour:
@@ -2809,6 +2858,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-2718924908730961750
 MonoBehaviour:
@@ -3567,6 +3617,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.316239, y: 0.20512772}
           - {x: -4.820513, y: -0.99145305}
@@ -4630,6 +4681,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -4637,6 +4689,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-1545550274744602000
 MonoBehaviour:
@@ -4686,6 +4739,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.8162813, y: -5.4912796}
 --- !u!114 &-1230101926562022136
@@ -4715,6 +4769,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.194473, y: 3.627788}
           - {x: -5.2304816, y: -1.3383707}
@@ -4724,6 +4779,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.8078284, y: -1.1312573}
 --- !u!114 &-1123799448097150218
@@ -5625,6 +5681,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -5634,6 +5691,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -0.015836775, y: 0.4046471}
 --- !u!114 &-957739267921107960
@@ -5672,7 +5730,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 1.5549802, y: -4.7636476}
+      StartPosition: {x: 2, y: -4.7636476}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 85.45454545454545
       NoteEndTime: 90
@@ -5684,6 +5742,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -5691,6 +5750,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-890016294293501325
 MonoBehaviour:
@@ -5719,6 +5779,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.647466, y: 1.2346253}
           - {x: -5.2304816, y: -1.3383707}
@@ -5728,6 +5789,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.169309, y: 1.7905489}
 --- !u!114 &-879255901649395375
@@ -5757,6 +5819,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 7
         _offsetFromEnd: 0
@@ -5764,6 +5827,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 11
         _offsetFromEnd: 0
@@ -5771,6 +5835,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -5778,6 +5843,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-802169261663008724
 MonoBehaviour:
@@ -5827,6 +5893,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -5836,6 +5903,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.3922048, y: -2.0564933}
 --- !u!114 &-93050658864768005
@@ -5865,6 +5933,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &-60336453637266737
 MonoBehaviour:
@@ -5881,7 +5950,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: -1.4535666, y: -4.7636476}
+      StartPosition: {x: -2, y: -4.7636476}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 65.45454545454545
       NoteEndTime: 74.54545454545455
@@ -5893,6 +5962,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -5900,6 +5970,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -5907,6 +5978,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -5967,6 +6039,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &167814850774472880
 MonoBehaviour:
@@ -5995,6 +6068,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &456692889618558478
 MonoBehaviour:
@@ -6011,7 +6085,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: -1.7612591, y: -4.7978354}
+      StartPosition: {x: -2, y: -4.7978354}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 74.54545454545455
       NoteEndTime: 78.18181818181817
@@ -6023,6 +6097,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &760044966039887666
 MonoBehaviour:
@@ -6051,6 +6126,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -6058,6 +6134,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -6065,6 +6142,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 16
         _offsetFromEnd: 0
@@ -6072,6 +6150,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -6079,6 +6158,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &1153771586124340504
 MonoBehaviour:
@@ -6107,6 +6187,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.076922, y: 2.0170937}
           - {x: -4.820513, y: -0.99145305}
@@ -6137,6 +6218,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &1448729550972709652
 MonoBehaviour:
@@ -6205,6 +6287,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.0085464, y: 3.6239314}
           - {x: -4.820513, y: -0.99145305}
@@ -6235,6 +6318,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.09191, y: 0.8243691}
           - {x: -5.2304816, y: -1.3383707}
@@ -6244,6 +6328,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.84362483, y: 1.1997623}
 --- !u!114 &2011893076447817434
@@ -6261,7 +6346,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 4.932995, y: -4.797836}
+      StartPosition: {x: 6, y: -4.797836}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 65.45454545454545
       NoteEndTime: 74.54545454545455
@@ -6273,6 +6358,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 14
         _offsetFromEnd: 0
@@ -6280,6 +6366,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -6287,6 +6374,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &2101019347131235030
 MonoBehaviour:
@@ -6315,6 +6403,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.09191, y: 2.9782152}
           - {x: -5.2304816, y: -1.3383707}
@@ -6324,6 +6413,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.3262234, y: -1.6262378}
 --- !u!114 &2138623617868437397
@@ -6353,6 +6443,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &2145358563145770506
 MonoBehaviour:
@@ -6446,6 +6537,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &2710987755543580636
 MonoBehaviour:
@@ -6474,6 +6566,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -6483,6 +6576,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.44846928, y: 0.3689313}
 --- !u!114 &2731131515676527816
@@ -6533,6 +6627,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.09191, y: 0.8243691}
           - {x: -5.2304816, y: -1.3383707}
@@ -6542,6 +6637,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3250967, y: 0.35944378}
 --- !u!114 &3131876306256220800
@@ -6571,6 +6667,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.194473, y: 3.627788}
           - {x: -5.2304816, y: -1.3383707}
@@ -6580,6 +6677,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.8090096, y: 3.4401603}
 --- !u!114 &3241029985881354545
@@ -6626,6 +6724,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.160284, y: 1.9183862}
           - {x: -5.2304816, y: -1.3383707}
@@ -6635,6 +6734,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -0.27551985, y: -1.0209014}
 --- !u!114 &3691485792175041472
@@ -7101,6 +7201,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.160284, y: 1.9183862}
           - {x: -5.2304816, y: -1.3383707}
@@ -7110,6 +7211,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -4.023853, y: 1.5863265}
 --- !u!114 &3984496877837870502
@@ -7127,7 +7229,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 8.460962, y: -4.8320236}
+      StartPosition: {x: 10, y: -4.8320236}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 74.54545454545455
       NoteEndTime: 78.18181818181817
@@ -7139,6 +7241,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &4052030610532180686
 MonoBehaviour:
@@ -7167,6 +7270,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -7176,6 +7280,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.44846928, y: 0.3689313}
 --- !u!114 &4064829025364650962
@@ -7226,6 +7331,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.09191, y: 2.9782152}
           - {x: -5.2304816, y: -1.3383707}
@@ -7235,6 +7341,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.1480556, y: -1.0550895}
 --- !u!114 &4292006582632754323
@@ -7264,6 +7371,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &4367924008656656102
 MonoBehaviour:
@@ -7297,7 +7405,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 5.0421596, y: -4.7294593}
+      StartPosition: {x: 6, y: -4.7294593}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 85.45454545454545
       NoteEndTime: 90
@@ -7309,6 +7417,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -7316,6 +7425,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &4605462968347151259
 MonoBehaviour:
@@ -7344,6 +7454,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.076922, y: 2.5528316}
           - {x: -4.820513, y: -0.99145305}
@@ -7374,6 +7485,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -7383,6 +7495,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.091488, y: 1.6904181}
 --- !u!114 &4655137366046136210
@@ -7421,7 +7534,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 5.0421596, y: -4.7294593}
+      StartPosition: {x: 6, y: -4.7294593}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 74.54545454545455
       NoteEndTime: 78.18181818181817
@@ -7433,6 +7546,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &4704968791016149026
 MonoBehaviour:
@@ -7449,7 +7563,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 1.5549802, y: -4.7636476}
+      StartPosition: {x: 2, y: -4.7636476}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 74.54545454545455
       NoteEndTime: 78.18181818181817
@@ -7461,6 +7575,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &4752103198561199250
 MonoBehaviour:
@@ -7489,6 +7604,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -7498,6 +7614,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.091488, y: 1.6904181}
 --- !u!114 &4778070299342361470
@@ -7527,6 +7644,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &4973773403083397959
 MonoBehaviour:
@@ -7555,6 +7673,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -7564,6 +7683,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.091488, y: 1.6904181}
 --- !u!114 &5017136551240063004
@@ -7593,6 +7713,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.7500296, y: 3.0124035}
           - {x: -5.2304816, y: -1.3383707}
@@ -7602,6 +7723,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.258466, y: 2.9653175}
 --- !u!114 &5132914916228530079
@@ -7995,6 +8117,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &5759570315010029443
 MonoBehaviour:
@@ -8023,6 +8146,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -8030,6 +8154,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -8037,6 +8162,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 16
         _offsetFromEnd: 0
@@ -8044,6 +8170,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -8051,6 +8178,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &5826171284927687792
 MonoBehaviour:
@@ -8241,6 +8369,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.398366, y: 1.3384918}
           - {x: -4.820513, y: -0.99145305}
@@ -8271,6 +8400,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -8278,6 +8408,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -8285,6 +8416,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 16
         _offsetFromEnd: 0
@@ -8292,6 +8424,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -8299,6 +8432,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &6554040677566125068
 MonoBehaviour:
@@ -8327,6 +8461,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.401376, y: 3.8382268}
           - {x: -4.820513, y: -0.99145305}
@@ -8361,7 +8496,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 1.8218836, y: -4.797836}
+      StartPosition: {x: 2, y: -4.797836}
       EndPosition: {x: 5.7056737, y: -0.3959039}
       NoteStartTime: 65.45454545454545
       NoteEndTime: 74.54545454545455
@@ -8373,6 +8508,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 13
         _offsetFromEnd: 0
@@ -8380,6 +8516,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -8387,6 +8524,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &7053563373387454586
 MonoBehaviour:
@@ -8415,6 +8553,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -8422,6 +8561,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -8429,6 +8569,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 16
         _offsetFromEnd: 0
@@ -8436,6 +8577,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions: []
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -8443,6 +8585,7 @@ MonoBehaviour:
           BlockPose: 2
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions: []
 --- !u!114 &7202308541523791474
 MonoBehaviour:
@@ -8471,6 +8614,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.2970376, y: 2.4312067}
           - {x: -5.2304816, y: -1.3383707}
@@ -8480,6 +8624,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.0705853, y: -1.4850392}
 --- !u!114 &7367026254885966066
@@ -8509,6 +8654,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.0085464, y: 3.6239314}
           - {x: -4.820513, y: -0.99145305}
@@ -8539,6 +8685,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.7500296, y: 3.0124035}
           - {x: -5.2304816, y: -1.3383707}
@@ -8548,6 +8695,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.014565, y: 3.3194206}
 --- !u!114 &7535242558523851983
@@ -8577,6 +8725,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.387671, y: 1.7051941}
           - {x: -4.820513, y: -0.99145305}
@@ -8632,6 +8781,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.693216, y: 3.1773832}
           - {x: -4.820513, y: -0.99145305}
@@ -9672,6 +9822,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.871795, y: 2.4273503}
           - {x: -4.820513, y: -0.99145305}
@@ -9702,6 +9853,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.09191, y: 2.9782152}
           - {x: -5.2304816, y: -1.3383707}
@@ -9711,5 +9863,6 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -3.0297203, y: 3.2307844}
