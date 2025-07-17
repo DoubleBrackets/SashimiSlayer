@@ -213,7 +213,6 @@
 		<property name="length">
 			<value>1.25</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeOutCurve">
 			<destination>{c7550634-cae9-4fd7-b74d-b7b51bdd9ba0}</destination>
 		</relationship>
@@ -465,6 +464,7 @@
 	<object class="MixerBusEffectChain" id="{6eeaf564-5161-4618-92d3-69df131296c8}">
 		<relationship name="effects">
 			<destination>{fe59c3d7-e1e2-4315-8f8a-3931191cbe95}</destination>
+			<destination>{dd344fae-5576-4983-a88c-efae91ced0e8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f8d7dbd6-f311-43c5-a69b-3f205267c012}" />
@@ -627,6 +627,17 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{fe59c3d7-e1e2-4315-8f8a-3931191cbe95}" />
+	<object class="SFXReverbEffect" id="{dd344fae-5576-4983-a88c-efae91ced0e8}">
+		<property name="highCut">
+			<value>1700</value>
+		</property>
+		<property name="wetLevel">
+			<value>-12.5</value>
+		</property>
+		<property name="dryLevel">
+			<value>-3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{c7d4b76f-5fec-4e54-9bc9-8a1c1fa0d385}" />
 	<object class="AutomationPoint" id="{bb3b3f77-e99f-4262-88ed-01f78bfc6513}">
 		<property name="position">
