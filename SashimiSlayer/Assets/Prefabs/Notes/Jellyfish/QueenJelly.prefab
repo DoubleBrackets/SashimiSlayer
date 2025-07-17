@@ -615,12 +615,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: QueenJellyVisual
       objectReference: {fileID: 0}
-    - target: {fileID: 7721206541844138366, guid: 27c8140385743724194c6080efaf6634,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -173224633, guid: 6000065aed767464c8e61181c2d1e7b7,
-        type: 3}
     - target: {fileID: 9035932056566311493, guid: 27c8140385743724194c6080efaf6634,
         type: 3}
       propertyPath: m_LocalPosition.x
