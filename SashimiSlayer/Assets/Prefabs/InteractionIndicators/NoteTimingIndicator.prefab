@@ -66,11 +66,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
-      propertyPath: _delay
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
       propertyPath: _beatPip
       value: 
       objectReference: {fileID: 5723349784501870178, guid: 1aa9d10758aa8f44e86913fcb3cc8153,
@@ -88,18 +83,8 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
-      propertyPath: _shakeVibrato
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
       propertyPath: _shakeDuration
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
-      propertyPath: _shakeStrength
-      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
@@ -218,11 +203,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
-      propertyPath: _delay
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
       propertyPath: _beatPip
       value: 
       objectReference: {fileID: 5723349784501870178, guid: d2d20c65a73178a4197807c4ca7598ba,
@@ -240,18 +220,8 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
-      propertyPath: _shakeVibrato
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
       propertyPath: _shakeDuration
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
-      propertyPath: _shakeStrength
-      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
@@ -370,11 +340,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
-      propertyPath: _delay
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
       propertyPath: _beatPip
       value: 
       objectReference: {fileID: 5723349784501870178, guid: 7cd6b221a8e31cf4bb36c36624046006,
@@ -394,18 +359,8 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
-      propertyPath: _shakeVibrato
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
       propertyPath: _shakeDuration
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
-        type: 3}
-      propertyPath: _shakeStrength
-      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
