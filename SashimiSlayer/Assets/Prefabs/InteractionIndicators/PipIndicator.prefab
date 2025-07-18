@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7497753849002471331}
   - component: {fileID: 3324664361253158490}
   m_Layer: 0
-  m_Name: BlockPipIndicator
+  m_Name: PipIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,5 +51,5 @@ MonoBehaviour:
   _beatPip: {fileID: 0}
   _finalPip: {fileID: 0}
   _delay: 0.02
-  _shakeStrength: 5
-  _shakeVibrato: 30
+  _shakeStrength: 0.1
+  _shakeVibrato: 50

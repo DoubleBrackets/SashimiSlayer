@@ -491,6 +491,11 @@ PrefabInstance:
       propertyPath: _startSound.Guid.Data4
       value: 1745421926
       objectReference: {fileID: 0}
+    - target: {fileID: 2487541582399672041, guid: 145834922b2ce6e4391b2bed15e8c7c3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 5674820681816966278, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: _totalDistance

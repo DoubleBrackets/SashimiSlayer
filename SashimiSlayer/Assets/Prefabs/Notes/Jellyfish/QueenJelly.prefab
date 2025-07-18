@@ -899,7 +899,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _pipPositioner
       value: 
-      objectReference: {fileID: 11400000, guid: 904e7d2c28eced447a68a352df81e3ed,
+      objectReference: {fileID: 11400000, guid: bab894c516b20dc42b219dc515442f2b,
         type: 2}
     - target: {fileID: 6907102033244874088, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
