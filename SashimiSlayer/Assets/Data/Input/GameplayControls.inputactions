@@ -58,6 +58,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ExhibitionReset",
+                    "type": "Button",
+                    "id": "32f1f98b-e7d2-4f31-9e4e-ff26ff2aff5d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ExhibitionInvertAim",
+                    "type": "Button",
+                    "id": "01f575f8-3eaa-480b-b263-17e97cf689f9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -311,6 +329,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "SwordControllerAngle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1677bae-9874-4f5f-b87e-b07a7b50147e",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExhibitionReset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e89a0ace-eed6-4a8a-bfda-591335330069",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExhibitionInvertAim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

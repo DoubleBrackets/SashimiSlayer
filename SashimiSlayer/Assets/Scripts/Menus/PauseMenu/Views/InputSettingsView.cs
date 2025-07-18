@@ -112,6 +112,11 @@ namespace Menus.PauseMenu.Views
             UpdateSwordAngleOffset();
         }
 
+        public void ToggleFlipSwordAim()
+        {
+            _swordAngleFlipToggle.isOn = !_swordAngleFlipToggle.isOn;
+        }
+
         private void UpdateSwordAngleMultiplier()
         {
             _swordAngleMultiplierChangeEvent.Raise(_swordAngleMultiplier * (_swordAngleFlip ? -1 : 1));

@@ -2,6 +2,7 @@ using System;
 using Core.Protag;
 using Events;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace GameInput
@@ -18,6 +19,14 @@ namespace GameInput
 
         [SerializeField]
         private BoolEvent _onMenuToggled;
+
+        [Header("Exhibition Hotkey Events")]
+
+        [SerializeField]
+        private UnityEvent _onExhibitionResetEvent;
+
+        [SerializeField]
+        private UnityEvent _OnExhibitionInvertAimEvent;
 
         private bool IsMenuOverlayed => _overlayMenus > 0;
 
@@ -150,6 +159,22 @@ namespace GameInput
             if (context.performed)
             {
                 _rawSwordAngle = -JoyToAngle(context.ReadValue<Vector2>().normalized);
+            }
+        }
+
+        public void OnExhibitionReset(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _onExhibitionResetEvent?.Invoke();
+            }
+        }
+
+        public void OnExhibitionInvertAim(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _OnExhibitionInvertAimEvent?.Invoke();
             }
         }
 
