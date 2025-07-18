@@ -80,6 +80,24 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ExhibitionReset"",
+                    ""type"": ""Button"",
+                    ""id"": ""32f1f98b-e7d2-4f31-9e4e-ff26ff2aff5d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ExhibitionInvertAim"",
+                    ""type"": ""Button"",
+                    ""id"": ""01f575f8-3eaa-480b-b263-17e97cf689f9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -335,6 +353,28 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""action"": ""SwordControllerAngle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1677bae-9874-4f5f-b87e-b07a7b50147e"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExhibitionReset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e89a0ace-eed6-4a8a-bfda-591335330069"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExhibitionInvertAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -355,6 +395,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         m_Gameplay_PoseButtonMid = m_Gameplay.FindAction("PoseButtonMid", throwIfNotFound: true);
         m_Gameplay_MousePos = m_Gameplay.FindAction("MousePos", throwIfNotFound: true);
         m_Gameplay_SwordControllerAngle = m_Gameplay.FindAction("SwordControllerAngle", throwIfNotFound: true);
+        m_Gameplay_ExhibitionReset = m_Gameplay.FindAction("ExhibitionReset", throwIfNotFound: true);
+        m_Gameplay_ExhibitionInvertAim = m_Gameplay.FindAction("ExhibitionInvertAim", throwIfNotFound: true);
     }
 
     ~@GameplayControls()
@@ -427,6 +469,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_PoseButtonMid;
     private readonly InputAction m_Gameplay_MousePos;
     private readonly InputAction m_Gameplay_SwordControllerAngle;
+    private readonly InputAction m_Gameplay_ExhibitionReset;
+    private readonly InputAction m_Gameplay_ExhibitionInvertAim;
     public struct GameplayActions
     {
         private @GameplayControls m_Wrapper;
@@ -437,6 +481,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         public InputAction @PoseButtonMid => m_Wrapper.m_Gameplay_PoseButtonMid;
         public InputAction @MousePos => m_Wrapper.m_Gameplay_MousePos;
         public InputAction @SwordControllerAngle => m_Wrapper.m_Gameplay_SwordControllerAngle;
+        public InputAction @ExhibitionReset => m_Wrapper.m_Gameplay_ExhibitionReset;
+        public InputAction @ExhibitionInvertAim => m_Wrapper.m_Gameplay_ExhibitionInvertAim;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -464,6 +510,12 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
             @SwordControllerAngle.started += instance.OnSwordControllerAngle;
             @SwordControllerAngle.performed += instance.OnSwordControllerAngle;
             @SwordControllerAngle.canceled += instance.OnSwordControllerAngle;
+            @ExhibitionReset.started += instance.OnExhibitionReset;
+            @ExhibitionReset.performed += instance.OnExhibitionReset;
+            @ExhibitionReset.canceled += instance.OnExhibitionReset;
+            @ExhibitionInvertAim.started += instance.OnExhibitionInvertAim;
+            @ExhibitionInvertAim.performed += instance.OnExhibitionInvertAim;
+            @ExhibitionInvertAim.canceled += instance.OnExhibitionInvertAim;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -486,6 +538,12 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
             @SwordControllerAngle.started -= instance.OnSwordControllerAngle;
             @SwordControllerAngle.performed -= instance.OnSwordControllerAngle;
             @SwordControllerAngle.canceled -= instance.OnSwordControllerAngle;
+            @ExhibitionReset.started -= instance.OnExhibitionReset;
+            @ExhibitionReset.performed -= instance.OnExhibitionReset;
+            @ExhibitionReset.canceled -= instance.OnExhibitionReset;
+            @ExhibitionInvertAim.started -= instance.OnExhibitionInvertAim;
+            @ExhibitionInvertAim.performed -= instance.OnExhibitionInvertAim;
+            @ExhibitionInvertAim.canceled -= instance.OnExhibitionInvertAim;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -520,5 +578,7 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         void OnPoseButtonMid(InputAction.CallbackContext context);
         void OnMousePos(InputAction.CallbackContext context);
         void OnSwordControllerAngle(InputAction.CallbackContext context);
+        void OnExhibitionReset(InputAction.CallbackContext context);
+        void OnExhibitionInvertAim(InputAction.CallbackContext context);
     }
 }

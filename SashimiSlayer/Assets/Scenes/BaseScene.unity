@@ -7006,6 +7006,49 @@ MonoBehaviour:
   _swordAngleOffsetEvent: {fileID: 11400000, guid: 9074d0865eea37c479c2fedcdeae87d5,
     type: 2}
   _onMenuToggled: {fileID: 11400000, guid: dbe2d9d70d477fa49a2b203b87339de8, type: 2}
+  _onExhibitionResetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1677762849}
+        m_TargetAssemblyTypeName: Core.Scene.LevelLoaderMono, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 482035a1de3620549917b4a21b8e5e53,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Core.Scene.GameLevelSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 380193905}
+        m_TargetAssemblyTypeName: Menus.PauseMenu.PauseMenuController, Assembly-CSharp
+        m_MethodName: ToggleMenu
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _OnExhibitionInvertAimEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 975919553}
+        m_TargetAssemblyTypeName: Menus.PauseMenu.Views.InputSettingsView, Assembly-CSharp
+        m_MethodName: ToggleFlipAngle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1969117888
 MonoBehaviour:
   m_ObjectHideFlags: 0
