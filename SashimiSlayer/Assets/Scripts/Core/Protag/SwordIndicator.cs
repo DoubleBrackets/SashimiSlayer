@@ -1,13 +1,16 @@
 using System.Collections.Generic;
+using Beatmapping;
+using Beatmapping.Interactions;
 using Events;
 using Events.Core;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Core.Protag
 {
     public class SwordIndicator : MonoBehaviour
     {
-        [Header("Visuals")]
+        [Header("Depends")]
 
         [SerializeField]
         private LineRenderer _sheathedLineRen;
@@ -16,21 +19,38 @@ namespace Core.Protag
         private LineRenderer _unsheathedLineRen;
 
         [SerializeField]
-        private ParticleSystem[] _sliceParticles;
-
-        [SerializeField]
         private GameObject _distortionPrefab;
 
-        [Header("Events")]
+        [SerializeField]
+        private List<ParticleSystem> _allSliceParticles;
+
+        [Header("Events (In)")]
 
         [SerializeField]
-        private SOEvent _protagSuccessfulSliceEvent;
+        private NoteInteractionFinalResultEvent _noteFinalResultEvent;
+
+        [SerializeField]
+        private SliceResultEvent _sliceResultEvent;
 
         [SerializeField]
         private ProtagSwordStateEvent _onSwordStateChange;
 
         [SerializeField]
         private Vector2Event _swordPivotPositionChangeEvent;
+
+        [Header("VFX Events")]
+
+        [SerializeField]
+        private UnityEvent _onUISliceVFX;
+
+        [SerializeField]
+        private UnityEvent _onEarlySliceVFX;
+
+        [SerializeField]
+        private UnityEvent _onPerfectSliceVFX;
+
+        [SerializeField]
+        private UnityEvent _onLateSliceVFX;
 
         public float Angle { get; private set; }
 
@@ -44,13 +64,11 @@ namespace Core.Protag
         {
             _onSwordStateChange.AddListener(OnSwordStateChange);
             SetSheatheState(SharedTypes.SheathState.Sheathed);
-            _protagSuccessfulSliceEvent.AddListener(PlaySliceVFX);
+            _noteFinalResultEvent.AddListener(PlayNoteSliceVFX);
+            _sliceResultEvent.AddListener(PlayUISliceVFX);
             _swordPivotPositionChangeEvent.AddListener(SetPosition);
 
-            foreach (ParticleSystem particle in _sliceParticles)
-            {
-                _initialParticleRot.Add(particle.main.startRotation);
-            }
+            AddToParticleRotations(_allSliceParticles);
         }
 
         private void Update()
@@ -63,15 +81,65 @@ namespace Core.Protag
         private void OnDestroy()
         {
             _onSwordStateChange.RemoveListener(OnSwordStateChange);
-            _protagSuccessfulSliceEvent.RemoveListener(PlaySliceVFX);
+            _noteFinalResultEvent.RemoveListener(PlayNoteSliceVFX);
+            _sliceResultEvent.RemoveListener(PlayUISliceVFX);
             _swordPivotPositionChangeEvent.RemoveListener(SetPosition);
         }
 
-        public void PlaySliceVFX()
+        private void PlayUISliceVFX(SliceResultData data)
         {
-            for (var i = 0; i < _sliceParticles.Length; i++)
+            if (data.SlicedObjectType != SliceResultData.SlicedObject.MenuItem)
             {
-                ParticleSystem particle = _sliceParticles[i];
+                return;
+            }
+
+            RotateSliceParticles();
+            _onUISliceVFX.Invoke();
+            CreateDistortion();
+        }
+
+        private void AddToParticleRotations(IReadOnlyList<ParticleSystem> particles)
+        {
+            foreach (ParticleSystem particle in particles)
+            {
+                _initialParticleRot.Add(particle.main.startRotation);
+            }
+        }
+
+        public void PlayNoteSliceVFX(NoteInteraction.FinalResult result)
+        {
+            if (!result.Successful || result.InteractionType != NoteInteraction.InteractionType.Slice)
+            {
+                return;
+            }
+
+            RotateSliceParticles();
+
+            TimingWindow.TimingResult timing = result.TimingResult;
+            if (timing.IsEarly())
+            {
+                _onEarlySliceVFX.Invoke();
+            }
+            else if (timing.IsPerfect())
+            {
+                _onPerfectSliceVFX.Invoke();
+            }
+            else if (timing.IsLate())
+            {
+                _onLateSliceVFX.Invoke();
+            }
+
+            CreateDistortion();
+        }
+
+        /// <summary>
+        ///     Rotate the slice particles based on the current sword angle.
+        /// </summary>
+        private void RotateSliceParticles()
+        {
+            for (var i = 0; i < _allSliceParticles.Count; i++)
+            {
+                ParticleSystem particle = _allSliceParticles[i];
                 // particle.transform.position = _cPos;
                 ParticleSystem.MinMaxCurve curve = _initialParticleRot[i];
                 curve.constantMin += -Angle * Mathf.Deg2Rad;
@@ -81,9 +149,11 @@ namespace Core.Protag
                 main.startRotation = curve;
 
                 particle.transform.rotation = Quaternion.Euler(0, 0, Angle);
-                particle.Play();
             }
+        }
 
+        private void CreateDistortion()
+        {
             Instantiate(_distortionPrefab, _currentSwordPivot, Quaternion.Euler(0, 0, Angle));
         }
 

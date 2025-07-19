@@ -1,3 +1,5 @@
+using Core.Protag;
+using Events.Core;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,7 +15,12 @@ namespace Menus.StartMenu
         [SerializeField]
         private SpriteRenderer _fishSprite;
 
-        [Header("Events")]
+        [Header("Events (Out)")]
+
+        [SerializeField]
+        private SliceResultEvent _sliceResultEvent;
+
+        [Header("Unity Events")]
 
         [SerializeField]
         private UnityEvent _onFishSlice;
@@ -31,6 +38,7 @@ namespace Menus.StartMenu
         {
             _fishSprite.enabled = false;
             _onFishSlice.Invoke();
+            _sliceResultEvent.Raise(new SliceResultData(1, SliceResultData.SlicedObject.MenuItem));
             Destroy(gameObject, 2f);
         }
     }

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fishSprite: {fileID: 684891417495521763}
+  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
   _onFishSlice:
     m_PersistentCalls:
       m_Calls: []

@@ -100,10 +100,7 @@ namespace Beatmapping
                 }
             }
 
-            sliceResultEvent.Raise(new SliceResultData
-            {
-                SliceCount = sliceCount
-            });
+            sliceResultEvent.Raise(new SliceResultData(sliceCount, SliceResultData.SlicedObject.Note));
         }
 
         public BeatNote SpawnNote(BeatNoteTypeSO hitConfig,

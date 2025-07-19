@@ -1,6 +1,7 @@
 using System;
 using Beatmapping;
 using Beatmapping.Interactions;
+using Core.Protag;
 using EditorUtils.BoldHeader;
 using Events.Core;
 using FMOD;
@@ -133,6 +134,12 @@ namespace Core.Audio
             if (data.SliceCount > 0)
             {
                 SetParamByName(_sliceTargetCountParam, data.SliceCount);
+            }
+
+            if (data.SlicedObjectType == SliceResultData.SlicedObject.MenuItem)
+            {
+                // Set timing to perfect for UI
+                SetParamByName(_interactionTimingGlobalParam, 1);
             }
         }
 
