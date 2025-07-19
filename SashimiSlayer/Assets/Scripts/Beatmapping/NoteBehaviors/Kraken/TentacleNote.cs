@@ -83,6 +83,7 @@ namespace Beatmapping.NoteBehaviors.Kraken
             if (currentSubdiv + _attackAnimationWindup >= targetSubdivIndex)
             {
                 _visual.AnimationForceTransition(_idleAnimation, _attackAnimation, currentSubdiv);
+                _visual.AnimationForceTransition(_spawnAnimation, _attackAnimation, currentSubdiv);
                 _visual.SetupAnimationTransitionOnEnd(_attackAnimation, _idleAnimation);
                 _attackAnimationPlayedInteraction = noteInteraction;
             }
