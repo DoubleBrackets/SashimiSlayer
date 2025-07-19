@@ -165,7 +165,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _middlePointThreshold: 0.75
+  _middlePointThreshold: 0.6666667
   _peakSfx:
     Guid:
       Data1: -609372783
