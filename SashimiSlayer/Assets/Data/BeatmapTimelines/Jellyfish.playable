@@ -339,10 +339,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 105.6846511627907
+    m_Start: 105.6796511627907
     m_ClipIn: 0
     m_Asset: {fileID: 4867084847484009955}
-    m_Duration: 35.58139534883723
+    m_Duration: 35.581395348837205
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8015301746708856105}
     m_EaseInDuration: 0
@@ -478,8 +478,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 12.558139534883722
-      NoteEndTime: 13.953488372093025
-      NoteBeatCount: 4.000000000000002
+      NoteEndTime: 13.953488372093023
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 20.568372093023257
+    m_Start: 20.573372093023256
     m_ClipIn: 0
     m_Asset: {fileID: -6300071285853897746}
     m_Duration: 1.3953488372093048
@@ -582,7 +582,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 24.056744186046515
+    m_Start: 24.061744186046514
     m_ClipIn: 0
     m_Asset: {fileID: -196776971178626964}
     m_Duration: 2.0930232558139537
@@ -651,7 +651,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 31.38232558139535
+    m_Start: 31.387325581395352
     m_ClipIn: 0
     m_Asset: {fileID: 6890033258297291134}
     m_Duration: 2.0930232558139537
@@ -720,7 +720,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 27.89395348837209
+    m_Start: 27.898953488372094
     m_ClipIn: 0
     m_Asset: {fileID: -8424318041118795306}
     m_Duration: 1.3953488372093048
@@ -789,7 +789,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 44.63813953488372
+    m_Start: 44.64313953488372
     m_ClipIn: 0
     m_Asset: {fileID: -4511522410795575856}
     m_Duration: 1.3953488372093048
@@ -858,7 +858,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 46.731162790697674
+    m_Start: 46.736162790697676
     m_ClipIn: 0
     m_Asset: {fileID: 3920672052788314271}
     m_Duration: 1.3953488372093048
@@ -927,7 +927,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 75.33581395348837
+    m_Start: 75.34081395348836
     m_ClipIn: 0
     m_Asset: {fileID: 3262709407497999197}
     m_Duration: 2.0930232558139608
@@ -996,7 +996,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 82.31255813953489
+    m_Start: 82.31755813953488
     m_ClipIn: 0
     m_Asset: {fileID: 773994207883721909}
     m_Duration: 1.3953488372092977
@@ -1065,7 +1065,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 90.33581395348837
+    m_Start: 90.33081395348837
     m_ClipIn: 0
     m_Asset: {fileID: -1176228355259364873}
     m_Duration: 1.395348837209312
@@ -1134,7 +1134,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 94.52186046511628
+    m_Start: 94.51686046511628
     m_ClipIn: 0
     m_Asset: {fileID: 1013978437601661781}
     m_Duration: 1.395348837209312
@@ -1203,7 +1203,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 92.08
+    m_Start: 92.075
     m_ClipIn: 0
     m_Asset: {fileID: 5943690504375631913}
     m_Duration: 2.0930232558139608
@@ -1272,7 +1272,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 100.45209302325581
+    m_Start: 100.44709302325582
     m_ClipIn: 0
     m_Asset: {fileID: 7499143820473506370}
     m_Duration: 2.0930232558139608
@@ -1341,7 +1341,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 119.2893023255814
+    m_Start: 119.28430232558141
     m_ClipIn: 0
     m_Asset: {fileID: -525107827471594006}
     m_Duration: 2.0930232558139465
@@ -1410,7 +1410,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 132.5451162790698
+    m_Start: 132.54011627906976
     m_ClipIn: 0
     m_Asset: {fileID: -4667836728107191885}
     m_Duration: 1.3953488372092977
@@ -1479,7 +1479,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 96.2660465116279
+    m_Start: 96.26104651162791
     m_ClipIn: 0
     m_Asset: {fileID: 3183919920077420604}
     m_Duration: 1.3953488372092977
@@ -1548,7 +1548,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 98.70790697674418
+    m_Start: 98.70290697674419
     m_ClipIn: 0
     m_Asset: {fileID: -1901318663731032983}
     m_Duration: 1.395348837209312
@@ -1617,7 +1617,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 110.91720930232559
+    m_Start: 110.91220930232559
     m_ClipIn: 0
     m_Asset: {fileID: -212228677666320090}
     m_Duration: 1.3953488372092977
@@ -1686,7 +1686,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 124.52186046511628
+    m_Start: 124.51686046511628
     m_ClipIn: 0
     m_Asset: {fileID: -3459754191805885308}
     m_Duration: 2.0930232558139608
@@ -1755,10 +1755,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 129.75441860465116
+    m_Start: 129.74941860465117
     m_ClipIn: 0
     m_Asset: {fileID: 1949258747066086837}
-    m_Duration: 2.0930232558139608
+    m_Duration: 2.0930232558139323
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7620407122743851986}
     m_EaseInDuration: 0
@@ -1824,7 +1824,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 70.10325581395348
+    m_Start: 70.10825581395348
     m_ClipIn: 0
     m_Asset: {fileID: 243077365047602367}
     m_Duration: 2.0930232558139608
@@ -1893,7 +1893,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 87.89395348837209
+    m_Start: 87.8889534883721
     m_ClipIn: 0
     m_Asset: {fileID: 3648031613978452725}
     m_Duration: 2.0930232558139608
@@ -1962,7 +1962,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 104.63813953488372
+    m_Start: 104.63313953488372
     m_ClipIn: 0
     m_Asset: {fileID: -1868660213795654355}
     m_Duration: 2.0930232558139608
@@ -2031,7 +2031,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 17.777674418604654
+    m_Start: 17.782674418604653
     m_ClipIn: 0
     m_Asset: {fileID: 8446212549797763976}
     m_Duration: 2.0930232558139537
@@ -2100,7 +2100,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 50.21953488372093
+    m_Start: 50.224534883720935
     m_ClipIn: 0
     m_Asset: {fileID: -5258630047041268286}
     m_Duration: 2.0930232558139537
@@ -2208,9 +2208,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 8.158635, y: -6.0713816}
       EndPosition: {x: -3.2538626, y: -8.3328705}
-      NoteStartTime: 30.34883720930233
+      NoteStartTime: 30.348837209302324
       NoteEndTime: 32.44186046511628
-      NoteBeatCount: 5.9999999999999805
+      NoteBeatCount: 6
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 1
@@ -2623,8 +2623,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 24.76744186046512
-      NoteEndTime: 26.162790697674424
+      NoteStartTime: 24.767441860465116
+      NoteEndTime: 26.16279069767442
       NoteBeatCount: 4.000000000000007
       Interactions:
       - _beatOffset: 3
@@ -2716,8 +2716,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 18.48837209302326
-      NoteEndTime: 19.883720930232563
+      NoteStartTime: 18.488372093023255
+      NoteEndTime: 19.88372093023256
       NoteBeatCount: 4.000000000000007
       Interactions:
       - _beatOffset: 3
@@ -2748,8 +2748,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 13.604651162790699
-      NoteEndTime: 14.999999999999998
-      NoteBeatCount: 3.999999999999992
+      NoteEndTime: 15
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -3350,9 +3350,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 26.51162790697675
+      NoteStartTime: 26.511627906976745
       NoteEndTime: 27.906976744186046
-      NoteBeatCount: 3.9999999999999867
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -3448,7 +3448,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 120.33581395348837
+    m_Start: 120.33081395348837
     m_ClipIn: 0
     m_Asset: {fileID: 2983943350887970935}
     m_Duration: 2.0930232558139608
@@ -3707,8 +3707,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 19.186046511627907
-      NoteEndTime: 20.581395348837212
-      NoteBeatCount: 4.000000000000007
+      NoteEndTime: 20.58139534883721
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -4177,7 +4177,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 23.010232558139535
+    m_Start: 23.015232558139537
     m_ClipIn: 0
     m_Asset: {fileID: -459265962985437290}
     m_Duration: 2.0930232558139537
@@ -4246,10 +4246,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 20.219534883720932
+    m_Start: 20.22453488372093
     m_ClipIn: 0
     m_Asset: {fileID: 6189522424849632830}
-    m_Duration: 1.3953488372092977
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1017061909413786394}
     m_EaseInDuration: 0
@@ -4315,7 +4315,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 25.10325581395349
+    m_Start: 25.10825581395349
     m_ClipIn: 0
     m_Asset: {fileID: -86880607777925351}
     m_Duration: 2.0930232558139537
@@ -4384,10 +4384,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 27.545116279069767
+    m_Start: 27.55011627906977
     m_ClipIn: 0
     m_Asset: {fileID: 5031856526807017569}
-    m_Duration: 1.3953488372093048
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1017061909413786394}
     m_EaseInDuration: 0
@@ -4453,9 +4453,78 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 30.335813953488376
+    m_Start: 30.340813953488375
     m_ClipIn: 0
     m_Asset: {fileID: 5294551255451562922}
+    m_Duration: 2.09302325581395
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -1017061909413786394}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: VulnerableJellyfish
+  - m_Version: 1
+    m_Start: 32.433837209302325
+    m_ClipIn: 0
+    m_Asset: {fileID: -7451784235950393978}
     m_Duration: 2.0930232558139537
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1017061909413786394}
@@ -4522,76 +4591,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 32.42883720930233
-    m_ClipIn: 0
-    m_Asset: {fileID: -7451784235950393978}
-    m_Duration: 2.0930232558139465
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -1017061909413786394}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: VulnerableJellyfish
-  - m_Version: 1
-    m_Start: 44.289302325581396
+    m_Start: 44.2943023255814
     m_ClipIn: 0
     m_Asset: {fileID: -1418679928457394161}
     m_Duration: 1.3953488372093048
@@ -4660,7 +4660,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 46.38232558139535
+    m_Start: 46.38732558139535
     m_ClipIn: 0
     m_Asset: {fileID: -221640745202542912}
     m_Duration: 1.3953488372092977
@@ -4729,7 +4729,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 74.28930232558139
+    m_Start: 74.29430232558138
     m_ClipIn: 0
     m_Asset: {fileID: -6867623466561597635}
     m_Duration: 2.0930232558139608
@@ -4798,7 +4798,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 81.96372093023255
+    m_Start: 81.96872093023255
     m_ClipIn: 0
     m_Asset: {fileID: 2751597249354438755}
     m_Duration: 1.395348837209312
@@ -4867,7 +4867,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 86.84744186046511
+    m_Start: 86.84244186046512
     m_ClipIn: 0
     m_Asset: {fileID: 994508836558432068}
     m_Duration: 2.0930232558139608
@@ -4936,7 +4936,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 106.38232558139535
+    m_Start: 106.37732558139535
     m_ClipIn: 0
     m_Asset: {fileID: -8914008789440640810}
     m_Duration: 1.3953488372092977
@@ -5005,7 +5005,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 119.2893023255814
+    m_Start: 119.28430232558141
     m_ClipIn: 0
     m_Asset: {fileID: -862808434103075208}
     m_Duration: 2.0930232558139465
@@ -5074,7 +5074,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 128.7079069767442
+    m_Start: 128.70290697674417
     m_ClipIn: 0
     m_Asset: {fileID: -46753333691182635}
     m_Duration: 2.0930232558139608
@@ -5143,7 +5143,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 132.19627906976746
+    m_Start: 132.19127906976743
     m_ClipIn: 0
     m_Asset: {fileID: 1852406361774758454}
     m_Duration: 1.3953488372092977
@@ -5212,7 +5212,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 108.47534883720931
+    m_Start: 108.47034883720931
     m_ClipIn: 0
     m_Asset: {fileID: 4540303845388065087}
     m_Duration: 1.3953488372092977
@@ -5281,7 +5281,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 110.56837209302326
+    m_Start: 110.56337209302326
     m_ClipIn: 0
     m_Asset: {fileID: -1407706572168577606}
     m_Duration: 1.3953488372092977
@@ -5350,7 +5350,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 122.42883720930233
+    m_Start: 122.42383720930233
     m_ClipIn: 0
     m_Asset: {fileID: 2915664775716576651}
     m_Duration: 2.0930232558139465
@@ -5419,10 +5419,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 126.61488372093024
+    m_Start: 126.60988372093024
     m_ClipIn: 0
     m_Asset: {fileID: 7311236511678778122}
-    m_Duration: 2.0930232558139608
+    m_Duration: 2.0930232558139323
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1017061909413786394}
     m_EaseInDuration: 0
@@ -5488,7 +5488,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 72.19627906976744
+    m_Start: 72.20127906976744
     m_ClipIn: 0
     m_Asset: {fileID: -103109350677219110}
     m_Duration: 2.0930232558139465
@@ -5557,7 +5557,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 68.01023255813953
+    m_Start: 68.01523255813953
     m_ClipIn: 0
     m_Asset: {fileID: -389299012170661169}
     m_Duration: 2.0930232558139465
@@ -5626,7 +5626,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 103.59162790697674
+    m_Start: 103.58662790697674
     m_ClipIn: 0
     m_Asset: {fileID: 8730356195778201419}
     m_Duration: 2.0930232558139608
@@ -5695,10 +5695,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 16.731162790697674
+    m_Start: 16.736162790697676
     m_ClipIn: 0
     m_Asset: {fileID: 4491276389922042195}
-    m_Duration: 1.3953488372093048
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1017061909413786394}
     m_EaseInDuration: 0
@@ -5764,7 +5764,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 50.21953488372093
+    m_Start: 50.224534883720935
     m_ClipIn: 0
     m_Asset: {fileID: 6009091009083655363}
     m_Duration: 2.0930232558139537
@@ -5833,7 +5833,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 56.49860465116279
+    m_Start: 56.503604651162796
     m_ClipIn: 0
     m_Asset: {fileID: -6552530917038316744}
     m_Duration: 1.3953488372092977
@@ -5902,7 +5902,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 113.01023255813953
+    m_Start: 113.00523255813954
     m_ClipIn: 0
     m_Asset: {fileID: 1854627707269753195}
     m_Duration: 2.0930232558139608
@@ -5971,7 +5971,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 133.94046511627909
+    m_Start: 133.93546511627906
     m_ClipIn: 0
     m_Asset: {fileID: -8944173601603788092}
     m_Duration: 1.3953488372092977
@@ -6141,8 +6141,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -5.223729, y: 6.89398}
       NoteStartTime: 5.232558139534884
-      NoteEndTime: 7.325581395348838
-      NoteBeatCount: 6
+      NoteEndTime: 7.325581395348839
+      NoteBeatCount: 6.000000000000003
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -6495,8 +6495,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 8.329723, y: -6.3109026}
       EndPosition: {x: -3.2196972, y: -7.9923005}
-      NoteStartTime: 21.976744186046517
-      NoteEndTime: 24.06976744186047
+      NoteStartTime: 21.976744186046513
+      NoteEndTime: 24.069767441860467
       NoteBeatCount: 6
       Interactions:
       - _beatOffset: 3
@@ -6595,7 +6595,7 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 7.5917377, y: -6.0615788}
       EndPosition: {x: -3.839708, y: -7.7516427}
-      NoteStartTime: 126.6279069767442
+      NoteStartTime: 126.62790697674417
       NoteEndTime: 128.72093023255815
       NoteBeatCount: 6.00000000000002
       Interactions:
@@ -7049,7 +7049,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 120.33581395348837
+    m_Start: 120.33081395348837
     m_ClipIn: 0
     m_Asset: {fileID: -2343653750786743221}
     m_Duration: 2.0930232558139608
@@ -7141,7 +7141,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 90.6846511627907
+    m_Start: 90.6796511627907
     m_ClipIn: 0
     m_Asset: {fileID: -6884169743675207473}
     m_Duration: 1.3953488372092977
@@ -7210,7 +7210,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 94.87069767441861
+    m_Start: 94.86569767441861
     m_ClipIn: 0
     m_Asset: {fileID: -2581995691686481134}
     m_Duration: 1.3953488372092977
@@ -7279,7 +7279,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 120.33581395348837
+    m_Start: 120.33081395348837
     m_ClipIn: 0
     m_Asset: {fileID: -5813029684274644941}
     m_Duration: 2.0930232558139608
@@ -7348,7 +7348,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 99.05674418604652
+    m_Start: 99.05174418604652
     m_ClipIn: 0
     m_Asset: {fileID: -252667611131024387}
     m_Duration: 1.3953488372092977
@@ -7437,7 +7437,7 @@ MonoBehaviour:
       EndPosition: {x: -3.839708, y: -7.7516427}
       NoteStartTime: 127.67441860465117
       NoteEndTime: 129.7674418604651
-      NoteBeatCount: 6.00000000000002
+      NoteBeatCount: 5.99999999999994
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 1
@@ -7827,8 +7827,8 @@ MonoBehaviour:
       StartPosition: {x: 5.45547, y: -5.4554706}
       EndPosition: {x: -2.364265, y: -8.573996}
       NoteStartTime: 60.697674418604656
-      NoteEndTime: 62.79069767441861
-      NoteBeatCount: 6
+      NoteEndTime: 62.7906976744186
+      NoteBeatCount: 5.9999999999999805
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 1
@@ -8132,10 +8132,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 19.173023255813952
+    m_Start: 19.178023255813955
     m_ClipIn: 0
     m_Asset: {fileID: 3803388964624513323}
-    m_Duration: 1.3953488372093048
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3691485792175041472}
     m_EaseInDuration: 0
@@ -8201,10 +8201,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 21.266046511627906
+    m_Start: 21.271046511627908
     m_ClipIn: 0
     m_Asset: {fileID: -2131104746913374843}
-    m_Duration: 1.3953488372093048
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3691485792175041472}
     m_EaseInDuration: 0
@@ -8270,7 +8270,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 6.266046511627907
+    m_Start: 6.271046511627907
     m_ClipIn: 0
     m_Asset: {fileID: 4238548434368010684}
     m_Duration: 1.3953488372093021
@@ -8339,10 +8339,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 14.638139534883722
+    m_Start: 14.643139534883723
     m_ClipIn: 0
     m_Asset: {fileID: -7634166626675708512}
-    m_Duration: 1.395348837209303
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3691485792175041472}
     m_EaseInDuration: 0
@@ -8408,7 +8408,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 10.452093023255815
+    m_Start: 10.457093023255815
     m_ClipIn: 0
     m_Asset: {fileID: 8585838481711649108}
     m_Duration: 1.3953488372093013
@@ -8477,10 +8477,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 28.591627906976747
+    m_Start: 28.596627906976746
     m_ClipIn: 0
     m_Asset: {fileID: -3454474314357226399}
-    m_Duration: 1.3953488372092977
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3691485792175041472}
     m_EaseInDuration: 0
@@ -8546,10 +8546,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 26.498604651162793
+    m_Start: 26.503604651162792
     m_ClipIn: 0
     m_Asset: {fileID: 4849228444079398570}
-    m_Duration: 1.3953488372092977
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3691485792175041472}
     m_EaseInDuration: 0
@@ -8615,7 +8615,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 43.242790697674415
+    m_Start: 43.24779069767442
     m_ClipIn: 0
     m_Asset: {fileID: -1365516509214615557}
     m_Duration: 1.3953488372093048
@@ -8684,7 +8684,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 45.33581395348837
+    m_Start: 45.34081395348837
     m_ClipIn: 0
     m_Asset: {fileID: 7934742521548120794}
     m_Duration: 1.3953488372093048
@@ -8753,7 +8753,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 48.12651162790698
+    m_Start: 48.13151162790698
     m_ClipIn: 0
     m_Asset: {fileID: 7344261749886936816}
     m_Duration: 2.0930232558139537
@@ -8822,7 +8822,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 52.312558139534886
+    m_Start: 52.31755813953489
     m_ClipIn: 0
     m_Asset: {fileID: -7134747611203592020}
     m_Duration: 1.3953488372092977
@@ -8891,7 +8891,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 57.54511627906977
+    m_Start: 57.55011627906977
     m_ClipIn: 0
     m_Asset: {fileID: 2348880812150384472}
     m_Duration: 2.0930232558139537
@@ -8960,7 +8960,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 54.40558139534884
+    m_Start: 54.41058139534884
     m_ClipIn: 0
     m_Asset: {fileID: -8518183764216373380}
     m_Duration: 1.3953488372092977
@@ -9029,10 +9029,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 63.82418604651163
+    m_Start: 63.82918604651163
     m_ClipIn: 0
     m_Asset: {fileID: 6800105560304901096}
-    m_Duration: 1.395348837209312
+    m_Duration: 1.3953488372093048
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3691485792175041472}
     m_EaseInDuration: 0
@@ -9098,7 +9098,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 65.91720930232559
+    m_Start: 65.92220930232558
     m_ClipIn: 0
     m_Asset: {fileID: 8210638582193639167}
     m_Duration: 2.0930232558139465
@@ -9167,7 +9167,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 34.521860465116276
+    m_Start: 34.52686046511628
     m_ClipIn: 0
     m_Asset: {fileID: -6347462696176099005}
     m_Duration: 1.3953488372093048
@@ -9236,7 +9236,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 36.61488372093023
+    m_Start: 36.61988372093023
     m_ClipIn: 0
     m_Asset: {fileID: -8332020139510831004}
     m_Duration: 1.3953488372093048
@@ -9305,7 +9305,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 38.707906976744184
+    m_Start: 38.712906976744186
     m_ClipIn: 0
     m_Asset: {fileID: 8520873350709904180}
     m_Duration: 1.3953488372093048
@@ -9374,7 +9374,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 76.38232558139535
+    m_Start: 76.38732558139534
     m_ClipIn: 0
     m_Asset: {fileID: 4619547702164736383}
     m_Duration: 1.3953488372092977
@@ -9443,7 +9443,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 78.4753488372093
+    m_Start: 78.48034883720929
     m_ClipIn: 0
     m_Asset: {fileID: -4758208503997492844}
     m_Duration: 1.395348837209312
@@ -9512,7 +9512,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 80.91720930232559
+    m_Start: 80.92220930232558
     m_ClipIn: 0
     m_Asset: {fileID: -6814100056674376918}
     m_Duration: 1.3953488372092977
@@ -9581,7 +9581,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 83.01023255813953
+    m_Start: 83.00523255813954
     m_ClipIn: 0
     m_Asset: {fileID: -6339716852422609532}
     m_Duration: 1.3953488372092977
@@ -9650,7 +9650,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 89.2893023255814
+    m_Start: 89.28430232558141
     m_ClipIn: 0
     m_Asset: {fileID: -8761167999415144400}
     m_Duration: 1.3953488372092977
@@ -9719,7 +9719,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 91.38232558139535
+    m_Start: 91.37732558139535
     m_ClipIn: 0
     m_Asset: {fileID: -5418948927007848836}
     m_Duration: 1.3953488372092977
@@ -9788,7 +9788,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 84.75441860465116
+    m_Start: 84.74941860465117
     m_ClipIn: 0
     m_Asset: {fileID: -7724866168912428406}
     m_Duration: 2.0930232558139465
@@ -9857,7 +9857,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 93.4753488372093
+    m_Start: 93.4703488372093
     m_ClipIn: 0
     m_Asset: {fileID: -3838203664956030682}
     m_Duration: 1.395348837209312
@@ -9926,7 +9926,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 95.56837209302326
+    m_Start: 95.56337209302326
     m_ClipIn: 0
     m_Asset: {fileID: 7751225546876686768}
     m_Duration: 1.3953488372092977
@@ -9995,7 +9995,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 101.4986046511628
+    m_Start: 101.4936046511628
     m_ClipIn: 0
     m_Asset: {fileID: -4384686679703279731}
     m_Duration: 2.0930232558139465
@@ -10064,7 +10064,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 105.6846511627907
+    m_Start: 105.6796511627907
     m_ClipIn: 0
     m_Asset: {fileID: -3092004230603777562}
     m_Duration: 1.3953488372092977
@@ -10133,7 +10133,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 115.1032558139535
+    m_Start: 115.0982558139535
     m_ClipIn: 0
     m_Asset: {fileID: 1409678908207719140}
     m_Duration: 1.3953488372092977
@@ -10202,7 +10202,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 117.19627906976744
+    m_Start: 117.19127906976745
     m_ClipIn: 0
     m_Asset: {fileID: -1492018095448723366}
     m_Duration: 1.3953488372092977
@@ -10271,7 +10271,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 131.1497674418605
+    m_Start: 131.14476744186047
     m_ClipIn: 0
     m_Asset: {fileID: -1011440602357633351}
     m_Duration: 1.3953488372092977
@@ -10340,7 +10340,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 133.24279069767442
+    m_Start: 133.2377906976744
     m_ClipIn: 0
     m_Asset: {fileID: -1433411546048887508}
     m_Duration: 1.3953488372093261
@@ -10409,7 +10409,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 2.08
+    m_Start: 2.085
     m_ClipIn: 0
     m_Asset: {fileID: -8776122377456620255}
     m_Duration: 1.3953488372093021
@@ -10478,7 +10478,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 97.6613953488372
+    m_Start: 97.65639534883721
     m_ClipIn: 0
     m_Asset: {fileID: -2384653895842391312}
     m_Duration: 1.395348837209312
@@ -10547,7 +10547,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 99.75441860465116
+    m_Start: 99.74941860465117
     m_ClipIn: 0
     m_Asset: {fileID: 6697476276789626012}
     m_Duration: 1.3953488372092977
@@ -10616,7 +10616,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 107.77767441860465
+    m_Start: 107.77267441860465
     m_ClipIn: 0
     m_Asset: {fileID: -3350033754925608771}
     m_Duration: 1.395348837209312
@@ -10685,7 +10685,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 109.87069767441861
+    m_Start: 109.86569767441861
     m_ClipIn: 0
     m_Asset: {fileID: -7376681917769901267}
     m_Duration: 1.3953488372092977
@@ -10754,7 +10754,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 40.80093023255814
+    m_Start: 40.80593023255814
     m_ClipIn: 0
     m_Asset: {fileID: -4486329225422857828}
     m_Duration: 2.0930232558139537
@@ -10823,7 +10823,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 61.731162790697674
+    m_Start: 61.736162790697676
     m_ClipIn: 0
     m_Asset: {fileID: -6050839515872664261}
     m_Duration: 1.3953488372093048
@@ -10911,8 +10911,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 17.093023255813954
-      NoteEndTime: 18.48837209302326
-      NoteBeatCount: 4.000000000000007
+      NoteEndTime: 18.488372093023255
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -11002,7 +11002,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -13.2, y: 3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 58.6046511627907
       NoteEndTime: 60
       NoteBeatCount: 3.9999999999999867
@@ -11103,9 +11103,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 14.651162790697674
-      NoteEndTime: 16.04651162790698
-      NoteBeatCount: 4.000000000000007
+      NoteStartTime: 14.651162790697676
+      NoteEndTime: 16.046511627906977
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -11134,7 +11134,7 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 62.79069767441861
+      NoteStartTime: 62.7906976744186
       NoteEndTime: 64.18604651162791
       NoteBeatCount: 3.9999999999999867
       Interactions:
@@ -11310,9 +11310,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 24.418604651162795
+      NoteStartTime: 24.41860465116279
       NoteEndTime: 25.813953488372093
-      NoteBeatCount: 3.9999999999999867
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -11343,7 +11343,7 @@ MonoBehaviour:
       EndPosition: {x: -0.024040699, y: -8.625088}
       NoteStartTime: 103.6046511627907
       NoteEndTime: 139.18604651162792
-      NoteBeatCount: 102.00000000000007
+      NoteBeatCount: 101.99999999999999
       Interactions:
       - _beatOffset: 15
         _offsetFromEnd: 1
@@ -11396,8 +11396,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 25.46511627906977
-      NoteEndTime: 26.860465116279073
-      NoteBeatCount: 4.000000000000007
+      NoteEndTime: 26.86046511627907
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -11447,9 +11447,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 7.2005515, y: -5.7976427}
       EndPosition: {x: -3.082776, y: -7.649612}
-      NoteStartTime: 28.255813953488378
-      NoteEndTime: 30.34883720930233
-      NoteBeatCount: 6
+      NoteStartTime: 28.255813953488374
+      NoteEndTime: 30.348837209302324
+      NoteBeatCount: 5.99999999999999
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 1
@@ -11635,9 +11635,9 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 18.139534883720934
+      NoteStartTime: 18.13953488372093
       NoteEndTime: 19.53488372093023
-      NoteBeatCount: 3.9999999999999867
+      NoteBeatCount: 3.9999999999999973
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -11713,8 +11713,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
-      NoteStartTime: 26.860465116279073
-      NoteEndTime: 28.255813953488378
+      NoteStartTime: 26.86046511627907
+      NoteEndTime: 28.255813953488374
       NoteBeatCount: 4.000000000000007
       Interactions:
       - _beatOffset: 3
@@ -11776,8 +11776,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 61.74418604651163
-      NoteEndTime: 63.13953488372094
-      NoteBeatCount: 4.0000000000000275
+      NoteEndTime: 63.139534883720934
+      NoteBeatCount: 4.000000000000007
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -11837,8 +11837,8 @@ MonoBehaviour:
       StartPosition: {x: 5.201916, y: -4.9900446}
       EndPosition: {x: -5.223729, y: 7.953112}
       NoteStartTime: 124.53488372093024
-      NoteEndTime: 126.6279069767442
-      NoteBeatCount: 6.00000000000002
+      NoteEndTime: 126.62790697674417
+      NoteBeatCount: 5.99999999999994
       Interactions:
       - _beatOffset: 3
         _offsetFromEnd: 0
@@ -12057,7 +12057,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 19.521860465116276
+    m_Start: 19.52686046511628
     m_ClipIn: 0
     m_Asset: {fileID: 4723293141564752901}
     m_Duration: 1.3953488372093048
@@ -12126,7 +12126,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 21.61488372093023
+    m_Start: 21.619883720930233
     m_ClipIn: 0
     m_Asset: {fileID: -5945326915435382748}
     m_Duration: 1.3953488372093048
@@ -12195,7 +12195,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 3.126511627906977
+    m_Start: 3.131511627906977
     m_ClipIn: 0
     m_Asset: {fileID: 2643359066691088830}
     m_Duration: 2.0930232558139537
@@ -12264,10 +12264,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 15.684651162790699
+    m_Start: 15.6896511627907
     m_ClipIn: 0
     m_Asset: {fileID: -6172673743614956309}
-    m_Duration: 1.3953488372092995
+    m_Duration: 1.3953488372093013
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8012124692829319110}
     m_EaseInDuration: 0
@@ -12333,7 +12333,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 28.94046511627907
+    m_Start: 28.94546511627907
     m_ClipIn: 0
     m_Asset: {fileID: 6659127230298515299}
     m_Duration: 1.3953488372093048
@@ -12402,7 +12402,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 26.847441860465118
+    m_Start: 26.852441860465117
     m_ClipIn: 0
     m_Asset: {fileID: -6380407973767605733}
     m_Duration: 1.3953488372093048
@@ -12471,7 +12471,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 43.59162790697675
+    m_Start: 43.59662790697675
     m_ClipIn: 0
     m_Asset: {fileID: 3570967376281987342}
     m_Duration: 1.3953488372092977
@@ -12540,7 +12540,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 45.6846511627907
+    m_Start: 45.6896511627907
     m_ClipIn: 0
     m_Asset: {fileID: 6525340059104306318}
     m_Duration: 1.3953488372092977
@@ -12609,7 +12609,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 53.35906976744186
+    m_Start: 53.36406976744186
     m_ClipIn: 0
     m_Asset: {fileID: 732604055230666558}
     m_Duration: 1.3953488372093048
@@ -12678,7 +12678,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 55.45209302325581
+    m_Start: 55.457093023255815
     m_ClipIn: 0
     m_Asset: {fileID: -6926776122275886541}
     m_Duration: 1.3953488372093048
@@ -12747,7 +12747,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 58.59162790697675
+    m_Start: 58.59662790697675
     m_ClipIn: 0
     m_Asset: {fileID: 8136078825992358821}
     m_Duration: 2.0930232558139537
@@ -12816,7 +12816,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 64.87069767441861
+    m_Start: 64.8756976744186
     m_ClipIn: 0
     m_Asset: {fileID: 4504432282313734237}
     m_Duration: 1.3953488372092977
@@ -12885,7 +12885,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 66.96372093023255
+    m_Start: 66.96872093023255
     m_ClipIn: 0
     m_Asset: {fileID: 6041291575561676165}
     m_Duration: 2.0930232558139608
@@ -12954,10 +12954,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 62.777674418604654
+    m_Start: 62.78267441860466
     m_ClipIn: 0
     m_Asset: {fileID: 2854742017586115411}
-    m_Duration: 2.0930232558139537
+    m_Duration: 2.0930232558139465
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8012124692829319110}
     m_EaseInDuration: 0
@@ -13023,7 +13023,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 35.56837209302326
+    m_Start: 35.57337209302326
     m_ClipIn: 0
     m_Asset: {fileID: 3463994994474714524}
     m_Duration: 1.3953488372092977
@@ -13092,7 +13092,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 37.66139534883721
+    m_Start: 37.66639534883721
     m_ClipIn: 0
     m_Asset: {fileID: 383564593745046160}
     m_Duration: 1.3953488372092977
@@ -13161,7 +13161,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 39.754418604651164
+    m_Start: 39.75941860465117
     m_ClipIn: 0
     m_Asset: {fileID: 3378594307854756140}
     m_Duration: 1.3953488372092977
@@ -13230,7 +13230,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 77.42883720930233
+    m_Start: 77.43383720930233
     m_ClipIn: 0
     m_Asset: {fileID: -8686989644893056344}
     m_Duration: 1.3953488372092977
@@ -13299,7 +13299,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 79.52186046511628
+    m_Start: 79.52686046511627
     m_ClipIn: 0
     m_Asset: {fileID: 5622409611150673010}
     m_Duration: 1.395348837209312
@@ -13368,7 +13368,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 81.2660465116279
+    m_Start: 81.2710465116279
     m_ClipIn: 0
     m_Asset: {fileID: 237411411572202992}
     m_Duration: 1.3953488372092977
@@ -13437,7 +13437,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 83.35906976744187
+    m_Start: 83.35406976744187
     m_ClipIn: 0
     m_Asset: {fileID: -3419743686092442451}
     m_Duration: 1.3953488372092977
@@ -13506,7 +13506,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 85.80093023255814
+    m_Start: 85.79593023255815
     m_ClipIn: 0
     m_Asset: {fileID: -3869697036937988120}
     m_Duration: 2.0930232558139465
@@ -13575,7 +13575,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 89.63813953488372
+    m_Start: 89.63313953488372
     m_ClipIn: 0
     m_Asset: {fileID: -2472019567412560185}
     m_Duration: 1.3953488372092977
@@ -13644,7 +13644,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 91.73116279069768
+    m_Start: 91.72616279069769
     m_ClipIn: 0
     m_Asset: {fileID: 4589411310615457826}
     m_Duration: 1.3953488372092977
@@ -13713,7 +13713,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 93.82418604651163
+    m_Start: 93.81918604651163
     m_ClipIn: 0
     m_Asset: {fileID: -272128455600839079}
     m_Duration: 1.3953488372092977
@@ -13782,7 +13782,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 95.91720930232559
+    m_Start: 95.91220930232559
     m_ClipIn: 0
     m_Asset: {fileID: 199543148615685820}
     m_Duration: 1.3953488372092977
@@ -13851,7 +13851,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 102.54511627906977
+    m_Start: 102.54011627906978
     m_ClipIn: 0
     m_Asset: {fileID: -993836691263387450}
     m_Duration: 2.0930232558139465
@@ -13920,7 +13920,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 106.03348837209302
+    m_Start: 106.02848837209302
     m_ClipIn: 0
     m_Asset: {fileID: 2195534446165080276}
     m_Duration: 1.395348837209312
@@ -13989,7 +13989,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 111.96372093023255
+    m_Start: 111.95872093023256
     m_ClipIn: 0
     m_Asset: {fileID: -3547871041149599104}
     m_Duration: 2.0930232558139608
@@ -14058,7 +14058,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 116.14976744186046
+    m_Start: 116.14476744186047
     m_ClipIn: 0
     m_Asset: {fileID: 2702583879601897541}
     m_Duration: 1.395348837209312
@@ -14127,7 +14127,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 118.24279069767442
+    m_Start: 118.23779069767443
     m_ClipIn: 0
     m_Asset: {fileID: 7571214735001531191}
     m_Duration: 2.0930232558139465
@@ -14196,7 +14196,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 131.4986046511628
+    m_Start: 131.49360465116277
     m_ClipIn: 0
     m_Asset: {fileID: 3823110832557997399}
     m_Duration: 1.3953488372093261
@@ -14265,7 +14265,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 133.59162790697675
+    m_Start: 133.58662790697673
     m_ClipIn: 0
     m_Asset: {fileID: -7390707095583560657}
     m_Duration: 1.3953488372092977
@@ -14334,7 +14334,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 11.498604651162792
+    m_Start: 11.503604651162792
     m_ClipIn: 0
     m_Asset: {fileID: -360097098816991157}
     m_Duration: 2.0930232558139537
@@ -14403,7 +14403,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 98.01023255813953
+    m_Start: 98.00523255813954
     m_ClipIn: 0
     m_Asset: {fileID: -8449687747976606803}
     m_Duration: 1.3953488372092977
@@ -14472,7 +14472,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 100.1032558139535
+    m_Start: 100.0982558139535
     m_ClipIn: 0
     m_Asset: {fileID: -6576911256547094606}
     m_Duration: 1.3953488372092977
@@ -14541,7 +14541,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 108.12651162790698
+    m_Start: 108.12151162790698
     m_ClipIn: 0
     m_Asset: {fileID: 2048190116389106635}
     m_Duration: 1.3953488372092977
@@ -14610,7 +14610,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 110.21953488372093
+    m_Start: 110.21453488372093
     m_ClipIn: 0
     m_Asset: {fileID: -3874020487943445099}
     m_Duration: 1.395348837209312
@@ -14679,10 +14679,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 7.312558139534884
+    m_Start: 7.317558139534884
     m_ClipIn: 0
     m_Asset: {fileID: -920645331583054534}
-    m_Duration: 2.0930232558139537
+    m_Duration: 2.0930232558139545
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8012124692829319110}
     m_EaseInDuration: 0
@@ -14748,7 +14748,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 60.6846511627907
+    m_Start: 60.6896511627907
     m_ClipIn: 0
     m_Asset: {fileID: 4056745111557772669}
     m_Duration: 1.3953488372092977
@@ -14817,7 +14817,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 49.17302325581395
+    m_Start: 49.178023255813955
     m_ClipIn: 0
     m_Asset: {fileID: -1794095190044400070}
     m_Duration: 2.0930232558139537
@@ -14934,7 +14934,7 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 5.45547, y: -5.4554706}
       EndPosition: {x: -2.4326997, y: -9.737126}
-      NoteStartTime: 63.83720930232559
+      NoteStartTime: 63.83720930232558
       NoteEndTime: 65.93023255813954
       NoteBeatCount: 5.9999999999999805
       Interactions:
@@ -14964,8 +14964,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 8.329723, y: -6.3109026}
       EndPosition: {x: -3.2196972, y: -7.9923005}
-      NoteStartTime: 15.697674418604654
-      NoteEndTime: 17.79069767441861
+      NoteStartTime: 15.697674418604652
+      NoteEndTime: 17.790697674418606
       NoteBeatCount: 6
       Interactions:
       - _beatOffset: 3
