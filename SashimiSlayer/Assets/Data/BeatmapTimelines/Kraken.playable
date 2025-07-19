@@ -46,7 +46,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.09191, y: 2.9782152}
+          - {x: 7.734404, y: 1.8575854}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -530,7 +530,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.160284, y: 1.9183862}
+          - {x: 7.47406, y: 0.8724656}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -1618,7 +1618,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.194473, y: 3.627788}
+          - {x: 7.000231, y: 3.8668556}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -1849,7 +1849,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.2970376, y: 2.4312067}
+          - {x: 7.3717465, y: 2.02778}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 6
         _offsetFromEnd: 0
@@ -4771,7 +4771,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.194473, y: 3.627788}
+          - {x: 6.342797, y: 4.1656904}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -5781,7 +5781,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 6.647466, y: 1.2346253}
+          - {x: 7.1885676, y: 2.0138123}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -5895,7 +5895,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.2970376, y: 2.4312067}
+          - {x: 6.714311, y: 3.23806}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 8
         _offsetFromEnd: 0
@@ -6405,7 +6405,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.09191, y: 2.9782152}
+          - {x: 7.465452, y: 2.2012455}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -6726,7 +6726,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.160284, y: 1.9183862}
+          - {x: 8.101612, y: 1.0368246}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -7203,7 +7203,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.160284, y: 1.9183862}
+          - {x: 7.474059, y: -0.98030853}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -7272,7 +7272,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.2970376, y: 2.4312067}
+          - {x: 7.476338, y: 1.5645866}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -7333,7 +7333,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.09191, y: 2.9782152}
+          - {x: 7.3309774, y: 2.6046722}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -7456,7 +7456,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.076922, y: 2.5528316}
+          - {x: 7.540115, y: 1.775862}
           - {x: -4.820513, y: -0.99145305}
 --- !u!114 &4622602757061203926
 MonoBehaviour:
@@ -7675,7 +7675,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.2970376, y: 2.4312067}
+          - {x: 6.8487864, y: 3.5518358}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
@@ -7715,7 +7715,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 6.7500296, y: 3.0124035}
+          - {x: 6.7500296, y: 3.4885736}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 12
         _offsetFromEnd: 0
@@ -8371,7 +8371,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.398366, y: 1.3384918}
+          - {x: 7.9213266, y: -1.3061935}
           - {x: -4.820513, y: -0.99145305}
 --- !u!114 &6427638413244475807
 MonoBehaviour:
@@ -8727,7 +8727,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.387671, y: 1.7051941}
+          - {x: 7.7014475, y: 0.31561375}
           - {x: -4.820513, y: -0.99145305}
 --- !u!114 &7655169594171241362
 MonoBehaviour:
@@ -8783,7 +8783,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 6.693216, y: 3.1773832}
+          - {x: 6.9023995, y: 2.5797143}
           - {x: -4.820513, y: -0.99145305}
 --- !u!114 &8012124692829319110
 MonoBehaviour:
@@ -9855,7 +9855,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.09191, y: 2.9782152}
+          - {x: 7.480394, y: 2.4104295}
           - {x: -5.2304816, y: -1.3383707}
       - _beatOffset: 0
         _offsetFromEnd: 1
