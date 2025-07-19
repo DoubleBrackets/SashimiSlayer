@@ -1496,7 +1496,7 @@ MonoBehaviour:
   Template:
     NoteConfig: {fileID: 11400000, guid: e7f0458cd61d42b4c969c878e98c2945, type: 2}
     NoteData:
-      StartPosition: {x: 8.603826, y: -4.429084}
+      StartPosition: {x: 9.359635, y: -4.429084}
       EndPosition: {x: 6.3485594, y: -0.28875643}
       NoteStartTime: 136.36363636363635
       NoteEndTime: 138.1818181818182
