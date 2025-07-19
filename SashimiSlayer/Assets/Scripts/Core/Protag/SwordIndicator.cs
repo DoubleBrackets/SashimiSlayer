@@ -56,6 +56,8 @@ namespace Core.Protag
 
         private readonly List<ParticleSystem.MinMaxCurve> _initialParticleRot = new();
 
+        private int _prevSliceFrame;
+
         private Vector3 _position;
 
         private Vector3 _currentSwordPivot;
@@ -112,6 +114,14 @@ namespace Core.Protag
             {
                 return;
             }
+
+            // Hack fix to prevent multiple VFX from the same slice, since interactions are called for each note
+            if (Time.frameCount == _prevSliceFrame)
+            {
+                return;
+            }
+
+            _prevSliceFrame = Time.frameCount;
 
             RotateSliceParticles();
 
