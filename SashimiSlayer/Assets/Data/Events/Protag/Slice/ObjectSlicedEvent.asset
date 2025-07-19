@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcf6a004c7396e4081ef1920b31dd87, type: 3}
   m_Name: ObjectSlicedEvent
   m_EditorClassIdentifier: 
-  _description: Raised by objects when they get sliced
+  _description: 'Raised by objects when they get sliced
+
+    Passes data about the
+    individual object sliced'
   _debug: 0

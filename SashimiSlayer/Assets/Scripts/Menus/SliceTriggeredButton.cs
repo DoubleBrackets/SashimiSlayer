@@ -121,10 +121,7 @@ namespace Menus
                 });
 
                 // Stupid hack to make the event work since there's no centralized slice manager for non-notes
-                _sliceResultEvent.Raise(new SliceResultData
-                {
-                    SliceCount = 1
-                });
+                _sliceResultEvent.Raise(new SliceResultData(1, SliceResultData.SlicedObject.MenuItem));
                 _used = true;
                 _buttonSlicedUnityEvent?.Invoke();
                 TriggerDelayedEvent(_delay).Forget();
