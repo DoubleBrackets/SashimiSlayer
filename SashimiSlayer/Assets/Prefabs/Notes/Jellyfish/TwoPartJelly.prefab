@@ -299,6 +299,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoPartJelly
       objectReference: {fileID: 0}
+    - target: {fileID: 1929824094368792074, guid: 145834922b2ce6e4391b2bed15e8c7c3,
+        type: 3}
+      propertyPath: _pipPositioner
+      value: 
+      objectReference: {fileID: 11400000, guid: 62793ebb09a4c5a4f8ff902312f5e3e4,
+        type: 2}
     - target: {fileID: 2358841284720666563, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: _startSound.Path
@@ -324,6 +330,18 @@ PrefabInstance:
       propertyPath: _startSound.Guid.Data4
       value: -1326794453
       objectReference: {fileID: 0}
+    - target: {fileID: 6489534682184979312, guid: 145834922b2ce6e4391b2bed15e8c7c3,
+        type: 3}
+      propertyPath: _pipPositioner
+      value: 
+      objectReference: {fileID: 11400000, guid: 62793ebb09a4c5a4f8ff902312f5e3e4,
+        type: 2}
+    - target: {fileID: 7185190017978873183, guid: 145834922b2ce6e4391b2bed15e8c7c3,
+        type: 3}
+      propertyPath: _pipPositioner
+      value: 
+      objectReference: {fileID: 11400000, guid: 62793ebb09a4c5a4f8ff902312f5e3e4,
+        type: 2}
     - target: {fileID: 7690596804962082351, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: Visuals.Array.size
