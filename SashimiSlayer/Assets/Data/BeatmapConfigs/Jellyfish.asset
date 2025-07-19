@@ -15,7 +15,7 @@ MonoBehaviour:
   <BeatmapID>k__BackingField: Jellyfish
   <Bpm>k__BackingField: 172
   <Subdivisions>k__BackingField: 2
-  <StartTime>k__BackingField: 2.08
+  <StartTime>k__BackingField: 2.075
   <BeatsPerMeasure>k__BackingField: 3
   <BeatmapTimeline>k__BackingField: {fileID: 11400000, guid: 46a4ea34e3d84cd448e4feca13c761e9,
     type: 2}
