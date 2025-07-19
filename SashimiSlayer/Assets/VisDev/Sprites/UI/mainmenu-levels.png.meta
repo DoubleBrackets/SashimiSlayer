@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: d130d6d84cbe4e74b963c3d72761b930
+guid: dbba0b95e0d44f545ada39825325ace9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 7
   spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 512
@@ -110,43 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fish_school_icon
+      name: mainmenu-levels_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 37
-        width: 546
-        height: 492
+        x: 0
+        y: 0
+        width: 500
+        height: 420
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25c028439fda491468acd673d1f72076
-      internalID: -855184800
+      spriteID: f451c4f10e780a64fa77fa7e70074747
+      internalID: -231577585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kraken_icon
+      name: mainmenu-levels_1
       rect:
         serializedVersion: 2
-        x: 634
+        x: 500
         y: 0
-        width: 578
-        height: 521
+        width: 500
+        height: 420
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 598701acec76c014fb6fbd10ec2f2cee
-      internalID: 864293042
+      spriteID: af32f62483759774dae50356454a2101
+      internalID: 1849215031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainmenu-levels_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279146dac82c2844cbea513342db6ff6
+      internalID: 419901358
       vertices: []
       indices: 
       edges: []
@@ -162,8 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fish_school_icon: -855184800
-      kraken_icon: 864293042
+      mainmenu-levels_0: -231577585
+      mainmenu-levels_1: 1849215031
+      mainmenu-levels_2: 419901358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
