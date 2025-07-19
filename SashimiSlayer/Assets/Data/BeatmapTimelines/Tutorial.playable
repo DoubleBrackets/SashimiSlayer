@@ -470,7 +470,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -10.405365, y: 3.303084}
+      EndPosition: {x: -10.405365, y: 9.2}
       NoteStartTime: 60
       NoteEndTime: 63
       NoteBeatCount: 6
@@ -481,6 +481,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 4.264219, y: 1.988064}
           - {x: -4.7798786, y: -0.8392911}
@@ -511,6 +512,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.1994805, y: 0.28169203}
 --- !u!114 &-8910760228112568070
@@ -529,7 +531,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -5.9765635, y: 7.950455}
+      EndPosition: {x: -5.9765635, y: 9.2}
       NoteStartTime: 36
       NoteEndTime: 39
       NoteBeatCount: 6
@@ -540,6 +542,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.516875, y: 2.6449375}
           - {x: -4.3620853, y: -0.57342273}
@@ -559,7 +562,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -10.4314165, y: 3.303084}
+      EndPosition: {x: -10.4314165, y: 9.2}
       NoteStartTime: 44
       NoteEndTime: 47
       NoteBeatCount: 6
@@ -570,6 +573,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.7137113, y: 2.8252027}
           - {x: -4.7798786, y: -0.8392911}
@@ -610,7 +614,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.2340412, y: 7.116889}
+      EndPosition: {x: -3.2340412, y: 9.2}
       NoteStartTime: 84
       NoteEndTime: 87
       NoteBeatCount: 6
@@ -621,6 +625,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.608561, y: 2.0327678}
           - {x: -4.58058, y: -0.4360311}
@@ -655,7 +660,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -10.345152, y: 3.8395975}
+      EndPosition: {x: -10.345152, y: 9.2}
       NoteStartTime: 93
       NoteEndTime: 96
       NoteBeatCount: 6
@@ -666,6 +671,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.7867775, y: 1.4958844}
           - {x: -4.5122046, y: -0.6069712}
@@ -737,7 +743,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.8654041, y: 7.3698587}
+      EndPosition: {x: -2.8654041, y: 9.2}
       NoteStartTime: 57
       NoteEndTime: 60
       NoteBeatCount: 6
@@ -748,6 +754,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.516875, y: 2.6449375}
           - {x: -4.7798786, y: -0.8392911}
@@ -782,7 +789,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.2340412, y: 7.325307}
+      EndPosition: {x: -3.2340412, y: 9.2}
       NoteStartTime: 92.5
       NoteEndTime: 95.5
       NoteBeatCount: 6
@@ -793,6 +800,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.081158, y: 2.1248062}
           - {x: -4.58058, y: -0.4360311}
@@ -2078,7 +2086,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.302417, y: 7.3807}
+      EndPosition: {x: -3.302417, y: 9.2}
       NoteStartTime: 84.5
       NoteEndTime: 87.5
       NoteBeatCount: 6
@@ -2089,6 +2097,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.142516, y: 1.9100523}
           - {x: -4.512205, y: -0.436031}
@@ -2391,7 +2400,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.2340412, y: 7.429516}
+      EndPosition: {x: -3.2340412, y: 9.2}
       NoteStartTime: 85.5
       NoteEndTime: 88.5
       NoteBeatCount: 6
@@ -2402,6 +2411,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.151996, y: 0.09998584}
           - {x: -4.58058, y: -0.4360311}
@@ -2421,7 +2431,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -10.345152, y: 3.8395975}
+      EndPosition: {x: -10.345152, y: 9.2}
       NoteStartTime: 81
       NoteEndTime: 84
       NoteBeatCount: 6
@@ -2432,6 +2442,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.2776437, y: 1.1737542}
           - {x: -4.5463924, y: -0.47021902}
@@ -2451,7 +2462,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.2643852, y: 7.457736}
+      EndPosition: {x: -2.2643852, y: 9.2}
       NoteStartTime: 53.5
       NoteEndTime: 56
       NoteBeatCount: 5
@@ -2462,6 +2473,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.268512, y: 0.43604302}
           - {x: -4.7798786, y: -0.8392911}
@@ -3879,6 +3891,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.1994805, y: 0.28169203}
 --- !u!114 &-3858965760601158821
@@ -3960,7 +3973,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 2367c0acd10c35949a7f9c83b54df5c3, type: 2}
     NoteData:
       StartPosition: {x: 7.8294086, y: -5.3854675}
-      EndPosition: {x: 0.073884964, y: -5.9085627}
+      EndPosition: {x: -0.44518673, y: -5.9085627}
       NoteStartTime: 89
       NoteEndTime: 92
       NoteBeatCount: 6
@@ -3971,6 +3984,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.460256, y: 0.655187}
           - {x: -5.3383737, y: -1.169358}
@@ -3980,8 +3994,9 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
-          - {x: 0.41652775, y: -1.2683363}
+          - {x: -0.6521487, y: -1.2683363}
 --- !u!114 &-3422261592518303231
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4041,6 +4056,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 1.2052115, y: -1.6134497}
 --- !u!114 &-2964359893404006874
@@ -4070,6 +4086,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.147461, y: 1.279129}
           - {x: -4.4952, y: -0.49333242}
@@ -4079,6 +4096,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 1.9638906, y: -1.6821381}
 --- !u!114 &-2878953298563464013
@@ -4097,7 +4115,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -10.405365, y: 3.303084}
+      EndPosition: {x: -10.405365, y: 9.2}
       NoteStartTime: 45
       NoteEndTime: 48
       NoteBeatCount: 6
@@ -4108,6 +4126,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.554141, y: 1.7579709}
           - {x: -4.7798786, y: -0.8392911}
@@ -4127,7 +4146,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.2643852, y: 7.4593797}
+      EndPosition: {x: -2.2643852, y: 9.2}
       NoteStartTime: 53
       NoteEndTime: 55.75
       NoteBeatCount: 5.5
@@ -4138,6 +4157,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.811256, y: 0.8962294}
           - {x: -4.7798786, y: -0.8392911}
@@ -4174,7 +4194,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -11.006385, y: 3.303084}
+      EndPosition: {x: -11.006385, y: 9.2}
       NoteStartTime: 45.5
       NoteEndTime: 48
       NoteBeatCount: 5
@@ -4185,6 +4205,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.4906917, y: 0.39670703}
           - {x: -4.476029, y: -0.7253475}
@@ -4244,7 +4265,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -10.345152, y: 3.8395975}
+      EndPosition: {x: -10.345152, y: 9.2}
       NoteStartTime: 92
       NoteEndTime: 95
       NoteBeatCount: 6
@@ -4255,6 +4276,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.2404132, y: 2.5236342}
           - {x: -4.5122046, y: -0.6069712}
@@ -4406,6 +4428,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.1027923, y: 1.9420583}
           - {x: -5.3383737, y: -1.169358}
@@ -4415,8 +4438,9 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
-          - {x: 5.313788, y: -1.1968434}
+          - {x: 8.122881, y: -1.1968434}
 --- !u!114 &-501070894553393834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4433,7 +4457,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.2340412, y: 8.080819}
+      EndPosition: {x: -3.2340412, y: 9.2}
       NoteStartTime: 93.5
       NoteEndTime: 96
       NoteBeatCount: 5
@@ -4444,6 +4468,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.8145275, y: 0.7902651}
           - {x: -4.58058, y: -0.4360311}
@@ -4911,6 +4936,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.147461, y: 1.279129}
           - {x: -4.6546135, y: -0.8274777}
@@ -4920,6 +4946,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 0.49435103, y: 1.5008945}
 --- !u!114 &-96512907476409134
@@ -4938,7 +4965,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -10.405365, y: 3.303084}
+      EndPosition: {x: -10.405365, y: 9.2}
       NoteStartTime: 61.5
       NoteEndTime: 64.5
       NoteBeatCount: 6
@@ -4949,6 +4976,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.1480536, y: 0.3927523}
           - {x: -4.7798786, y: -0.8392911}
@@ -4968,7 +4996,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.8654041, y: 7.500119}
+      EndPosition: {x: -2.8654041, y: 9.2}
       NoteStartTime: 60.5
       NoteEndTime: 63.5
       NoteBeatCount: 6
@@ -4979,6 +5007,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.427768, y: 2.0313559}
           - {x: -4.7798786, y: -0.8392911}
@@ -5033,7 +5062,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -4.6780033, y: 7.5214787}
+      EndPosition: {x: -4.6780033, y: 9.2}
       NoteStartTime: 40
       NoteEndTime: 43
       NoteBeatCount: 6
@@ -5044,6 +5073,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.7828336, y: 1.757971}
           - {x: -4.5519915, y: -0.7633287}
@@ -5089,6 +5119,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.144348, y: 1.9791391}
 --- !u!114 &833097427183589768
@@ -5107,7 +5138,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.2643852, y: 7.721545}
+      EndPosition: {x: -2.2643852, y: 9.2}
       NoteStartTime: 52.5
       NoteEndTime: 55.5
       NoteBeatCount: 6
@@ -5118,6 +5149,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.3817477, y: 1.8626208}
           - {x: -4.7798786, y: -0.8392911}
@@ -5148,6 +5180,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.8332342, y: -0.0048605204}
 --- !u!114 &1074363807910333031
@@ -5166,7 +5199,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.302417, y: 7.380699}
+      EndPosition: {x: -3.302417, y: 9.2}
       NoteStartTime: 81.5
       NoteEndTime: 84.5
       NoteBeatCount: 6
@@ -5177,6 +5210,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 7.3207316, y: 0.2227019}
           - {x: -4.512205, y: -0.436031}
@@ -5196,7 +5230,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.2643852, y: 7.6433907}
+      EndPosition: {x: -2.2643852, y: 9.2}
       NoteStartTime: 52
       NoteEndTime: 55
       NoteBeatCount: 6
@@ -5207,6 +5241,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.740418, y: 2.3228068}
           - {x: -4.7798786, y: -0.8392911}
@@ -5242,7 +5277,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.8654041, y: 7.4480143}
+      EndPosition: {x: -2.8654041, y: 9.2}
       NoteStartTime: 61
       NoteEndTime: 64
       NoteBeatCount: 6
@@ -5253,6 +5288,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.979991, y: 0.92690873}
           - {x: -4.7798786, y: -0.8392911}
@@ -5986,6 +6022,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3556087, y: 0.20960307}
 --- !u!114 &3577831271815540342
@@ -6187,6 +6224,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.496003, y: 0.9411584}
           - {x: -5.3383737, y: -1.169358}
@@ -6196,8 +6234,9 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
-          - {x: 2.883031, y: -1.2325898}
+          - {x: 3.7227058, y: -1.2325898}
 --- !u!114 &4539167557533657206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6338,6 +6377,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.336288, y: 2.8117096}
 --- !u!114 &4948954289360086848
@@ -6367,6 +6407,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -0.12493682, y: -1.6128684}
 --- !u!114 &5114024999773415740
@@ -6385,7 +6426,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -10.345152, y: 3.8395975}
+      EndPosition: {x: -10.345152, y: 9.2}
       NoteStartTime: 85
       NoteEndTime: 88
       NoteBeatCount: 6
@@ -6396,6 +6437,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.36968, y: 0.7595863}
           - {x: -4.5463924, y: -0.47021902}
@@ -6426,6 +6468,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 2.0720394, y: 1.5163733}
 --- !u!114 &5145844636911831059
@@ -6503,6 +6546,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: -1.3476502, y: 0.065595746}
 --- !u!114 &5826171284927687792
@@ -6542,7 +6586,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 6.667432, y: -4.513868}
-      EndPosition: {x: -2.2643852, y: 7.669442}
+      EndPosition: {x: -2.2643852, y: 9.2}
       NoteStartTime: 49
       NoteEndTime: 52
       NoteBeatCount: 6
@@ -6553,6 +6597,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 6.516875, y: 2.6449375}
           - {x: -4.7798786, y: -0.8392911}
@@ -6611,6 +6656,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.056495, y: 0.531917}
 --- !u!114 &6976503126511583732
@@ -6629,7 +6675,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.302417, y: 7.3807}
+      EndPosition: {x: -3.302417, y: 9.2}
       NoteStartTime: 80.5
       NoteEndTime: 83.5
       NoteBeatCount: 6
@@ -6640,6 +6686,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 5.142516, y: 1.9100523}
           - {x: -4.512205, y: -0.436031}
@@ -6659,7 +6706,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 8a1e72dd48efb0d4d83d5d580f34e2c1, type: 2}
     NoteData:
       StartPosition: {x: 8.611906, y: -4.9381175}
-      EndPosition: {x: -3.302417, y: 7.380699}
+      EndPosition: {x: -3.302417, y: 9.2}
       NoteStartTime: 80
       NoteEndTime: 83
       NoteBeatCount: 6
@@ -6670,6 +6717,7 @@ MonoBehaviour:
           BlockPose: 1
           InteractionType: 0
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.930692, y: 2.5696523}
           - {x: -4.512205, y: -0.436031}
@@ -6751,6 +6799,7 @@ MonoBehaviour:
           BlockPose: 0
           InteractionType: 1
           Flags: 0
+          HideIndicator: 0
           Positions:
           - {x: 3.056495, y: 0.531917}
 --- !u!114 &7623303194789307746

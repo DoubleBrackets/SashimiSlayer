@@ -33,7 +33,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 131.86046511627907
       NoteEndTime: 133.25581395348837
       NoteBeatCount: 3.9999999999999867
@@ -46,7 +46,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 1}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-8914008789440640810
 MonoBehaviour:
@@ -64,7 +64,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 6.9892373, y: -4.954298}
-      EndPosition: {x: -5.121232, y: 8.598291}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 104.30232558139535
       NoteEndTime: 105.69767441860465
       NoteBeatCount: 3.9999999999999867
@@ -77,7 +77,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 6.5438547, y: 2.2238564}
+          - {x: 6.5438547, y: 1.4}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-8776122377456620255
 MonoBehaviour:
@@ -95,7 +95,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 0
       NoteEndTime: 1.3953488372093021
       NoteBeatCount: 3.9999999999999996
@@ -126,7 +126,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.053284, y: 8.32267}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 87.2093023255814
       NoteEndTime: 88.6046511627907
       NoteBeatCount: 3.9999999999999867
@@ -139,7 +139,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-8739017720185291674
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.155551, y: 8.1522255}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 75.34883720930233
       NoteEndTime: 76.74418604651163
       NoteBeatCount: 3.9999999999999867
@@ -191,7 +191,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 1.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-8518183764216373380
 MonoBehaviour:
@@ -209,7 +209,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.4964414, y: 8.424936}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 52.32558139534884
       NoteEndTime: 53.72093023255814
       NoteBeatCount: 3.9999999999999867
@@ -240,7 +240,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.0187354, y: 8.427464}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 95.93023255813954
       NoteEndTime: 97.32558139534883
       NoteBeatCount: 3.9999999999999867
@@ -271,7 +271,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.949991, y: 8.394953}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 25.813953488372093
       NoteEndTime: 27.209302325581397
       NoteBeatCount: 4.000000000000007
@@ -302,7 +302,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.257946, y: 8.258083}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 34.53488372093023
       NoteEndTime: 35.93023255813954
       NoteBeatCount: 4.000000000000007
@@ -476,7 +476,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 12.558139534883722
       NoteEndTime: 13.953488372093025
       NoteBeatCount: 4.000000000000002
@@ -2237,7 +2237,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 131.51162790697674
       NoteEndTime: 132.90697674418604
       NoteBeatCount: 3.9999999999999867
@@ -2268,7 +2268,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.2117558, y: -5.229203}
-      EndPosition: {x: -5.223729, y: 7.812483}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 107.79069767441861
       NoteEndTime: 109.18604651162791
       NoteBeatCount: 3.9999999999999867
@@ -2281,7 +2281,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 3.3975556, y: 2.6860104}
+          - {x: 3.3975556, y: 3}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-7137627398019140838
 MonoBehaviour:
@@ -2320,7 +2320,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.9510174, y: 8.254492}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 50.23255813953489
       NoteEndTime: 51.627906976744185
       NoteBeatCount: 3.9999999999999867
@@ -2372,7 +2372,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.0873737, y: 8.5272045}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 53.372093023255815
       NoteEndTime: 54.76744186046512
       NoteBeatCount: 4.000000000000007
@@ -2403,7 +2403,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.0651627, y: 8.493805}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 88.6046511627907
       NoteEndTime: 90
       NoteBeatCount: 3.9999999999999867
@@ -2508,7 +2508,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.0191946, y: 8.32267}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 78.83720930232559
       NoteEndTime: 80.23255813953489
       NoteBeatCount: 3.9999999999999867
@@ -2521,7 +2521,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-6576911256547094606
 MonoBehaviour:
@@ -2539,7 +2539,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.461629}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 98.0232558139535
       NoteEndTime: 99.4186046511628
       NoteBeatCount: 3.9999999999999867
@@ -2570,7 +2570,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.4964414, y: 8.424936}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 54.418604651162795
       NoteEndTime: 55.81395348837209
       NoteBeatCount: 3.9999999999999867
@@ -2622,7 +2622,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.2921634, y: 8.292301}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 24.76744186046512
       NoteEndTime: 26.162790697674424
       NoteBeatCount: 4.000000000000007
@@ -2653,7 +2653,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.360598, y: 8.086997}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 32.44186046511628
       NoteEndTime: 33.83720930232558
       NoteBeatCount: 4.000000000000007
@@ -2684,7 +2684,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.985106, y: 8.5272045}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 80.93023255813954
       NoteEndTime: 82.32558139534883
       NoteBeatCount: 3.9999999999999867
@@ -2697,7 +2697,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-6300071285853897746
 MonoBehaviour:
@@ -2715,7 +2715,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 18.48837209302326
       NoteEndTime: 19.883720930232563
       NoteBeatCount: 4.000000000000007
@@ -2746,7 +2746,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 13.604651162790699
       NoteEndTime: 14.999999999999998
       NoteBeatCount: 3.999999999999992
@@ -2777,7 +2777,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1895123, y: 8.531822}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 59.651162790697676
       NoteEndTime: 61.04651162790698
       NoteBeatCount: 4.000000000000007
@@ -2808,7 +2808,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 19.53488372093023
       NoteEndTime: 20.930232558139537
       NoteBeatCount: 4.000000000000007
@@ -2869,7 +2869,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.269237, y: 8.459026}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 89.30232558139535
       NoteEndTime: 90.69767441860465
       NoteBeatCount: 3.9999999999999867
@@ -2882,7 +2882,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-5258630047041268286
 MonoBehaviour:
@@ -2930,7 +2930,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.155551, y: 8.356759}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 76.3953488372093
       NoteEndTime: 77.79069767441861
       NoteBeatCount: 4.0000000000000275
@@ -2943,7 +2943,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 3}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-4667836728107191885
 MonoBehaviour:
@@ -2961,7 +2961,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 130.46511627906978
       NoteEndTime: 131.86046511627907
       NoteBeatCount: 3.9999999999999867
@@ -2992,7 +2992,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.3605986, y: 7.9843454}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 42.55813953488372
       NoteEndTime: 43.95348837209303
       NoteBeatCount: 4.000000000000007
@@ -3005,7 +3005,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 3.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-4486329225422857828
 MonoBehaviour:
@@ -3187,7 +3187,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 6.261049, y: -4.9900446}
-      EndPosition: {x: -5.0529013, y: 8.529961}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 108.13953488372093
       NoteEndTime: 109.53488372093024
       NoteBeatCount: 4.0000000000000275
@@ -3200,7 +3200,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 4.8185415, y: 2.632875}
+          - {x: 4.8185415, y: 2.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-3869697036937988120
 MonoBehaviour:
@@ -3248,7 +3248,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.326226, y: 8.734954}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 91.3953488372093
       NoteEndTime: 92.79069767441861
       NoteBeatCount: 4.0000000000000275
@@ -3261,7 +3261,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-3547871041149599104
 MonoBehaviour:
@@ -3349,7 +3349,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.189512, y: 8.56604}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 26.51162790697675
       NoteEndTime: 27.906976744186046
       NoteBeatCount: 3.9999999999999867
@@ -3362,7 +3362,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-3419743686092442451
 MonoBehaviour:
@@ -3380,7 +3380,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.0873733, y: 7.913602}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 81.27906976744187
       NoteEndTime: 82.67441860465117
       NoteBeatCount: 3.9999999999999867
@@ -3411,7 +3411,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.2117558, y: -5.229203}
-      EndPosition: {x: -5.223729, y: 7.812483}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 105.69767441860465
       NoteEndTime: 107.09302325581396
       NoteBeatCount: 4.0000000000000275
@@ -3424,7 +3424,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 3.3975556, y: 2.6860104}
+          - {x: 3.3975556, y: 3}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-3287965588966462303
 MonoBehaviour:
@@ -3534,7 +3534,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.2117558, y: -5.229203}
-      EndPosition: {x: -5.223729, y: 7.812483}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 103.6046511627907
       NoteEndTime: 105
       NoteBeatCount: 3.9999999999999867
@@ -3547,7 +3547,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 3.3975556, y: 2.6860104}
+          - {x: 3.3975556, y: 3}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-2718924908730961750
 MonoBehaviour:
@@ -3582,7 +3582,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1895633, y: 8.359133}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 92.79069767441861
       NoteEndTime: 94.18604651162791
       NoteBeatCount: 3.9999999999999867
@@ -3613,7 +3613,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.746483, y: 8.424937}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 87.55813953488372
       NoteEndTime: 88.95348837209302
       NoteBeatCount: 3.9999999999999867
@@ -3644,7 +3644,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1895638, y: 8.666622}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 95.5813953488372
       NoteEndTime: 96.97674418604652
       NoteBeatCount: 4.0000000000000275
@@ -3657,7 +3657,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-2343653750786743221
 MonoBehaviour:
@@ -3705,7 +3705,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 19.186046511627907
       NoteEndTime: 20.581395348837212
       NoteBeatCount: 4.000000000000007
@@ -3718,7 +3718,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-2042112074663296496
 MonoBehaviour:
@@ -3757,7 +3757,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.98457, y: 8.495794}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 96.62790697674419
       NoteEndTime: 98.0232558139535
       NoteBeatCount: 4.0000000000000275
@@ -3770,7 +3770,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-1868660213795654355
 MonoBehaviour:
@@ -3964,7 +3964,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 3.8792987, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 115.11627906976744
       NoteEndTime: 116.51162790697674
       NoteBeatCount: 3.9999999999999867
@@ -3995,7 +3995,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 131.1627906976744
       NoteEndTime: 132.55813953488374
       NoteBeatCount: 4.000000000000068
@@ -4008,7 +4008,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-1418679928457394161
 MonoBehaviour:
@@ -4026,7 +4026,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.052643, y: 7.984346}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 42.2093023255814
       NoteEndTime: 43.6046511627907
       NoteBeatCount: 4.000000000000007
@@ -4039,7 +4039,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 4}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-1407706572168577606
 MonoBehaviour:
@@ -4057,7 +4057,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 6.9892373, y: -4.954298}
-      EndPosition: {x: -5.121232, y: 8.598291}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 108.48837209302326
       NoteEndTime: 109.88372093023256
       NoteBeatCount: 3.9999999999999867
@@ -4070,7 +4070,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 6.5438547, y: 2.2238564}
+          - {x: 6.5438547, y: 1.4}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-1365516509214615557
 MonoBehaviour:
@@ -4088,7 +4088,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.642173}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 41.16279069767442
       NoteEndTime: 42.55813953488372
       NoteBeatCount: 4.000000000000007
@@ -4101,7 +4101,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-1176228355259364873
 MonoBehaviour:
@@ -4119,7 +4119,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.84875, y: 9.072628}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 88.25581395348837
       NoteEndTime: 89.65116279069768
       NoteBeatCount: 4.0000000000000275
@@ -4132,7 +4132,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-1123799448097150218
 MonoBehaviour:
@@ -6057,7 +6057,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 129.06976744186048
       NoteEndTime: 130.46511627906978
       NoteBeatCount: 3.9999999999999867
@@ -6070,7 +6070,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-993836691263387450
 MonoBehaviour:
@@ -6370,7 +6370,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1895638, y: 8.1541395}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 91.74418604651163
       NoteEndTime: 93.13953488372093
       NoteBeatCount: 3.9999999999999867
@@ -6401,7 +6401,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1895633, y: 7.949145}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 96.97674418604652
       NoteEndTime: 98.37209302325581
       NoteBeatCount: 3.9999999999999867
@@ -6432,7 +6432,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.9157734, y: 8.600256}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 44.30232558139535
       NoteEndTime: 45.69767441860465
       NoteBeatCount: 3.9999999999999867
@@ -6445,7 +6445,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 4}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-212228677666320090
 MonoBehaviour:
@@ -6463,7 +6463,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 7.951154, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.223867}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 108.83720930232559
       NoteEndTime: 110.23255813953489
       NoteBeatCount: 3.9999999999999867
@@ -6476,7 +6476,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 7.950263, y: 3.0624003}
+          - {x: 7.950263, y: 0.8}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &-196776971178626964
 MonoBehaviour:
@@ -6655,7 +6655,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.427464}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 93.83720930232559
       NoteEndTime: 95.23255813953489
       NoteBeatCount: 3.9999999999999867
@@ -6686,7 +6686,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.985106, y: 8.834005}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 79.18604651162791
       NoteEndTime: 80.5813953488372
       NoteBeatCount: 3.9999999999999867
@@ -6757,7 +6757,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.0184255, y: 8.121215}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 35.58139534883721
       NoteEndTime: 36.97674418604651
       NoteBeatCount: 3.9999999999999867
@@ -6788,7 +6788,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.019195, y: 8.254492}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 51.27906976744186
       NoteEndTime: 52.674418604651166
       NoteBeatCount: 4.000000000000007
@@ -6819,7 +6819,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.8828387, y: 8.288581}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 80.23255813953489
       NoteEndTime: 81.62790697674419
       NoteBeatCount: 3.9999999999999867
@@ -6880,7 +6880,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.085808}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 92.44186046511628
       NoteEndTime: 93.83720930232559
       NoteBeatCount: 4.0000000000000275
@@ -6893,7 +6893,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &1409678908207719140
 MonoBehaviour:
@@ -6911,7 +6911,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 3.8792987, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 113.0232558139535
       NoteEndTime: 114.4186046511628
       NoteBeatCount: 3.9999999999999867
@@ -6982,7 +6982,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 130.11627906976744
       NoteEndTime: 131.51162790697674
       NoteBeatCount: 3.9999999999999867
@@ -6995,7 +6995,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &1854627707269753195
 MonoBehaviour:
@@ -7589,7 +7589,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 6.261049, y: -4.9900446}
-      EndPosition: {x: -5.0529013, y: 8.529961}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 106.04651162790698
       NoteEndTime: 107.44186046511628
       NoteBeatCount: 3.9999999999999867
@@ -7602,7 +7602,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 4.8185415, y: 2.632875}
+          - {x: 4.8185415, y: 2.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &2145358563145770506
 MonoBehaviour:
@@ -7641,7 +7641,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 6.261049, y: -4.9900446}
-      EndPosition: {x: -5.0529013, y: 8.529961}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 103.95348837209302
       NoteEndTime: 105.34883720930233
       NoteBeatCount: 4.0000000000000275
@@ -7654,7 +7654,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 4.8185415, y: 2.632875}
+          - {x: 4.8185415, y: 2.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &2348880812150384472
 MonoBehaviour:
@@ -7742,7 +7742,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 114.06976744186046
       NoteEndTime: 115.46511627906978
       NoteBeatCount: 4.0000000000000275
@@ -7794,7 +7794,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.84875, y: 8.32267}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 79.88372093023256
       NoteEndTime: 81.27906976744187
       NoteBeatCount: 4.0000000000000275
@@ -7807,7 +7807,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &2854742017586115411
 MonoBehaviour:
@@ -7925,7 +7925,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.495794}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 94.18604651162791
       NoteEndTime: 95.5813953488372
       NoteBeatCount: 3.9999999999999867
@@ -7938,7 +7938,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 1.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &3241029985881354545
 MonoBehaviour:
@@ -8003,7 +8003,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.2921634, y: 8.497604}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 37.674418604651166
       NoteEndTime: 39.06976744186046
       NoteBeatCount: 3.9999999999999867
@@ -8034,7 +8034,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.18965}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 33.48837209302326
       NoteEndTime: 34.883720930232556
       NoteBeatCount: 3.9999999999999867
@@ -8065,7 +8065,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1895123, y: 7.6421723}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 41.51162790697675
       NoteEndTime: 42.906976744186046
       NoteBeatCount: 3.9999999999999867
@@ -8078,7 +8078,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 1.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &3648031613978452725
 MonoBehaviour:
@@ -10909,7 +10909,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 17.093023255813954
       NoteEndTime: 18.48837209302326
       NoteBeatCount: 4.000000000000007
@@ -10922,7 +10922,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &3823110832557997399
 MonoBehaviour:
@@ -10940,7 +10940,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 129.41860465116278
       NoteEndTime: 130.8139534883721
       NoteBeatCount: 4.000000000000068
@@ -10971,7 +10971,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.80556}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 44.651162790697676
       NoteEndTime: 46.04651162790698
       NoteBeatCount: 4.000000000000007
@@ -10984,7 +10984,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 3.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &4056745111557772669
 MonoBehaviour:
@@ -11002,7 +11002,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.05278}
+      EndPosition: {x: -13.2, y: 3}
       NoteStartTime: 58.6046511627907
       NoteEndTime: 60
       NoteBeatCount: 3.9999999999999867
@@ -11054,7 +11054,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 4.186046511627907
       NoteEndTime: 5.5813953488372094
       NoteBeatCount: 3.9999999999999996
@@ -11102,7 +11102,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 14.651162790697674
       NoteEndTime: 16.04651162790698
       NoteBeatCount: 4.000000000000007
@@ -11133,7 +11133,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1210775, y: 8.086998}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 62.79069767441861
       NoteEndTime: 64.18604651162791
       NoteBeatCount: 3.9999999999999867
@@ -11164,7 +11164,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 6.9892373, y: -4.954298}
-      EndPosition: {x: -5.121232, y: 8.598291}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 106.39534883720931
       NoteEndTime: 107.79069767441861
       NoteBeatCount: 3.9999999999999867
@@ -11177,7 +11177,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 6.5438547, y: 2.2238564}
+          - {x: 6.5438547, y: 1.4}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &4589411310615457826
 MonoBehaviour:
@@ -11195,7 +11195,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.18987, y: 8.767742}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 89.65116279069768
       NoteEndTime: 91.04651162790698
       NoteBeatCount: 3.9999999999999867
@@ -11226,7 +11226,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.0532837, y: 8.527204}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 74.30232558139535
       NoteEndTime: 75.69767441860465
       NoteBeatCount: 3.9999999999999867
@@ -11239,7 +11239,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 1.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &4655137366046136210
 MonoBehaviour:
@@ -11278,7 +11278,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 17.441860465116278
       NoteEndTime: 18.837209302325583
       NoteBeatCount: 4.000000000000007
@@ -11309,7 +11309,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1895123, y: 8.18965}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 24.418604651162795
       NoteEndTime: 25.813953488372093
       NoteBeatCount: 3.9999999999999867
@@ -11322,7 +11322,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &4867084847484009955
 MonoBehaviour:
@@ -11394,7 +11394,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1552944, y: 8.086998}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 25.46511627906977
       NoteEndTime: 26.860465116279073
       NoteBeatCount: 4.000000000000007
@@ -11407,7 +11407,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &5145844636911831059
 MonoBehaviour:
@@ -11476,7 +11476,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -4.985106, y: 8.390848}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 77.44186046511628
       NoteEndTime: 78.83720930232559
       NoteBeatCount: 4.0000000000000275
@@ -11489,7 +11489,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 3}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &5826171284927687792
 MonoBehaviour:
@@ -11634,7 +11634,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 18.139534883720934
       NoteEndTime: 19.53488372093023
       NoteBeatCount: 3.9999999999999867
@@ -11647,7 +11647,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &6525340059104306318
 MonoBehaviour:
@@ -11665,7 +11665,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.950128}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 43.6046511627907
       NoteEndTime: 45
       NoteBeatCount: 3.9999999999999867
@@ -11678,7 +11678,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 1.2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &6640569924543703568
 MonoBehaviour:
@@ -11712,7 +11712,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.1552944, y: 8.258083}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 26.860465116279073
       NoteEndTime: 28.255813953488378
       NoteBeatCount: 4.000000000000007
@@ -11743,7 +11743,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.155398, y: 8.324966}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 97.67441860465117
       NoteEndTime: 99.06976744186046
       NoteBeatCount: 3.9999999999999867
@@ -11756,7 +11756,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &6800105560304901096
 MonoBehaviour:
@@ -11774,7 +11774,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.360736}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 61.74418604651163
       NoteEndTime: 63.13953488372094
       NoteBeatCount: 4.0000000000000275
@@ -11989,7 +11989,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.188305}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 93.48837209302326
       NoteEndTime: 94.88372093023256
       NoteBeatCount: 3.9999999999999867
@@ -12002,7 +12002,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2.7}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &7934742521548120794
 MonoBehaviour:
@@ -12020,7 +12020,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.189512, y: 7.8132596}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 43.25581395348837
       NoteEndTime: 44.651162790697676
       NoteBeatCount: 4.000000000000007
@@ -12033,7 +12033,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 5.4546857, y: 1.8280971}
+          - {x: 5.4546857, y: 2}
           - {x: 0.21175396, y: 1.3602707}
 --- !u!114 &8012124692829319110
 MonoBehaviour:
@@ -15014,7 +15014,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 8.702909}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 36.627906976744185
       NoteEndTime: 38.02325581395349
       NoteBeatCount: 4.000000000000007
@@ -15045,7 +15045,7 @@ MonoBehaviour:
     NoteConfig: {fileID: 11400000, guid: 3cf953fffd7093f498aba4fe128d7e52, type: 2}
     NoteData:
       StartPosition: {x: 5.201916, y: -4.9900446}
-      EndPosition: {x: -5.223729, y: 7.3}
+      EndPosition: {x: -13.4, y: 3}
       NoteStartTime: 8.372093023255815
       NoteEndTime: 9.767441860465116
       NoteBeatCount: 3.9999999999999973

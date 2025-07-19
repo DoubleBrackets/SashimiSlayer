@@ -325,6 +325,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: KrakenHeadVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 5221706990887733150, guid: 0b653db2160b0a3449bfd53e357c70da,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221706990887733150, guid: 0b653db2160b0a3449bfd53e357c70da,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221706990887733150, guid: 0b653db2160b0a3449bfd53e357c70da,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9035932056566311493, guid: 0b653db2160b0a3449bfd53e357c70da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,7 +424,7 @@ PrefabInstance:
     - target: {fileID: 363621706291659099, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: _squishScale
-      value: 0.9
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 363621706291659099, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
