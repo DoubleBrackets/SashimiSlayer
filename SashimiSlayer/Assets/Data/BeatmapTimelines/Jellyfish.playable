@@ -11353,7 +11353,7 @@ MonoBehaviour:
           Flags: 0
           HideIndicator: 0
           Positions:
-          - {x: 4.2841926, y: -0.061742306}
+          - {x: 4.094665, y: 1.632952}
       - _beatOffset: 12
         _offsetFromEnd: 1
         InteractionData:

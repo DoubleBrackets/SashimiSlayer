@@ -6,6 +6,7 @@ using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Beatmapping.NoteBehaviors.Kraken
 {
@@ -26,7 +27,10 @@ namespace Beatmapping.NoteBehaviors.Kraken
         private BeatNote _beatNote;
 
         [SerializeField]
-        private ParticleSystem[] _dieParticles;
+        private ParticleSystem[] _hitParticles;
+
+        [SerializeField]
+        private ParticleSystem[] _slainParticles;
 
         [SerializeField]
         private Transform _bodyTransform;
@@ -41,6 +45,11 @@ namespace Beatmapping.NoteBehaviors.Kraken
 
         [SerializeField]
         private float _entranceDuration;
+
+        [Header("Sliced Effects")]
+
+        [SerializeField]
+        private UnityEvent _onSliced;
 
         private Vector2 _startPos;
         private Vector2 _targetPos;
@@ -89,11 +98,15 @@ namespace Beatmapping.NoteBehaviors.Kraken
         {
             float t = _enterCurve.Evaluate(rawTime / _entranceDuration);
 
-            // X velocity is constant, y uses curve
-            _bodyTransform.position = new Vector2(
-                Mathf.Lerp(_startPos.x, _targetPos.x, t),
-                Mathf.Lerp(_startPos.y, _targetPos.y, t)
-            );
+            // prevents locking movement after entrance animation
+            if (t <= 1.1f)
+            {
+                // X velocity is constant, y uses curve
+                _bodyTransform.position = new Vector2(
+                    Mathf.Lerp(_startPos.x, _targetPos.x, t),
+                    Mathf.Lerp(_startPos.y, _targetPos.y, t)
+                );
+            }
         }
 
         private void BeatNote_SlicedByProtag(int interactionIndex,
@@ -103,7 +116,14 @@ namespace Beatmapping.NoteBehaviors.Kraken
 
             if (_visualIndex >= _damageVariantVisuals.Count)
             {
-                foreach (ParticleSystem particle in _dieParticles)
+                foreach (ParticleSystem particle in _slainParticles)
+                {
+                    particle.Play();
+                }
+            }
+            else
+            {
+                foreach (ParticleSystem particle in _hitParticles)
                 {
                     particle.Play();
                 }
@@ -113,6 +133,8 @@ namespace Beatmapping.NoteBehaviors.Kraken
             {
                 _damageVariantVisuals[i].SetVisible(i == _visualIndex);
             }
+
+            _onSliced.Invoke();
         }
 
         public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
