@@ -27,6 +27,15 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
         private int _currentAnimationIndex = -1;
 
+        private void Awake()
+        {
+            // Temp fix for visual bug where first frame of note flashes the static sprite renderer
+            if (_playFirstAnimationOnStart && _animatedSprites.Count > 0)
+            {
+                _spriteRenderer.sprite = null;
+            }
+        }
+
         private void Start()
         {
             if (_playFirstAnimationOnStart)
