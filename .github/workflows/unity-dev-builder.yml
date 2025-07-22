@@ -45,8 +45,6 @@ jobs:
         uses: paulhatch/semantic-version@v5.4.0
         id: semantic_version
         with:
-          # Named version, will be used as suffix for name version tag
-          namespace: ${{ env.PROJ_NAME }}
           # If enabled, diagnostic information will be added to the action output.
           debug: true
           # Automatically bump patch version
