@@ -19,6 +19,7 @@ on:
     paths:
     # Only build when these are changed by the push
     # Actions doesn't support env. variables in this section...
+      - '.github/**'
       - 'SashimiSlayer/Assets/**'
       - 'SashimiSlayer/Packages/**'
       - 'SashimiSlayer/ProjectSettings/**'
