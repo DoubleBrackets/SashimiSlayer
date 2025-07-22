@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 249287012447320160, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: m_Name
-      value: SlicePip
+      value: RedPip
       objectReference: {fileID: 0}
     - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
         type: 3}
@@ -101,6 +101,11 @@ PrefabInstance:
     - target: {fileID: 3186684886518204455, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306941576750342416, guid: 592056af166c722408c183934c3beab1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5276071713733921850, guid: 592056af166c722408c183934c3beab1,

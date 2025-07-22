@@ -83,6 +83,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
+      propertyPath: _pipPositioner
+      value: 
+      objectReference: {fileID: 11400000, guid: a9d059dd8f27e7d42999bec226ac2bfc,
+        type: 2}
+    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
+        type: 3}
       propertyPath: _shakeDuration
       value: 1
       objectReference: {fileID: 0}
@@ -218,6 +224,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1213604575691114643, guid: 8951f8751f8eaf248821c88dfa2ff741,
         type: 3}
+    - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
+        type: 3}
+      propertyPath: _pipPositioner
+      value: 
+      objectReference: {fileID: 11400000, guid: a9d059dd8f27e7d42999bec226ac2bfc,
+        type: 2}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
       propertyPath: _shakeDuration
