@@ -93,7 +93,7 @@ jobs:
         run: |
           cd "${{env.BUILD_DIR}}"
           sudo mv "${{ matrix.targetPlatform }}" "${{ env.PROJ_NAME }}"
-          sudo zip -v -r "../$ZIP_NAME" "${{ env.PROJ_NAME }}"
+          sudo zip -v -r "../$ZIP_NAME" "${{ env.PROJ_NAME }} v${{steps.semantic_version.outputs.version}}"
           cd ..
           
       - name: Download Butler
