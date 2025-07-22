@@ -89,7 +89,7 @@ jobs:
       - name: NamingStrings
         run: | 
           echo "ZIP_NAME=${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip" >> $GITHUB_ENV
-          echo "BUILD_FOLDER_NAME=${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-v${{steps.semantic_version.outputs.version}}" >> $GITHUB_ENV
+          echo "BUILD_FOLDER_NAME=${{env.BUILD_NAME_PREFIX}}-v${{steps.semantic_version.outputs.version}}" >> $GITHUB_ENV
 
       # Enter the build directory
       # Rename the build folder to include version number
