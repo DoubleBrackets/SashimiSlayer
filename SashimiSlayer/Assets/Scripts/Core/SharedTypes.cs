@@ -3,8 +3,7 @@ public static class SharedTypes
     public enum BlockPoseStates
     {
         TopPose,
-        MidPose,
-        BotPose
+        MidPose
     }
 
     public enum SheathState

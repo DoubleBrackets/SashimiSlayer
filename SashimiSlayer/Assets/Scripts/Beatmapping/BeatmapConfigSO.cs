@@ -1,5 +1,6 @@
 using System;
 using Beatmapping.Timing;
+using Core.Audio;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.Timeline;
@@ -13,7 +14,7 @@ namespace Beatmapping
 
         [field: SerializeField]
         [field: TextArea]
-        public string BeatmapName { get; private set; }
+        public string BeatmapID { get; private set; }
 
         [field: SerializeField]
         public double Bpm { get; private set; }
@@ -38,6 +39,9 @@ namespace Beatmapping
         [field: SerializeField]
         public EventReference BeatmapSoundtrackEvent { get; private set; }
 
+        [field: SerializeField]
+        public PitchShiftValues PitchShiftValues { get; private set; }
+
         [field: Header("Gameplay Data")]
 
         [field: SerializeField]
@@ -48,6 +52,11 @@ namespace Beatmapping
 
         [field: SerializeField]
         public GameObject ResultsScreenCustomPrefab { get; private set; }
+
+        /// <summary>
+        ///     Duration of the beatmap level, in seconds, from the start time
+        /// </summary>
+        public double BeatmapDuration => BeatmapTimeline.duration - StartTime;
 
         /// <summary>
         ///     Take a time and snap it to the nearest subdivision

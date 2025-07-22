@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EventFolder" id="{bc02c214-24bd-4f40-b261-082a104f9af3}">
+		<property name="name">
+			<value>MootFish</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d246a020-58d9-461a-8e89-c7527d371f42}</destination>
+		</relationship>
+	</object>
+</objects>

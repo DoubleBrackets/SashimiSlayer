@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EventFolder" id="{f9681c89-245c-4d14-adcf-ff157d707dc4}">
+		<property name="name">
+			<value>JellyfishLevel</value>
+		</property>
+		<relationship name="folder">
+			<destination>{3251ff77-a4f7-4758-b423-03d13ca36875}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerGroup" id="{4674f542-6aee-47ae-804c-7f1e690ebc2a}">
+		<property name="name">
+			<value>Music</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{7f9e1e7b-2dde-41d7-9958-692bfd5845c3}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{a0ad6364-6d5e-48c0-81fb-8e654fc8eab7}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5f78daac-10a6-442c-836e-69c6751dfdbb}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{7f9e1e7b-2dde-41d7-9958-692bfd5845c3}">
+		<relationship name="effects">
+			<destination>{c874e371-b0b6-4481-8361-891d909c074a}</destination>
+			<destination>{5091c0e1-4744-4d00-87e5-30847e3dbdb8}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{a0ad6364-6d5e-48c0-81fb-8e654fc8eab7}" />
+	<object class="MixerBusFader" id="{c874e371-b0b6-4481-8361-891d909c074a}" />
+	<object class="ThreeEQEffect" id="{5091c0e1-4744-4d00-87e5-30847e3dbdb8}">
+		<relationship name="modulators">
+			<destination>{af065de9-a5e4-4883-93b5-54b312f69d2f}</destination>
+		</relationship>
+	</object>
+	<object class="SidechainModulator" id="{af065de9-a5e4-4883-93b5-54b312f69d2f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>highGain</value>
+		</property>
+		<property name="amount">
+			<value>16</value>
+		</property>
+		<property name="attackTime">
+			<value>10</value>
+		</property>
+		<property name="releaseTime">
+			<value>10</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{05401c4f-84b4-43a0-ae03-32c1876e491d}</destination>
+		</relationship>
+	</object>
+</objects>

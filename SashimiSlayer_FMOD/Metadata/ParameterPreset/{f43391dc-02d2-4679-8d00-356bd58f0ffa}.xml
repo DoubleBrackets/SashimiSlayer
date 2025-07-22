@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{f43391dc-02d2-4679-8d00-356bd58f0ffa}">
+		<property name="note">
+			<value>Number of targets sliced</value>
+		</property>
+		<property name="name">
+			<value>SliceTargetCount</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8df83157-9691-4434-aca2-263b160c6e86}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d96e4ff0-ce13-4989-80c9-9deb078c543a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d96e4ff0-ce13-4989-80c9-9deb078c543a}">
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

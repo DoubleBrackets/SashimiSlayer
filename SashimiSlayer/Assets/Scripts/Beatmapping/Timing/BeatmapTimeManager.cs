@@ -78,7 +78,7 @@ namespace Beatmapping.Timing
         [SerializeField]
         private GameLevelSO _levelResultLevel;
 
-        [Header("Listening Events")]
+        [Header("Events (In)")]
 
         [SerializeField]
         private BeatmapEvent _beatmapLoadedEvent;
@@ -89,13 +89,16 @@ namespace Beatmapping.Timing
         [SerializeField]
         private BoolEvent _optionsMenuOpenEvent;
 
-        [Header("Invoking Events")]
+        [Header("Events (Out)")]
 
         [SerializeField]
         private IntEvent _beatPassedEvent;
 
         [SerializeField]
         private IntEvent _subdivPassedEvent;
+
+        [SerializeField]
+        private FloatEvent _normalizedProgressEvent;
 
         public static BeatmapTimeManager Instance { get; private set; }
 
@@ -253,6 +256,9 @@ namespace Beatmapping.Timing
             OnTick?.Invoke(CurrentTickInfo);
 
             _previousEventTime = currentEventTime;
+
+            // progress
+            _normalizedProgressEvent.Raise((float)(currentBeatmapTime / _currentBeatmap.BeatmapDuration));
         }
 
         public int GetClosestSubdivOfTime(double beatmapTime)

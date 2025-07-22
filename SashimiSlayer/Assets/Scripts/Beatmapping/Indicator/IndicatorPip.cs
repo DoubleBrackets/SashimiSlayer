@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using EditorUtils.BoldHeader;
 using NaughtyAttributes;
@@ -16,10 +17,10 @@ namespace Beatmapping.Indicator
         [Header("Dependencies")]
 
         [SerializeField]
-        private SpriteRenderer _onSprite;
+        private List<SpriteRenderer> _onSprite;
 
         [SerializeField]
-        private SpriteRenderer _offSprite;
+        private List<SpriteRenderer> _offSprite;
 
         [Header("Visuals")]
 
@@ -35,18 +36,12 @@ namespace Beatmapping.Indicator
         [Header("Events")]
 
         [SerializeField]
-        private UnityEvent _onPipFlash;
+        private UnityEvent _onFlashEntry;
+
+        [SerializeField]
+        private UnityEvent _onFlashTrigger;
 
         public bool IsOn { get; private set; }
-
-        private float _onSpriteAlpha;
-        private float _offSpriteAlpha;
-
-        public void Setup()
-        {
-            _onSpriteAlpha = _onSprite.color.a;
-            _offSpriteAlpha = _offSprite.color.a;
-        }
 
         [Button("Set On")]
         public void SetOn()
@@ -60,15 +55,24 @@ namespace Beatmapping.Indicator
             SetOn(false);
         }
 
-        public void Flash()
+        /// <summary>
+        ///     "Flash" the pip on the beat it triggers
+        /// </summary>
+        public void FlashTriggerBeat()
         {
-            _onPipFlash.Invoke();
+            _onFlashTrigger.Invoke();
+        }
+
+        public void FlashEntry()
+        {
+            _onFlashEntry.Invoke();
         }
 
         public void SetOn(bool isOn)
         {
-            _onSprite.enabled = isOn;
-            _offSprite.enabled = !isOn;
+            _onSprite.ForEach(sprite => sprite.enabled = isOn);
+            _offSprite.ForEach(sprite => sprite.enabled = !isOn);
+
             IsOn = isOn;
         }
 
@@ -81,21 +85,8 @@ namespace Beatmapping.Indicator
 
         public void SetVisible(bool isVisible)
         {
-            _onSprite.gameObject.SetActive(isVisible);
-            _offSprite.gameObject.SetActive(isVisible);
-        }
-
-        public void SetAlpha(float normalized)
-        {
-            float alpha = _alphaCurve.Evaluate(normalized);
-
-            Color color = _onSprite.color;
-            color.a = alpha * _onSpriteAlpha;
-            _onSprite.color = color;
-
-            color = _offSprite.color;
-            color.a = alpha * _offSpriteAlpha;
-            _offSprite.color = color;
+            _onSprite.ForEach(sprite => sprite.gameObject.SetActive(isVisible));
+            _offSprite.ForEach(sprite => sprite.gameObject.SetActive(isVisible));
         }
     }
 }

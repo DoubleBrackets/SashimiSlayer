@@ -1,5 +1,6 @@
 using Beatmapping;
 using Beatmapping.Tooling;
+using Core.Scene;
 using Timeline.BeatNoteTrack.BeatNote;
 using UnityEngine;
 using UnityEngine.Playables;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{3eab5e54-da01-440e-8841-e30cba5ef0d8}">
+		<property name="assetPath">
+			<value>SFX/Slice Textures/slice_ringshift_2.aif</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.9721541950113379</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7cd14a9f-71f5-497c-846f-fa301b2af1c2}</destination>
+		</relationship>
+	</object>
+</objects>

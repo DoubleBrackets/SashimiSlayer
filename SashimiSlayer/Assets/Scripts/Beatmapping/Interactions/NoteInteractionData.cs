@@ -24,13 +24,16 @@ namespace Beatmapping.Interactions
         [HideInInspector]
         public NoteInteraction.InteractionFlags Flags;
 
+        [Tooltip("Hide Timing Indicator")]
+        public bool HideIndicator;
+
         [FormerlySerializedAs("InteractionPositions")]
         [Tooltip("Positions for the interaction")]
         public List<Vector2> Positions;
 
         public NoteInteraction ToNoteInteraction(TimingWindow window)
         {
-            return new NoteInteraction(InteractionType, Flags, BlockPose, Positions, window);
+            return new NoteInteraction(InteractionType, Flags, BlockPose, Positions, window, HideIndicator);
         }
     }
 }

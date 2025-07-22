@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: KrakenHead
   m_EditorClassIdentifier: 
   <DamageDealtToPlayer>k__BackingField: 1
-  <HitboxRadius>k__BackingField: 1.4
+  <HitboxRadius>k__BackingField: 1.6
   <Prefab>k__BackingField: {fileID: 8772479368319537360, guid: 720f93312ccb37846a94fd5c37e57291,
     type: 3}

@@ -96,6 +96,10 @@ namespace Beatmapping
 
             public Direction Direction;
             public float NormalizedTimeDelta;
+            
+            public bool IsEarly() => Score == Score.Pass && Direction == Direction.Early;
+            public bool IsLate() => Score == Score.Pass && Direction == Direction.Late;
+            public bool IsPerfect() => Score == Score.Perfect;
         }
     }
 }

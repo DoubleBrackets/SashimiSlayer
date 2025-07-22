@@ -51,9 +51,6 @@ namespace Beatmapping.Notes
                 return;
             }
 
-            // Success!
-            Protaganist.Instance.SuccessfulBlock(protagSwordState.BlockPose);
-
             var finalResult = new NoteInteraction.FinalResult(
                 interactionAttemptResult.TimingResult,
                 NoteInteraction.InteractionType.Block,
@@ -67,6 +64,8 @@ namespace Beatmapping.Notes
             OnInteractionFinalResult?.Invoke(_noteTickInfo, finalResult);
 
             OnBlockedByProtag?.Invoke(GetInteractionIndex(interaction), interactionAttemptResult);
+
+            Protaganist.Instance.SuccessfulBlock(protagSwordState.BlockPose);
         }
 
         /// <summary>
@@ -118,9 +117,6 @@ namespace Beatmapping.Notes
                 return false;
             }
 
-            // Success!
-            OnSlicedByProtag?.Invoke(GetInteractionIndex(interaction), interactionAttemptResult);
-
             var finalResult = new NoteInteraction.FinalResult(interactionAttemptResult.TimingResult,
                 NoteInteraction.InteractionType.Slice,
                 true);
@@ -131,6 +127,7 @@ namespace Beatmapping.Notes
                 Position = _hitboxTransform.position
             });
             OnInteractionFinalResult?.Invoke(_noteTickInfo, finalResult);
+            OnSlicedByProtag?.Invoke(GetInteractionIndex(interaction), interactionAttemptResult);
 
             return true;
         }

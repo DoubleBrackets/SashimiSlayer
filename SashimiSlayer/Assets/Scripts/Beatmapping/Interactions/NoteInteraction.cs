@@ -49,13 +49,16 @@ namespace Beatmapping.Interactions
 
         public SharedTypes.BlockPoseStates BlockPose { get; }
 
+        public bool HideIndicator { get; private set; }
+
         private readonly TimingWindow _timingWindow;
 
         public NoteInteraction(InteractionType typeType,
             InteractionFlags interactionFlags,
             SharedTypes.BlockPoseStates blockPose,
             List<Vector2> positions,
-            TimingWindow window)
+            TimingWindow window,
+            bool hideIndicator)
         {
             Type = typeType;
             Flags = interactionFlags;
@@ -63,6 +66,7 @@ namespace Beatmapping.Interactions
             _timingWindow = window;
             Positions = positions == null ? null : new List<Vector2>(positions);
             State = NoteInteractionState.Default;
+            HideIndicator = hideIndicator;
         }
 
         public void ResetState()

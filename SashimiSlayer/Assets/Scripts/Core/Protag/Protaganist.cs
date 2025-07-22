@@ -4,6 +4,7 @@ using Beatmapping.Tooling;
 using Events;
 using Events.Core;
 using Feel;
+using GameInput;
 using UnityEngine;
 
 namespace Core.Protag
@@ -235,9 +236,6 @@ namespace Core.Protag
                     break;
                 case SharedTypes.BlockPoseStates.MidPose:
                     _blockSuccessMidEvent.Raise(_currentSwordState);
-                    break;
-                case SharedTypes.BlockPoseStates.BotPose:
-                    _blockSuccessBotEvent.Raise(_currentSwordState);
                     break;
             }
 

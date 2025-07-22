@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPresetFolder" id="{42ed3cb7-dcdb-4e11-9d01-3838ed4089be}">
+		<property name="name">
+			<value>Pitching</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8df83157-9691-4434-aca2-263b160c6e86}</destination>
+		</relationship>
+	</object>
+</objects>

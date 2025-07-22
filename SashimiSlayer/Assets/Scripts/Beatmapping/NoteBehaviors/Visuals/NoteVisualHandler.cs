@@ -32,6 +32,11 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
         private int _currentVisualIndex;
 
+        private void Awake()
+        {
+            DisableAllVisuals();
+        }
+
         public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;

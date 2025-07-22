@@ -6,9 +6,6 @@ using UnityEngine;
 
 namespace Beatmapping.Indicator
 {
-    /// <summary>
-    ///     Script that aligns a visual container to the sword angle of the protaganist. Intended for pip indicators
-    /// </summary>
     public class AlignToSwordAngle : MonoBehaviour
     {
         [BoldHeader("Align To Sword Angle")]

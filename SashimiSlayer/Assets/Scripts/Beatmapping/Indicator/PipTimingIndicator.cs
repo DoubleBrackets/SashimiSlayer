@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Base;
+using Beatmapping.Indicator.Positioners;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
 using Cysharp.Threading.Tasks;
@@ -23,10 +24,10 @@ namespace Beatmapping.Indicator
         [Header("Layout")]
 
         [SerializeField]
-        private float _totalDistance;
+        private PipPositioner _pipPositioner;
 
         [SerializeField]
-        private Vector2 _layoutDirection;
+        private int _pipCountOffset;
 
         [Header("Indicator")]
 
@@ -55,34 +56,84 @@ namespace Beatmapping.Indicator
 
         private int _prevBeatRemaining;
 
-        private bool _flashOnNext;
+        private bool _didShake;
+        private bool _didStartInteractionVisible;
+        private bool _isFirstInteraction;
 
-        private void OnDrawGizmos()
+        [ShowNonSerializedField]
+        private bool _isVisible;
+
+        /// <summary>
+        ///     Hidden because too many beats before interaction time
+        /// </summary>
+        [ShowNonSerializedField]
+        private bool _prematurelyHidden;
+
+        /// <summary>
+        ///     On the next visible beat, flash the entry pip
+        /// </summary>
+        private bool _flashEntryQueued;
+
+        private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + Vector3.left * _totalDistance);
+            if (_pipPositioner == null)
+            {
+                return;
+            }
+
+            List<(Vector2, float)> pipPositions =
+                _pipPositioner.CalculatePipLocalPositions(4 + _pipCountOffset);
+
+            Vector2 centerPosition = _visualContainer.position;
+            for (var i = 0; i < pipPositions.Count; i++)
+            {
+                if (i == 0)
+                {
+                    Gizmos.color = Color.green;
+                }
+                else
+                {
+                    Gizmos.color = Color.red;
+                }
+
+                Vector2 position = pipPositions[i].Item1;
+                Gizmos.DrawSphere(centerPosition + position, 0.1f);
+            }
         }
 
-        public void FlashOnNext()
+        public void SetupNewInteraction(BeatmapConfigSo beatmapConfigSo, bool isFirstInteraction)
         {
-            _flashOnNext = true;
+            _didShake = false;
+            _didStartInteractionVisible = true;
+            _isFirstInteraction = isFirstInteraction;
+            _isVisible = true;
+            _prematurelyHidden = false;
+
+            if (!_initialized)
+            {
+                Initialize(beatmapConfigSo);
+                _initialized = true;
+            }
         }
 
+        /// <summary>
+        ///     Initialize the pip indicator. Should only be called once during lifetime
+        /// </summary>
+        /// <param name="beatmapConfigSo"></param>
         private void Initialize(BeatmapConfigSo beatmapConfigSo)
         {
             int beatsPerMeasure = beatmapConfigSo.BeatsPerMeasure;
+            int totalPips = beatsPerMeasure + _pipCountOffset;
 
-            int totalPips = beatsPerMeasure + 1;
+            List<(Vector2, float)> pipPositions = _pipPositioner.CalculatePipLocalPositions(totalPips);
 
             for (var i = 0; i < totalPips; i++)
             {
                 IndicatorPip prefab = i == 0 ? _finalPip : _beatPip;
                 IndicatorPip pip = Instantiate(prefab, _visualContainer);
-                pip.Setup();
 
-                float t = (float)i / (totalPips - 1);
-
-                pip.transform.localPosition = _layoutDirection.normalized * (_totalDistance * t);
+                pip.transform.localPosition = pipPositions[i].Item1;
+                pip.transform.localRotation = Quaternion.Euler(0, 0, pipPositions[i].Item2);
 
                 pip.SetOn(false);
                 _pips.Add(pip);
@@ -93,9 +144,15 @@ namespace Beatmapping.Indicator
 
         public void SetVisible(bool visible)
         {
+            _isVisible = visible;
+            UpdateVisibility();
+        }
+
+        private void UpdateVisibility()
+        {
             foreach (IndicatorPip pip in _pips)
             {
-                pip.SetVisible(visible);
+                pip.SetVisible(_isVisible && !_prematurelyHidden);
             }
         }
 
@@ -106,59 +163,52 @@ namespace Beatmapping.Indicator
                 return;
             }
 
-            _pips[0].Flash();
+            _pips[0].FlashTriggerBeat();
         }
 
         public async UniTaskVoid Tick(BeatNote.NoteTickInfo tickInfo)
         {
             await UniTask.Delay((int)_delay * 1000, cancellationToken: destroyCancellationToken);
-            if (!_initialized)
-            {
-                Initialize(tickInfo.BeatmapTickInfo.CurrentBeatmap);
-                _initialized = true;
-            }
 
             NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
 
             int beatsRemaining = CalculateBeatRemaining(interaction, tickInfo);
-            float normalized = 1 - (float)beatsRemaining / (_pips.Count - 1);
+            bool beatChanged = _prevBeatRemaining != beatsRemaining;
 
-            bool changed = _prevBeatRemaining != beatsRemaining;
             _prevBeatRemaining = beatsRemaining;
 
             // Don't show anything at all if the target subdiv is before any of the pips
-            bool shouldShowPips = beatsRemaining < _pips.Count;
+            _prematurelyHidden = beatsRemaining > _pips.Count;
+            UpdateVisibility();
 
             for (var i = 0; i < _pips.Count; i++)
             {
-                bool isVisible = i <= beatsRemaining && shouldShowPips;
-                _pips[i].SetVisible(isVisible);
-
-                if (!isVisible)
+                // Counting down; i.e pip index 0 is the final beat
+                if (_prematurelyHidden || !_isVisible)
                 {
-                    _pips[i].SetOn(false);
+                    _didStartInteractionVisible = false;
                     continue;
                 }
 
-                bool isOn = i == beatsRemaining;
-                bool wasOn = _pips[i].IsOn;
+                bool isOn = i < beatsRemaining;
                 _pips[i].SetOn(isOn);
-                _pips[i].SetAlpha(normalized);
 
-                if (i == 1 && isOn && !wasOn)
+                if (i == 0 && beatsRemaining == 1 && !_didShake)
                 {
+                    _didShake = true;
                     _pips[i].transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, fadeOut: false);
                 }
 
-                if (isOn && !wasOn && _flashOnNext)
-                {
-                    _flashOnNext = false;
-                    _pips[i].Flash();
-                }
-
-                if (changed)
+                if (beatChanged)
                 {
                     _pips[i].DoSquish();
+                }
+
+                bool validToShowEntryFlash = !_didStartInteractionVisible || _isFirstInteraction;
+                if (_flashEntryQueued && validToShowEntryFlash)
+                {
+                    _pips[i].FlashEntry();
+                    _flashEntryQueued = false;
                 }
             }
         }
@@ -175,6 +225,11 @@ namespace Beatmapping.Indicator
             int beatsRemaining = (targetSubdiv - currentSubdivision + 1) / subdivsPerBeat;
 
             return beatsRemaining;
+        }
+
+        public void QueueFlashEntry()
+        {
+            _flashEntryQueued = true;
         }
     }
 }

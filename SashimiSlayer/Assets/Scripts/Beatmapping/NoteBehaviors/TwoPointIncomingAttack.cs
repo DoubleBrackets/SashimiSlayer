@@ -171,7 +171,7 @@ namespace Beatmapping.NoteBehaviors
             Vector2 rawTargetPos = Vector2.zero;
             if (Protaganist.Instance != null)
             {
-                rawTargetPos = Protaganist.Instance.NoteTargetPosition;
+                rawTargetPos = Protaganist.Instance.SwordPosition;
             }
             else
             {

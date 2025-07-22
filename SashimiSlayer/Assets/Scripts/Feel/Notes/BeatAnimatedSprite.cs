@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using EditorUtils.BoldHeader;
 using Events;
@@ -46,9 +47,12 @@ namespace Feel.Notes
 
         private BeatAnimatedSprite _transitionTo;
 
+        private CancellationToken _destroyCancellationToken;
+
         private void OnEnable()
         {
             _incrementEvent.AddListener(HandleEvent);
+            _destroyCancellationToken = this.GetCancellationTokenOnDestroy();
         }
 
         private void OnDisable()
@@ -99,7 +103,7 @@ namespace Feel.Notes
                 return;
             }
 
-            if (destroyCancellationToken.IsCancellationRequested)
+            if (_destroyCancellationToken.IsCancellationRequested)
             {
                 return;
             }

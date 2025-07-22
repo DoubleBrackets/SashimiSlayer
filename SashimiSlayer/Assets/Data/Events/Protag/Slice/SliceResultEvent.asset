@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab08b323f2612743be12f0c55e4ce0a, type: 3}
   m_Name: SliceResultEvent
   m_EditorClassIdentifier: 
-  _description: Raised by objects when sliced that provide information about the
-    slice result (e.g number of objects sliced)
+  _description: 'Raised by objects that are sliced.
+
+    Passes data about the slice'
   _debug: 0

@@ -12,6 +12,8 @@ namespace Feel
         [SerializeField]
         private float _lifetime;
 
+        public IReadOnlyList<ParticleSystem> ParticleSystems => _particleSystems;
+
         public static void PlayVFX(OneshotVFX vfxPrefab, Vector3 position, Quaternion rotation)
         {
             OneshotVFX vfx = Instantiate(vfxPrefab, position, rotation);

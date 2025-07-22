@@ -112,6 +112,9 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
                 TimelineEditor.Refresh(RefreshReason.ContentsModified);
             }
 
+            // Mark timeline as dirty
+            EditorUtility.SetDirty(target);
+
             Repaint();
         }
 

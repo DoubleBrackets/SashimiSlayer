@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial.unity
     guid: c5443ce2f9ac3904dbeece7ecda15d19
+  - enabled: 1
+    path: Assets/Scenes/Levels/Jellyfish.unity
+    guid: fc7ac55d0aaaae649b9e6ed31e043e43
   m_configObjects: {}

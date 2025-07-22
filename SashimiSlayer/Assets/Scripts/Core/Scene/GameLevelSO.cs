@@ -17,6 +17,7 @@ namespace Core.Scene
         }
 
         [field: SerializeField]
+        [field: Scene]
         public string GameSceneName { get; private set; }
 
         [field: SerializeField]

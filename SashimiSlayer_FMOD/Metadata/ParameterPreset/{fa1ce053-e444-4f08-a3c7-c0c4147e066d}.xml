@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{fa1ce053-e444-4f08-a3c7-c0c4147e066d}">
+		<property name="note">
+			<value>Per-beatmap pitch shift parameter
+</value>
+		</property>
+		<property name="name">
+			<value>ShellBlockPitchShift</value>
+		</property>
+		<relationship name="folder">
+			<destination>{42ed3cb7-dcdb-4e11-9d01-3838ed4089be}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{802da481-5a3d-45e9-8b13-f47da88f1aee}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{802da481-5a3d-45e9-8b13-f47da88f1aee}">
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0.66700000000000004</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

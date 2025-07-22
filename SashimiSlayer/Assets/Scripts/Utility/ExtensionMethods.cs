@@ -1,23 +1,26 @@
 using UnityEngine;
 
-public static class ExtensionMethods
+namespace Utility
 {
-    public static bool IsIndexInFlag(this int enumAsInt, int index)
+    public static class ExtensionMethods
     {
-        return (enumAsInt & (1 << index)) != 0;
-    }
+        public static bool IsIndexInFlag(this int enumAsInt, int index)
+        {
+            return (enumAsInt & (1 << index)) != 0;
+        }
 
-    public static void SetEnabled(this CanvasGroup canvasGroup, bool state)
-    {
-        canvasGroup.alpha = state ? 1 : 0;
-        canvasGroup.interactable = state;
-        canvasGroup.blocksRaycasts = state;
-    }
+        public static void SetEnabled(this CanvasGroup canvasGroup, bool state)
+        {
+            canvasGroup.alpha = state ? 1 : 0;
+            canvasGroup.interactable = state;
+            canvasGroup.blocksRaycasts = state;
+        }
 
-    public static void SetAlpha(this SpriteRenderer spriteRenderer, float alpha)
-    {
-        Color color = spriteRenderer.color;
-        color.a = alpha;
-        spriteRenderer.color = color;
+        public static void SetAlpha(this SpriteRenderer spriteRenderer, float alpha)
+        {
+            Color color = spriteRenderer.color;
+            color.a = alpha;
+            spriteRenderer.color = color;
+        }
     }
 }

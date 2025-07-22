@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{018c80ea-16d2-4aa1-9fea-8b1c9c4f4d9e}">
+		<property name="assetPath">
+			<value>SFX/Ambiance/Rain.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>360.69877551020409</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7cd14a9f-71f5-497c-846f-fa301b2af1c2}</destination>
+		</relationship>
+	</object>
+</objects>

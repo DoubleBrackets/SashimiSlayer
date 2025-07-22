@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a5fe83c4dd451c999d985ee0e7db5d, type: 3}
   m_Name: ProtagTrySlice
   m_EditorClassIdentifier: 
-  _description: 
+  _description: Raised by the protag when a slice is attempted
+  _debug: 0

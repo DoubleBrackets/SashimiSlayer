@@ -8,17 +8,19 @@ Designed to played with a custom Sword Controller.
 
 ## Builds
 
-Builds are downloadable from https://doublebrackets.itch.io/sashimi-slayer
+Release Builds are downloadable from https://doublebrackets.itch.io/sashimi-slayer
 
+Dev branch builds are downloadable from https://doublebrackets.itch.io/sashimi-slayer-dev (password: `dev`)
 
 ## Software Info
 
 Programs
-- Unity 2022.3.21f1
+- Unity 2022.3.48f1
 - FMOD 2.02
 
-Arduino Libraries
-- https://github.com/adafruit/Adafruit_BNO055
+Arduino Libraries (Required to compile sketches)
+- https://docs.arduino.cc/libraries/adafruit-bno055/ (install through Arduino IDE Library Manager to get dependencies automatically)
+- https://github.com/MHeironimus/ArduinoJoystickLibrary (need to install through local .zip)
 
 Packages
 - [NaughtyAttributes](https://github.com/dbrizov/NaughtyAttributes)

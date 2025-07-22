@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55b03e1938f5454d937feca9a9dbd47, type: 3}
   m_Name: Tutorial
   m_EditorClassIdentifier: 
-  <BeatmapName>k__BackingField: CABBAGE
+  <BeatmapID>k__BackingField: Tutorial
   <Bpm>k__BackingField: 120
   <Subdivisions>k__BackingField: 2
   <StartTime>k__BackingField: 5.98
@@ -26,6 +26,10 @@ MonoBehaviour:
       Data3: -1869054552
       Data4: 983716121
     Path: event:/TutorialLevel/TutorialMusic
+  <PitchShiftValues>k__BackingField:
+    SlicePitchShift: 1
+    StarBlockPitchShift: 1
+    ShellBlockPitchShift: 1
   <PlayerMaxHealth>k__BackingField: 6666
   <TimingWindowSO>k__BackingField: {fileID: 11400000, guid: 54462036f164d014095fd6aaaee307e5,
     type: 2}

@@ -1,6 +1,9 @@
 using Beatmapping.Tooling;
 using Cysharp.Threading.Tasks;
+using EditorUtils.BoldHeader;
 using FMODUnity;
+using Menus.MainMenu;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Core.Scene
@@ -10,6 +13,10 @@ namespace Core.Scene
     /// </summary>
     public class SceneStarter : MonoBehaviour
     {
+        [BoldHeader("Scene Bootup")]
+        [InfoBox("Handles loading initial loading and entering starting scene")]
+        [Header("Depends")]
+
         [SerializeField]
         private BootupConfigSO _bootupConfigSO;
 

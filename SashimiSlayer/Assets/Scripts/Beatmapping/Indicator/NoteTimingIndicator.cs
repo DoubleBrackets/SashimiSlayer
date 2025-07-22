@@ -26,105 +26,95 @@ namespace Beatmapping.Indicator
         private BeatNote _beatNote;
 
         private NoteInteraction _lastInteraction;
+        private PipTimingIndicator _currentActiveIndicator;
 
         private void BeatNote_OnTick(BeatNote.NoteTickInfo tickInfo)
         {
             BeatNote.TimeSegmentType segmentType = tickInfo.NoteSegment.Type;
 
-            if (segmentType != BeatNote.TimeSegmentType.Interaction)
+            if (segmentType == BeatNote.TimeSegmentType.Interaction)
             {
+                NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
+
+                bool isNewInteraction = _lastInteraction != interaction;
+                bool isFirstInteraction = _lastInteraction == null;
+
+                if (isNewInteraction)
+                {
+                    // Flash the final beat of previous interaction
+                    if (_lastInteraction != null)
+                    {
+                        _currentActiveIndicator.FlashFinalBeat();
+                    }
+
+                    SwitchIndicators(interaction, tickInfo.BeatmapTickInfo.CurrentBeatmap, isFirstInteraction);
+
+                    _currentActiveIndicator.QueueFlashEntry();
+
+                    _lastInteraction = interaction;
+                }
+
+                _currentActiveIndicator.Tick(tickInfo).Forget();
+            }
+            else
+            {
+                if (_lastInteraction == null)
+                {
+                    return;
+                }
+
+                // Not an interaction; hide all indicators
                 _sliceTimingIndicators.SetVisible(false);
                 foreach (PipTimingIndicator blockTimingIndicator in _blockTimingIndicators)
                 {
                     blockTimingIndicator.SetVisible(false);
                 }
 
-                if (_lastInteraction != null && _lastInteraction != null)
+                // Flash the final beat of the last interaction
+                if (_lastInteraction != null)
                 {
-                    FlashFinalBeat(_lastInteraction);
+                    _currentActiveIndicator.FlashFinalBeat();
                 }
 
+                _currentActiveIndicator = null;
                 _lastInteraction = null;
-                return;
             }
-
-            NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
-
-            // Optimization that causes a delay for looping notes...
-            /*if (!tickInfo.BeatmapTickInfo.CrossedSubdivThisTick)
-            {
-                return;
-            }*/
-
-            bool isNewInteraction = _lastInteraction != interaction;
-
-            // Flash the final beat of previous interaction
-            if (isNewInteraction && _lastInteraction != null)
-            {
-                FlashFinalBeat(_lastInteraction);
-            }
-
-            TickInteraction(interaction, tickInfo, isNewInteraction);
-            _lastInteraction = interaction;
         }
 
-        private void TickInteraction(NoteInteraction interaction, BeatNote.NoteTickInfo tickInfo, bool isNewInteraction)
+        /// <summary>
+        ///     Switch to the matching indicator and initialize it. This should be called on new interaction
+        /// </summary>
+        private void SwitchIndicators(NoteInteraction interaction, BeatmapConfigSo currentBeatmap,
+            bool firstInteraction)
         {
+            bool hideIndicator = interaction.HideIndicator;
+
             if (interaction.Type == NoteInteraction.InteractionType.Block)
             {
-                if (isNewInteraction)
+                // Select matching block indicator
+                var blockIndex = (int)interaction.BlockPose;
+                _blockTimingIndicators[blockIndex].SetupNewInteraction(currentBeatmap, firstInteraction);
+                for (var i = 0; i < _blockTimingIndicators.Count; i++)
                 {
-                    _sliceTimingIndicators.SetVisible(false);
+                    _blockTimingIndicators[i].SetVisible(i == blockIndex && !hideIndicator);
                 }
 
-                TickBlockIndicators(tickInfo, interaction.BlockPose, isNewInteraction);
+                _currentActiveIndicator = _blockTimingIndicators[blockIndex];
+
+                _sliceTimingIndicators.SetVisible(false);
             }
             else if (interaction.Type == NoteInteraction.InteractionType.Slice)
             {
-                if (isNewInteraction)
-                {
-                    _sliceTimingIndicators.SetVisible(true);
-                    _sliceTimingIndicators.FlashOnNext();
-                    foreach (PipTimingIndicator blockIndicator in _blockTimingIndicators)
-                    {
-                        blockIndicator.SetVisible(false);
-                    }
-                }
+                _sliceTimingIndicators.SetupNewInteraction(currentBeatmap, firstInteraction);
+                _sliceTimingIndicators.SetVisible(!hideIndicator);
+                _currentActiveIndicator = _sliceTimingIndicators;
 
-                _sliceTimingIndicators.Tick(tickInfo).Forget();
-            }
-        }
-
-        private void FlashFinalBeat(NoteInteraction interaction)
-        {
-            if (interaction.Type == NoteInteraction.InteractionType.Block)
-            {
-                foreach (PipTimingIndicator blockTimingIndicator in _blockTimingIndicators)
+                // Hide all block indicators
+                foreach (PipTimingIndicator blockIndicator in _blockTimingIndicators)
                 {
-                    blockTimingIndicator.FlashFinalBeat();
+                    blockIndicator.SetVisible(false);
                 }
             }
-            else if (interaction.Type == NoteInteraction.InteractionType.Slice)
-            {
-                _sliceTimingIndicators.FlashFinalBeat();
-            }
-        }
-
-        private void TickBlockIndicators(BeatNote.NoteTickInfo tickInfo, SharedTypes.BlockPoseStates blockPose,
-            bool isNewInteraction)
-        {
-            var blockIndex = (int)blockPose;
-
-            for (var i = 0; i < _blockTimingIndicators.Count; i++)
-            {
-                if (isNewInteraction)
-                {
-                    _blockTimingIndicators[i].FlashOnNext();
-                    _blockTimingIndicators[i].SetVisible(i == blockIndex);
-                }
-            }
-
-            _blockTimingIndicators[blockIndex].Tick(tickInfo).Forget();
         }
 
         public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()

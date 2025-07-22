@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{e57bd66f-5961-4328-8e0f-0cbbfce924e5}">
+		<property name="note">
+			<value>Early/Late/Perfect timing of interaction</value>
+		</property>
+		<property name="name">
+			<value>InteractionTimingGlobal</value>
+		</property>
+		<relationship name="folder">
+			<destination>{360cf177-3599-424c-ad2e-364694107d0a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{52547f08-c395-40a8-9553-f4d8760e538a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{52547f08-c395-40a8-9553-f4d8760e538a}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Early</value>
+			<value>Perfect</value>
+			<value>Late</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

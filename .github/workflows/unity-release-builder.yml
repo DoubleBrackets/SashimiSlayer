@@ -1,0 +1,117 @@
+name: Unity-Release-Builder
+
+concurrency:
+  group: ci-${{ github.actor }}-${{ github.ref }}-release-runner
+  cancel-in-progress: true
+
+env:
+  PROJ_DIR: SashimiSlayer
+  PROJ_NAME: Sashimi Slayer
+  BUILD_NAME_PREFIX: SashimiSlayer
+  BUILD_DIR: build
+  BUTLER_LINK: https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
+  ITCH_GAME_NAME: doublebrackets/sashimi-slayer
+
+on: 
+  push:
+    branches: 
+      - main
+    paths:
+    # Only build when these are changed by the push
+    # Actions doesn't support env. variables in this section...
+      - '.github/**'
+      - 'SashimiSlayer/Assets/**'
+      - 'SashimiSlayer/Packages/**'
+      - 'SashimiSlayer/ProjectSettings/**'
+  workflow_dispatch:
+      
+jobs:
+  UnityBuilds:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        targetPlatform:
+          # - WebGL
+          - StandaloneWindows64
+          - StandaloneOSX
+          - StandaloneLinux64
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Git Semantic Version
+        uses: paulhatch/semantic-version@v5.4.0
+        id: semantic_version
+        with:
+          # If enabled, diagnostic information will be added to the action output.
+          debug: true
+          # Automatically bump patch version
+          bump_each_commit: true
+
+      - name: Library Cache
+        uses: actions/cache@v3
+        with:
+          path: ${{env.PROJ_DIR}}/Library
+          key: Library-${{ env.PROJ_NAME }}-${{ matrix.targetPlatform }}-${{ hashFiles('${{env.PROJ_DIR}}/Assets/**', '${{env.PROJ_DIR}}/Packages/**', '${{env.PROJ_DIR}}/ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ env.PROJ_NAME }}-${{ matrix.targetPlatform }}-
+            Library-${{ env.PROJ_NAME }}-
+          
+      - name: Build Unity Project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          unityVersion: auto
+          # name of the folder containing the build output
+          buildName: ${{ env.PROJ_NAME }}
+          projectPath: ${{env.PROJ_DIR}}
+          buildsPath: ${{env.BUILD_PATH}}
+          # use existing semver
+          versioning: Custom
+          version: ${{steps.semantic_version.outputs.version}}
+          
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}
+          path: ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
+    
+      # Zip name isn't shown to the player since butler renames it after uploading
+      # Build folder name is what the player sees one folder down from the downloaded zip on itch.io
+      - name: NamingStrings
+        run: | 
+          echo "ZIP_NAME=${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip" >> $GITHUB_ENV
+          echo "BUILD_FOLDER_NAME=${{env.BUILD_NAME_PREFIX}}-v${{steps.semantic_version.outputs.version}}" >> $GITHUB_ENV
+
+      # Enter the build directory
+      # Rename the build folder to include version number
+      # Zip build (speeds up uploading through butler)
+      # The name of the zip itself doesn't matter to the player since itch.io renames it after uploading
+      - name: Zip Build
+        run: |
+          cd "${{env.BUILD_DIR}}"
+          sudo mv "${{ matrix.targetPlatform }}" "$BUILD_FOLDER_NAME"
+          tree -L 4
+          sudo zip -v -r "../$ZIP_NAME" "$BUILD_FOLDER_NAME"
+          cd ..
+          
+      - name: Download Butler
+        run: |
+          curl -L -o butler.zip ${{env.BUTLER_LINK}}
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+
+      - name: Push Build to Butler
+        run: |
+          ./butler push -v $ZIP_NAME ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}}
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+    
+    

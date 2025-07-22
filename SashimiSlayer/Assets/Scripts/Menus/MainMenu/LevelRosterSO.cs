@@ -1,19 +1,23 @@
 using System.Collections.Generic;
 using Core.Scene;
+using Menus.ScoreScreen;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelRoster", menuName = "MainMenu/LevelRoster")]
-public class LevelRosterSO : ScriptableObject
+namespace Menus.MainMenu
 {
-    [field: SerializeField]
-    public List<GameLevelSO> Levels { get; private set; }
-
-    public void WipeHighScores()
+    [CreateAssetMenu(fileName = "LevelRoster", menuName = "MainMenu/LevelRoster")]
+    public class LevelRosterSO : ScriptableObject
     {
-        Debug.Log("Wiping high scores");
-        foreach (GameLevelSO level in Levels)
+        [field: SerializeField]
+        public List<GameLevelSO> Levels { get; private set; }
+
+        public void WipeHighScores()
         {
-            PlayerPrefs.SetFloat($"{level.Beatmap.BeatmapName}.highscore", 0);
+            Debug.Log("Wiping all high scores");
+            foreach (GameLevelSO level in Levels)
+            {
+                PlayerPrefs.SetFloat(FinalScoreDisplay.GetHighscorePrefKey(level.Beatmap.BeatmapID), 0);
+            }
         }
     }
 }
