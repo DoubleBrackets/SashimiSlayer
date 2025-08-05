@@ -212,7 +212,6 @@ namespace Beatmapping.Editor
                 catch (Exception e)
                 {
                     Debug.LogError(e);
-                    throw;
                 }
             }
             else if (param == PlayModeStateChange.EnteredPlayMode)
