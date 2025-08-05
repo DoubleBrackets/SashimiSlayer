@@ -6962,8 +6962,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1969117886}
-  - component: {fileID: 1969117887}
   - component: {fileID: 1969117888}
+  - component: {fileID: 1969117887}
   - component: {fileID: 1969117890}
   - component: {fileID: 1969117889}
   - component: {fileID: 1969117891}
@@ -7064,6 +7064,10 @@ MonoBehaviour:
   _onControlSchemeChanged: {fileID: 11400000, guid: 1587be54aaec6e848b921a0c977ecaa4,
     type: 2}
   _setUseSerialInput: {fileID: 11400000, guid: ae2649dcf4fe32b4bb34667a4644dc28, type: 2}
+  _angleMultiplierEvent: {fileID: 11400000, guid: 084fa5ca422192449a31ac7d1393fa37,
+    type: 2}
+  _swordAngleOffsetEvent: {fileID: 11400000, guid: 9074d0865eea37c479c2fedcdeae87d5,
+    type: 2}
   _hidInputProvider: {fileID: 1969117887}
   _serialInputProvider: {fileID: 1969117890}
   _useSerialController: 0
@@ -7098,10 +7102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serialReader: {fileID: 1969117889}
   _quatDebugger: {fileID: 1847439421}
-  _angleMultiplierEvent: {fileID: 11400000, guid: 084fa5ca422192449a31ac7d1393fa37,
-    type: 2}
-  _swordAngleOffsetEvent: {fileID: 11400000, guid: 9074d0865eea37c479c2fedcdeae87d5,
-    type: 2}
   _connectToSerialPort: {fileID: 11400000, guid: 9ccd70ecbcb706141be8ed8c468769f2,
     type: 2}
   _upAxisChangedEvent: {fileID: 11400000, guid: 4fc8f9163265c4e448f6db7f3efa086a,

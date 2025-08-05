@@ -39,8 +39,6 @@ namespace GameInput
         private SharedTypes.BlockPoseStates _blockPoseStates;
         private SharedTypes.SheathState _sheathState;
 
-        private float _angleMultiplier = 1f;
-        private float _angleOffset;
         private float _rawSwordAngle;
 
         /// <summary>
@@ -50,8 +48,6 @@ namespace GameInput
 
         private void Awake()
         {
-            _angleMultiplierEvent.AddListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.AddListener(SetAngleOffset);
             _onMenuToggled.AddListener(HandleMenuToggled);
         }
 
@@ -70,8 +66,6 @@ namespace GameInput
 
         private void OnDestroy()
         {
-            _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
             _onMenuToggled.RemoveListener(HandleMenuToggled);
         }
 
@@ -184,29 +178,9 @@ namespace GameInput
             _overlayMenus += isMenuOpen ? 1 : -1;
         }
 
-        private void SetAngleMultiplier(float angleMultiplier)
-        {
-            _angleMultiplier = angleMultiplier;
-        }
-
-        private void SetAngleOffset(float angleOffset)
-        {
-            _angleOffset = angleOffset;
-        }
-
         public override float GetSwordAngle()
         {
-            return ConfiguredSwordAngle(_rawSwordAngle);
-        }
-
-        /// <summary>
-        ///     Process raw input angle with settings configuration
-        /// </summary>
-        /// <param name="rawSwordAngled"></param>
-        /// <returns></returns>
-        private float ConfiguredSwordAngle(float rawSwordAngled)
-        {
-            return (rawSwordAngled + _angleOffset) * _angleMultiplier;
+            return _rawSwordAngle;
         }
 
         private float JoyToAngle(Vector2 joyVector)

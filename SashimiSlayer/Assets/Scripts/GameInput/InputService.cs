@@ -26,6 +26,12 @@ namespace GameInput
         [SerializeField]
         private BoolEvent _setUseSerialInput;
 
+        [SerializeField]
+        private FloatEvent _angleMultiplierEvent;
+
+        [SerializeField]
+        private FloatEvent _swordAngleOffsetEvent;
+
         [Header("Depends")]
 
         [SerializeField]
@@ -49,6 +55,9 @@ namespace GameInput
         public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
         public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
 
+        private float _angleMultiplier = 1f;
+        private float _angleOffset;
+
         private void Awake()
         {
             if (Instance == null)
@@ -64,6 +73,8 @@ namespace GameInput
 
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
+            _angleMultiplierEvent.AddListener(SetAngleMultiplier);
+            _swordAngleOffsetEvent.AddListener(SetAngleOffset);
 
             InputSystem.onDeviceChange += (device, change) => { UpdateControlScheme(); };
         }
@@ -74,6 +85,18 @@ namespace GameInput
 
             _onDrawDebugGUI.RemoveListener(HandleDrawDebugGUI);
             _setUseSerialInput.RemoveListener(HandleSetUseSerialInput);
+            _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
+            _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
+        }
+
+        private void SetAngleMultiplier(float angleMultiplier)
+        {
+            _angleMultiplier = angleMultiplier;
+        }
+
+        private void SetAngleOffset(float angleOffset)
+        {
+            _angleOffset = angleOffset;
         }
 
         private void HandleSetUseSerialInput(bool useSerialInput)
@@ -139,7 +162,17 @@ namespace GameInput
 
         public override float GetSwordAngle()
         {
-            return InputProvider.GetSwordAngle();
+            return ConfiguredSwordAngle(InputProvider.GetSwordAngle());
+        }
+
+        /// <summary>
+        ///     Process raw input angle with settings configuration
+        /// </summary>
+        /// <param name="rawSwordAngled"></param>
+        /// <returns></returns>
+        private float ConfiguredSwordAngle(float rawSwordAngled)
+        {
+            return (rawSwordAngled + Mathf.Sign(_angleMultiplier) * _angleOffset) * _angleMultiplier;
         }
 
         public override SharedTypes.SheathState GetSheathState()
