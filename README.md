@@ -1,5 +1,5 @@
 # Sashimi Slayer
-[![Build to itch.io](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/main.yml)
+[![itch.io Release Build](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-release-builder.yml/badge.svg?branch=main)](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-release-builder.yml) [![itch.io Dev Build](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-dev-builder.yml/badge.svg?branch=dev)](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-dev-builder.yml)
 
 An Alt Control Rhythm Slice'em up Game! 
 
