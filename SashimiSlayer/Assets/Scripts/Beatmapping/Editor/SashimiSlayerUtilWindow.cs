@@ -64,8 +64,9 @@ namespace Beatmapping.Editor
                 GUILayout.Toggle(BeatmappingUtilities.StartFromTimelinePlayhead,
                     $"Start Level From Timeline Playhead ({BeatmappingUtilities.TimelinePlayheadTime.ToString()})");
 
+            BeatmapConfigSo currentBeatmap = BeatmappingUtilities.CurrentEditingBeatmapConfig;
             BeatmappingUtilities.PlayFromEditedBeatmap = GUILayout.Toggle(BeatmappingUtilities.PlayFromEditedBeatmap,
-                "Play from Edited Beatmap");
+                $"Play from Edited Beatmap ({(currentBeatmap != null ? currentBeatmap.name : "None")})");
 
             SwordSerialReader.LogPackets = GUILayout.Toggle(SwordSerialReader.LogPackets, "Log Sword Packets");
 
