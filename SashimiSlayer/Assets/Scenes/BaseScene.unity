@@ -7072,6 +7072,7 @@ MonoBehaviour:
   _serialInputProvider: {fileID: 1969117890}
   _useSerialController: 0
   _onDrawDebugGUI: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
+  _sliceDebounce: 0.1
 --- !u!114 &1969117889
 MonoBehaviour:
   m_ObjectHideFlags: 0

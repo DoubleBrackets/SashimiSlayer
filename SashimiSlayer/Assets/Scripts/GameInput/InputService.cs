@@ -46,6 +46,12 @@ namespace GameInput
         [SerializeField]
         private VoidEvent _onDrawDebugGUI;
 
+        [Header("Config")]
+
+        [Tooltip("Debounce time between sheathing and unsheathing slice to prevent bouncing")]
+        [SerializeField]
+        private float _sliceDebounce;
+
         public static InputService Instance { get; private set; }
 
         private BaseUserInputProvider InputProvider => _useSerialController ? _serialInputProvider : _hidInputProvider;
@@ -57,6 +63,8 @@ namespace GameInput
 
         private float _angleMultiplier = 1f;
         private float _angleOffset;
+
+        private float _lastSheathedTime;
 
         private void Awake()
         {
@@ -157,6 +165,22 @@ namespace GameInput
 
         private void HandleSheatheStateChanged(SharedTypes.SheathState state)
         {
+            if (state == SharedTypes.SheathState.Unsheathed)
+            {
+                if (Time.time < _lastSheathedTime + _sliceDebounce)
+                {
+                    float timeSinceSheathed = Time.time - _lastSheathedTime;
+                    Debug.LogWarning(
+                        $"Unsheathing too soon after slicing, ignoring unsheathe request. {timeSinceSheathed:F2}s since last sheathed.");
+                    return;
+                }
+            }
+
+            if (state == SharedTypes.SheathState.Sheathed)
+            {
+                _lastSheathedTime = Time.time;
+            }
+
             OnSheathStateChanged?.Invoke(state);
         }
 
