@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3186684886518204455}
   - component: {fileID: 5592791821229469203}
   m_Layer: 0
-  m_Name: CirclePip
+  m_Name: BarPip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   _squishScale: 0.8
   _squishDuration: 0.2
-  _onPipFlash:
+  _onFlashEntry:
+    m_PersistentCalls:
+      m_Calls: []
+  _onFlashTrigger:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &356917924831822296
@@ -192,8 +195,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.84999996, y: 0.84999996, z: 0.84999996}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.12, y: 0.4, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3306941576750342416}
   m_Father: {fileID: 3186684886518204455}
@@ -239,9 +242,8 @@ SpriteRenderer:
   m_SortingLayerID: -986906195
   m_SortingLayer: 3
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: 020fd745777d70144b959a09951976da,
-    type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5516857bb46791f4a9ca26b8d859cef6, type: 3}
+  m_Color: {r: 0.5423377, g: 0.4481132, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -278,8 +280,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.6, y: 1.2, z: 1.45}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7997846933537966050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -324,8 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: -986906195
   m_SortingLayer: 3
   m_SortingOrder: 4
-  m_Sprite: {fileID: -2413806693520163455, guid: 020fd745777d70144b959a09951976da,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5516857bb46791f4a9ca26b8d859cef6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
