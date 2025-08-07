@@ -3,7 +3,7 @@ using Core.Scene;
 using Menus.ScoreScreen;
 using UnityEngine;
 
-namespace Menus.MainMenu
+namespace Menus.LevelSelect
 {
     [CreateAssetMenu(fileName = "LevelRoster", menuName = "MainMenu/LevelRoster")]
     public class LevelRosterSO : ScriptableObject

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: d240ab3926782bd4e88325e54ee05b0d,
     type: 3}
   m_SourceFontFile: {fileID: 12800000, guid: d240ab3926782bd4e88325e54ee05b0d, type: 3}
-  m_AtlasPopulationMode: 1
+  m_AtlasPopulationMode: 0
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Comic Sans MS

@@ -2,7 +2,7 @@ using Beatmapping.Tooling;
 using Cysharp.Threading.Tasks;
 using EditorUtils.BoldHeader;
 using FMODUnity;
-using Menus.MainMenu;
+using Menus.LevelSelect;
 using NaughtyAttributes;
 using UnityEngine;
 

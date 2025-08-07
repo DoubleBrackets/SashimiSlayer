@@ -15,7 +15,6 @@ namespace Core.Protag
         {
             public SharedTypes.BlockPoseStates BlockPose;
             public SharedTypes.SheathState SheathState;
-            public SharedTypes.BlockPoseStates RecentHitBlockPose;
             public Vector3 SwordPosition;
             public float SwordAngle;
 
@@ -234,7 +233,7 @@ namespace Core.Protag
                 case SharedTypes.BlockPoseStates.TopPose:
                     _blockSuccessTopEvent.Raise(_currentSwordState);
                     break;
-                case SharedTypes.BlockPoseStates.MidPose:
+                case SharedTypes.BlockPoseStates.BotPose:
                     _blockSuccessMidEvent.Raise(_currentSwordState);
                     break;
             }

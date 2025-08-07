@@ -5,9 +5,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Menus.MainMenu
+namespace Menus.LevelSelect
 {
-    public class LevelSelectButton : MonoBehaviour
+    public class LevelPanel : MonoBehaviour
     {
         [SerializeField]
         private TMP_Text _levelNameText;
@@ -45,6 +45,11 @@ namespace Menus.MainMenu
         public void SelectLevel()
         {
             OnLevelSelected?.Invoke(_level);
+        }
+
+        public void SetVisible(bool visible)
+        {
+            gameObject.SetActive(visible);
         }
     }
 }
