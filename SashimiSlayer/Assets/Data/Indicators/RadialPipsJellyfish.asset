@@ -18,4 +18,4 @@ MonoBehaviour:
   _pipRadius: 2.3
   _pipDirection: -1
   _centerOffset: {x: 0, y: 0}
-  _rotateOffset: 180
+  _rotateOffset: -90
