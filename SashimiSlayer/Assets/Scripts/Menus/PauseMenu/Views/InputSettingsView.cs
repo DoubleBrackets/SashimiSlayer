@@ -76,9 +76,12 @@ namespace Menus.PauseMenu.Views
             _upAxisDropdown.value = _upAxis;
             _flipParryDirectionToggle.isOn = _flipParryDirection;
 
+            // Need to explicitly call these methods to ensure the initial values are set correctly
+            // Since UI callbacks don't trigger if the value is the same as the current value (i.e default)
             HandleSwordAngleMultiplierChange(_swordAngleMultiplier);
             HandleUpAxisChange(_upAxis);
             UpdateSwordAngleMultiplier();
+            HandleFlipParryDirectionChange(_flipParryDirection);
         }
 
         public override void ViewDestroy()
