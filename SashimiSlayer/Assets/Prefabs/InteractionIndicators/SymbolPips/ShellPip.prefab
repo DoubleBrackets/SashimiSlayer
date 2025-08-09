@@ -69,6 +69,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5607132048904915572, guid: f707637074385d0449fb367dc9a0712a,
+        type: 3}
+      propertyPath: _isBlockSymbol
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9146102963700681063, guid: f707637074385d0449fb367dc9a0712a,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time

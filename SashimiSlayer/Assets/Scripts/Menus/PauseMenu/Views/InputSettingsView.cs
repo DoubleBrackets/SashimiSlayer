@@ -12,6 +12,7 @@ namespace Menus.PauseMenu.Views
         private const string SwordAngleOffset = "SwordAngleOffset";
         private const string FlipSwordAim = "SwordAngleFlip";
         private const string UpAxis = "UpAxis";
+        private const string FlipParryDirection = "FlipParryDirection";
 
         [Header("Events (Out)")]
 
@@ -24,30 +25,31 @@ namespace Menus.PauseMenu.Views
         [SerializeField]
         private IntEvent _upAxisChangedEvent;
 
-        [Header("Sword Angle Multiplier")]
+        [SerializeField]
+        private BoolEvent _flipParryDirectionChangeEvent;
+
+        [Header("UI")]
 
         [SerializeField]
         private Slider _swordAngleMultiplierSlider;
 
-        [Header("Sword Angle Offset")]
-
         [SerializeField]
         private Slider _swordAngleOffsetSlider;
-
-        [Header("Sword Angle Flip")]
 
         [SerializeField]
         private UnityEngine.UI.Toggle _swordAngleFlipToggle;
 
-        [Header("Up Angle Axis")]
-
         [SerializeField]
         private TMP_Dropdown _upAxisDropdown;
+
+        [SerializeField]
+        private Toggle _flipParryDirectionToggle;
 
         private float _swordAngleMultiplier;
         private float _swordAngleOffset;
         private bool _swordAngleFlip;
         private int _upAxis;
+        private bool _flipParryDirection;
 
         public override void ViewAwake()
         {
@@ -55,11 +57,13 @@ namespace Menus.PauseMenu.Views
             _swordAngleOffset = PlayerPrefs.GetFloat(SwordAngleOffset, 0);
             _swordAngleFlip = PlayerPrefs.GetInt(FlipSwordAim, 0) == 1;
             _upAxis = PlayerPrefs.GetInt(UpAxis, 1);
+            _flipParryDirection = PlayerPrefs.GetInt(FlipParryDirection, 0) == 1;
 
             _swordAngleMultiplierSlider.onValueChanged.AddListener(HandleSwordAngleMultiplierChange);
             _swordAngleOffsetSlider.onValueChanged.AddListener(HandleSwordAngleOffsetChange);
             _swordAngleFlipToggle.onValueChanged.AddListener(HandleSwordAngleFlipChange);
             _upAxisDropdown.onValueChanged.AddListener(HandleUpAxisChange);
+            _flipParryDirectionToggle.onValueChanged.AddListener(HandleFlipParryDirectionChange);
 
             SetupDropdown();
         }
@@ -70,6 +74,7 @@ namespace Menus.PauseMenu.Views
             _swordAngleOffsetSlider.value = _swordAngleOffset;
             _swordAngleFlipToggle.isOn = _swordAngleFlip;
             _upAxisDropdown.value = _upAxis;
+            _flipParryDirectionToggle.isOn = _flipParryDirection;
 
             HandleSwordAngleMultiplierChange(_swordAngleMultiplier);
             HandleUpAxisChange(_upAxis);
@@ -82,6 +87,14 @@ namespace Menus.PauseMenu.Views
             _swordAngleOffsetSlider.onValueChanged.RemoveListener(HandleSwordAngleOffsetChange);
             _swordAngleFlipToggle.onValueChanged.RemoveListener(HandleSwordAngleFlipChange);
             _upAxisDropdown.onValueChanged.RemoveListener(HandleUpAxisChange);
+            _flipParryDirectionToggle.onValueChanged.RemoveListener(HandleFlipParryDirectionChange);
+        }
+
+        private void HandleFlipParryDirectionChange(bool value)
+        {
+            _flipParryDirection = value;
+            PlayerPrefs.SetInt(FlipParryDirection, _flipParryDirection ? 1 : 0);
+            _flipParryDirectionChangeEvent.Raise(_flipParryDirection);
         }
 
         private void SetupDropdown()
