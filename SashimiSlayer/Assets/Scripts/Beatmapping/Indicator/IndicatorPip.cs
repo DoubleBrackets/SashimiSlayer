@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using EditorUtils.BoldHeader;
-using GameInput;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -34,10 +33,6 @@ namespace Beatmapping.Indicator
         [SerializeField]
         private float _squishDuration;
 
-        [Tooltip("If this is a block symbol. Used for flipping the directional sprite based on settings")]
-        [SerializeField]
-        private bool _isBlockSymbol;
-
         [Header("Events")]
 
         [SerializeField]
@@ -47,16 +42,6 @@ namespace Beatmapping.Indicator
         private UnityEvent _onFlashTrigger;
 
         public bool IsOn { get; private set; }
-
-        private void Start()
-        {
-            if (_isBlockSymbol && InputService.Instance != null && InputService.Instance.FlipParryDirection)
-            {
-                // If this is a block symbol, flip the sprite based on the input settings
-                _onSprite.ForEach(sprite => sprite.flipX = !sprite.flipX);
-                _offSprite.ForEach(sprite => sprite.flipX = !sprite.flipX);
-            }
-        }
 
         [Button("Set On")]
         public void SetOn()
