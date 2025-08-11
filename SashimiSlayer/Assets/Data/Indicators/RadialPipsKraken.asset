@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _finalPipAngle: 90
   _pipIntervalAngle: 16
+  _finalPipIntervalAngle: 7
   _pipRadius: 5
   _pipDirection: -1
   _centerOffset: {x: 0, y: 0}
-  _rotateOffset: 180
+  _rotateOffset: -90

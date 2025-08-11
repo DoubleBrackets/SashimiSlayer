@@ -32,7 +32,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0db4efafc53efb749b7e2ebba2a6c90e,
+      objectReference: {fileID: 21300000, guid: 5516857bb46791f4a9ca26b8d859cef6,
         type: 3}
     - target: {fileID: 1346551767113182563, guid: 592056af166c722408c183934c3beab1,
         type: 3}
@@ -49,12 +49,6 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0db4efafc53efb749b7e2ebba2a6c90e,
-        type: 3}
     - target: {fileID: 2146320319376572125, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: m_Color.b
@@ -130,16 +124,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3306941576750342416, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306941576750342416, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5276071713733921850, guid: 592056af166c722408c183934c3beab1,
         type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
@@ -148,38 +132,8 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7997846933537966050, guid: 592056af166c722408c183934c3beab1,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997846933537966050, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997846933537966050, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997846933537966050, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997846933537966050, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997846933537966050, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997846933537966050, guid: 592056af166c722408c183934c3beab1,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

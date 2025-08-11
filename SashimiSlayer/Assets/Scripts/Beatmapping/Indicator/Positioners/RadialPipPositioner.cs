@@ -15,6 +15,9 @@ namespace Beatmapping.Indicator.Positioners
         private float _pipIntervalAngle;
 
         [SerializeField]
+        private float _finalPipIntervalAngle;
+
+        [SerializeField]
         private float _pipRadius;
 
         [SerializeField]
@@ -23,12 +26,14 @@ namespace Beatmapping.Indicator.Positioners
         [SerializeField]
         private Vector2 _centerOffset;
 
+        [Header("Rotation")]
+
         [SerializeField]
         private float _rotateOffset;
 
         public override List<(Vector2, float)> CalculatePipLocalPositions(int totalPips)
         {
-            float startingAngle = _finalPipAngle;
+            float angleAccumulate = _finalPipAngle;
 
             var positions = new List<(Vector2, float)>(totalPips);
             for (var i = 0; i < totalPips; i++)
@@ -36,12 +41,13 @@ namespace Beatmapping.Indicator.Positioners
                 Vector2 dir = Quaternion.Euler(
                                   0,
                                   0,
-                                  startingAngle + i * _pipIntervalAngle * _pipDirection) *
+                                  angleAccumulate) *
                               Vector2.up;
 
                 Vector2 pos = dir * _pipRadius + _centerOffset;
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + _rotateOffset;
-                positions.Add((dir * _pipRadius + _centerOffset, angle));
+                float angle = angleAccumulate + _rotateOffset;
+                positions.Add((pos, angle));
+                angleAccumulate += (i == 0 ? _finalPipIntervalAngle : _pipIntervalAngle) * _pipDirection;
             }
 
             return positions;

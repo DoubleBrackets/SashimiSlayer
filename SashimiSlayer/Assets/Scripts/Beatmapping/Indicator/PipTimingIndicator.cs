@@ -190,7 +190,7 @@ namespace Beatmapping.Indicator
                     continue;
                 }
 
-                bool isOn = i < beatsRemaining;
+                bool isOn = i <= beatsRemaining;
                 _pips[i].SetOn(isOn);
 
                 if (i == 0 && beatsRemaining == 1 && !_didShake)
