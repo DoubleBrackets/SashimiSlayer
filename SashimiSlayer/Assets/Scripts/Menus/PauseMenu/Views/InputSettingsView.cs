@@ -37,7 +37,7 @@ namespace Menus.PauseMenu.Views
         private Slider _swordAngleOffsetSlider;
 
         [SerializeField]
-        private UnityEngine.UI.Toggle _swordAngleFlipToggle;
+        private Toggle _swordAngleFlipToggle;
 
         [SerializeField]
         private TMP_Dropdown _upAxisDropdown;
@@ -50,6 +50,8 @@ namespace Menus.PauseMenu.Views
         private bool _swordAngleFlip;
         private int _upAxis;
         private bool _flipParryDirection;
+
+        private bool _isLeftHanded;
 
         public override void ViewAwake()
         {
@@ -80,7 +82,7 @@ namespace Menus.PauseMenu.Views
             // Since UI callbacks don't trigger if the value is the same as the current value (i.e default)
             HandleSwordAngleMultiplierChange(_swordAngleMultiplier);
             HandleUpAxisChange(_upAxis);
-            UpdateSwordAngleMultiplier();
+            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip);
             HandleFlipParryDirectionChange(_flipParryDirection);
         }
 
@@ -97,7 +99,7 @@ namespace Menus.PauseMenu.Views
         {
             _flipParryDirection = value;
             PlayerPrefs.SetInt(FlipParryDirection, _flipParryDirection ? 1 : 0);
-            _flipParryDirectionChangeEvent.Raise(_flipParryDirection);
+            _flipParryDirectionChangeEvent.Raise(_flipParryDirection ^ _isLeftHanded);
         }
 
         private void SetupDropdown()
@@ -117,14 +119,14 @@ namespace Menus.PauseMenu.Views
         {
             _swordAngleMultiplier = value;
             PlayerPrefs.SetFloat(SwordAimMultiplier, _swordAngleMultiplier);
-            UpdateSwordAngleMultiplier();
+            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip);
         }
 
         private void HandleSwordAngleFlipChange(bool value)
         {
             _swordAngleFlip = value;
             PlayerPrefs.SetInt(FlipSwordAim, _swordAngleFlip ? 1 : 0);
-            UpdateSwordAngleMultiplier();
+            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip ^ _isLeftHanded);
             UpdateSwordAngleOffset();
         }
 
@@ -133,9 +135,9 @@ namespace Menus.PauseMenu.Views
             _swordAngleFlipToggle.isOn = !_swordAngleFlipToggle.isOn;
         }
 
-        private void UpdateSwordAngleMultiplier()
+        private void UpdateSwordAngleMultiplier(float swordAngleMultiplier, bool swordAngleFlip)
         {
-            _swordAngleMultiplierChangeEvent.Raise(_swordAngleMultiplier * (_swordAngleFlip ? -1 : 1));
+            _swordAngleMultiplierChangeEvent.Raise(swordAngleMultiplier * (swordAngleFlip ? -1 : 1));
         }
 
         private void HandleSwordAngleOffsetChange(float value)
@@ -153,6 +155,19 @@ namespace Menus.PauseMenu.Views
         public void ToggleFlipAngle()
         {
             _swordAngleFlipToggle.isOn = !_swordAngleFlipToggle.isOn;
+        }
+
+        /// <summary>
+        ///     Left-handedness is a "hidden" setting that is only set through exhibition hotkey (specific joystick button from
+        ///     sword joystick)
+        ///     This modifies the parry flip and angle multiplier settings
+        /// </summary>
+        public void SetIsLeftHanded(bool isLeftHanded)
+        {
+            Debug.Log($"Left-handed mode set to: {isLeftHanded}");
+            _isLeftHanded = isLeftHanded;
+            HandleFlipParryDirectionChange(_flipParryDirection);
+            HandleSwordAngleFlipChange(_swordAngleFlip);
         }
     }
 }
