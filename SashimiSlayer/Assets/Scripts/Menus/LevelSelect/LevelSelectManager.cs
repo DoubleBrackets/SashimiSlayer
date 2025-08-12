@@ -5,21 +5,24 @@ using GameInput;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using GameLevelSO = Core.Scene.GameLevelSO;
 
 namespace Menus.LevelSelect
 {
     public class LevelSelectManager : MonoBehaviour
     {
+        [FormerlySerializedAs("trackRoster")]
         [FormerlySerializedAs("mapRoster")]
         [FormerlySerializedAs("_levelRoster")]
         [Header("Dependencies")]
 
         [SerializeField]
-        private TrackRosterSO trackRoster;
+        private SongRosterSO songRoster;
 
+        [FormerlySerializedAs("trackPanelPrefab")]
         [FormerlySerializedAs("levelPanelPrefab")]
         [SerializeField]
-        private TrackPanel trackPanelPrefab;
+        private SongPanel songPanelPrefab;
 
         [SerializeField]
         private Transform _panelContainer;
@@ -34,9 +37,9 @@ namespace Menus.LevelSelect
 
         private bool _loaded;
 
-        private List<TrackPanel> _levelPanels = new();
+        private List<SongPanel> _levelPanels = new();
         private int _currentPanelIndex;
-        private bool _hardMaps;
+        private bool _hardDifficulty;
 
         private void Awake()
         {
@@ -77,26 +80,26 @@ namespace Menus.LevelSelect
 
         private void SetupLevelSelectUI()
         {
-            if (trackRoster == null)
+            if (songRoster == null)
             {
                 Debug.LogError("LevelRosterSO is not assigned in LevelSelectManager.");
                 return;
             }
 
-            if (trackRoster.Tracks.Count == 0)
+            if (songRoster.Songs.Count == 0)
             {
                 Debug.LogError("No levels found in LevelRosterSO.");
                 return;
             }
 
-            foreach (TrackRosterSO.TrackEntry track in trackRoster.Tracks)
+            foreach (GameLevelSO song in songRoster.Songs)
             {
-                TrackPanel trackPanel = Instantiate(trackPanelPrefab, _panelContainer);
-                trackPanel.SetupUI(track);
-                trackPanel.OnLevelSelected += OnLevelSelected;
-                trackPanel.SetVisible(false);
+                SongPanel songPanel = Instantiate(songPanelPrefab, _panelContainer);
+                songPanel.SetupUI(song);
+                songPanel.OnLevelSelected += OnLevelSelected;
+                songPanel.SetVisible(false);
 
-                _levelPanels.Add(trackPanel);
+                _levelPanels.Add(songPanel);
             }
 
             _levelPanels[_currentPanelIndex].SetVisible(true);
@@ -113,12 +116,16 @@ namespace Menus.LevelSelect
             LevelLoader.Instance.LoadLevel(level).Forget();
         }
 
-        public void SetShowHardMap(bool hardMaps)
+        public void SetDifficulty(bool hardDifficulty)
         {
-            _hardMaps = hardMaps;
-            foreach (TrackPanel panel in _levelPanels)
+            LevelLoader.Instance.SetDifficulty(hardDifficulty
+                ? LevelLoader.Difficulty.Hard
+                : LevelLoader.Difficulty.Normal);
+
+            _hardDifficulty = hardDifficulty;
+            foreach (SongPanel panel in _levelPanels)
             {
-                panel.SetHardLevel(hardMaps);
+                panel.SetDifficulty(hardDifficulty);
             }
         }
     }

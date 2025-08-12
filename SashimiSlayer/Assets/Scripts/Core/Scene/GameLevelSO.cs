@@ -29,7 +29,10 @@ namespace Core.Scene
         public string LevelDescription { get; private set; }
 
         [field: SerializeField]
-        public BeatmapConfigSo Beatmap { get; private set; }
+        public BeatmapConfigSo NormalBeatmap { get; private set; }
+
+        [field: SerializeField]
+        public BeatmapConfigSo HardBeatmap { get; private set; }
 
         [field: SerializeField]
         public LevelTypes LevelType { get; private set; }

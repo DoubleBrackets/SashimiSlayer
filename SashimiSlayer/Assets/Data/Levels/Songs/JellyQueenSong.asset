@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4898a6bbe03df044ad17b6dafd162d8, type: 3}
-  m_Name: JellyfishLevelHard
+  m_Name: JellyQueenSong
   m_EditorClassIdentifier: 
   <GameSceneName>k__BackingField: Jellyfish
   <LevelTitle>k__BackingField: Jelly Queen
   <LevelDescription>k__BackingField: A night of jellyfish
-  <Beatmap>k__BackingField: {fileID: 11400000, guid: 55205771b87624a428fcb823dff1ad1a,
+  <NormalBeatmap>k__BackingField: {fileID: 11400000, guid: 81d98b5d8d82c0d409f2adabc98ead74,
+    type: 2}
+  <HardBeatmap>k__BackingField: {fileID: 11400000, guid: 55205771b87624a428fcb823dff1ad1a,
     type: 2}
   <LevelType>k__BackingField: 1
   <LevelSelectSprite>k__BackingField: {fileID: 419901358, guid: dbba0b95e0d44f545ada39825325ace9,

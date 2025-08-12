@@ -1097,7 +1097,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 211011091}
         m_TargetAssemblyTypeName: Menus.LevelSelect.LevelSelectManager, Assembly-CSharp
-        m_MethodName: SetShowHardMap
+        m_MethodName: SetDifficulty
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1136,7 +1136,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 211011091}
         m_TargetAssemblyTypeName: Menus.LevelSelect.LevelSelectManager, Assembly-CSharp
-        m_MethodName: SetShowHardMap
+        m_MethodName: SetDifficulty
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

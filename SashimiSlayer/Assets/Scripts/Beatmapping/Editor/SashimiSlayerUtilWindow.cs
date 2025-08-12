@@ -4,14 +4,13 @@ using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using Core.Scene;
 using GameInput;
+using Menus.LevelSelect;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEditor.Timeline;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
-using TrackRosterSO = Menus.LevelSelect.TrackRosterSO;
 
 namespace Beatmapping.Editor
 {
@@ -19,7 +18,7 @@ namespace Beatmapping.Editor
     {
         private const string PrefsPath = "Assets/Settings/Editor/User/SimpleUtilsPrefs.asset";
         private const string _levelRosterPref = "BeatmapEditorWindow.levelRosterSO";
-        private static TrackRosterSO trackRoster;
+        private static SongRosterSO songRoster;
 
         // Caching for mapping timeline to beatmap
         private static TimelineAsset _currentEditingTimeline;
@@ -45,9 +44,14 @@ namespace Beatmapping.Editor
             GUILayout.Space(10);
             GUILayout.Label("Beatmap Utils", EditorStyles.boldLabel);
 
-            if (GUILayout.Button("Select Beatmap Timeline (Shift+W)"))
+            if (GUILayout.Button("Select Beatmap Timeline [Normal] (Shift+W)"))
             {
-                SelectTimelineFromScene();
+                SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
+            }
+
+            if (GUILayout.Button("Select Beatmap Timeline [Hard] (Shift+E)"))
+            {
+                SelectTimelineFromScene(LevelLoader.Difficulty.Hard);
             }
 
             if (GUILayout.Button("Refresh Timeline (Shift+R)"))
@@ -75,7 +79,7 @@ namespace Beatmapping.Editor
 
             if (GUILayout.Button("Wipe All Highscores"))
             {
-                trackRoster.WipeHighScores();
+                songRoster.WipeHighScores();
             }
 
             if (GUILayout.Button("Open Persistent Data Path"))
@@ -110,7 +114,7 @@ namespace Beatmapping.Editor
             EditorApplication.playModeStateChanged += ModeChanged;
 
             // Load editing beatmap from prefs
-            trackRoster = AssetDatabase.LoadAssetAtPath<TrackRosterSO>(
+            songRoster = AssetDatabase.LoadAssetAtPath<SongRosterSO>(
                 EditorPrefs.GetString(_levelRosterPref, string.Empty));
         }
 
@@ -126,26 +130,35 @@ namespace Beatmapping.Editor
                 return _currentEditingBeatmap;
             }
 
-            foreach (TrackRosterSO.TrackEntry track in trackRoster.Tracks)
+            foreach (GameLevelSO track in songRoster.Songs)
             {
-                GameLevelSO normalMap = track.NormalMap;
-                GameLevelSO hardMap = track.HardMap;
-                if (normalMap.Beatmap.BeatmapTimeline == timeline)
+                BeatmapConfigSo normalMap = track.NormalBeatmap;
+                BeatmapConfigSo hardMap = track.HardBeatmap;
+
+                var didMatchMap = false;
+                BeatmapConfigSo matchingMap = null;
+
+                if (normalMap.BeatmapTimeline == timeline)
                 {
-                    _currentEditingTimeline = timeline;
-                    _currentEditingBeatmap = normalMap.Beatmap;
-                    BeatmappingUtilities.SetBeatmapConfig(_currentEditingBeatmap);
-                    return normalMap.Beatmap;
+                    didMatchMap = true;
+                    matchingMap = normalMap;
+                }
+                else if (hardMap && hardMap.BeatmapTimeline == timeline)
+                {
+                    didMatchMap = true;
+                    matchingMap = hardMap;
                 }
 
-                if (hardMap.Beatmap.BeatmapTimeline == timeline)
+                if (didMatchMap)
                 {
+                    _currentEditingBeatmap = matchingMap;
                     _currentEditingTimeline = timeline;
-                    _currentEditingBeatmap = hardMap.Beatmap;
                     BeatmappingUtilities.SetBeatmapConfig(_currentEditingBeatmap);
-                    return hardMap.Beatmap;
+                    return matchingMap;
                 }
             }
+
+            Debug.LogWarning($"No beatmap found for timeline {timeline.name}.");
 
             return null;
         }
@@ -163,19 +176,20 @@ namespace Beatmapping.Editor
         }
 
         [MenuItem("Sashimi Slayer/Open Current Beatmap Timeline #w")]
-        public static void SelectTimelineFromScene()
+        public static void SelectTimelineFromScene(LevelLoader.Difficulty difficulty)
         {
             // Search the current scene for a playable director
-            var director = FindObjectOfType<PlayableDirector>();
+            var quickSelect = FindObjectOfType<TimelineQuickSelect>();
 
-            if (director == null)
+            if (quickSelect == null)
             {
                 Debug.LogWarning("No PlayableDirector found in scene");
                 return;
             }
 
             // Select it
-            Selection.activeGameObject = director.gameObject;
+            Selection.activeGameObject = quickSelect.gameObject;
+            Selection.activeGameObject = quickSelect.LoadMap(difficulty).gameObject;
         }
 
         /// <summary>
@@ -232,12 +246,12 @@ namespace Beatmapping.Editor
 
         private void DrawBeatmapRosterField()
         {
-            trackRoster =
-                (TrackRosterSO)EditorGUILayout.ObjectField("Level Roster", trackRoster, typeof(TrackRosterSO),
+            songRoster =
+                (SongRosterSO)EditorGUILayout.ObjectField("Level Roster", songRoster, typeof(SongRosterSO),
                     false);
 
             EditorPrefs.SetString(_levelRosterPref,
-                trackRoster ? AssetDatabase.GetAssetPath(trackRoster) : string.Empty);
+                songRoster ? AssetDatabase.GetAssetPath(songRoster) : string.Empty);
         }
     }
 }

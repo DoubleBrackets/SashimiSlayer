@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Menus.LevelSelect
 {
-    public class TrackPanel : MonoBehaviour
+    public class SongPanel : MonoBehaviour
     {
         [Header("Depends")]
 
@@ -28,17 +28,15 @@ namespace Menus.LevelSelect
 
         public event Action<GameLevelSO> OnLevelSelected;
 
-        private GameLevelSO _normalLevel;
-        private GameLevelSO _hardLevel;
+        private GameLevelSO _track;
 
         private bool _hardLevelSelected;
 
-        public void SetupUI(TrackRosterSO.TrackEntry track)
+        public void SetupUI(GameLevelSO track)
         {
-            _normalLevel = track.NormalMap;
-            _hardLevel = track.HardMap;
-            SetHardLevel(false);
-            UpdateUI(_normalLevel);
+            _track = track;
+            SetDifficulty(false);
+            UpdateUI(track);
         }
 
         private void UpdateUI(GameLevelSO level)
@@ -67,20 +65,19 @@ namespace Menus.LevelSelect
 
         public void SelectLevel()
         {
-            OnLevelSelected?.Invoke(_hardLevelSelected ? _hardLevel : _normalLevel);
+            OnLevelSelected?.Invoke(_track);
         }
 
-        public void SetHardLevel(bool isHardLevel)
+        public void SetDifficulty(bool isHardDifficulty)
         {
-            if (isHardLevel && _hardLevel == null)
+            if (isHardDifficulty && _track.HardBeatmap == null)
             {
                 return;
             }
 
-            _onHardLevelToggled?.Invoke(isHardLevel);
+            _onHardLevelToggled?.Invoke(isHardDifficulty);
 
-            _hardLevelSelected = isHardLevel;
-            UpdateUI(_hardLevelSelected ? _hardLevel : _normalLevel);
+            _hardLevelSelected = isHardDifficulty;
         }
 
         public void SetVisible(bool visible)

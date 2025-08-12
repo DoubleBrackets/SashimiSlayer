@@ -21,10 +21,11 @@ namespace Core.Scene
         [SerializeField]
         private BootupConfigSO _bootupConfigSO;
 
+        [FormerlySerializedAs("trackRosterSO")]
         [FormerlySerializedAs("mapRosterSO")]
         [FormerlySerializedAs("_levelRosterSO")]
         [SerializeField]
-        private TrackRosterSO trackRosterSO;
+        private SongRosterSO songRosterSO;
 
         [SerializeField]
         private StudioBankLoader _studioBankLoader;
@@ -52,17 +53,19 @@ namespace Core.Scene
             // Load startup level
             if (BeatmappingUtilities.PlayFromEditedBeatmap)
             {
-                foreach (TrackRosterSO.TrackEntry track in trackRosterSO.Tracks)
+                foreach (GameLevelSO song in songRosterSO.Songs)
                 {
-                    if (track.NormalMap.Beatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    if (song.NormalBeatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
                     {
-                        LevelLoader.Instance.LoadLevel(track.NormalMap).Forget();
+                        LevelLoader.Instance.SetDifficulty(LevelLoader.Difficulty.Normal);
+                        LevelLoader.Instance.LoadLevel(song).Forget();
                         return;
                     }
 
-                    if (track.HardMap.Beatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    if (song.HardBeatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
                     {
-                        LevelLoader.Instance.LoadLevel(track.HardMap).Forget();
+                        LevelLoader.Instance.SetDifficulty(LevelLoader.Difficulty.Hard);
+                        LevelLoader.Instance.LoadLevel(song).Forget();
                         return;
                     }
                 }
