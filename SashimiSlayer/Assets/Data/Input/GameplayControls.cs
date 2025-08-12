@@ -387,17 +387,6 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4f3e9c1f-1a4b-48dc-a2a2-0a1a5be48e2c"",
-                    ""path"": ""<Keyboard>/l"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftHandSwordIdentify"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""2c1df739-4ae8-459d-b1e5-8119ddbb6d0c"",
                     ""path"": ""<HID::Arduino LLC Arduino Leonardo>/button5"",
                     ""interactions"": """",
