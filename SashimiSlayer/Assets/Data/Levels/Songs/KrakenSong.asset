@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4898a6bbe03df044ad17b6dafd162d8, type: 3}
-  m_Name: KrakenLevel
+  m_Name: KrakenSong
   m_EditorClassIdentifier: 
   <GameSceneName>k__BackingField: Kraken
   <LevelTitle>k__BackingField: The Kraken
   <LevelDescription>k__BackingField: A Tentacled Tussle!
-  <Beatmap>k__BackingField: {fileID: 11400000, guid: 6e2f3237bb7a3d14188f0f4d1baa9ba4,
+  <NormalBeatmap>k__BackingField: {fileID: 11400000, guid: 6e2f3237bb7a3d14188f0f4d1baa9ba4,
+    type: 2}
+  <HardBeatmap>k__BackingField: {fileID: 11400000, guid: ae841e758e86b724584b4a07349a8420,
     type: 2}
   <LevelType>k__BackingField: 1
   <LevelSelectSprite>k__BackingField: {fileID: 1849215031, guid: dbba0b95e0d44f545ada39825325ace9,

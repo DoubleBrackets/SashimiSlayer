@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d55b03e1938f5454d937feca9a9dbd47, type: 3}
-  m_Name: Jellyfish
+  m_Name: Jellyfish (Hard)
   m_EditorClassIdentifier: 
-  <BeatmapID>k__BackingField: Jellyfish
+  <BeatmapID>k__BackingField: JellyfishHard
   <Bpm>k__BackingField: 172
   <Subdivisions>k__BackingField: 2
   <StartTime>k__BackingField: 2.075
   <BeatsPerMeasure>k__BackingField: 3
-  <BeatmapTimeline>k__BackingField: {fileID: 11400000, guid: d0e6a8996dd7f2a49a7777c7061728ad,
+  <BeatmapTimeline>k__BackingField: {fileID: 11400000, guid: 46a4ea34e3d84cd448e4feca13c761e9,
     type: 2}
   <BeatmapSoundtrackEvent>k__BackingField:
     Guid:

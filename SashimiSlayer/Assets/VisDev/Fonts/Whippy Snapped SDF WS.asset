@@ -20,7 +20,7 @@ MonoBehaviour:
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: d757198d660f2f040aa06dcd5a3d8aec,
     type: 3}
   m_SourceFontFile: {fileID: 12800000, guid: d757198d660f2f040aa06dcd5a3d8aec, type: 3}
-  m_AtlasPopulationMode: 1
+  m_AtlasPopulationMode: 0
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Whippy Snapped

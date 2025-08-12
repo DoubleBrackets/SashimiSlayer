@@ -106,6 +106,11 @@ namespace Menus
 
         private void OnProtagSlice(Protaganist.ProtagSwordState swordState)
         {
+            if (!isActiveAndEnabled)
+            {
+                return;
+            }
+
             if (_used && _singleUse)
             {
                 return;

@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4898a6bbe03df044ad17b6dafd162d8, type: 3}
-  m_Name: Tutorial
+  m_Name: FishSchoolSong
   m_EditorClassIdentifier: 
   <GameSceneName>k__BackingField: Tutorial
   <LevelTitle>k__BackingField: Fish School
   <LevelDescription>k__BackingField: 'Learn the Basics!
 
 '
-  <Beatmap>k__BackingField: {fileID: 11400000, guid: 927c3dc5372465d4db6ba59d803b358f,
+  <NormalBeatmap>k__BackingField: {fileID: 11400000, guid: 927c3dc5372465d4db6ba59d803b358f,
     type: 2}
+  <HardBeatmap>k__BackingField: {fileID: 0}
   <LevelType>k__BackingField: 1
-  <LevelSelectSprite>k__BackingField: {fileID: -855184800, guid: d130d6d84cbe4e74b963c3d72761b930,
+  <LevelSelectSprite>k__BackingField: {fileID: -231577585, guid: dbba0b95e0d44f545ada39825325ace9,
     type: 3}
   <FmodBanksToPreLoad>k__BackingField:
   - Tutorial
-  <ResultsScreenCustomPrefab>k__BackingField: {fileID: 6643969481075471894, guid: 50672a1d1121a1246b1366084dcc26c6,
-    type: 3}

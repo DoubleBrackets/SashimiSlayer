@@ -120,8 +120,8 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.MidPose);
-                _blockPoseStates = SharedTypes.BlockPoseStates.MidPose;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BotPose);
+                _blockPoseStates = SharedTypes.BlockPoseStates.BotPose;
             }
         }
 
