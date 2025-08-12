@@ -175,7 +175,18 @@ namespace Beatmapping.Editor
             TimelineEditor.Refresh(RefreshReason.ContentsAddedOrRemoved);
         }
 
-        [MenuItem("Sashimi Slayer/Open Current Beatmap Timeline #w")]
+        [MenuItem("Sashimi Slayer/Select Normal #w")]
+        private static void SelectTimelineFromSceneNormal()
+        {
+            SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
+        }
+
+        [MenuItem("Sashimi Slayer/Select Hard #e")]
+        private static void SelectTimelineFromSceneHard()
+        {
+            SelectTimelineFromScene(LevelLoader.Difficulty.Hard);
+        }
+
         public static void SelectTimelineFromScene(LevelLoader.Difficulty difficulty)
         {
             // Search the current scene for a playable director
@@ -190,6 +201,7 @@ namespace Beatmapping.Editor
             // Select it
             Selection.activeGameObject = quickSelect.gameObject;
             Selection.activeGameObject = quickSelect.LoadMap(difficulty).gameObject;
+            RefreshTimelineEditor();
         }
 
         /// <summary>
