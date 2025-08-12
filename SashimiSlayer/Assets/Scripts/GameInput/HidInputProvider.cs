@@ -28,6 +28,9 @@ namespace GameInput
         [SerializeField]
         private UnityEvent _OnExhibitionInvertAimEvent;
 
+        [SerializeField]
+        private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
+
         private bool IsMenuOverlayed => _overlayMenus > 0;
 
         public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
@@ -170,6 +173,11 @@ namespace GameInput
             {
                 _OnExhibitionInvertAimEvent?.Invoke();
             }
+        }
+
+        public void OnLeftHandSwordIdentify(InputAction.CallbackContext context)
+        {
+            _onLeftHandSwordIdentifyEvent?.Invoke(context.ReadValueAsButton());
         }
 
         private void HandleMenuToggled(bool isMenuOpen)

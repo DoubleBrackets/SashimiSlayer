@@ -1,10 +1,15 @@
 /*
-v. 0.1.1
+v. 0.2.1
 This variation allows the sword to act as a generic joystick. 
 This is preferred over the serial comm variation.
 
+This version also identifies the handed-ness by holding down the appropriate button, which automatically inverts aiming + block directions in-game
+
 To connect with the game, just plug the sword in and it should work immediately.
 */
+
+// CONFIG - SET THIS TO 'true' IF FLASHING ONTO A LEFT-HANDED SWORD
+bool leftHanded = false;
 
 // Libraries
 #include <Wire.h>
@@ -43,6 +48,7 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_JOYSTICK,
 #define BLOCK_TOP_GAMEPAD 2
 #define BLOCK_MID_GAMEPAD 3
 #define AXIS_RANGE 1024
+#define LEFTHAND_IDENTIFY 4
 
 char inputBuffer;
 
@@ -81,6 +87,9 @@ void setup() {
   Joystick.begin();
   Joystick.setXAxisRange(-AXIS_RANGE, AXIS_RANGE);
   Joystick.setYAxisRange(-AXIS_RANGE, AXIS_RANGE);
+
+  // Identify as left-handed if relevant
+  Joystick.setButton(LEFTHAND_IDENTIFY, leftHanded);
 }
 
 void loop() {

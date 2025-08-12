@@ -7209,6 +7209,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onLeftHandSwordIdentifyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 975919553}
+        m_TargetAssemblyTypeName: Menus.PauseMenu.Views.InputSettingsView, Assembly-CSharp
+        m_MethodName: SetIsLeftHanded
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1969117888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7352,7 +7367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bootupConfigSO: {fileID: 11400000, guid: 58dc6f5ba8c452642bf6e462070d6eca, type: 2}
-  _levelRosterSO: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2, type: 2}
+  songRosterSO: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2, type: 2}
   _studioBankLoader: {fileID: 1973045993}
 --- !u!1 &1988705190
 GameObject:
