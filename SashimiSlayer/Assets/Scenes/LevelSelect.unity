@@ -377,14 +377,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d5c12edc310464a8aace98ea0505ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackRoster: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2, type: 2}
-  trackPanelPrefab: {fileID: 116148503937992090, guid: 95e37dacc483c6344b04cacf7662d687,
+  songRoster: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2, type: 2}
+  songPanelPrefab: {fileID: 116148503937992090, guid: 95e37dacc483c6344b04cacf7662d687,
     type: 3}
   _panelContainer: {fileID: 472467207}
   OnLevelDecremented:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6959229336136285510}
+      - m_Target: {fileID: 329837654}
         m_TargetAssemblyTypeName: Shake, Assembly-CSharp
         m_MethodName: DoShake
         m_Mode: 1
@@ -399,7 +399,7 @@ MonoBehaviour:
   OnLevelIncremented:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 329837654}
+      - m_Target: {fileID: 6959229336136285510}
         m_TargetAssemblyTypeName: Shake, Assembly-CSharp
         m_MethodName: DoShake
         m_Mode: 1
@@ -508,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -46.67
+      value: -335
       objectReference: {fileID: 0}
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
@@ -2806,6 +2806,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 880088437}
     m_Modifications:
+    - target: {fileID: 493790676693434717, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _defaultSprite
+      value: 
+      objectReference: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff,
+        type: 3}
+    - target: {fileID: 493790676693434717, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _flippedSprite
+      value: 
+      objectReference: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff,
+        type: 3}
     - target: {fileID: 1997589898146277632, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_Name
@@ -2889,7 +2901,7 @@ PrefabInstance:
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -325.92
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}

@@ -23,6 +23,9 @@ namespace Beatmapping.Indicator
         [SerializeField]
         private List<ParticleSystemRenderer> _particles;
 
+        [SerializeField]
+        private List<Transform> _transforms;
+
         private void Awake()
         {
             if (InputService.Instance != null && InputService.Instance.FlipParryDirection)
@@ -54,8 +57,7 @@ namespace Beatmapping.Indicator
                 }
                 else
                 {
-                    Debug.LogWarning(
-                        "A SpriteRenderer in ParrySymbolFlipper is null. Please assign all required SpriteRenderers.");
+                    Debug.LogWarning("Unassigned SpriteRenderer in parry symbol flipper");
                 }
             }
 
@@ -71,8 +73,21 @@ namespace Beatmapping.Indicator
                 }
                 else
                 {
-                    Debug.LogWarning(
-                        "A ParticleSystem in ParrySymbolFlipper is null. Please assign all required ParticleSystems.");
+                    Debug.LogWarning("Unassigned ParticleSystem in parry symbol flipper");
+                }
+            }
+
+            foreach (Transform tform in _transforms)
+            {
+                if (tform != null)
+                {
+                    Vector3 localScale = tform.localScale;
+                    localScale.x = flip ? -1 : 1;
+                    tform.localScale = localScale;
+                }
+                else
+                {
+                    Debug.LogWarning("Unassigned Transform in parry symbol flipper");
                 }
             }
         }
