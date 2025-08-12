@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 47976034177530382}
   - component: {fileID: 6975623584651101274}
   - component: {fileID: 5368716780901036643}
+  - component: {fileID: 7997932034446462789}
+  - component: {fileID: 493790676693434717}
   m_Layer: 5
   m_Name: SelectPrompt
   m_TagString: Untagged
@@ -105,3 +107,38 @@ MonoBehaviour:
     _strength: {x: 0, y: 0, z: 0}
     _vibrato: 0
     _fadeOut: 0
+--- !u!114 &7997932034446462789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997589898146277632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72f4d8224802c84e9e24c4101efb21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipParryDirectionEvent: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
+    type: 2}
+  _sprites: []
+  _particles: []
+  _transforms:
+  - {fileID: 8939316533694602398}
+--- !u!114 &493790676693434717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997589898146277632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eda320fde2a0be49aa8c6efc874980e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipParryDirectionEvent: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
+    type: 2}
+  _defaultSprite: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
+  _flippedSprite: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
+  _image: {fileID: 6975623584651101274}

@@ -32,6 +32,9 @@ namespace GameInput
         [SerializeField]
         private FloatEvent _swordAngleOffsetEvent;
 
+        [SerializeField]
+        private BoolEvent _setFlipParryDirection;
+
         [Header("Depends")]
 
         [SerializeField]
@@ -58,6 +61,8 @@ namespace GameInput
 
         public ControlSchemes ControlScheme { get; private set; }
 
+        public bool FlipParryDirection { get; private set; }
+
         public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
         public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
 
@@ -83,6 +88,7 @@ namespace GameInput
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
             _angleMultiplierEvent.AddListener(SetAngleMultiplier);
             _swordAngleOffsetEvent.AddListener(SetAngleOffset);
+            _setFlipParryDirection.AddListener(SetInvertDirectionalBlockInputs);
 
             InputSystem.onDeviceChange += (device, change) => { UpdateControlScheme(); };
         }
@@ -95,6 +101,12 @@ namespace GameInput
             _setUseSerialInput.RemoveListener(HandleSetUseSerialInput);
             _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
             _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
+            _setFlipParryDirection.RemoveListener(SetInvertDirectionalBlockInputs);
+        }
+
+        private void SetInvertDirectionalBlockInputs(bool invert)
+        {
+            FlipParryDirection = invert;
         }
 
         private void SetAngleMultiplier(float angleMultiplier)

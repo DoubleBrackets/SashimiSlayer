@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db413c6941146258baa7163210f0e31, type: 3}
   m_Name: ControlSchemeChanged
   m_EditorClassIdentifier: 
-  _description: '0 = keyboard and mouse
-
-    1 = gamepad
-
-    2 = Sword'
+  _description: See GameInput.ControlSchemes enum
+  _debug: 0

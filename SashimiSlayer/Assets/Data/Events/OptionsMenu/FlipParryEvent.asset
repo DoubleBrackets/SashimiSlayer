@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1cf66aa3f5340d0af36934d30123a71, type: 3}
-  m_Name: AngleMultiplierEvent
+  m_Script: {fileID: 11500000, guid: a2f70f35c4824ee09fcb50fd8385c0c7, type: 3}
+  m_Name: FlipParryEvent
   m_EditorClassIdentifier: 
-  _description: Triggers when the Angle Multiplier setting changes
+  _description: Triggers when the setting to flip Parry directions is changed
   _debug: 0

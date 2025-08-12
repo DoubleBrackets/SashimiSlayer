@@ -69,6 +69,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5607132048904915572, guid: f707637074385d0449fb367dc9a0712a,
+        type: 3}
+      propertyPath: _isBlockSymbol
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9146102963700681063, guid: f707637074385d0449fb367dc9a0712a,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
@@ -97,5 +102,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 232141349736045575, guid: f707637074385d0449fb367dc9a0712a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2869494491855169235}
   m_SourcePrefab: {fileID: 100100000, guid: f707637074385d0449fb367dc9a0712a, type: 3}
+--- !u!199 &2598216799184547639 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 8721685102690364880, guid: f707637074385d0449fb367dc9a0712a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703359613702767335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4648632480346708061 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2126926701901159098, guid: f707637074385d0449fb367dc9a0712a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703359613702767335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6791328587867119328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 232141349736045575, guid: f707637074385d0449fb367dc9a0712a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703359613702767335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2869494491855169235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791328587867119328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72f4d8224802c84e9e24c4101efb21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipParryDirectionEvent: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
+    type: 2}
+  _sprites:
+  - {fileID: 4648632480346708061}
+  _particles:
+  - {fileID: 7645310746369109577}
+  - {fileID: 2598216799184547639}
+--- !u!199 &7645310746369109577 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 3971760989010570414, guid: f707637074385d0449fb367dc9a0712a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703359613702767335}
+  m_PrefabAsset: {fileID: 0}

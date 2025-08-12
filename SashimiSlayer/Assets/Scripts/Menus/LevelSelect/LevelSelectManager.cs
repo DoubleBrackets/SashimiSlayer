@@ -4,23 +4,17 @@ using Cysharp.Threading.Tasks;
 using GameInput;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using GameLevelSO = Core.Scene.GameLevelSO;
 
 namespace Menus.LevelSelect
 {
     public class LevelSelectManager : MonoBehaviour
     {
-        [FormerlySerializedAs("trackRoster")]
-        [FormerlySerializedAs("mapRoster")]
-        [FormerlySerializedAs("_levelRoster")]
         [Header("Dependencies")]
 
         [SerializeField]
         private SongRosterSO songRoster;
 
-        [FormerlySerializedAs("trackPanelPrefab")]
-        [FormerlySerializedAs("levelPanelPrefab")]
         [SerializeField]
         private SongPanel songPanelPrefab;
 
@@ -53,25 +47,39 @@ namespace Menus.LevelSelect
             InputService.Instance.OnBlockPoseChanged -= HandleBlockPoseChanged;
         }
 
+        /// <summary>
+        ///     Handle switching between level panels when blocking
+        /// </summary>
+        /// <param name="newState"></param>
         private void HandleBlockPoseChanged(SharedTypes.BlockPoseStates newState)
         {
             int prevPanelIndex = _currentPanelIndex;
-            if (newState == SharedTypes.BlockPoseStates.BotPose && _currentPanelIndex > 0)
-            {
-                // Go previous
-                _currentPanelIndex--;
-                OnLevelDecremented?.Invoke();
-            }
-            else if (newState == SharedTypes.BlockPoseStates.TopPose && _currentPanelIndex < _levelPanels.Count - 1)
+            int flipBlockDirection = InputService.Instance.FlipParryDirection ? -1 : 1;
+            if (newState == SharedTypes.BlockPoseStates.BotPose)
             {
                 // Go next
-                _currentPanelIndex++;
-                OnLevelIncremented?.Invoke();
+                _currentPanelIndex += flipBlockDirection;
             }
+            else if (newState == SharedTypes.BlockPoseStates.TopPose)
+            {
+                // Go previous
+                _currentPanelIndex -= flipBlockDirection;
+            }
+
+            _currentPanelIndex = Mathf.Clamp(_currentPanelIndex, 0, _levelPanels.Count - 1);
 
             if (prevPanelIndex == _currentPanelIndex)
             {
                 return;
+            }
+
+            if (_currentPanelIndex > prevPanelIndex)
+            {
+                OnLevelIncremented?.Invoke();
+            }
+            else
+            {
+                OnLevelDecremented?.Invoke();
             }
 
             _levelPanels[prevPanelIndex].SetVisible(false);
