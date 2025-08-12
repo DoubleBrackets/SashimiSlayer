@@ -4,7 +4,6 @@ using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using Core.Scene;
 using GameInput;
-using Menus.LevelSelect;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEditor.Timeline;
@@ -12,6 +11,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
+using TrackRosterSO = Menus.LevelSelect.TrackRosterSO;
 
 namespace Beatmapping.Editor
 {
@@ -19,7 +19,7 @@ namespace Beatmapping.Editor
     {
         private const string PrefsPath = "Assets/Settings/Editor/User/SimpleUtilsPrefs.asset";
         private const string _levelRosterPref = "BeatmapEditorWindow.levelRosterSO";
-        private static LevelRosterSO _levelRoster;
+        private static TrackRosterSO trackRoster;
 
         // Caching for mapping timeline to beatmap
         private static TimelineAsset _currentEditingTimeline;
@@ -75,7 +75,7 @@ namespace Beatmapping.Editor
 
             if (GUILayout.Button("Wipe All Highscores"))
             {
-                _levelRoster.WipeHighScores();
+                trackRoster.WipeHighScores();
             }
 
             if (GUILayout.Button("Open Persistent Data Path"))
@@ -110,7 +110,7 @@ namespace Beatmapping.Editor
             EditorApplication.playModeStateChanged += ModeChanged;
 
             // Load editing beatmap from prefs
-            _levelRoster = AssetDatabase.LoadAssetAtPath<LevelRosterSO>(
+            trackRoster = AssetDatabase.LoadAssetAtPath<TrackRosterSO>(
                 EditorPrefs.GetString(_levelRosterPref, string.Empty));
         }
 
@@ -126,14 +126,24 @@ namespace Beatmapping.Editor
                 return _currentEditingBeatmap;
             }
 
-            foreach (GameLevelSO level in _levelRoster.Levels)
+            foreach (TrackRosterSO.TrackEntry track in trackRoster.Tracks)
             {
-                if (level.Beatmap.BeatmapTimeline == timeline)
+                GameLevelSO normalMap = track.NormalMap;
+                GameLevelSO hardMap = track.HardMap;
+                if (normalMap.Beatmap.BeatmapTimeline == timeline)
                 {
                     _currentEditingTimeline = timeline;
-                    _currentEditingBeatmap = level.Beatmap;
+                    _currentEditingBeatmap = normalMap.Beatmap;
                     BeatmappingUtilities.SetBeatmapConfig(_currentEditingBeatmap);
-                    return level.Beatmap;
+                    return normalMap.Beatmap;
+                }
+
+                if (hardMap.Beatmap.BeatmapTimeline == timeline)
+                {
+                    _currentEditingTimeline = timeline;
+                    _currentEditingBeatmap = hardMap.Beatmap;
+                    BeatmappingUtilities.SetBeatmapConfig(_currentEditingBeatmap);
+                    return hardMap.Beatmap;
                 }
             }
 
@@ -222,12 +232,12 @@ namespace Beatmapping.Editor
 
         private void DrawBeatmapRosterField()
         {
-            _levelRoster =
-                (LevelRosterSO)EditorGUILayout.ObjectField("Level Roster", _levelRoster, typeof(LevelRosterSO),
+            trackRoster =
+                (TrackRosterSO)EditorGUILayout.ObjectField("Level Roster", trackRoster, typeof(TrackRosterSO),
                     false);
 
             EditorPrefs.SetString(_levelRosterPref,
-                _levelRoster ? AssetDatabase.GetAssetPath(_levelRoster) : string.Empty);
+                trackRoster ? AssetDatabase.GetAssetPath(trackRoster) : string.Empty);
         }
     }
 }

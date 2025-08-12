@@ -2,27 +2,27 @@ using System.Collections.Generic;
 using Core.Scene;
 using Cysharp.Threading.Tasks;
 using GameInput;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Menus.LevelSelect
 {
     public class LevelSelectManager : MonoBehaviour
     {
+        [FormerlySerializedAs("mapRoster")]
+        [FormerlySerializedAs("_levelRoster")]
         [Header("Dependencies")]
 
         [SerializeField]
-        private LevelRosterSO _levelRoster;
+        private TrackRosterSO trackRoster;
 
+        [FormerlySerializedAs("levelPanelPrefab")]
         [SerializeField]
-        private LevelPanel levelPanelPrefab;
+        private TrackPanel trackPanelPrefab;
 
         [SerializeField]
         private Transform _panelContainer;
-
-        [SerializeField]
-        private TMP_Text _levelDescriptionText;
 
         [Header("Unity Events")]
 
@@ -34,8 +34,9 @@ namespace Menus.LevelSelect
 
         private bool _loaded;
 
-        private List<LevelPanel> _levelPanels = new();
+        private List<TrackPanel> _levelPanels = new();
         private int _currentPanelIndex;
+        private bool _hardMaps;
 
         private void Awake()
         {
@@ -72,40 +73,33 @@ namespace Menus.LevelSelect
 
             _levelPanels[prevPanelIndex].SetVisible(false);
             _levelPanels[_currentPanelIndex].SetVisible(true);
-            UpdateDescriptionText();
-        }
-
-        private void UpdateDescriptionText()
-        {
-            _levelDescriptionText.text = _levelRoster.Levels[_currentPanelIndex].LevelDescription;
         }
 
         private void SetupLevelSelectUI()
         {
-            if (_levelRoster == null)
+            if (trackRoster == null)
             {
                 Debug.LogError("LevelRosterSO is not assigned in LevelSelectManager.");
                 return;
             }
 
-            if (_levelRoster.Levels.Count == 0)
+            if (trackRoster.Tracks.Count == 0)
             {
                 Debug.LogError("No levels found in LevelRosterSO.");
                 return;
             }
 
-            foreach (GameLevelSO level in _levelRoster.Levels)
+            foreach (TrackRosterSO.TrackEntry track in trackRoster.Tracks)
             {
-                LevelPanel levelPanel = Instantiate(levelPanelPrefab, _panelContainer);
-                levelPanel.SetupUI(level);
-                levelPanel.OnLevelSelected += OnLevelSelected;
-                levelPanel.SetVisible(false);
+                TrackPanel trackPanel = Instantiate(trackPanelPrefab, _panelContainer);
+                trackPanel.SetupUI(track);
+                trackPanel.OnLevelSelected += OnLevelSelected;
+                trackPanel.SetVisible(false);
 
-                _levelPanels.Add(levelPanel);
+                _levelPanels.Add(trackPanel);
             }
 
             _levelPanels[_currentPanelIndex].SetVisible(true);
-            UpdateDescriptionText();
         }
 
         private void OnLevelSelected(GameLevelSO level)
@@ -117,6 +111,15 @@ namespace Menus.LevelSelect
 
             _loaded = true;
             LevelLoader.Instance.LoadLevel(level).Forget();
+        }
+
+        public void SetShowHardMap(bool hardMaps)
+        {
+            _hardMaps = hardMaps;
+            foreach (TrackPanel panel in _levelPanels)
+            {
+                panel.SetHardLevel(hardMaps);
+            }
         }
     }
 }

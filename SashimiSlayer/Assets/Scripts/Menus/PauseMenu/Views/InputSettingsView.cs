@@ -37,7 +37,7 @@ namespace Menus.PauseMenu.Views
         [Header("Sword Angle Flip")]
 
         [SerializeField]
-        private Toggle _swordAngleFlipToggle;
+        private UnityEngine.UI.Toggle _swordAngleFlipToggle;
 
         [Header("Up Angle Axis")]
 

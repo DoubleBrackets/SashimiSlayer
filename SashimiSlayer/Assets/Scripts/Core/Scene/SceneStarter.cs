@@ -5,6 +5,7 @@ using FMODUnity;
 using Menus.LevelSelect;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.Scene
 {
@@ -20,8 +21,10 @@ namespace Core.Scene
         [SerializeField]
         private BootupConfigSO _bootupConfigSO;
 
+        [FormerlySerializedAs("mapRosterSO")]
+        [FormerlySerializedAs("_levelRosterSO")]
         [SerializeField]
-        private LevelRosterSO _levelRosterSO;
+        private TrackRosterSO trackRosterSO;
 
         [SerializeField]
         private StudioBankLoader _studioBankLoader;
@@ -49,11 +52,17 @@ namespace Core.Scene
             // Load startup level
             if (BeatmappingUtilities.PlayFromEditedBeatmap)
             {
-                foreach (GameLevelSO level in _levelRosterSO.Levels)
+                foreach (TrackRosterSO.TrackEntry track in trackRosterSO.Tracks)
                 {
-                    if (level.Beatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    if (track.NormalMap.Beatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
                     {
-                        LevelLoader.Instance.LoadLevel(level).Forget();
+                        LevelLoader.Instance.LoadLevel(track.NormalMap).Forget();
+                        return;
+                    }
+
+                    if (track.HardMap.Beatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    {
+                        LevelLoader.Instance.LoadLevel(track.HardMap).Forget();
                         return;
                     }
                 }

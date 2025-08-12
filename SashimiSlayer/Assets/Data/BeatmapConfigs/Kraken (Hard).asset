@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55b03e1938f5454d937feca9a9dbd47, type: 3}
+  m_Name: Kraken (Hard)
+  m_EditorClassIdentifier: 
+  <BeatmapID>k__BackingField: KrakenHard
+  <Bpm>k__BackingField: 132
+  <Subdivisions>k__BackingField: 2
+  <StartTime>k__BackingField: 5.44
+  <BeatsPerMeasure>k__BackingField: 4
+  <BeatmapTimeline>k__BackingField: {fileID: 11400000, guid: b3d2bc9c023dfef42bdc9d94e99a077e,
+    type: 2}
+  <BeatmapSoundtrackEvent>k__BackingField:
+    Guid:
+      Data1: -1545945138
+      Data2: 1264386663
+      Data3: 333011362
+      Data4: -135783907
+    Path: event:/KrakenLevel/KrakenMusic
+  <PitchShiftValues>k__BackingField:
+    SlicePitchShift: 1
+    StarBlockPitchShift: 1
+    ShellBlockPitchShift: 1
+  <PlayerMaxHealth>k__BackingField: 6666
+  <TimingWindowSO>k__BackingField: {fileID: 11400000, guid: 54462036f164d014095fd6aaaee307e5,
+    type: 2}
+  <ResultsScreenCustomPrefab>k__BackingField: {fileID: 5820484520841906090, guid: 755591dfefab54948bc23495b9dab5ed,
+    type: 3}
