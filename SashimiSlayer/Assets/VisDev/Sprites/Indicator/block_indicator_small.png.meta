@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 6e518ab9fd5141a4e97349e356e71987
+guid: 946a28b0afaed7e438d6ccc02207ccaf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 7
   spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: block_indicator_hollow_mid
+      name: block_right_small
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 105
-        height: 102
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c35cfcc948abf84b873733fa5318613
-      internalID: 1452775412
+      spriteID: f542dd0f6a31f3a4f9b81dffefb5ced6
+      internalID: 1712797032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: block_indicator_hollow_top
+      name: block_left_small
       rect:
         serializedVersion: 2
-        x: 105
+        x: 200
         y: 0
-        width: 105
-        height: 102
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59720dbd803e5c4429f4b46cc2490a65
-      internalID: -1847638329
+      spriteID: 51bd7d1f511c22544a88cbe37a020a0e
+      internalID: 287091319
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      block_indicator_hollow_mid: 1452775412
-      block_indicator_hollow_top: -1847638329
+      block_left_small: 287091319
+      block_right_small: 1712797032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
