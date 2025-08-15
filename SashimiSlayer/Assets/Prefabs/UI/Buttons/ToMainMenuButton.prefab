@@ -8,35 +8,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 348608948805475563, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 348608948805475563, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 348608948805475563, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 396191492311083592, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: m_Name
-      value: ToMainMenuButton Variant
+      value: ToMainMenuButton
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
@@ -50,11 +30,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2518674504992100071}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2518674504992100071}
@@ -63,16 +38,6 @@ PrefabInstance:
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2518674504992100071}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadLevel
-      objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -95,11 +60,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: LevelLoaderMono, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Core.Scene.LevelLoaderMono, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -108,12 +68,6 @@ PrefabInstance:
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: LevelLoaderMono, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 5339086c43da29a4c8e0339a8132dbf0,
-        type: 2}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -133,11 +87,6 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: GameLevelSO, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Core.Scene.GameLevelSO, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -146,18 +95,25 @@ PrefabInstance:
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: GameLevelSO, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2161797189126742305, guid: 5b5ea00b238fcef47828dca0ecb14693,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2926583154780616422, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f0d5a28b55fcd494c90d1ba73b154e2f,
-        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3728807490756124304, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: m_text
-      value: 'Main Menu
-
-'
+      value: Level Select
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728807490756124304, guid: 5b5ea00b238fcef47828dca0ecb14693,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190705
       objectReference: {fileID: 0}
     - target: {fileID: 9204028337242412592, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
