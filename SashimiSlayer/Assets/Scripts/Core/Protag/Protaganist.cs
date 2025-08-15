@@ -230,10 +230,10 @@ namespace Core.Protag
         {
             switch (pose)
             {
-                case SharedTypes.BlockPoseStates.TopPose:
+                case SharedTypes.BlockPoseStates.LeftPose:
                     _blockSuccessTopEvent.Raise(_currentSwordState);
                     break;
-                case SharedTypes.BlockPoseStates.BotPose:
+                case SharedTypes.BlockPoseStates.RightPose:
                     _blockSuccessMidEvent.Raise(_currentSwordState);
                     break;
             }

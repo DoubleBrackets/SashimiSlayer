@@ -72,12 +72,12 @@ namespace Menus.LevelSelect
         {
             int prevPanelIndex = _currentPanelIndex;
             int flipBlockDirection = InputService.Instance.FlipParryDirection ? -1 : 1;
-            if (newState == SharedTypes.BlockPoseStates.BotPose)
+            if (newState == SharedTypes.BlockPoseStates.RightPose)
             {
                 // Go next
                 _currentPanelIndex += flipBlockDirection;
             }
-            else if (newState == SharedTypes.BlockPoseStates.TopPose)
+            else if (newState == SharedTypes.BlockPoseStates.LeftPose)
             {
                 // Go previous
                 _currentPanelIndex -= flipBlockDirection;
