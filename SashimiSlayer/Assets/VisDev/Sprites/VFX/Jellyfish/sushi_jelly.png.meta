@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c4bd6035df86c643acdaf022c6a8d13
+guid: 88fcfc058fea6fd4ca2bd9da1357e792
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 7
   spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 720
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jellyshi_0
+      name: sushi_jelly_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 571
-        height: 448
+        width: 210
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99bf120a27ad214eba4acd3505ef8d1
-      internalID: -1026713616
+      spriteID: c2c4939c5849744499811d6f7e1af204
+      internalID: -789384277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sushi_jelly_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 210
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8dfc9b3ed8b154c96153079f145bb0
+      internalID: 1352199576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sushi_jelly_2
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 210
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0b60c571fae1c4eaa630a1bc123157
+      internalID: 576354533
       vertices: []
       indices: 
       edges: []
@@ -141,7 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jellyshi_0: -1026713616
+      sushi_jelly_0: -789384277
+      sushi_jelly_1: 1352199576
+      sushi_jelly_2: 576354533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
