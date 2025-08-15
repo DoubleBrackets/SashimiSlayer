@@ -20,7 +20,7 @@ MonoBehaviour:
   <HardBeatmap>k__BackingField: {fileID: 11400000, guid: 55205771b87624a428fcb823dff1ad1a,
     type: 2}
   <LevelType>k__BackingField: 1
-  <LevelSelectSprite>k__BackingField: {fileID: 419901358, guid: dbba0b95e0d44f545ada39825325ace9,
+  <LevelSelectSprite>k__BackingField: {fileID: 1176003208, guid: adebe804a345dd24aaaa1afb03a4738b,
     type: 3}
   <FmodBanksToPreLoad>k__BackingField:
   - Jellyfish

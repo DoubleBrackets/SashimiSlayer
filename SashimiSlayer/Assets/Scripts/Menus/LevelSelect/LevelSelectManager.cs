@@ -29,6 +29,9 @@ namespace Menus.LevelSelect
         [SerializeField]
         private UnityEvent OnLevelIncremented;
 
+        [SerializeField]
+        private UnityEvent OnSongChosen;
+
         private bool _loaded;
 
         private List<SongPanel> _levelPanels = new();
@@ -104,7 +107,8 @@ namespace Menus.LevelSelect
             {
                 SongPanel songPanel = Instantiate(songPanelPrefab, _panelContainer);
                 songPanel.SetupUI(song);
-                songPanel.OnLevelSelected += OnLevelSelected;
+                songPanel.OnLevelSelected += OnLoadLevel;
+                songPanel.OnPanelSliced += OnLevelSliced;
                 songPanel.SetVisible(false);
 
                 _levelPanels.Add(songPanel);
@@ -113,7 +117,12 @@ namespace Menus.LevelSelect
             _levelPanels[_currentPanelIndex].SetVisible(true);
         }
 
-        private void OnLevelSelected(GameLevelSO level)
+        private void OnLevelSliced()
+        {
+            OnSongChosen?.Invoke();
+        }
+
+        private void OnLoadLevel(GameLevelSO level)
         {
             if (_loaded)
             {
