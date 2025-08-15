@@ -1,6 +1,5 @@
 using System;
 using Core.Scene;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,6 +26,7 @@ namespace Menus.LevelSelect
         private UnityEvent<bool> _onHardLevelToggled;
 
         public event Action<GameLevelSO> OnLevelSelected;
+        public event Action OnPanelSliced;
 
         private GameLevelSO _track;
 
@@ -51,21 +51,14 @@ namespace Menus.LevelSelect
             _thumbnailImage.sprite = level.LevelSelectSprite;
         }
 
-        public void SetHovered(bool val)
-        {
-            if (val)
-            {
-                transform.DOScale(1.25f, 0.15f);
-            }
-            else
-            {
-                transform.DOScale(1f, 0.15f);
-            }
-        }
-
         public void SelectLevel()
         {
             OnLevelSelected?.Invoke(_track);
+        }
+
+        public void PanelSliced()
+        {
+            OnPanelSliced?.Invoke();
         }
 
         public void SetDifficulty(bool isHardDifficulty)

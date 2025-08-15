@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dbba0b95e0d44f545ada39825325ace9
+guid: adebe804a345dd24aaaa1afb03a4738b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,64 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mainmenu-levels_0
+      name: levelselect-song-art_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 420
+        width: 450
+        height: 290
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f451c4f10e780a64fa77fa7e70074747
-      internalID: -231577585
+      spriteID: 3a030d3c65d42ea48975cdb56d99e974
+      internalID: -669883177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mainmenu-levels_1
+      name: levelselect-song-art_1
       rect:
         serializedVersion: 2
-        x: 500
+        x: 450
         y: 0
-        width: 500
-        height: 420
+        width: 450
+        height: 290
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af32f62483759774dae50356454a2101
-      internalID: 1849215031
+      spriteID: f4276341945665b48bc10c4b07fe1244
+      internalID: 232938178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mainmenu-levels_2
+      name: levelselect-song-art_2
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 900
         y: 0
-        width: 500
-        height: 420
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 450
+        height: 290
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 279146dac82c2844cbea513342db6ff6
-      internalID: 419901358
+      spriteID: f007f69fb06e827459548c141118fee1
+      internalID: 1176003208
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mainmenu-levels_0: -231577585
-      mainmenu-levels_1: 1849215031
-      mainmenu-levels_2: 419901358
+      levelselect-song-art_0: -669883177
+      levelselect-song-art_1: 232938178
+      levelselect-song-art_2: 1176003208
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

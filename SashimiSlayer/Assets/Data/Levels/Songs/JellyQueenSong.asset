@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <GameSceneName>k__BackingField: Jellyfish
   <LevelTitle>k__BackingField: Jelly Queen
-  <LevelDescription>k__BackingField: A night of jellyfish
+  <LevelDescription>k__BackingField: A Royal Dance!
   <NormalBeatmap>k__BackingField: {fileID: 11400000, guid: 81d98b5d8d82c0d409f2adabc98ead74,
     type: 2}
   <HardBeatmap>k__BackingField: {fileID: 11400000, guid: 55205771b87624a428fcb823dff1ad1a,
     type: 2}
   <LevelType>k__BackingField: 1
-  <LevelSelectSprite>k__BackingField: {fileID: 419901358, guid: dbba0b95e0d44f545ada39825325ace9,
+  <LevelSelectSprite>k__BackingField: {fileID: 1176003208, guid: adebe804a345dd24aaaa1afb03a4738b,
     type: 3}
   <FmodBanksToPreLoad>k__BackingField:
   - Jellyfish
