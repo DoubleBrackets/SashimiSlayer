@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1db8affb5c84fb44c85250032995abff
+guid: 946a28b0afaed7e438d6ccc02207ccaf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 7
   spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: block_right_outline
+      name: block_right_small
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: block_left_outline
+      name: block_left_small
       rect:
         serializedVersion: 2
         x: 200
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      block_left_outline: 287091319
-      block_right_outline: 1712797032
+      block_left_small: 287091319
+      block_right_small: 1712797032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

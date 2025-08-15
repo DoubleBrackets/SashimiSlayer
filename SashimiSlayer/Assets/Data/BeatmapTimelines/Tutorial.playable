@@ -643,7 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -1454124108, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 287091319, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
 --- !u!114 &-8561575116058183432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -690,7 +690,7 @@ MonoBehaviour:
   template:
     color: {r: 0, g: 0, b: 0, a: 1}
     fontSize: 7.98
-    text: "Keep the rhythm, \n<color=#FF6900>TAP ON THE BEAT!</color>"
+    text: "Keep the rhythm, \n<color=#3b2798>TAP ON THE BEAT!</color>"
 --- !u!114 &-7974124173024059953
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -727595751, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 1712797032, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
 --- !u!114 &-7913552016835471347
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -727595751, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 1712797032, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
 --- !u!114 &-7137627398019140838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1745,7 +1745,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: "Keep the rhythm, \n<color=#FF6900>TAP ON THE BEAT!</color>"
+    m_DisplayName: "Keep the rhythm, \n<color=#3b2798>TAP ON THE BEAT!</color>"
   - m_Version: 1
     m_Start: 3.025
     m_ClipIn: 0
@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -1454124108, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 287091319, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
 --- !u!114 &-5295893012419878833
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2758,7 +2758,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: mid
+    m_DisplayName: block_right_small
   - m_Version: 1
     m_Start: 41.78333333333333
     m_ClipIn: 0
@@ -2809,7 +2809,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: top
+    m_DisplayName: block_left_small
   - m_Version: 1
     m_Start: 66.15166666666667
     m_ClipIn: 0
@@ -2878,7 +2878,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: top
+    m_DisplayName: block_left_small
   - m_Version: 1
     m_Start: 68.13333333333334
     m_ClipIn: 0
@@ -2947,7 +2947,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: mid
+    m_DisplayName: block_right_small
   - m_Version: 1
     m_Start: 69.15166666666667
     m_ClipIn: 0
@@ -2998,7 +2998,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: top
+    m_DisplayName: block_left_small
   - m_Version: 1
     m_Start: 70.48
     m_ClipIn: 0
@@ -3049,7 +3049,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: mid
+    m_DisplayName: block_right_small
   - m_Version: 1
     m_Start: 73.98333333333333
     m_ClipIn: 0
@@ -3151,7 +3151,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: top
+    m_DisplayName: block_left_small
   - m_Version: 1
     m_Start: 80
     m_ClipIn: 0
@@ -3286,7 +3286,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: top
+    m_DisplayName: block_left_small
   m_Markers:
     m_Objects: []
 --- !u!114 &-4103571415117731955
@@ -5397,7 +5397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -1454124108, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 287091319, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
 --- !u!114 &2731131515676527816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5747,7 +5747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -727595751, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 1712797032, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
 --- !u!114 &3241029985881354545
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6518,7 +6518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -1454124108, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 287091319, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
 --- !u!114 &5761044849728758122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7838,4 +7838,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    sprite: {fileID: -1454124108, guid: 48b01df6847544f149fe1cf6e812d46c, type: 3}
+    sprite: {fileID: 287091319, guid: 946a28b0afaed7e438d6ccc02207ccaf, type: 3}
