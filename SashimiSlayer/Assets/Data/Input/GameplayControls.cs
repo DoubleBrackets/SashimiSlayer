@@ -46,7 +46,7 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""PoseButtonTop"",
+                    ""name"": ""BlockButtonLeft"",
                     ""type"": ""PassThrough"",
                     ""id"": ""ad2ed90e-bbbd-4e10-9b1d-da64921ae152"",
                     ""expectedControlType"": ""Button"",
@@ -55,7 +55,7 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""PoseButtonMid"",
+                    ""name"": ""BlockButtonRight"",
                     ""type"": ""PassThrough"",
                     ""id"": ""f0f51208-706e-4519-ac55-3ea20dd7f47a"",
                     ""expectedControlType"": ""Button"",
@@ -134,52 +134,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7672e99e-3ffc-42d9-be11-2fc2773cf926"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Unsheathe"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""c1d47cf3-9b37-4257-8024-c069bdbf27a6"",
                     ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Unsheathe"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""60b6bb79-ea8f-4a3e-8c0a-fee1c67c0324"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Unsheathe"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bdfa374c-2849-4653-8808-cc191049aad4"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Unsheathe"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""90c6a19f-1311-4fc5-be5a-a70095e63343"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -211,34 +167,56 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6b4bc36a-da1f-4fa4-bf75-513c8bc65123"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""id"": ""dea5f0da-62f0-4c16-8ca9-5d6257331376"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonTop"",
+                    ""action"": ""Unsheathe"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7a427325-233c-4d50-9742-7095554c5d87"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""a4b05b91-8125-4a16-b13c-d6272e156615"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonTop"",
+                    ""action"": ""Unsheathe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e7e121c-b331-4fee-b77c-408fcf841155"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Unsheathe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b4bc36a-da1f-4fa4-bf75-513c8bc65123"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BlockButtonLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""947fe3b9-3c9f-4ae7-aa10-f1f0e31b9fad"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonTop"",
+                    ""action"": ""BlockButtonLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -249,7 +227,18 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonTop"",
+                    ""action"": ""BlockButtonLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a427325-233c-4d50-9742-7095554c5d87"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BlockButtonLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -260,40 +249,29 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonTop"",
+                    ""action"": ""BlockButtonLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c22fc1a-4f8c-48bd-b73f-fd17758c444d"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BlockButtonLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""b023dbd5-7153-4450-a3da-c37d1394e4fb"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonMid"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""54fbbef0-de2a-4714-93b9-f890ce7d0815"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PoseButtonMid"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1474649e-5823-424b-a1ff-dc1a32088e42"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PoseButtonMid"",
+                    ""action"": ""BlockButtonRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -304,7 +282,7 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonMid"",
+                    ""action"": ""BlockButtonRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -315,18 +293,18 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonMid"",
+                    ""action"": ""BlockButtonRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c87efbd3-5313-4277-8b62-2e970f617f84"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""54fbbef0-de2a-4714-93b9-f890ce7d0815"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonMid"",
+                    ""action"": ""BlockButtonRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -337,7 +315,18 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PoseButtonMid"",
+                    ""action"": ""BlockButtonRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4acc4df5-fea3-4ce9-b1e7-1dffed7b048b"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BlockButtonRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -411,8 +400,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_SwordAngle = m_Gameplay.FindAction("SwordAngle", throwIfNotFound: true);
         m_Gameplay_Unsheathe = m_Gameplay.FindAction("Unsheathe", throwIfNotFound: true);
-        m_Gameplay_PoseButtonTop = m_Gameplay.FindAction("PoseButtonTop", throwIfNotFound: true);
-        m_Gameplay_PoseButtonMid = m_Gameplay.FindAction("PoseButtonMid", throwIfNotFound: true);
+        m_Gameplay_BlockButtonLeft = m_Gameplay.FindAction("BlockButtonLeft", throwIfNotFound: true);
+        m_Gameplay_BlockButtonRight = m_Gameplay.FindAction("BlockButtonRight", throwIfNotFound: true);
         m_Gameplay_MousePos = m_Gameplay.FindAction("MousePos", throwIfNotFound: true);
         m_Gameplay_SwordControllerAngle = m_Gameplay.FindAction("SwordControllerAngle", throwIfNotFound: true);
         m_Gameplay_ExhibitionReset = m_Gameplay.FindAction("ExhibitionReset", throwIfNotFound: true);
@@ -486,8 +475,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_SwordAngle;
     private readonly InputAction m_Gameplay_Unsheathe;
-    private readonly InputAction m_Gameplay_PoseButtonTop;
-    private readonly InputAction m_Gameplay_PoseButtonMid;
+    private readonly InputAction m_Gameplay_BlockButtonLeft;
+    private readonly InputAction m_Gameplay_BlockButtonRight;
     private readonly InputAction m_Gameplay_MousePos;
     private readonly InputAction m_Gameplay_SwordControllerAngle;
     private readonly InputAction m_Gameplay_ExhibitionReset;
@@ -499,8 +488,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         public GameplayActions(@GameplayControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @SwordAngle => m_Wrapper.m_Gameplay_SwordAngle;
         public InputAction @Unsheathe => m_Wrapper.m_Gameplay_Unsheathe;
-        public InputAction @PoseButtonTop => m_Wrapper.m_Gameplay_PoseButtonTop;
-        public InputAction @PoseButtonMid => m_Wrapper.m_Gameplay_PoseButtonMid;
+        public InputAction @BlockButtonLeft => m_Wrapper.m_Gameplay_BlockButtonLeft;
+        public InputAction @BlockButtonRight => m_Wrapper.m_Gameplay_BlockButtonRight;
         public InputAction @MousePos => m_Wrapper.m_Gameplay_MousePos;
         public InputAction @SwordControllerAngle => m_Wrapper.m_Gameplay_SwordControllerAngle;
         public InputAction @ExhibitionReset => m_Wrapper.m_Gameplay_ExhibitionReset;
@@ -521,12 +510,12 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
             @Unsheathe.started += instance.OnUnsheathe;
             @Unsheathe.performed += instance.OnUnsheathe;
             @Unsheathe.canceled += instance.OnUnsheathe;
-            @PoseButtonTop.started += instance.OnPoseButtonTop;
-            @PoseButtonTop.performed += instance.OnPoseButtonTop;
-            @PoseButtonTop.canceled += instance.OnPoseButtonTop;
-            @PoseButtonMid.started += instance.OnPoseButtonMid;
-            @PoseButtonMid.performed += instance.OnPoseButtonMid;
-            @PoseButtonMid.canceled += instance.OnPoseButtonMid;
+            @BlockButtonLeft.started += instance.OnBlockButtonLeft;
+            @BlockButtonLeft.performed += instance.OnBlockButtonLeft;
+            @BlockButtonLeft.canceled += instance.OnBlockButtonLeft;
+            @BlockButtonRight.started += instance.OnBlockButtonRight;
+            @BlockButtonRight.performed += instance.OnBlockButtonRight;
+            @BlockButtonRight.canceled += instance.OnBlockButtonRight;
             @MousePos.started += instance.OnMousePos;
             @MousePos.performed += instance.OnMousePos;
             @MousePos.canceled += instance.OnMousePos;
@@ -552,12 +541,12 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
             @Unsheathe.started -= instance.OnUnsheathe;
             @Unsheathe.performed -= instance.OnUnsheathe;
             @Unsheathe.canceled -= instance.OnUnsheathe;
-            @PoseButtonTop.started -= instance.OnPoseButtonTop;
-            @PoseButtonTop.performed -= instance.OnPoseButtonTop;
-            @PoseButtonTop.canceled -= instance.OnPoseButtonTop;
-            @PoseButtonMid.started -= instance.OnPoseButtonMid;
-            @PoseButtonMid.performed -= instance.OnPoseButtonMid;
-            @PoseButtonMid.canceled -= instance.OnPoseButtonMid;
+            @BlockButtonLeft.started -= instance.OnBlockButtonLeft;
+            @BlockButtonLeft.performed -= instance.OnBlockButtonLeft;
+            @BlockButtonLeft.canceled -= instance.OnBlockButtonLeft;
+            @BlockButtonRight.started -= instance.OnBlockButtonRight;
+            @BlockButtonRight.performed -= instance.OnBlockButtonRight;
+            @BlockButtonRight.canceled -= instance.OnBlockButtonRight;
             @MousePos.started -= instance.OnMousePos;
             @MousePos.performed -= instance.OnMousePos;
             @MousePos.canceled -= instance.OnMousePos;
@@ -603,8 +592,8 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
     {
         void OnSwordAngle(InputAction.CallbackContext context);
         void OnUnsheathe(InputAction.CallbackContext context);
-        void OnPoseButtonTop(InputAction.CallbackContext context);
-        void OnPoseButtonMid(InputAction.CallbackContext context);
+        void OnBlockButtonLeft(InputAction.CallbackContext context);
+        void OnBlockButtonRight(InputAction.CallbackContext context);
         void OnMousePos(InputAction.CallbackContext context);
         void OnSwordControllerAngle(InputAction.CallbackContext context);
         void OnExhibitionReset(InputAction.CallbackContext context);

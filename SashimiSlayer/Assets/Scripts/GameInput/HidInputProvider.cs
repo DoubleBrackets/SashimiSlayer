@@ -100,7 +100,7 @@ namespace GameInput
             }
         }
 
-        public void OnPoseButtonTop(InputAction.CallbackContext context)
+        public void OnBlockButtonLeft(InputAction.CallbackContext context)
         {
             if (IsMenuOverlayed)
             {
@@ -109,12 +109,12 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.TopPose);
-                _blockPoseStates = SharedTypes.BlockPoseStates.TopPose;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.LeftPose);
+                _blockPoseStates = SharedTypes.BlockPoseStates.LeftPose;
             }
         }
 
-        public void OnPoseButtonMid(InputAction.CallbackContext context)
+        public void OnBlockButtonRight(InputAction.CallbackContext context)
         {
             if (IsMenuOverlayed)
             {
@@ -123,8 +123,8 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BotPose);
-                _blockPoseStates = SharedTypes.BlockPoseStates.BotPose;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.RightPose);
+                _blockPoseStates = SharedTypes.BlockPoseStates.RightPose;
             }
         }
 

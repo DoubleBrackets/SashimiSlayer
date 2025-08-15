@@ -2,8 +2,8 @@ public static class SharedTypes
 {
     public enum BlockPoseStates
     {
-        TopPose,
-        BotPose
+        LeftPose,
+        RightPose
     }
 
     public enum SheathState
