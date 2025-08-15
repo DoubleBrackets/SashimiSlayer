@@ -381,6 +381,9 @@ MonoBehaviour:
   songPanelPrefab: {fileID: 116148503937992090, guid: 95e37dacc483c6344b04cacf7662d687,
     type: 3}
   _panelContainer: {fileID: 472467207}
+  _disabledColor: {r: 1, g: 1, b: 1, a: 0.43137255}
+  _decrementButton: {fileID: 329837655}
+  _incrementButton: {fileID: 6959229336136285511}
   OnLevelDecremented:
     m_PersistentCalls:
       m_Calls:
@@ -566,6 +569,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1ed2395bd40814cb83e42dfef8a45d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &329837655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6975623584651101274, guid: b5fdcff4f71b68e49b0785d21404e115,
+    type: 3}
+  m_PrefabInstance: {fileID: 329837652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &367585953
@@ -1822,6 +1837,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 472467207}
     m_Modifications:
+    - target: {fileID: 1051846563645260397, guid: 95e37dacc483c6344b04cacf7662d687,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1176003208, guid: adebe804a345dd24aaaa1afb03a4738b,
+        type: 3}
+    - target: {fileID: 1593317226412515081, guid: 95e37dacc483c6344b04cacf7662d687,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3096825598131998105, guid: 95e37dacc483c6344b04cacf7662d687,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3178,6 +3204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StarPrompt
       objectReference: {fileID: 0}
+    - target: {fileID: 6975623584651101274, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3299,6 +3330,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1ed2395bd40814cb83e42dfef8a45d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6959229336136285511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6975623584651101274, guid: b5fdcff4f71b68e49b0785d21404e115,
+    type: 3}
+  m_PrefabInstance: {fileID: 6959229336136285508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

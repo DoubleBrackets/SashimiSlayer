@@ -98,9 +98,9 @@ MonoBehaviour:
     _vibrato: 0
     _fadeOut: 0
   _rotationShakeConfig:
-    _duration: 0.25
+    _duration: 0.15
     _strength: {x: 0, y: 0, z: 25}
-    _vibrato: 30
+    _vibrato: 5
     _fadeOut: 0
   _scaleShakeConfig:
     _duration: 0

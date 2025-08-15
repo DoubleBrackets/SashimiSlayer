@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <GameSceneName>k__BackingField: Tutorial
   <LevelTitle>k__BackingField: Fish School
-  <LevelDescription>k__BackingField: 'Learn the Basics!
-
-'
+  <LevelDescription>k__BackingField: Learn to play!
   <NormalBeatmap>k__BackingField: {fileID: 11400000, guid: 927c3dc5372465d4db6ba59d803b358f,
     type: 2}
   <HardBeatmap>k__BackingField: {fileID: 0}

@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using GameInput;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using GameLevelSO = Core.Scene.GameLevelSO;
 
 namespace Menus.LevelSelect
@@ -20,6 +21,17 @@ namespace Menus.LevelSelect
 
         [SerializeField]
         private Transform _panelContainer;
+
+        [Header("Carousal Prompts")]
+
+        [SerializeField]
+        private Color _disabledColor;
+
+        [SerializeField]
+        private Image _decrementButton;
+
+        [SerializeField]
+        private Image _incrementButton;
 
         [Header("Unity Events")]
 
@@ -43,6 +55,8 @@ namespace Menus.LevelSelect
             SetupLevelSelectUI();
 
             InputService.Instance.OnBlockPoseChanged += HandleBlockPoseChanged;
+
+            UpdatePromptOpacity();
         }
 
         private void OnDestroy()
@@ -71,6 +85,8 @@ namespace Menus.LevelSelect
 
             _currentPanelIndex = Mathf.Clamp(_currentPanelIndex, 0, _levelPanels.Count - 1);
 
+            UpdatePromptOpacity();
+
             if (prevPanelIndex == _currentPanelIndex)
             {
                 return;
@@ -87,6 +103,17 @@ namespace Menus.LevelSelect
 
             _levelPanels[prevPanelIndex].SetVisible(false);
             _levelPanels[_currentPanelIndex].SetVisible(true);
+        }
+
+        private void UpdatePromptOpacity()
+        {
+            _decrementButton.color = _currentPanelIndex == 0
+                ? _disabledColor
+                : Color.white;
+
+            _incrementButton.color = _currentPanelIndex == _levelPanels.Count - 1
+                ? _disabledColor
+                : Color.white;
         }
 
         private void SetupLevelSelectUI()
