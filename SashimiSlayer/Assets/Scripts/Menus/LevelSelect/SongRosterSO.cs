@@ -16,8 +16,15 @@ namespace Menus.LevelSelect
             Debug.Log("Wiping all high scores");
             foreach (GameLevelSO song in Songs)
             {
-                PlayerPrefs.SetFloat(FinalScoreDisplay.GetHighscorePrefKey(song.NormalBeatmap.BeatmapID), 0);
-                PlayerPrefs.SetFloat(FinalScoreDisplay.GetHighscorePrefKey(song.HardBeatmap.BeatmapID), 0);
+                if (song.NormalBeatmap)
+                {
+                    PlayerPrefs.SetFloat(FinalScoreDisplay.GetHighscorePrefKey(song.NormalBeatmap.BeatmapID), 0);
+                }
+
+                if (song.HardBeatmap)
+                {
+                    PlayerPrefs.SetFloat(FinalScoreDisplay.GetHighscorePrefKey(song.HardBeatmap.BeatmapID), 0);
+                }
             }
         }
     }
