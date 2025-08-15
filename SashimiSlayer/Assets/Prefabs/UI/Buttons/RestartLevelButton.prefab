@@ -26,21 +26,11 @@ PrefabInstance:
     - target: {fileID: 396191492311083592, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: m_Name
-      value: RestartLevelButton Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: RestartLevelButton
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
@@ -55,11 +45,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1741211455223184923}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1741211455223184923}
@@ -68,16 +53,6 @@ PrefabInstance:
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1741211455223184923}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadLastBeatmapLevel
-      objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -100,11 +75,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: LevelLoaderMono, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LevelLoaderMono, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -120,11 +90,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: _buttonSlicedUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1044986642061614050, guid: 5b5ea00b238fcef47828dca0ecb14693,
-        type: 3}
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -133,16 +98,25 @@ PrefabInstance:
       propertyPath: _buttonSlicedDelayedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2161797189126742305, guid: 5b5ea00b238fcef47828dca0ecb14693,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2926583154780616422, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c512873afd71dc44283d4479c017c3e9,
-        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3728807490756124304, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
       propertyPath: m_text
       value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728807490756124304, guid: 5b5ea00b238fcef47828dca0ecb14693,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190705
       objectReference: {fileID: 0}
     - target: {fileID: 3728807490756124304, guid: 5b5ea00b238fcef47828dca0ecb14693,
         type: 3}
