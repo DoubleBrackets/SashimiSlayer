@@ -82,7 +82,7 @@ namespace Menus.PauseMenu.Views
             // Since UI callbacks don't trigger if the value is the same as the current value (i.e default)
             HandleSwordAngleMultiplierChange(_swordAngleMultiplier);
             HandleUpAxisChange(_upAxis);
-            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip);
+            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip, _isLeftHanded);
             HandleFlipParryDirectionChange(_flipParryDirection);
         }
 
@@ -119,14 +119,14 @@ namespace Menus.PauseMenu.Views
         {
             _swordAngleMultiplier = value;
             PlayerPrefs.SetFloat(SwordAimMultiplier, _swordAngleMultiplier);
-            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip);
+            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip, _isLeftHanded);
         }
 
         private void HandleSwordAngleFlipChange(bool value)
         {
             _swordAngleFlip = value;
             PlayerPrefs.SetInt(FlipSwordAim, _swordAngleFlip ? 1 : 0);
-            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip ^ _isLeftHanded);
+            UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip, _isLeftHanded);
             UpdateSwordAngleOffset();
         }
 
@@ -135,9 +135,9 @@ namespace Menus.PauseMenu.Views
             _swordAngleFlipToggle.isOn = !_swordAngleFlipToggle.isOn;
         }
 
-        private void UpdateSwordAngleMultiplier(float swordAngleMultiplier, bool swordAngleFlip)
+        private void UpdateSwordAngleMultiplier(float swordAngleMultiplier, bool swordAngleFlip, bool isLeftHanded)
         {
-            _swordAngleMultiplierChangeEvent.Raise(swordAngleMultiplier * (swordAngleFlip ? -1 : 1));
+            _swordAngleMultiplierChangeEvent.Raise(swordAngleMultiplier * (swordAngleFlip ^ isLeftHanded ? -1 : 1));
         }
 
         private void HandleSwordAngleOffsetChange(float value)
