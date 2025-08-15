@@ -12,19 +12,19 @@ PrefabInstance:
         type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -1026713616, guid: 1c4bd6035df86c643acdaf022c6a8d13,
+      objectReference: {fileID: -789384277, guid: 88fcfc058fea6fd4ca2bd9da1357e792,
         type: 3}
     - target: {fileID: 2199673564168058439, guid: a341094307ceb7b46bdf60a63a4084e2,
         type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -1026713616, guid: 1c4bd6035df86c643acdaf022c6a8d13,
+      objectReference: {fileID: 576354533, guid: 88fcfc058fea6fd4ca2bd9da1357e792,
         type: 3}
     - target: {fileID: 3677572614683793442, guid: a341094307ceb7b46bdf60a63a4084e2,
         type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -1026713616, guid: 1c4bd6035df86c643acdaf022c6a8d13,
+      objectReference: {fileID: 1352199576, guid: 88fcfc058fea6fd4ca2bd9da1357e792,
         type: 3}
     - target: {fileID: 7249552311306029431, guid: a341094307ceb7b46bdf60a63a4084e2,
         type: 3}
