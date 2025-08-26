@@ -1160,6 +1160,21 @@ MonoBehaviour:
           Positions:
           - {x: 5.7867775, y: 1.4958844}
           - {x: -4.5122046, y: -0.6069712}
+--- !u!114 &-8559794978141456659
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957eea265cfd44f8b8bdf986f81b990c, type: 3}
+  m_Name: SpritePlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: b2638bb31237242bdbe3e16e00890ecf, type: 3}
 --- !u!114 &-8542992235533403859
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1326,7 +1341,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 42
+    m_Start: 41.980000000000004
     m_ClipIn: 0
     m_Asset: {fileID: -8910760228112568070}
     m_Duration: 3
@@ -2038,6 +2053,21 @@ MonoBehaviour:
       NoteEndTime: 0
       NoteBeatCount: 0
       Interactions: []
+--- !u!114 &-6915544528815632209
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957eea265cfd44f8b8bdf986f81b990c, type: 3}
+  m_Name: SpritePlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: ba20bb7bd678b4c56a56331116c9b5e8, type: 3}
 --- !u!114 &-6840777843569228543
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3867,7 +3897,7 @@ MonoBehaviour:
     m_Start: 16.5
     m_ClipIn: 0
     m_Asset: {fileID: 2655830794550029393}
-    m_Duration: 5.5
+    m_Duration: 1.4800000000000004
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4570267411883170350}
     m_EaseInDuration: 0
@@ -3896,6 +3926,204 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: SwordClosed
+  - m_Version: 1
+    m_Start: 20.52
+    m_ClipIn: 0
+    m_Asset: {fileID: 6813863524691723739}
+    m_Duration: 1.4800000000000004
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -4570267411883170350}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: SwordClosed
+  - m_Version: 1
+    m_Start: 20.02
+    m_ClipIn: 0
+    m_Asset: {fileID: 4814120164403510770}
+    m_Duration: 0.5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -4570267411883170350}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: SwordOpen
+  - m_Version: 1
+    m_Start: 19.52
+    m_ClipIn: 0
+    m_Asset: {fileID: -3163499606473720731}
+    m_Duration: 0.5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -4570267411883170350}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: countdown4
+  - m_Version: 1
+    m_Start: 19.02
+    m_ClipIn: 0
+    m_Asset: {fileID: -6915544528815632209}
+    m_Duration: 0.5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -4570267411883170350}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: countdown3
+  - m_Version: 1
+    m_Start: 18.52
+    m_ClipIn: 0
+    m_Asset: {fileID: 5611153552224489383}
+    m_Duration: 0.5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -4570267411883170350}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: countdown2
+  - m_Version: 1
+    m_Start: 18.020000333333332
+    m_ClipIn: 0
+    m_Asset: {fileID: -8559794978141456659}
+    m_Duration: 0.4999996666666675
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -4570267411883170350}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: countdown1
   m_Markers:
     m_Objects: []
 --- !u!114 &-4403546755635590880
@@ -3950,10 +4178,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 9.991666666666667
+    m_Start: 9.98
     m_ClipIn: 0
     m_Asset: {fileID: -8912032260152168032}
-    m_Duration: 3.991666666666667
+    m_Duration: 4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4103571415117731955}
     m_EaseInDuration: 0
@@ -4019,7 +4247,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 33.983333333333334
+    m_Start: 33.980000000000004
     m_ClipIn: 0
     m_Asset: {fileID: 3552979465737294309}
     m_Duration: 3
@@ -4088,7 +4316,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 21.991666333333335
+    m_Start: 21.98
     m_ClipIn: 0
     m_Asset: {fileID: 1003458402168696384}
     m_Duration: 4
@@ -4226,10 +4454,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 13.991666666666667
+    m_Start: 13.98
     m_ClipIn: 0
     m_Asset: {fileID: -3007801668252433447}
-    m_Duration: 3.9999996666666675
+    m_Duration: 4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4103571415117731955}
     m_EaseInDuration: 0
@@ -4295,10 +4523,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 25.991666333333335
+    m_Start: 25.98
     m_ClipIn: 0
     m_Asset: {fileID: 4948954289360086848}
-    m_Duration: 3.9800000000000004
+    m_Duration: 4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4103571415117731955}
     m_EaseInDuration: 0
@@ -4433,7 +4661,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: MootTutFish
   - m_Version: 1
-    m_Start: 17.991666333333335
+    m_Start: 17.98
     m_ClipIn: 0
     m_Asset: {fileID: -3881776500812075650}
     m_Duration: 4
@@ -4614,6 +4842,21 @@ MonoBehaviour:
     text: '<color=#db3b3b>SLICE</color> on the <color=#db3b3b>BEAT!</color>
 
 '
+--- !u!114 &-3163499606473720731
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957eea265cfd44f8b8bdf986f81b990c, type: 3}
+  m_Name: SpritePlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: d8b2c6870b6764a72ad306c2ddacdc58, type: 3}
 --- !u!114 &-3156594010454479955
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6168,7 +6411,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 33.983333333333334
+    m_Start: 33.980000000000004
     m_ClipIn: 0
     m_Asset: {fileID: 696523541525339585}
     m_Duration: 3
@@ -6306,10 +6549,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 27.991666666666667
+    m_Start: 27.98
     m_ClipIn: 0
     m_Asset: {fileID: 6697841001882536403}
-    m_Duration: 3.9800000000000004
+    m_Duration: 4
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2839535838791464466}
     m_EaseInDuration: 0
@@ -7036,6 +7279,21 @@ MonoBehaviour:
           HideIndicator: 0
           Positions:
           - {x: 5.336288, y: 2.8117096}
+--- !u!114 &4814120164403510770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957eea265cfd44f8b8bdf986f81b990c, type: 3}
+  m_Name: SpritePlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: -501380116, guid: 57473820b4ce4a7449d759a564b6bc15, type: 3}
 --- !u!114 &4831280259575203751
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7190,6 +7448,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
   m_Name: ActivationPlayableAsset(Clone)(Clone)
   m_EditorClassIdentifier: 
+--- !u!114 &5611153552224489383
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957eea265cfd44f8b8bdf986f81b990c, type: 3}
+  m_Name: SpritePlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: 9f01890419d46447890d174443ecb987, type: 3}
 --- !u!114 &5761044849728758122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7345,6 +7618,21 @@ MonoBehaviour:
           HideIndicator: 0
           Positions:
           - {x: 3.056495, y: 0.531917}
+--- !u!114 &6813863524691723739
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957eea265cfd44f8b8bdf986f81b990c, type: 3}
+  m_Name: SpritePlayableAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  template:
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 573210420, guid: 57473820b4ce4a7449d759a564b6bc15, type: 3}
 --- !u!114 &6976503126511583732
 MonoBehaviour:
   m_ObjectHideFlags: 1
