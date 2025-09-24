@@ -149,7 +149,7 @@ namespace Menus.PauseMenu.Views
 
         private void UpdateSwordAngleOffset()
         {
-            _swordAngleOffsetChangeEvent.Raise(_swordAngleOffset * (_swordAngleFlip ? -1 : 1));
+            _swordAngleOffsetChangeEvent.Raise(_swordAngleOffset);
         }
 
         public void ToggleFlipAngle()
