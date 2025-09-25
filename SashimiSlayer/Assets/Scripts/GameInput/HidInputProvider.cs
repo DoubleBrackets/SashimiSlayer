@@ -155,7 +155,7 @@ namespace GameInput
         {
             if (context.performed)
             {
-                _rawSwordAngle = -JoyToAngle(context.ReadValue<Vector2>().normalized);
+                _rawSwordAngle = JoyToAngle(context.ReadValue<Vector2>().normalized);
             }
         }
 

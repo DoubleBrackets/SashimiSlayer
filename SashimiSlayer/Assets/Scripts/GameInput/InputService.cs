@@ -208,7 +208,10 @@ namespace GameInput
         /// <returns></returns>
         private float ConfiguredSwordAngle(float rawSwordAngled)
         {
-            return (rawSwordAngled + Mathf.Sign(_angleMultiplier) * _angleOffset) * _angleMultiplier;
+            // We want to add multipler first so that the "horizontal" angle remains the same
+            // i.e offset of -25 degrees means holding physical sword at 25 degrees hilt-up is horizontal
+            // regardless of mult or flipping
+            return (rawSwordAngled + _angleOffset) * _angleMultiplier;
         }
 
         public override SharedTypes.SheathState GetSheathState()

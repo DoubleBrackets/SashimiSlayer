@@ -1,5 +1,5 @@
 /*
-v. 0.2.1
+v. 0.3.0
 This variation allows the sword to act as a generic joystick. 
 This is preferred over the serial comm variation.
 
@@ -9,7 +9,8 @@ To connect with the game, just plug the sword in and it should work immediately.
 */
 
 // CONFIG - SET THIS TO 'true' IF FLASHING ONTO A LEFT-HANDED SWORD
-bool leftHanded = false;
+// A left-handed sword is one where the left hand is on the sword's grip
+bool leftHanded = true;
 
 // Libraries
 #include <Wire.h>
