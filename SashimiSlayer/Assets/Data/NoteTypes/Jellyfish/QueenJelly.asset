@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: QueenJelly
   m_EditorClassIdentifier: 
   <DamageDealtToPlayer>k__BackingField: 1
-  <HitboxRadius>k__BackingField: 1.6
+  <HitboxRadius>k__BackingField: 3
   <Prefab>k__BackingField: {fileID: 8772479368319537360, guid: f38ae0e92e06c2a4f90b92dd7b178a71,
     type: 3}

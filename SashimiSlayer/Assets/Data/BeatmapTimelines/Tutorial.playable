@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 58.980000000000004
+    m_Start: 58.97
     m_ClipIn: 0
     m_Asset: {fileID: -2733709977444201013}
     m_Duration: 2.75
@@ -123,7 +123,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 66.98
+    m_Start: 66.97
     m_ClipIn: 0
     m_Asset: {fileID: 1363379792737387491}
     m_Duration: 3
@@ -192,7 +192,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 50.980000000000004
+    m_Start: 50.97
     m_ClipIn: 0
     m_Asset: {fileID: -2878953298563464013}
     m_Duration: 3
@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 41.980000000000004
+    m_Start: 41.97
     m_ClipIn: 0
     m_Asset: {fileID: -8910760228112568070}
     m_Duration: 3
@@ -1410,7 +1410,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 45.980000000000004
+    m_Start: 45.97
     m_ClipIn: 0
     m_Asset: {fileID: 149878421483160442}
     m_Duration: 3
@@ -1479,7 +1479,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 62.980000000000004
+    m_Start: 62.97
     m_ClipIn: 0
     m_Asset: {fileID: -7913552016835471347}
     m_Duration: 3
@@ -1548,7 +1548,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 57.980000000000004
+    m_Start: 57.97
     m_ClipIn: 0
     m_Asset: {fileID: 1257960077039165815}
     m_Duration: 3
@@ -1686,7 +1686,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 65.98
+    m_Start: 65.97
     m_ClipIn: 0
     m_Asset: {fileID: -8972756601108966183}
     m_Duration: 3
@@ -1755,7 +1755,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 54.980000000000004
+    m_Start: 54.97
     m_ClipIn: 0
     m_Asset: {fileID: 5843567527227144197}
     m_Duration: 3
@@ -4247,7 +4247,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 33.980000000000004
+    m_Start: 33.97
     m_ClipIn: 0
     m_Asset: {fileID: 3552979465737294309}
     m_Duration: 3
@@ -4316,7 +4316,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 21.98
+    m_Start: 21.97
     m_ClipIn: 0
     m_Asset: {fileID: 1003458402168696384}
     m_Duration: 4
@@ -4523,7 +4523,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 25.98
+    m_Start: 25.97
     m_ClipIn: 0
     m_Asset: {fileID: 4948954289360086848}
     m_Duration: 4
@@ -4661,7 +4661,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: MootTutFish
   - m_Version: 1
-    m_Start: 17.98
+    m_Start: 17.97
     m_ClipIn: 0
     m_Asset: {fileID: -3881776500812075650}
     m_Duration: 4
@@ -5428,7 +5428,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 59.480000000000004
+    m_Start: 59.47
     m_ClipIn: 0
     m_Asset: {fileID: -4870925799724017901}
     m_Duration: 2.5
@@ -5497,7 +5497,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 51.480000000000004
+    m_Start: 51.47
     m_ClipIn: 0
     m_Asset: {fileID: -2692751500084855303}
     m_Duration: 2.5
@@ -5635,7 +5635,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 67.48
+    m_Start: 67.47
     m_ClipIn: 0
     m_Asset: {fileID: -96512907476409134}
     m_Duration: 3
@@ -6074,8 +6074,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 7.1319265, y: -4.9127874}
       EndPosition: {x: -1.241159, y: -5.8845873}
-      NoteStartTime: 28.000000000000004
-      NoteEndTime: 31.000000000000004
+      NoteStartTime: 28
+      NoteEndTime: 31
       NoteBeatCount: 6
       Interactions:
       - _beatOffset: 2
@@ -6411,7 +6411,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 33.980000000000004
+    m_Start: 33.97
     m_ClipIn: 0
     m_Asset: {fileID: 696523541525339585}
     m_Duration: 3
@@ -6549,7 +6549,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SadTutFish
   - m_Version: 1
-    m_Start: 27.98
+    m_Start: 27.97
     m_ClipIn: 0
     m_Asset: {fileID: 6697841001882536403}
     m_Duration: 4
@@ -6898,8 +6898,8 @@ MonoBehaviour:
     NoteData:
       StartPosition: {x: 1.6657343, y: -4.9872026}
       EndPosition: {x: -5.5802107, y: -5.80425}
-      NoteStartTime: 28.000000000000004
-      NoteEndTime: 31.000000000000004
+      NoteStartTime: 28
+      NoteEndTime: 31
       NoteBeatCount: 6
       Interactions:
       - _beatOffset: 2
@@ -8434,7 +8434,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 58.480000000000004
+    m_Start: 58.47
     m_ClipIn: 0
     m_Asset: {fileID: 833097427183589768}
     m_Duration: 3
@@ -8503,7 +8503,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 66.48
+    m_Start: 66.47
     m_ClipIn: 0
     m_Asset: {fileID: -39178167214981909}
     m_Duration: 3
@@ -8572,7 +8572,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AngryTutFish
   - m_Version: 1
-    m_Start: 49.980000000000004
+    m_Start: 49.97
     m_ClipIn: 0
     m_Asset: {fileID: -8779424422837530917}
     m_Duration: 3
