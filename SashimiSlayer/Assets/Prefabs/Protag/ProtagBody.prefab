@@ -9856,6 +9856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8052754702843359902}
   - component: {fileID: 3676557254323355344}
+  - component: {fileID: 1011728654055859092}
   m_Layer: 0
   m_Name: ParryIcons
   m_TagString: Untagged
@@ -9898,6 +9899,25 @@ MonoBehaviour:
   _animators:
   - {fileID: 3932522774148569482}
   - {fileID: 8559283525871142478}
+--- !u!114 &1011728654055859092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143433492268318193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72f4d8224802c84e9e24c4101efb21f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipParryDirectionEvent: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
+    type: 2}
+  _sprites:
+  - {fileID: 341611061104258262}
+  - {fileID: 3191289809871855088}
+  _particles: []
+  _transforms: []
 --- !u!1 &1173543765282030318
 GameObject:
   m_ObjectHideFlags: 0
@@ -25168,7 +25188,7 @@ GameObject:
   - component: {fileID: 3932522774148569482}
   - component: {fileID: 1361788165975723061}
   m_Layer: 0
-  m_Name: Top
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25238,7 +25258,7 @@ GameObject:
   - component: {fileID: 8559283525871142478}
   - component: {fileID: 3242177595369577150}
   m_Layer: 0
-  m_Name: Middle
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

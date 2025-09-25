@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: block_right_small
+      name: L_block_small
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: block_left_small
+      name: R_block_small
       rect:
         serializedVersion: 2
         x: 200
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      block_left_small: 287091319
-      block_right_small: 1712797032
+      L_block_small: 1712797032
+      R_block_small: 287091319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

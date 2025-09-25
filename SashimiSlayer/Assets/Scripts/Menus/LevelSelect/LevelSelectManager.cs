@@ -72,15 +72,15 @@ namespace Menus.LevelSelect
         {
             int prevPanelIndex = _currentPanelIndex;
             int flipBlockDirection = InputService.Instance.FlipParryDirection ? -1 : 1;
-            if (newState == SharedTypes.BlockPoseStates.RightPose)
+            if (newState == SharedTypes.BlockPoseStates.BlockLeft)
             {
                 // Go next
-                _currentPanelIndex += flipBlockDirection;
+                _currentPanelIndex -= flipBlockDirection;
             }
-            else if (newState == SharedTypes.BlockPoseStates.LeftPose)
+            else if (newState == SharedTypes.BlockPoseStates.BlockRight)
             {
                 // Go previous
-                _currentPanelIndex -= flipBlockDirection;
+                _currentPanelIndex += flipBlockDirection;
             }
 
             _currentPanelIndex = Mathf.Clamp(_currentPanelIndex, 0, _levelPanels.Count - 1);

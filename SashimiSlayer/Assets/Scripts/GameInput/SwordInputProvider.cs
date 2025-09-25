@@ -82,14 +82,14 @@ namespace GameInput
 
             if (data.TopButton && !_wasTopButtonPressed)
             {
-                _currentBlockPose = SharedTypes.BlockPoseStates.LeftPose;
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.LeftPose);
+                _currentBlockPose = SharedTypes.BlockPoseStates.BlockRight;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockRight);
             }
 
             if (data.MiddleButton && !_wasMiddleButtonPressed)
             {
-                _currentBlockPose = SharedTypes.BlockPoseStates.RightPose;
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.RightPose);
+                _currentBlockPose = SharedTypes.BlockPoseStates.BlockLeft;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockLeft);
             }
 
             _wasTopButtonPressed = data.TopButton;

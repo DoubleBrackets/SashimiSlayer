@@ -437,16 +437,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1244952284}
     m_Modifications:
+    - target: {fileID: 493790676693434717, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _defaultSprite
+      value: 
+      objectReference: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff,
+        type: 3}
+    - target: {fileID: 493790676693434717, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _flippedSprite
+      value: 
+      objectReference: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff,
+        type: 3}
     - target: {fileID: 1997589898146277632, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_Name
-      value: ShellPrompt
+      value: LeftPrompt
       objectReference: {fileID: 0}
     - target: {fileID: 6975623584651101274, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff,
+      objectReference: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff,
         type: 3}
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
@@ -2145,8 +2157,8 @@ RectTransform:
   m_Children:
   - {fileID: 1872450269}
   - {fileID: 472467207}
-  - {fileID: 6959229336136285509}
   - {fileID: 329837653}
+  - {fileID: 6959229336136285509}
   m_Father: {fileID: 880088437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3187,27 +3199,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1244952284}
     m_Modifications:
-    - target: {fileID: 493790676693434717, guid: b5fdcff4f71b68e49b0785d21404e115,
-        type: 3}
-      propertyPath: _defaultSprite
-      value: 
-      objectReference: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff,
-        type: 3}
-    - target: {fileID: 493790676693434717, guid: b5fdcff4f71b68e49b0785d21404e115,
-        type: 3}
-      propertyPath: _flippedSprite
-      value: 
-      objectReference: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff,
-        type: 3}
     - target: {fileID: 1997589898146277632, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_Name
-      value: StarPrompt
-      objectReference: {fileID: 0}
-    - target: {fileID: 6975623584651101274, guid: b5fdcff4f71b68e49b0785d21404e115,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
+      value: RightPrompt
       objectReference: {fileID: 0}
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
