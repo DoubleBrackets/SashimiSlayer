@@ -140,7 +140,7 @@ MonoBehaviour:
   _bodyTransform: {fileID: 8169531864538412295}
   noteVisualHandler: {fileID: 8648048418781562551}
   _interactionIndex: 0
-  _distanceFromTarget: 1.3
+  _distanceFromTarget: 1
   _moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -297,7 +297,7 @@ PrefabInstance:
     - target: {fileID: 1280336683830416164, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: m_Name
-      value: TwoPartFish
+      value: MootFish
       objectReference: {fileID: 0}
     - target: {fileID: 2358841284720666563, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
