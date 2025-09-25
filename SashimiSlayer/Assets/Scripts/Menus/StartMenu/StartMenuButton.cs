@@ -57,6 +57,11 @@ namespace Menus.StartMenu
 
         private void OnBlockPoseChanged(SharedTypes.BlockPoseStates blockPose)
         {
+            if (!isActiveAndEnabled)
+            {
+                return;
+            }
+
             if (blockPose != _pressPose)
             {
                 return;

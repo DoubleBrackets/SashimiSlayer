@@ -5714,128 +5714,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _pressOnce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _pressPose
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1678571606}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1678571607}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Core.Scene.LevelLoaderMono, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: FMODUnity.StudioEventEmitter, FMODUnity
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 5339086c43da29a4c8e0339a8132dbf0,
-        type: 2}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Core.Scene.GameLevelSO, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: _onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931390341293962214, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_Name
       value: StartGameButton
       objectReference: {fileID: 0}
-    - target: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_LocalScale.x
+      value: 1.4999999
       objectReference: {fileID: 0}
-    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
-      propertyPath: m_text
-      value: 'Start Game
-
-'
+      propertyPath: m_LocalScale.y
+      value: 1.4999999
       objectReference: {fileID: 0}
-    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.3019608
+      propertyPath: m_LocalScale.z
+      value: 1.4999999
       objectReference: {fileID: 0}
-    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.03529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.078431375
-      objectReference: {fileID: 0}
-    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278205594
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -5845,7 +5747,7 @@ PrefabInstance:
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.37
+      value: 0.57999986
       objectReference: {fileID: 0}
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -5891,14 +5793,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
+    - targetCorrespondingSourceObject: {fileID: 5258330999477789606, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1678571606}
-    - targetCorrespondingSourceObject: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1678571607}
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b15670233d1b8444b9c10b47f5234913, type: 3}
 --- !u!1 &1678571605 stripped
 GameObject:
@@ -5906,49 +5804,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1678571604}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1678571606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678571605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f2c50167e0d81d44922c59499e39b26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1678571607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678571605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -153549871
-      Data2: 1212164636
-      Data3: -681903223
-      Data4: -1592310782
-    Path: event:/PlayerSFX/PlayerSheathe
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1709151836
 GameObject:
   m_ObjectHideFlags: 0
@@ -16003,6 +15858,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1678571605}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFishAttemptPlace:
     m_PersistentCalls:
       m_Calls: []
@@ -21217,6 +21084,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
+      propertyPath: m_text
+      value: Another Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -21232,8 +21109,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278205594
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8268202734957726281, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -21249,7 +21151,7 @@ PrefabInstance:
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.35
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -21294,7 +21196,7 @@ PrefabInstance:
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8719976976275615771, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
