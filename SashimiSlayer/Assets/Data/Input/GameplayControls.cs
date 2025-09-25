@@ -82,6 +82,15 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""LeftHandSwordIdentify"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""7d9a55c3-d599-40bd-b04b-9f50ec5f3ea0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""ExhibitionReset"",
                     ""type"": ""Button"",
                     ""id"": ""32f1f98b-e7d2-4f31-9e4e-ff26ff2aff5d"",
@@ -100,13 +109,13 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""LeftHandSwordIdentify"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""7d9a55c3-d599-40bd-b04b-9f50ec5f3ea0"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""ExhibitionSkipLoop"",
+                    ""type"": ""Button"",
+                    ""id"": ""3884bd2a-486b-4071-84ec-ed475181d80b"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -384,6 +393,17 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
                     ""action"": ""LeftHandSwordIdentify"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d973adc9-57ad-498d-bbd9-4bda4a8724bd"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExhibitionSkipLoop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -404,9 +424,10 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         m_Gameplay_BlockButtonRight = m_Gameplay.FindAction("BlockButtonRight", throwIfNotFound: true);
         m_Gameplay_MousePos = m_Gameplay.FindAction("MousePos", throwIfNotFound: true);
         m_Gameplay_SwordControllerAngle = m_Gameplay.FindAction("SwordControllerAngle", throwIfNotFound: true);
+        m_Gameplay_LeftHandSwordIdentify = m_Gameplay.FindAction("LeftHandSwordIdentify", throwIfNotFound: true);
         m_Gameplay_ExhibitionReset = m_Gameplay.FindAction("ExhibitionReset", throwIfNotFound: true);
         m_Gameplay_ExhibitionInvertAim = m_Gameplay.FindAction("ExhibitionInvertAim", throwIfNotFound: true);
-        m_Gameplay_LeftHandSwordIdentify = m_Gameplay.FindAction("LeftHandSwordIdentify", throwIfNotFound: true);
+        m_Gameplay_ExhibitionSkipLoop = m_Gameplay.FindAction("ExhibitionSkipLoop", throwIfNotFound: true);
     }
 
     ~@GameplayControls()
@@ -479,9 +500,10 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_BlockButtonRight;
     private readonly InputAction m_Gameplay_MousePos;
     private readonly InputAction m_Gameplay_SwordControllerAngle;
+    private readonly InputAction m_Gameplay_LeftHandSwordIdentify;
     private readonly InputAction m_Gameplay_ExhibitionReset;
     private readonly InputAction m_Gameplay_ExhibitionInvertAim;
-    private readonly InputAction m_Gameplay_LeftHandSwordIdentify;
+    private readonly InputAction m_Gameplay_ExhibitionSkipLoop;
     public struct GameplayActions
     {
         private @GameplayControls m_Wrapper;
@@ -492,9 +514,10 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         public InputAction @BlockButtonRight => m_Wrapper.m_Gameplay_BlockButtonRight;
         public InputAction @MousePos => m_Wrapper.m_Gameplay_MousePos;
         public InputAction @SwordControllerAngle => m_Wrapper.m_Gameplay_SwordControllerAngle;
+        public InputAction @LeftHandSwordIdentify => m_Wrapper.m_Gameplay_LeftHandSwordIdentify;
         public InputAction @ExhibitionReset => m_Wrapper.m_Gameplay_ExhibitionReset;
         public InputAction @ExhibitionInvertAim => m_Wrapper.m_Gameplay_ExhibitionInvertAim;
-        public InputAction @LeftHandSwordIdentify => m_Wrapper.m_Gameplay_LeftHandSwordIdentify;
+        public InputAction @ExhibitionSkipLoop => m_Wrapper.m_Gameplay_ExhibitionSkipLoop;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -522,15 +545,18 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
             @SwordControllerAngle.started += instance.OnSwordControllerAngle;
             @SwordControllerAngle.performed += instance.OnSwordControllerAngle;
             @SwordControllerAngle.canceled += instance.OnSwordControllerAngle;
+            @LeftHandSwordIdentify.started += instance.OnLeftHandSwordIdentify;
+            @LeftHandSwordIdentify.performed += instance.OnLeftHandSwordIdentify;
+            @LeftHandSwordIdentify.canceled += instance.OnLeftHandSwordIdentify;
             @ExhibitionReset.started += instance.OnExhibitionReset;
             @ExhibitionReset.performed += instance.OnExhibitionReset;
             @ExhibitionReset.canceled += instance.OnExhibitionReset;
             @ExhibitionInvertAim.started += instance.OnExhibitionInvertAim;
             @ExhibitionInvertAim.performed += instance.OnExhibitionInvertAim;
             @ExhibitionInvertAim.canceled += instance.OnExhibitionInvertAim;
-            @LeftHandSwordIdentify.started += instance.OnLeftHandSwordIdentify;
-            @LeftHandSwordIdentify.performed += instance.OnLeftHandSwordIdentify;
-            @LeftHandSwordIdentify.canceled += instance.OnLeftHandSwordIdentify;
+            @ExhibitionSkipLoop.started += instance.OnExhibitionSkipLoop;
+            @ExhibitionSkipLoop.performed += instance.OnExhibitionSkipLoop;
+            @ExhibitionSkipLoop.canceled += instance.OnExhibitionSkipLoop;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -553,15 +579,18 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
             @SwordControllerAngle.started -= instance.OnSwordControllerAngle;
             @SwordControllerAngle.performed -= instance.OnSwordControllerAngle;
             @SwordControllerAngle.canceled -= instance.OnSwordControllerAngle;
+            @LeftHandSwordIdentify.started -= instance.OnLeftHandSwordIdentify;
+            @LeftHandSwordIdentify.performed -= instance.OnLeftHandSwordIdentify;
+            @LeftHandSwordIdentify.canceled -= instance.OnLeftHandSwordIdentify;
             @ExhibitionReset.started -= instance.OnExhibitionReset;
             @ExhibitionReset.performed -= instance.OnExhibitionReset;
             @ExhibitionReset.canceled -= instance.OnExhibitionReset;
             @ExhibitionInvertAim.started -= instance.OnExhibitionInvertAim;
             @ExhibitionInvertAim.performed -= instance.OnExhibitionInvertAim;
             @ExhibitionInvertAim.canceled -= instance.OnExhibitionInvertAim;
-            @LeftHandSwordIdentify.started -= instance.OnLeftHandSwordIdentify;
-            @LeftHandSwordIdentify.performed -= instance.OnLeftHandSwordIdentify;
-            @LeftHandSwordIdentify.canceled -= instance.OnLeftHandSwordIdentify;
+            @ExhibitionSkipLoop.started -= instance.OnExhibitionSkipLoop;
+            @ExhibitionSkipLoop.performed -= instance.OnExhibitionSkipLoop;
+            @ExhibitionSkipLoop.canceled -= instance.OnExhibitionSkipLoop;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -596,8 +625,9 @@ public partial class @GameplayControls: IInputActionCollection2, IDisposable
         void OnBlockButtonRight(InputAction.CallbackContext context);
         void OnMousePos(InputAction.CallbackContext context);
         void OnSwordControllerAngle(InputAction.CallbackContext context);
+        void OnLeftHandSwordIdentify(InputAction.CallbackContext context);
         void OnExhibitionReset(InputAction.CallbackContext context);
         void OnExhibitionInvertAim(InputAction.CallbackContext context);
-        void OnLeftHandSwordIdentify(InputAction.CallbackContext context);
+        void OnExhibitionSkipLoop(InputAction.CallbackContext context);
     }
 }

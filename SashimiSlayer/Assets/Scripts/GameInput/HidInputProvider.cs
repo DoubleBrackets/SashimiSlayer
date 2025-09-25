@@ -29,6 +29,9 @@ namespace GameInput
         private UnityEvent _OnExhibitionInvertAimEvent;
 
         [SerializeField]
+        private UnityEvent _onExhibitionSkipLoopEvent;
+
+        [SerializeField]
         private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
 
         private bool IsMenuOverlayed => _overlayMenus > 0;
@@ -159,6 +162,11 @@ namespace GameInput
             }
         }
 
+        public void OnLeftHandSwordIdentify(InputAction.CallbackContext context)
+        {
+            _onLeftHandSwordIdentifyEvent?.Invoke(context.ReadValueAsButton());
+        }
+
         public void OnExhibitionReset(InputAction.CallbackContext context)
         {
             if (context.performed)
@@ -175,9 +183,12 @@ namespace GameInput
             }
         }
 
-        public void OnLeftHandSwordIdentify(InputAction.CallbackContext context)
+        public void OnExhibitionSkipLoop(InputAction.CallbackContext context)
         {
-            _onLeftHandSwordIdentifyEvent?.Invoke(context.ReadValueAsButton());
+            if (context.performed)
+            {
+                _onExhibitionSkipLoopEvent?.Invoke();
+            }
         }
 
         private void HandleMenuToggled(bool isMenuOpen)

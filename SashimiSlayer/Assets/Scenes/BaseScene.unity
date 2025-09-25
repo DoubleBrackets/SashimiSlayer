@@ -132,7 +132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 28433223}
   - component: {fileID: 28433222}
-  - component: {fileID: 28433224}
   m_Layer: 0
   m_Name: TimingService
   m_TagString: Untagged
@@ -178,23 +177,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &28433224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28433221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 079a144310f6ff046875115cff76b164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _beatmapTimeManager: {fileID: 28433222}
-  _setBeatNoteSpawningEnabledEvent: {fileID: 11400000, guid: cf723e3ec26681646873098fad8d1137,
-    type: 2}
-  _noteInteractionFinalResultEvent: {fileID: 11400000, guid: 62c8f0224e6cd4b4885d7ee487e3bab6,
-    type: 2}
 --- !u!1 &73587386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,6 +4927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1447541452}
   - component: {fileID: 1447541451}
+  - component: {fileID: 1447541453}
   m_Layer: 0
   m_Name: FMODParamManager
   m_TagString: Untagged
@@ -4975,6 +4958,21 @@ MonoBehaviour:
   _interactionTimingGlobalParam: InteractionTimingGlobal
   _successStreakParam: SuccessStreak
   _sliceTargetCountParam: SliceTargetCount
+  _onFmodStreakParamChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1447541453}
+        m_TargetAssemblyTypeName: Beatmapping.Timing.LoopRegionGuardMarker, Assembly-CSharp
+        m_MethodName: OnFMODStreakParamSet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1447541452
 Transform:
   m_ObjectHideFlags: 0
@@ -4990,6 +4988,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1447541453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447541450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079a144310f6ff046875115cff76b164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beatmapTimeManager: {fileID: 28433222}
+  _setBeatNoteSpawningEnabledEvent: {fileID: 11400000, guid: cf723e3ec26681646873098fad8d1137,
+    type: 2}
+  _onLoopPassed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1447541451}
+        m_TargetAssemblyTypeName: Core.Audio.FmodParamManager, Assembly-CSharp
+        m_MethodName: EndSkipLoops
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1448660305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7208,6 +7236,21 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+  _onExhibitionSkipLoopEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1447541451}
+        m_TargetAssemblyTypeName: Core.Audio.FmodParamManager, Assembly-CSharp
+        m_MethodName: BeginSkipLoops
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   _onLeftHandSwordIdentifyEvent:
     m_PersistentCalls:
