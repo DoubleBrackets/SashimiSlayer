@@ -100,7 +100,7 @@ namespace Core.Audio
         {
             if (_shouldSkipLoops)
             {
-                GUILayout.TextField("SKIP");
+                GUILayout.TextField("~");
             }
         }
 
