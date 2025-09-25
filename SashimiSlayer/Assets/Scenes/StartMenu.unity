@@ -5808,7 +5808,7 @@ PrefabInstance:
     - target: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -5845,7 +5845,7 @@ PrefabInstance:
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.37
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -5899,6 +5899,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1678571607}
+    - targetCorrespondingSourceObject: {fileID: 5258330999477789606, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b15670233d1b8444b9c10b47f5234913, type: 3}
 --- !u!1 &1678571605 stripped
 GameObject:
@@ -16003,6 +16007,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1678571605}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFishAttemptPlace:
     m_PersistentCalls:
       m_Calls: []
@@ -21217,6 +21233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
+      propertyPath: m_text
+      value: Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -21249,7 +21270,7 @@ PrefabInstance:
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.35
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 8276384366198047794, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
