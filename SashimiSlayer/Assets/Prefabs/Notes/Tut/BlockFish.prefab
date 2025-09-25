@@ -48,7 +48,7 @@ MonoBehaviour:
   _bodyTransform: {fileID: 3397291025441130690}
   noteVisualHandler: {fileID: 2756644931817438066}
   _interactionIndex: 0
-  _distanceFromTarget: 1
+  _distanceFromTarget: 1.3
   _moveCurve:
     serializedVersion: 2
     m_Curve:
@@ -308,7 +308,7 @@ PrefabInstance:
     - target: {fileID: 1280336683830416164, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
       propertyPath: m_Name
-      value: AngryFish
+      value: BlockFish
       objectReference: {fileID: 0}
     - target: {fileID: 7690596804962082351, guid: 145834922b2ce6e4391b2bed15e8c7c3,
         type: 3}
