@@ -109,8 +109,8 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.LeftPose);
-                _blockPoseStates = SharedTypes.BlockPoseStates.LeftPose;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockLeft);
+                _blockPoseStates = SharedTypes.BlockPoseStates.BlockLeft;
             }
         }
 
@@ -123,8 +123,8 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.RightPose);
-                _blockPoseStates = SharedTypes.BlockPoseStates.RightPose;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockRight);
+                _blockPoseStates = SharedTypes.BlockPoseStates.BlockRight;
             }
         }
 
