@@ -1,12 +1,11 @@
 using System;
 using System.Runtime.InteropServices;
 using AOT;
-using Beatmapping.Interactions;
 using Events;
-using Events.Core;
 using FMOD;
 using FMOD.Studio;
 using UnityEngine;
+using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 namespace Beatmapping.Timing
@@ -28,31 +27,27 @@ namespace Beatmapping.Timing
         [SerializeField]
         private BoolEvent _setBeatNoteSpawningEnabledEvent;
 
-        [Header("Event (In)")]
-
         [SerializeField]
-        private NoteInteractionFinalResultEvent _noteInteractionFinalResultEvent;
+        private UnityEvent _onLoopPassed;
 
         private EVENT_CALLBACK _callback;
-
-        private int _currentSuccessfulStreak;
 
         private int _successfulStreakRequiredToUnlockLoopRegion;
 
         private double _guardMarkerBeatmapTime;
 
+        private int _currentSuccessfulStreak;
+
         private void Awake()
         {
             _instance = this;
             _beatmapTimeManager.OnBeatmapSoundtrackInstanceCreated += OnBeatmapSoundtrackInstanceCreated;
-            _noteInteractionFinalResultEvent.AddListener(OnNoteInteractionFinalResult);
             _beatmapTimeManager.OnTick += OnTick;
         }
 
         private void OnDestroy()
         {
             _beatmapTimeManager.OnBeatmapSoundtrackInstanceCreated -= OnBeatmapSoundtrackInstanceCreated;
-            _noteInteractionFinalResultEvent.RemoveListener(OnNoteInteractionFinalResult);
             _beatmapTimeManager.OnTick -= OnTick;
         }
 
@@ -66,27 +61,27 @@ namespace Beatmapping.Timing
             }
         }
 
-        private void OnNoteInteractionFinalResult(NoteInteraction.FinalResult result)
+        /// <summary>
+        ///     Called by the FMOD Param manager
+        /// </summary>
+        /// <param name="fmodStreakParam"></param>
+        public void OnFMODStreakParamSet(int fmodStreakParam)
         {
-            if (result.Successful)
-            {
-                _currentSuccessfulStreak++;
-            }
-            else
-            {
-                _currentSuccessfulStreak = 0;
-            }
-
+            _currentSuccessfulStreak = fmodStreakParam;
             // After each interaction unlock the note spawning
             // This shouldn't ever come into play if the loop guard markers are set up correctly in FMOD
             // So it's more of a "just in case" someone misplaces a marker...
             _setBeatNoteSpawningEnabledEvent.Raise(true);
         }
 
-        private void UpdateSpawningEnabled()
+        private void EnableSpawningOnLoopPassed()
         {
             bool spawningEnabled = _currentSuccessfulStreak >= _successfulStreakRequiredToUnlockLoopRegion;
             _setBeatNoteSpawningEnabledEvent.Raise(spawningEnabled);
+            if (spawningEnabled)
+            {
+                _onLoopPassed?.Invoke();
+            }
         }
 
         private void OnBeatmapSoundtrackInstanceCreated(EventInstance instance)
@@ -131,7 +126,7 @@ namespace Beatmapping.Timing
             {
                 _instance._successfulStreakRequiredToUnlockLoopRegion = int.Parse(markerName.Split(' ')[0]);
                 _instance._guardMarkerBeatmapTime = _instance._beatmapTimeManager.CurrentTickInfo.BeatmapTime;
-                _instance.UpdateSpawningEnabled();
+                _instance.EnableSpawningOnLoopPassed();
             }
             catch (Exception)
             {
