@@ -5714,10 +5714,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      propertyPath: _pressOnce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_Name
       value: StartGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8026839660033726894, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -5792,11 +5802,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5258330999477789606, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b15670233d1b8444b9c10b47f5234913, type: 3}
 --- !u!1 &1678571605 stripped
 GameObject:
@@ -15870,6 +15876,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7235256992770112482}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFishAttemptPlace:
     m_PersistentCalls:
       m_Calls: []
@@ -21023,6 +21041,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
+      propertyPath: _pressOnce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485799121125092960, guid: b15670233d1b8444b9c10b47f5234913,
+        type: 3}
       propertyPath: _pressPose
       value: 1
       objectReference: {fileID: 0}
@@ -21075,7 +21098,7 @@ PrefabInstance:
     - target: {fileID: 3018770995018090927, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3996785745211567415, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -21206,11 +21229,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5258330999477789606, guid: b15670233d1b8444b9c10b47f5234913,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b15670233d1b8444b9c10b47f5234913, type: 3}
 --- !u!1 &7235256992770112482 stripped
 GameObject:
