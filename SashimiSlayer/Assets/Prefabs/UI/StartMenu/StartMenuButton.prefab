@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonTransform: {fileID: 8276384366198047794}
   _pressPose: 0
-  _pressOnce: 1
+  _pressOnce: 0
   _shakeDuration: 0.3
   _shakeStrength: 0.5
   _shakeVibrato: 25
