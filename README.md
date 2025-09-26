@@ -16,7 +16,7 @@ Dev branch builds are downloadable from https://doublebrackets.itch.io/sashimi-s
 
 Programs
 - Unity 2022.3.48f1
-- FMOD 2.02
+- FMOD 2.03
 
 Arduino Libraries (Required to compile sketches)
 - https://docs.arduino.cc/libraries/adafruit-bno055/ (install through Arduino IDE Library Manager to get dependencies automatically)
