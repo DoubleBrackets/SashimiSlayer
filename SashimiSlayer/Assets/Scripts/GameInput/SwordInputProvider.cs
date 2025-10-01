@@ -27,12 +27,6 @@ namespace GameInput
         [Header("Events (In)")]
 
         [SerializeField]
-        private FloatEvent _angleMultiplierEvent;
-
-        [SerializeField]
-        private FloatEvent _swordAngleOffsetEvent;
-
-        [SerializeField]
         private StringEvent _connectToSerialPort;
 
         [SerializeField]
@@ -51,14 +45,10 @@ namespace GameInput
 
         private SharedTypes.BlockPoseStates _currentBlockPose;
 
-        private float _angleMultiplier = 1f;
-        private float _angleOffset;
-
         private void Awake()
         {
             _serialReader.OnSerialRead += HandleSerialRead;
-            _angleMultiplierEvent.AddListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.AddListener(SetAngleOffset);
+
             _connectToSerialPort.AddListener(ConnectToPort);
             _upAxisChangedEvent.AddListener(HandleUpAxisChanged);
         }
@@ -66,8 +56,7 @@ namespace GameInput
         private void OnDestroy()
         {
             _serialReader.OnSerialRead -= HandleSerialRead;
-            _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
+
             _connectToSerialPort.RemoveListener(ConnectToPort);
             _upAxisChangedEvent.RemoveListener(HandleUpAxisChanged);
         }
@@ -75,16 +64,6 @@ namespace GameInput
         private void HandleUpAxisChanged(int axis)
         {
             _upAxis = (UpAxis)axis;
-        }
-
-        private void SetAngleMultiplier(float angleMultiplier)
-        {
-            _angleMultiplier = angleMultiplier;
-        }
-
-        private void SetAngleOffset(float angleOffset)
-        {
-            _angleOffset = angleOffset;
         }
 
         private void HandleSerialRead(SwordSerialReader.SerialReadResult data)
@@ -103,20 +82,20 @@ namespace GameInput
 
             if (data.TopButton && !_wasTopButtonPressed)
             {
-                _currentBlockPose = SharedTypes.BlockPoseStates.TopPose;
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.TopPose);
+                _currentBlockPose = SharedTypes.BlockPoseStates.BlockRight;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockRight);
             }
 
             if (data.MiddleButton && !_wasMiddleButtonPressed)
             {
-                _currentBlockPose = SharedTypes.BlockPoseStates.MidPose;
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.MidPose);
+                _currentBlockPose = SharedTypes.BlockPoseStates.BlockLeft;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockLeft);
             }
 
             _wasTopButtonPressed = data.TopButton;
             _wasMiddleButtonPressed = data.MiddleButton;
 
-            _swordAngle = ProcessSwordOrientation(data.SwordOrientation) + _angleOffset;
+            _swordAngle = ProcessSwordOrientation(data.SwordOrientation);
             _quatDebugger.transform.rotation = data.SwordOrientation;
         }
 
@@ -144,7 +123,6 @@ namespace GameInput
 
             Vector3 up = quat * upAxis;
             float angle = -Vector3.Angle(up, Vector3.up) + 90f;
-            angle *= _angleMultiplier;
             return angle;
         }
 

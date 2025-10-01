@@ -62,7 +62,7 @@ PrefabInstance:
     - target: {fileID: 2747962596363924785, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
       propertyPath: m_Name
-      value: BlockIndicatorTop
+      value: BlockIndicatorRight
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
@@ -85,7 +85,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _pipPositioner
       value: 
-      objectReference: {fileID: 11400000, guid: a9d059dd8f27e7d42999bec226ac2bfc,
+      objectReference: {fileID: 11400000, guid: 469d58a13d9053e44b8a6ba5e4cb40cf,
         type: 2}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
@@ -205,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 2747962596363924785, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
       propertyPath: m_Name
-      value: BlockPipIndicatorMid
+      value: BlockPipIndicatorLeft
       objectReference: {fileID: 0}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}
@@ -228,7 +228,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _pipPositioner
       value: 
-      objectReference: {fileID: 11400000, guid: a9d059dd8f27e7d42999bec226ac2bfc,
+      objectReference: {fileID: 11400000, guid: 469d58a13d9053e44b8a6ba5e4cb40cf,
         type: 2}
     - target: {fileID: 3324664361253158490, guid: 9e49de79ebcfe3e4f98e1b2fa8bb7200,
         type: 3}

@@ -25,7 +25,7 @@ namespace Timeline.BeatNoteTrack
             BeatmapConfigSo beatmap;
             if (Application.isPlaying)
             {
-                beatmap = LevelLoader.Instance.CurrentLevel.Beatmap;
+                beatmap = LevelLoader.Instance.CurrentLevel.NormalBeatmap;
             }
             else
             {

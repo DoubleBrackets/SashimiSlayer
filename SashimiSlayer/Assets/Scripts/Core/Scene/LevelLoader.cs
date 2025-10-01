@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Beatmapping;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using EditorUtils.BoldHeader;
@@ -12,6 +13,12 @@ namespace Core.Scene
 {
     public class LevelLoader : MonoBehaviour
     {
+        public enum Difficulty
+        {
+            Normal,
+            Hard
+        }
+
         [BoldHeader("Level Loader")]
         [InfoBox("Handles changing levels & scenes")]
         [Header("Depends")]
@@ -33,6 +40,8 @@ namespace Core.Scene
 
         private string _currentLevelSceneName = string.Empty;
         private GameLevelSO _previousBeatmapLevel;
+
+        private Difficulty _currentDifficulty = Difficulty.Normal;
 
         /// <summary>
         ///     Queue for levels to be loaded, in case a transition is interrupted by another level load
@@ -106,7 +115,7 @@ namespace Core.Scene
             if (SceneManager.GetSceneByName(_currentLevelSceneName).isLoaded)
             {
                 await SceneManager.UnloadSceneAsync(_currentLevelSceneName);
-                _beatmapUnloadEvent.Raise(CurrentLevel.Beatmap);
+                _beatmapUnloadEvent.Raise(GetBeatmapFromTrack(gameLevel));
             }
 
             // Load the new scene
@@ -118,7 +127,7 @@ namespace Core.Scene
 
             if (gameLevel.LevelType == GameLevelSO.LevelTypes.Gameplay)
             {
-                _beatmapStartEvent.Raise(gameLevel.Beatmap);
+                _beatmapStartEvent.Raise(GetBeatmapFromTrack(gameLevel));
                 _previousBeatmapLevel = gameLevel;
             }
 
@@ -176,6 +185,31 @@ namespace Core.Scene
                 Debug.Log($"Unloading bank {bankRef}");
                 RuntimeManager.UnloadBank(bankRef);
             }
+        }
+
+        public void SetDifficulty(Difficulty difficulty)
+        {
+            _currentDifficulty = difficulty;
+            Debug.Log($"Current difficulty set to: {_currentDifficulty}");
+        }
+
+        private BeatmapConfigSo GetBeatmapFromTrack(GameLevelSO track)
+        {
+            if (_currentDifficulty == Difficulty.Normal)
+            {
+                return track.NormalBeatmap;
+            }
+
+            if (_currentDifficulty == Difficulty.Hard)
+            {
+                return track.HardBeatmap == null
+                    ? track.NormalBeatmap
+                    : track.HardBeatmap;
+            }
+
+            Debug.LogError($"Unknown difficulty: {_currentDifficulty}");
+
+            return null;
         }
     }
 }

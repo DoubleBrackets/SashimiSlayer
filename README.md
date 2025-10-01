@@ -1,5 +1,5 @@
 # Sashimi Slayer
-[![Build to itch.io](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/main.yml)
+[![itch.io Release Build](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-release-builder.yml/badge.svg?branch=main)](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-release-builder.yml) [![itch.io Dev Build](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-dev-builder.yml/badge.svg?branch=dev)](https://github.com/DoubleBrackets/SashimiSlayer/actions/workflows/unity-dev-builder.yml)
 
 An Alt Control Rhythm Slice'em up Game! 
 
@@ -16,7 +16,7 @@ Dev branch builds are downloadable from https://doublebrackets.itch.io/sashimi-s
 
 Programs
 - Unity 2022.3.48f1
-- FMOD 2.02
+- FMOD 2.03
 
 Arduino Libraries (Required to compile sketches)
 - https://docs.arduino.cc/libraries/adafruit-bno055/ (install through Arduino IDE Library Manager to get dependencies automatically)

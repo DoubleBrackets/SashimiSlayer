@@ -28,6 +28,12 @@ namespace GameInput
         [SerializeField]
         private UnityEvent _OnExhibitionInvertAimEvent;
 
+        [SerializeField]
+        private UnityEvent _onExhibitionSkipLoopEvent;
+
+        [SerializeField]
+        private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
+
         private bool IsMenuOverlayed => _overlayMenus > 0;
 
         public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
@@ -39,8 +45,6 @@ namespace GameInput
         private SharedTypes.BlockPoseStates _blockPoseStates;
         private SharedTypes.SheathState _sheathState;
 
-        private float _angleMultiplier = 1f;
-        private float _angleOffset;
         private float _rawSwordAngle;
 
         /// <summary>
@@ -50,8 +54,6 @@ namespace GameInput
 
         private void Awake()
         {
-            _angleMultiplierEvent.AddListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.AddListener(SetAngleOffset);
             _onMenuToggled.AddListener(HandleMenuToggled);
         }
 
@@ -70,8 +72,6 @@ namespace GameInput
 
         private void OnDestroy()
         {
-            _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
             _onMenuToggled.RemoveListener(HandleMenuToggled);
         }
 
@@ -103,7 +103,7 @@ namespace GameInput
             }
         }
 
-        public void OnPoseButtonTop(InputAction.CallbackContext context)
+        public void OnBlockButtonLeft(InputAction.CallbackContext context)
         {
             if (IsMenuOverlayed)
             {
@@ -112,12 +112,12 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.TopPose);
-                _blockPoseStates = SharedTypes.BlockPoseStates.TopPose;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockLeft);
+                _blockPoseStates = SharedTypes.BlockPoseStates.BlockLeft;
             }
         }
 
-        public void OnPoseButtonMid(InputAction.CallbackContext context)
+        public void OnBlockButtonRight(InputAction.CallbackContext context)
         {
             if (IsMenuOverlayed)
             {
@@ -126,8 +126,8 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.MidPose);
-                _blockPoseStates = SharedTypes.BlockPoseStates.MidPose;
+                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockRight);
+                _blockPoseStates = SharedTypes.BlockPoseStates.BlockRight;
             }
         }
 
@@ -158,8 +158,13 @@ namespace GameInput
         {
             if (context.performed)
             {
-                _rawSwordAngle = -JoyToAngle(context.ReadValue<Vector2>().normalized);
+                _rawSwordAngle = JoyToAngle(context.ReadValue<Vector2>().normalized);
             }
+        }
+
+        public void OnLeftHandSwordIdentify(InputAction.CallbackContext context)
+        {
+            _onLeftHandSwordIdentifyEvent?.Invoke(context.ReadValueAsButton());
         }
 
         public void OnExhibitionReset(InputAction.CallbackContext context)
@@ -178,35 +183,23 @@ namespace GameInput
             }
         }
 
+        public void OnExhibitionSkipLoop(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _onExhibitionSkipLoopEvent?.Invoke();
+            }
+        }
+
         private void HandleMenuToggled(bool isMenuOpen)
         {
             Debug.Log("Menu toggled: " + isMenuOpen);
             _overlayMenus += isMenuOpen ? 1 : -1;
         }
 
-        private void SetAngleMultiplier(float angleMultiplier)
-        {
-            _angleMultiplier = angleMultiplier;
-        }
-
-        private void SetAngleOffset(float angleOffset)
-        {
-            _angleOffset = angleOffset;
-        }
-
         public override float GetSwordAngle()
         {
-            return ConfiguredSwordAngle(_rawSwordAngle);
-        }
-
-        /// <summary>
-        ///     Process raw input angle with settings configuration
-        /// </summary>
-        /// <param name="rawSwordAngled"></param>
-        /// <returns></returns>
-        private float ConfiguredSwordAngle(float rawSwordAngled)
-        {
-            return (rawSwordAngled + _angleOffset) * _angleMultiplier;
+            return _rawSwordAngle;
         }
 
         private float JoyToAngle(Vector2 joyVector)

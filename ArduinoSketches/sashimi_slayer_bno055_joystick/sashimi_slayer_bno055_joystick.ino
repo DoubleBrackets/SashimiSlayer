@@ -1,10 +1,20 @@
 /*
-v. 0.1.1
+v. 0.3.1
 This variation allows the sword to act as a generic joystick. 
 This is preferred over the serial comm variation.
 
+This version also identifies the handed-ness by holding down the appropriate button, which automatically inverts aiming + block directions in-game
+
+Notes
+- Handedness is based on which hand grips the sword handle
+- Top button is the one closer to the sword handle
+- Bot button is the other one
+
 To connect with the game, just plug the sword in and it should work immediately.
 */
+
+// CONFIG - SET THIS TO 'true' IF FLASHING ONTO A LEFT-HANDED SWORD
+bool leftHanded = false;
 
 // Libraries
 #include <Wire.h>
@@ -16,7 +26,7 @@ To connect with the game, just plug the sword in and it should work immediately.
 
 // Button state
 int btnTop = 0;
-int btnMid = 0;
+int btnBot = 0;
 
 int sliceBtn = 0;
 
@@ -32,7 +42,7 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_JOYSTICK,
 // Pin numbers
 #define HAPTIC_IN_PIN 5
 #define BTN_TOP_PIN 14
-#define BTN_MID_PIN 15
+#define BTN_BOT_PIN 15
 
 #define SHEATHE_L_PIN 7
 #define SHEATHE_R_PIN 8
@@ -40,9 +50,10 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_JOYSTICK,
 
 // Gamepad button mapping
 #define SLICE_GAMEPAD 1
-#define BLOCK_TOP_GAMEPAD 2
-#define BLOCK_MID_GAMEPAD 3
+#define BLOCK_TOP_GAMEPAD 3
+#define BLOCK_BOT_GAMEPAD 2
 #define AXIS_RANGE 1024
+#define LEFTHAND_IDENTIFY 4
 
 char inputBuffer;
 
@@ -72,7 +83,7 @@ void setup() {
   setup_gyro();
 
   pinMode(BTN_TOP_PIN, INPUT_PULLUP);
-  pinMode(BTN_MID_PIN, INPUT_PULLUP);
+  pinMode(BTN_BOT_PIN, INPUT_PULLUP);
   pinMode(SHEATHE_L_PIN, INPUT_PULLUP);
   pinMode(SHEATHE_R_PIN, INPUT_PULLUP);
   pinMode(LED_PIN, OUTPUT);
@@ -81,12 +92,15 @@ void setup() {
   Joystick.begin();
   Joystick.setXAxisRange(-AXIS_RANGE, AXIS_RANGE);
   Joystick.setYAxisRange(-AXIS_RANGE, AXIS_RANGE);
+
+  // Identify as left-handed if relevant
+  Joystick.setButton(LEFTHAND_IDENTIFY, leftHanded);
 }
 
 void loop() {
   // invert because of pullup
   bool newBtnTop = !digitalRead(BTN_TOP_PIN);
-  bool newBtnMid = !digitalRead(BTN_MID_PIN);
+  bool newBtnBot = !digitalRead(BTN_BOT_PIN);
 
   if (newBtnTop != btnTop)
   {
@@ -94,10 +108,10 @@ void loop() {
     Joystick.setButton(BLOCK_TOP_GAMEPAD, btnTop);
   }
 
-  if (newBtnMid != btnMid)
+  if (newBtnBot != btnBot)
   {
-    btnMid = newBtnMid;
-    Joystick.setButton(BLOCK_MID_GAMEPAD, btnMid);
+    btnBot = newBtnBot;
+    Joystick.setButton(BLOCK_BOT_GAMEPAD, btnBot);
   }
 
   // False when sheathe is in (switches are closed), true when sheathe is out (switches are open)

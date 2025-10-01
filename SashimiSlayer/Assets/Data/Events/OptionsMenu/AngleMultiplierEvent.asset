@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cf66aa3f5340d0af36934d30123a71, type: 3}
   m_Name: AngleMultiplierEvent
   m_EditorClassIdentifier: 
-  _description: Triggers when the hardware angle multiplier changes
+  _description: Triggers when the Angle Multiplier setting changes
+  _debug: 0

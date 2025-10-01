@@ -8,6 +8,7 @@ using FMOD;
 using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 namespace Core.Audio
@@ -69,7 +70,17 @@ namespace Core.Audio
         [ParamRef]
         private string _sliceTargetCountParam;
 
-        private int _successfulStreak;
+        [Header("Unity Events")]
+
+        [SerializeField]
+        private UnityEvent<int> _onFmodStreakParamChanged;
+
+        private int _successStreak;
+
+        /// <summary>
+        ///     For exhibitioning; if toggled true, tutorial will not loop (streak is set to max)
+        /// </summary>
+        private bool _shouldSkipLoops;
 
         private void Awake()
         {
@@ -85,6 +96,14 @@ namespace Core.Audio
             _beatmapLoadedEvent.RemoveListener(OnBeatmapLoaded);
         }
 
+        private void OnGUI()
+        {
+            if (_shouldSkipLoops)
+            {
+                GUILayout.TextField("~");
+            }
+        }
+
         private void OnBeatmapLoaded(BeatmapConfigSo beatmap)
         {
             PitchShiftValues pitchShiftValues = beatmap.PitchShiftValues;
@@ -92,13 +111,15 @@ namespace Core.Audio
             SetParamByName(_slicePitchShiftParam, pitchShiftValues.SlicePitchShift);
             SetParamByName(_starBlockPitchShiftParam, pitchShiftValues.StarBlockPitchShift);
             SetParamByName(_shellBlockPitchShiftParam, pitchShiftValues.ShellBlockPitchShift);
+
+            EndSkipLoops();
         }
 
         private void OnNoteInteractionFinalResult(NoteInteraction.FinalResult result)
         {
             if (result.Successful)
             {
-                _successfulStreak++;
+                _successStreak++;
 
                 var timingParamVal = 0;
                 switch (result.TimingResult.Score)
@@ -123,10 +144,14 @@ namespace Core.Audio
             }
             else
             {
-                _successfulStreak = 0;
+                _successStreak = 0;
             }
 
-            SetParamByName(_successStreakParam, _successfulStreak);
+            // If auto clear is toggled, leave fmod param at max to avoid looping
+            if (!_shouldSkipLoops)
+            {
+                SetStreakParam(_successStreak);
+            }
         }
 
         private void OnSliceResult(SliceResultData data)
@@ -151,6 +176,27 @@ namespace Core.Audio
             {
                 Debug.Log($"Failed to set FMOD parameter '{param}' to {value}: {result}");
             }
+        }
+
+        public void BeginSkipLoops()
+        {
+            _shouldSkipLoops = true;
+
+            if (_shouldSkipLoops)
+            {
+                SetStreakParam(99);
+            }
+        }
+
+        public void EndSkipLoops()
+        {
+            _shouldSkipLoops = false;
+        }
+
+        private void SetStreakParam(int val)
+        {
+            SetParamByName(_successStreakParam, val);
+            _onFmodStreakParamChanged?.Invoke(val);
         }
     }
 }

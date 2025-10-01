@@ -153,6 +153,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &392116377 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1201745700319042158, guid: 07cc0a138bc6a624eb540942b522b906,
+    type: 3}
+  m_PrefabInstance: {fileID: 3839366753099063744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &595073153
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +750,7 @@ PrefabInstance:
     - target: {fileID: 4379481617919899903, guid: aa08b2ed03f82b1429418869623ebc9b,
         type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4379481617919899903, guid: aa08b2ed03f82b1429418869623ebc9b,
         type: 3}
@@ -852,7 +858,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SceneBindings.Array.data[17].key
       value: 
-      objectReference: {fileID: -5514918871920249659, guid: be7318f6e73332d46a85fe51d61ac8ce,
+      objectReference: {fileID: -8851267679948290418, guid: be7318f6e73332d46a85fe51d61ac8ce,
         type: 2}
     - target: {fileID: 4379481617919899903, guid: aa08b2ed03f82b1429418869623ebc9b,
         type: 3}
@@ -995,7 +1001,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SceneBindings.Array.data[17].value
       value: 
-      objectReference: {fileID: 1522054429}
+      objectReference: {fileID: 392116377}
     - target: {fileID: 4379481617919899903, guid: aa08b2ed03f82b1429418869623ebc9b,
         type: 3}
       propertyPath: m_SceneBindings.Array.data[18].value
@@ -1021,6 +1027,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayManagers
       objectReference: {fileID: 0}
+    - target: {fileID: 7237801960541871757, guid: aa08b2ed03f82b1429418869623ebc9b,
+        type: 3}
+      propertyPath: _song
+      value: 
+      objectReference: {fileID: 11400000, guid: 897ac6c85862ae846a1b47876efe6eeb,
+        type: 2}
     - target: {fileID: 7503210638679948415, guid: aa08b2ed03f82b1429418869623ebc9b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1110,6 +1122,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1201745700319042158, guid: 07cc0a138bc6a624eb540942b522b906,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201745700319042158, guid: 07cc0a138bc6a624eb540942b522b906,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.390625
+      objectReference: {fileID: 0}
     - target: {fileID: 7309830885349167797, guid: 07cc0a138bc6a624eb540942b522b906,
         type: 3}
       propertyPath: m_Name

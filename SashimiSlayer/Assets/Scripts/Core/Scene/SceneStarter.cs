@@ -2,9 +2,10 @@ using Beatmapping.Tooling;
 using Cysharp.Threading.Tasks;
 using EditorUtils.BoldHeader;
 using FMODUnity;
-using Menus.MainMenu;
+using Menus.LevelSelect;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.Scene
 {
@@ -20,8 +21,11 @@ namespace Core.Scene
         [SerializeField]
         private BootupConfigSO _bootupConfigSO;
 
+        [FormerlySerializedAs("trackRosterSO")]
+        [FormerlySerializedAs("mapRosterSO")]
+        [FormerlySerializedAs("_levelRosterSO")]
         [SerializeField]
-        private LevelRosterSO _levelRosterSO;
+        private SongRosterSO songRosterSO;
 
         [SerializeField]
         private StudioBankLoader _studioBankLoader;
@@ -49,11 +53,19 @@ namespace Core.Scene
             // Load startup level
             if (BeatmappingUtilities.PlayFromEditedBeatmap)
             {
-                foreach (GameLevelSO level in _levelRosterSO.Levels)
+                foreach (GameLevelSO song in songRosterSO.Songs)
                 {
-                    if (level.Beatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    if (song.NormalBeatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
                     {
-                        LevelLoader.Instance.LoadLevel(level).Forget();
+                        LevelLoader.Instance.SetDifficulty(LevelLoader.Difficulty.Normal);
+                        LevelLoader.Instance.LoadLevel(song).Forget();
+                        return;
+                    }
+
+                    if (song.HardBeatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    {
+                        LevelLoader.Instance.SetDifficulty(LevelLoader.Difficulty.Hard);
+                        LevelLoader.Instance.LoadLevel(song).Forget();
                         return;
                     }
                 }
