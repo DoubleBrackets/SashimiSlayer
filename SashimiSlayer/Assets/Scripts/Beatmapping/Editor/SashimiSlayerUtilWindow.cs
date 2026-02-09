@@ -224,7 +224,7 @@ namespace Beatmapping.Editor
                 EditorSceneManager.OpenScene(startupScenePath, OpenSceneMode.Single);
             }
 
-            EditorApplication.ExecuteMenuItem("Edit/Play");
+            EditorApplication.EnterPlaymode();
         }
 
         public static void CleanupNotes()
@@ -237,6 +237,11 @@ namespace Beatmapping.Editor
             }
         }
 
+        /// <summary>
+        ///     Hook on play mode state change to open last edited scene
+        ///     We need to do this manually since we're entering play mode from the startup scene...
+        /// </summary>
+        /// <param name="param"></param>
         private void ModeChanged(PlayModeStateChange param)
         {
             if (param == PlayModeStateChange.EnteredEditMode)
