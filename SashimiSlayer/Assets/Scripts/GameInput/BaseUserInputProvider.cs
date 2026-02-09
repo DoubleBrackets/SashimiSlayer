@@ -8,6 +8,7 @@ namespace GameInput
         public abstract event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
 
         public abstract event Action<SharedTypes.SheathState> OnSheathStateChanged;
+        public abstract event Action OnToggleMenuInput;
 
         /// <summary>
         ///     Get the sword angle in degrees

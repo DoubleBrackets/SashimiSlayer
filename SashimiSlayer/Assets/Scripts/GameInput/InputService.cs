@@ -35,6 +35,9 @@ namespace GameInput
         [SerializeField]
         private BoolEvent _setFlipParryDirection;
 
+        [SerializeField]
+        private BoolEvent _onMenuToggled;
+
         [Header("Depends")]
 
         [SerializeField]
@@ -65,11 +68,18 @@ namespace GameInput
 
         public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
         public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
+        public override event Action OnToggleMenuInput;
 
         private float _angleMultiplier = 1f;
         private float _angleOffset;
 
         private float _lastSheathedTime;
+        private bool IsMenuOverlayed => _overlayMenus;
+
+        /// <summary>
+        ///     Disables input when menus are open
+        /// </summary>
+        private bool _overlayMenus;
 
         private void Awake()
         {
@@ -90,6 +100,8 @@ namespace GameInput
             _swordAngleOffsetEvent.AddListener(SetAngleOffset);
             _setFlipParryDirection.AddListener(SetInvertDirectionalBlockInputs);
 
+            _onMenuToggled.AddListener(HandleMenuToggled);
+
             InputSystem.onDeviceChange += (device, change) => { UpdateControlScheme(); };
         }
 
@@ -102,6 +114,14 @@ namespace GameInput
             _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
             _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
             _setFlipParryDirection.RemoveListener(SetInvertDirectionalBlockInputs);
+
+            _onMenuToggled.RemoveListener(HandleMenuToggled);
+        }
+
+        private void HandleMenuToggled(bool isMenuOpen)
+        {
+            Debug.Log("Menu toggled: " + isMenuOpen);
+            _overlayMenus = isMenuOpen;
         }
 
         private void SetInvertDirectionalBlockInputs(bool invert)
@@ -162,16 +182,28 @@ namespace GameInput
         {
             InputProvider.OnBlockPoseChanged += HandleBlockPoseChanged;
             InputProvider.OnSheathStateChanged += HandleSheatheStateChanged;
+            InputProvider.OnToggleMenuInput += HandleOnToggleMenuInput;
         }
 
         private void EventPassthroughUnsub()
         {
             InputProvider.OnBlockPoseChanged -= HandleBlockPoseChanged;
             InputProvider.OnSheathStateChanged -= HandleSheatheStateChanged;
+            InputProvider.OnToggleMenuInput -= HandleOnToggleMenuInput;
+        }
+
+        private void HandleOnToggleMenuInput()
+        {
+            OnToggleMenuInput?.Invoke();
         }
 
         private void HandleBlockPoseChanged(SharedTypes.BlockPoseStates state)
         {
+            if (IsMenuOverlayed)
+            {
+                return;
+            }
+
             OnBlockPoseChanged?.Invoke(state);
         }
 
@@ -193,11 +225,22 @@ namespace GameInput
                 _lastSheathedTime = Time.time;
             }
 
+            if (IsMenuOverlayed)
+            {
+                return;
+            }
+
             OnSheathStateChanged?.Invoke(state);
         }
 
         public override float GetSwordAngle()
         {
+            if (IsMenuOverlayed)
+            {
+                // Ignore mouse aim when menus are open
+                return 0;
+            }
+
             return ConfiguredSwordAngle(InputProvider.GetSwordAngle());
         }
 

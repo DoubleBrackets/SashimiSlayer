@@ -17,9 +17,6 @@ namespace GameInput
         [SerializeField]
         private FloatEvent _swordAngleOffsetEvent;
 
-        [SerializeField]
-        private BoolEvent _onMenuToggled;
-
         [Header("Exhibition Hotkey Events")]
 
         [SerializeField]
@@ -34,10 +31,9 @@ namespace GameInput
         [SerializeField]
         private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
 
-        private bool IsMenuOverlayed => _overlayMenus > 0;
-
         public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
         public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
+        public override event Action OnToggleMenuInput;
 
         private GameplayControls _gameplayControls;
 
@@ -47,15 +43,10 @@ namespace GameInput
 
         private float _rawSwordAngle;
 
-        /// <summary>
-        ///     Disables input when menus are open
-        /// </summary>
-        private int _overlayMenus;
-
-        private void Awake()
-        {
-            _onMenuToggled.AddListener(HandleMenuToggled);
-        }
+        // Tracks individual button state without dealing with menu overlays and such
+        // Currently only used for menu toggling w/ button combo
+        private bool _isLeftButtonDown;
+        private bool _isRightButtonDown;
 
         private void OnEnable()
         {
@@ -70,11 +61,6 @@ namespace GameInput
             _gameplayControls.Disable();
         }
 
-        private void OnDestroy()
-        {
-            _onMenuToggled.RemoveListener(HandleMenuToggled);
-        }
-
         public void OnSwordAngle(InputAction.CallbackContext context)
         {
             if (context.performed)
@@ -85,16 +71,17 @@ namespace GameInput
 
         public void OnUnsheathe(InputAction.CallbackContext context)
         {
-            if (IsMenuOverlayed)
-            {
-                return;
-            }
-
             bool isPressed = context.ReadValueAsButton();
 
             SharedTypes.SheathState newState = isPressed
                 ? SharedTypes.SheathState.Unsheathed
                 : SharedTypes.SheathState.Sheathed;
+
+            // Toggle menu by pressing both buttons at the same time and slicing
+            if (_isLeftButtonDown && _isRightButtonDown && newState == SharedTypes.SheathState.Unsheathed)
+            {
+                OnToggleMenuInput?.Invoke();
+            }
 
             if (_sheathState != newState)
             {
@@ -105,10 +92,7 @@ namespace GameInput
 
         public void OnBlockButtonLeft(InputAction.CallbackContext context)
         {
-            if (IsMenuOverlayed)
-            {
-                return;
-            }
+            _isLeftButtonDown = context.ReadValueAsButton();
 
             if (context.ReadValueAsButton())
             {
@@ -119,10 +103,7 @@ namespace GameInput
 
         public void OnBlockButtonRight(InputAction.CallbackContext context)
         {
-            if (IsMenuOverlayed)
-            {
-                return;
-            }
+            _isRightButtonDown = context.ReadValueAsButton();
 
             if (context.ReadValueAsButton())
             {
@@ -133,12 +114,6 @@ namespace GameInput
 
         public void OnMousePos(InputAction.CallbackContext context)
         {
-            if (IsMenuOverlayed)
-            {
-                // Ignore mouse aim when menus are open
-                return;
-            }
-
             var newMousePos = context.ReadValue<Vector2>();
             if (newMousePos != _mousePos && Protaganist.Instance != null && Camera.main != null)
             {
@@ -159,6 +134,14 @@ namespace GameInput
             if (context.performed)
             {
                 _rawSwordAngle = JoyToAngle(context.ReadValue<Vector2>().normalized);
+            }
+        }
+
+        public void OnToggleMenu(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnToggleMenuInput?.Invoke();
             }
         }
 
@@ -189,12 +172,6 @@ namespace GameInput
             {
                 _onExhibitionSkipLoopEvent?.Invoke();
             }
-        }
-
-        private void HandleMenuToggled(bool isMenuOpen)
-        {
-            Debug.Log("Menu toggled: " + isMenuOpen);
-            _overlayMenus += isMenuOpen ? 1 : -1;
         }
 
         public override float GetSwordAngle()
