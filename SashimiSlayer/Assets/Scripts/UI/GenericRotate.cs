@@ -12,13 +12,18 @@ public class GenericRotate : MonoBehaviour
     [SerializeField]
     private Vector3 _defaultRotate;
 
+    private void OnEnable()
+    {
+        transform.localRotation = Quaternion.Euler(_defaultRotate);
+    }
+
     public void Rotate()
     {
-        transform.DORotate(_rotateTo, _expandDuration);
+        transform.DOLocalRotate(_rotateTo, _expandDuration);
     }
 
     public void Unrotate()
     {
-        transform.DORotate(_defaultRotate, _expandDuration);
+        transform.DOLocalRotate(_defaultRotate, _expandDuration);
     }
 }

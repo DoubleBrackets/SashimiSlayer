@@ -33,7 +33,7 @@ namespace UI.Slider
 
         private void OnSliderValueChanged(float value)
         {
-            _canvasGroup.SetEnabled(value != _resetValue);
+            // _canvasGroup.SetEnabled(value != _resetValue);
         }
     }
 }

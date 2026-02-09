@@ -34,6 +34,7 @@ namespace GameInput
 
         public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
         public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
+        public override event Action OnToggleMenuInput;
 
         private UpAxis _upAxis = UpAxis.Y;
 
@@ -76,6 +77,12 @@ namespace GameInput
             {
                 _sheathState = newSheatheState;
                 OnSheathStateChanged?.Invoke(_sheathState);
+
+                // Toggle menu by unsheathing when all buttons are pressed
+                if (_sheathState == SharedTypes.SheathState.Unsheathed && data.TopButton && data.MiddleButton)
+                {
+                    OnToggleMenuInput?.Invoke();
+                }
             }
 
             SharedTypes.BlockPoseStates newPose = 0;

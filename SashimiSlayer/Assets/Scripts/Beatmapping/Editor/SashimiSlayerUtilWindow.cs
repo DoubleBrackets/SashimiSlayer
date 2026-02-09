@@ -9,6 +9,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEditor.Timeline;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
@@ -85,6 +86,23 @@ namespace Beatmapping.Editor
             if (GUILayout.Button("Open Persistent Data Path"))
             {
                 EditorUtility.RevealInFinder(Application.persistentDataPath);
+            }
+
+            if (EventSystem.current)
+            {
+                GameObject selected = EventSystem.current.currentSelectedGameObject;
+
+                // full hierarchy path
+                var path = "";
+
+                while (selected != null)
+                {
+                    path = $"{selected.name}/{path}";
+                    Transform parent = selected.transform.parent;
+                    selected = parent != null ? parent.gameObject : null;
+                }
+
+                GUILayout.Label($"UI Selected: {path}");
             }
         }
 

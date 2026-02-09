@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using EditorUtils.BoldHeader;
 using Events;
+using GameInput;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Utility;
 
@@ -12,6 +15,13 @@ namespace Menus.PauseMenu
 {
     public class PauseMenuController : MonoBehaviour
     {
+        public enum PauseMenuState
+        {
+            Hidden,
+            NavigatingSidebar,
+            InsideView
+        }
+
         [Serializable]
         public struct ViewSelection
         {
@@ -24,11 +34,6 @@ namespace Menus.PauseMenu
                 {
                     View.Show();
                 }
-
-                if (SelectionButton)
-                {
-                    SelectionButton.interactable = false;
-                }
             }
 
             public void Hide()
@@ -36,11 +41,6 @@ namespace Menus.PauseMenu
                 if (View)
                 {
                     View.Hide();
-                }
-
-                if (SelectionButton)
-                {
-                    SelectionButton.interactable = true;
                 }
             }
         }
@@ -53,6 +53,9 @@ namespace Menus.PauseMenu
         private CanvasGroup _canvasGroup;
 
         [SerializeField]
+        private CanvasGroup _sidebarCanvasGroup;
+
+        [SerializeField]
         private List<ViewSelection> _pauseMenuViews;
 
         [Header("Events (Out)")]
@@ -60,9 +63,10 @@ namespace Menus.PauseMenu
         [SerializeField]
         private BoolEvent _menuToggleEvent;
 
-        private bool _menuOpen;
+        private bool _menuOpen = true;
 
         private ViewSelection _currentView;
+        private PauseMenuState _state;
 
         private void Awake()
         {
@@ -72,28 +76,27 @@ namespace Menus.PauseMenu
             {
                 view.View.Hide();
                 view.View.ViewAwake();
-                view.SelectionButton.onClick.AddListener(() => SwitchView(view));
+                view.SelectionButton.onClick.AddListener(() => EnterView(view));
             }
         }
 
         private void Start()
         {
+            InputService.Instance.OnToggleMenuInput += HandleOnToggleMenuInput;
             foreach (ViewSelection view in _pauseMenuViews)
             {
                 view.View.ViewStart();
             }
         }
 
-        private void Update()
+        private void HandleOnToggleMenuInput()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
-            {
-                ToggleMenu(!_menuOpen);
-            }
+            ToggleMenu(!_menuOpen);
         }
 
         private void OnDestroy()
         {
+            InputService.Instance.OnToggleMenuInput -= HandleOnToggleMenuInput;
             foreach (ViewSelection view in _pauseMenuViews)
             {
                 view.View.ViewDestroy();
@@ -101,27 +104,46 @@ namespace Menus.PauseMenu
             }
         }
 
-        public void ToggleMenu(bool state)
+        public void ToggleMenu(bool open)
         {
-            _canvasGroup.SetEnabled(state);
-            _menuOpen = state;
-            _menuToggleEvent.Raise(state);
-
-            if (_menuOpen)
+            if (_menuOpen == open)
             {
-                SwitchView(_pauseMenuViews.First());
+                return;
+            }
+
+            _canvasGroup.SetEnabled(open);
+            _menuOpen = open;
+
+            if (open)
+            {
+                _menuToggleEvent.Raise(open);
+                EnterView(_pauseMenuViews.First());
+                SetPauseMenuState(PauseMenuState.InsideView);
             }
             else
             {
                 _currentView.Hide();
+                SetPauseMenuState(PauseMenuState.Hidden);
+                MenuToggleEventDelayed().Forget();
             }
         }
 
-        public void SwitchView(ViewSelection view)
+        /// <summary>
+        ///     Shitty hack; otherwise, the menu closing would also trigger a slice
+        ///     This way the input occurs first, then the menu closes on the next frame, blocking the input
+        /// </summary>
+        private async UniTaskVoid MenuToggleEventDelayed()
+        {
+            await UniTask.DelayFrame(1);
+            _menuToggleEvent.Raise(false);
+        }
+
+        public void EnterView(ViewSelection view)
         {
             _currentView.Hide();
             view.Show();
             _currentView = view;
+            SetPauseMenuState(PauseMenuState.InsideView);
         }
 
         [Button("Next View")]
@@ -135,7 +157,7 @@ namespace Menus.PauseMenu
 
             index = (index + 1) % _pauseMenuViews.Count;
 
-            SwitchView(_pauseMenuViews[index]);
+            EnterView(_pauseMenuViews[index]);
         }
 
         [Button("Find Child Views")]
@@ -146,6 +168,39 @@ namespace Menus.PauseMenu
                 View = a,
                 SelectionButton = null
             }).ToList();
+        }
+
+        public void SetPauseMenuState(PauseMenuState state)
+        {
+            Debug.Log($"Setting pause menu state to {state}");
+            if (_state == state)
+            {
+                return;
+            }
+
+            _state = state;
+
+            if (_state == PauseMenuState.NavigatingSidebar)
+            {
+                _sidebarCanvasGroup.interactable = true;
+
+                EventSystem.current.SetSelectedGameObject(_currentView.SelectionButton.gameObject);
+
+                _currentView.View.SetInteractable(false);
+            }
+            else
+            {
+                _currentView.View.EnterSelection();
+
+                _sidebarCanvasGroup.interactable = false;
+
+                _currentView.View.SetInteractable(true);
+            }
+        }
+
+        public void EnterSidebar()
+        {
+            SetPauseMenuState(PauseMenuState.NavigatingSidebar);
         }
     }
 }
