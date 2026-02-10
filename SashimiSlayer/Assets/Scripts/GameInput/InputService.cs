@@ -1,20 +1,14 @@
 using System;
 using System.Linq;
 using Events;
+using GameInput.InputSources;
+using GameInput.Interface;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace GameInput
 {
-    public enum ControlSchemes
-    {
-        KeyboardMouse,
-        Gamepad,
-        SwordJoystick,
-        SwordSerial
-    }
-
-    public class InputService : BaseUserInputProvider
+    public class InputService : MonoBehaviour, IUserInput
     {
         [Header("Event (Out)")]
 
@@ -41,10 +35,10 @@ namespace GameInput
         [Header("Depends")]
 
         [SerializeField]
-        private BaseUserInputProvider _hidInputProvider;
+        private HidInputSource _hidInputSource;
 
         [SerializeField]
-        private SwordInputProvider _serialInputProvider;
+        private SerialSwordInputSource _serialInputSource;
 
         [SerializeField]
         private bool _useSerialController;
@@ -58,17 +52,15 @@ namespace GameInput
         [SerializeField]
         private float _sliceDebounce;
 
-        public static InputService Instance { get; private set; }
-
-        private BaseUserInputProvider InputProvider => _useSerialController ? _serialInputProvider : _hidInputProvider;
+        private IUserInputSource InputProvider => _useSerialController ? _serialInputSource : _hidInputSource;
 
         public ControlSchemes ControlScheme { get; private set; }
 
         public bool FlipParryDirection { get; private set; }
 
-        public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
-        public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
-        public override event Action OnToggleMenuInput;
+        public event Action<BlockPoseStates> OnBlockPoseChanged;
+        public event Action<SheathState> OnSheathStateChanged;
+        public event Action OnToggleMenuInput;
 
         private float _angleMultiplier = 1f;
         private float _angleOffset;
@@ -83,15 +75,6 @@ namespace GameInput
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-
             EventPassthroughSub();
 
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
@@ -197,7 +180,7 @@ namespace GameInput
             OnToggleMenuInput?.Invoke();
         }
 
-        private void HandleBlockPoseChanged(SharedTypes.BlockPoseStates state)
+        private void HandleBlockPoseChanged(BlockPoseStates state)
         {
             if (IsMenuOverlayed)
             {
@@ -207,9 +190,9 @@ namespace GameInput
             OnBlockPoseChanged?.Invoke(state);
         }
 
-        private void HandleSheatheStateChanged(SharedTypes.SheathState state)
+        private void HandleSheatheStateChanged(SheathState state)
         {
-            if (state == SharedTypes.SheathState.Unsheathed)
+            if (state == SheathState.Unsheathed)
             {
                 if (Time.time < _lastSheathedTime + _sliceDebounce)
                 {
@@ -220,7 +203,7 @@ namespace GameInput
                 }
             }
 
-            if (state == SharedTypes.SheathState.Sheathed)
+            if (state == SheathState.Sheathed)
             {
                 _lastSheathedTime = Time.time;
             }
@@ -233,7 +216,7 @@ namespace GameInput
             OnSheathStateChanged?.Invoke(state);
         }
 
-        public override float GetSwordAngle()
+        public float GetSwordAngle()
         {
             if (IsMenuOverlayed)
             {
@@ -257,12 +240,12 @@ namespace GameInput
             return (rawSwordAngled + _angleOffset) * _angleMultiplier;
         }
 
-        public override SharedTypes.SheathState GetSheathState()
+        public SheathState GetSheathState()
         {
             return InputProvider.GetSheathState();
         }
 
-        public override SharedTypes.BlockPoseStates GetBlockPose()
+        public BlockPoseStates GetBlockPose()
         {
             return InputProvider.GetBlockPose();
         }

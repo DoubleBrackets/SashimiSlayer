@@ -1,13 +1,15 @@
 using System;
 using Events;
+using GameInput.Interface;
+using GameInput.SerialComm;
 using UnityEngine;
 
-namespace GameInput
+namespace GameInput.InputSources
 {
     /// <summary>
-    ///     Handles interpreting sword controller data into game inputs
+    ///     Handles interpreting sword controller data into game inputs.
     /// </summary>
-    public class SwordInputProvider : BaseUserInputProvider
+    public class SerialSwordInputSource : MonoBehaviour, IUserInputSource
     {
         private enum UpAxis
         {
@@ -32,19 +34,19 @@ namespace GameInput
         [SerializeField]
         private IntEvent _upAxisChangedEvent;
 
-        public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
-        public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
-        public override event Action OnToggleMenuInput;
+        public event Action<BlockPoseStates> OnBlockPoseChanged;
+        public event Action<SheathState> OnSheathStateChanged;
+        public event Action OnToggleMenuInput;
 
         private UpAxis _upAxis = UpAxis.Y;
 
-        private SharedTypes.SheathState _sheathState = SharedTypes.SheathState.Sheathed;
+        private SheathState _sheathState = SheathState.Sheathed;
         private float _swordAngle = 90f;
 
         private bool _wasTopButtonPressed;
         private bool _wasMiddleButtonPressed;
 
-        private SharedTypes.BlockPoseStates _currentBlockPose;
+        private BlockPoseStates _currentBlockPose;
 
         private void Awake()
         {
@@ -69,9 +71,9 @@ namespace GameInput
 
         private void HandleSerialRead(SwordSerialReader.SerialReadResult data)
         {
-            SharedTypes.SheathState newSheatheState = data.LeftSheatheSwitch && data.RightSheatheSwitch
-                ? SharedTypes.SheathState.Unsheathed
-                : SharedTypes.SheathState.Sheathed;
+            SheathState newSheatheState = data.LeftSheatheSwitch && data.RightSheatheSwitch
+                ? SheathState.Unsheathed
+                : SheathState.Sheathed;
 
             if (newSheatheState != _sheathState)
             {
@@ -79,24 +81,24 @@ namespace GameInput
                 OnSheathStateChanged?.Invoke(_sheathState);
 
                 // Toggle menu by unsheathing when all buttons are pressed
-                if (_sheathState == SharedTypes.SheathState.Unsheathed && data.TopButton && data.MiddleButton)
+                if (_sheathState == SheathState.Unsheathed && data.TopButton && data.MiddleButton)
                 {
                     OnToggleMenuInput?.Invoke();
                 }
             }
 
-            SharedTypes.BlockPoseStates newPose = 0;
+            BlockPoseStates newPose = 0;
 
             if (data.TopButton && !_wasTopButtonPressed)
             {
-                _currentBlockPose = SharedTypes.BlockPoseStates.BlockRight;
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockRight);
+                _currentBlockPose = BlockPoseStates.BlockRight;
+                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockRight);
             }
 
             if (data.MiddleButton && !_wasMiddleButtonPressed)
             {
-                _currentBlockPose = SharedTypes.BlockPoseStates.BlockLeft;
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockLeft);
+                _currentBlockPose = BlockPoseStates.BlockLeft;
+                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockLeft);
             }
 
             _wasTopButtonPressed = data.TopButton;
@@ -133,17 +135,17 @@ namespace GameInput
             return angle;
         }
 
-        public override float GetSwordAngle()
+        public float GetSwordAngle()
         {
             return _swordAngle;
         }
 
-        public override SharedTypes.SheathState GetSheathState()
+        public SheathState GetSheathState()
         {
             return _sheathState;
         }
 
-        public override SharedTypes.BlockPoseStates GetBlockPose()
+        public BlockPoseStates GetBlockPose()
         {
             return _currentBlockPose;
         }

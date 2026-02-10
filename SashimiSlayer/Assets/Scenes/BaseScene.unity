@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1426507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426508}
+  - component: {fileID: 1426509}
+  m_Layer: 0
+  m_Name: CursorVisibility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1969117886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62be26e876d1fb4bbc76d2ae254a648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controlSchemeChanged: {fileID: 11400000, guid: 1587be54aaec6e848b921a0c977ecaa4,
+    type: 2}
+  _optionsMenuToggled: {fileID: 11400000, guid: dbe2d9d70d477fa49a2b203b87339de8,
+    type: 2}
 --- !u!1 &28433221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2063,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &752961569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 752961571}
+  - component: {fileID: 752961570}
+  m_Layer: 0
+  m_Name: ServiceLocator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &752961570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752961569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c222fe89a6d241c292535d0da95663b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Framework.ServiceLocator
+  _userInputProvider: {fileID: 1969117888}
+--- !u!4 &752961571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752961569}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &756763148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4824,6 +4917,73 @@ MonoBehaviour:
   _fadeInTime: 1
   _fadeInDelay: 0.4
   _margin: 20
+--- !u!1 &1477892478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477892479}
+  - component: {fileID: 1477892481}
+  - component: {fileID: 1477892480}
+  m_Layer: 0
+  m_Name: SerialInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1477892479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477892478}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1969117886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1477892480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477892478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670962b0d14442ac930a327bdfe27ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serialReader: {fileID: 1477892481}
+  _quatDebugger: {fileID: 1847439421}
+  _connectToSerialPort: {fileID: 11400000, guid: 9ccd70ecbcb706141be8ed8c468769f2,
+    type: 2}
+  _upAxisChangedEvent: {fileID: 11400000, guid: 4fc8f9163265c4e448f6db7f3efa086a,
+    type: 2}
+--- !u!114 &1477892481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477892478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab48104154760724d8851abd785d90d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baudRate: 9600
+  _onDrawDebugGUI: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
+  _serialPortConnectionStatus: {fileID: 11400000, guid: c2d14197b2d74754ab3a6c9273a93780,
+    type: 2}
 --- !u!1 &1490399728
 GameObject:
   m_ObjectHideFlags: 0
@@ -5181,6 +5341,127 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1569467101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569467102}
+  - component: {fileID: 1569467103}
+  m_Layer: 0
+  m_Name: HIDInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1569467102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569467101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1969117886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1569467103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569467101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76af12a8e397d5e468fa9fb69b15c405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _angleMultiplierEvent: {fileID: 11400000, guid: 084fa5ca422192449a31ac7d1393fa37,
+    type: 2}
+  _swordAngleOffsetEvent: {fileID: 11400000, guid: 9074d0865eea37c479c2fedcdeae87d5,
+    type: 2}
+  _onExhibitionResetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1677762849}
+        m_TargetAssemblyTypeName: Core.Scene.LevelLoaderMono, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 482035a1de3620549917b4a21b8e5e53,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Core.Scene.GameLevelSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 380193905}
+        m_TargetAssemblyTypeName: Menus.PauseMenu.PauseMenuController, Assembly-CSharp
+        m_MethodName: ToggleMenu
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _OnExhibitionInvertAimEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 975919553}
+        m_TargetAssemblyTypeName: Menus.PauseMenu.Views.InputSettingsView, Assembly-CSharp
+        m_MethodName: ToggleFlipAngle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onExhibitionSkipLoopEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1447541451}
+        m_TargetAssemblyTypeName: Core.Audio.FmodParamManager, Assembly-CSharp
+        m_MethodName: BeginSkipLoops
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _onLeftHandSwordIdentifyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 975919553}
+        m_TargetAssemblyTypeName: Menus.PauseMenu.Views.InputSettingsView, Assembly-CSharp
+        m_MethodName: SetIsLeftHanded
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1572872181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7019,10 +7300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1969117886}
   - component: {fileID: 1969117888}
-  - component: {fileID: 1969117887}
-  - component: {fileID: 1969117890}
-  - component: {fileID: 1969117889}
-  - component: {fileID: 1969117891}
   m_Layer: 0
   m_Name: InputService
   m_TagString: Untagged
@@ -7042,98 +7319,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1569467102}
+  - {fileID: 1477892479}
+  - {fileID: 1426508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1969117887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969117885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76af12a8e397d5e468fa9fb69b15c405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _angleMultiplierEvent: {fileID: 11400000, guid: 084fa5ca422192449a31ac7d1393fa37,
-    type: 2}
-  _swordAngleOffsetEvent: {fileID: 11400000, guid: 9074d0865eea37c479c2fedcdeae87d5,
-    type: 2}
-  _onExhibitionResetEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1677762849}
-        m_TargetAssemblyTypeName: Core.Scene.LevelLoaderMono, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 482035a1de3620549917b4a21b8e5e53,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Core.Scene.GameLevelSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 380193905}
-        m_TargetAssemblyTypeName: Menus.PauseMenu.PauseMenuController, Assembly-CSharp
-        m_MethodName: ToggleMenu
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _OnExhibitionInvertAimEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 975919553}
-        m_TargetAssemblyTypeName: Menus.PauseMenu.Views.InputSettingsView, Assembly-CSharp
-        m_MethodName: ToggleFlipAngle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onExhibitionSkipLoopEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1447541451}
-        m_TargetAssemblyTypeName: Core.Audio.FmodParamManager, Assembly-CSharp
-        m_MethodName: BeginSkipLoops
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _onLeftHandSwordIdentifyEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 975919553}
-        m_TargetAssemblyTypeName: Menus.PauseMenu.Views.InputSettingsView, Assembly-CSharp
-        m_MethodName: SetIsLeftHanded
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1969117888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7156,61 +7347,11 @@ MonoBehaviour:
   _setFlipParryDirection: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
     type: 2}
   _onMenuToggled: {fileID: 11400000, guid: dbe2d9d70d477fa49a2b203b87339de8, type: 2}
-  _hidInputProvider: {fileID: 1969117887}
-  _serialInputProvider: {fileID: 1969117890}
+  _hidInputSource: {fileID: 1569467103}
+  _serialInputSource: {fileID: 1477892480}
   _useSerialController: 0
   _onDrawDebugGUI: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
   _sliceDebounce: 0.1
---- !u!114 &1969117889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969117885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab48104154760724d8851abd785d90d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baudRate: 9600
-  _onDrawDebugGUI: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
-  _serialPortConnectionStatus: {fileID: 11400000, guid: c2d14197b2d74754ab3a6c9273a93780,
-    type: 2}
---- !u!114 &1969117890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969117885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670962b0d14442ac930a327bdfe27ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serialReader: {fileID: 1969117889}
-  _quatDebugger: {fileID: 1847439421}
-  _connectToSerialPort: {fileID: 11400000, guid: 9ccd70ecbcb706141be8ed8c468769f2,
-    type: 2}
-  _upAxisChangedEvent: {fileID: 11400000, guid: 4fc8f9163265c4e448f6db7f3efa086a,
-    type: 2}
---- !u!114 &1969117891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969117885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b62be26e876d1fb4bbc76d2ae254a648, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _controlSchemeChanged: {fileID: 11400000, guid: 1587be54aaec6e848b921a0c977ecaa4,
-    type: 2}
-  _optionsMenuToggled: {fileID: 11400000, guid: dbe2d9d70d477fa49a2b203b87339de8,
-    type: 2}
 --- !u!1 &1973045991
 GameObject:
   m_ObjectHideFlags: 0
@@ -8398,6 +8539,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1514205691}
+  - {fileID: 752961571}
   - {fileID: 1969117886}
   - {fileID: 1847439421}
   - {fileID: 162499281}

@@ -1,6 +1,8 @@
+using CommonTypes;
 using DG.Tweening;
 using EditorUtils.BoldHeader;
-using GameInput;
+using Framework;
+using GameInput.Interface;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,7 +12,7 @@ namespace Menus.StartMenu
     /// <summary>
     ///     Button for the start menu, triggered by block
     /// </summary>
-    public class StartMenuButton : MonoBehaviour
+    public class StartMenuButton : MonoBehaviour, IFindsDependencies
     {
         [BoldHeader("Start Menu Button")]
         [InfoBox("Button for the start menu, triggered by a block")]
@@ -22,7 +24,7 @@ namespace Menus.StartMenu
         [Header("Config")]
 
         [SerializeField]
-        private SharedTypes.BlockPoseStates _pressPose;
+        private BlockPoseStates _pressPose;
 
         [SerializeField]
         private bool _pressOnce;
@@ -45,17 +47,25 @@ namespace Menus.StartMenu
 
         private Tweener _shakeTween;
 
+        private IUserInput _userInput;
+
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetUserInput();
+        }
+
         private void Start()
         {
-            InputService.Instance.OnBlockPoseChanged += OnBlockPoseChanged;
+            FindDependencies();
+            _userInput.OnBlockPoseChanged += OnBlockPoseChanged;
         }
 
         private void OnDestroy()
         {
-            InputService.Instance.OnBlockPoseChanged -= OnBlockPoseChanged;
+            _userInput.OnBlockPoseChanged -= OnBlockPoseChanged;
         }
 
-        private void OnBlockPoseChanged(SharedTypes.BlockPoseStates blockPose)
+        private void OnBlockPoseChanged(BlockPoseStates blockPose)
         {
             if (!isActiveAndEnabled)
             {

@@ -1,13 +1,14 @@
 using System;
 using Core.Protag;
 using Events;
+using GameInput.Interface;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-namespace GameInput
+namespace GameInput.InputSources
 {
-    public class HidInputProvider : BaseUserInputProvider, GameplayControls.IGameplayActions
+    public class HidInputSource : MonoBehaviour, IUserInputSource, GameplayControls.IGameplayActions
     {
         [Header("Events (In)")]
 
@@ -31,15 +32,15 @@ namespace GameInput
         [SerializeField]
         private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
 
-        public override event Action<SharedTypes.BlockPoseStates> OnBlockPoseChanged;
-        public override event Action<SharedTypes.SheathState> OnSheathStateChanged;
-        public override event Action OnToggleMenuInput;
+        public event Action<BlockPoseStates> OnBlockPoseChanged;
+        public event Action<SheathState> OnSheathStateChanged;
+        public event Action OnToggleMenuInput;
 
         private GameplayControls _gameplayControls;
 
         private Vector2 _mousePos;
-        private SharedTypes.BlockPoseStates _blockPoseStates;
-        private SharedTypes.SheathState _sheathState;
+        private BlockPoseStates _blockPoseStates;
+        private SheathState _sheathState;
 
         private float _rawSwordAngle;
 
@@ -73,12 +74,12 @@ namespace GameInput
         {
             bool isPressed = context.ReadValueAsButton();
 
-            SharedTypes.SheathState newState = isPressed
-                ? SharedTypes.SheathState.Unsheathed
-                : SharedTypes.SheathState.Sheathed;
+            SheathState newState = isPressed
+                ? SheathState.Unsheathed
+                : SheathState.Sheathed;
 
             // Toggle menu by pressing both buttons at the same time and slicing
-            if (_isLeftButtonDown && _isRightButtonDown && newState == SharedTypes.SheathState.Unsheathed)
+            if (_isLeftButtonDown && _isRightButtonDown && newState == SheathState.Unsheathed)
             {
                 OnToggleMenuInput?.Invoke();
             }
@@ -96,8 +97,8 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockLeft);
-                _blockPoseStates = SharedTypes.BlockPoseStates.BlockLeft;
+                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockLeft);
+                _blockPoseStates = BlockPoseStates.BlockLeft;
             }
         }
 
@@ -107,8 +108,8 @@ namespace GameInput
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(SharedTypes.BlockPoseStates.BlockRight);
-                _blockPoseStates = SharedTypes.BlockPoseStates.BlockRight;
+                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockRight);
+                _blockPoseStates = BlockPoseStates.BlockRight;
             }
         }
 
@@ -174,7 +175,7 @@ namespace GameInput
             }
         }
 
-        public override float GetSwordAngle()
+        public float GetSwordAngle()
         {
             return _rawSwordAngle;
         }
@@ -184,12 +185,12 @@ namespace GameInput
             return Vector2.SignedAngle(Vector2.right, joyVector.normalized);
         }
 
-        public override SharedTypes.SheathState GetSheathState()
+        public SheathState GetSheathState()
         {
             return _sheathState;
         }
 
-        public override SharedTypes.BlockPoseStates GetBlockPose()
+        public BlockPoseStates GetBlockPose()
         {
             return _blockPoseStates;
         }

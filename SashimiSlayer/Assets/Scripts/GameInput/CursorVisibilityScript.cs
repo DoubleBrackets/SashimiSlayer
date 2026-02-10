@@ -1,5 +1,6 @@
 using EditorUtils.BoldHeader;
 using Events;
+using GameInput.Interface;
 using UnityEngine;
 
 namespace GameInput

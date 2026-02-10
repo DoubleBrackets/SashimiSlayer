@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 using Events;
 using UnityEngine;
 
-namespace GameInput
+namespace GameInput.SerialComm
 {
     /// <summary>
     ///     Reads serial data from the sword controller

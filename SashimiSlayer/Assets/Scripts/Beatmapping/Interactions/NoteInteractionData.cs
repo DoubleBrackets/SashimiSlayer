@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameInput.Interface;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,7 +16,7 @@ namespace Beatmapping.Interactions
         [AllowNesting]
         [Tooltip("The correct block pose, if this interaction is an attack that can be blocked")]
         [HideIf("InteractionType", NoteInteraction.InteractionType.Slice)]
-        public SharedTypes.BlockPoseStates BlockPose;
+        public BlockPoseStates BlockPose;
 
         [Tooltip("The type of interaction this is")]
         public NoteInteraction.InteractionType InteractionType;

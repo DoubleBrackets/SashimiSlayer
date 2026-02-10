@@ -1,20 +1,25 @@
 using Base;
 using Beatmapping;
 using Beatmapping.Tooling;
+using CommonTypes;
 using Events;
 using Events.Core;
 using Feel;
-using GameInput;
+using Framework;
+using GameInput.Interface;
 using UnityEngine;
 
 namespace Core.Protag
 {
-    public class Protaganist : DescMono
+    /// <summary>
+    ///     Protaganist, placed into the scene by hand, needs global state
+    /// </summary>
+    public class Protaganist : DescMono, IFindsDependencies
     {
         public struct ProtagSwordState
         {
-            public SharedTypes.BlockPoseStates BlockPose;
-            public SharedTypes.SheathState SheathState;
+            public BlockPoseStates BlockPose;
+            public SheathState SheathState;
             public Vector3 SwordPosition;
             public float SwordAngle;
 
@@ -107,12 +112,20 @@ namespace Core.Protag
 
         public Vector3 SwordPosition => _currentSwordState.SwordPosition;
 
-        private BaseUserInputProvider _inputProvider;
-
         private float _health;
         private float _maxHealth;
 
         private ProtagSwordState _currentSwordState;
+
+        /// <summary>
+        ///     User input, retrieved from service locator
+        /// </summary>
+        private IUserInput _inputProvider;
+
+        public void FindDependencies()
+        {
+            _inputProvider = ServiceLocator.GetUserInput();
+        }
 
         private void Awake()
         {
@@ -125,7 +138,7 @@ namespace Core.Protag
                 Destroy(gameObject);
             }
 
-            _inputProvider = InputService.Instance;
+            FindDependencies();
 
             _health = _maxHealth;
             _healthChangeEvent.Raise(_health);
@@ -170,29 +183,29 @@ namespace Core.Protag
             _healthChangeEvent.Raise(_health);
         }
 
-        private void OnPoseStateChanged(SharedTypes.BlockPoseStates blockPoseStates)
+        private void OnPoseStateChanged(BlockPoseStates blockPoseStates)
         {
             _currentSwordState.BlockPose = blockPoseStates;
             _tryBlockEvent.Raise(_currentSwordState);
         }
 
-        private void OnSheathStateChanged(SharedTypes.SheathState newState)
+        private void OnSheathStateChanged(SheathState newState)
         {
-            SharedTypes.SheathState oldState = _currentSwordState.SheathState;
+            SheathState oldState = _currentSwordState.SheathState;
             _currentSwordState.SheathState = newState;
 
             // Sword is sheathed from unsheathed means a slice
-            if (newState == SharedTypes.SheathState.Unsheathed
-                && oldState == SharedTypes.SheathState.Sheathed)
+            if (newState == SheathState.Unsheathed
+                && oldState == SheathState.Sheathed)
             {
                 _trySliceEvent.Raise(_currentSwordState);
             }
 
-            if (newState == SharedTypes.SheathState.Unsheathed && oldState == SharedTypes.SheathState.Sheathed)
+            if (newState == SheathState.Unsheathed && oldState == SheathState.Sheathed)
             {
                 _unsheatheEvent.Raise(_currentSwordState);
             }
-            else if (newState == SharedTypes.SheathState.Sheathed && oldState == SharedTypes.SheathState.Unsheathed)
+            else if (newState == SheathState.Sheathed && oldState == SheathState.Unsheathed)
             {
                 _sheatheEvent.Raise(_currentSwordState);
             }
@@ -226,14 +239,14 @@ namespace Core.Protag
             }
         }
 
-        public void SuccessfulBlock(SharedTypes.BlockPoseStates pose)
+        public void SuccessfulBlock(BlockPoseStates pose)
         {
             switch (pose)
             {
-                case SharedTypes.BlockPoseStates.BlockRight:
+                case BlockPoseStates.BlockRight:
                     _blockSuccessTopEvent.Raise(_currentSwordState);
                     break;
-                case SharedTypes.BlockPoseStates.BlockLeft:
+                case BlockPoseStates.BlockLeft:
                     _blockSuccessMidEvent.Raise(_currentSwordState);
                     break;
             }
