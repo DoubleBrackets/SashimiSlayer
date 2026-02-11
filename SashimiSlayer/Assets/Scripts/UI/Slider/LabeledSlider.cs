@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace UI.Slider
 {
+    /// <summary>
+    ///     Labeled slider that allows editing of the value with only two navigation keys
+    /// </summary>
     public class LabeledSlider : MonoBehaviour, IMoveHandler
     {
         public enum Style
@@ -46,7 +49,6 @@ namespace UI.Slider
         {
             _slider.onValueChanged.AddListener(SetValue);
             SetValue(_slider.value);
-            _defaultNav = _slider.navigation;
         }
 
         private void OnDestroy()
@@ -82,9 +84,15 @@ namespace UI.Slider
         /// </summary>
         public void ToggleFocused()
         {
+            if (!_locked)
+            {
+                _defaultNav = _slider.navigation;
+            }
+
             _locked = !_locked;
 
             _editingLabel.gameObject.SetActive(_locked);
+
             if (_locked)
             {
                 _slider.navigation = new Navigation

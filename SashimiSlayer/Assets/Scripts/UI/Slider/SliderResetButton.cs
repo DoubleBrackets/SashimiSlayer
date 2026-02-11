@@ -1,8 +1,10 @@
 using UnityEngine;
-using Utility;
 
 namespace UI.Slider
 {
+    /// <summary>
+    ///     Resets a slider to a given value when clicked
+    /// </summary>
     public class SliderResetButton : MonoBehaviour
     {
         [SerializeField]
@@ -14,10 +16,12 @@ namespace UI.Slider
         [SerializeField]
         private CanvasGroup _canvasGroup;
 
+        [SerializeField]
+        private float _disabledAlpha;
+
         private void Awake()
         {
             _slider.onValueChanged.AddListener(OnSliderValueChanged);
-
             OnSliderValueChanged(_slider.value);
         }
 
@@ -33,7 +37,7 @@ namespace UI.Slider
 
         private void OnSliderValueChanged(float value)
         {
-            // _canvasGroup.SetEnabled(value != _resetValue);
+            _canvasGroup.alpha = Mathf.Approximately(value, _resetValue) ? _disabledAlpha : 1;
         }
     }
 }
