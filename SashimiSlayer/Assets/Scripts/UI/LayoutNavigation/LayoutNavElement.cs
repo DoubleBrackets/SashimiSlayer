@@ -6,7 +6,7 @@ namespace UI.LayoutNavigation
 {
     /// <summary>
     ///     UI element that is part of a <see cref="LayoutNavGroup" /> and can navigate between each
-    ///     other
+    ///     other.
     /// </summary>
     public class LayoutNavElement : MonoBehaviour
     {

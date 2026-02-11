@@ -97,7 +97,7 @@ namespace UI.LayoutNavigation
                     }
                 }
 
-                current.Selectable.navigation = navigation;
+                current.SetNavigation(navigation);
             }
         }
     }

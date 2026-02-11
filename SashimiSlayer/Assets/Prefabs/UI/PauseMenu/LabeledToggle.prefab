@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 2927980556578638494}
   - component: {fileID: 8445811483106696000}
   - component: {fileID: 1581114546877034441}
+  - component: {fileID: 974519442236631251}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -102,7 +103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -61.3}
+  m_AnchoredPosition: {x: 84.3, y: -61.3}
   m_SizeDelta: {x: 160, y: 19.999998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8445811483106696000
@@ -181,6 +182,19 @@ MonoBehaviour:
   _rotateTo: {x: 0, y: 0, z: 1}
   _defaultRotate: {x: 0, y: 0, z: 0}
   _rotateOnSelected: 1
+--- !u!114 &974519442236631251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889265617993938435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc9075c8f124b26970dc95491e7ee57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.LayoutNavigation.ScrollbarFocus
+  _scrollRect: {fileID: 0}
 --- !u!1 &3688508216396835204
 GameObject:
   m_ObjectHideFlags: 0

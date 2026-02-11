@@ -53,9 +53,6 @@ namespace Menus.PauseMenu
         private CanvasGroup _canvasGroup;
 
         [SerializeField]
-        private CanvasGroup _sidebarCanvasGroup;
-
-        [SerializeField]
         private List<ViewSelection> _pauseMenuViews;
 
         [Header("Events (Out)")]
@@ -182,7 +179,10 @@ namespace Menus.PauseMenu
 
             if (_state == PauseMenuState.NavigatingSidebar)
             {
-                _sidebarCanvasGroup.interactable = true;
+                foreach (ViewSelection view in _pauseMenuViews)
+                {
+                    view.SelectionButton.interactable = true;
+                }
 
                 EventSystem.current.SetSelectedGameObject(_currentView.SelectionButton.gameObject);
 
@@ -192,7 +192,12 @@ namespace Menus.PauseMenu
             {
                 _currentView.View.EnterSelection();
 
-                _sidebarCanvasGroup.interactable = false;
+                foreach (ViewSelection view in _pauseMenuViews)
+                {
+                    view.SelectionButton.interactable = true;
+                }
+
+                _currentView.SelectionButton.interactable = false;
 
                 _currentView.View.SetInteractable(true);
             }
