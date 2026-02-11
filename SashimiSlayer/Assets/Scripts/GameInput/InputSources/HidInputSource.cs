@@ -5,10 +5,11 @@ using GameInput.Interface;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace GameInput.InputSources
 {
-    public class HidInputSource : MonoBehaviour, IUserInputSource, GameplayControls.IGameplayActions
+    public class HidInputSource : MonoBehaviour, IUserInputSource
     {
         [Header("Events (In)")]
 
@@ -18,13 +19,54 @@ namespace GameInput.InputSources
         [SerializeField]
         private FloatEvent _swordAngleOffsetEvent;
 
+        [Header("Gameplay Input Action References")]
+
+        [SerializeField]
+        private InputActionAsset _inputActionAsset;
+
+        [SerializeField]
+        private InputActionReference _blockButtonLeftAction;
+
+        [SerializeField]
+        private InputActionReference _blockButtonRightAction;
+
+        [SerializeField]
+        private InputActionReference _swordAngleAction;
+
+        [SerializeField]
+        private InputActionReference _swordSheatheAction;
+
+        [SerializeField]
+        private InputActionReference _mousePosAction;
+
+        [SerializeField]
+        private InputActionReference _swordControllerAngleAction;
+
+        [SerializeField]
+        private InputActionReference _toggleMenuAction;
+
+        [SerializeField]
+        private InputActionReference _leftHandSwordIdentifyAction;
+
+        [Header("Exhibit Hotkey Input Action References")]
+
+        [SerializeField]
+        private InputActionReference _exhibitionResetAction;
+
+        [SerializeField]
+        private InputActionReference _exhibitionInvertAimAction;
+
+        [SerializeField]
+        private InputActionReference _exhibitionSkipLoopAction;
+
         [Header("Exhibition Hotkey Events")]
 
         [SerializeField]
         private UnityEvent _onExhibitionResetEvent;
 
+        [FormerlySerializedAs("_OnExhibitionInvertAimEvent")]
         [SerializeField]
-        private UnityEvent _OnExhibitionInvertAimEvent;
+        private UnityEvent _onExhibitionInvertAimEvent;
 
         [SerializeField]
         private UnityEvent _onExhibitionSkipLoopEvent;
@@ -35,8 +77,6 @@ namespace GameInput.InputSources
         public event Action<BlockPoseStates> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
-
-        private GameplayControls _gameplayControls;
 
         private Vector2 _mousePos;
         private BlockPoseStates _blockPoseStates;
@@ -49,28 +89,65 @@ namespace GameInput.InputSources
         private bool _isLeftButtonDown;
         private bool _isRightButtonDown;
 
-        private void OnEnable()
+        private void Awake()
         {
-            _gameplayControls = new GameplayControls();
-            _gameplayControls.Enable();
-            _gameplayControls.Gameplay.SetCallbacks(this);
             _blockPoseStates = 0;
+            _inputActionAsset.Enable();
+            SubscribeToInputActions();
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
-            _gameplayControls.Disable();
+            UnsubscribeFromInputActions();
+        }
+
+        private void SubscribeToInputActions()
+        {
+            // Gameplay Input Actions
+            _swordAngleAction.action.performed += OnSwordAngle;
+            _swordSheatheAction.action.performed += OnSheatheButton;
+            _blockButtonLeftAction.action.performed += OnBlockButtonLeft;
+            _blockButtonRightAction.action.performed += OnBlockButtonRight;
+            _mousePosAction.action.performed += OnMousePos;
+            _swordControllerAngleAction.action.performed += OnSwordControllerAngle;
+
+            _toggleMenuAction.action.performed += OnToggleMenu;
+            _leftHandSwordIdentifyAction.action.performed += OnLeftHandSwordIdentify;
+
+            // Exhibit Hotkey Input Actions
+            _exhibitionResetAction.action.performed += OnExhibitionReset;
+            _exhibitionInvertAimAction.action.performed += OnExhibitionInvertAim;
+            _exhibitionSkipLoopAction.action.performed += OnExhibitionSkipLoop;
+        }
+
+        private void UnsubscribeFromInputActions()
+        {
+            // Gameplay Input Actions
+            _swordAngleAction.action.performed -= OnSwordAngle;
+            _swordSheatheAction.action.performed -= OnSheatheButton;
+            _blockButtonLeftAction.action.performed -= OnBlockButtonLeft;
+            _blockButtonRightAction.action.performed -= OnBlockButtonRight;
+            _mousePosAction.action.performed -= OnMousePos;
+            _swordControllerAngleAction.action.performed -= OnSwordControllerAngle;
+
+            _toggleMenuAction.action.performed -= OnToggleMenu;
+            _leftHandSwordIdentifyAction.action.performed -= OnLeftHandSwordIdentify;
+
+            // Exhibit Hotkey Input Actions
+            _exhibitionResetAction.action.performed -= OnExhibitionReset;
+            _exhibitionInvertAimAction.action.performed -= OnExhibitionInvertAim;
+            _exhibitionSkipLoopAction.action.performed -= OnExhibitionSkipLoop;
         }
 
         public void OnSwordAngle(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                _rawSwordAngle = JoyToAngle(context.ReadValue<Vector2>());
+                _rawSwordAngle = JoystickVectorToAngle(context.ReadValue<Vector2>());
             }
         }
 
-        public void OnUnsheathe(InputAction.CallbackContext context)
+        private void OnSheatheButton(InputAction.CallbackContext context)
         {
             bool isPressed = context.ReadValueAsButton();
 
@@ -120,7 +197,7 @@ namespace GameInput.InputSources
             {
                 Vector2 screenCenter = Camera.main.WorldToScreenPoint(Protaganist.Instance.SwordPosition);
                 Vector2 mouseDelta = newMousePos - screenCenter;
-                _rawSwordAngle = JoyToAngle(mouseDelta);
+                _rawSwordAngle = JoystickVectorToAngle(mouseDelta);
             }
 
             _mousePos = newMousePos;
@@ -134,7 +211,7 @@ namespace GameInput.InputSources
         {
             if (context.performed)
             {
-                _rawSwordAngle = JoyToAngle(context.ReadValue<Vector2>().normalized);
+                _rawSwordAngle = JoystickVectorToAngle(context.ReadValue<Vector2>().normalized);
             }
         }
 
@@ -163,7 +240,7 @@ namespace GameInput.InputSources
         {
             if (context.performed)
             {
-                _OnExhibitionInvertAimEvent?.Invoke();
+                _onExhibitionInvertAimEvent?.Invoke();
             }
         }
 
@@ -180,7 +257,12 @@ namespace GameInput.InputSources
             return _rawSwordAngle;
         }
 
-        private float JoyToAngle(Vector2 joyVector)
+        /// <summary>
+        ///     Converts a joystick vector to an angle
+        /// </summary>
+        /// <param name="joyVector"></param>
+        /// <returns>angle in degrees</returns>
+        private float JoystickVectorToAngle(Vector2 joyVector)
         {
             return Vector2.SignedAngle(Vector2.right, joyVector.normalized);
         }
