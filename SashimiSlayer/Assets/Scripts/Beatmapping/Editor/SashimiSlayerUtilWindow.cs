@@ -5,6 +5,7 @@ using Beatmapping.Tooling;
 using Core.Scene;
 using GameInput.SerialComm;
 using Menus.LevelSelect;
+using Saving;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEditor.Timeline;
@@ -80,7 +81,7 @@ namespace Beatmapping.Editor
 
             if (GUILayout.Button("Wipe All Highscores"))
             {
-                songRoster.WipeHighScores();
+                new SaveService().WipeHighScore();
             }
 
             if (GUILayout.Button("Open Persistent Data Path"))

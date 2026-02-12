@@ -1,14 +1,17 @@
 using Beatmapping.Scoring;
+using CommonTypes;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Events;
+using Framework;
+using Saving;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Menus.ScoreScreen
 {
-    public class FinalScoreDisplay : MonoBehaviour
+    public class FinalScoreDisplay : MonoBehaviour, IFindsDependencies
     {
         [Header("Display")]
 
@@ -71,8 +74,11 @@ namespace Menus.ScoreScreen
 
         private float _percentageAnimated;
 
+        private SaveService _saveService;
+
         private void Start()
         {
+            FindDependencies();
             ScoringService.BeatmapScore scoring = ScoringService.Instance.CurrentScore;
 
             if (scoring.DidSucceed)
@@ -89,6 +95,8 @@ namespace Menus.ScoreScreen
 
         private async UniTaskVoid DisplayUI(ScoringService.BeatmapScore scoring)
         {
+            LoadHighScore(scoring, out bool isHighscore, out int currentHighscore);
+
             GameObject customEffect = scoring.Beatmap.ResultsScreenCustomPrefab;
 
             if (customEffect != null)
@@ -133,28 +141,51 @@ namespace Menus.ScoreScreen
 
             await UniTask.Delay(delay);
 
-            HighScore(scoring);
+            UpdateHighscoreVisual(isHighscore, currentHighscore);
         }
 
-        private void HighScore(ScoringService.BeatmapScore scoring)
+        private void LoadHighScore(ScoringService.BeatmapScore scoring, out bool isHighscore, out int currentHighscore)
         {
-            _highscoreText.gameObject.SetActive(true);
+            float currentHighestScore = 0;
 
-            float currentHighestScore = PlayerPrefs.GetFloat(GetHighscorePrefKey(scoring.BeatmapID), 0);
+            if (_saveService.GetHighScore(scoring.HighScoreKey, out HighScoreSaveModel highScore))
+            {
+                currentHighestScore = highScore.FinalScore;
+            }
 
             if (scoring.FinalScore > currentHighestScore && scoring.DidSucceed)
             {
-                _newHighscoreVisual.SetActive(true);
-                currentHighestScore = scoring.FinalScore;
-                PlayerPrefs.SetFloat(GetHighscorePrefKey(scoring.BeatmapID), scoring.FinalScore);
+                currentHighscore = scoring.FinalScore;
+                isHighscore = true;
+
+                _saveService.SetHighScore(new HighScoreSaveModel
+                {
+                    NameKey = scoring.HighScoreKey,
+                    Earlies = scoring.Earlies,
+                    Late = scoring.Lates,
+                    Miss = scoring.Misses,
+                    Perfects = scoring.Perfects,
+                    FinalScore = scoring.FinalScore
+                });
             }
+            else
+            {
+                currentHighscore = (int)currentHighestScore;
+                isHighscore = false;
+            }
+        }
+
+        private void UpdateHighscoreVisual(bool isNewHighscore, int currentHighestScore)
+        {
+            _highscoreText.gameObject.SetActive(true);
+            _newHighscoreVisual.SetActive(isNewHighscore);
 
             _highscoreText.text = $"{currentHighestScore}";
         }
 
-        public static string GetHighscorePrefKey(string beatmapID)
+        public void FindDependencies()
         {
-            return $"{beatmapID}.highscore";
+            _saveService = ServiceLocator.GetGameSaveService();
         }
     }
 }

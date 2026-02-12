@@ -1,14 +1,11 @@
 using Feel;
-using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Menus.PauseMenu.Views
 {
-    public class MiscSettingsView : MenuView
+    public class MiscSettingsView : PauseMenuView
     {
-        private const string ScreenShakeKey = "ScreenShake";
-
         [Header("Depends")]
 
         [SerializeField]
@@ -23,8 +20,10 @@ namespace Menus.PauseMenu.Views
 
         public override void ViewAwake()
         {
+            FindDependencies();
+
             _screenShakeSlider.onValueChanged.AddListener(UpdateScreenShake);
-            _screenShakeScale = PlayerPrefs.GetFloat(ScreenShakeKey, 1);
+            _screenShakeScale = SaveService.ScreenShakeRatio;
             _screenShakeSlider.value = _screenShakeScale;
         }
 
@@ -36,8 +35,13 @@ namespace Menus.PauseMenu.Views
         private void UpdateScreenShake(float value)
         {
             _screenShakeScale = value;
-            PlayerPrefs.SetFloat(ScreenShakeKey, value);
+            SaveService.ScreenShakeRatio = value;
             ScreenShakeService.Instance.ForceScale = value;
+        }
+
+        public void WipeHighScores()
+        {
+            SaveService.WipeHighScore();
         }
     }
 }
