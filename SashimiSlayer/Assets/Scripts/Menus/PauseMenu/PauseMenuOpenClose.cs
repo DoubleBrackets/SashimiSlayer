@@ -38,6 +38,11 @@ namespace Menus.PauseMenu
             SetMenuOpenDelayed(!_isMenuOpen).Forget();
         }
 
+        public void SetMenuOpen(bool isOpen)
+        {
+            SetMenuOpenDelayed(isOpen).Forget();
+        }
+
         /// <summary>
         ///     Delay to avoid menu-opening inputs causing navigation on entering
         /// </summary>

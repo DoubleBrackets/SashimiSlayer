@@ -651,7 +651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &362974150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1218,7 +1218,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 380193905}
+      objectReference: {fileID: 380193906}
+    - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMenuOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menus.PauseMenu.PauseMenuOpenClose, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8278721966630422178, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1384,7 +1394,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 380193905}
+      objectReference: {fileID: 380193906}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -1398,7 +1408,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleMenu
+      value: SetMenuOpen
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
@@ -1408,7 +1418,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Menus.PauseMenu.PauseMenuController, Assembly-CSharp
+      value: Menus.PauseMenu.PauseMenuOpenClose, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
@@ -2291,7 +2301,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 380193905}
+      objectReference: {fileID: 380193906}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -2305,7 +2315,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleMenu
+      value: SetMenuOpen
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
@@ -2315,7 +2325,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Menus.PauseMenu.PauseMenuController, Assembly-CSharp
+      value: Menus.PauseMenu.PauseMenuOpenClose, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
@@ -3231,10 +3241,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1535250485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 227, y: -415}
+  m_SizeDelta: {x: 454, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1043127747
 MonoBehaviour:
@@ -5193,7 +5203,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 380193905}
+      objectReference: {fileID: 380193906}
+    - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMenuOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menus.PauseMenu.PauseMenuOpenClose, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8278721966630422178, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5636,7 +5656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1677762845
 RectTransform:
   m_ObjectHideFlags: 0
