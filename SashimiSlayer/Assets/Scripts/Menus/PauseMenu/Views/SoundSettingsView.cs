@@ -1,11 +1,12 @@
 using FMOD.Studio;
 using FMODUnity;
+using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Menus.PauseMenu.Views
 {
-    public class SoundSettingsView : PauseMenuView
+    public class SoundSettingsView : MenuView
     {
         private const string SfxKey = "SfxVolume";
         private const string MusicKey = "MusicVolume";

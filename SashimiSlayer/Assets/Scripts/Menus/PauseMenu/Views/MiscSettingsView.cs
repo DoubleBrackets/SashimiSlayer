@@ -1,10 +1,11 @@
 using Feel;
+using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Menus.PauseMenu.Views
 {
-    public class MiscSettingsView : PauseMenuView
+    public class MiscSettingsView : MenuView
     {
         private const string ScreenShakeKey = "ScreenShake";
 

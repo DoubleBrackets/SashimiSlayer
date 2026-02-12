@@ -1,12 +1,13 @@
 using Beatmapping;
 using Core.Scene;
 using Events.Core;
+using UI.MenuViews;
 using UnityEngine;
 using Button = UnityEngine.UI.Button;
 
 namespace Menus.PauseMenu.Views
 {
-    public class MainView : PauseMenuView
+    public class MainView : MenuView
     {
         [Header("Events (In)")]
 

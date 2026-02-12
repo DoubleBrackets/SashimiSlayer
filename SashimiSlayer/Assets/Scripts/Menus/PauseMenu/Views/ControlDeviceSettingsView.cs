@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Events;
 using TMPro;
+using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Menus.PauseMenu.Views
 {
-    public class ControlDeviceSettingsView : PauseMenuView
+    public class ControlDeviceSettingsView : MenuView
     {
         public const string LastPortName = "LastPortName";
 

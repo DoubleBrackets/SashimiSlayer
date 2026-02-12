@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using Events;
 using TMPro;
+using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Menus.PauseMenu.Views
 {
-    public class InputSettingsView : PauseMenuView
+    public class InputSettingsView : MenuView
     {
         private const string SwordAimMultiplier = "SwordAngleMultiplier";
         private const string SwordAngleOffset = "SwordAngleOffset";

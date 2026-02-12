@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 2212220612907501728}
   - component: {fileID: 1059577238624542118}
   - component: {fileID: 9038649998740932685}
+  - component: {fileID: 1091941698593244145}
+  - component: {fileID: 8150103848268202924}
+  - component: {fileID: 680803135463078997}
   m_Layer: 5
   m_Name: WhiteButton
   m_TagString: Untagged
@@ -121,6 +124,48 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1091941698593244145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481647961048135500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab958da89920462489c411a88c3a07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.LayoutNavigation.LayoutNavElement
+  <Selectable>k__BackingField: {fileID: 9038649998740932685}
+--- !u!114 &8150103848268202924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481647961048135500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccff84b1d8d2744db7f53effe75acb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GenericRotate
+  _expandDuration: 0.1
+  _rotateTo: {x: 0, y: 0, z: 1}
+  _defaultRotate: {x: 0, y: 0, z: 0}
+  _rotateOnSelected: 1
+--- !u!114 &680803135463078997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481647961048135500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc9075c8f124b26970dc95491e7ee57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.LayoutNavigation.ScrollbarFocus
+  _scrollRect: {fileID: 0}
 --- !u!1 &6120061908512233463
 GameObject:
   m_ObjectHideFlags: 0
