@@ -38,6 +38,11 @@ namespace UI.LayoutNavigation
 
         private void Start()
         {
+            Initialize();
+        }
+
+        public void Initialize()
+        {
             FindChildLayoutNavElements();
             SetupNavigationBetweenElements();
         }

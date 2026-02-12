@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 7469254846253614930}
   - component: {fileID: 2957715044220330078}
   - component: {fileID: 6549938025304597687}
+  - component: {fileID: 1199636623893525501}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -259,6 +260,35 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1199636623893525501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371500015125408689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7258005399105353142}
+          m_TargetAssemblyTypeName: UI.MenuViews.MenuViewButton, Assembly-CSharp
+          m_MethodName: OnSelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6590797243428866511
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,8 +299,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3666598534754742945}
   - component: {fileID: 4736041139178325955}
+  - component: {fileID: 7258005399105353142}
   m_Layer: 5
-  m_Name: ViewButton
+  m_Name: ViewSelectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,3 +340,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.LayoutNavigation.LayoutNavElement
   <Selectable>k__BackingField: {fileID: 6549938025304597687}
+--- !u!114 &7258005399105353142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590797243428866511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab46ada8f8e4ac9a12675d27ac0f869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.MenuViews.MenuViewButton
+  _button: {fileID: 6549938025304597687}
+  _label: {fileID: 8214021047104265829}
