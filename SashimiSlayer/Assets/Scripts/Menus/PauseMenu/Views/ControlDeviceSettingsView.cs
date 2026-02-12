@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Events;
 using TMPro;
-using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Menus.PauseMenu.Views
 {
-    public class ControlDeviceSettingsView : MenuView
+    public class ControlDeviceSettingsView : PauseMenuView
     {
-        public const string LastPortName = "LastPortName";
-
         [Header("Events (Out)")]
 
         [SerializeField]
@@ -52,7 +49,8 @@ namespace Menus.PauseMenu.Views
 
         public override void ViewAwake()
         {
-            _lastPortName = PlayerPrefs.GetString(LastPortName, "");
+            FindDependencies();
+            _lastPortName = SaveService.LastSerialPortName;
             _inputDeviceDropdown.ClearOptions();
             _inputDeviceDropdown.AddOptions(new List<string> { "HID Input (Default)", "Sword Control Serial" });
 
@@ -89,7 +87,7 @@ namespace Menus.PauseMenu.Views
             string serialPort = _serialPortDropdown.options[_serialPortDropdown.value].text;
 
             // Save to last used port
-            PlayerPrefs.SetString(LastPortName, serialPort);
+            SaveService.LastSerialPortName = serialPort;
             _lastPortName = serialPort;
 
             _connectToSerialPort.Raise(serialPort);

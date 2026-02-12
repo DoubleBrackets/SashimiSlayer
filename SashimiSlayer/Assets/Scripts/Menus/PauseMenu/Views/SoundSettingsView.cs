@@ -1,17 +1,12 @@
 using FMOD.Studio;
 using FMODUnity;
-using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Menus.PauseMenu.Views
 {
-    public class SoundSettingsView : MenuView
+    public class SoundSettingsView : PauseMenuView
     {
-        private const string SfxKey = "SfxVolume";
-        private const string MusicKey = "MusicVolume";
-        private const string MasterKey = "MasterVolume";
-
         [Header("Volume")]
 
         [SerializeField]
@@ -40,6 +35,8 @@ namespace Menus.PauseMenu.Views
 
         public override void ViewAwake()
         {
+            FindDependencies();
+
             _musicBus = RuntimeManager.GetBus("bus:/Music");
             _sfxBus = RuntimeManager.GetBus("bus:/Sfx");
             _masterBus = RuntimeManager.GetBus("bus:/");
@@ -48,9 +45,9 @@ namespace Menus.PauseMenu.Views
             _sfxVolumeSlider.onValueChanged.AddListener(UpdateSfxVolume);
             _masterVolumeSlider.onValueChanged.AddListener(UpdateMasterVolume);
 
-            _sfxVolume = PlayerPrefs.GetFloat(SfxKey, 1);
-            _musicVolume = PlayerPrefs.GetFloat(MusicKey, 1);
-            _masterVolume = PlayerPrefs.GetFloat(MasterKey, 1);
+            _sfxVolume = SaveService.SfxVolume;
+            _musicVolume = SaveService.MusicVolume;
+            _masterVolume = SaveService.MasterVolume;
 
             _sfxVolumeSlider.value = _sfxVolume;
             _musicVolumeSlider.value = _musicVolume;
@@ -64,21 +61,21 @@ namespace Menus.PauseMenu.Views
         private void UpdateMusicVolume(float volume)
         {
             _sfxVolume = volume;
-            PlayerPrefs.SetFloat(MusicKey, volume);
+            SaveService.MusicVolume = volume;
             _musicBus.setVolume(volume);
         }
 
         private void UpdateSfxVolume(float volume)
         {
             _sfxVolume = volume;
-            PlayerPrefs.SetFloat(SfxKey, volume);
+            SaveService.SfxVolume = volume;
             _sfxBus.setVolume(volume);
         }
 
         private void UpdateMasterVolume(float volume)
         {
             _masterVolume = volume;
-            PlayerPrefs.SetFloat(MasterKey, volume);
+            SaveService.MasterVolume = volume;
             _masterBus.setVolume(volume);
         }
     }

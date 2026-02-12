@@ -31,6 +31,8 @@ namespace Beatmapping.Scoring
             /// </summary>
             public bool DidSucceed;
 
+            public string HighScoreKey => BeatmapID + "HighScore";
+
             public int CompareTo(BeatmapScore other)
             {
                 return FinalScore.CompareTo(other.FinalScore);

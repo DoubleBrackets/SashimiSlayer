@@ -1,6 +1,7 @@
 using System;
 using GameInput;
 using GameInput.Interface;
+using Saving;
 using UnityEngine;
 
 namespace Framework
@@ -17,6 +18,7 @@ namespace Framework
         private InputService _userInputProvider;
 
         private static ServiceLocator instance;
+        private static SaveService saveService;
 
         public static IUserInput GetUserInput()
         {
@@ -31,6 +33,11 @@ namespace Framework
             return userInput;
         }
 
+        public static SaveService GetGameSaveService()
+        {
+            return saveService ??= new SaveService();
+        }
+
         private void Awake()
         {
             if (instance != null)
@@ -39,6 +46,8 @@ namespace Framework
                 Destroy(gameObject);
                 return;
             }
+
+            saveService = new SaveService();
 
             instance = this;
         }
