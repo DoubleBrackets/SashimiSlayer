@@ -860,7 +860,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Menus.PauseMenu.PauseMenuOpenClose
   _pauseMenu: {fileID: 380193905}
   _canvasGroup: {fileID: 380193903}
-  _menuToggleEvent: {fileID: 11400000, guid: dbe2d9d70d477fa49a2b203b87339de8, type: 2}
 --- !u!1001 &424625533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7359,7 +7358,6 @@ MonoBehaviour:
     type: 2}
   _setFlipParryDirection: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
     type: 2}
-  _onMenuToggled: {fileID: 11400000, guid: dbe2d9d70d477fa49a2b203b87339de8, type: 2}
   _hidInputSource: {fileID: 1569467103}
   _serialInputSource: {fileID: 1477892480}
   _useSerialController: 0

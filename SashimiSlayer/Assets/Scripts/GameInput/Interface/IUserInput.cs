@@ -9,5 +9,8 @@ namespace GameInput.Interface
     {
         public bool FlipParryDirection { get; }
         ControlSchemes ControlScheme { get; }
+
+        public void AddInputBlocker();
+        public void RemoveInputBlocker();
     }
 }

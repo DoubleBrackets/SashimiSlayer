@@ -159,6 +159,7 @@ namespace GameInput.InputSources
             if (_isLeftButtonDown && _isRightButtonDown && newState == SheathState.Unsheathed)
             {
                 OnToggleMenuInput?.Invoke();
+                return;
             }
 
             if (_sheathState != newState)

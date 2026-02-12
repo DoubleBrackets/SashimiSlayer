@@ -29,9 +29,6 @@ namespace GameInput
         [SerializeField]
         private BoolEvent _setFlipParryDirection;
 
-        [SerializeField]
-        private BoolEvent _onMenuToggled;
-
         [Header("Depends")]
 
         [SerializeField]
@@ -66,12 +63,12 @@ namespace GameInput
         private float _angleOffset;
 
         private float _lastSheathedTime;
-        private bool IsMenuOverlayed => _overlayMenus;
+        private bool IsInputBlocked => _inputBlockerCount > 0;
 
         /// <summary>
-        ///     Disables input when menus are open
+        ///     Counter for input blockers
         /// </summary>
-        private bool _overlayMenus;
+        private int _inputBlockerCount;
 
         private void Awake()
         {
@@ -82,8 +79,6 @@ namespace GameInput
             _angleMultiplierEvent.AddListener(SetAngleMultiplier);
             _swordAngleOffsetEvent.AddListener(SetAngleOffset);
             _setFlipParryDirection.AddListener(SetInvertDirectionalBlockInputs);
-
-            _onMenuToggled.AddListener(HandleMenuToggled);
 
             InputSystem.onDeviceChange += (device, change) => { UpdateControlScheme(); };
         }
@@ -97,14 +92,16 @@ namespace GameInput
             _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
             _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
             _setFlipParryDirection.RemoveListener(SetInvertDirectionalBlockInputs);
-
-            _onMenuToggled.RemoveListener(HandleMenuToggled);
         }
 
-        private void HandleMenuToggled(bool isMenuOpen)
+        public void AddInputBlocker()
         {
-            Debug.Log("Menu toggled: " + isMenuOpen);
-            _overlayMenus = isMenuOpen;
+            _inputBlockerCount++;
+        }
+
+        public void RemoveInputBlocker()
+        {
+            _inputBlockerCount = Math.Max(0, _inputBlockerCount - 1);
         }
 
         private void SetInvertDirectionalBlockInputs(bool invert)
@@ -182,7 +179,7 @@ namespace GameInput
 
         private void HandleBlockPoseChanged(BlockPoseStates state)
         {
-            if (IsMenuOverlayed)
+            if (IsInputBlocked)
             {
                 return;
             }
@@ -208,7 +205,7 @@ namespace GameInput
                 _lastSheathedTime = Time.time;
             }
 
-            if (IsMenuOverlayed)
+            if (IsInputBlocked)
             {
                 return;
             }
@@ -218,7 +215,7 @@ namespace GameInput
 
         public float GetSwordAngle()
         {
-            if (IsMenuOverlayed)
+            if (IsInputBlocked)
             {
                 // Ignore mouse aim when menus are open
                 return 0;

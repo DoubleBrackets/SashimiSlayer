@@ -227,6 +227,11 @@ namespace Beatmapping.Editor
         /// </summary>
         private void PlayGame()
         {
+            if (EditorApplication.isPlaying)
+            {
+                return;
+            }
+
             string startupScenePath = _prefs.StartupScenePath;
 
             _lastEditedScenePath = SceneManager.GetActiveScene().path;

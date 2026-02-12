@@ -1,6 +1,4 @@
 using CommonTypes;
-using Cysharp.Threading.Tasks;
-using Events;
 using Framework;
 using GameInput.Interface;
 using UI.MenuViews;
@@ -22,12 +20,7 @@ namespace Menus.PauseMenu
         [SerializeField]
         private CanvasGroup _canvasGroup;
 
-        [Header("Events (Out)")]
-
-        [SerializeField]
-        private BoolEvent _menuToggleEvent;
-
-        private bool _isMenuOpen;
+        private bool _isMenuOpen = true;
         private IUserInput _userInput;
 
         public void FindDependencies()
@@ -38,40 +31,23 @@ namespace Menus.PauseMenu
         private void Start()
         {
             FindDependencies();
-            SetMenuOpenDelayed(false, false).Forget();
+            SetMenuOpen(false);
             _userInput.OnToggleMenuInput += HandleOnToggleMenuInput;
         }
 
         private void HandleOnToggleMenuInput()
         {
-            SetMenuOpenDelayed(!_isMenuOpen).Forget();
+            SetMenuOpen(!_isMenuOpen);
         }
 
         public void SetMenuOpen(bool isOpen)
         {
-            SetMenuOpenDelayed(isOpen).Forget();
-        }
-
-        /// <summary>
-        ///     Delay to avoid menu-opening inputs causing navigation on entering
-        /// </summary>
-        /// <param name="isOpen"></param>
-        /// <param name="delay"></param>
-        private async UniTaskVoid SetMenuOpenDelayed(bool isOpen, bool delay = true)
-        {
-            // Additional delay to prevent slicing immediately after closing
-            if (delay && !isOpen)
+            if (_isMenuOpen == isOpen)
             {
-                await UniTask.Yield();
+                return;
             }
 
             _isMenuOpen = isOpen;
-            _menuToggleEvent.Raise(_isMenuOpen);
-
-            if (delay)
-            {
-                await UniTask.Yield();
-            }
 
             _canvasGroup.alpha = isOpen ? 1 : 0;
 
@@ -84,6 +60,15 @@ namespace Menus.PauseMenu
             {
                 // Drop selection
                 EventSystem.current.SetSelectedGameObject(null);
+            }
+
+            if (_isMenuOpen)
+            {
+                _userInput.AddInputBlocker();
+            }
+            else
+            {
+                _userInput.RemoveInputBlocker();
             }
         }
 
