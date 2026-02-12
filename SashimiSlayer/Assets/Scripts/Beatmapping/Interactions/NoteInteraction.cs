@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameInput.Interface;
 using UnityEngine;
 
 namespace Beatmapping.Interactions
@@ -47,7 +48,7 @@ namespace Beatmapping.Interactions
 
         public InteractionFlags Flags { get; }
 
-        public SharedTypes.BlockPoseStates BlockPose { get; }
+        public BlockPoseStates BlockPose { get; }
 
         public bool HideIndicator { get; private set; }
 
@@ -55,7 +56,7 @@ namespace Beatmapping.Interactions
 
         public NoteInteraction(InteractionType typeType,
             InteractionFlags interactionFlags,
-            SharedTypes.BlockPoseStates blockPose,
+            BlockPoseStates blockPose,
             List<Vector2> positions,
             TimingWindow window,
             bool hideIndicator)
@@ -84,7 +85,7 @@ namespace Beatmapping.Interactions
         public AttemptResult TryInteraction(
             double attemptTime,
             InteractionType attemptedInteraction,
-            SharedTypes.BlockPoseStates blockPose = default)
+            BlockPoseStates blockPose = default)
         {
             // Interaction already succeeded or failed
             if (State != NoteInteractionState.Default)
@@ -201,7 +202,7 @@ namespace Beatmapping.Interactions
         {
             public TimingWindow.TimingResult TimingResult;
             public InteractionType InteractionType;
-            public SharedTypes.BlockPoseStates Pose;
+            public BlockPoseStates Pose;
             public bool Successful;
 
             public FinalResult(TimingWindow.TimingResult timingResult, InteractionType interactionType, bool successful)

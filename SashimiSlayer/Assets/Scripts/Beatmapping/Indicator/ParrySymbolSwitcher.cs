@@ -1,5 +1,7 @@
+using CommonTypes;
 using Events;
-using GameInput;
+using Framework;
+using GameInput.Interface;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +10,7 @@ namespace Beatmapping.Indicator
     /// <summary>
     ///     Utility component that switches sprites based on parry direction.
     /// </summary>
-    public class ParrySymbolSwitcher : MonoBehaviour
+    public class ParrySymbolSwitcher : MonoBehaviour, IFindsDependencies
     {
         [Header("Events (In)")]
 
@@ -26,9 +28,18 @@ namespace Beatmapping.Indicator
         [SerializeField]
         private Image _image;
 
+        private IUserInput _userInput;
+
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetUserInput();
+        }
+
         private void Awake()
         {
-            if (InputService.Instance != null && InputService.Instance.FlipParryDirection)
+            FindDependencies();
+
+            if (_userInput.FlipParryDirection)
             {
                 OnFlipParry(true);
             }

@@ -2,6 +2,7 @@ using Core.Protag;
 using Events.Core;
 using FMOD.Studio;
 using FMODUnity;
+using GameInput.Interface;
 using UnityEngine;
 
 public class ProtagSFX : MonoBehaviour
@@ -46,7 +47,7 @@ public class ProtagSFX : MonoBehaviour
         BlockPoseSfx(_successfulBlockSfx, swordState.BlockPose);
     }
 
-    private void BlockPoseSfx(EventReference sfx, SharedTypes.BlockPoseStates blockPose)
+    private void BlockPoseSfx(EventReference sfx, BlockPoseStates blockPose)
     {
         EventInstance instance = RuntimeManager.CreateInstance(sfx);
 

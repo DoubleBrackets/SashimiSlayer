@@ -1,6 +1,6 @@
-using Cysharp.Threading.Tasks;
-using Events;
-using GameInput;
+using CommonTypes;
+using Framework;
+using GameInput.Interface;
 using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +10,7 @@ namespace Menus.PauseMenu
     /// <summary>
     ///     Handles opening and closing the pause menu
     /// </summary>
-    public class PauseMenuOpenClose : MonoBehaviour
+    public class PauseMenuOpenClose : MonoBehaviour, IFindsDependencies
     {
         [Header("Dependencies")]
 
@@ -20,49 +20,34 @@ namespace Menus.PauseMenu
         [SerializeField]
         private CanvasGroup _canvasGroup;
 
-        [Header("Events (Out)")]
+        private bool _isMenuOpen = true;
+        private IUserInput _userInput;
 
-        [SerializeField]
-        private BoolEvent _menuToggleEvent;
-
-        private bool _isMenuOpen;
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetUserInput();
+        }
 
         private void Start()
         {
-            SetMenuOpenDelayed(false, false).Forget();
-            InputService.Instance.OnToggleMenuInput += HandleOnToggleMenuInput;
+            FindDependencies();
+            SetMenuOpen(false);
+            _userInput.OnToggleMenuInput += HandleOnToggleMenuInput;
         }
 
         private void HandleOnToggleMenuInput()
         {
-            SetMenuOpenDelayed(!_isMenuOpen).Forget();
+            SetMenuOpen(!_isMenuOpen);
         }
 
         public void SetMenuOpen(bool isOpen)
         {
-            SetMenuOpenDelayed(isOpen).Forget();
-        }
-
-        /// <summary>
-        ///     Delay to avoid menu-opening inputs causing navigation on entering
-        /// </summary>
-        /// <param name="isOpen"></param>
-        /// <param name="delay"></param>
-        private async UniTaskVoid SetMenuOpenDelayed(bool isOpen, bool delay = true)
-        {
-            // Additional delay to prevent slicing immediately after closing
-            if (delay && !isOpen)
+            if (_isMenuOpen == isOpen)
             {
-                await UniTask.Yield();
+                return;
             }
 
             _isMenuOpen = isOpen;
-            _menuToggleEvent.Raise(_isMenuOpen);
-
-            if (delay)
-            {
-                await UniTask.Yield();
-            }
 
             _canvasGroup.alpha = isOpen ? 1 : 0;
 
@@ -76,11 +61,20 @@ namespace Menus.PauseMenu
                 // Drop selection
                 EventSystem.current.SetSelectedGameObject(null);
             }
+
+            if (_isMenuOpen)
+            {
+                _userInput.AddInputBlocker();
+            }
+            else
+            {
+                _userInput.RemoveInputBlocker();
+            }
         }
 
         private void OnDestroy()
         {
-            InputService.Instance.OnToggleMenuInput -= HandleOnToggleMenuInput;
+            _userInput.OnToggleMenuInput -= HandleOnToggleMenuInput;
         }
     }
 }

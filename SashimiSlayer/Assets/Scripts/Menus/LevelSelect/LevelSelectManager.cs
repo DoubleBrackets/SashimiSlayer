@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using CommonTypes;
 using Core.Scene;
 using Cysharp.Threading.Tasks;
-using GameInput;
+using Framework;
+using GameInput.Interface;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,7 +11,10 @@ using GameLevelSO = Core.Scene.GameLevelSO;
 
 namespace Menus.LevelSelect
 {
-    public class LevelSelectManager : MonoBehaviour
+    /// <summary>
+    ///     Handles the UI for the level select menu.
+    /// </summary>
+    public class LevelSelectManager : MonoBehaviour, IFindsDependencies
     {
         [Header("Dependencies")]
 
@@ -50,34 +55,43 @@ namespace Menus.LevelSelect
         private int _currentPanelIndex;
         private bool _hardDifficulty;
 
+        private IUserInput _userInput;
+
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetUserInput();
+        }
+
         private void Awake()
         {
+            FindDependencies();
+
             SetupLevelSelectUI();
 
-            InputService.Instance.OnBlockPoseChanged += HandleBlockPoseChanged;
+            _userInput.OnBlockPoseChanged += HandleBlockPoseChanged;
 
             UpdatePromptOpacity();
         }
 
         private void OnDestroy()
         {
-            InputService.Instance.OnBlockPoseChanged -= HandleBlockPoseChanged;
+            _userInput.OnBlockPoseChanged -= HandleBlockPoseChanged;
         }
 
         /// <summary>
         ///     Handle switching between level panels when blocking
         /// </summary>
         /// <param name="newState"></param>
-        private void HandleBlockPoseChanged(SharedTypes.BlockPoseStates newState)
+        private void HandleBlockPoseChanged(BlockPoseStates newState)
         {
             int prevPanelIndex = _currentPanelIndex;
-            int flipBlockDirection = InputService.Instance.FlipParryDirection ? -1 : 1;
-            if (newState == SharedTypes.BlockPoseStates.BlockLeft)
+            int flipBlockDirection = _userInput.FlipParryDirection ? -1 : 1;
+            if (newState == BlockPoseStates.BlockLeft)
             {
                 // Go next
                 _currentPanelIndex -= flipBlockDirection;
             }
-            else if (newState == SharedTypes.BlockPoseStates.BlockRight)
+            else if (newState == BlockPoseStates.BlockRight)
             {
                 // Go previous
                 _currentPanelIndex += flipBlockDirection;

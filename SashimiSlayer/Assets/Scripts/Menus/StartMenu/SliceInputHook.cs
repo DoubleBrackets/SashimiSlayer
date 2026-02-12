@@ -1,31 +1,44 @@
+using CommonTypes;
 using EditorUtils.BoldHeader;
-using GameInput;
+using Framework;
+using GameInput.Interface;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Menus.StartMenu
 {
-    public class SliceInputHook : MonoBehaviour
+    /// <summary>
+    ///     Passes slice input through a unity event for quick and dirty input
+    /// </summary>
+    public class SliceInputHook : MonoBehaviour, IFindsDependencies
     {
         [BoldHeader("Slice Input Hook")]
         [InfoBox("Passes slice input through a unity event")]
         [SerializeField]
         private UnityEvent _onSlice;
 
+        private IUserInput _userInput;
+
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetUserInput();
+        }
+
         private void Start()
         {
-            InputService.Instance.OnSheathStateChanged += OnSheathStateChanged;
+            FindDependencies();
+            _userInput.OnSheathStateChanged += OnSheathStateChanged;
         }
 
         private void OnDestroy()
         {
-            InputService.Instance.OnSheathStateChanged -= OnSheathStateChanged;
+            _userInput.OnSheathStateChanged -= OnSheathStateChanged;
         }
 
-        private void OnSheathStateChanged(SharedTypes.SheathState sheathState)
+        private void OnSheathStateChanged(SheathState sheathState)
         {
-            if (sheathState == SharedTypes.SheathState.Unsheathed)
+            if (sheathState == SheathState.Unsheathed)
             {
                 _onSlice.Invoke();
             }

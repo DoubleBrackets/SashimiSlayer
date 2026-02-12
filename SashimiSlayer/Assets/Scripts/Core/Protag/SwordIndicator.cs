@@ -3,6 +3,7 @@ using Beatmapping;
 using Beatmapping.Interactions;
 using Events;
 using Events.Core;
+using GameInput.Interface;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -65,7 +66,7 @@ namespace Core.Protag
         private void Awake()
         {
             _onSwordStateChange.AddListener(OnSwordStateChange);
-            SetSheatheState(SharedTypes.SheathState.Sheathed);
+            SetSheatheState(SheathState.Sheathed);
             _noteFinalResultEvent.AddListener(PlayNoteSliceVFX);
             _sliceResultEvent.AddListener(PlayUISliceVFX);
             _swordPivotPositionChangeEvent.AddListener(SetPosition);
@@ -174,10 +175,10 @@ namespace Core.Protag
             SetPosition(swordState.SwordPosition);
         }
 
-        private void SetSheatheState(SharedTypes.SheathState state)
+        private void SetSheatheState(SheathState state)
         {
-            _sheathedLineRen.enabled = state == SharedTypes.SheathState.Sheathed;
-            _unsheathedLineRen.enabled = state == SharedTypes.SheathState.Unsheathed;
+            _sheathedLineRen.enabled = state == SheathState.Sheathed;
+            _unsheathedLineRen.enabled = state == SheathState.Unsheathed;
         }
 
         private void SetAngle(float angle)

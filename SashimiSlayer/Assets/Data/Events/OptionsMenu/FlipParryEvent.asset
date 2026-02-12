@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f70f35c4824ee09fcb50fd8385c0c7, type: 3}
   m_Name: FlipParryEvent
   m_EditorClassIdentifier: 
-  _description: Triggers when the setting to flip Parry directions is changed
+  _description: Invokes when the setting to flip Parry directions is changed
   _debug: 0

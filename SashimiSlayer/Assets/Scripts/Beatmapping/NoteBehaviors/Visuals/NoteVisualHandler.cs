@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
+using GameInput.Interface;
 using NaughtyAttributes;
 
 namespace Beatmapping.NoteBehaviors.Visuals
@@ -19,7 +20,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
             [AllowNesting]
             [HideIf("IsForSlicing")]
-            public SharedTypes.BlockPoseStates Pose;
+            public BlockPoseStates Pose;
 
             public bool IsForSlicing;
         }

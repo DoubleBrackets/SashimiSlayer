@@ -6,6 +6,7 @@ using Beatmapping.Editor;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
+using GameInput.Interface;
 using UnityEditor;
 using UnityEditor.Timeline;
 using UnityEngine;
@@ -167,7 +168,7 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
             ClipBackgroundRegion region,
             float normalizedPos)
         {
-            int posePositionCount = Enum.GetValues(typeof(SharedTypes.BlockPoseStates)).Length;
+            int posePositionCount = Enum.GetValues(typeof(BlockPoseStates)).Length;
 
             // Draw a vertical line at the time of the attack
             Rect linePos = region.position;

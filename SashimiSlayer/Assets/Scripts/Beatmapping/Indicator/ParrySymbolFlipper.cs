@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using CommonTypes;
 using Events;
-using GameInput;
+using Framework;
+using GameInput.Interface;
 using UnityEngine;
 
 namespace Beatmapping.Indicator
@@ -8,7 +10,7 @@ namespace Beatmapping.Indicator
     /// <summary>
     ///     Utility component that flips the direction of parry symbols based on input settings.
     /// </summary>
-    public class ParrySymbolFlipper : MonoBehaviour
+    public class ParrySymbolFlipper : MonoBehaviour, IFindsDependencies
     {
         [Header("Events (In)")]
 
@@ -26,9 +28,18 @@ namespace Beatmapping.Indicator
         [SerializeField]
         private List<Transform> _transforms;
 
+        private IUserInput _userInput;
+
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetUserInput();
+        }
+
         private void Awake()
         {
-            if (InputService.Instance != null && InputService.Instance.FlipParryDirection)
+            FindDependencies();
+
+            if (_userInput.FlipParryDirection)
             {
                 OnFlipParry(true);
             }
