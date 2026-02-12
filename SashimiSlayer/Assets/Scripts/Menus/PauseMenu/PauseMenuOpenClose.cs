@@ -1,6 +1,8 @@
+using CommonTypes;
 using Cysharp.Threading.Tasks;
 using Events;
-using GameInput;
+using Framework;
+using GameInput.Interface;
 using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +12,7 @@ namespace Menus.PauseMenu
     /// <summary>
     ///     Handles opening and closing the pause menu
     /// </summary>
-    public class PauseMenuOpenClose : MonoBehaviour
+    public class PauseMenuOpenClose : MonoBehaviour, IFindsDependencies
     {
         [Header("Dependencies")]
 
@@ -26,11 +28,18 @@ namespace Menus.PauseMenu
         private BoolEvent _menuToggleEvent;
 
         private bool _isMenuOpen;
+        private IUserInput _userInput;
+
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetUserInput();
+        }
 
         private void Start()
         {
+            FindDependencies();
             SetMenuOpenDelayed(false, false).Forget();
-            InputService.Instance.OnToggleMenuInput += HandleOnToggleMenuInput;
+            _userInput.OnToggleMenuInput += HandleOnToggleMenuInput;
         }
 
         private void HandleOnToggleMenuInput()
@@ -80,7 +89,7 @@ namespace Menus.PauseMenu
 
         private void OnDestroy()
         {
-            InputService.Instance.OnToggleMenuInput -= HandleOnToggleMenuInput;
+            _userInput.OnToggleMenuInput -= HandleOnToggleMenuInput;
         }
     }
 }

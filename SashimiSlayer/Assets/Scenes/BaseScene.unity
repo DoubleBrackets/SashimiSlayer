@@ -5429,9 +5429,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 380193905}
-        m_TargetAssemblyTypeName: Menus.PauseMenu.PauseMenuController, Assembly-CSharp
-        m_MethodName: ToggleMenu
+      - m_Target: {fileID: 380193906}
+        m_TargetAssemblyTypeName: Menus.PauseMenu.PauseMenuOpenClose, Assembly-CSharp
+        m_MethodName: SetMenuOpen
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5443,19 +5443,7 @@ MonoBehaviour:
         m_CallState: 2
   _onExhibitionInvertAimEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 975919553}
-        m_TargetAssemblyTypeName: Menus.PauseMenu.Views.InputSettingsView, Assembly-CSharp
-        m_MethodName: ToggleFlipAngle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onExhibitionSkipLoopEvent:
     m_PersistentCalls:
       m_Calls:
