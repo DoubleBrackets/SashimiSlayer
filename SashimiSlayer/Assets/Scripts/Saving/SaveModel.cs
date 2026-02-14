@@ -28,6 +28,8 @@ namespace Saving
 
         // Highscore
         public List<HighScoreSaveModel> HighScores;
+
+        public string InputBindingOverrides;
     }
 
     [Serializable]

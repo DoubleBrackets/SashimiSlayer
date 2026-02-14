@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace UI.MenuViews
 {
-    public abstract class MenuView : MonoBehaviour
+    public class MenuView : MonoBehaviour
     {
         /// <summary>
         ///     The gameobject to select with EventSystem when this view is shown

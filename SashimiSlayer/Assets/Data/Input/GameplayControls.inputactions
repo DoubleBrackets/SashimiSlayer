@@ -113,18 +113,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "SwordAngle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4344aec1-7de0-4426-92a9-9583499d8a68",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "SwordAngle",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -135,40 +124,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Unsheathe",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6cdb655c-1a07-4c72-b407-d84c9e59730b",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Unsheathe",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e4b2298b-667c-4e6d-801f-527983685a04",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Unsheathe",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dea5f0da-62f0-4c16-8ca9-5d6257331376",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "Unsheathe",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -179,7 +135,18 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
+                    "action": "Unsheathe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4b2298b-667c-4e6d-801f-527983685a04",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Custom",
                     "action": "Unsheathe",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -190,37 +157,15 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "BlockButtonLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "947fe3b9-3c9f-4ae7-aa10-f1f0e31b9fad",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BlockButtonLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "facdcd29-7bb2-4d71-b1bd-24af050fe74c",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BlockButtonLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7a427325-233c-4d50-9742-7095554c5d87",
-                    "path": "<Gamepad>/buttonWest",
+                    "id": "7c22fc1a-4f8c-48bd-b73f-fd17758c444d",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -241,66 +186,11 @@
                 },
                 {
                     "name": "",
-                    "id": "7c22fc1a-4f8c-48bd-b73f-fd17758c444d",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BlockButtonLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b023dbd5-7153-4450-a3da-c37d1394e4fb",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "BlockButtonRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "057cbf27-c811-460b-a77b-9bb162c2cfbf",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BlockButtonRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "60b09323-39a5-44ca-bc1b-377fcf7d1f5a",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BlockButtonRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "54fbbef0-de2a-4714-93b9-f890ce7d0815",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BlockButtonRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "54b24085-4bc3-4ec8-b1f9-c027d96129b0",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "BlockButtonRight",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -311,7 +201,18 @@
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
+                    "action": "BlockButtonRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54b24085-4bc3-4ec8-b1f9-c027d96129b0",
+                    "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Custom",
                     "action": "BlockButtonRight",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -322,7 +223,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "MousePos",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -333,7 +234,7 @@
                     "path": "<HID::Arduino LLC Arduino Leonardo>/stick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Custom",
                     "action": "SwordControllerAngle",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -366,7 +267,7 @@
                     "path": "<HID::Arduino LLC Arduino Leonardo>/button5",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Custom",
                     "action": "LeftHandSwordIdentify",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -388,7 +289,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "ToggleMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -399,18 +300,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "ToggleMenu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6eb40ae8-afff-4ce4-853e-ee4f0e27ed5b",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "ToggleMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -655,8 +545,35 @@
     ],
     "controlSchemes": [
         {
-            "name": "Gameplay",
-            "bindingGroup": "Gameplay",
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "KeyboardMouse",
+            "bindingGroup": "KeyboardMouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Custom",
+            "bindingGroup": "Custom",
             "devices": []
         }
     ]

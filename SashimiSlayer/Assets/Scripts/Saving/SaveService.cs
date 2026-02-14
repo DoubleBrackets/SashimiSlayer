@@ -118,6 +118,16 @@ namespace Saving
             }
         }
 
+        public string InputBindingOverrides
+        {
+            get => _saveModel.InputBindingOverrides;
+            set
+            {
+                _saveModel.InputBindingOverrides = value;
+                Save();
+            }
+        }
+
         public SaveService()
         {
             string persistentDataPath = Application.persistentDataPath;
