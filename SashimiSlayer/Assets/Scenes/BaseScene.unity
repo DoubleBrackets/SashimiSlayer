@@ -611,6 +611,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Left Stick [Xbox Controller]'
       objectReference: {fileID: 0}
+    - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 32.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_Name
@@ -1253,6 +1258,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 'button3 [HID::Arduino LLC Arduino Leonardo]'
       objectReference: {fileID: 0}
+    - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20.35
+      objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_Name
@@ -1612,6 +1622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 'Left Bumper [Xbox Controller]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30.7
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -3308,7 +3323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &756125285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4645,7 +4660,12 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'button4 [HID::Arduino LLC Arduino Leonardo]'
+      value: 'Left Button [Mouse]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 34.4
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -4876,7 +4896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &975919551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7192,6 +7212,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 'stick [HID::Arduino LLC Arduino Leonardo]'
       objectReference: {fileID: 0}
+    - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 21.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_Name
@@ -7709,6 +7734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 'Right Bumper [Xbox Controller]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 29.75
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -9675,6 +9705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 'button2 [HID::Arduino LLC Arduino Leonardo]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20.4
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
