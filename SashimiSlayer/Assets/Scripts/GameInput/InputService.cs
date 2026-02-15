@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Events;
+using GameInput.Haptics;
 using GameInput.InputSources;
 using GameInput.Interface;
 using UnityEngine;
@@ -28,6 +29,9 @@ namespace GameInput
 
         [SerializeField]
         private BoolEvent _setFlipParryDirection;
+
+        [SerializeField]
+        private BoolEvent _rumbleFeedbackEvent;
 
         [Header("Depends")]
 
@@ -70,6 +74,8 @@ namespace GameInput
         /// </summary>
         private int _inputBlockerCount;
 
+        private bool _rumbleFeedbackEnabled;
+
         private void Awake()
         {
             EventPassthroughSub();
@@ -79,6 +85,7 @@ namespace GameInput
             _angleMultiplierEvent.AddListener(SetAngleMultiplier);
             _swordAngleOffsetEvent.AddListener(SetAngleOffset);
             _setFlipParryDirection.AddListener(SetInvertDirectionalBlockInputs);
+            _rumbleFeedbackEvent.AddListener(SetRumbleFeedback);
 
             InputSystem.onDeviceChange += (device, change) => { UpdateControlScheme(); };
         }
@@ -92,6 +99,12 @@ namespace GameInput
             _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
             _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
             _setFlipParryDirection.RemoveListener(SetInvertDirectionalBlockInputs);
+            _rumbleFeedbackEvent.RemoveListener(SetRumbleFeedback);
+        }
+
+        private void SetRumbleFeedback(bool rumbleFeedbackEnabled)
+        {
+            _rumbleFeedbackEnabled = rumbleFeedbackEnabled;
         }
 
         public void AddInputBlocker()
@@ -102,6 +115,16 @@ namespace GameInput
         public void RemoveInputBlocker()
         {
             _inputBlockerCount = Math.Max(0, _inputBlockerCount - 1);
+        }
+
+        public void AddRumble(RumbleFeedbackSO rumbleFeedback)
+        {
+            if (!_rumbleFeedbackEnabled)
+            {
+                return;
+            }
+
+            InputProvider.AddRumble(rumbleFeedback);
         }
 
         private void SetInvertDirectionalBlockInputs(bool invert)

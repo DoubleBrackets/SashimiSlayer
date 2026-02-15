@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using Core.Protag;
 using Events;
 using Framework;
+using GameInput.Haptics;
 using GameInput.Interface;
 using Saving;
 using UnityEngine;
@@ -90,6 +92,19 @@ namespace GameInput.InputSources
 
         private SaveService _saveService;
 
+        private struct RumbleInstance
+        {
+            public RumbleProfile Profile;
+            public float StartTime;
+            public float EndTime;
+        }
+
+        private List<RumbleInstance> _lowFreqRumbleInstances = new();
+        private List<RumbleInstance> _highFreqRumbleInstances = new();
+
+        private float _currentLowFreqRumbleAmount;
+        private float _currentHighFreqRumbleAmount;
+
         private void Awake()
         {
             _saveService = ServiceLocator.GetGameSaveService();
@@ -107,6 +122,47 @@ namespace GameInput.InputSources
         {
             UnsubscribeFromInputActions();
             _onInputBindingOverride.RemoveListener(SaveInputBindings);
+
+            Gamepad controller = Gamepad.current;
+
+            if (controller != null)
+            {
+                controller.SetMotorSpeeds(0, 0);
+            }
+        }
+
+        private void Update()
+        {
+            _currentLowFreqRumbleAmount = EvaluateRumble(_lowFreqRumbleInstances);
+            _currentHighFreqRumbleAmount = EvaluateRumble(_highFreqRumbleInstances);
+
+            Gamepad controller = Gamepad.current;
+
+            if (controller != null)
+            {
+                controller.SetMotorSpeeds(_currentLowFreqRumbleAmount, _currentHighFreqRumbleAmount);
+            }
+        }
+
+        private float EvaluateRumble(List<RumbleInstance> instances)
+        {
+            float totalRumble = 0;
+
+            for (var i = 0; i < instances.Count; i++)
+            {
+                RumbleInstance instance = instances[i];
+                if (Time.time >= instance.EndTime)
+                {
+                    instances.RemoveAt(i);
+                    i--;
+                }
+                else
+                {
+                    totalRumble += instance.Profile.Evaluate(Time.time - instance.StartTime);
+                }
+            }
+
+            return totalRumble;
         }
 
         private void SubscribeToInputActions()
@@ -307,6 +363,26 @@ namespace GameInput.InputSources
         public BlockPoseStates GetBlockPose()
         {
             return _blockPoseStates;
+        }
+
+        public void AddRumble(RumbleFeedbackSO rumbleFeedback)
+        {
+            RumbleProfile lowFreqRumble = rumbleFeedback.RumbleProfileLowFreq;
+            RumbleProfile highFreqRumble = rumbleFeedback.RumbleProfileHighFreq;
+
+            _lowFreqRumbleInstances.Add(new RumbleInstance
+            {
+                EndTime = Time.time + lowFreqRumble.Duration,
+                Profile = lowFreqRumble,
+                StartTime = Time.time
+            });
+
+            _highFreqRumbleInstances.Add(new RumbleInstance
+            {
+                EndTime = Time.time + highFreqRumble.Duration,
+                Profile = highFreqRumble,
+                StartTime = Time.time
+            });
         }
     }
 }

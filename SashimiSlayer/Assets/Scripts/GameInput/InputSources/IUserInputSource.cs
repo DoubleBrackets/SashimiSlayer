@@ -1,4 +1,5 @@
 using System;
+using GameInput.Haptics;
 using GameInput.Interface;
 
 namespace GameInput.InputSources
@@ -29,5 +30,7 @@ namespace GameInput.InputSources
         /// </summary>
         /// <returns></returns>
         public BlockPoseStates GetBlockPose();
+
+        public void AddRumble(RumbleFeedbackSO rumbleFeedback);
     }
 }

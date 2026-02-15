@@ -22,6 +22,9 @@ namespace Menus.PauseMenu.Views
         [SerializeField]
         private BoolEvent _flipParryDirectionChangeEvent;
 
+        [SerializeField]
+        private BoolEvent _rumbleFeedbackEvent;
+
         [Header("UI")]
 
         [SerializeField]
@@ -39,11 +42,15 @@ namespace Menus.PauseMenu.Views
         [SerializeField]
         private Toggle _flipParryDirectionToggle;
 
+        [SerializeField]
+        private Toggle _rumbleFeedbackToggle;
+
         private float _swordAngleMultiplier;
         private float _swordAngleOffset;
         private bool _swordAngleFlip;
         private int _upAxis;
         private bool _flipParryDirection;
+        private bool _rumbleFeedback;
 
         private bool _isLeftHanded;
 
@@ -56,12 +63,14 @@ namespace Menus.PauseMenu.Views
             _swordAngleFlip = SaveService.FlipSwordAim;
             _upAxis = SaveService.UpAxis;
             _flipParryDirection = SaveService.FlipParryDirection;
+            _rumbleFeedback = SaveService.RumbleFeedbackEnabled;
 
             _swordAngleMultiplierSlider.onValueChanged.AddListener(HandleSwordAngleMultiplierChange);
             _swordAngleOffsetSlider.onValueChanged.AddListener(HandleSwordAngleOffsetChange);
             _swordAngleFlipToggle.onValueChanged.AddListener(HandleSwordAngleFlipChange);
             _upAxisDropdown.onValueChanged.AddListener(HandleUpAxisChange);
             _flipParryDirectionToggle.onValueChanged.AddListener(HandleFlipParryDirectionChange);
+            _rumbleFeedbackToggle.onValueChanged.AddListener(HandleRumbleFeedbackToggleChange);
 
             SetupDropdown();
         }
@@ -73,6 +82,7 @@ namespace Menus.PauseMenu.Views
             _swordAngleFlipToggle.isOn = _swordAngleFlip;
             _upAxisDropdown.value = _upAxis;
             _flipParryDirectionToggle.isOn = _flipParryDirection;
+            _rumbleFeedbackToggle.isOn = _rumbleFeedback;
 
             // Need to explicitly call these methods to ensure the initial values are set correctly
             // Since UI callbacks don't trigger if the value is the same as the current value (i.e default)
@@ -80,6 +90,7 @@ namespace Menus.PauseMenu.Views
             HandleUpAxisChange(_upAxis);
             UpdateSwordAngleMultiplier(_swordAngleMultiplier, _swordAngleFlip, _isLeftHanded);
             HandleFlipParryDirectionChange(_flipParryDirection);
+            HandleRumbleFeedbackToggleChange(_rumbleFeedback);
         }
 
         public override void ViewDestroy()
@@ -141,6 +152,13 @@ namespace Menus.PauseMenu.Views
             _swordAngleOffset = value;
             SaveService.SwordAngleOffset = _swordAngleOffset;
             UpdateSwordAngleOffset();
+        }
+
+        private void HandleRumbleFeedbackToggleChange(bool rumbleEnabled)
+        {
+            _rumbleFeedback = rumbleEnabled;
+            SaveService.RumbleFeedbackEnabled = _rumbleFeedback;
+            _rumbleFeedbackEvent.Raise(_rumbleFeedback);
         }
 
         private void UpdateSwordAngleOffset()

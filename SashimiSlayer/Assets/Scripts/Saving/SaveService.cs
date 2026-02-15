@@ -128,6 +128,16 @@ namespace Saving
             }
         }
 
+        public bool RumbleFeedbackEnabled
+        {
+            get => _saveModel.RumbleFeedbackEnabled;
+            set
+            {
+                _saveModel.RumbleFeedbackEnabled = value;
+                Save();
+            }
+        }
+
         public SaveService()
         {
             string persistentDataPath = Application.persistentDataPath;

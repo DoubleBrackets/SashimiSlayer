@@ -1251,7 +1251,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Button 3 [Arduino Leonardo]'
+      value: 'button3 [HID::Arduino LLC Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -2373,6 +2373,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &455280399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455280401}
+  - component: {fileID: 455280400}
+  m_Layer: 0
+  m_Name: RumbleTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &455280400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455280399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81b7947ed4b4b75a24d0314456b5a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Protag.RumbleTest
+  _rumble: {fileID: 11400000, guid: 5fdc494f218b32948bebd5276b3d65e1, type: 2}
+--- !u!4 &455280401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455280399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.56872, y: 1.63557, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &463492119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3264,7 +3309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &756125285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3915,6 +3960,152 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 832208435}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &895423552
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1023921488}
+    m_Modifications:
+    - target: {fileID: 974519442236631251, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: _scrollRect
+      value: 
+      objectReference: {fileID: 8905180037063782924}
+    - target: {fileID: 1323995520925234848, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_text
+      value: Controller Rumble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853806598473070391, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_Name
+      value: RumbleFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 81.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73fccc250ac307f4295f9a2d39025b78, type: 3}
+--- !u!224 &895423553 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8240173690092360554, guid: 73fccc250ac307f4295f9a2d39025b78,
+    type: 3}
+  m_PrefabInstance: {fileID: 895423552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &895423554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8445811483106696000, guid: 73fccc250ac307f4295f9a2d39025b78,
+    type: 3}
+  m_PrefabInstance: {fileID: 895423552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &919509697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4455,7 +4646,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Button 4 [Arduino Leonardo]'
+      value: 'button4 [HID::Arduino LLC Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -4686,7 +4877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &975919551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4730,11 +4921,14 @@ MonoBehaviour:
     type: 2}
   _flipParryDirectionChangeEvent: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
     type: 2}
+  _rumbleFeedbackEvent: {fileID: 11400000, guid: 610579aced60c2147a27f4e48ce0d9b5,
+    type: 2}
   _swordAngleMultiplierSlider: {fileID: 1747919743}
   _swordAngleOffsetSlider: {fileID: 1395926320}
   _swordAngleFlipToggle: {fileID: 1234097993}
   _upAxisDropdown: {fileID: 444639985}
   _flipParryDirectionToggle: {fileID: 424625535}
+  _rumbleFeedbackToggle: {fileID: 895423554}
 --- !u!225 &975919555
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6997,7 +7191,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Stick [Arduino Leonardo]'
+      value: 'stick [HID::Arduino LLC Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -9477,7 +9671,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Button 2 [Arduino Leonardo]'
+      value: 'button2 [HID::Arduino LLC Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -10691,6 +10885,8 @@ MonoBehaviour:
   _swordAngleOffsetEvent: {fileID: 11400000, guid: 9074d0865eea37c479c2fedcdeae87d5,
     type: 2}
   _setFlipParryDirection: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
+    type: 2}
+  _rumbleFeedbackEvent: {fileID: 11400000, guid: 610579aced60c2147a27f4e48ce0d9b5,
     type: 2}
   _hidInputSource: {fileID: 1569467103}
   _serialInputSource: {fileID: 1477892480}
@@ -12538,8 +12734,24 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 424625534}
+    - targetCorrespondingSourceObject: {fileID: 3557712175203842250, guid: e872b07fdb8aec74c887a4c5edcd175e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 895423553}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e872b07fdb8aec74c887a4c5edcd175e, type: 3}
+--- !u!114 &8905180037063782924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1065084907574529499, guid: e872b07fdb8aec74c887a4c5edcd175e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8905180037063782923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ScrollRect
 --- !u!114 &9074939233020353756 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
@@ -12572,3 +12784,4 @@ SceneRoots:
   - {fileID: 938862751}
   - {fileID: 1601302616}
   - {fileID: 1640389115}
+  - {fileID: 455280401}

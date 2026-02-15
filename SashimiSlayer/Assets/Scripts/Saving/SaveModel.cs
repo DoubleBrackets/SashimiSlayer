@@ -22,6 +22,7 @@ namespace Saving
         public bool FlipSwordAim;
         public int UpAxis;
         public bool FlipParryDirection;
+        public bool RumbleFeedbackEnabled = true;
 
         // Controller
         public string LastConnectedSerialPortName;

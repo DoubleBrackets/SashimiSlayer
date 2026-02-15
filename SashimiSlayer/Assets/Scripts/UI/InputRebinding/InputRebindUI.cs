@@ -239,6 +239,7 @@ namespace UI.InputRebinding
                 action.actionMap.Disable();
             }
 
+            // Only allow rebinding of controls that are part of the same group, i.e devices in the binding's control scheme
             InputBinding baseBinding = action.bindings[bindingIndex];
             string group = baseBinding.groups;
 

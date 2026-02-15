@@ -1,5 +1,6 @@
 using System;
 using Events;
+using GameInput.Haptics;
 using GameInput.Interface;
 using GameInput.SerialComm;
 using UnityEngine;
@@ -148,6 +149,11 @@ namespace GameInput.InputSources
         public BlockPoseStates GetBlockPose()
         {
             return _currentBlockPose;
+        }
+
+        public void AddRumble(RumbleFeedbackSO rumbleFeedback)
+        {
+            // Not supported
         }
 
         public void ConnectToPort(string portName)
