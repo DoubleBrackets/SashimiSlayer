@@ -8,7 +8,9 @@ using GameInput.Interface;
 using Saving;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.Serialization;
 
 namespace GameInput.InputSources
@@ -59,6 +61,14 @@ namespace GameInput.InputSources
 
         [SerializeField]
         private InputActionReference _exhibitionSkipLoopAction;
+
+        [Header("UI Action References")]
+
+        [SerializeField]
+        private InputActionReference _uiNavigateAction;
+
+        [SerializeField]
+        private InputActionReference _uiNavigateActionInverted;
 
         [Header("Exhibition Hotkey Events")]
 
@@ -383,6 +393,18 @@ namespace GameInput.InputSources
                 Profile = highFreqRumble,
                 StartTime = Time.time
             });
+        }
+
+        /// <summary>
+        ///     We handle flipping for gameplay elsewhere, so this is only needed for UI navigation since there's no processing
+        ///     since there's no layers between the action and the UI input module
+        /// </summary>
+        /// <param name="invert"></param>
+        public void SetInvertParryDirection(bool invert)
+        {
+            var uiModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
+
+            uiModule.move = invert ? _uiNavigateActionInverted : _uiNavigateAction;
         }
     }
 }

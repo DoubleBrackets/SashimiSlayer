@@ -130,6 +130,8 @@ namespace GameInput
         private void SetInvertDirectionalBlockInputs(bool invert)
         {
             FlipParryDirection = invert;
+
+            _hidInputSource.SetInvertParryDirection(invert);
         }
 
         private void SetAngleMultiplier(float angleMultiplier)
