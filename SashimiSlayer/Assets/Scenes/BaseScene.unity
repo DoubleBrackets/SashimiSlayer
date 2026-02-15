@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controlSchemeChanged: {fileID: 11400000, guid: 1587be54aaec6e848b921a0c977ecaa4,
     type: 2}
-  _optionsMenuToggled: {fileID: 11400000, guid: dbe2d9d70d477fa49a2b203b87339de8,
+  _optionsMenuToggled: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
     type: 2}
 --- !u!1 &28433221
 GameObject:
@@ -1961,7 +1961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuViews:
   - {fileID: 1677762847}
-  - {fileID: 362974152}
   - {fileID: 975919553}
   - {fileID: 1725459385}
   - {fileID: 762562468}
@@ -8251,6 +8250,10 @@ MonoBehaviour:
   _exhibitionInvertAimAction: {fileID: 3179541971578313997, guid: c86165f3c71e618458bb5c17310c302e,
     type: 3}
   _exhibitionSkipLoopAction: {fileID: 8689431110682733482, guid: c86165f3c71e618458bb5c17310c302e,
+    type: 3}
+  _uiNavigateAction: {fileID: -1246063463842141843, guid: c86165f3c71e618458bb5c17310c302e,
+    type: 3}
+  _uiNavigateActionInverted: {fileID: -6092363497142233401, guid: c86165f3c71e618458bb5c17310c302e,
     type: 3}
   _onExhibitionResetEvent:
     m_PersistentCalls:
