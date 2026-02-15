@@ -1,7 +1,9 @@
 using System;
 using Core.Protag;
 using Events;
+using Framework;
 using GameInput.Interface;
+using Saving;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -14,10 +16,7 @@ namespace GameInput.InputSources
         [Header("Events (In)")]
 
         [SerializeField]
-        private FloatEvent _angleMultiplierEvent;
-
-        [SerializeField]
-        private FloatEvent _swordAngleOffsetEvent;
+        private SOEvent _onInputBindingOverride;
 
         [Header("Gameplay Input Action References")]
 
@@ -89,16 +88,25 @@ namespace GameInput.InputSources
         private bool _isLeftButtonDown;
         private bool _isRightButtonDown;
 
+        private SaveService _saveService;
+
         private void Awake()
         {
+            _saveService = ServiceLocator.GetGameSaveService();
+
+            LoadInputBindings();
+
             _blockPoseStates = 0;
             _inputActionAsset.Enable();
             SubscribeToInputActions();
+
+            _onInputBindingOverride.AddListener(SaveInputBindings);
         }
 
         private void OnDestroy()
         {
             UnsubscribeFromInputActions();
+            _onInputBindingOverride.RemoveListener(SaveInputBindings);
         }
 
         private void SubscribeToInputActions()
@@ -145,6 +153,29 @@ namespace GameInput.InputSources
             {
                 _rawSwordAngle = JoystickVectorToAngle(context.ReadValue<Vector2>());
             }
+        }
+
+        /// <summary>
+        ///     Loads the input bindings from the save file
+        /// </summary>
+        /// <returns></returns>
+        private void LoadInputBindings()
+        {
+            try
+            {
+                _inputActionAsset.LoadBindingOverridesFromJson(_saveService.InputBindingOverrides);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
+        }
+
+        private void SaveInputBindings()
+        {
+            // awkward prettify
+            _saveService.InputBindingOverrides =
+                JsonUtility.ToJson(JsonUtility.FromJson<string>(_inputActionAsset.SaveBindingOverridesAsJson()), true);
         }
 
         private void OnSheatheButton(InputAction.CallbackContext context)

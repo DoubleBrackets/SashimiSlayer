@@ -1,4 +1,5 @@
 using CommonTypes;
+using Events;
 using Framework;
 using GameInput.Interface;
 using UI.MenuViews;
@@ -19,6 +20,11 @@ namespace Menus.PauseMenu
 
         [SerializeField]
         private CanvasGroup _canvasGroup;
+
+        [Header("Event (Out)")]
+
+        [SerializeField]
+        private BoolEvent _pauseMenuOpenEvent;
 
         private bool _isMenuOpen = true;
         private IUserInput _userInput;
@@ -62,7 +68,9 @@ namespace Menus.PauseMenu
                 EventSystem.current.SetSelectedGameObject(null);
             }
 
-            if (_isMenuOpen)
+            _pauseMenuOpenEvent?.Raise(isOpen);
+
+            if (isOpen)
             {
                 _userInput.AddInputBlocker();
             }
