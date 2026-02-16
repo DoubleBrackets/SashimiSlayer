@@ -87,10 +87,12 @@ namespace Core.Protag
         private VoidEvent _onDrawDebugGuiEvent;
 
         [SerializeField]
-        private Vector2Event _protagSetSwordPivot;
+        private SliceResultEvent _sliceResultEvent;
+
+        [Header("Channels (In)")]
 
         [SerializeField]
-        private SliceResultEvent _sliceResultEvent;
+        private Vector2Event _protagSetSwordPivot;
 
         [Header("Screen Shake")]
 

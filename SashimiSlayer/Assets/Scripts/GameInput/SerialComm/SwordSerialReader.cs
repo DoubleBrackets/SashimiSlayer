@@ -34,7 +34,7 @@ namespace GameInput.SerialComm
         [SerializeField]
         private int _baudRate;
 
-        [Header("Config")]
+        [Header("Events (In)")]
 
         [SerializeField]
         private VoidEvent _onDrawDebugGUI;

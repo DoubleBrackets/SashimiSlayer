@@ -19,6 +19,11 @@ namespace GameInput
         [Header("Event (In)")]
 
         [SerializeField]
+        private VoidEvent _onDrawDebugGUI;
+
+        [Header("Channel (In)")]
+
+        [SerializeField]
         private BoolEvent _setUseSerialInput;
 
         [SerializeField]
@@ -43,9 +48,6 @@ namespace GameInput
 
         [SerializeField]
         private bool _useSerialController;
-
-        [SerializeField]
-        private VoidEvent _onDrawDebugGUI;
 
         [Header("Config")]
 

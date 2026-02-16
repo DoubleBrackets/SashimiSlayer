@@ -6,6 +6,8 @@ public class DebugService : MonoBehaviour
     [SerializeField]
     private bool _showGuiLabel;
 
+    [Header("Events (Out)")]
+
     [SerializeField]
     private VoidEvent _onDrawGuiEvent;
 

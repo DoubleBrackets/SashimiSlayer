@@ -1,6 +1,5 @@
 using Core.Protag;
 using Cysharp.Threading.Tasks;
-using Events;
 using Events.Core;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,7 +18,7 @@ namespace Menus
             ScreenOverlay
         }
 
-        [Header("Listening Events")]
+        [Header("Events (In)")]
 
         [SerializeField]
         private ProtagSwordStateEvent _protagSliceEvent;
@@ -27,10 +26,7 @@ namespace Menus
         [SerializeField]
         private ProtagSwordStateEvent _protagSwordStateEvent;
 
-        [Header("Invoking Events")]
-
-        [SerializeField]
-        private VoidEvent _buttonSlicedEvent;
+        [Header("Events (Out)")]
 
         [SerializeField]
         private ObjectSlicedEvent _objectSlicedEvent;
@@ -137,10 +133,6 @@ namespace Menus
         {
             await UniTask.Delay((int)(delay * 1000));
             _buttonSlicedDelayedEvent?.Invoke();
-            if (_buttonSlicedEvent != null)
-            {
-                _buttonSlicedEvent.Raise();
-            }
         }
 
         private Vector2 CameraCanvasPositionToWorld(Vector2 cameraCanvasPosition)

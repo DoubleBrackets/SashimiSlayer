@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 28433223}
   - component: {fileID: 28433222}
   m_Layer: 0
-  m_Name: TimingService
+  m_Name: BeatmapTimeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2387,51 +2387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &455280399
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 455280401}
-  - component: {fileID: 455280400}
-  m_Layer: 0
-  m_Name: RumbleTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &455280400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455280399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a81b7947ed4b4b75a24d0314456b5a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Core.Protag.RumbleTest
-  _rumble: {fileID: 11400000, guid: 5fdc494f218b32948bebd5276b3d65e1, type: 2}
---- !u!4 &455280401
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455280399}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56872, y: 1.63557, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &463492119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4660,12 +4615,12 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Left Button [Mouse]'
+      value: 'button4 [HID::Arduino LLC Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_fontSize
-      value: 34.4
+      value: 20.3
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -10917,6 +10872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onControlSchemeChanged: {fileID: 11400000, guid: 1587be54aaec6e848b921a0c977ecaa4,
     type: 2}
+  _onDrawDebugGUI: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
   _setUseSerialInput: {fileID: 11400000, guid: ae2649dcf4fe32b4bb34667a4644dc28, type: 2}
   _angleMultiplierEvent: {fileID: 11400000, guid: 084fa5ca422192449a31ac7d1393fa37,
     type: 2}
@@ -10929,7 +10885,6 @@ MonoBehaviour:
   _hidInputSource: {fileID: 1569467103}
   _serialInputSource: {fileID: 1477892480}
   _useSerialController: 0
-  _onDrawDebugGUI: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
   _sliceDebounce: 0.1
 --- !u!1 &1973045991
 GameObject:
@@ -12031,9 +11986,9 @@ MonoBehaviour:
     type: 2}
   _onDrawDebugGuiEvent: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d,
     type: 2}
+  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
   _protagSetSwordPivot: {fileID: 11400000, guid: 55a449ae478ed574c96efac265420098,
     type: 2}
-  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
   _damageScreenShake: {fileID: 11400000, guid: fad18fb22ba344d4880ce634ffcbb160, type: 2}
   _blockScreenShake: {fileID: 11400000, guid: a41083569f483974fb6416b3b5f0c335, type: 2}
   _sliceScreenShake: {fileID: 11400000, guid: f9a0a07aa2568c242adf19f428d9cff0, type: 2}
@@ -12822,4 +12777,3 @@ SceneRoots:
   - {fileID: 938862751}
   - {fileID: 1601302616}
   - {fileID: 1640389115}
-  - {fileID: 455280401}

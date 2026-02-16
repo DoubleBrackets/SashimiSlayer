@@ -36,6 +36,8 @@ namespace Core.Protag
         [SerializeField]
         private ProtagSwordStateEvent _onSwordStateChange;
 
+        [Header("Channels (In)")]
+
         [SerializeField]
         private Vector2Event _swordPivotPositionChangeEvent;
 

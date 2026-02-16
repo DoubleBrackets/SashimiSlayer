@@ -26,6 +26,8 @@ namespace Beatmapping
         [SerializeField]
         private ProtagSwordStateEvent _onSliceByProtag;
 
+        [Header("Channels (In)")]
+
         [SerializeField]
         private BoolEvent _setSpawnEnabledEvent;
 
