@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using CommonTypes;
 using Events;
-using Framework;
+using Framework.Services;
 using GameInput.Interface;
 using UnityEngine;
 
@@ -32,7 +32,7 @@ namespace Beatmapping.Indicator
 
         public void FindDependencies()
         {
-            _userInput = ServiceLocator.GetUserInput();
+            _userInput = ServiceLocator.GetService<IUserInput>();
         }
 
         private void Awake()

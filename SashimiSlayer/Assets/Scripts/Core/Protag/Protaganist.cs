@@ -1,10 +1,9 @@
 using Base;
 using Beatmapping;
-using CommonTypes;
 using Events;
 using Events.Core;
 using Feel;
-using Framework;
+using Framework.Services;
 using GameInput.Interface;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ namespace Core.Protag
     /// <summary>
     ///     Protaganist, placed into the scene by hand, needs global state
     /// </summary>
-    public class Protaganist : DescMono, IFindsDependencies
+    public class Protaganist : DescMono
     {
         public struct ProtagSwordState
         {
@@ -104,8 +103,6 @@ namespace Core.Protag
         [SerializeField]
         private ScreenShakeSO _sliceScreenShake;
 
-        public static Protaganist Instance { get; private set; }
-
         /// <summary>
         ///     The position that notes move towards
         /// </summary>
@@ -123,24 +120,16 @@ namespace Core.Protag
         /// </summary>
         private IUserInput _inputProvider;
 
-        public void FindDependencies()
+        private ScreenShakeService _screenShakeService;
+
+        public void Initialize(IUserInput userInput, ScreenShakeService screenShakeService)
         {
-            _inputProvider = ServiceLocator.GetUserInput();
+            _inputProvider = userInput;
+            _screenShakeService = screenShakeService;
         }
 
-        private void Awake()
+        private void Start()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-
-            FindDependencies();
-
             _health = _maxHealth;
             _healthChangeEvent.Raise(_health);
 
@@ -219,13 +208,14 @@ namespace Core.Protag
 
         public void TakeDamage(float damage)
         {
-            ScreenShakeService.Instance.ShakeScreen(_damageScreenShake);
+            ServiceLocator.GetService<ScreenShakeService>().ShakeScreen(_damageScreenShake);
 
             if (_health <= 0)
             {
                 return;
             }
 
+            _health -= damage;
             _healthChangeEvent.Raise(_health);
             _damageTakenEvent.Raise();
 
@@ -249,7 +239,7 @@ namespace Core.Protag
 
             _blockSuccessEvent.Raise(_currentSwordState);
 
-            ScreenShakeService.Instance.ShakeScreen(_blockScreenShake);
+            ServiceLocator.GetService<ScreenShakeService>().ShakeScreen(_blockScreenShake);
         }
 
         private void HandleSliceResult(SliceResultData data)
@@ -257,7 +247,7 @@ namespace Core.Protag
             if (data.SliceCount > 0)
             {
                 _successfulSliceEvent.Raise(_currentSwordState);
-                ScreenShakeService.Instance.ShakeScreen(_sliceScreenShake);
+                _screenShakeService.ShakeScreen(_sliceScreenShake);
             }
         }
 

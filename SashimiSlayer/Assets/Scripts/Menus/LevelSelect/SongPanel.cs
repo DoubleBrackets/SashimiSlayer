@@ -2,7 +2,6 @@ using System;
 using Core.Scene;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Menus.LevelSelect
@@ -20,11 +19,6 @@ namespace Menus.LevelSelect
         [SerializeField]
         private Image _thumbnailImage;
 
-        [Header("UnityEvents")]
-
-        [SerializeField]
-        private UnityEvent<bool> _onHardLevelToggled;
-
         public event Action<GameLevelSO> OnLevelSelected;
         public event Action OnPanelSliced;
 
@@ -35,7 +29,6 @@ namespace Menus.LevelSelect
         public void SetupUI(GameLevelSO track)
         {
             _track = track;
-            SetDifficulty(false);
             UpdateUI(track);
         }
 
@@ -59,18 +52,6 @@ namespace Menus.LevelSelect
         public void PanelSliced()
         {
             OnPanelSliced?.Invoke();
-        }
-
-        public void SetDifficulty(bool isHardDifficulty)
-        {
-            if (isHardDifficulty && _track.HardBeatmap == null)
-            {
-                return;
-            }
-
-            _onHardLevelToggled?.Invoke(isHardDifficulty);
-
-            _hardLevelSelected = isHardDifficulty;
         }
 
         public void SetVisible(bool visible)

@@ -33,6 +33,6 @@ public class PlayerDeathHandler : MonoBehaviour
     private async UniTaskVoid OnDeath()
     {
         await UniTask.Delay(1000);
-        LevelLoader.Instance.LoadLevel(_levelResultLevel).Forget();
+        // LevelLoader.Instance.LoadLevel(_levelResultLevel).Forget();
     }
 }

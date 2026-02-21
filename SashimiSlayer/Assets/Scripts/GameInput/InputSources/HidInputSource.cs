@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Core.Protag;
 using Events;
-using Framework;
+using Framework.Services;
 using GameInput.Haptics;
 using GameInput.Interface;
 using Saving;
@@ -115,9 +115,9 @@ namespace GameInput.InputSources
         private float _currentLowFreqRumbleAmount;
         private float _currentHighFreqRumbleAmount;
 
-        private void Awake()
+        private void Start()
         {
-            _saveService = ServiceLocator.GetGameSaveService();
+            _saveService = ServiceLocator.GetService<SaveService>();
 
             LoadInputBindings();
 
@@ -291,9 +291,10 @@ namespace GameInput.InputSources
         public void OnMousePos(InputAction.CallbackContext context)
         {
             var newMousePos = context.ReadValue<Vector2>();
-            if (newMousePos != _mousePos && Protaganist.Instance != null && Camera.main != null)
+            if (newMousePos != _mousePos && ServiceLocator.GetService<Protaganist>() != null && Camera.main != null)
             {
-                Vector2 screenCenter = Camera.main.WorldToScreenPoint(Protaganist.Instance.SwordPosition);
+                Vector2 screenCenter =
+                    Camera.main.WorldToScreenPoint(ServiceLocator.GetService<Protaganist>().SwordPosition);
                 Vector2 mouseDelta = newMousePos - screenCenter;
                 _rawSwordAngle = JoystickVectorToAngle(mouseDelta);
             }

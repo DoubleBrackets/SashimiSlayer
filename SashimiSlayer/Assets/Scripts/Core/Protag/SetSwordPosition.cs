@@ -1,10 +1,11 @@
 using Core.Protag;
+using Framework.Services;
 using UnityEngine;
 
 public class SetSwordPosition : MonoBehaviour
 {
     private void Awake()
     {
-        Protaganist.Instance.SetSwordPosition(transform.position);
+        ServiceLocator.GetService<Protaganist>().SetSwordPosition(transform.position);
     }
 }

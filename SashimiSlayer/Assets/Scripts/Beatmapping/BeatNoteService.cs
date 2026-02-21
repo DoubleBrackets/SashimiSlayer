@@ -40,6 +40,7 @@ namespace Beatmapping
         private readonly List<BeatNote> _activeBeatNotes = new();
 
         private bool _spawningEnabled = true;
+        public BeatmapConfigSo CurrentBeatmap { get; set; }
 
         private void Awake()
         {

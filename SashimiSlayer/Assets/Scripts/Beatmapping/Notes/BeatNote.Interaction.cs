@@ -2,6 +2,7 @@ using Base;
 using Beatmapping.Interactions;
 using Core.Protag;
 using Events.Core;
+using Framework.Services;
 using UnityEngine;
 
 namespace Beatmapping.Notes
@@ -65,7 +66,7 @@ namespace Beatmapping.Notes
 
             OnBlockedByProtag?.Invoke(GetInteractionIndex(interaction), interactionAttemptResult);
 
-            Protaganist.Instance.SuccessfulBlock(protagSwordState.BlockPose);
+            ServiceLocator.GetService<Protaganist>().SuccessfulBlock(protagSwordState.BlockPose);
         }
 
         /// <summary>

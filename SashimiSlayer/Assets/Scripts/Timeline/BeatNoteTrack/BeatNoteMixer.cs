@@ -1,6 +1,5 @@
 using Beatmapping;
 using Beatmapping.Tooling;
-using Core.Scene;
 using Timeline.BeatNoteTrack.BeatNote;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -11,13 +10,13 @@ namespace Timeline.BeatNoteTrack
 {
     public class BeatNoteMixer : PlayableBehaviour
     {
-        private BeatNoteService _mTrackBinding;
+        private BeatNoteService _trackBinding;
 
         // Called every frame that the timeline is evaluated. ProcessFrame is invoked after its' inputs.
         public override void ProcessFrame(Playable playable, FrameData info, object playerData)
         {
-            _mTrackBinding = playerData as BeatNoteService;
-            if (_mTrackBinding == null)
+            _trackBinding = playerData as BeatNoteService;
+            if (_trackBinding == null)
             {
                 Debug.LogWarning("BeatNoteMixer: Track binding is null");
             }
@@ -25,7 +24,7 @@ namespace Timeline.BeatNoteTrack
             BeatmapConfigSo beatmap;
             if (Application.isPlaying)
             {
-                beatmap = LevelLoader.Instance.CurrentLevel.NormalBeatmap;
+                beatmap = _trackBinding.CurrentBeatmap;
             }
             else
             {

@@ -2,6 +2,7 @@ using Base;
 using Beatmapping.Interactions;
 using Beatmapping.Timing;
 using Core.Protag;
+using Framework.Services;
 
 namespace Beatmapping.Notes
 {
@@ -236,9 +237,9 @@ namespace Beatmapping.Notes
             if (interactionState != NoteInteraction.NoteInteractionState.Success
                 && prevInsidePassWindowInteraction.Type == NoteInteraction.InteractionType.Block)
             {
-                if (Protaganist.Instance)
+                if (ServiceLocator.GetService<Protaganist>())
                 {
-                    Protaganist.Instance.TakeDamage(1);
+                    ServiceLocator.GetService<Protaganist>().TakeDamage(1);
                 }
             }
         }

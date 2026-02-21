@@ -1,6 +1,7 @@
 using Core.Protag;
 using Cysharp.Threading.Tasks;
 using Events.Core;
+using Framework.Services;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -86,7 +87,7 @@ namespace Menus
         {
             Vector2 pos = CameraCanvasPositionToWorld(transform.position);
 
-            float dist = Protaganist.Instance.DistanceToSwordPlane(pos);
+            float dist = ServiceLocator.GetService<Protaganist>().DistanceToSwordPlane(pos);
 
             if (dist < _radius)
             {

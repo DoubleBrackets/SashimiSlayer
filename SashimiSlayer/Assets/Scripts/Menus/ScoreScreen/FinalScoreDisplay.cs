@@ -3,7 +3,7 @@ using CommonTypes;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Events;
-using Framework;
+using Framework.Services;
 using Saving;
 using TMPro;
 using UnityEngine;
@@ -185,7 +185,7 @@ namespace Menus.ScoreScreen
 
         public void FindDependencies()
         {
-            _saveService = ServiceLocator.GetGameSaveService();
+            _saveService = ServiceLocator.GetService<SaveService>();
         }
     }
 }

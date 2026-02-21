@@ -61,7 +61,7 @@ namespace DevTools.Editor.SashimiSlayer
         /// <param name="mode"></param>
         private void HandleSceneOpened(Scene scene, OpenSceneMode mode)
         {
-            TimelineAsset timelineAsset = SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
+            TimelineAsset timelineAsset = SelectTimelineFromScene();
             if (timelineAsset != null)
             {
                 SelectBeatmapFromTimeline(timelineAsset);
@@ -106,7 +106,7 @@ namespace DevTools.Editor.SashimiSlayer
 
             if (GUILayout.Button("Select Beatmap Timeline (Shift+W)"))
             {
-                TimelineAsset timelineAsset = SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
+                TimelineAsset timelineAsset = SelectTimelineFromScene();
                 SelectBeatmapFromTimeline(timelineAsset);
             }
 
@@ -196,21 +196,15 @@ namespace DevTools.Editor.SashimiSlayer
 
             foreach (GameLevelSO track in SashimiDevToolPrefs.instance.SongRoster.Songs)
             {
-                BeatmapConfigSo normalMap = track.NormalBeatmap;
-                BeatmapConfigSo hardMap = track.HardBeatmap;
+                BeatmapConfigSo map = track.NormalBeatmap;
 
                 var didMatchMap = false;
                 BeatmapConfigSo matchingMap = null;
 
-                if (normalMap.BeatmapTimeline == timeline)
+                if (map.BeatmapTimeline == timeline)
                 {
                     didMatchMap = true;
-                    matchingMap = normalMap;
-                }
-                else if (hardMap && hardMap.BeatmapTimeline == timeline)
-                {
-                    didMatchMap = true;
-                    matchingMap = hardMap;
+                    matchingMap = map;
                 }
 
                 if (didMatchMap)
@@ -239,10 +233,10 @@ namespace DevTools.Editor.SashimiSlayer
         [MenuItem("Sashimi Slayer/Select Normal #w")]
         private static void SelectTimelineFromSceneNormal()
         {
-            SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
+            SelectTimelineFromScene();
         }
 
-        private static TimelineAsset SelectTimelineFromScene(LevelLoader.Difficulty difficulty)
+        private static TimelineAsset SelectTimelineFromScene()
         {
             // Search the current scene for a playable director
             var quickSelect = FindObjectOfType<TimelineQuickSelect>();
@@ -254,8 +248,7 @@ namespace DevTools.Editor.SashimiSlayer
             }
 
             // Select it
-            Selection.activeGameObject = quickSelect.gameObject;
-            Selection.activeGameObject = quickSelect.LoadMap(difficulty).gameObject;
+            Selection.activeGameObject = quickSelect.LoadMap().gameObject;
             RefreshTimelineEditor();
             return quickSelect.CurrentTimeline;
         }

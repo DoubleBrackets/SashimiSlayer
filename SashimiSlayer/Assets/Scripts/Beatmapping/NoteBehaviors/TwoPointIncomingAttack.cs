@@ -6,6 +6,7 @@ using Beatmapping.Tooling;
 using Core.Protag;
 using EditorUtils.BoldHeader;
 using FMODUnity;
+using Framework.Services;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -169,9 +170,9 @@ namespace Beatmapping.NoteBehaviors
         private Vector2 GetTargetPositionFromProtag()
         {
             Vector2 rawTargetPos = Vector2.zero;
-            if (Protaganist.Instance != null)
+            if (ServiceLocator.GetService<Protaganist>())
             {
-                rawTargetPos = Protaganist.Instance.SwordPosition;
+                rawTargetPos = ServiceLocator.GetService<Protaganist>().SwordPosition;
             }
             else
             {

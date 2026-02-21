@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using CommonTypes;
 using Events;
-using Framework;
+using Framework.Services;
 using GameInput.Interface;
 using UnityEngine;
 
@@ -27,7 +27,7 @@ public class TutorialInputSwitcher : MonoBehaviour, IFindsDependencies
 
     public void FindDependencies()
     {
-        _userInput = ServiceLocator.GetUserInput();
+        _userInput = ServiceLocator.GetService<IUserInput>();
     }
 
     private void Awake()

@@ -1,7 +1,7 @@
 using Beatmapping.Interactions;
 using Events;
 using Events.Core;
-using Framework;
+using Framework.Services;
 using GameInput.Haptics;
 using GameInput.Interface;
 using UnityEngine;
@@ -42,7 +42,7 @@ namespace Core.Protag
 
         private void Awake()
         {
-            _userInput = ServiceLocator.GetUserInput();
+            _userInput = ServiceLocator.GetService<IUserInput>();
             _onDamageTakenEvent.AddListener(HandleDamageTaken);
             _noteInteractionFinalResultEvent.AddListener(HandleNoteInteractionFinalResult);
             _sliceResultEvent.AddListener(HandleSliceResult);

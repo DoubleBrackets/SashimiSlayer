@@ -1,5 +1,6 @@
 using Core.Protag;
 using EditorUtils.BoldHeader;
+using Framework.Services;
 using UnityEngine;
 
 namespace Beatmapping.Indicator
@@ -27,7 +28,7 @@ namespace Beatmapping.Indicator
                 return;
             }
 
-            Vector3 swordPos = Protaganist.Instance.SwordPosition;
+            Vector3 swordPos = ServiceLocator.GetService<Protaganist>().SwordPosition;
             Vector3 vectorFromPlayer = _visualContainer.position - swordPos;
 
             _visualContainer.transform.right = vectorFromPlayer.normalized;

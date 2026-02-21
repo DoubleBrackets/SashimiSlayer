@@ -48,18 +48,14 @@ namespace UI.MenuViews
 
         private PauseMenuState _state = PauseMenuState.NavigatingSidebar;
         private List<MenuViewButton> _buttons = new();
+        public IList<MenuView> Views => _menuViews;
 
-        private void Awake()
-        {
-            InitializeViews();
-        }
-
-        private void InitializeViews()
+        public void Initialize()
         {
             foreach (MenuView view in _menuViews)
             {
                 view.Hide();
-                view.ViewAwake();
+                view.ViewInitialized();
 
                 // Instantiate button for the view
                 MenuViewButton button = Instantiate(_buttonPrefab, _buttonParent);

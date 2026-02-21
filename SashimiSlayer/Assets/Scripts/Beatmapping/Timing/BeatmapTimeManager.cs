@@ -8,6 +8,7 @@ using Events.Core;
 using FMOD;
 using FMOD.Studio;
 using FMODUnity;
+using Framework.Services;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
@@ -195,7 +196,7 @@ namespace Beatmapping.Timing
 
         private void EndBeatmap()
         {
-            LevelLoader.Instance.LoadLevel(_levelResultLevel).Forget();
+            ServiceLocator.GetService<LevelLoader>().LoadLevel(_levelResultLevel).Forget();
             _beatmapState = BeatmapState.Unloaded;
         }
 

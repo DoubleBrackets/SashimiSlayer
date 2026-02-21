@@ -1,4 +1,4 @@
-using Framework;
+using Framework.Services;
 using GameInput.Haptics;
 using GameInput.Interface;
 using NaughtyAttributes;
@@ -20,7 +20,7 @@ namespace Core.Protag
 
         private void Awake()
         {
-            _userInput = ServiceLocator.GetUserInput();
+            _userInput = ServiceLocator.GetService<IUserInput>();
         }
 
         [Button("Do Rumble")]

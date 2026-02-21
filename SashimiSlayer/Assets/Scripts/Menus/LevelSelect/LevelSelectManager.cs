@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using CommonTypes;
-using Core.Scene;
 using Cysharp.Threading.Tasks;
-using Framework;
+using Framework.Services;
 using GameInput.Interface;
 using UnityEngine;
 using UnityEngine.Events;
@@ -59,7 +58,7 @@ namespace Menus.LevelSelect
 
         public void FindDependencies()
         {
-            _userInput = ServiceLocator.GetUserInput();
+            _userInput = ServiceLocator.GetService<IUserInput>();
         }
 
         private void Awake()
@@ -171,20 +170,7 @@ namespace Menus.LevelSelect
             }
 
             _loaded = true;
-            LevelLoader.Instance.LoadLevel(level).Forget();
-        }
-
-        public void SetDifficulty(bool hardDifficulty)
-        {
-            LevelLoader.Instance.SetDifficulty(hardDifficulty
-                ? LevelLoader.Difficulty.Hard
-                : LevelLoader.Difficulty.Normal);
-
-            _hardDifficulty = hardDifficulty;
-            foreach (SongPanel panel in _levelPanels)
-            {
-                panel.SetDifficulty(hardDifficulty);
-            }
+            ServiceLocator.GetService<LevelLoader>().LoadLevel(level).Forget();
         }
     }
 }

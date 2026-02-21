@@ -1,6 +1,6 @@
 using CommonTypes;
 using EditorUtils.BoldHeader;
-using Framework;
+using Framework.Services;
 using GameInput.Interface;
 using NaughtyAttributes;
 using UnityEngine;
@@ -22,7 +22,7 @@ namespace Menus.StartMenu
 
         public void FindDependencies()
         {
-            _userInput = ServiceLocator.GetUserInput();
+            _userInput = ServiceLocator.GetService<IUserInput>();
         }
 
         private void Start()

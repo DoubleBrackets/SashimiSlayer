@@ -1,5 +1,6 @@
 using EditorUtils.BoldHeader;
 using Events;
+using Framework.Services;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -27,7 +28,7 @@ namespace Core.Protag
 
         private void Awake()
         {
-            Protaganist.Instance.NoteTargetPosition = TargetPosition;
+            ServiceLocator.GetService<Protaganist>().NoteTargetPosition = TargetPosition;
         }
 
         private void Start()

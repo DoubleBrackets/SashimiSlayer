@@ -19,11 +19,10 @@ namespace Beatmapping.Tooling
         public TimelineAsset CurrentTimeline => _playableDirector?.playableAsset as TimelineAsset;
 
         /// <summary>
-        ///     Loads the map based on the difficulty selected in the LevelLoader. Intended for editor use
+        ///     Loads the mapselected in the LevelLoader. Intended for editor use
         /// </summary>
-        /// <param name="difficulty"></param>
         /// <returns></returns>
-        public PlayableDirector LoadMap(LevelLoader.Difficulty difficulty)
+        public PlayableDirector LoadMap()
         {
             if (_song == null)
             {
@@ -38,11 +37,6 @@ namespace Beatmapping.Tooling
             }
 
             BeatmapConfigSo beatmap = _song.NormalBeatmap;
-
-            if (difficulty == LevelLoader.Difficulty.Hard && _song.HardBeatmap != null)
-            {
-                beatmap = _song.HardBeatmap;
-            }
 
             _playableDirector.playableAsset = beatmap.BeatmapTimeline;
 
