@@ -1,6 +1,6 @@
 using System;
 using Beatmapping;
-using Beatmapping.Editor;
+using DevTools.Editor;
 using FMODUnity;
 using UnityEditor;
 using UnityEditor.Timeline;
@@ -14,7 +14,7 @@ namespace Timeline.FMODEditorEventTrack.Editor
     {
         public override void DrawBackground(TimelineClip clip, ClipBackgroundRegion region)
         {
-            BeatmapConfigSo beatmapConfig = SashimiSlayerUtilWindow.CurrentEditingBeatmap;
+            BeatmapConfigSo beatmapConfig = SashimiSlayerToolsWindow.CurrentEditingBeatmap;
 
             if (beatmapConfig == null)
             {

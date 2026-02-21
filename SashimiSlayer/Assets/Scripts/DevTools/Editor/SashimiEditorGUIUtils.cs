@@ -2,26 +2,29 @@ using NaughtyAttributes.Editor;
 using UnityEditor;
 using UnityEngine;
 
-namespace EditorUtils.Editor
+namespace DevTools.Editor
 {
-    public class SashimiEditorGUI
+    /// <summary>
+    ///     Utility class for reusable Editor GUI styles and controls
+    /// </summary>
+    public static class SashimiEditorGUIUtils
     {
-        public static Color boldHeaderColor = new(1f, 0.973f, 0.639f);
+        private static Color boldHeaderColor = new(1f, 0.973f, 0.639f);
 
-        private static GUIStyle _boldHeaderStyle;
+        private static GUIStyle boldHeaderStyle;
 
-        public static GUIStyle BoldHeaderStyle
+        private static GUIStyle BoldHeaderStyle
         {
             get
             {
-                if (_boldHeaderStyle != null)
+                if (boldHeaderStyle != null)
                 {
-                    return _boldHeaderStyle;
+                    return boldHeaderStyle;
                 }
 
                 var style = new GUIStyle(EditorStyles.largeLabel);
                 style.normal.textColor = boldHeaderColor;
-                _boldHeaderStyle = style;
+                boldHeaderStyle = style;
                 return style;
             }
         }
@@ -52,6 +55,17 @@ namespace EditorUtils.Editor
         /// <param name="text"></param>
         public static void DrawBoldHeader(Rect position, string text)
         {
+            position.y += EditorGUIUtility.singleLineHeight * 0.6f;
+            GUI.Label(position, text, BoldHeaderStyle);
+            position.y += EditorGUIUtility.singleLineHeight * 1.2f;
+            NaughtyEditorGUI.HorizontalLine(position, 2, boldHeaderColor);
+        }
+
+        public static void DrawBoldHeaderWithLayout(string text)
+        {
+            float height = EditorGUIUtility.singleLineHeight * 2.8f;
+            Rect position = EditorGUILayout.GetControlRect(false, height);
+
             position.y += EditorGUIUtility.singleLineHeight * 0.6f;
             GUI.Label(position, text, BoldHeaderStyle);
             position.y += EditorGUIUtility.singleLineHeight * 1.2f;

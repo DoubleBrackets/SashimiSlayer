@@ -51,18 +51,18 @@ namespace Core.Scene
             Debug.Log("All banks loaded");
 
             // Load startup level
-            if (BeatmappingUtilities.PlayFromEditedBeatmap)
+            if (BeatmappingEditingSettings.PlayFromEditedBeatmap)
             {
                 foreach (GameLevelSO song in songRosterSO.Songs)
                 {
-                    if (song.NormalBeatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    if (song.NormalBeatmap == BeatmappingEditingSettings.CurrentEditingBeatmapConfig)
                     {
                         LevelLoader.Instance.SetDifficulty(LevelLoader.Difficulty.Normal);
                         LevelLoader.Instance.LoadLevel(song).Forget();
                         return;
                     }
 
-                    if (song.HardBeatmap == BeatmappingUtilities.CurrentEditingBeatmapConfig)
+                    if (song.HardBeatmap == BeatmappingEditingSettings.CurrentEditingBeatmapConfig)
                     {
                         LevelLoader.Instance.SetDifficulty(LevelLoader.Difficulty.Hard);
                         LevelLoader.Instance.LoadLevel(song).Forget();

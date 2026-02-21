@@ -1,4 +1,4 @@
-using EditorUtils.Editor;
+using DevTools.Editor;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ namespace EditorUtils.BoldHeader.Editor
         public override void OnGUI(Rect position)
         {
             var headerAttribute = attribute as BoldHeaderAttribute;
-            SashimiEditorGUI.DrawBoldHeader(position, headerAttribute.header);
+            SashimiEditorGUIUtils.DrawBoldHeader(position, headerAttribute.header);
         }
     }
 }

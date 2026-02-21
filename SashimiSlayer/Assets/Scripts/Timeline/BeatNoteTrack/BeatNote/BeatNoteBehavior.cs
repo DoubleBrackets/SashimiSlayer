@@ -71,7 +71,7 @@ namespace Timeline.BeatNoteTrack.BeatNote
                 _beatNote.Tick(new BeatmapTimeManager.TickInfo
                 {
                     BeatmapTime = currentBeatmapTime,
-                    CurrentBeatmap = BeatmappingUtilities.CurrentEditingBeatmapConfig
+                    CurrentBeatmap = BeatmappingEditingSettings.CurrentEditingBeatmapConfig
                 }, Beatmapping.Notes.BeatNote.TickFlags.UpdateLocation);
 
                 if (currentBeatmapTime < NoteData.NoteStartTime)

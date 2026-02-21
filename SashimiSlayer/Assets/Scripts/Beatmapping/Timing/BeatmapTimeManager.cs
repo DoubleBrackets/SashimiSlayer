@@ -299,8 +299,8 @@ namespace Beatmapping.Timing
             _currentBeatmap = beatmap;
 
             // Testing util to start from the editor timeline playhead
-            double startTime = BeatmappingUtilities.StartFromTimelinePlayhead
-                ? BeatmappingUtilities.TimelinePlayheadTime
+            double startTime = BeatmappingEditingSettings.StartFromTimelinePlayhead
+                ? BeatmappingEditingSettings.TimelinePlayheadTime
                 : 0;
 
             StartBeatmapTrack(beatmap, startTime);

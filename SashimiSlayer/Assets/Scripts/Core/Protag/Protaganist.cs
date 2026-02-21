@@ -1,6 +1,5 @@
 using Base;
 using Beatmapping;
-using Beatmapping.Tooling;
 using CommonTypes;
 using Events;
 using Events.Core;
@@ -225,11 +224,6 @@ namespace Core.Protag
             if (_health <= 0)
             {
                 return;
-            }
-
-            if (!BeatmappingUtilities.ProtagInvincible)
-            {
-                _health -= damage;
             }
 
             _healthChangeEvent.Raise(_health);

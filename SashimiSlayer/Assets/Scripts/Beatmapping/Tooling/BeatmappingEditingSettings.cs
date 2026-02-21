@@ -1,16 +1,11 @@
 namespace Beatmapping.Tooling
 {
     /// <summary>
-    ///     Beatmap editor utilities.
-    ///     This is intended to only be used in the editor, but should NOT be placed in the editor folder.
+    ///     Beatmap editor settings. Intended to be modified through Editor Windows, bridging gameplay and editor.
+    ///     This should NOT be placed in an editor folder, since gameplay scripts will read from this
     /// </summary>
-    public static class BeatmappingUtilities
+    public static class BeatmappingEditingSettings
     {
-        /// <summary>
-        ///     Should the player be invincible, for beatmapping purposes.
-        /// </summary>
-        public static bool ProtagInvincible { get; set; }
-
         /// <summary>
         ///     Should the play mode level start from the editing timeline playhead?
         /// </summary>
@@ -22,7 +17,7 @@ namespace Beatmapping.Tooling
         public static double TimelinePlayheadTime { get; set; }
 
         /// <summary>
-        ///     Load directly into the edited beatmap on play
+        ///     Should we load directly into the currently edited beatmap on play
         /// </summary>
         public static bool PlayFromEditedBeatmap { get; set; }
 
