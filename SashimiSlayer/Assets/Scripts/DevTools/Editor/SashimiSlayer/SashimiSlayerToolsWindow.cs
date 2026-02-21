@@ -224,7 +224,7 @@ namespace DevTools.Editor.SashimiSlayer
             return null;
         }
 
-        [MenuItem("Sashimi Slayer/Sashimi Slayer Tool Window")]
+        [MenuItem("Sashimi Slayer/Sashimi Slayer Tools Window", false, 1)]
         public static void ShowWindow()
         {
             GetWindow<SashimiSlayerToolsWindow>("Sashimi Slayer Tools");
