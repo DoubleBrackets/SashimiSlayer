@@ -23,7 +23,7 @@ namespace Beatmapping.Tooling
 
         public static BeatmapConfigSo CurrentEditingBeatmapConfig { get; private set; }
 
-        public static void SetBeatmapConfig(BeatmapConfigSo beatmapConfig)
+        public static void SetCurrentlyEditingBeatmap(BeatmapConfigSo beatmapConfig)
         {
             CurrentEditingBeatmapConfig = beatmapConfig;
         }

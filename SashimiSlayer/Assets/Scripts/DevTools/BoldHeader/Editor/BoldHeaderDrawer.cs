@@ -1,4 +1,4 @@
-using DevTools.Editor;
+using DevTools.Editor.SashimiSlayer;
 using UnityEditor;
 using UnityEngine;
 

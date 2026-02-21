@@ -5,7 +5,7 @@ using Beatmapping;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
-using DevTools.Editor;
+using DevTools.Editor.SashimiSlayer;
 using GameInput.Interface;
 using UnityEditor;
 using UnityEditor.Timeline;

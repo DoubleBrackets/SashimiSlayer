@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
-using DevTools.Editor;
+using DevTools.Editor.SashimiSlayer;
 using UnityEditor;
 using UnityEditor.Timeline;
 using UnityEngine;

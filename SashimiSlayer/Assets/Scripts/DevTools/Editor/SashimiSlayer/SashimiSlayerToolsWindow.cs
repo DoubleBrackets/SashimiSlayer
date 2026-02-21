@@ -2,6 +2,7 @@ using Beatmapping;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using Core.Scene;
+using DevTools.Editor.StartupSceneTool;
 using GameInput.SerialComm;
 using Menus.LevelSelect;
 using Saving;
@@ -10,21 +11,20 @@ using UnityEditor.SceneManagement;
 using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
-namespace DevTools.Editor
+namespace DevTools.Editor.SashimiSlayer
 {
     /// <summary>
     ///     All-in-one dev tool editor window for this game
     /// </summary>
     public class SashimiSlayerToolsWindow : EditorWindow
     {
-        private const string DefaultStartupScenePath = "Assets/Scenes/BaseScene.unity";
-
         private static TimelineAsset currentEditingTimeline;
         private static BeatmapConfigSo currentEditingBeatmap;
 
-        public static BeatmapConfigSo CurrentEditingBeatmap => GetBeatmapFromTimeline(TimelineEditor.inspectedAsset);
+        public static BeatmapConfigSo CurrentEditingBeatmap => currentEditingBeatmap;
 
         private SashimiDevToolPrefs _prefs;
 
@@ -36,16 +36,9 @@ namespace DevTools.Editor
 
             _prefs = SashimiDevToolPrefs.instance;
 
-            if (string.IsNullOrEmpty(_prefs.StartupScenePath))
-            {
-                _prefs.StartupScenePath = DefaultStartupScenePath;
-                Debug.Log($"Set startup scene to default: {DefaultStartupScenePath}");
-            }
-
-            UpdateStartupScene(_prefs.StartupScenePath);
-
-            EditorApplication.playModeStateChanged -= HandlePlayModeChanged;
+            EditorApplication.playModeStateChanged += HandlePlayModeChanged;
             EditorApplication.wantsToQuit += HandleWantsToQuit;
+            EditorSceneManager.sceneOpened += HandleSceneOpened;
         }
 
         private bool HandleWantsToQuit()
@@ -56,8 +49,23 @@ namespace DevTools.Editor
 
         private void OnDisable()
         {
-            EditorApplication.playModeStateChanged += HandlePlayModeChanged;
+            EditorApplication.playModeStateChanged -= HandlePlayModeChanged;
             EditorApplication.wantsToQuit -= HandleWantsToQuit;
+            EditorSceneManager.sceneOpened -= HandleSceneOpened;
+        }
+
+        /// <summary>
+        ///     Try to select the beatmap from the scene when loading it in, for convenience
+        /// </summary>
+        /// <param name="scene"></param>
+        /// <param name="mode"></param>
+        private void HandleSceneOpened(Scene scene, OpenSceneMode mode)
+        {
+            TimelineAsset timelineAsset = SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
+            if (timelineAsset != null)
+            {
+                SelectBeatmapFromTimeline(timelineAsset);
+            }
         }
 
         private void OnGUI()
@@ -81,13 +89,9 @@ namespace DevTools.Editor
 
         private void DrawBasicSetupControls()
         {
-            string currentStartupScenePath = _prefs.StartupScenePath;
-            string startupScenePath = EditorGUILayout.TextField("Startup Scene", _prefs.StartupScenePath);
-
-            if (startupScenePath != currentStartupScenePath)
+            if (GUILayout.Button("Open Startup Scene Configuration"))
             {
-                _prefs.StartupScenePath = startupScenePath;
-                UpdateStartupScene(startupScenePath);
+                EditorStartupSceneWindow.ShowWindow();
             }
         }
 
@@ -100,14 +104,10 @@ namespace DevTools.Editor
                     typeof(SongRosterSO),
                     false);
 
-            if (GUILayout.Button("Select Beatmap Timeline [Normal] (Shift+W)"))
+            if (GUILayout.Button("Select Beatmap Timeline (Shift+W)"))
             {
-                SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
-            }
-
-            if (GUILayout.Button("Select Beatmap Timeline [Hard] (Shift+E)"))
-            {
-                SelectTimelineFromScene(LevelLoader.Difficulty.Hard);
+                TimelineAsset timelineAsset = SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
+                SelectBeatmapFromTimeline(timelineAsset);
             }
 
             if (GUILayout.Button("Refresh Timeline (Shift+R)"))
@@ -165,8 +165,25 @@ namespace DevTools.Editor
             }
         }
 
+        private void SelectBeatmapFromTimeline(TimelineAsset timeline)
+        {
+            BeatmapConfigSo matchingMap = GetBeatmapFromTimeline(timeline);
+            if (matchingMap == null)
+            {
+                Debug.LogWarning($"No beatmap found for timeline {timeline.name}.");
+                return;
+            }
+
+            Debug.Log(
+                $"Found beatmap {matchingMap.name} for timeline {timeline.name}, setting as current editing beatmap.");
+
+            currentEditingBeatmap = matchingMap;
+            currentEditingTimeline = timeline;
+            BeatmappingEditingSettings.SetCurrentlyEditingBeatmap(currentEditingBeatmap);
+        }
+
         /// <summary>
-        ///     Find the beatmap that contains the given timeline.
+        ///     Find the beatmap that contains the given timeline
         /// </summary>
         /// <param name="timeline"></param>
         /// <returns></returns>
@@ -198,9 +215,6 @@ namespace DevTools.Editor
 
                 if (didMatchMap)
                 {
-                    currentEditingBeatmap = matchingMap;
-                    currentEditingTimeline = timeline;
-                    BeatmappingEditingSettings.SetBeatmapConfig(currentEditingBeatmap);
                     return matchingMap;
                 }
             }
@@ -228,13 +242,7 @@ namespace DevTools.Editor
             SelectTimelineFromScene(LevelLoader.Difficulty.Normal);
         }
 
-        [MenuItem("Sashimi Slayer/Select Hard #e")]
-        private static void SelectTimelineFromSceneHard()
-        {
-            SelectTimelineFromScene(LevelLoader.Difficulty.Hard);
-        }
-
-        private static void SelectTimelineFromScene(LevelLoader.Difficulty difficulty)
+        private static TimelineAsset SelectTimelineFromScene(LevelLoader.Difficulty difficulty)
         {
             // Search the current scene for a playable director
             var quickSelect = FindObjectOfType<TimelineQuickSelect>();
@@ -242,13 +250,14 @@ namespace DevTools.Editor
             if (quickSelect == null)
             {
                 Debug.LogWarning("No PlayableDirector found in scene");
-                return;
+                return null;
             }
 
             // Select it
             Selection.activeGameObject = quickSelect.gameObject;
             Selection.activeGameObject = quickSelect.LoadMap(difficulty).gameObject;
             RefreshTimelineEditor();
+            return quickSelect.CurrentTimeline;
         }
 
         private static void CleanupNotes()
@@ -258,29 +267,6 @@ namespace DevTools.Editor
             foreach (BeatNote note in notes)
             {
                 DestroyImmediate(note.gameObject);
-            }
-        }
-
-        /// <summary>
-        ///     Set the startup scene for the editor.
-        ///     The game must bootstrap from this scene to work.
-        /// </summary>
-        /// <param name="startupScenePath"></param>
-        private void UpdateStartupScene(string startupScenePath)
-        {
-            if (!string.IsNullOrEmpty(startupScenePath))
-            {
-                var startupScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(startupScenePath);
-
-                if (startupScene == null)
-                {
-                    Debug.LogWarning($"Startup scene not found: {startupScenePath}");
-                    return;
-                }
-
-                EditorSceneManager.playModeStartScene = startupScene;
-
-                Debug.Log($"Set startup scene to {startupScenePath}");
             }
         }
 

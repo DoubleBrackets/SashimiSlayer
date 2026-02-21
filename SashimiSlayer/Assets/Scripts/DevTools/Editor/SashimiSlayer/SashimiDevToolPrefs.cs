@@ -2,7 +2,7 @@ using Menus.LevelSelect;
 using UnityEditor;
 using UnityEngine;
 
-namespace DevTools.Editor
+namespace DevTools.Editor.SashimiSlayer
 {
     /// <summary>
     ///     Holds editor preferences for <see cref="SashimiSlayerToolsWindow" />
@@ -10,9 +10,6 @@ namespace DevTools.Editor
     [FilePath("UserSettings/SashimiDevToolPrefs.asset", FilePathAttribute.Location.ProjectFolder)]
     public class SashimiDevToolPrefs : ScriptableSingleton<SashimiDevToolPrefs>
     {
-        [field: SerializeField]
-        public string StartupScenePath { get; set; }
-
         [field: SerializeField]
         public SongRosterSO SongRoster { get; set; }
 

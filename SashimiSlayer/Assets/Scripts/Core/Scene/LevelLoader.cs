@@ -13,6 +13,9 @@ namespace Core.Scene
 {
     public class LevelLoader : MonoBehaviour
     {
+        /// <summary>
+        ///     Currently unused
+        /// </summary>
         public enum Difficulty
         {
             Normal,

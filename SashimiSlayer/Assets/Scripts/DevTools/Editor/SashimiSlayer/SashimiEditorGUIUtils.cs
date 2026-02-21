@@ -2,7 +2,7 @@ using NaughtyAttributes.Editor;
 using UnityEditor;
 using UnityEngine;
 
-namespace DevTools.Editor
+namespace DevTools.Editor.SashimiSlayer
 {
     /// <summary>
     ///     Utility class for reusable Editor GUI styles and controls

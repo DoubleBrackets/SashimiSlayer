@@ -1,6 +1,6 @@
 using System;
 using Beatmapping;
-using DevTools.Editor;
+using DevTools.Editor.SashimiSlayer;
 using FMODUnity;
 using UnityEditor;
 using UnityEditor.Timeline;
