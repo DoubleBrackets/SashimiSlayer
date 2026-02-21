@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Beatmapping.Editor;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
+using DevTools.Editor.SashimiSlayer;
 using UnityEditor;
 using UnityEditor.Timeline;
 using UnityEngine;
@@ -107,7 +107,7 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
 
         private void OnPositionHandleChange()
         {
-            if (SashimiSlayerUtilWindow.AutoRefreshTimeline)
+            if (SashimiDevToolPrefs.instance.AutoRefreshTimeline)
             {
                 TimelineEditor.Refresh(RefreshReason.ContentsModified);
             }

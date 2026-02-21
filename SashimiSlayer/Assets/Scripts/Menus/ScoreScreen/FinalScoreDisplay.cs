@@ -36,7 +36,7 @@ namespace Menus.ScoreScreen
         [SerializeField]
         private CategoryLine _missLine;
 
-        [Header("Events")]
+        [Header("Events (Out)")]
 
         [SerializeField]
         private VoidEvent _onProtagVictory;

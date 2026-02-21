@@ -37,7 +37,7 @@ namespace Beatmapping.Notes
         [SerializeField]
         private Transform _hitboxTransform;
 
-        [Header("Events Invoking")]
+        [Header("Events (Out)")]
 
         [SerializeField]
         private NoteInteractionFinalResultEvent _noteInteractionFinalResultEvent;

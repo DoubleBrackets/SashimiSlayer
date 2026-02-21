@@ -1,6 +1,5 @@
 using Base;
 using Beatmapping;
-using Beatmapping.Tooling;
 using CommonTypes;
 using Events;
 using Events.Core;
@@ -87,10 +86,12 @@ namespace Core.Protag
         private VoidEvent _onDrawDebugGuiEvent;
 
         [SerializeField]
-        private Vector2Event _protagSetSwordPivot;
+        private SliceResultEvent _sliceResultEvent;
+
+        [Header("Channels (In)")]
 
         [SerializeField]
-        private SliceResultEvent _sliceResultEvent;
+        private Vector2Event _protagSetSwordPivot;
 
         [Header("Screen Shake")]
 
@@ -223,11 +224,6 @@ namespace Core.Protag
             if (_health <= 0)
             {
                 return;
-            }
-
-            if (!BeatmappingUtilities.ProtagInvincible)
-            {
-                _health -= damage;
             }
 
             _healthChangeEvent.Raise(_health);

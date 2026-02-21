@@ -17,7 +17,7 @@ namespace GameInput.InputSources
 {
     public class HidInputSource : MonoBehaviour, IUserInputSource
     {
-        [Header("Events (In)")]
+        [Header("Channels (In)")]
 
         [SerializeField]
         private SOEvent _onInputBindingOverride;

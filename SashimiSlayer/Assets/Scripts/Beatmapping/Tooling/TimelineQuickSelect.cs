@@ -1,6 +1,7 @@
 using Core.Scene;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 namespace Beatmapping.Tooling
 {
@@ -15,6 +16,8 @@ namespace Beatmapping.Tooling
         [SerializeField]
         private GameLevelSO _song;
 
+        public TimelineAsset CurrentTimeline => _playableDirector?.playableAsset as TimelineAsset;
+
         /// <summary>
         ///     Loads the map based on the difficulty selected in the LevelLoader. Intended for editor use
         /// </summary>
@@ -22,9 +25,15 @@ namespace Beatmapping.Tooling
         /// <returns></returns>
         public PlayableDirector LoadMap(LevelLoader.Difficulty difficulty)
         {
+            if (_song == null)
+            {
+                Debug.LogWarning("Song is not assigned in TimelineQuickSelect.");
+                return null;
+            }
+
             if (_playableDirector == null)
             {
-                Debug.LogError("PlayableDirector is not assigned in TimelineQuickSelect.");
+                Debug.LogWarning("PlayableDirector is not assigned in TimelineQuickSelect.");
                 return null;
             }
 

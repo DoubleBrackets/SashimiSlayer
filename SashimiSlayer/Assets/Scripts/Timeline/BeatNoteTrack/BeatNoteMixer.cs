@@ -29,7 +29,7 @@ namespace Timeline.BeatNoteTrack
             }
             else
             {
-                beatmap = BeatmappingUtilities.CurrentEditingBeatmapConfig;
+                beatmap = BeatmappingEditingSettings.CurrentEditingBeatmapConfig;
             }
 
             double currentTime = playable.GetTime();
@@ -38,7 +38,7 @@ namespace Timeline.BeatNoteTrack
             // If scrubbing in editing mode, cache the playhead time
             if (!Application.isPlaying)
             {
-                BeatmappingUtilities.TimelinePlayheadTime = currentTime;
+                BeatmappingEditingSettings.TimelinePlayheadTime = currentTime;
             }
 
             // Iterate through all the notes in the track and process frame

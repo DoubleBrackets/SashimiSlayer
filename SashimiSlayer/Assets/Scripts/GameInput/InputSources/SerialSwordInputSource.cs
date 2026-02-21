@@ -27,7 +27,7 @@ namespace GameInput.InputSources
         [SerializeField]
         private Transform _quatDebugger;
 
-        [Header("Events (In)")]
+        [Header("Channels (In)")]
 
         [SerializeField]
         private StringEvent _connectToSerialPort;
