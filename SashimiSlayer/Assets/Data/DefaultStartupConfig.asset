@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49205a0657c4ad84ca2d353fcc2bf879, type: 3}
   m_Name: DefaultStartupConfig
   m_EditorClassIdentifier: 
-  <InitialGameLevel>k__BackingField: {fileID: 11400000, guid: 482035a1de3620549917b4a21b8e5e53,
+  <InitialGameLevel>k__BackingField: {fileID: 11400000, guid: 170f5efc596d3b4409ada658dcd2a66e,
     type: 2}
   <SongRoster>k__BackingField: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2,
-    type: 2}
-  <InteractionFinalResultsEvent>k__BackingField: {fileID: 11400000, guid: 8a06f27a18647e64b8d44ac36e2b0134,
     type: 2}
   <PauseMenuPrefab>k__BackingField: {fileID: 8861204899379832006, guid: d1cb783db24fb0145bc54c35dff01db3,
     type: 3}

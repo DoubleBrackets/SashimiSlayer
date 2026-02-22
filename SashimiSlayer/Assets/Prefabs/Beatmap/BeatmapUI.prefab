@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 353586307110562534}
   - component: {fileID: 2996412365045546330}
   m_Layer: 5
-  m_Name: GameplayUI
+  m_Name: BeatmapUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

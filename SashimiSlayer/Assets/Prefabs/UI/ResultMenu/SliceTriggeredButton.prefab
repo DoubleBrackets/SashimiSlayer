@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9204028337242412592}
   - component: {fileID: 1044986642061614050}
   - component: {fileID: 8170232905480533496}
+  - component: {fileID: 481003489801261269}
   m_Layer: 0
   m_Name: SliceTriggeredButton
   m_TagString: Untagged
@@ -47,12 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d418287a9354c4ba7efadb09e62094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _protagSliceEvent: {fileID: 11400000, guid: 1fc9d5635b7fb36408b893568c3ada1a, type: 2}
-  _protagSwordStateEvent: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47,
-    type: 2}
-  _buttonSlicedEvent: {fileID: 0}
-  _objectSlicedEvent: {fileID: 11400000, guid: a2c9117a5f6db464ebc4424eb172d481, type: 2}
-  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
+  _circularSliceableMono: {fileID: 481003489801261269}
   _buttonSlicedUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -113,10 +109,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _radius: 1.11
-  _singleUse: 1
   _delay: 0.5
-  _isInCanvasSpace: 0
 --- !u!114 &8170232905480533496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +125,30 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 2926583154780616422}
   _particles:
   - {fileID: 763201104337503837}
+--- !u!114 &481003489801261269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396191492311083592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d72c1b7fa654a239276499eaec368e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions.Components.CircularSliceableMono
+  _radius: 1
+  _spaceType: 0
+  _singleUse: 0
+  _onHoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onUnhoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSlicedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1691671553082690582
 GameObject:
   m_ObjectHideFlags: 0
