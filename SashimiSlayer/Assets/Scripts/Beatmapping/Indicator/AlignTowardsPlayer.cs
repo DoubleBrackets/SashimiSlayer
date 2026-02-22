@@ -1,6 +1,6 @@
-using Core.Protag;
 using EditorUtils.BoldHeader;
-using Framework.Services;
+using Framework;
+using Protag.Core;
 using UnityEngine;
 
 namespace Beatmapping.Indicator

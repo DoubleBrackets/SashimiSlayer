@@ -1,7 +1,7 @@
-using Core.Scene;
-using GlobalUI.PauseMenu;
-using GlobalUI.TransitionUI;
-using Menus.LevelSelect;
+using Framework.LevelLoading;
+using UI.Screens.LevelSelect;
+using UI.Screens.PauseMenu;
+using UI.Screens.TransitionUI;
 using UnityEngine;
 
 namespace Framework
@@ -25,5 +25,24 @@ namespace Framework
 
         [field: SerializeField]
         public SceneTransitionVisuals SceneTransitionVisualsPrefab { get; private set; }
+
+        public GameLevelSO GetStartupLevel()
+        {
+            if (this == null || InitialGameLevel == null)
+            {
+                Debug.LogError("No initial level found in StartupConfigSO.");
+                return null;
+            }
+
+            SongRosterSO songRoster = SongRoster;
+
+            if (BeatmappingEditingSettings.PlayFromEditedBeatmap)
+            {
+                return songRoster.Songs.Find(song =>
+                    song.NormalBeatmap == BeatmappingEditingSettings.CurrentEditingBeatmapConfig);
+            }
+
+            return InitialGameLevel;
+        }
     }
 }

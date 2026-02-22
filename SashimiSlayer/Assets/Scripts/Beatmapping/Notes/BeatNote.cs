@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Base;
+using Beatmapping.Interaction.DataTypes;
 using Beatmapping.Interactions;
 using Beatmapping.Tooling;
-using Events.Core;
+using Interactions.Framework;
+using Interactions.Interactables;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,7 +17,7 @@ namespace Beatmapping.Notes
     ///     Represents a single sequenced note with some interactions.
     ///     Supports scrubbing (arbitrary tick timing)
     /// </summary>
-    public partial class BeatNote : DescMono, IInteractionUser
+    public partial class BeatNote : DescMono, INoteInteractionUser, IInteractable
     {
         public delegate void TickEventHandler(
             NoteTickInfo tickInfo);
@@ -26,7 +28,7 @@ namespace Beatmapping.Notes
 
         public delegate void InteractionFinalResultEventHandler(
             NoteTickInfo tickInfo,
-            NoteInteraction.FinalResult finalResult);
+            NoteInteractionFinalResult noteInteractionFinalResult);
 
         /// <summary>
         ///     Fixed time between end and cleanup
@@ -36,14 +38,6 @@ namespace Beatmapping.Notes
         // Serialized fields
         [SerializeField]
         private Transform _hitboxTransform;
-
-        [Header("Events (Out)")]
-
-        [SerializeField]
-        private NoteInteractionFinalResultEvent _noteInteractionFinalResultEvent;
-
-        [SerializeField]
-        private ObjectSlicedEvent _objectSlicedEvent;
 
         [FormerlySerializedAs("_beatNoteListeners")]
         [SerializeField]
@@ -115,7 +109,6 @@ namespace Beatmapping.Notes
         private List<NoteInteraction> _allInteractions;
 
         private float _hitboxRadius;
-        private int _damageDealtToPlayer;
 
         /// <summary>
         ///     When the note starts being "active". The note can be initialized before this time
@@ -130,6 +123,8 @@ namespace Beatmapping.Notes
         private bool _isFirstTick;
         private bool _isFirstInteraction;
 
+        private CircleSliceable _circleSliceable;
+
         public void OnDestroy()
         {
             foreach (BeatNoteModule listener in _beatNoteModules)
@@ -143,13 +138,13 @@ namespace Beatmapping.Notes
             DrawDebug();
         }
 
-        public IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
-            var positionUsage = new List<IInteractionUser.InteractionUsage>();
+            var positionUsage = new List<INoteInteractionUser.InteractionUsage>();
 
             foreach (BeatNoteModule listener in _beatNoteModules)
             {
-                IEnumerable<IInteractionUser.InteractionUsage> usages = listener.GetInteractionUsages();
+                IEnumerable<INoteInteractionUser.InteractionUsage> usages = listener.GetInteractionUsages();
                 if (usages == null)
                 {
                     continue;
@@ -173,14 +168,13 @@ namespace Beatmapping.Notes
             double noteEndTime,
             double initializeTime,
             float hitboxRadius,
-            int damageDealtToPlayer
+            InteractionService interactionService = null
         )
         {
             _allInteractions = new List<NoteInteraction>(noteInteractions);
             _noteStartTime = noteStartTime;
             _noteEndTime = noteEndTime;
             _hitboxRadius = hitboxRadius;
-            _damageDealtToPlayer = damageDealtToPlayer;
             StartPosition = noteStartPos;
             EndPosition = noteEndPos;
 
@@ -190,6 +184,18 @@ namespace Beatmapping.Notes
 
             // Build timing segments
             _noteTimeSegments = BuildNoteTimeSegments(noteInteractions, noteStartTime, noteEndTime, initializeTime);
+
+            // Slice interaction
+            if (interactionService != null)
+            {
+                _circleSliceable = new CircleSliceable(
+                    interactionService,
+                    _hitboxRadius,
+                    false,
+                    CircleSliceable.SpaceType.Worldspace,
+                    _hitboxTransform
+                );
+            }
 
             foreach (BeatNoteModule listener in _beatNoteModules)
             {

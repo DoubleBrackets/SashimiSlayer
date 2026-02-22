@@ -167,61 +167,6 @@ MonoBehaviour:
     type: 2}
   _optionsMenuToggled: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
     type: 2}
---- !u!1 &28433221
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 28433223}
-  - component: {fileID: 28433222}
-  m_Layer: 0
-  m_Name: BeatmapTimeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &28433222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28433221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4840bca07f537e14ea9a96dab119bc1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelResultLevel: {fileID: 11400000, guid: 170f5efc596d3b4409ada658dcd2a66e, type: 2}
-  _beatmapLoadedEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251,
-    type: 2}
-  _beatmapUnloadedEvent: {fileID: 11400000, guid: 10bdfd4824e94144ba44fe0616fcf818,
-    type: 2}
-  _optionsMenuOpenEvent: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
-    type: 2}
-  _beatPassedEvent: {fileID: 11400000, guid: 0e41b350d0df0f14ebecef06152b6404, type: 2}
-  _subdivPassedEvent: {fileID: 11400000, guid: 445c41cbba60a1b4c991dd2746e5b858, type: 2}
-  _normalizedProgressEvent: {fileID: 11400000, guid: 88e411d0c80985c4385057f210044732,
-    type: 2}
---- !u!4 &28433223
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28433221}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &162499278
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +308,7 @@ GameObject:
   - component: {fileID: 432079949}
   - component: {fileID: 432079948}
   m_Layer: 0
-  m_Name: ScoreService
+  m_Name: ScoringService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +330,6 @@ MonoBehaviour:
   _interactionFinalResultEvent: {fileID: 11400000, guid: 62c8f0224e6cd4b4885d7ee487e3bab6,
     type: 2}
   _loadBeatmapEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251, type: 2}
-  _playerDeathEvent: {fileID: 11400000, guid: d0f2aa8260a8f9241bac790517c4a7a4, type: 2}
   _onDrawGuiEvent: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
   _beatmapScoreEvent: {fileID: 11400000, guid: f426bc2ce53676d4392a01713575b5a6, type: 2}
 --- !u!4 &432079949
@@ -696,7 +640,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.25
+  orthographic size: 6.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -721,7 +665,7 @@ Transform:
   m_GameObject: {fileID: 756763148}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.51, y: 0.3, z: -10}
+  m_LocalPosition: {x: 0.51, y: 1.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -841,7 +785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _noteInteractionFinalResultEvent: {fileID: 11400000, guid: 62c8f0224e6cd4b4885d7ee487e3bab6,
     type: 2}
-  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
+  _objectsSlicedEvent: {fileID: 11400000, guid: a2c9117a5f6db464ebc4424eb172d481,
+    type: 2}
   _beatmapLoadedEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251,
     type: 2}
   _slicePitchShiftParam: SlicePitchShift
@@ -892,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079a144310f6ff046875115cff76b164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beatmapTimeManager: {fileID: 28433222}
+  _beatmapTimeManager: {fileID: 0}
   _setBeatNoteSpawningEnabledEvent: {fileID: 11400000, guid: cf723e3ec26681646873098fad8d1137,
     type: 2}
   _onLoopPassed:
@@ -939,8 +884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be88f05f448c5a94daa1765cbdc6768e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionUIScene: {fileID: 102900000, guid: dce34a9fbc1898b43abe27f511b13ed7,
-    type: 3}
   _beatmapStartEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251, type: 2}
   _beatmapUnloadEvent: {fileID: 11400000, guid: 10bdfd4824e94144ba44fe0616fcf818,
     type: 2}
@@ -1397,8 +1340,10 @@ MonoBehaviour:
   _startupConfigSO: {fileID: 11400000, guid: 58dc6f5ba8c452642bf6e462070d6eca, type: 2}
   _globalUIParentTransform: {fileID: 659400201}
   _studioBankLoader: {fileID: 652628481}
-  _levelLoader: {fileID: 1475056206}
+  _levelService: {fileID: 1475056206}
   _userInput: {fileID: 1969117888}
+  _beatmapServiceContainer: {fileID: 11400000, guid: c2f4b5d1526d99b4b88d411abd519962,
+    type: 2}
   _screenShakeService: {fileID: 162499280}
   _debugService: {fileID: 1549907074}
   _protaganist: {fileID: 5033607641350698433}
@@ -1478,36 +1423,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _devDesc: 
-  _healthChangeEvent: {fileID: 11400000, guid: 437b3037f01661c4d926b43c63f3ae04, type: 2}
-  _maxHealthChangeEvent: {fileID: 11400000, guid: 63656528a7d3cdb46b99ed6431fe445c,
-    type: 2}
   _damageTakenEvent: {fileID: 11400000, guid: 7517b3ffc01c7a1449611f21a59752ca, type: 2}
+  _tryBlock: {fileID: 11400000, guid: 4cfa3609e31db094690a78cc3b3e91f3, type: 2}
   _blockSuccessEvent: {fileID: 11400000, guid: fad3a062bb5635b4aa3ebf80b94fb757, type: 2}
-  _blockSuccessTopEvent: {fileID: 11400000, guid: bcd5a20fb77cb194c9fcc3958bac6571,
-    type: 2}
-  _blockSuccessMidEvent: {fileID: 11400000, guid: de90496f5929b02439b0d3907887baee,
-    type: 2}
-  _blockSuccessBotEvent: {fileID: 11400000, guid: c606fd12f7e8df34999b7b78c8a8c1ee,
-    type: 2}
-  _tryBlockEvent: {fileID: 11400000, guid: 4cfa3609e31db094690a78cc3b3e91f3, type: 2}
-  _trySliceEvent: {fileID: 11400000, guid: 1fc9d5635b7fb36408b893568c3ada1a, type: 2}
-  _swordStateChangeEvent: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47,
-    type: 2}
-  _playerDeadEvent: {fileID: 11400000, guid: d0f2aa8260a8f9241bac790517c4a7a4, type: 2}
-  _unsheatheEvent: {fileID: 11400000, guid: 57cf023d4fecd634d8adcd692ffbdd07, type: 2}
-  _sheatheEvent: {fileID: 11400000, guid: d0d9571abd5476346a304f13acb437c6, type: 2}
+  _blockedRight: {fileID: 11400000, guid: bcd5a20fb77cb194c9fcc3958bac6571, type: 2}
+  _blockedLeft: {fileID: 11400000, guid: de90496f5929b02439b0d3907887baee, type: 2}
+  _trySlice: {fileID: 11400000, guid: 1fc9d5635b7fb36408b893568c3ada1a, type: 2}
   _successfulSliceEvent: {fileID: 11400000, guid: c9cd6894bca4a8c43b3f69e78d991d17,
     type: 2}
-  _beatmapLoadedEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251,
-    type: 2}
+  _earlySliceEvent: {fileID: 11400000, guid: c00219962b93f964a9c1545ea5dd4ee3, type: 2}
+  _lateSliceEvent: {fileID: 11400000, guid: 23cdf5f54fe65bd49902bc6923ba9d22, type: 2}
+  _perfectSliceEvent: {fileID: 11400000, guid: 19b6671518202bf4ba1f8cc3a3897cb0, type: 2}
+  _swordAngleChanged: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47, type: 2}
+  _swordSheathed: {fileID: 11400000, guid: d0d9571abd5476346a304f13acb437c6, type: 2}
+  _objectsSliced: {fileID: 11400000, guid: a2c9117a5f6db464ebc4424eb172d481, type: 2}
   _onDrawDebugGuiEvent: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d,
     type: 2}
-  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
   _protagSetSwordPivot: {fileID: 11400000, guid: 55a449ae478ed574c96efac265420098,
     type: 2}
-  _damageScreenShake: {fileID: 11400000, guid: fad18fb22ba344d4880ce634ffcbb160, type: 2}
-  _blockScreenShake: {fileID: 11400000, guid: a41083569f483974fb6416b3b5f0c335, type: 2}
-  _sliceScreenShake: {fileID: 11400000, guid: f9a0a07aa2568c242adf19f428d9cff0, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1522,10 +1455,9 @@ SceneRoots:
   - {fileID: 162499281}
   - {fileID: 1549907075}
   - {fileID: 1447541452}
+  - {fileID: 1811963881377612007}
   - {fileID: 2105647812}
   - {fileID: 659400201}
   - {fileID: 1640389115}
   - {fileID: 629819676}
-  - {fileID: 28433223}
-  - {fileID: 1811963881377612007}
   - {fileID: 432079949}

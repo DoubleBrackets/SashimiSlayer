@@ -1,14 +1,14 @@
 using System;
-using Beatmapping.Tooling;
-using Core.Scene;
+using Beatmapping.Events;
+using Beatmapping.Service;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Events;
-using Events.Core;
+using Events.Basic;
 using FMOD;
 using FMOD.Studio;
 using FMODUnity;
-using Framework.Services;
+using Framework;
+using Framework.LevelLoading;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
@@ -79,6 +79,9 @@ namespace Beatmapping.Timing
         [SerializeField]
         private GameLevelSO _levelResultLevel;
 
+        [SerializeField]
+        private BeatmapTimelineRunner _timelineRunner;
+
         [Header("Events (In)")]
 
         [SerializeField]
@@ -100,8 +103,6 @@ namespace Beatmapping.Timing
 
         [SerializeField]
         private FloatEvent _normalizedProgressEvent;
-
-        public static BeatmapTimeManager Instance { get; private set; }
 
         public TickInfo CurrentTickInfo { get; private set; }
 
@@ -134,21 +135,13 @@ namespace Beatmapping.Timing
         private void Awake()
         {
             DOTween.KillAll();
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
 
             _beatmapLoadedEvent.AddListener(HandleStartBeatmap);
             _beatmapUnloadedEvent.AddListener(HandleBeatmapUnloaded);
             _optionsMenuOpenEvent.AddListener(HandleOptionsMenuOpen);
         }
 
-        private void Update()
+        public void TickForward()
         {
             if (_currentBeatmap == null)
             {
@@ -168,6 +161,8 @@ namespace Beatmapping.Timing
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            _timelineRunner.TickTimelineRunner(CurrentTickInfo);
         }
 
         private void OnDestroy()
@@ -196,7 +191,7 @@ namespace Beatmapping.Timing
 
         private void EndBeatmap()
         {
-            ServiceLocator.GetService<LevelLoader>().LoadLevel(_levelResultLevel).Forget();
+            ServiceLocator.GetService<LevelService>().LoadLevel(_levelResultLevel).Forget();
             _beatmapState = BeatmapState.Unloaded;
         }
 

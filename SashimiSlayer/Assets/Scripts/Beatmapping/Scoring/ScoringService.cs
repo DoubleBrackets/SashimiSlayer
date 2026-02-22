@@ -1,8 +1,8 @@
 using System;
-using Beatmapping.Interactions;
+using Beatmapping.Events;
+using Beatmapping.Interaction.DataTypes;
 using EditorUtils.BoldHeader;
-using Events;
-using Events.Core;
+using Events.Basic;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -55,9 +55,6 @@ namespace Beatmapping.Scoring
         private BeatmapEvent _loadBeatmapEvent;
 
         [SerializeField]
-        private VoidEvent _playerDeathEvent;
-
-        [SerializeField]
         private VoidEvent _onDrawGuiEvent;
 
         [Header("Events (Out)")]
@@ -85,7 +82,6 @@ namespace Beatmapping.Scoring
 
             _interactionFinalResultEvent.AddListener(OnBeatInteractionResult);
             _loadBeatmapEvent.AddListener(OnLoadBeatmap);
-            _playerDeathEvent.AddListener(HandlePlayerDeath);
             _onDrawGuiEvent.AddListener(DrawGUI);
         }
 
@@ -93,7 +89,6 @@ namespace Beatmapping.Scoring
         {
             _interactionFinalResultEvent.RemoveListener(OnBeatInteractionResult);
             _loadBeatmapEvent.RemoveListener(OnLoadBeatmap);
-            _playerDeathEvent.RemoveListener(HandlePlayerDeath);
             _onDrawGuiEvent.RemoveListener(DrawGUI);
         }
 
@@ -102,12 +97,12 @@ namespace Beatmapping.Scoring
             GUILayout.Label(JsonUtility.ToJson(_currentScore));
         }
 
-        private void OnBeatInteractionResult(NoteInteraction.FinalResult interactionFinalResult)
+        private void OnBeatInteractionResult(NoteInteractionFinalResult interactionNoteInteractionFinalResult)
         {
             _currentScore.MaxScore += _scoreConfig.PointsForPerfect;
-            TimingWindow.Score score = interactionFinalResult.TimingResult.Score;
+            TimingWindow.Score score = interactionNoteInteractionFinalResult.TimingResult.Score;
 
-            if (score == TimingWindow.Score.Miss || !interactionFinalResult.Successful)
+            if (score == TimingWindow.Score.Miss || !interactionNoteInteractionFinalResult.Successful)
             {
                 _currentScore.Misses++;
                 _currentScore.FinalScore += _scoreConfig.PointsForMiss;
@@ -119,7 +114,7 @@ namespace Beatmapping.Scoring
             }
             else if (score == TimingWindow.Score.Pass)
             {
-                if (interactionFinalResult.TimingResult.Direction == TimingWindow.Direction.Early)
+                if (interactionNoteInteractionFinalResult.TimingResult.Direction == TimingWindow.Direction.Early)
                 {
                     _currentScore.Earlies++;
                     _currentScore.FinalScore += _scoreConfig.PointsForEarly;
@@ -132,11 +127,6 @@ namespace Beatmapping.Scoring
             }
 
             _beatmapScoreEvent.Raise(_currentScore);
-        }
-
-        private void HandlePlayerDeath()
-        {
-            _currentScore.DidSucceed = false;
         }
 
         private void OnLoadBeatmap(BeatmapConfigSo beatmap)

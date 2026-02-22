@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using CommonTypes;
-using Events;
-using Framework.Services;
+using Events.Basic;
+using Framework;
 using GameInput.Interface;
 using UnityEngine;
 

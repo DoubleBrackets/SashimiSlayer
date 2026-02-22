@@ -1,7 +1,7 @@
 using System;
-using Events;
+using CommonTypes;
+using Events.Basic;
 using GameInput.Haptics;
-using GameInput.Interface;
 using GameInput.SerialComm;
 using UnityEngine;
 
@@ -35,7 +35,7 @@ namespace GameInput.InputSources
         [SerializeField]
         private IntEvent _upAxisChangedEvent;
 
-        public event Action<BlockPoseStates> OnBlockPoseChanged;
+        public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
 
@@ -47,7 +47,7 @@ namespace GameInput.InputSources
         private bool _wasTopButtonPressed;
         private bool _wasMiddleButtonPressed;
 
-        private BlockPoseStates _currentBlockPose;
+        private BlockPoses _currentBlockPose;
 
         private void Awake()
         {
@@ -72,13 +72,13 @@ namespace GameInput.InputSources
 
         private void HandleSerialRead(SwordSerialReader.SerialReadResult data)
         {
-            SheathState newSheatheState = data.LeftSheatheSwitch && data.RightSheatheSwitch
+            SheathState newSheathSheathState = data.LeftSheatheSwitch && data.RightSheatheSwitch
                 ? SheathState.Unsheathed
                 : SheathState.Sheathed;
 
-            if (newSheatheState != _sheathState)
+            if (newSheathSheathState != _sheathState)
             {
-                _sheathState = newSheatheState;
+                _sheathState = newSheathSheathState;
                 OnSheathStateChanged?.Invoke(_sheathState);
 
                 // Toggle menu by unsheathing when all buttons are pressed
@@ -88,18 +88,18 @@ namespace GameInput.InputSources
                 }
             }
 
-            BlockPoseStates newPose = 0;
+            BlockPoses newPose = 0;
 
             if (data.TopButton && !_wasTopButtonPressed)
             {
-                _currentBlockPose = BlockPoseStates.BlockRight;
-                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockRight);
+                _currentBlockPose = BlockPoses.BlockRight;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockRight);
             }
 
             if (data.MiddleButton && !_wasMiddleButtonPressed)
             {
-                _currentBlockPose = BlockPoseStates.BlockLeft;
-                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockLeft);
+                _currentBlockPose = BlockPoses.BlockLeft;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockLeft);
             }
 
             _wasTopButtonPressed = data.TopButton;
@@ -146,7 +146,7 @@ namespace GameInput.InputSources
             return _sheathState;
         }
 
-        public BlockPoseStates GetBlockPose()
+        public BlockPoses GetBlockPose()
         {
             return _currentBlockPose;
         }

@@ -1,11 +1,10 @@
 using System;
-using Base;
 using Beatmapping.Interactions;
 using Beatmapping.Timing;
 
 namespace Beatmapping.Notes
 {
-    public partial class BeatNote : DescMono
+    public partial class BeatNote
     {
         /// <summary>
         ///     Differe types of note time segments

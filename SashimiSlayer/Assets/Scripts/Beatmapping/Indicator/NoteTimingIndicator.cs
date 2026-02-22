@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Beatmapping.Interaction.DataTypes;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
@@ -89,7 +90,7 @@ namespace Beatmapping.Indicator
         {
             bool hideIndicator = interaction.HideIndicator;
 
-            if (interaction.Type == NoteInteraction.InteractionType.Block)
+            if (interaction.Type == NoteInteractionType.Block)
             {
                 // Select matching block indicator
                 var blockIndex = (int)interaction.BlockPose;
@@ -103,7 +104,7 @@ namespace Beatmapping.Indicator
 
                 _sliceTimingIndicators.SetVisible(false);
             }
-            else if (interaction.Type == NoteInteraction.InteractionType.Slice)
+            else if (interaction.Type == NoteInteractionType.Slice)
             {
                 _sliceTimingIndicators.SetupNewInteraction(currentBeatmap, firstInteraction);
                 _sliceTimingIndicators.SetVisible(!hideIndicator);
@@ -117,7 +118,7 @@ namespace Beatmapping.Indicator
             }
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }

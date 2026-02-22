@@ -1,136 +1,156 @@
-using Base;
+using Beatmapping.Interaction.DataTypes;
 using Beatmapping.Interactions;
-using Core.Protag;
-using Events.Core;
-using Framework.Services;
+using CommonTypes;
+using Interactions.DataTypes;
 using UnityEngine;
 
 namespace Beatmapping.Notes
 {
-    public partial class BeatNote : DescMono
+    public partial class BeatNote
     {
         /// <summary>
-        ///     Handle protag's attempt to block
+        ///     Evaluate the given interaction attempt. Interactions can be invalid if the interaction window has passed
         /// </summary>
-        public void AttemptPlayerBlock(Protaganist.ProtagSwordState protagSwordState)
+        /// <param name="attempt"></param>
+        /// <param name="result"></param>
+        /// <returns>true of interaction is valid, false otherwise</returns>
+        public bool EvaluateInteraction(BeatmapInteractionAttempt attempt, out NoteInteractionFinalResult result)
+        {
+            result = default;
+            if (attempt.NoteInteractionType == NoteInteractionType.Block)
+            {
+                return EvaluateBlockInteraction(out result, attempt.BlockPose);
+            }
+
+            if (attempt.NoteInteractionType == NoteInteractionType.Slice)
+            {
+                return EvaluateSliceInteraction(out result);
+            }
+
+            return false;
+        }
+
+        private bool EvaluateBlockInteraction(out NoteInteractionFinalResult result, BlockPoses blockPose)
         {
             double currentBeatmapTime = _noteTickInfo.BeatmapTime;
             NoteInteraction interaction = _noteTickInfo.InsideInteractionWindow;
 
             if (interaction == null)
             {
-                return;
+                result = default;
+                return false;
             }
 
             NoteInteraction.AttemptResult interactionAttemptResult = interaction.TryInteraction(
                 currentBeatmapTime,
-                NoteInteraction.InteractionType.Block,
-                protagSwordState.BlockPose);
+                NoteInteractionType.Block,
+                blockPose);
 
             // Hitting in the fail window means instant failure
             if (interactionAttemptResult.TimingResult.Score == TimingWindow.Score.Miss)
             {
-                var earlyFailResult = new NoteInteraction.FinalResult(
+                result = new NoteInteractionFinalResult(
+                    this,
                     interactionAttemptResult.TimingResult,
-                    NoteInteraction.InteractionType.Block,
-                    false
-                )
-                {
-                    Pose = protagSwordState.BlockPose
-                };
+                    NoteInteractionType.Block,
+                    false,
+                    blockPose
+                );
 
-                _noteInteractionFinalResultEvent.Raise(earlyFailResult);
-                OnInteractionFinalResult?.Invoke(_noteTickInfo, earlyFailResult);
-                OnProtagFailBlock?.Invoke(_noteTickInfo, earlyFailResult);
+                OnInteractionFinalResult?.Invoke(_noteTickInfo, result);
+                OnProtagFailBlock?.Invoke(_noteTickInfo, result);
 
-                return;
+                return true;
             }
 
             // No pass means do nothing
             if (!interactionAttemptResult.Passed)
             {
-                return;
-            }
-
-            var finalResult = new NoteInteraction.FinalResult(
-                interactionAttemptResult.TimingResult,
-                NoteInteraction.InteractionType.Block,
-                true
-            )
-            {
-                Pose = protagSwordState.BlockPose
-            };
-
-            _noteInteractionFinalResultEvent.Raise(finalResult);
-            OnInteractionFinalResult?.Invoke(_noteTickInfo, finalResult);
-
-            OnBlockedByProtag?.Invoke(GetInteractionIndex(interaction), interactionAttemptResult);
-
-            ServiceLocator.GetService<Protaganist>().SuccessfulBlock(protagSwordState.BlockPose);
-        }
-
-        /// <summary>
-        ///     Handle protag's attempt to attack
-        /// </summary>
-        /// <param name="protagSwordState"></param>
-        public bool AttemptPlayerSlice(Protaganist.ProtagSwordState protagSwordState)
-        {
-            // Check if slice is in hitbox
-            Vector3 pos = _hitboxTransform.transform.position;
-            float dist = protagSwordState.DistanceToSwordPlane(pos);
-            bool isAttackOnTarget = dist < _hitboxRadius;
-
-            if (!isAttackOnTarget)
-            {
+                result = default;
                 return false;
             }
 
+            result = new NoteInteractionFinalResult(
+                this,
+                interactionAttemptResult.TimingResult,
+                NoteInteractionType.Block,
+                true,
+                blockPose
+            );
+
+            OnInteractionFinalResult?.Invoke(_noteTickInfo, result);
+            OnBlockedByProtag?.Invoke(GetInteractionIndex(interaction), interactionAttemptResult);
+
+            return true;
+        }
+
+        private bool EvaluateSliceInteraction(out NoteInteractionFinalResult result)
+        {
             // Call interaction logic
             double currentBeatmapTime = _noteTickInfo.BeatmapTime;
             NoteInteraction interaction = _noteTickInfo.InsideInteractionWindow;
 
             if (interaction == null)
             {
+                result = default;
                 return false;
             }
 
             NoteInteraction.AttemptResult interactionAttemptResult = interaction.TryInteraction(
                 currentBeatmapTime,
-                NoteInteraction.InteractionType.Slice,
-                protagSwordState.BlockPose);
+                NoteInteractionType.Slice);
 
             // Hitting in the early lockout window fails immediately
             if (interactionAttemptResult.TimingResult.Score == TimingWindow.Score.Miss)
             {
-                var earlyFailResult = new NoteInteraction.FinalResult(interactionAttemptResult.TimingResult,
-                    NoteInteraction.InteractionType.Slice,
+                result = new NoteInteractionFinalResult(
+                    this,
+                    interactionAttemptResult.TimingResult,
+                    NoteInteractionType.Slice,
                     false);
 
-                _noteInteractionFinalResultEvent.Raise(earlyFailResult);
-                OnInteractionFinalResult?.Invoke(_noteTickInfo, earlyFailResult);
-                OnProtagMissedHit?.Invoke(_noteTickInfo, earlyFailResult);
-                return false;
+                OnInteractionFinalResult?.Invoke(_noteTickInfo, result);
+                OnProtagMissedHit?.Invoke(_noteTickInfo, result);
+
+                return true;
             }
 
-            // Other fails simply do nothing
+            // Other fails count as invalid, allowing for retries
             if (!interactionAttemptResult.Passed)
             {
+                result = default;
                 return false;
             }
 
-            var finalResult = new NoteInteraction.FinalResult(interactionAttemptResult.TimingResult,
-                NoteInteraction.InteractionType.Slice,
+            result = new NoteInteractionFinalResult(
+                this,
+                interactionAttemptResult.TimingResult,
+                NoteInteractionType.Slice,
                 true);
 
-            _noteInteractionFinalResultEvent.Raise(finalResult);
-            _objectSlicedEvent.Raise(new ObjectSlicedData
-            {
-                Position = _hitboxTransform.position
-            });
-            OnInteractionFinalResult?.Invoke(_noteTickInfo, finalResult);
+            OnInteractionFinalResult?.Invoke(_noteTickInfo, result);
             OnSlicedByProtag?.Invoke(GetInteractionIndex(interaction), interactionAttemptResult);
 
             return true;
         }
+
+        public InteractionResult AttemptInteraction(InteractionAttempt attempt)
+        {
+            // Blocks are always successful; the actual logic is handled through note interactions
+            if (attempt.Type == InteractionType.Block)
+            {
+                return InteractionResult.Success(this);
+            }
+
+            // Slices use hitbox radius to determine success
+            if (attempt.Type == InteractionType.Slice)
+            {
+                return _circleSliceable.AttemptInteraction(attempt);
+            }
+
+            return InteractionResult.Fail(this);
+        }
+
+        public Vector2 Position => _hitboxTransform.position;
     }
 }

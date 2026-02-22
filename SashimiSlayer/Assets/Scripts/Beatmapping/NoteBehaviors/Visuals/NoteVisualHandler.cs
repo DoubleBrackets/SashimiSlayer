@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Beatmapping.Interaction.DataTypes;
 using Beatmapping.Interactions;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
-using GameInput.Interface;
+using CommonTypes;
 using NaughtyAttributes;
 
 namespace Beatmapping.NoteBehaviors.Visuals
@@ -20,7 +21,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
             [AllowNesting]
             [HideIf("IsForSlicing")]
-            public BlockPoseStates Pose;
+            public BlockPoses Pose;
 
             public bool IsForSlicing;
         }
@@ -38,7 +39,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
             DisableAllVisuals();
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }
@@ -72,7 +73,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
             int newVisual = _currentVisualIndex;
 
-            if (interaction.Type == NoteInteraction.InteractionType.Slice)
+            if (interaction.Type == NoteInteractionType.Slice)
             {
                 newVisual = GetSliceVisualIndex();
             }

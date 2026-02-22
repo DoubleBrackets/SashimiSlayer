@@ -7,9 +7,6 @@ namespace Beatmapping.Notes
     public class BeatNoteTypeSO : ScriptableObject
     {
         [field: SerializeField]
-        public int DamageDealtToPlayer { get; private set; }
-
-        [field: SerializeField]
         public float HitboxRadius { get; private set; }
 
         [field: ShowAssetPreview]

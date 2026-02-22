@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 using AOT;
-using Events;
+using Events.Basic;
 using FMOD;
 using FMOD.Studio;
 using UnityEngine;
@@ -41,14 +41,14 @@ namespace Beatmapping.Timing
         private void Awake()
         {
             _instance = this;
-            _beatmapTimeManager.OnBeatmapSoundtrackInstanceCreated += OnBeatmapSoundtrackInstanceCreated;
-            _beatmapTimeManager.OnTick += OnTick;
+            /*_beatmapTimeManager.OnBeatmapSoundtrackInstanceCreated += OnBeatmapSoundtrackInstanceCreated;
+            _beatmapTimeManager.OnTick += OnTick;*/
         }
 
         private void OnDestroy()
         {
-            _beatmapTimeManager.OnBeatmapSoundtrackInstanceCreated -= OnBeatmapSoundtrackInstanceCreated;
-            _beatmapTimeManager.OnTick -= OnTick;
+            /*_beatmapTimeManager.OnBeatmapSoundtrackInstanceCreated -= OnBeatmapSoundtrackInstanceCreated;
+            _beatmapTimeManager.OnTick -= OnTick;*/
         }
 
         private void OnTick(BeatmapTimeManager.TickInfo tickInfo)

@@ -454,6 +454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftPrompt
       objectReference: {fileID: 0}
+    - target: {fileID: 2236655404925673017, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _onBlockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 211011091}
     - target: {fileID: 6975623584651101274, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}
       propertyPath: m_Sprite
@@ -1002,6 +1007,7 @@ GameObject:
   - component: {fileID: 519239248}
   - component: {fileID: 519239249}
   - component: {fileID: 519239247}
+  - component: {fileID: 519239250}
   m_Layer: 5
   m_Name: HardmodeToggle
   m_TagString: Untagged
@@ -1058,12 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d418287a9354c4ba7efadb09e62094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _protagSliceEvent: {fileID: 11400000, guid: 1fc9d5635b7fb36408b893568c3ada1a, type: 2}
-  _protagSwordStateEvent: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47,
-    type: 2}
-  _buttonSlicedEvent: {fileID: 0}
-  _objectSlicedEvent: {fileID: 11400000, guid: a2c9117a5f6db464ebc4424eb172d481, type: 2}
-  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
+  _circularSliceableMono: {fileID: 519239250}
   _buttonSlicedUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1112,10 +1113,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _radius: 1.11
-  _singleUse: 0
   _delay: 0.5
-  _isInCanvasSpace: 1
 --- !u!114 &519239249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1205,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &519239250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519239245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d72c1b7fa654a239276499eaec368e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions.Components.CircularSliceableMono
+  _radius: 0
+  _spaceType: 0
+  _singleUse: 0
+  _onHoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onUnhoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSlicedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &551975560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,7 +3028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Select
+  m_text: Map Select
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a067bd8e2d609564fb379d7befbe2674, type: 2}
   m_sharedMaterial: {fileID: 7243388180163275987, guid: a067bd8e2d609564fb379d7befbe2674,
@@ -3168,6 +3190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtagPos
       objectReference: {fileID: 0}
+    - target: {fileID: 2953849703437606026, guid: 10fbe4dea8aa3bf42ad3cec8c0155f9c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7674640129088678999, guid: 10fbe4dea8aa3bf42ad3cec8c0155f9c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3218,6 +3245,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8748921241827338172, guid: 10fbe4dea8aa3bf42ad3cec8c0155f9c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3235,6 +3267,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RightPrompt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236655404925673017, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _blockPose
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236655404925673017, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _onBlockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 211011091}
+    - target: {fileID: 2236655404925673017, guid: b5fdcff4f71b68e49b0785d21404e115,
+        type: 3}
+      propertyPath: _onBlockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FlipNext
       objectReference: {fileID: 0}
     - target: {fileID: 8939316533694602398, guid: b5fdcff4f71b68e49b0785d21404e115,
         type: 3}

@@ -1,7 +1,7 @@
-using Core.Protag;
 using EditorUtils.BoldHeader;
-using Events.Core;
 using NaughtyAttributes;
+using Protag.Core;
+using Protag.Presentation.Events;
 using UnityEngine;
 
 namespace Beatmapping.Indicator

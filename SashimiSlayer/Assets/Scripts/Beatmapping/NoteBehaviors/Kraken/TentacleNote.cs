@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Beatmapping.Interaction.DataTypes;
 using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
 using Beatmapping.Notes;
@@ -55,7 +56,7 @@ namespace Beatmapping.NoteBehaviors.Kraken
 
             NoteInteraction interaction = segment.Interaction;
 
-            if (interaction.Type == NoteInteraction.InteractionType.Block)
+            if (interaction.Type == NoteInteractionType.Block)
             {
                 if (interaction != _attackAnimationPlayedInteraction)
                 {
@@ -105,7 +106,7 @@ namespace Beatmapping.NoteBehaviors.Kraken
             _visual.SetupAnimationTransitionOnEnd(_spawnAnimation, _idleAnimation);
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }

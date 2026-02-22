@@ -1,4 +1,4 @@
-using Events;
+using Events.Basic;
 using UnityEngine;
 
 namespace DevTools

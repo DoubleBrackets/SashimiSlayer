@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Beatmapping.Interaction.DataTypes;
 using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
 using Beatmapping.Notes;
@@ -137,11 +138,11 @@ namespace Beatmapping.NoteBehaviors.Kraken
             _onSliced.Invoke();
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
-            return new List<IInteractionUser.InteractionUsage>
+            return new List<INoteInteractionUser.InteractionUsage>
             {
-                new(NoteInteraction.InteractionType.Slice, 0, 1)
+                new(NoteInteractionType.Slice, 0, 1)
             };
         }
 

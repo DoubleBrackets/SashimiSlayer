@@ -1,55 +1,58 @@
 using System;
 using System.Collections.Generic;
 using CommonTypes;
-using Events;
-using Framework.Services;
+using Events.Basic;
+using Framework;
 using GameInput.Interface;
 using UnityEngine;
 
-/// <summary>
-///     Handled control scheme changes in the tutorial scene
-/// </summary>
-public class TutorialInputSwitcher : MonoBehaviour, IFindsDependencies
+namespace UI
 {
-    [Serializable]
-    private class SpriteRendererArray
+    /// <summary>
+    ///     Handled control scheme changes in the tutorial scene
+    /// </summary>
+    public class TutorialInputSwitcher : MonoBehaviour, IFindsDependencies
     {
-        public SpriteRenderer[] sprites;
-    }
-
-    [SerializeField]
-    private List<SpriteRendererArray> _sprites;
-
-    [SerializeField]
-    private IntEvent _controlSchemeChangedEvent;
-
-    private IUserInput _userInput;
-
-    public void FindDependencies()
-    {
-        _userInput = ServiceLocator.GetService<IUserInput>();
-    }
-
-    private void Awake()
-    {
-        FindDependencies();
-        _controlSchemeChangedEvent.AddListener(HandleControlSchemeChanged);
-        HandleControlSchemeChanged((int)_userInput.ControlScheme);
-    }
-
-    private void OnDestroy()
-    {
-        _controlSchemeChangedEvent.RemoveListener(HandleControlSchemeChanged);
-    }
-
-    private void HandleControlSchemeChanged(int controlScheme)
-    {
-        for (var i = 0; i < _sprites.Count; i++)
+        [Serializable]
+        private class SpriteRendererArray
         {
-            bool isMatchingControlPrompt = i == controlScheme;
-            foreach (SpriteRenderer sprite in _sprites[i].sprites)
+            public SpriteRenderer[] sprites;
+        }
+
+        [SerializeField]
+        private List<SpriteRendererArray> _sprites;
+
+        [SerializeField]
+        private IntEvent _controlSchemeChangedEvent;
+
+        private IUserInput _userInput;
+
+        public void FindDependencies()
+        {
+            _userInput = ServiceLocator.GetService<IUserInput>();
+        }
+
+        private void Awake()
+        {
+            FindDependencies();
+            _controlSchemeChangedEvent.AddListener(HandleControlSchemeChanged);
+            HandleControlSchemeChanged((int)_userInput.ControlScheme);
+        }
+
+        private void OnDestroy()
+        {
+            _controlSchemeChangedEvent.RemoveListener(HandleControlSchemeChanged);
+        }
+
+        private void HandleControlSchemeChanged(int controlScheme)
+        {
+            for (var i = 0; i < _sprites.Count; i++)
             {
-                sprite.enabled = isMatchingControlPrompt;
+                bool isMatchingControlPrompt = i == controlScheme;
+                foreach (SpriteRenderer sprite in _sprites[i].sprites)
+                {
+                    sprite.enabled = isMatchingControlPrompt;
+                }
             }
         }
     }

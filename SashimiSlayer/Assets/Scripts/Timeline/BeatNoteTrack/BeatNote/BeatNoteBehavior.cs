@@ -1,8 +1,9 @@
 using System;
 using Beatmapping;
 using Beatmapping.Notes;
+using Beatmapping.Service;
 using Beatmapping.Timing;
-using Beatmapping.Tooling;
+using Framework;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Serialization;

@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Beatmapping;
-using Beatmapping.Interactions;
+using Beatmapping.Interaction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
+using CommonTypes;
 using DevTools.Editor.SashimiSlayer;
-using GameInput.Interface;
 using UnityEditor;
 using UnityEditor.Timeline;
 using UnityEngine;
@@ -52,7 +52,7 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
 
         private void EnforceInteractionUsage(BeatNoteBehavior template)
         {
-            List<IInteractionUser.InteractionUsage> interactionUsages =
+            List<INoteInteractionUser.InteractionUsage> interactionUsages =
                 template.NoteConfig.Prefab.GetInteractionUsages().ToList();
 
             List<SequencedNoteInteraction> sequencedInteractions = template.NoteData.Interactions;
@@ -68,14 +68,14 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
             }
 
             // Validate each interaction
-            foreach (IInteractionUser.InteractionUsage usage in interactionUsages)
+            foreach (INoteInteractionUser.InteractionUsage usage in interactionUsages)
             {
                 int interactionIndex = usage.InteractionIndex;
 
                 SequencedNoteInteraction sequencedInteraction = sequencedInteractions[interactionIndex];
                 NoteInteractionData interactionData = sequencedInteraction.InteractionData;
 
-                interactionData.InteractionType = usage.InteractionType;
+                interactionData.NoteInteractionType = usage.NoteInteractionType;
 
                 int numPositions = usage.PositionCount;
 
@@ -151,11 +151,11 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
                 // Add 0.01f for precision errors(?)
                 if (interactionStartTime >= region.startTime && interactionStartTime <= region.endTime + 0.01f)
                 {
-                    if (interactionData.InteractionType == NoteInteraction.InteractionType.Block)
+                    if (interactionData.NoteInteractionType == NoteInteractionType.Block)
                     {
                         DrawAttackInteraction(interactionData, region, normalizedPos);
                     }
-                    else if (interactionData.InteractionType == NoteInteraction.InteractionType.Slice)
+                    else if (interactionData.NoteInteractionType == NoteInteractionType.Slice)
                     {
                         DrawVulnerableInteraction(region, normalizedPos);
                     }
@@ -168,7 +168,7 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
             ClipBackgroundRegion region,
             float normalizedPos)
         {
-            int posePositionCount = Enum.GetValues(typeof(BlockPoseStates)).Length;
+            int posePositionCount = Enum.GetValues(typeof(BlockPoses)).Length;
 
             // Draw a vertical line at the time of the attack
             Rect linePos = region.position;

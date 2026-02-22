@@ -58,7 +58,7 @@ namespace Beatmapping.NoteBehaviors
             visualHandler.SetSpriteAlpha(0.7f);
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }
