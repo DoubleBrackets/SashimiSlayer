@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6477782909349302656}
   - component: {fileID: 858151799199879554}
   m_Layer: 0
-  m_Name: Distortion
+  m_Name: SliceDistortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
