@@ -251,6 +251,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3276293617742855450, guid: 2f84c1195c347d94dbfb30836fff3f02,
+        type: 3}
+      propertyPath: _squishTransform.Array.data[0].beatInterval
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7778500423997977250, guid: 2f84c1195c347d94dbfb30836fff3f02,
         type: 3}
       propertyPath: m_Color.b
