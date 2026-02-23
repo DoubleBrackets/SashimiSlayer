@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Beatmapping.Interactions;
 using CommonTypes;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Beatmapping.Interaction.DataTypes
+namespace Beatmapping.NoteInteraction.DataTypes
 {
     /// <summary>
     ///     Data for serializing a note interaction

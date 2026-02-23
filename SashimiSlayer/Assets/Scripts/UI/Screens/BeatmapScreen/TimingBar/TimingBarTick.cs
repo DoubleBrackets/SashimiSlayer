@@ -1,4 +1,4 @@
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;

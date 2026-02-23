@@ -1,5 +1,4 @@
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using CommonTypes;
 using Interactions.DataTypes;
 using UnityEngine;
@@ -33,7 +32,7 @@ namespace Beatmapping.Notes
         private bool EvaluateBlockInteraction(out NoteInteractionFinalResult result, BlockPoses blockPose)
         {
             double currentBeatmapTime = _noteTickInfo.BeatmapTime;
-            NoteInteraction interaction = _noteTickInfo.InsideInteractionWindow;
+            NoteInteraction.NoteInteraction interaction = _noteTickInfo.InsideInteractionWindow;
 
             if (interaction == null)
             {
@@ -41,7 +40,7 @@ namespace Beatmapping.Notes
                 return false;
             }
 
-            NoteInteraction.AttemptResult interactionAttemptResult = interaction.TryInteraction(
+            NoteInteraction.NoteInteraction.AttemptResult interactionAttemptResult = interaction.TryInteraction(
                 currentBeatmapTime,
                 NoteInteractionType.Block,
                 blockPose);
@@ -88,7 +87,7 @@ namespace Beatmapping.Notes
         {
             // Call interaction logic
             double currentBeatmapTime = _noteTickInfo.BeatmapTime;
-            NoteInteraction interaction = _noteTickInfo.InsideInteractionWindow;
+            NoteInteraction.NoteInteraction interaction = _noteTickInfo.InsideInteractionWindow;
 
             if (interaction == null)
             {
@@ -96,7 +95,7 @@ namespace Beatmapping.Notes
                 return false;
             }
 
-            NoteInteraction.AttemptResult interactionAttemptResult = interaction.TryInteraction(
+            NoteInteraction.NoteInteraction.AttemptResult interactionAttemptResult = interaction.TryInteraction(
                 currentBeatmapTime,
                 NoteInteractionType.Slice);
 

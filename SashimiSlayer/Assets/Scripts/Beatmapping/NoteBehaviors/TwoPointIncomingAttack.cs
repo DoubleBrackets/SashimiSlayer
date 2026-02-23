@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Beatmapping.Interaction.DataTypes;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -177,7 +177,7 @@ namespace Beatmapping.NoteBehaviors
             }
             else
             {
-                var body = FindObjectOfType<ProtagBody>();
+                var body = FindFirstObjectByType<ProtagBody>();
                 if (body != null)
                 {
                     rawTargetPos = body.TargetPosition;

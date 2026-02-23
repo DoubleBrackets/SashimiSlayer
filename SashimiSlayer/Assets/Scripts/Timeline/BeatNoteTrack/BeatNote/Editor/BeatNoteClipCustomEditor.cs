@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using DevTools.Editor.SashimiSlayer;
 using UnityEditor;

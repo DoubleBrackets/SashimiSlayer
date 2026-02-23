@@ -3,6 +3,7 @@ using CommonTypes;
 using Cysharp.Threading.Tasks;
 using Framework;
 using Framework.LevelLoading;
+using Interactions.DataTypes;
 using Interactions.Framework;
 using Interactions.Interactables;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace UI.Screens.LevelSelect
     /// <summary>
     ///     Handles the UI for the level select menu.
     /// </summary>
-    public class LevelSelectManager : MonoBehaviour, IFindsDependencies
+    public class LevelSelectManager : MonoBehaviour, IFindsDependencies, IInteractable
     {
         [Header("Dependencies")]
 
@@ -57,15 +58,15 @@ namespace UI.Screens.LevelSelect
         private bool _hardDifficulty;
 
         private LevelService _levelService;
-        private InteractionService _interactionService;
+        private IInteractionService _interactionService;
 
-        private Blockable _leftBlockable;
-        private Blockable _rightBlockable;
+        private SingleDirBlockable _leftBlockable;
+        private SingleDirBlockable _rightBlockable;
 
         public void FindDependencies()
         {
             _levelService = ServiceLocator.GetService<LevelService>();
-            _interactionService = ServiceLocator.GetService<InteractionService>();
+            _interactionService = ServiceLocator.GetService<IInteractionService>();
         }
 
         private void Awake()
@@ -76,8 +77,12 @@ namespace UI.Screens.LevelSelect
 
             UpdatePromptOpacity();
 
-            _leftBlockable = new Blockable(_interactionService, BlockPoses.BlockLeft, false, transform);
-            _rightBlockable = new Blockable(_interactionService, BlockPoses.BlockRight, false, transform);
+            _leftBlockable =
+                new SingleDirBlockable(this, BlockPoses.BlockLeft, false);
+            _rightBlockable =
+                new SingleDirBlockable(this, BlockPoses.BlockRight, false);
+
+            _interactionService.Register(this);
 
             _leftBlockable.OnBlocked += FlipPrevious;
             _rightBlockable.OnBlocked += FlipNext;
@@ -85,8 +90,7 @@ namespace UI.Screens.LevelSelect
 
         private void OnDestroy()
         {
-            _leftBlockable.Cleanup();
-            _rightBlockable.Cleanup();
+            _interactionService.Unregister(this);
         }
 
         public void FlipNext()
@@ -186,5 +190,25 @@ namespace UI.Screens.LevelSelect
             _loaded = true;
             _levelService.LoadLevel(level).Forget();
         }
+
+        public InteractionResult AttemptInteraction(InteractionAttempt attempt)
+        {
+            InteractionResult left = _leftBlockable.AttemptInteraction(attempt);
+            InteractionResult right = _rightBlockable.AttemptInteraction(attempt);
+
+            if (left.Successful)
+            {
+                return left;
+            }
+
+            if (right.Successful)
+            {
+                return right;
+            }
+
+            return InteractionResult.Fail(this);
+        }
+
+        public Vector2 Position => transform.position;
     }
 }

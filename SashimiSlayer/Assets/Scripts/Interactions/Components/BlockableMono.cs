@@ -1,6 +1,7 @@
 using System;
 using CommonTypes;
 using Framework;
+using Interactions.DataTypes;
 using Interactions.Framework;
 using Interactions.Interactables;
 using UnityEngine;
@@ -8,7 +9,7 @@ using UnityEngine.Events;
 
 namespace Interactions.Components
 {
-    public class BlockableMono : MonoBehaviour
+    public class BlockableMono : MonoBehaviour, IInteractable
     {
         [Header("Config")]
 
@@ -25,7 +26,9 @@ namespace Interactions.Components
 
         public event Action OnBlocked;
 
-        private Blockable _blockable;
+        private SingleDirBlockable _blockable;
+
+        private IInteractionService _interactionService;
 
         public bool Enabled
         {
@@ -35,20 +38,19 @@ namespace Interactions.Components
 
         private void OnEnable()
         {
-            _blockable = new Blockable(
-                ServiceLocator.GetService<InteractionService>(),
-                _blockPose,
-                _singleUse,
-                transform
-            );
+            _interactionService = ServiceLocator.GetService<IInteractionService>();
+            _blockable = new SingleDirBlockable(this, _blockPose, _singleUse);
 
             _blockable.OnBlocked += HandleOnBlocked;
+
+            _interactionService.Register(this);
         }
 
         private void OnDisable()
         {
             _blockable.OnBlocked -= HandleOnBlocked;
-            _blockable.Cleanup();
+
+            _interactionService.Unregister(this);
         }
 
         private void HandleOnBlocked()
@@ -56,5 +58,12 @@ namespace Interactions.Components
             _onBlockedEvent?.Invoke();
             OnBlocked?.Invoke();
         }
+
+        public InteractionResult AttemptInteraction(InteractionAttempt attempt)
+        {
+            return _blockable.AttemptInteraction(attempt);
+        }
+
+        public Vector2 Position => transform.position;
     }
 }

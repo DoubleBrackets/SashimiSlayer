@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -26,7 +25,7 @@ namespace Beatmapping.Indicator
 
         private BeatNote _beatNote;
 
-        private NoteInteraction _lastInteraction;
+        private NoteInteraction.NoteInteraction _lastInteraction;
         private PipTimingIndicator _currentActiveIndicator;
 
         private void BeatNote_OnTick(BeatNote.NoteTickInfo tickInfo)
@@ -35,7 +34,7 @@ namespace Beatmapping.Indicator
 
             if (segmentType == BeatNote.TimeSegmentType.Interaction)
             {
-                NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
+                NoteInteraction.NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
 
                 bool isNewInteraction = _lastInteraction != interaction;
                 bool isFirstInteraction = _lastInteraction == null;
@@ -85,7 +84,7 @@ namespace Beatmapping.Indicator
         /// <summary>
         ///     Switch to the matching indicator and initialize it. This should be called on new interaction
         /// </summary>
-        private void SwitchIndicators(NoteInteraction interaction, BeatmapConfigSo currentBeatmap,
+        private void SwitchIndicators(NoteInteraction.NoteInteraction interaction, BeatmapConfigSo currentBeatmap,
             bool firstInteraction)
         {
             bool hideIndicator = interaction.HideIndicator;

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Beatmapping.Data;
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 
 namespace Beatmapping.Service
 {
@@ -16,5 +16,7 @@ namespace Beatmapping.Service
         /// </summary>
         /// <returns></returns>
         public BeatmapTickFinalResults TickForward();
+
+        public void BeginRunningBeatmap(BeatmapConfigSo beatmap);
     }
 }

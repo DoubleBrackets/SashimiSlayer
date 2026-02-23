@@ -1,7 +1,7 @@
 using Beatmapping.Notes;
 using CommonTypes;
 
-namespace Beatmapping.Interaction.DataTypes
+namespace Beatmapping.NoteInteraction.DataTypes
 {
     /// <summary>
     ///     The final result of a single note interaction evaluation; either a success when it occurs, or a failure after the

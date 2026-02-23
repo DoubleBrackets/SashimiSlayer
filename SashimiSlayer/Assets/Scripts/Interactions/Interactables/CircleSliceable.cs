@@ -5,15 +5,8 @@ using UnityEngine;
 
 namespace Interactions.Interactables
 {
-    public class CircleSliceable : IInteractable
+    public class CircleSliceable
     {
-        public enum SpaceType
-        {
-            Worldspace,
-            CameraOverlay,
-            ScreenOverlay
-        }
-
         public event Action OnHovered;
         public event Action OnUnhovered;
         public event Action OnSliced;
@@ -25,36 +18,29 @@ namespace Interactions.Interactables
         private bool _singleUse;
         private SpaceType _spaceType;
         private Transform _hitCircleCenter;
-
-        private InteractionService _interactionService;
+        private IInteractable _sourceInteractable;
 
         public bool Enabled { get; set; } = true;
 
-        public CircleSliceable(InteractionService interactionService,
+        public CircleSliceable(
+            IInteractable sourceInteractable,
             float radius,
             bool singleUse,
             SpaceType spaceType,
             Transform hitCircleCenter)
         {
-            _interactionService = interactionService;
-            _interactionService.Register(this);
-
             _radius = radius;
             _singleUse = singleUse;
             _spaceType = spaceType;
             _hitCircleCenter = hitCircleCenter;
-        }
-
-        public void Cleanup()
-        {
-            _interactionService.Unregister(this);
+            _sourceInteractable = sourceInteractable;
         }
 
         public InteractionResult AttemptInteraction(InteractionAttempt attempt)
         {
             if (!Enabled || (_used && _singleUse))
             {
-                return InteractionResult.Fail(this);
+                return InteractionResult.Fail(_sourceInteractable);
             }
 
             Vector2 pos = CameraCanvasPositionToWorld(_hitCircleCenter.position);
@@ -78,7 +64,7 @@ namespace Interactions.Interactables
                     _hovered = shouldHover;
                 }
 
-                return InteractionResult.Fail(this);
+                return InteractionResult.Fail(_sourceInteractable);
             }
 
             if (attempt.Type == InteractionType.Slice)
@@ -91,12 +77,12 @@ namespace Interactions.Interactables
                     return new InteractionResult
                     {
                         Successful = true,
-                        Interactable = this
+                        Interactable = _sourceInteractable
                     };
                 }
             }
 
-            return InteractionResult.Fail(this);
+            return InteractionResult.Fail(_sourceInteractable);
         }
 
         public Vector2 Position => _hitCircleCenter.position;
@@ -113,5 +99,12 @@ namespace Interactions.Interactables
             Camera camera = Camera.main;
             return camera.ScreenToWorldPoint(cameraCanvasPosition);
         }
+    }
+
+    public enum SpaceType
+    {
+        Worldspace,
+        CameraOverlay,
+        ScreenOverlay
     }
 }

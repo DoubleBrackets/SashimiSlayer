@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Base;
 using Beatmapping.Indicator.Positioners;
-using Beatmapping.Interactions;
 using Beatmapping.Notes;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -170,7 +169,7 @@ namespace Beatmapping.Indicator
         {
             await UniTask.Delay((int)_delay * 1000, cancellationToken: destroyCancellationToken);
 
-            NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
+            NoteInteraction.NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
 
             int beatsRemaining = CalculateBeatRemaining(interaction, tickInfo);
             bool beatChanged = _prevBeatRemaining != beatsRemaining;
@@ -213,7 +212,7 @@ namespace Beatmapping.Indicator
             }
         }
 
-        private int CalculateBeatRemaining(NoteInteraction interaction, BeatNote.NoteTickInfo tickInfo)
+        private int CalculateBeatRemaining(NoteInteraction.NoteInteraction interaction, BeatNote.NoteTickInfo tickInfo)
         {
             int subdivsPerBeat = tickInfo.BeatmapTickInfo.CurrentBeatmap.Subdivisions;
             int currentSubdivision = tickInfo.SubdivisionIndex;

@@ -1,4 +1,4 @@
-namespace Beatmapping.Interaction.DataTypes
+namespace Beatmapping.NoteInteraction.DataTypes
 {
     public enum NoteInteractionType
     {

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Beatmapping;
 using Beatmapping.Events;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -23,7 +25,9 @@ namespace Framework.LevelLoading
         [SerializeField]
         private BeatmapEvent _beatmapUnloadEvent;
 
-        public GameLevelSO CurrentLevel { get; private set; }
+        public event Action<BeatmapConfigSo> BeatmapLevelDoneLoadingEvent;
+
+        private GameLevelSO CurrentLevel { get; set; }
 
         private string _currentLevelSceneName = string.Empty;
         private GameLevelSO _previousBeatmapLevel;
@@ -37,11 +41,14 @@ namespace Framework.LevelLoading
 
         private SceneTransitionVisuals _sceneTransitionVisuals;
 
-        public void Initialize(SceneTransitionVisuals sceneTransitionVisuals)
+        public void Initialize()
         {
             _isLoading = false;
+        }
+
+        public void SetSceneTransitionVisuals(SceneTransitionVisuals sceneTransitionVisuals)
+        {
             _sceneTransitionVisuals = sceneTransitionVisuals;
-            ;
         }
 
         private void OnDestroy()
@@ -72,9 +79,12 @@ namespace Framework.LevelLoading
 
             _isLoading = true;
 
-            _sceneTransitionVisuals.SetTitleText(gameLevel.LevelTitle);
+            if (_sceneTransitionVisuals)
+            {
+                _sceneTransitionVisuals.SetTitleText(gameLevel.LevelTitle);
+                await _sceneTransitionVisuals.FadeOut();
+            }
 
-            await _sceneTransitionVisuals.FadeOut();
             Debug.Log($"Killed {DOTween.KillAll()} tweens");
 
             // Unload and load banks
@@ -108,10 +118,14 @@ namespace Framework.LevelLoading
             if (gameLevel.LevelType == GameLevelSO.LevelTypes.Gameplay)
             {
                 _beatmapStartEvent.Raise(gameLevel.NormalBeatmap);
+                BeatmapLevelDoneLoadingEvent?.Invoke(gameLevel.NormalBeatmap);
                 _previousBeatmapLevel = gameLevel;
             }
 
-            await _sceneTransitionVisuals.FadeIn();
+            if (_sceneTransitionVisuals)
+            {
+                await _sceneTransitionVisuals.FadeIn();
+            }
 
             _isLoading = false;
 

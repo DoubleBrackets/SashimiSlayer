@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49205a0657c4ad84ca2d353fcc2bf879, type: 3}
   m_Name: DefaultStartupConfig
   m_EditorClassIdentifier: 
-  <InitialGameLevel>k__BackingField: {fileID: 11400000, guid: 170f5efc596d3b4409ada658dcd2a66e,
+  <InitialGameLevel>k__BackingField: {fileID: 11400000, guid: 482035a1de3620549917b4a21b8e5e53,
     type: 2}
   <SongRoster>k__BackingField: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2,
     type: 2}

@@ -88,8 +88,6 @@ namespace GameInput.InputSources
                 }
             }
 
-            BlockPoses newPose = 0;
-
             if (data.TopButton && !_wasTopButtonPressed)
             {
                 _currentBlockPose = BlockPoses.BlockRight;

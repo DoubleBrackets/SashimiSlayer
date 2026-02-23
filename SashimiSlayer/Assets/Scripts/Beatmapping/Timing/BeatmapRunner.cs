@@ -1,6 +1,4 @@
 using System;
-using Beatmapping.Events;
-using Beatmapping.Service;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Events.Basic;
@@ -15,7 +13,10 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Beatmapping.Timing
 {
-    public class BeatmapTimeManager : MonoBehaviour
+    /// <summary>
+    ///     Handles running the beatmap, the audio, and syncing timing
+    /// </summary>
+    public class BeatmapRunner : MonoBehaviour
     {
         private enum BeatmapState
         {
@@ -85,12 +86,6 @@ namespace Beatmapping.Timing
         [Header("Events (In)")]
 
         [SerializeField]
-        private BeatmapEvent _beatmapLoadedEvent;
-
-        [SerializeField]
-        private BeatmapEvent _beatmapUnloadedEvent;
-
-        [SerializeField]
         private BoolEvent _optionsMenuOpenEvent;
 
         [Header("Events (Out)")]
@@ -132,13 +127,46 @@ namespace Beatmapping.Timing
 
         private BeatmapState _beatmapState = BeatmapState.Unloaded;
 
-        private void Awake()
+        public void Initialize()
         {
             DOTween.KillAll();
-
-            _beatmapLoadedEvent.AddListener(HandleStartBeatmap);
-            _beatmapUnloadedEvent.AddListener(HandleBeatmapUnloaded);
             _optionsMenuOpenEvent.AddListener(HandleOptionsMenuOpen);
+        }
+
+        public void Cleanup()
+        {
+            _optionsMenuOpenEvent.RemoveListener(HandleOptionsMenuOpen);
+
+            if (_beatmapSoundtrackInstance.isValid())
+            {
+                _beatmapSoundtrackInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            }
+
+            _currentBeatmap = null;
+        }
+
+        public void BeginRunningBeatmap(BeatmapConfigSo beatmap)
+        {
+            if (_currentBeatmap != null)
+            {
+                Debug.LogWarning("Already running a beatmap, cannot run two on the same BeatmapRunner");
+                return;
+            }
+
+            GetDspInfo();
+
+            _currentBeatmap = beatmap;
+
+            // Testing util to start from the editor timeline playhead
+            double startTime = BeatmappingEditingSettings.StartFromTimelinePlayhead
+                ? BeatmappingEditingSettings.TimelinePlayheadTime
+                : 0;
+
+            StartBeatmapTrack(beatmap, startTime);
+
+            _beatmapState = BeatmapState.WaitingForSoundtrackEvent;
+
+            _timelineRunner.StartRunningBeatmap(beatmap);
         }
 
         public void TickForward()
@@ -163,13 +191,6 @@ namespace Beatmapping.Timing
             }
 
             _timelineRunner.TickTimelineRunner(CurrentTickInfo);
-        }
-
-        private void OnDestroy()
-        {
-            _beatmapLoadedEvent.RemoveListener(HandleStartBeatmap);
-            _beatmapUnloadedEvent.RemoveListener(HandleBeatmapUnloaded);
-            _optionsMenuOpenEvent.RemoveListener(HandleOptionsMenuOpen);
         }
 
         private void HandleOptionsMenuOpen(bool optionsMenuOpen)
@@ -257,11 +278,6 @@ namespace Beatmapping.Timing
             _normalizedProgressEvent.Raise((float)(currentBeatmapTime / _currentBeatmap.BeatmapDuration));
         }
 
-        public int GetClosestSubdivOfTime(double beatmapTime)
-        {
-            return (int)Math.Round(beatmapTime / _timeIntervalPerSubdiv);
-        }
-
         /// <summary>
         ///     After loading a beatmap, wait for the soundtrack event to begin playing before starting the timing.
         /// </summary>
@@ -286,32 +302,6 @@ namespace Beatmapping.Timing
 
                 _beatmapState = BeatmapState.Playing;
             }
-        }
-
-        private void HandleStartBeatmap(BeatmapConfigSo beatmap)
-        {
-            GetDspInfo();
-
-            _currentBeatmap = beatmap;
-
-            // Testing util to start from the editor timeline playhead
-            double startTime = BeatmappingEditingSettings.StartFromTimelinePlayhead
-                ? BeatmappingEditingSettings.TimelinePlayheadTime
-                : 0;
-
-            StartBeatmapTrack(beatmap, startTime);
-
-            _beatmapState = BeatmapState.WaitingForSoundtrackEvent;
-        }
-
-        private void HandleBeatmapUnloaded(BeatmapConfigSo beatmap)
-        {
-            if (_beatmapSoundtrackInstance.isValid())
-            {
-                _beatmapSoundtrackInstance.stop(STOP_MODE.ALLOWFADEOUT);
-            }
-
-            _currentBeatmap = null;
         }
 
         private void StartBeatmapTrack(BeatmapConfigSo beatmap, double startTime)

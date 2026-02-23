@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3285137201050589972}
   - component: {fileID: 8913546797851624770}
   m_Layer: 0
-  m_Name: TimelineLoader
+  m_Name: TimelineRunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _director: {fileID: 4379481617919899903}
-  _beatmapLoadedEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251,
-    type: 2}
 --- !u!1 &4247121317061799972
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,19 +134,19 @@ PlayableDirector:
   - key: {fileID: 7655169594171241362, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
     value: {fileID: 7973889014936138893}
   - key: {fileID: 6435859260828590340, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -7634491408669650360, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: 7855175669344345868, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -9154038518674239263, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: 1754087978691026967, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: 2839535838791464466, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: 3688818801659884798, guid: a7a490df6f3f0af45aae6f5a3d4949d7, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -4626324314927229077, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
     value: {fileID: 0}
   - key: {fileID: -4468069694051999095, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
@@ -156,25 +154,25 @@ PlayableDirector:
   - key: {fileID: -3997030203857747525, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
     value: {fileID: 0}
   - key: {fileID: 5132914916228530079, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: 5861960165396905160, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
     value: {fileID: 0}
   - key: {fileID: 8012124692829319110, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -1017061909413786394, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -7215369108311081076, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -3923887647974106270, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -2180659109493248338, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -2706253447543145310, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: -2450049588080088057, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   - key: {fileID: 3691485792175041472, guid: d68bc4e836b534a479130c17c4938b7d, type: 2}
-    value: {fileID: 2761162634390235980}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - a9f18c31f6ec9b44fad95be507f5cbc5: {fileID: 0}
@@ -213,7 +211,7 @@ GameObject:
   - component: {fileID: 6619292839552495298}
   - component: {fileID: 2024484109156033776}
   m_Layer: 0
-  m_Name: BeatmapTimeManager
+  m_Name: BeatmapRunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,8 +225,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4927146003075516979}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.62517, y: -0.44052, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -248,10 +246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelResultLevel: {fileID: 11400000, guid: 170f5efc596d3b4409ada658dcd2a66e, type: 2}
   _timelineRunner: {fileID: 8913546797851624770}
-  _beatmapLoadedEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251,
-    type: 2}
-  _beatmapUnloadedEvent: {fileID: 11400000, guid: 10bdfd4824e94144ba44fe0616fcf818,
-    type: 2}
   _optionsMenuOpenEvent: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
     type: 2}
   _beatPassedEvent: {fileID: 11400000, guid: 0e41b350d0df0f14ebecef06152b6404, type: 2}
@@ -304,52 +298,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playableDirector: {fileID: 4379481617919899903}
   _song: {fileID: 0}
---- !u!1 &5460961408318255829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4913787320634776501}
-  - component: {fileID: 2761162634390235980}
-  m_Layer: 0
-  m_Name: BeatNoteService
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4913787320634776501
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5460961408318255829}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7503210638679948415}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2761162634390235980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5460961408318255829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8c8f3a9a0274644baf99d8eca5c1e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _setSpawnEnabledEvent: {fileID: 11400000, guid: cf723e3ec26681646873098fad8d1137,
-    type: 2}
 --- !u!1 &6849324837600310558
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,11 +328,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4913787320634776501}
   - {fileID: 6619292839552495298}
   - {fileID: 3285137201050589972}
   - {fileID: 908414219806441327}
   - {fileID: 607410970119139591}
+  - {fileID: 610212186903872423}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8729527356022045980
@@ -401,5 +349,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Beatmapping.Service.BeatmapService
   _beatmapServiceContainer: {fileID: 11400000, guid: c2f4b5d1526d99b4b88d411abd519962,
     type: 2}
-  _beatNoteService: {fileID: 2761162634390235980}
-  _timeManager: {fileID: 2024484109156033776}
+  _beatmapRunner: {fileID: 2024484109156033776}
+  _noteParentTransform: {fileID: 610212186903872423}
+  _setNoteSpawnEnabledEvent: {fileID: 11400000, guid: cf723e3ec26681646873098fad8d1137,
+    type: 2}
+  _noteInteractionFinalResultEvent: {fileID: 11400000, guid: 62c8f0224e6cd4b4885d7ee487e3bab6,
+    type: 2}
+--- !u!1 &6869659616919866503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 610212186903872423}
+  m_Layer: 0
+  m_Name: NoteContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &610212186903872423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6869659616919866503}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7503210638679948415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

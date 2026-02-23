@@ -1,6 +1,5 @@
 using Beatmapping.Data;
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Timing;
 
 namespace Beatmapping.Notes
@@ -12,7 +11,7 @@ namespace Beatmapping.Notes
         /// </summary>
         /// <param name="tickInfo"></param>
         /// <param name="tickFlags"></param>
-        public NoteTickedResults Tick(BeatmapTimeManager.TickInfo tickInfo, TickFlags tickFlags)
+        public NoteTickedResults Tick(BeatmapRunner.TickInfo tickInfo, TickFlags tickFlags)
         {
             var didHitTarget = false;
             var didMissInteraction = false;
@@ -98,7 +97,7 @@ namespace Beatmapping.Notes
         /// <param name="tickInfo"></param>
         /// <param name="tickFlags"></param>
         /// <returns>true if we're in a segment, false otherwise</returns>
-        private void UpdateTiming(BeatmapTimeManager.TickInfo tickInfo, TickFlags tickFlags)
+        private void UpdateTiming(BeatmapRunner.TickInfo tickInfo, TickFlags tickFlags)
         {
             double currentBeatmapTime = tickInfo.BeatmapTime;
             double previousBeatmapTime = _prevTickInfo.BeatmapTickInfo.BeatmapTime;
@@ -128,12 +127,12 @@ namespace Beatmapping.Notes
             double timeSinceNoteEnd = currentBeatmapTime - _noteEndTime;
 
             // See if we're in an interaction window
-            NoteInteraction inWindowInteraction = null;
-            NoteInteraction inPassingInteraction = null;
+            NoteInteraction.NoteInteraction inWindowInteraction = null;
+            NoteInteraction.NoteInteraction inPassingInteraction = null;
 
             // Assume we have no overlaps, so we break early
             // A passing window will be narrower than the interaction window
-            foreach (NoteInteraction interaction in _allInteractions)
+            foreach (NoteInteraction.NoteInteraction interaction in _allInteractions)
             {
                 bool inInteractionWindow = interaction.IsInInteractTimingWindow(currentBeatmapTime);
                 if (inInteractionWindow)
@@ -208,8 +207,10 @@ namespace Beatmapping.Notes
             out bool hitTarget,
             out bool missedInteraction)
         {
-            NoteInteraction currentInsidePassWindowInteraction = noteTickInfo.InsidePassInteractionWindow;
-            NoteInteraction prevInsidePassWindowInteraction = previousTiming.InsidePassInteractionWindow;
+            NoteInteraction.NoteInteraction currentInsidePassWindowInteraction =
+                noteTickInfo.InsidePassInteractionWindow;
+            NoteInteraction.NoteInteraction prevInsidePassWindowInteraction =
+                previousTiming.InsidePassInteractionWindow;
 
             hitTarget = false;
             missedInteraction = false;
@@ -222,11 +223,12 @@ namespace Beatmapping.Notes
                 return;
             }
 
-            NoteInteraction.NoteInteractionState interactionState = prevInsidePassWindowInteraction.State;
+            NoteInteraction.NoteInteraction.NoteInteractionState interactionState =
+                prevInsidePassWindowInteraction.State;
 
             // If default state, then no action happened, so we need to handle a 'Late Miss'
             // An early miss (a lockout) or a success were handled immediately, so no need to handle it here
-            if (interactionState == NoteInteraction.NoteInteractionState.Default)
+            if (interactionState == NoteInteraction.NoteInteraction.NoteInteractionState.Default)
             {
                 prevInsidePassWindowInteraction.SetFailed();
 
@@ -255,7 +257,7 @@ namespace Beatmapping.Notes
                 OnInteractionFinalResult?.Invoke(previousTiming, finalResult);
             }
 
-            if (interactionState != NoteInteraction.NoteInteractionState.Success
+            if (interactionState != NoteInteraction.NoteInteraction.NoteInteractionState.Success
                 && prevInsidePassWindowInteraction.Type == NoteInteractionType.Block)
             {
                 hitTarget = true;

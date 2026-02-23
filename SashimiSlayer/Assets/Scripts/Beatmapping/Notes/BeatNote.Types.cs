@@ -1,5 +1,4 @@
 using System;
-using Beatmapping.Interactions;
 using Beatmapping.Timing;
 
 namespace Beatmapping.Notes
@@ -82,12 +81,12 @@ namespace Beatmapping.Notes
             /// <summary>
             ///     Interaction that we're currently inside of, if any
             /// </summary>
-            public NoteInteraction InsideInteractionWindow;
+            public NoteInteraction.NoteInteraction InsideInteractionWindow;
 
             /// <summary>
             ///     Interaction that we're currently inside of the PASSING window of, if any
             /// </summary>
-            public NoteInteraction InsidePassInteractionWindow;
+            public NoteInteraction.NoteInteraction InsidePassInteractionWindow;
 
             /// <summary>
             ///     Index of the segment's interaction, if it exists. -1 otherwise
@@ -99,7 +98,7 @@ namespace Beatmapping.Notes
             /// </summary>
             public int SegmentIndex;
 
-            public BeatmapTimeManager.TickInfo BeatmapTickInfo;
+            public BeatmapRunner.TickInfo BeatmapTickInfo;
 
             public TickFlags Flags;
 
@@ -119,7 +118,7 @@ namespace Beatmapping.Notes
             ///     The interaction relevant to this time slice. Should only be set for Interaction type
             ///     slice
             /// </summary>
-            public NoteInteraction Interaction;
+            public NoteInteraction.NoteInteraction Interaction;
 
             public TimeSegmentType Type;
         }

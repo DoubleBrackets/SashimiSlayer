@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Beatmapping.Scoring
+namespace Scoring
 {
     [CreateAssetMenu(fileName = "ScoreConfig", menuName = "BeatMapping/ScoreConfig")]
     public class ScoreConfigSO : ScriptableObject

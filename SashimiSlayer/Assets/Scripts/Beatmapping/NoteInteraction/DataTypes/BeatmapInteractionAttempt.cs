@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Beatmapping.Notes;
 using CommonTypes;
 
-namespace Beatmapping.Interaction.DataTypes
+namespace Beatmapping.NoteInteraction.DataTypes
 {
     public class BeatmapInteractionAttempt
     {

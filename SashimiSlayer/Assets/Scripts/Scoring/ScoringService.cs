@@ -1,9 +1,11 @@
 using System;
 using Beatmapping.Events;
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using EditorUtils.BoldHeader;
 using Events.Basic;
 using NaughtyAttributes;
+using Scoring;
+using Scoring.Events;
 using UnityEngine;
 
 namespace Beatmapping.Scoring

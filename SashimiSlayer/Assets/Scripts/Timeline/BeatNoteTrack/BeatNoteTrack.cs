@@ -9,7 +9,7 @@ namespace Timeline.BeatNoteTrack
 {
     [TrackColor(1, 0, 0)]
     [TrackClipType(typeof(BeatNoteClip))]
-    [TrackBindingType(typeof(BeatNoteService))]
+    [TrackBindingType(typeof(BeatmapService))]
     [DisplayName("Beat Note Track")]
     public class BeatNoteTrack : TrackAsset
     {

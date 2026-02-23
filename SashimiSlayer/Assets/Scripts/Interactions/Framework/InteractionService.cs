@@ -3,7 +3,7 @@ using Interactions.DataTypes;
 
 namespace Interactions.Framework
 {
-    public class InteractionService
+    public class InteractionService : IInteractionService
     {
         private List<IInteractable> _interactables = new();
 

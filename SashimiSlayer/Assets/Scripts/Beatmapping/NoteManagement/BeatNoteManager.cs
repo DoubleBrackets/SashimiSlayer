@@ -1,54 +1,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using Beatmapping.Data;
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Timing;
-using EditorUtils.BoldHeader;
-using Events.Basic;
-using Interactions.Framework;
-using NaughtyAttributes;
 using UnityEngine;
 
-namespace Beatmapping.Service
+namespace Beatmapping.NoteManagement
 {
-    public class BeatNoteService : MonoBehaviour
+    public class BeatNoteManager
     {
-        [BoldHeader("Beat Note Service")]
-        [InfoBox("Manages creation, ticking, interactions, and cleanup of beat notes during play")]
-        [Header("Channels (In)")]
-
-        [SerializeField]
-        private BoolEvent _setSpawnEnabledEvent;
-
-        [Header("Events (Out)")]
-
         private readonly List<BeatNote> _activeBeatNotes = new();
 
         private bool _spawningEnabled = true;
         public BeatmapConfigSo CurrentBeatmap { get; set; }
 
-        private InteractionService _interactionService;
+        private BeatNoteFactory _noteFactory;
 
-        private void Awake()
+        public bool SpawningEnabled
         {
-            _setSpawnEnabledEvent.AddListener(SetSpawningEnabled);
+            get => _spawningEnabled;
+            set => _spawningEnabled = value;
         }
 
-        private void OnDestroy()
+        public BeatNoteManager(BeatNoteFactory noteFactory)
         {
-            _setSpawnEnabledEvent.RemoveListener(SetSpawningEnabled);
-        }
-
-        public void Initialize(InteractionService interactionService)
-        {
-            _interactionService = interactionService;
-        }
-
-        private void SetSpawningEnabled(bool spawningEnabled)
-        {
-            _spawningEnabled = spawningEnabled;
+            _noteFactory = noteFactory;
         }
 
         public IList<NoteInteractionFinalResult> GetNoteInteractionFinalResults(BeatmapInteractionAttempt attempt)
@@ -67,7 +44,7 @@ namespace Beatmapping.Service
             return results;
         }
 
-        public List<NoteTickedResults> TickNotes(BeatmapTimeManager.TickInfo tickInfo, BeatNote.TickFlags tickFlags)
+        public List<NoteTickedResults> TickNotes(BeatmapRunner.TickInfo tickInfo, BeatNote.TickFlags tickFlags)
         {
             var results = new List<NoteTickedResults>();
 
@@ -97,9 +74,9 @@ namespace Beatmapping.Service
             double timeIntervalPerBeat = 60 / beatmap.Bpm;
 
             // Create interactions from data
-            var interactions = new List<NoteInteraction>();
+            var interactions = new List<NoteInteraction.NoteInteraction>();
 
-            NoteInteraction CreateNoteInteraction(SequencedNoteInteraction sequencedInteraction)
+            NoteInteraction.NoteInteraction CreateNoteInteraction(SequencedNoteInteraction sequencedInteraction)
             {
                 NoteInteractionData interactionData = sequencedInteraction.InteractionData;
                 double beatsFromStart = sequencedInteraction.GetBeatsFromNoteStart(noteBeatLength);
@@ -120,17 +97,7 @@ namespace Beatmapping.Service
             interactions.Sort((a, b) => a.TargetTime.CompareTo(b.TargetTime));
 
             // Instantiate note and register
-            BeatNote note = Instantiate(hitConfig.Prefab, transform);
-            note.Initialize(
-                interactions,
-                data.StartPosition,
-                data.EndPosition,
-                data.NoteStartTime,
-                data.NoteEndTime,
-                initalizeTime,
-                hitConfig.HitboxRadius,
-                _interactionService
-            );
+            BeatNote note = _noteFactory.CreateBeatNote(hitConfig, data, interactions, initalizeTime);
 
             _activeBeatNotes.Add(note);
 
@@ -144,11 +111,11 @@ namespace Beatmapping.Service
             _activeBeatNotes.Remove(note);
             if (Application.isPlaying)
             {
-                Destroy(note.gameObject);
+                GameObject.Destroy(note.gameObject);
             }
             else
             {
-                DestroyImmediate(note.gameObject);
+                GameObject.DestroyImmediate(note.gameObject);
             }
         }
 

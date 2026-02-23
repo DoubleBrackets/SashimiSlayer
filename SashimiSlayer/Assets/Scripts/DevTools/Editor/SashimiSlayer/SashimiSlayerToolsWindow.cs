@@ -39,7 +39,18 @@ namespace DevTools.Editor.SashimiSlayer
 
             EditorApplication.playModeStateChanged += HandlePlayModeChanged;
             EditorApplication.wantsToQuit += HandleWantsToQuit;
+            AssemblyReloadEvents.beforeAssemblyReload += HandleAssemblyReload;
             EditorSceneManager.sceneOpened += HandleSceneOpened;
+
+            SelectBeatmapInScene();
+        }
+
+        private void OnDisable()
+        {
+            EditorApplication.playModeStateChanged -= HandlePlayModeChanged;
+            EditorApplication.wantsToQuit -= HandleWantsToQuit;
+            AssemblyReloadEvents.beforeAssemblyReload -= HandleAssemblyReload;
+            EditorSceneManager.sceneOpened -= HandleSceneOpened;
         }
 
         private bool HandleWantsToQuit()
@@ -48,11 +59,9 @@ namespace DevTools.Editor.SashimiSlayer
             return true;
         }
 
-        private void OnDisable()
+        private void HandleAssemblyReload()
         {
-            EditorApplication.playModeStateChanged -= HandlePlayModeChanged;
-            EditorApplication.wantsToQuit -= HandleWantsToQuit;
-            EditorSceneManager.sceneOpened -= HandleSceneOpened;
+            _prefs.SaveThis();
         }
 
         /// <summary>
@@ -62,10 +71,19 @@ namespace DevTools.Editor.SashimiSlayer
         /// <param name="mode"></param>
         private void HandleSceneOpened(Scene scene, OpenSceneMode mode)
         {
+            SelectBeatmapInScene();
+        }
+
+        private void SelectBeatmapInScene()
+        {
             TimelineAsset timelineAsset = SelectTimelineFromScene();
             if (timelineAsset != null)
             {
                 SelectBeatmapFromTimeline(timelineAsset);
+            }
+            else
+            {
+                Debug.LogWarning("No playable director found in scene");
             }
         }
 
@@ -240,7 +258,7 @@ namespace DevTools.Editor.SashimiSlayer
         private static TimelineAsset SelectTimelineFromScene()
         {
             // Search the current scene for a playable director
-            var quickSelect = FindObjectOfType<TimelineQuickSelect>();
+            var quickSelect = FindFirstObjectByType<TimelineQuickSelect>();
 
             if (quickSelect == null)
             {

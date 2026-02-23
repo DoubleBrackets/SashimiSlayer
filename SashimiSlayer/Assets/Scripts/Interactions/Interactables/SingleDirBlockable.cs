@@ -2,53 +2,44 @@ using System;
 using CommonTypes;
 using Interactions.DataTypes;
 using Interactions.Framework;
-using UnityEngine;
 
 namespace Interactions.Interactables
 {
-    public class Blockable : IInteractable
+    public class SingleDirBlockable
     {
         public event Action OnBlocked;
 
-        private InteractionService _interactionService;
+        private IInteractionService _interactionService;
 
         private BlockPoses _blockPose;
         private bool _singleUse;
         private bool _blocked;
-        private Transform _hitCenter;
+        private IInteractable _sourceInteractable;
 
         public bool Enabled { get; set; } = true;
 
-        public Blockable(InteractionService interactionService, BlockPoses blockPose, bool singleUse,
-            Transform hitCenter)
+        public SingleDirBlockable(IInteractable sourceInteractable, BlockPoses blockPose, bool singleUse)
         {
-            _interactionService = interactionService;
-            _interactionService.Register(this);
             _blockPose = blockPose;
             _singleUse = singleUse;
-            _hitCenter = hitCenter;
-        }
-
-        public void Cleanup()
-        {
-            _interactionService.Unregister(this);
+            _sourceInteractable = sourceInteractable;
         }
 
         public InteractionResult AttemptInteraction(InteractionAttempt attempt)
         {
             if (!Enabled || (_singleUse && _blocked))
             {
-                return InteractionResult.Fail(this);
+                return InteractionResult.Fail(_sourceInteractable);
             }
 
             if (attempt.Type != InteractionType.Block)
             {
-                return InteractionResult.Fail(this);
+                return InteractionResult.Fail(_sourceInteractable);
             }
 
             if (attempt.BlockPose != _blockPose)
             {
-                return InteractionResult.Fail(this);
+                return InteractionResult.Fail(_sourceInteractable);
             }
 
             _blocked = true;
@@ -58,10 +49,8 @@ namespace Interactions.Interactables
             return new InteractionResult
             {
                 Successful = true,
-                Interactable = this
+                Interactable = _sourceInteractable
             };
         }
-
-        public Vector2 Position => _hitCenter.position;
     }
 }

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -94,7 +93,7 @@ namespace Beatmapping.NoteBehaviors
         }
 
         private void BeatNote_SlicedByProtag(int interactionIndex,
-            NoteInteraction.AttemptResult result)
+            NoteInteraction.NoteInteraction.AttemptResult result)
         {
             _visual.SetVisible(false);
             foreach (ParticleSystem particle in _dieParticles)

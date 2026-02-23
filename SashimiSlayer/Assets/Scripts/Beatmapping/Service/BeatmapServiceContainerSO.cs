@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Beatmapping.Data;
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using UnityEngine;
 
 namespace Beatmapping.Service
@@ -35,6 +35,11 @@ namespace Beatmapping.Service
                 NoteTickedResults = new List<NoteTickedResults>(),
                 BeatmapOver = false
             };
+        }
+
+        public void BeginRunningBeatmap(BeatmapConfigSo beatmap)
+        {
+            _implementation?.BeginRunningBeatmap(beatmap);
         }
     }
 }

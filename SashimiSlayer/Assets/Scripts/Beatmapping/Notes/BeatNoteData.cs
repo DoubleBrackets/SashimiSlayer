@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using NaughtyAttributes;
 using UnityEngine;
 

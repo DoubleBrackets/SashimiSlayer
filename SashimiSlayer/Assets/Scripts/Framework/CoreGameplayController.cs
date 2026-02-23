@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Beatmapping;
 using Beatmapping.Data;
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Service;
 using CommonTypes;
 using Core.Protag.Core;
+using Framework.LevelLoading;
 using GameInput.Interface;
 using Interactions.DataTypes;
 using Interactions.Framework;
@@ -21,16 +22,19 @@ namespace Framework
     public class CoreGameplayController
     {
         private Protaganist _protaganist;
-        private InteractionService _interactionService;
+        private IInteractionService _interactionService;
         private IUserInput _userInputService;
         private IBeatmapService _beatmapService;
+        private LevelService _levelService;
 
         public CoreGameplayController(
+            LevelService levelService,
             Protaganist protaganist,
-            InteractionService interactionService,
+            IInteractionService interactionService,
             IUserInput userInputService,
             IBeatmapService beatmapService)
         {
+            _levelService = levelService;
             _protaganist = protaganist;
             _interactionService = interactionService;
             _userInputService = userInputService;
@@ -38,6 +42,21 @@ namespace Framework
 
             _userInputService.OnBlockPoseChanged += HandleBlockPoseChanged;
             _userInputService.OnSheathStateChanged += HandleSheathStateChanged;
+
+            _levelService.BeatmapLevelDoneLoadingEvent += BeginRunningBeatmap;
+        }
+
+        public void Cleanup()
+        {
+            _userInputService.OnBlockPoseChanged -= HandleBlockPoseChanged;
+            _userInputService.OnSheathStateChanged -= HandleSheathStateChanged;
+
+            _levelService.BeatmapLevelDoneLoadingEvent -= BeginRunningBeatmap;
+        }
+
+        private void BeginRunningBeatmap(BeatmapConfigSo beatmap)
+        {
+            _beatmapService.BeginRunningBeatmap(beatmap);
         }
 
         public void Update()
@@ -77,6 +96,8 @@ namespace Framework
                 return;
             }
 
+            // For now, notes always listen to all interactions at all times
+            // And only evaluate the correctness on the note interaction side, not the interaction service side
             List<BeatNote> interactedNotes = interactablesInteractedWith
                 .Select(a => a as BeatNote)
                 .NotNull()

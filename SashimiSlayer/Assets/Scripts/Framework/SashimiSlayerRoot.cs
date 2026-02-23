@@ -64,7 +64,7 @@ namespace Framework
         // Services
         private ServiceLocator _serviceLocator;
         private SaveService _saveService;
-        private InteractionService _interactionService;
+        private IInteractionService _interactionService;
 
         // Global UI
         private PauseMenuController _pauseMenuController;
@@ -80,41 +80,22 @@ namespace Framework
         private void OnDestroy()
         {
             _studioBankLoader.Unload();
+            _gameplayController?.Cleanup();
         }
 
         private async UniTaskVoid BeginGame()
         {
-            _serviceLocator = new ServiceLocator();
-            _saveService = new SaveService();
-            _interactionService = new InteractionService();
+            SetupServices();
+            SetupGlobalUI();
+            await SetupFMOD();
 
-            GlobalUIFactory globalUIFactory = new(_startupConfigSO,
-                _saveService,
+            _gameplayController = new CoreGameplayController(
+                _levelService,
+                _protaganist,
+                _interactionService,
                 _userInput,
-                _screenShakeService,
-                _globalUIParentTransform);
-
-            globalUIFactory.CreateGlobalUI(out _pauseMenuController, out _sceneTransitionVisuals);
-
-            _levelService.Initialize(_sceneTransitionVisuals);
-
-            // Register the ones that need to be accessed globally
-            _serviceLocator.RegisterService(_levelService);
-            _serviceLocator.RegisterService(_saveService);
-            _serviceLocator.RegisterService<IUserInput>(_userInput);
-            _serviceLocator.RegisterService(_screenShakeService);
-            _serviceLocator.RegisterService(_debugService);
-            _serviceLocator.RegisterService(_protaganist);
-            _serviceLocator.RegisterService(_interactionService);
-
-            Debug.Log("Loading starting banks");
-            _studioBankLoader.Load();
-
-            // Load all the global banks
-            await UniTask.WaitUntil(() => RuntimeManager.HaveAllBanksLoaded);
-            await UniTask.WaitUntil(() => !RuntimeManager.AnySampleDataLoading());
-
-            Debug.Log("All banks loaded");
+                _beatmapServiceContainer
+            );
 
             // Load startup level
             GameLevelSO startupLevel = _startupConfigSO.GetStartupLevel();
@@ -125,14 +106,50 @@ namespace Framework
                 return;
             }
 
-            _gameplayController = new CoreGameplayController(
-                _protaganist,
-                _interactionService,
-                _userInput,
-                _beatmapServiceContainer
-            );
-
             await _levelService.LoadLevel(startupLevel);
+        }
+
+        private void SetupServices()
+        {
+            _serviceLocator = new ServiceLocator();
+            _saveService = new SaveService();
+            _interactionService = new InteractionService();
+
+            _levelService.Initialize();
+
+            // Register the ones that need to be accessed globally
+            _serviceLocator.RegisterService(_levelService);
+            _serviceLocator.RegisterService(_saveService);
+            _serviceLocator.RegisterService<IUserInput>(_userInput);
+            _serviceLocator.RegisterService(_screenShakeService);
+            _serviceLocator.RegisterService(_debugService);
+            _serviceLocator.RegisterService(_protaganist);
+            _serviceLocator.RegisterService(_interactionService);
+        }
+
+        private void SetupGlobalUI()
+        {
+            GlobalUIFactory globalUIFactory = new(_startupConfigSO,
+                _saveService,
+                _userInput,
+                _screenShakeService,
+                _globalUIParentTransform);
+
+            globalUIFactory.CreateGlobalUI(out _pauseMenuController, out _sceneTransitionVisuals);
+
+            _levelService.SetSceneTransitionVisuals(_sceneTransitionVisuals);
+        }
+
+        private async UniTask SetupFMOD()
+        {
+            Debug.Log("Loading starting banks");
+            _studioBankLoader.Load();
+
+            // Load all the global banks
+            await UniTask.WaitUntil(() => RuntimeManager.HaveAllBanksLoaded);
+            await UniTask.WaitUntil(() => !RuntimeManager.AnySampleDataLoading());
+
+            Debug.Log("All banks loaded");
         }
 
         private void Update()

@@ -1,7 +1,8 @@
+using Beatmapping.Scoring;
 using Events;
 using UnityEngine;
 
-namespace Beatmapping.Scoring
+namespace Scoring.Events
 {
     [CreateAssetMenu(fileName = "BeatmapScoreEvent", menuName = "Events/BeatmapScoreEvent")]
     public class BeatmapScoreEvent : SOEvent<ScoringService.BeatmapScore>

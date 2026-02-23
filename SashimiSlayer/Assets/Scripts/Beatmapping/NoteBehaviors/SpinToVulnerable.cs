@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -51,7 +50,7 @@ namespace Beatmapping.NoteBehaviors
         private bool _enteredDazed;
 
         private void BeatNote_OnSlicedByProtag(int interactionIndex,
-            NoteInteraction.AttemptResult result)
+            NoteInteraction.NoteInteraction.AttemptResult result)
         {
             if (interactionIndex != _interactionIndex)
             {
@@ -75,7 +74,7 @@ namespace Beatmapping.NoteBehaviors
                 return;
             }
 
-            NoteInteraction interaction = segment.Interaction;
+            NoteInteraction.NoteInteraction interaction = segment.Interaction;
             _visuals.SetSpriteAlpha(1f);
 
             if (interaction.Type == NoteInteractionType.Slice)

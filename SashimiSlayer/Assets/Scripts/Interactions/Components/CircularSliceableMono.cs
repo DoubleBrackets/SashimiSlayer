@@ -1,5 +1,6 @@
 using System;
 using Framework;
+using Interactions.DataTypes;
 using Interactions.Framework;
 using Interactions.Interactables;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.Events;
 
 namespace Interactions.Components
 {
-    public class CircularSliceableMono : MonoBehaviour
+    public class CircularSliceableMono : MonoBehaviour, IInteractable
     {
         [Header("Config")]
 
@@ -15,7 +16,7 @@ namespace Interactions.Components
         private float _radius;
 
         [SerializeField]
-        private CircleSliceable.SpaceType _spaceType;
+        private SpaceType _spaceType;
 
         [SerializeField]
         private bool _singleUse;
@@ -39,6 +40,8 @@ namespace Interactions.Components
 
         private CircleSliceable _circleSliceable;
 
+        private IInteractionService _interactionService;
+
         public bool Enabled
         {
             get => _circleSliceable.Enabled;
@@ -47,8 +50,9 @@ namespace Interactions.Components
 
         private void OnEnable()
         {
+            _interactionService = ServiceLocator.GetService<IInteractionService>();
             _circleSliceable = new CircleSliceable(
-                ServiceLocator.GetService<InteractionService>(),
+                this,
                 _radius,
                 _singleUse,
                 _spaceType,
@@ -58,6 +62,8 @@ namespace Interactions.Components
             _circleSliceable.OnHovered += HandleOnHovered;
             _circleSliceable.OnUnhovered += HandleOnUnhovered;
             _circleSliceable.OnSliced += HandleOnSliced;
+
+            _interactionService.Register(this);
         }
 
         private void OnDisable()
@@ -66,7 +72,7 @@ namespace Interactions.Components
             _circleSliceable.OnUnhovered -= HandleOnUnhovered;
             _circleSliceable.OnSliced -= HandleOnSliced;
 
-            _circleSliceable.Cleanup();
+            _interactionService.Unregister(this);
         }
 
         private void HandleOnHovered()
@@ -92,5 +98,12 @@ namespace Interactions.Components
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, _radius);
         }
+
+        public InteractionResult AttemptInteraction(InteractionAttempt attempt)
+        {
+            return _circleSliceable.AttemptInteraction(attempt);
+        }
+
+        public Vector2 Position => _circleSliceable.Position;
     }
 }

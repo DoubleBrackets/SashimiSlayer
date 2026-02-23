@@ -1,4 +1,4 @@
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using Events;
 using UnityEngine;
 

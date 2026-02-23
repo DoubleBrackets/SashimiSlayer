@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Beatmapping;
 using Beatmapping.Events;
-using Beatmapping.Interaction.DataTypes;
+using Beatmapping.NoteInteraction.DataTypes;
 using EditorUtils.BoldHeader;
 using FMOD;
 using FMODUnity;

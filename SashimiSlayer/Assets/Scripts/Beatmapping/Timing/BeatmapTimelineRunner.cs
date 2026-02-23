@@ -1,11 +1,9 @@
-using Beatmapping.Events;
-using Beatmapping.Timing;
 using EditorUtils.BoldHeader;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Playables;
 
-namespace Beatmapping.Service
+namespace Beatmapping.Timing
 {
     /// <summary>
     ///     Handles the timeline playback in step with the beatmap music FMOD event
@@ -17,27 +15,9 @@ namespace Beatmapping.Service
         [SerializeField]
         private PlayableDirector _director;
 
-        [Header("Events (In)")]
-
-        [SerializeField]
-        private BeatmapEvent _beatmapLoadedEvent;
-
         private bool _inProgress;
 
-        private void Awake()
-        {
-            _beatmapLoadedEvent.AddListener(HandleStartBeatmap);
-
-            // Use manual to play with FMOD dsp time
-            _director.timeUpdateMode = DirectorUpdateMode.Manual;
-        }
-
-        private void OnDestroy()
-        {
-            _beatmapLoadedEvent.RemoveListener(HandleStartBeatmap);
-        }
-
-        public void TickTimelineRunner(BeatmapTimeManager.TickInfo tickInfo)
+        public void TickTimelineRunner(BeatmapRunner.TickInfo tickInfo)
         {
             if (_inProgress)
             {
@@ -53,8 +33,9 @@ namespace Beatmapping.Service
             _director.Evaluate();
         }
 
-        private void HandleStartBeatmap(BeatmapConfigSo beatmap)
+        public void StartRunningBeatmap(BeatmapConfigSo beatmap)
         {
+            _director.timeUpdateMode = DirectorUpdateMode.Manual;
             _director.playableAsset = beatmap.BeatmapTimeline;
             _director.Play();
             _director.Evaluate();

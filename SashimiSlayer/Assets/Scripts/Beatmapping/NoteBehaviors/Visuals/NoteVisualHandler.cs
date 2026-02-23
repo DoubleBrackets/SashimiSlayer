@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using CommonTypes;
@@ -57,7 +56,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
         private void BeatNote_OnTick(BeatNote.NoteTickInfo tickinfo)
         {
-            NoteInteraction interaction = tickinfo.NoteSegment.Interaction;
+            NoteInteraction.NoteInteraction interaction = tickinfo.NoteSegment.Interaction;
             if (interaction == null)
             {
                 return;
@@ -182,7 +181,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
             return Visuals.FindIndex(v => v.IsForSlicing);
         }
 
-        private int GetBlockVisualIndex(NoteInteraction interaction)
+        private int GetBlockVisualIndex(NoteInteraction.NoteInteraction interaction)
         {
             return Visuals.FindIndex(v => !v.IsForSlicing && v.Pose == interaction.BlockPose);
         }

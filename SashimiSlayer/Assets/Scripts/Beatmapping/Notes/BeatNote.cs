@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Base;
-using Beatmapping.Interaction.DataTypes;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Tooling;
 using Interactions.Framework;
 using Interactions.Interactables;
@@ -24,7 +23,7 @@ namespace Beatmapping.Notes
 
         public delegate void InteractionAttemptEventHandler(
             int interactionIndex,
-            NoteInteraction.AttemptResult result);
+            NoteInteraction.NoteInteraction.AttemptResult result);
 
         public delegate void InteractionFinalResultEventHandler(
             NoteTickInfo tickInfo,
@@ -106,7 +105,7 @@ namespace Beatmapping.Notes
         private NoteTickInfo _noteTickInfo;
         private NoteTickInfo _prevTickInfo;
         private List<NoteTimeSegment> _noteTimeSegments;
-        private List<NoteInteraction> _allInteractions;
+        private List<NoteInteraction.NoteInteraction> _allInteractions;
 
         private float _hitboxRadius;
 
@@ -124,6 +123,7 @@ namespace Beatmapping.Notes
         private bool _isFirstInteraction;
 
         private CircleSliceable _circleSliceable;
+        private IInteractionService _interactionService;
 
         public void OnDestroy()
         {
@@ -131,6 +131,8 @@ namespace Beatmapping.Notes
             {
                 listener.OnNoteCleanedUp(this);
             }
+
+            _interactionService.Unregister(this);
         }
 
         private void OnDrawGizmos()
@@ -161,22 +163,23 @@ namespace Beatmapping.Notes
         ///     All time parameters are expected to be in beatmap timespace
         /// </summary>
         public void Initialize(
-            List<NoteInteraction> noteInteractions,
+            List<NoteInteraction.NoteInteraction> noteInteractions,
             Vector2 noteStartPos,
             Vector2 noteEndPos,
             double noteStartTime,
             double noteEndTime,
             double initializeTime,
             float hitboxRadius,
-            InteractionService interactionService = null
+            IInteractionService interactionService
         )
         {
-            _allInteractions = new List<NoteInteraction>(noteInteractions);
+            _allInteractions = new List<NoteInteraction.NoteInteraction>(noteInteractions);
             _noteStartTime = noteStartTime;
             _noteEndTime = noteEndTime;
             _hitboxRadius = hitboxRadius;
             StartPosition = noteStartPos;
             EndPosition = noteEndPos;
+            _interactionService = interactionService;
 
             // Default values
             _isFirstTick = true;
@@ -186,16 +189,13 @@ namespace Beatmapping.Notes
             _noteTimeSegments = BuildNoteTimeSegments(noteInteractions, noteStartTime, noteEndTime, initializeTime);
 
             // Slice interaction
-            if (interactionService != null)
-            {
-                _circleSliceable = new CircleSliceable(
-                    interactionService,
-                    _hitboxRadius,
-                    false,
-                    CircleSliceable.SpaceType.Worldspace,
-                    _hitboxTransform
-                );
-            }
+            _circleSliceable = new CircleSliceable(
+                this,
+                _hitboxRadius,
+                false,
+                SpaceType.Worldspace,
+                _hitboxTransform
+            );
 
             foreach (BeatNoteModule listener in _beatNoteModules)
             {
@@ -203,6 +203,8 @@ namespace Beatmapping.Notes
             }
 
             OnInitialize?.Invoke();
+
+            interactionService.Register(this);
         }
 
         /// <summary>
@@ -211,7 +213,7 @@ namespace Beatmapping.Notes
         public void ResetState()
         {
             // Currently the only state is the interaction state
-            foreach (NoteInteraction interaction in _allInteractions)
+            foreach (NoteInteraction.NoteInteraction interaction in _allInteractions)
             {
                 interaction.ResetState();
             }
@@ -225,7 +227,7 @@ namespace Beatmapping.Notes
             _isFirstInteraction = true;
         }
 
-        private List<NoteTimeSegment> BuildNoteTimeSegments(List<NoteInteraction> interactions,
+        private List<NoteTimeSegment> BuildNoteTimeSegments(List<NoteInteraction.NoteInteraction> interactions,
             double noteStartTime,
             double noteEndTime,
             double initializeTime)
@@ -249,7 +251,7 @@ namespace Beatmapping.Notes
 
             double nextTime = noteStartTime;
 
-            foreach (NoteInteraction interaction in interactions)
+            foreach (NoteInteraction.NoteInteraction interaction in interactions)
             {
                 timeSegments.Add(new NoteTimeSegment
                 {
@@ -324,7 +326,7 @@ namespace Beatmapping.Notes
                 return Vector2.zero;
             }
 
-            NoteInteraction prevSegment = _allInteractions[interactionIndex - 1];
+            NoteInteraction.NoteInteraction prevSegment = _allInteractions[interactionIndex - 1];
             List<Vector2> prevPositions = prevSegment.Positions;
 
             if (prevPositions.Count == 0)
@@ -343,7 +345,7 @@ namespace Beatmapping.Notes
                 return StartPosition;
             }
 
-            NoteInteraction finalInteraction = _allInteractions[^1];
+            NoteInteraction.NoteInteraction finalInteraction = _allInteractions[^1];
             List<Vector2> finalPositions = finalInteraction.Positions;
 
             if (finalPositions.Count == 0)
@@ -393,7 +395,7 @@ namespace Beatmapping.Notes
             return position;
         }
 
-        private int GetInteractionIndex(NoteInteraction interaction)
+        private int GetInteractionIndex(NoteInteraction.NoteInteraction interaction)
         {
             return _allInteractions.IndexOf(interaction);
         }
@@ -417,6 +419,11 @@ namespace Beatmapping.Notes
                     $"\nType: {CurrentInteraction.Type}" +
             }
 #endif*/
+        }
+
+        public object GetCustomData()
+        {
+            throw new NotImplementedException();
         }
     }
 }
