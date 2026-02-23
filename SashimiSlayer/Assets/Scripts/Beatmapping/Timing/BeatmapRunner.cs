@@ -1,12 +1,10 @@
 using System;
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Events.Basic;
 using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using Framework;
-using Framework.LevelLoading;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
@@ -76,9 +74,6 @@ namespace Beatmapping.Timing
         }
 
         [Header("Dependencies")]
-
-        [SerializeField]
-        private GameLevelSO _levelResultLevel;
 
         [SerializeField]
         private BeatmapTimelineRunner _timelineRunner;
@@ -169,12 +164,20 @@ namespace Beatmapping.Timing
             _timelineRunner.StartRunningBeatmap(beatmap);
         }
 
-        public void TickForward()
+        /// <summary>
+        ///     Tick the beatmap forward
+        /// </summary>
+        /// <returns>True if the beatmap is still running, false if it has ended</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public bool TickForward()
         {
             if (_currentBeatmap == null)
             {
-                return;
+                Debug.LogError("No beatmap loaded, cannot tick forward");
+                return false;
             }
+
+            var running = true;
 
             switch (_beatmapState)
             {
@@ -184,13 +187,14 @@ namespace Beatmapping.Timing
                     WaitForSoundtrackEventSync();
                     break;
                 case BeatmapState.Playing:
-                    TickBeatmapPlaying();
+                    running = TickBeatmapPlaying();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
             _timelineRunner.TickTimelineRunner(CurrentTickInfo);
+            return running;
         }
 
         private void HandleOptionsMenuOpen(bool optionsMenuOpen)
@@ -210,23 +214,17 @@ namespace Beatmapping.Timing
             }
         }
 
-        private void EndBeatmap()
+        private bool TickBeatmapPlaying()
         {
-            ServiceLocator.GetService<LevelService>().LoadLevel(_levelResultLevel).Forget();
-            _beatmapState = BeatmapState.Unloaded;
-        }
-
-        private void TickBeatmapPlaying()
-        {
-            // If the soundtrack instsance is no longer valid, the level has ended
+            // If the soundtrack instance is no longer valid, the level has ended
             if (!_beatmapSoundtrackInstance.isValid())
             {
-                EndBeatmap();
+                _beatmapState = BeatmapState.Unloaded;
+                return false;
             }
-            else
-            {
-                TickPlaying();
-            }
+
+            TickPlaying();
+            return true;
         }
 
         private void TickPlaying()

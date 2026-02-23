@@ -127,12 +127,14 @@ namespace Beatmapping.Service
 
         public BeatmapTickFinalResults TickForward()
         {
-            _beatmapRunner.TickForward();
+            bool isRunning = _beatmapRunner.TickForward();
+
             List<NoteTickedResults> noteTickResults =
                 _beatNoteManager.TickNotes(_beatmapRunner.CurrentTickInfo, BeatNote.TickFlags.All);
             return new BeatmapTickFinalResults
             {
-                NoteTickedResults = noteTickResults
+                NoteTickedResults = noteTickResults,
+                BeatmapOver = !isRunning
             };
         }
 

@@ -7,6 +7,7 @@ using Beatmapping.Notes;
 using Beatmapping.Service;
 using CommonTypes;
 using Core.Protag.Core;
+using Cysharp.Threading.Tasks;
 using Framework.LevelLoading;
 using GameInput.Interface;
 using Interactions.DataTypes;
@@ -26,14 +27,17 @@ namespace Framework
         private IUserInput _userInputService;
         private IBeatmapService _beatmapService;
         private LevelService _levelService;
+        private GameLevelSO _scoreScreenLevel;
 
         public CoreGameplayController(
+            GameLevelSO scoreScreenLevel,
             LevelService levelService,
             Protaganist protaganist,
             IInteractionService interactionService,
             IUserInput userInputService,
             IBeatmapService beatmapService)
         {
+            _scoreScreenLevel = scoreScreenLevel;
             _levelService = levelService;
             _protaganist = protaganist;
             _interactionService = interactionService;
@@ -71,6 +75,11 @@ namespace Framework
             if (playerHit)
             {
                 _protaganist.DoDamagedPresentation();
+            }
+
+            if (tickBeatmapResult.BeatmapOver)
+            {
+                _levelService.LoadLevel(_scoreScreenLevel).Forget();
             }
         }
 

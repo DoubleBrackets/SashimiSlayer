@@ -16,6 +16,9 @@ namespace Framework
         public GameLevelSO InitialGameLevel { get; private set; }
 
         [field: SerializeField]
+        public GameLevelSO ScoreScreenLevel { get; private set; }
+
+        [field: SerializeField]
         public SongRosterSO SongRoster { get; private set; }
 
         [field: Header("Global UI Prefabs")]

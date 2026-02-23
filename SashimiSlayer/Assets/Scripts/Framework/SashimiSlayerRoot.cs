@@ -90,6 +90,7 @@ namespace Framework
             await SetupFMOD();
 
             _gameplayController = new CoreGameplayController(
+                _startupConfigSO.ScoreScreenLevel,
                 _levelService,
                 _protaganist,
                 _interactionService,
