@@ -984,6 +984,8 @@ MonoBehaviour:
   _beatmapStartEvent: {fileID: 11400000, guid: c6454aecf2d6c4748ac6087f73e2e251, type: 2}
   _beatmapUnloadEvent: {fileID: 11400000, guid: 10bdfd4824e94144ba44fe0616fcf818,
     type: 2}
+  _onEnterMenuEvent: {fileID: 11400000, guid: 765074b6eb3820b47aed0a866be87d9f, type: 2}
+  _onExitMenuEvent: {fileID: 11400000, guid: 270cc02a5cdfb2f4f81b7e35b9dc876b, type: 2}
 --- !u!4 &1475056207
 Transform:
   m_ObjectHideFlags: 0
@@ -1564,6 +1566,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.2
+--- !u!1 &4623885906857561025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4699420301199334156}
+  - component: {fileID: 8057980923878343034}
+  - component: {fileID: 8057980923878343035}
+  m_Layer: 0
+  m_Name: MenuMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4699420301199334156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623885906857561025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4953079648344236376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,6 +1683,52 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8057980923878343034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623885906857561025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 299886782
+      Data2: 1094007015
+      Data3: 1598169494
+      Data4: 1431698528
+    Path: event:/Menus/MenuMusic
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8057980923878343035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623885906857561025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2069827013abea2468e3907aae9fe01d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameJuice.Audio.EventAudioToggle
+  _source: {fileID: 8057980923878343034}
+  _playEvent: {fileID: 11400000, guid: 765074b6eb3820b47aed0a866be87d9f, type: 2}
+  _stopEvent: {fileID: 11400000, guid: 270cc02a5cdfb2f4f81b7e35b9dc876b, type: 2}
 --- !u!224 &8134647406904557916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1755,3 +1836,4 @@ SceneRoots:
   - {fileID: 659400201}
   - {fileID: 1640389115}
   - {fileID: 8696172677230377308}
+  - {fileID: 4699420301199334156}

@@ -4922,7 +4922,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Core.Scene.LevelLoaderMono, Assembly-CSharp
+      value: Framework.LevelLoading.LevelLoaderMono, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
@@ -4938,7 +4938,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Core.Scene.GameLevelSO, Assembly-CSharp
+      value: Framework.LevelLoading.GameLevelSO, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
@@ -6005,7 +6005,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Core.Scene.LevelLoaderMono, Assembly-CSharp
+      value: Framework.LevelLoading.LevelLoaderMono, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
@@ -6021,7 +6021,7 @@ PrefabInstance:
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Core.Scene.GameLevelSO, Assembly-CSharp
+      value: Framework.LevelLoading.GameLevelSO, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5668627216224036979, guid: 32f13f38c82c0e643882db1e5e8563ed,
         type: 3}

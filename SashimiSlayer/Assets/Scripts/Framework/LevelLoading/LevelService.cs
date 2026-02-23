@@ -5,6 +5,7 @@ using Beatmapping.Events;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using EditorUtils.BoldHeader;
+using Events.Basic;
 using FMODUnity;
 using NaughtyAttributes;
 using UI.Screens.TransitionUI;
@@ -24,6 +25,12 @@ namespace Framework.LevelLoading
 
         [SerializeField]
         private BeatmapEvent _beatmapUnloadEvent;
+
+        [SerializeField]
+        private VoidEvent _onEnterMenuEvent;
+
+        [SerializeField]
+        private VoidEvent _onExitMenuEvent;
 
         public event Action<BeatmapConfigSo> BeatmapLevelDoneLoadingEvent;
 
@@ -59,15 +66,15 @@ namespace Framework.LevelLoading
         /// <summary>
         ///     Loads a new level, unloading the current one if necessary
         /// </summary>
-        /// <param name="gameLevel"></param>
-        public async UniTask LoadLevel(GameLevelSO gameLevel)
+        /// <param name="levelToLoad"></param>
+        public async UniTask LoadLevel(GameLevelSO levelToLoad)
         {
             if (_isLoading)
             {
                 if (_levelLoadQueue.Count < 1)
                 {
                     Debug.Log("Level is already loading, adding to queue");
-                    _levelLoadQueue.Enqueue(gameLevel);
+                    _levelLoadQueue.Enqueue(levelToLoad);
                 }
                 else
                 {
@@ -81,7 +88,7 @@ namespace Framework.LevelLoading
 
             if (_sceneTransitionVisuals)
             {
-                _sceneTransitionVisuals.SetTitleText(gameLevel.LevelTitle);
+                _sceneTransitionVisuals.SetTitleText(levelToLoad.LevelTitle);
                 await _sceneTransitionVisuals.FadeOut();
             }
 
@@ -95,31 +102,51 @@ namespace Framework.LevelLoading
                 UnloadBanks(CurrentLevel.FmodBanksToPreLoad);
             }
 
-            if (gameLevel.LevelType == GameLevelSO.LevelTypes.Gameplay)
+            if (levelToLoad.LevelType == GameLevelSO.LevelTypes.Gameplay)
             {
-                await LoadBanks(gameLevel.FmodBanksToPreLoad);
+                await LoadBanks(levelToLoad.FmodBanksToPreLoad);
             }
 
             // Unload the current scene
-            string sceneName = gameLevel.GameSceneName;
+            string sceneName = levelToLoad.GameSceneName;
             if (SceneManager.GetSceneByName(_currentLevelSceneName).isLoaded)
             {
                 await SceneManager.UnloadSceneAsync(_currentLevelSceneName);
-                _beatmapUnloadEvent.Raise(gameLevel.NormalBeatmap);
+
+                if (CurrentLevel.LevelType == GameLevelSO.LevelTypes.Gameplay)
+                {
+                    _beatmapUnloadEvent.Raise(levelToLoad.NormalBeatmap);
+                }
+
+                if (CurrentLevel.LevelType == GameLevelSO.LevelTypes.MainMenu
+                    && levelToLoad.LevelType != GameLevelSO.LevelTypes.MainMenu)
+                {
+                    _onExitMenuEvent.Raise();
+                }
             }
 
             // Load the new scene
             Debug.Log($"Loading scene {sceneName}");
             await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
             _currentLevelSceneName = sceneName;
-            CurrentLevel = gameLevel;
+            GameLevelSO previousLevel = CurrentLevel;
+            CurrentLevel = levelToLoad;
+
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
 
-            if (gameLevel.LevelType == GameLevelSO.LevelTypes.Gameplay)
+            if (levelToLoad.LevelType == GameLevelSO.LevelTypes.Gameplay)
             {
-                _beatmapStartEvent.Raise(gameLevel.NormalBeatmap);
-                BeatmapLevelDoneLoadingEvent?.Invoke(gameLevel.NormalBeatmap);
-                _previousBeatmapLevel = gameLevel;
+                _beatmapStartEvent.Raise(levelToLoad.NormalBeatmap);
+                BeatmapLevelDoneLoadingEvent?.Invoke(levelToLoad.NormalBeatmap);
+                _previousBeatmapLevel = levelToLoad;
+            }
+
+            if (previousLevel != null
+                && levelToLoad.LevelType == GameLevelSO.LevelTypes.MainMenu
+                && previousLevel.LevelType != GameLevelSO.LevelTypes.MainMenu)
+            {
+                _onEnterMenuEvent.Raise();
             }
 
             if (_sceneTransitionVisuals)

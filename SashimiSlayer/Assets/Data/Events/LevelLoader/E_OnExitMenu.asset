@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e10a3e7b9ac43c0b5c2230ba272d1fb, type: 3}
-  m_Name: E_OnBeatmapLoaded
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 11500000, guid: 058cd2ebe33d4d39a1b6fa61a6138c4c, type: 3}
+  m_Name: E_OnExitMenu
+  m_EditorClassIdentifier: Assembly-CSharp::Events.Basic.VoidEvent
   _description: 
   _debug: 1
