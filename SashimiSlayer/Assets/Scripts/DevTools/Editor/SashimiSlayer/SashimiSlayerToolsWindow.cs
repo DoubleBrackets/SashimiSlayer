@@ -35,8 +35,6 @@ namespace DevTools.Editor.SashimiSlayer
         {
             Debug.Log("SashimiSlayerToolsWindow Enabled");
 
-            _prefs = SashimiDevToolPrefs.instance;
-
             EditorApplication.playModeStateChanged += HandlePlayModeChanged;
             EditorSceneManager.sceneOpened += HandleSceneOpened;
 
@@ -74,6 +72,8 @@ namespace DevTools.Editor.SashimiSlayer
 
         private void OnGUI()
         {
+            _prefs = SashimiDevToolPrefs.instance;
+
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
 
             SashimiEditorGUIUtils.DrawBoldHeaderWithLayout("Basic Setup");
