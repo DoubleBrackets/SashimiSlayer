@@ -38,6 +38,7 @@ namespace GameInput.InputSources
         public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
+        public event Action OnToggleSkipLooping;
 
         private UpAxis _upAxis = UpAxis.Y;
 

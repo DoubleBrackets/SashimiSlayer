@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: E_ObjectSlicedEvent
   m_EditorClassIdentifier: 
   _description: Provides positional information on individual objects sliced
-  _debug: 1
+  _debug: 0

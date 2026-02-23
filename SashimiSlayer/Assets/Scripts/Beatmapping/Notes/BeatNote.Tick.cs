@@ -14,7 +14,8 @@ namespace Beatmapping.Notes
         public NoteTickedResults Tick(BeatmapRunner.TickInfo tickInfo, TickFlags tickFlags)
         {
             var didHitTarget = false;
-            var didMissInteraction = false;
+            NoteInteractionFinalResult interactionFinalResult = default;
+            var interactionProduced = false;
 
             UpdateTiming(tickInfo, tickFlags);
 
@@ -30,11 +31,11 @@ namespace Beatmapping.Notes
             // Only if this is NOT the first tick
             if (triggerInteractions && !_isFirstTick)
             {
-                HandleExitingInteractionWindow(
+                interactionProduced = HandleExitingInteractionWindow(
                     _noteTickInfo,
                     _prevTickInfo,
-                    out didHitTarget,
-                    out didMissInteraction);
+                    out interactionFinalResult,
+                    out didHitTarget);
             }
 
             // We might've skipped the spawn segment (e.g if the first tick is past the spawn segment)
@@ -86,8 +87,9 @@ namespace Beatmapping.Notes
 
             return new NoteTickedResults
             {
-                DidHitPlayer = didHitTarget,
-                DidMiss = didMissInteraction
+                HasInteractionFinalResult = interactionProduced,
+                TargetHit = didHitTarget,
+                InteractionFinalResult = interactionFinalResult
             };
         }
 
@@ -201,33 +203,52 @@ namespace Beatmapping.Notes
             return segmentIndex;
         }
 
-        private void HandleExitingInteractionWindow(
+        /// <summary>
+        ///     Handle exiting an interaction window. Returns true if an interaction final result was produced, false otherwise
+        /// </summary>
+        /// <param name="noteTickInfo"></param>
+        /// <param name="previousTiming"></param>
+        /// <param name="interactionFinalResult"></param>
+        /// <param name="didHitTarget"></param>
+        /// <returns></returns>
+        private bool HandleExitingInteractionWindow(
             NoteTickInfo noteTickInfo,
             NoteTickInfo previousTiming,
-            out bool hitTarget,
-            out bool missedInteraction)
+            out NoteInteractionFinalResult interactionFinalResult,
+            out bool didHitTarget)
         {
             NoteInteraction.NoteInteraction currentInsidePassWindowInteraction =
                 noteTickInfo.InsidePassInteractionWindow;
             NoteInteraction.NoteInteraction prevInsidePassWindowInteraction =
                 previousTiming.InsidePassInteractionWindow;
 
-            hitTarget = false;
-            missedInteraction = false;
+            didHitTarget = false;
+            interactionFinalResult = default;
 
-            // If we were previously in a passing interaction window, and now we're not, we've exited the window
-            // This does not work properly with overlapping windows...
-            bool didJustExit = prevInsidePassWindowInteraction != null && currentInsidePassWindowInteraction == null;
-            if (!didJustExit)
+            // If we were previously inside an interaction window, and now we're not, we've exited the window
+            // TODO: This does not work properly with overlapping windows
+            bool didJustExitInteractionWindow =
+                prevInsidePassWindowInteraction != null && currentInsidePassWindowInteraction == null;
+            if (!didJustExitInteractionWindow)
             {
-                return;
+                interactionFinalResult = default;
+                return false;
             }
 
             NoteInteraction.NoteInteraction.NoteInteractionState interactionState =
                 prevInsidePassWindowInteraction.State;
 
-            // If default state, then no action happened, so we need to handle a 'Late Miss'
-            // An early miss (a lockout) or a success were handled immediately, so no need to handle it here
+            // Special case blocks, since we want the "hit" to only happen when the window passes
+            // Even if it is already a failed interaction
+            // e.g if the player tries to block too early, we still want the "impact" to occur at the end instead of immediately
+            if (interactionState != NoteInteraction.NoteInteraction.NoteInteractionState.Success
+                && prevInsidePassWindowInteraction.Type == NoteInteractionType.Block)
+            {
+                didHitTarget = true;
+            }
+
+            // If the interaction ended without a success or failure, then we need to handle
+            // it here as a failure due to inaction
             if (interactionState == NoteInteraction.NoteInteraction.NoteInteractionState.Default)
             {
                 prevInsidePassWindowInteraction.SetFailed();
@@ -252,16 +273,13 @@ namespace Beatmapping.Notes
                         break;
                 }
 
-                missedInteraction = true;
-
                 OnInteractionFinalResult?.Invoke(previousTiming, finalResult);
+
+                interactionFinalResult = finalResult;
+                return true;
             }
 
-            if (interactionState != NoteInteraction.NoteInteraction.NoteInteractionState.Success
-                && prevInsidePassWindowInteraction.Type == NoteInteractionType.Block)
-            {
-                hitTarget = true;
-            }
+            return false;
         }
     }
 }

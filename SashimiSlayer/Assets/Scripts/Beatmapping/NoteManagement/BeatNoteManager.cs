@@ -12,22 +12,24 @@ namespace Beatmapping.NoteManagement
     {
         private readonly List<BeatNote> _activeBeatNotes = new();
 
-        private bool _spawningEnabled = true;
         public BeatmapConfigSo CurrentBeatmap { get; set; }
 
         private BeatNoteFactory _noteFactory;
 
-        public bool SpawningEnabled
-        {
-            get => _spawningEnabled;
-            set => _spawningEnabled = value;
-        }
+        public bool SpawningEnabled { get; set; }
+
+        public bool PauseSpawningForLoopGuard { get; set; }
 
         public BeatNoteManager(BeatNoteFactory noteFactory)
         {
             _noteFactory = noteFactory;
         }
 
+        /// <summary>
+        ///     Get the final results of all VALID note interactions for the given attempt
+        /// </summary>
+        /// <param name="attempt"></param>
+        /// <returns></returns>
         public IList<NoteInteractionFinalResult> GetNoteInteractionFinalResults(BeatmapInteractionAttempt attempt)
         {
             var results = new List<NoteInteractionFinalResult>();
@@ -62,7 +64,7 @@ namespace Beatmapping.NoteManagement
             BeatmapConfigSo beatmap,
             double initalizeTime)
         {
-            if (!_spawningEnabled)
+            if (!SpawningEnabled || PauseSpawningForLoopGuard)
             {
                 return null;
             }

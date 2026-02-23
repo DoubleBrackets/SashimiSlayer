@@ -1,7 +1,7 @@
-using Beatmapping.Scoring;
 using DG.Tweening;
 using EditorUtils.BoldHeader;
 using NaughtyAttributes;
+using Scoring;
 using Scoring.Events;
 using TMPro;
 using UnityEngine;

@@ -96,8 +96,6 @@ namespace Beatmapping.Timing
 
         public TickInfo CurrentTickInfo { get; private set; }
 
-        public event Action<EventInstance> OnBeatmapSoundtrackInstanceCreated;
-
         public event Action<TickInfo> OnTick;
 
         private BeatmapConfigSo _currentBeatmap;
@@ -140,11 +138,12 @@ namespace Beatmapping.Timing
             _currentBeatmap = null;
         }
 
-        public void BeginRunningBeatmap(BeatmapConfigSo beatmap)
+        public void BeginRunningBeatmap(BeatmapConfigSo beatmap, out EventInstance soundtrackInstance)
         {
             if (_currentBeatmap != null)
             {
                 Debug.LogWarning("Already running a beatmap, cannot run two on the same BeatmapRunner");
+                soundtrackInstance = default;
                 return;
             }
 
@@ -157,7 +156,7 @@ namespace Beatmapping.Timing
                 ? BeatmappingEditingSettings.TimelinePlayheadTime
                 : 0;
 
-            StartBeatmapTrack(beatmap, startTime);
+            StartBeatmapTrack(beatmap, startTime, out soundtrackInstance);
 
             _beatmapState = BeatmapState.WaitingForSoundtrackEvent;
 
@@ -302,7 +301,7 @@ namespace Beatmapping.Timing
             }
         }
 
-        private void StartBeatmapTrack(BeatmapConfigSo beatmap, double startTime)
+        private void StartBeatmapTrack(BeatmapConfigSo beatmap, double startTime, out EventInstance soundtrackInstance)
         {
             EventInstance soundtrack = RuntimeManager.CreateInstance(beatmap.BeatmapSoundtrackEvent);
 
@@ -315,7 +314,7 @@ namespace Beatmapping.Timing
 
             _beatmapSoundtrackInstance = soundtrack;
 
-            OnBeatmapSoundtrackInstanceCreated?.Invoke(soundtrack);
+            soundtrackInstance = soundtrack;
         }
 
         private double GetCurrentDspTime()

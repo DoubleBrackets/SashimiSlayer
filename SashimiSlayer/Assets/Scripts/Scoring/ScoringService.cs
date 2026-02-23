@@ -1,14 +1,14 @@
 using System;
+using Beatmapping;
 using Beatmapping.Events;
 using Beatmapping.NoteInteraction.DataTypes;
 using EditorUtils.BoldHeader;
 using Events.Basic;
 using NaughtyAttributes;
-using Scoring;
 using Scoring.Events;
 using UnityEngine;
 
-namespace Beatmapping.Scoring
+namespace Scoring
 {
     /// <summary>
     ///     Handles tracking gameplay score and interaction results

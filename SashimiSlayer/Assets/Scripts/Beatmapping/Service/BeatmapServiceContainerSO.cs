@@ -41,5 +41,10 @@ namespace Beatmapping.Service
         {
             _implementation?.BeginRunningBeatmap(beatmap);
         }
+
+        public void ToggleSkipLoop()
+        {
+            _implementation?.ToggleSkipLoop();
+        }
     }
 }

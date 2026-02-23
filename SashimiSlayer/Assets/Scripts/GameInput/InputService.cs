@@ -65,6 +65,7 @@ namespace GameInput
         public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
+        public event Action OnToggleSkipLooping;
 
         private float _angleMultiplier = 1f;
         private float _angleOffset;
@@ -191,6 +192,7 @@ namespace GameInput
             InputProvider.OnBlockPoseChanged += HandleBlockPoseChanged;
             InputProvider.OnSheathStateChanged += HandleSheatheStateChanged;
             InputProvider.OnToggleMenuInput += HandleOnToggleMenuInput;
+            InputProvider.OnToggleSkipLooping += HandleToggleSkipLooping;
         }
 
         private void EventPassthroughUnsub()
@@ -198,6 +200,7 @@ namespace GameInput
             InputProvider.OnBlockPoseChanged -= HandleBlockPoseChanged;
             InputProvider.OnSheathStateChanged -= HandleSheatheStateChanged;
             InputProvider.OnToggleMenuInput -= HandleOnToggleMenuInput;
+            InputProvider.OnToggleSkipLooping -= HandleToggleSkipLooping;
         }
 
         private void HandleOnToggleMenuInput()
@@ -239,6 +242,11 @@ namespace GameInput
             }
 
             OnSheathStateChanged?.Invoke(sheathState);
+        }
+
+        private void HandleToggleSkipLooping()
+        {
+            OnToggleSkipLooping?.Invoke();
         }
 
         public float GetSwordAngle()

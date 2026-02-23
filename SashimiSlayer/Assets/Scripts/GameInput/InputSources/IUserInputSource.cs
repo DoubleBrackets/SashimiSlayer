@@ -12,6 +12,7 @@ namespace GameInput.InputSources
         public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
+        public event Action OnToggleSkipLooping;
 
         /// <summary>
         ///     Get the current sword angle in degrees

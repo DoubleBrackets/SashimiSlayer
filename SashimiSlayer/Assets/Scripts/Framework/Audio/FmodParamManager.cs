@@ -10,10 +10,9 @@ using NaughtyAttributes;
 using Protag.Presentation.Events;
 using Protag.Presentation.Slicing;
 using UnityEngine;
-using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
-namespace Core.Audio
+namespace Framework.Audio
 {
     [Serializable]
     public struct PitchShiftValues
@@ -46,6 +45,9 @@ namespace Core.Audio
         [SerializeField]
         private BeatmapEvent _beatmapLoadedEvent;
 
+        [SerializeField]
+        private BeatmapEvent _beatmapUnloadedEvent;
+
         [Header("Param Refs")]
 
         [SerializeField]
@@ -66,29 +68,14 @@ namespace Core.Audio
 
         [SerializeField]
         [ParamRef]
-        private string _successStreakParam;
-
-        [SerializeField]
-        [ParamRef]
         private string _sliceTargetCountParam;
-
-        [Header("Unity Events")]
-
-        [SerializeField]
-        private UnityEvent<int> _onFmodStreakParamChanged;
-
-        private int _successStreak;
-
-        /// <summary>
-        ///     For exhibitioning; if toggled true, tutorial will not loop (streak is set to max)
-        /// </summary>
-        private bool _shouldSkipLoops;
 
         private void Awake()
         {
             _noteInteractionFinalResultEvent.AddListener(OnNoteInteractionFinalResult);
             _objectsSlicedEvent.AddListener(OnObjectsSliced);
             _beatmapLoadedEvent.AddListener(OnBeatmapLoaded);
+            _beatmapUnloadedEvent.AddListener(OnBeatmapUnloaded);
         }
 
         private void OnDestroy()
@@ -96,14 +83,7 @@ namespace Core.Audio
             _noteInteractionFinalResultEvent.RemoveListener(OnNoteInteractionFinalResult);
             _objectsSlicedEvent.RemoveListener(OnObjectsSliced);
             _beatmapLoadedEvent.RemoveListener(OnBeatmapLoaded);
-        }
-
-        private void OnGUI()
-        {
-            if (_shouldSkipLoops)
-            {
-                GUILayout.TextField("~");
-            }
+            _beatmapUnloadedEvent.RemoveListener(OnBeatmapUnloaded);
         }
 
         private void OnBeatmapLoaded(BeatmapConfigSo beatmap)
@@ -113,16 +93,18 @@ namespace Core.Audio
             SetParamByName(_slicePitchShiftParam, pitchShiftValues.SlicePitchShift);
             SetParamByName(_starBlockPitchShiftParam, pitchShiftValues.StarBlockPitchShift);
             SetParamByName(_shellBlockPitchShiftParam, pitchShiftValues.ShellBlockPitchShift);
+        }
 
-            EndSkipLoops();
+        private void OnBeatmapUnloaded(BeatmapConfigSo beatmap)
+        {
+            // Set interaction timing to "Perfect" when in menus
+            SetParamByName(_interactionTimingGlobalParam, 1);
         }
 
         private void OnNoteInteractionFinalResult(NoteInteractionFinalResult result)
         {
             if (result.Successful)
             {
-                _successStreak++;
-
                 var timingParamVal = 0;
                 switch (result.TimingResult.Score)
                 {
@@ -142,17 +124,8 @@ namespace Core.Audio
                         break;
                 }
 
+                Debug.Log(timingParamVal);
                 SetParamByName(_interactionTimingGlobalParam, timingParamVal);
-            }
-            else
-            {
-                _successStreak = 0;
-            }
-
-            // If auto clear is toggled, leave fmod param at max to avoid looping
-            if (!_shouldSkipLoops)
-            {
-                SetStreakParam(_successStreak);
             }
         }
 
@@ -167,13 +140,9 @@ namespace Core.Audio
 
             // Set slice target count
             SetParamByName(_sliceTargetCountParam, objects.Count);
-
-            // Set interaction timing to "Perfect"
-            // For UI elements this is intended, and for notes, this parameter will be overriden by the note interaction result
-            SetParamByName(_interactionTimingGlobalParam, 1);
         }
 
-        private void SetParamByName(string param, float value)
+        public static void SetParamByName(string param, float value)
         {
             FMOD.Studio.System studioSystem = RuntimeManager.StudioSystem;
             RESULT result = studioSystem.setParameterByName(param, value, true);
@@ -181,27 +150,6 @@ namespace Core.Audio
             {
                 Debug.Log($"Failed to set FMOD parameter '{param}' to {value}: {result}");
             }
-        }
-
-        public void BeginSkipLoops()
-        {
-            _shouldSkipLoops = true;
-
-            if (_shouldSkipLoops)
-            {
-                SetStreakParam(99);
-            }
-        }
-
-        public void EndSkipLoops()
-        {
-            _shouldSkipLoops = false;
-        }
-
-        private void SetStreakParam(int val)
-        {
-            SetParamByName(_successStreakParam, val);
-            _onFmodStreakParamChanged?.Invoke(val);
         }
     }
 }

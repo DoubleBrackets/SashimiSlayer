@@ -1,11 +1,15 @@
 using System.Collections.Generic;
+using System.Linq;
 using Beatmapping.Data;
 using Beatmapping.Events;
 using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.NoteManagement;
 using Beatmapping.Notes;
 using Beatmapping.Timing;
+using Beatmapping.Timing.LoopHandler;
 using Events.Basic;
+using FMOD.Studio;
+using FMODUnity;
 using Framework;
 using Interactions.Framework;
 using NaughtyAttributes;
@@ -31,6 +35,12 @@ namespace Beatmapping.Service
         [SerializeField]
         private Transform _noteParentTransform;
 
+        [Header("FMODParams")]
+
+        [SerializeField]
+        [ParamRef]
+        private string _successStreakParam;
+
         [Header("Channels (In)")]
 
         [SerializeField]
@@ -48,6 +58,10 @@ namespace Beatmapping.Service
         private BeatmapConfigSo _currentBeatmap;
 
         private bool _initialized;
+
+        private int _currentSuccessStreak;
+
+        private ILoopHandler _loopHandler;
 
         /// <summary>
         ///     We want to initialize this in both edit and play mode to support editor beatmapping, but awake
@@ -82,24 +96,37 @@ namespace Beatmapping.Service
             {
                 _interactionService = ServiceLocator.GetService<IInteractionService>();
                 _beatmapServiceContainer.RegisterImplementation(this);
+                _loopHandler = new BeatmapFMODLoopHandler(_successStreakParam);
             }
             else
             {
                 // Mock it
                 _interactionService = new NullInteractionService();
+                _loopHandler = new NullLoopHandler();
             }
 
             var noteFactory = new BeatNoteFactory(_noteParentTransform, _interactionService);
             _beatNoteManager = new BeatNoteManager(noteFactory);
 
             _setNoteSpawnEnabledEvent.AddListener(HandleSetNoteSpawningEnabled);
+            _loopHandler.OnPauseNoteSpawning += HandlePauseNoteSpawning;
+
             _beatmapRunner.Initialize();
         }
 
         public void BeginRunningBeatmap(BeatmapConfigSo beatmap)
         {
             _currentBeatmap = beatmap;
-            _beatmapRunner.BeginRunningBeatmap(beatmap);
+            _beatmapRunner.BeginRunningBeatmap(beatmap, out EventInstance soundtrackInstance);
+
+            _loopHandler.SetupNewBeatmap(soundtrackInstance);
+
+            _currentSuccessStreak = 0;
+        }
+
+        public void ToggleSkipLoop()
+        {
+            _loopHandler.ToggleSkipLoops();
         }
 
         private void HandleSetNoteSpawningEnabled(bool noteSpawningEnabled)
@@ -120,9 +147,20 @@ namespace Beatmapping.Service
             }
 
             _beatmapServiceContainer.DeregisterImplementation();
+
+            if (_loopHandler != null)
+            {
+                _loopHandler.OnPauseNoteSpawning -= HandlePauseNoteSpawning;
+            }
+
             _beatmapRunner.Cleanup();
 
             _initialized = false;
+        }
+
+        private void HandlePauseNoteSpawning(bool pause)
+        {
+            _beatNoteManager.PauseSpawningForLoopGuard = pause;
         }
 
         public BeatmapTickFinalResults TickForward()
@@ -131,6 +169,19 @@ namespace Beatmapping.Service
 
             List<NoteTickedResults> noteTickResults =
                 _beatNoteManager.TickNotes(_beatmapRunner.CurrentTickInfo, BeatNote.TickFlags.All);
+
+            IList<NoteInteractionFinalResult> interactionResults = noteTickResults
+                .Where(r => r.HasInteractionFinalResult)
+                .Select(r => r.InteractionFinalResult)
+                .ToList();
+
+            foreach (NoteInteractionFinalResult result in interactionResults)
+            {
+                ProcessInteractionRes(result);
+            }
+
+            _loopHandler.Tick(_beatmapRunner.CurrentTickInfo);
+
             return new BeatmapTickFinalResults
             {
                 NoteTickedResults = noteTickResults,
@@ -144,10 +195,26 @@ namespace Beatmapping.Service
 
             foreach (NoteInteractionFinalResult result in results)
             {
-                _noteInteractionFinalResultEvent.Raise(result);
+                ProcessInteractionRes(result);
             }
 
             return results;
+        }
+
+        private void ProcessInteractionRes(NoteInteractionFinalResult result)
+        {
+            _noteInteractionFinalResultEvent.Raise(result);
+
+            if (result.Successful)
+            {
+                _currentSuccessStreak++;
+            }
+            else
+            {
+                _currentSuccessStreak = 0;
+            }
+
+            _loopHandler.SetSuccessStreak(_currentSuccessStreak);
         }
 
         public BeatNote SpawnNote(BeatNoteTypeSO hitConfig,
@@ -161,6 +228,14 @@ namespace Beatmapping.Service
         public void CleanupNote(BeatNote beatNote)
         {
             _beatNoteManager.CleanupNote(beatNote);
+        }
+
+        private void OnGUI()
+        {
+            if (_loopHandler.IsSkippingLoops)
+            {
+                GUILayout.TextField("~");
+            }
         }
     }
 }

@@ -80,14 +80,12 @@ namespace GameInput.InputSources
         private UnityEvent _onExhibitionInvertAimEvent;
 
         [SerializeField]
-        private UnityEvent _onExhibitionSkipLoopEvent;
-
-        [SerializeField]
         private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
 
         public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
+        public event Action OnToggleSkipLooping;
 
         private Vector2 _mousePos;
         private BlockPoses _blockPoses;
@@ -347,7 +345,7 @@ namespace GameInput.InputSources
         {
             if (context.performed)
             {
-                _onExhibitionSkipLoopEvent?.Invoke();
+                OnToggleSkipLooping?.Invoke();
             }
         }
 

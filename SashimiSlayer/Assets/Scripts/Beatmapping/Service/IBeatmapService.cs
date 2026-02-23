@@ -18,5 +18,7 @@ namespace Beatmapping.Service
         public BeatmapTickFinalResults TickForward();
 
         public void BeginRunningBeatmap(BeatmapConfigSo beatmap);
+
+        public void ToggleSkipLoop();
     }
 }

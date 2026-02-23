@@ -22,8 +22,19 @@ namespace Beatmapping.NoteInteraction
 
         public enum NoteInteractionState
         {
+            /// <summary>
+            ///     No valid interaction attempt has been made yet
+            /// </summary>
             Default,
+
+            /// <summary>
+            ///     An interaction attempt was made, but it failed (e.g missed timing)
+            /// </summary>
             Fail,
+
+            /// <summary>
+            ///     An interaction attempt was made and succeeded
+            /// </summary>
             Success
         }
 

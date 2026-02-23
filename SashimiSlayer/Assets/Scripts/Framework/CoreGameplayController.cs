@@ -47,6 +47,7 @@ namespace Framework
 
             _userInputService.OnBlockPoseChanged += HandleBlockPoseChanged;
             _userInputService.OnSheathStateChanged += HandleSheathStateChanged;
+            _userInputService.OnToggleSkipLooping += HandleToggleSkipLooping;
 
             _levelService.BeatmapLevelDoneLoadingEvent += BeginRunningBeatmap;
         }
@@ -55,6 +56,7 @@ namespace Framework
         {
             _userInputService.OnBlockPoseChanged -= HandleBlockPoseChanged;
             _userInputService.OnSheathStateChanged -= HandleSheathStateChanged;
+            _userInputService.OnToggleSkipLooping -= HandleToggleSkipLooping;
 
             _levelService.BeatmapLevelDoneLoadingEvent -= BeginRunningBeatmap;
         }
@@ -71,7 +73,7 @@ namespace Framework
 
             IList<NoteTickedResults> noteTickResults = tickBeatmapResult.NoteTickedResults;
 
-            bool playerHit = noteTickResults.Any(a => a.DidHitPlayer);
+            bool playerHit = noteTickResults.Any(a => a.TargetHit);
 
             if (playerHit)
             {
@@ -226,6 +228,11 @@ namespace Framework
                     Position = ProtagGlobalData.ProtagSwordPivot
                 }
             });
+        }
+
+        private void HandleToggleSkipLooping()
+        {
+            _beatmapService.ToggleSkipLoop();
         }
 
         #endregion

@@ -350,6 +350,7 @@ MonoBehaviour:
     type: 2}
   _beatmapRunner: {fileID: 2024484109156033776}
   _noteParentTransform: {fileID: 610212186903872423}
+  _successStreakParam: SuccessStreak
   _setNoteSpawnEnabledEvent: {fileID: 11400000, guid: cf723e3ec26681646873098fad8d1137,
     type: 2}
   _noteInteractionFinalResultEvent: {fileID: 11400000, guid: 62c8f0224e6cd4b4885d7ee487e3bab6,
