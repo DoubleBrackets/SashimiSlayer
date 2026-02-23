@@ -14,14 +14,11 @@ namespace Beatmapping.NoteManagement
 
         private BeatNoteFactory _noteFactory;
 
-        public bool SpawningEnabled { get; set; }
-
         public bool PauseSpawningForLoopGuard { get; set; }
 
         public BeatNoteManager(BeatNoteFactory noteFactory)
         {
             _noteFactory = noteFactory;
-            SpawningEnabled = true;
             PauseSpawningForLoopGuard = false;
         }
 
@@ -64,7 +61,7 @@ namespace Beatmapping.NoteManagement
             BeatmapConfigSo beatmap,
             double initalizeTime)
         {
-            if (!SpawningEnabled || PauseSpawningForLoopGuard)
+            if (PauseSpawningForLoopGuard)
             {
                 return null;
             }

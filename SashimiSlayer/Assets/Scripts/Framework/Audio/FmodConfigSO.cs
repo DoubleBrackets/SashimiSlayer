@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Audio
+namespace Framework.Audio
 {
     [CreateAssetMenu(fileName = "FmodConfig")]
     public class FmodConfigSo : ScriptableObject

@@ -7,7 +7,6 @@ using Beatmapping.NoteManagement;
 using Beatmapping.Notes;
 using Beatmapping.Timing;
 using Beatmapping.Timing.LoopHandler;
-using Events.Basic;
 using FMOD.Studio;
 using FMODUnity;
 using Framework;
@@ -40,11 +39,6 @@ namespace Beatmapping.Service
         [SerializeField]
         [ParamRef]
         private string _successStreakParam;
-
-        [Header("Channels (In)")]
-
-        [SerializeField]
-        private BoolEvent _setNoteSpawnEnabledEvent;
 
         [Header("Events (Out)")]
 
@@ -108,7 +102,6 @@ namespace Beatmapping.Service
             var noteFactory = new BeatNoteFactory(_noteParentTransform, _interactionService);
             _beatNoteManager = new BeatNoteManager(noteFactory);
 
-            _setNoteSpawnEnabledEvent.AddListener(HandleSetNoteSpawningEnabled);
             _loopHandler.OnPauseNoteSpawning += HandlePauseNoteSpawning;
 
             _beatmapRunner.Initialize();
@@ -129,12 +122,6 @@ namespace Beatmapping.Service
             _loopHandler.ToggleSkipLoops();
         }
 
-        private void HandleSetNoteSpawningEnabled(bool noteSpawningEnabled)
-        {
-            Debug.Log(noteSpawningEnabled);
-            _beatNoteManager.SpawningEnabled = noteSpawningEnabled;
-        }
-
         private void OnDestroy()
         {
             Cleanup();
@@ -153,8 +140,6 @@ namespace Beatmapping.Service
             {
                 _loopHandler.OnPauseNoteSpawning -= HandlePauseNoteSpawning;
             }
-
-            _setNoteSpawnEnabledEvent.RemoveListener(HandleSetNoteSpawningEnabled);
 
             _beatmapRunner.Cleanup();
 

@@ -5,7 +5,7 @@ using UnityEngine;
 using ADVANCEDSETTINGS = FMOD.Studio.ADVANCEDSETTINGS;
 using Debug = UnityEngine.Debug;
 
-namespace Core.Audio
+namespace Framework.Audio
 {
     /// <summary>
     ///     Callback handler for FMOD to set up the FMOD system with the correct settings.
