@@ -124,7 +124,6 @@ namespace Framework.Audio
                         break;
                 }
 
-                Debug.Log(timingParamVal);
                 SetParamByName(_interactionTimingGlobalParam, timingParamVal);
             }
         }

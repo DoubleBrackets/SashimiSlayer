@@ -12,8 +12,6 @@ namespace Beatmapping.NoteManagement
     {
         private readonly List<BeatNote> _activeBeatNotes = new();
 
-        public BeatmapConfigSo CurrentBeatmap { get; set; }
-
         private BeatNoteFactory _noteFactory;
 
         public bool SpawningEnabled { get; set; }
@@ -23,6 +21,8 @@ namespace Beatmapping.NoteManagement
         public BeatNoteManager(BeatNoteFactory noteFactory)
         {
             _noteFactory = noteFactory;
+            SpawningEnabled = true;
+            PauseSpawningForLoopGuard = false;
         }
 
         /// <summary>

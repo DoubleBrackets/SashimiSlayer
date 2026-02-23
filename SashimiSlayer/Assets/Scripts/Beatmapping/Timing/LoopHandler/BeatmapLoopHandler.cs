@@ -28,9 +28,9 @@ namespace Beatmapping.Timing.LoopHandler
      * After disabling, re-enable after the loop occurs, which we check by comparing the current beatmap time
      * to the beatmap time when the guard marker was passed
      */
-    public class BeatmapFMODLoopHandler : ILoopHandler
+    public class BeatmapLoopHandler : ILoopHandler
     {
-        private static BeatmapFMODLoopHandler _instance;
+        private static BeatmapLoopHandler _instance;
 
         public bool IsSkippingLoops => _skippingLoops;
 
@@ -58,7 +58,7 @@ namespace Beatmapping.Timing.LoopHandler
 
         public event Action<bool> OnPauseNoteSpawning;
 
-        public BeatmapFMODLoopHandler(string successStreakParam)
+        public BeatmapLoopHandler(string successStreakParam)
         {
             _instance = this;
             _successStreakParam = successStreakParam;
@@ -178,7 +178,7 @@ namespace Beatmapping.Timing.LoopHandler
 
         private void SetNoteSpawningPaused(bool paused)
         {
-            OnPauseNoteSpawning?.Invoke(!paused);
+            OnPauseNoteSpawning?.Invoke(paused);
         }
     }
 }

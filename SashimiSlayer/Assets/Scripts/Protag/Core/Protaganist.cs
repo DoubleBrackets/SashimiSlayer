@@ -146,8 +146,6 @@ namespace Protag.Core
 
         public void DoSlicePresentation(List<IInteractable> finalInteractedWith, SlicePresentationTypes style)
         {
-            Debug.Log($"Final Interacted with {finalInteractedWith.Count}");
-
             var slicedObjectList = new ProtagSlicedObjectList
             {
                 SlicedObjects = finalInteractedWith.Select(i => new ProtagSlicedObject

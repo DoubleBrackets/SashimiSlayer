@@ -96,7 +96,7 @@ namespace Beatmapping.Service
             {
                 _interactionService = ServiceLocator.GetService<IInteractionService>();
                 _beatmapServiceContainer.RegisterImplementation(this);
-                _loopHandler = new BeatmapFMODLoopHandler(_successStreakParam);
+                _loopHandler = new BeatmapLoopHandler(_successStreakParam);
             }
             else
             {
@@ -131,6 +131,7 @@ namespace Beatmapping.Service
 
         private void HandleSetNoteSpawningEnabled(bool noteSpawningEnabled)
         {
+            Debug.Log(noteSpawningEnabled);
             _beatNoteManager.SpawningEnabled = noteSpawningEnabled;
         }
 
@@ -152,6 +153,8 @@ namespace Beatmapping.Service
             {
                 _loopHandler.OnPauseNoteSpawning -= HandlePauseNoteSpawning;
             }
+
+            _setNoteSpawnEnabledEvent.RemoveListener(HandleSetNoteSpawningEnabled);
 
             _beatmapRunner.Cleanup();
 
