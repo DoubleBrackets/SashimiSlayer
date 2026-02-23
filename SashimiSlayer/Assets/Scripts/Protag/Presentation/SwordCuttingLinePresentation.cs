@@ -39,6 +39,9 @@ namespace Protag.Presentation
         private ProtagSwordStateEvent _onSwordUnsheathed;
 
         [SerializeField]
+        private ProtagSwordStateEvent _onSuccessfulSlice;
+
+        [SerializeField]
         private ProtagSwordStateEvent _onCreateDistortionEvent;
 
         private float _swordAngle;
@@ -52,6 +55,7 @@ namespace Protag.Presentation
             _onSwordRotated.AddListener(HandleSwordRotated);
             _onSwordSheathed.AddListener(OnSwordSheathed);
             _onSwordUnsheathed.AddListener(OnSwordUnsheathed);
+            _onSuccessfulSlice.AddListener(OnSuccessfulSlice);
 
             _onCreateDistortionEvent.AddListener(CreateDistortion);
 
@@ -69,8 +73,14 @@ namespace Protag.Presentation
             _onSwordRotated.RemoveListener(HandleSwordRotated);
             _onSwordSheathed.RemoveListener(OnSwordSheathed);
             _onSwordUnsheathed.RemoveListener(OnSwordUnsheathed);
+            _onSuccessfulSlice.RemoveListener(OnSuccessfulSlice);
 
             _onCreateDistortionEvent.RemoveListener(CreateDistortion);
+        }
+
+        private void OnSuccessfulSlice(Protaganist.ProtagSwordState state)
+        {
+            RotateSliceParticles(_swordAngle);
         }
 
         private void HandleSwordRotated(Protaganist.ProtagSwordState swordState)
@@ -132,7 +142,6 @@ namespace Protag.Presentation
         {
             UpdateLineRenOrientation(_sheathedLineRen, _swordAngle, CurrentSwordPivot);
             UpdateLineRenOrientation(_unsheathedLineRen, _swordAngle, CurrentSwordPivot);
-            RotateSliceParticles(_swordAngle);
         }
 
         private void UpdateLineRenOrientation(LineRenderer lineRen, float angle, Vector3 pivot)
