@@ -142,9 +142,9 @@ namespace Framework.LevelLoading
                 _previousBeatmapLevel = levelToLoad;
             }
 
-            if (previousLevel != null
-                && levelToLoad.LevelType == GameLevelSO.LevelTypes.MainMenu
-                && previousLevel.LevelType != GameLevelSO.LevelTypes.MainMenu)
+            bool wasInMainMenu = previousLevel != null && previousLevel.LevelType == GameLevelSO.LevelTypes.MainMenu;
+            if (levelToLoad.LevelType == GameLevelSO.LevelTypes.MainMenu
+                && !wasInMainMenu)
             {
                 _onEnterMenuEvent.Raise();
             }

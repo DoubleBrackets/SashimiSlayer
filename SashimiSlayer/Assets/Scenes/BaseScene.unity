@@ -1704,7 +1704,7 @@ MonoBehaviour:
       Data4: 1431698528
     Path: event:/Menus/MenuMusic
   Event: 
-  EventPlayTrigger: 1
+  EventPlayTrigger: 0
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0

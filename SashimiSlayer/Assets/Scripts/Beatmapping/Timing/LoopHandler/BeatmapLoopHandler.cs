@@ -78,6 +78,7 @@ namespace Beatmapping.Timing.LoopHandler
             if (tickInfo.BeatmapTime < _guardMarkerBeatmapTime)
             {
                 _successfulStreakRequiredToUnlockLoopRegion = 0;
+                _guardMarkerBeatmapTime = 0;
                 SetNoteSpawningPaused(false);
             }
 

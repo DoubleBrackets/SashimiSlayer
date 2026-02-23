@@ -8,6 +8,10 @@ namespace Events.Basic
         public void Raise()
         {
             _internalVoidEvent?.Invoke();
+            if (_debug)
+            {
+                Debug.Log($"Event {name} raised");
+            }
         }
     }
 }

@@ -235,6 +235,12 @@ namespace Beatmapping.Timing
             double currentEventTime = eventTime / 1000.0;
             double remainingDeltaTime = currentEventTime - _previousEventTime;
 
+            if (remainingDeltaTime <= 0)
+            {
+                DoTick(currentEventTime);
+                return;
+            }
+
             // Tick the beatmap until we've caught up to the current event time
             // Reduces skipping artifacts on lag spikes
             while (remainingDeltaTime > 0)
