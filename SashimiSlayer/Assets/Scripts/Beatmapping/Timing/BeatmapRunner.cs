@@ -16,6 +16,8 @@ namespace Beatmapping.Timing
     /// </summary>
     public class BeatmapRunner : MonoBehaviour
     {
+        private const double MinDeltaTime = 0.05f;
+
         private enum BeatmapState
         {
             Unloaded,
@@ -231,8 +233,24 @@ namespace Beatmapping.Timing
             // Update dps time
             _beatmapSoundtrackInstance.getTimelinePosition(out int eventTime);
             double currentEventTime = eventTime / 1000.0;
-            double eventDeltaTime = currentEventTime - _previousEventTime;
+            double remainingDeltaTime = currentEventTime - _previousEventTime;
 
+            // Tick the beatmap until we've caught up to the current event time
+            // Reduces skipping artifacts on lag spikes
+            while (remainingDeltaTime > 0)
+            {
+                double newRemainingDeltaTime = Math.Max(0, remainingDeltaTime - MinDeltaTime);
+                double iterationDeltaTime = remainingDeltaTime - newRemainingDeltaTime;
+                double tickIterationEventTime = _previousEventTime + iterationDeltaTime;
+
+                DoTick(tickIterationEventTime);
+
+                remainingDeltaTime = newRemainingDeltaTime;
+            }
+        }
+
+        private void DoTick(double currentEventTime)
+        {
             // Calculate time since start of beatmap
             double currentBeatmapTime = currentEventTime - _beatmapStartTime;
             double previousBeatmapTime = _previousEventTime - _beatmapStartTime;

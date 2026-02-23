@@ -24993,9 +24993,8 @@ MonoBehaviour:
   _onSwordRotated: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47, type: 2}
   _onSwordSheathed: {fileID: 11400000, guid: d0d9571abd5476346a304f13acb437c6, type: 2}
   _onSwordUnsheathed: {fileID: 11400000, guid: 1fc9d5635b7fb36408b893568c3ada1a, type: 2}
+  _onSuccessfulSlice: {fileID: 11400000, guid: c9cd6894bca4a8c43b3f69e78d991d17, type: 2}
   _onCreateDistortionEvent: {fileID: 11400000, guid: c9cd6894bca4a8c43b3f69e78d991d17,
-    type: 2}
-  _swordPivotPositionChangeEvent: {fileID: 11400000, guid: 55a449ae478ed574c96efac265420098,
     type: 2}
 --- !u!1 &8492881330074626962
 GameObject:
