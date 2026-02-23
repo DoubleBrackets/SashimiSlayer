@@ -38,8 +38,6 @@ namespace DevTools.Editor.SashimiSlayer
             _prefs = SashimiDevToolPrefs.instance;
 
             EditorApplication.playModeStateChanged += HandlePlayModeChanged;
-            EditorApplication.wantsToQuit += HandleWantsToQuit;
-            AssemblyReloadEvents.beforeAssemblyReload += HandleAssemblyReload;
             EditorSceneManager.sceneOpened += HandleSceneOpened;
 
             SelectBeatmapInScene();
@@ -48,20 +46,7 @@ namespace DevTools.Editor.SashimiSlayer
         private void OnDisable()
         {
             EditorApplication.playModeStateChanged -= HandlePlayModeChanged;
-            EditorApplication.wantsToQuit -= HandleWantsToQuit;
-            AssemblyReloadEvents.beforeAssemblyReload -= HandleAssemblyReload;
             EditorSceneManager.sceneOpened -= HandleSceneOpened;
-        }
-
-        private bool HandleWantsToQuit()
-        {
-            _prefs.SaveThis();
-            return true;
-        }
-
-        private void HandleAssemblyReload()
-        {
-            _prefs.SaveThis();
         }
 
         /// <summary>

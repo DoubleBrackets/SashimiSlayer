@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using CommonTypes;
-using Events.Basic;
 using Protag.Core;
 using Protag.Presentation.Events;
+using Protag.SharedData;
 using UnityEngine;
 
 namespace Protag.Presentation
@@ -41,16 +41,11 @@ namespace Protag.Presentation
         [SerializeField]
         private ProtagSwordStateEvent _onCreateDistortionEvent;
 
-        [Header("Channels (In)")]
-
-        [SerializeField]
-        private Vector2Event _swordPivotPositionChangeEvent;
-
         private float _swordAngle;
 
         private readonly List<ParticleSystem.MinMaxCurve> _initialParticleRot = new();
 
-        private Vector3 _currentSwordPivot;
+        private Vector2 CurrentSwordPivot => ProtagGlobalData.ProtagSwordPivot;
 
         private void Awake()
         {
@@ -59,10 +54,14 @@ namespace Protag.Presentation
             _onSwordUnsheathed.AddListener(OnSwordUnsheathed);
 
             _onCreateDistortionEvent.AddListener(CreateDistortion);
-            _swordPivotPositionChangeEvent.AddListener(SetPosition);
 
             SetSheatheState(SheathState.Sheathed);
             CacheInitialParticleRotations(_allSliceParticles);
+        }
+
+        private void Start()
+        {
+            UpdatePresentation();
         }
 
         private void OnDestroy()
@@ -72,7 +71,6 @@ namespace Protag.Presentation
             _onSwordUnsheathed.RemoveListener(OnSwordUnsheathed);
 
             _onCreateDistortionEvent.RemoveListener(CreateDistortion);
-            _swordPivotPositionChangeEvent.RemoveListener(SetPosition);
         }
 
         private void HandleSwordRotated(Protaganist.ProtagSwordState swordState)
@@ -111,7 +109,7 @@ namespace Protag.Presentation
 
         private void CreateDistortion()
         {
-            Instantiate(_distortionPrefab, _currentSwordPivot, Quaternion.Euler(0, 0, _swordAngle));
+            Instantiate(_distortionPrefab, CurrentSwordPivot, Quaternion.Euler(0, 0, _swordAngle));
         }
 
         private void OnSwordUnsheathed(Protaganist.ProtagSwordState state)
@@ -130,16 +128,10 @@ namespace Protag.Presentation
             _unsheathedLineRen.enabled = state == SheathState.Unsheathed;
         }
 
-        private void SetPosition(Vector2 position)
-        {
-            _currentSwordPivot = position;
-            UpdatePresentation();
-        }
-
         private void UpdatePresentation()
         {
-            UpdateLineRenOrientation(_sheathedLineRen, _swordAngle, _currentSwordPivot);
-            UpdateLineRenOrientation(_unsheathedLineRen, _swordAngle, _currentSwordPivot);
+            UpdateLineRenOrientation(_sheathedLineRen, _swordAngle, CurrentSwordPivot);
+            UpdateLineRenOrientation(_unsheathedLineRen, _swordAngle, CurrentSwordPivot);
             RotateSliceParticles(_swordAngle);
         }
 

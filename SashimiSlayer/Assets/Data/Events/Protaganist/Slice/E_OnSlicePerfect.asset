@@ -16,4 +16,4 @@ MonoBehaviour:
 
     Does not pass data
     about what was sliced'
-  _debug: 0
+  _debug: 1

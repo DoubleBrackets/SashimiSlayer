@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BlockRumble
   m_EditorClassIdentifier: Assembly-CSharp::GameInput.Haptics.RumbleFeedbackSO
   <RumbleProfileLowFreq>k__BackingField:
-    <Duration>k__BackingField: 0.1
-    <Amplitude>k__BackingField: 0.8
+    <Duration>k__BackingField: 0.15
+    <Amplitude>k__BackingField: 1
     <Curve>k__BackingField:
       serializedVersion: 2
       m_Curve:

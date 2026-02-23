@@ -13,6 +13,7 @@ using GameInput.Interface;
 using Interactions.DataTypes;
 using Interactions.Framework;
 using Protag.Core;
+using Protag.SharedData;
 using Unity.VisualScripting;
 
 namespace Framework
@@ -63,7 +64,7 @@ namespace Framework
             _beatmapService.BeginRunningBeatmap(beatmap);
         }
 
-        public void Update()
+        public void TickGameplay()
         {
             HandleSwordAngleChanged(_userInputService.GetSwordAngle());
             BeatmapTickFinalResults tickBeatmapResult = _beatmapService.TickForward();
@@ -192,7 +193,7 @@ namespace Framework
                 Aim = new SwordAim
                 {
                     Angle = _protaganist.SwordAngle,
-                    Position = _protaganist.SwordPosition
+                    Position = ProtagGlobalData.ProtagSwordPivot
                 }
             });
         }
@@ -222,7 +223,7 @@ namespace Framework
                 Aim = new SwordAim
                 {
                     Angle = _protaganist.SwordAngle,
-                    Position = _protaganist.SwordPosition
+                    Position = ProtagGlobalData.ProtagSwordPivot
                 }
             });
         }

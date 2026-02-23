@@ -157,7 +157,7 @@ namespace Framework
         {
             if (_gameplayController != null)
             {
-                _gameplayController.Update();
+                _gameplayController.TickGameplay();
             }
         }
     }

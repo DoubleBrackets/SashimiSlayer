@@ -40,7 +40,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   <RumbleProfileHighFreq>k__BackingField:
-    <Duration>k__BackingField: 0.35
+    <Duration>k__BackingField: 0.3
     <Amplitude>k__BackingField: 4
     <Curve>k__BackingField:
       serializedVersion: 2

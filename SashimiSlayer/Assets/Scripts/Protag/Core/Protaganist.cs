@@ -77,17 +77,11 @@ namespace Protag.Core
         [SerializeField]
         private VoidEvent _onDrawDebugGuiEvent;
 
-        [Header("Channels (In)")]
-
-        [SerializeField]
-        private Vector2Event _protagSetSwordPivot;
-
         /// <summary>
         ///     The position that notes move towards
         /// </summary>
         public Vector3 NoteTargetPosition { get; set; }
 
-        public Vector3 SwordPosition => _currentSwordState.SwordPosition;
         public float SwordAngle => _currentSwordState.SwordAngle;
 
         private ProtagSwordState _currentSwordState;
@@ -95,13 +89,11 @@ namespace Protag.Core
         private void Awake()
         {
             _onDrawDebugGuiEvent.AddListener(HandleDrawDebugGUI);
-            _protagSetSwordPivot.AddListener(SetSwordPosition);
         }
 
         private void OnDestroy()
         {
             _onDrawDebugGuiEvent.RemoveListener(HandleDrawDebugGUI);
-            _protagSetSwordPivot.RemoveListener(SetSwordPosition);
         }
 
         private void HandleDrawDebugGUI()
@@ -150,11 +142,6 @@ namespace Protag.Core
         {
             _currentSwordState.BlockPose = blockPose;
             _tryBlock.Raise(_currentSwordState);
-        }
-
-        public void SetSwordPosition(Vector2 position)
-        {
-            _currentSwordState.SwordPosition = position;
         }
 
         public void DoSlicePresentation(List<IInteractable> finalInteractedWith, SlicePresentationTypes style)

@@ -4,7 +4,7 @@ using CommonTypes;
 using Events;
 using Framework;
 using GameInput.Haptics;
-using Protag.Core;
+using Protag.SharedData;
 using Saving;
 using UnityEngine;
 using UnityEngine.Events;
@@ -291,10 +291,10 @@ namespace GameInput.InputSources
         public void OnMousePos(InputAction.CallbackContext context)
         {
             var newMousePos = context.ReadValue<Vector2>();
-            if (newMousePos != _mousePos && ServiceLocator.GetService<Protaganist>() != null && Camera.main != null)
+            if (newMousePos != _mousePos && Camera.main != null)
             {
                 Vector2 screenCenter =
-                    Camera.main.WorldToScreenPoint(ServiceLocator.GetService<Protaganist>().SwordPosition);
+                    Camera.main.WorldToScreenPoint(ProtagGlobalData.ProtagSwordPivot);
                 Vector2 mouseDelta = newMousePos - screenCenter;
                 _rawSwordAngle = JoystickVectorToAngle(mouseDelta);
             }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207443418104215904}
+  - component: {fileID: 2984077081946432802}
   m_Layer: 0
   m_Name: NoteTarget
   m_TagString: Untagged
@@ -31,6 +32,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5963297688816790602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2984077081946432802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173543765282030318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389953715bf94c0ca6b0eaa5025d7a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Protag.SetProtagTargetPos
 --- !u!1 &2458498196661927274
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711670906277985343}
+  - component: {fileID: 6092470509005652618}
   m_Layer: 0
   m_Name: SwordPivot
   m_TagString: Untagged
@@ -62,6 +76,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5963297688816790602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6092470509005652618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458498196661927274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee9f17f900640444baf3f8ed11ab727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Protag.SetSwordPivot
 --- !u!1 &3950902060585002301
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +97,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5963297688816790602}
-  - component: {fileID: 4248893675434110695}
   m_Layer: 0
   m_Name: ProtagBody
   m_TagString: Untagged
@@ -100,22 +125,6 @@ Transform:
   - {fileID: 3913546295784471621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4248893675434110695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3950902060585002301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8826ca7a86ac5845b56ef9deeb69f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetTransform: {fileID: 1207443418104215904}
-  _swordPivot: {fileID: 711670906277985343}
-  _swordPivotPositionChangeEvent: {fileID: 11400000, guid: 55a449ae478ed574c96efac265420098,
-    type: 2}
 --- !u!1001 &581986499218584932
 PrefabInstance:
   m_ObjectHideFlags: 0

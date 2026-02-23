@@ -39,7 +39,8 @@ namespace Framework
 
             SongRosterSO songRoster = SongRoster;
 
-            if (BeatmappingEditingSettings.PlayFromEditedBeatmap)
+            if (BeatmappingEditingSettings.PlayFromEditedBeatmap &&
+                BeatmappingEditingSettings.CurrentEditingBeatmapConfig != null)
             {
                 return songRoster.Songs.Find(song =>
                     song.NormalBeatmap == BeatmappingEditingSettings.CurrentEditingBeatmapConfig);

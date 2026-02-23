@@ -5,10 +5,8 @@ using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
 using FMODUnity;
-using Framework;
 using NaughtyAttributes;
-using Protag.Core;
-using Protag.Presentation;
+using Protag.SharedData;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -170,20 +168,7 @@ namespace Beatmapping.NoteBehaviors
 
         private Vector2 GetTargetPositionFromProtag()
         {
-            Vector2 rawTargetPos = Vector2.zero;
-            if (ServiceLocator.GetService<Protaganist>())
-            {
-                rawTargetPos = ServiceLocator.GetService<Protaganist>().SwordPosition;
-            }
-            else
-            {
-                var body = FindFirstObjectByType<ProtagBody>();
-                if (body != null)
-                {
-                    rawTargetPos = body.TargetPosition;
-                }
-            }
-
+            Vector2 rawTargetPos = ProtagGlobalData.ProtagTargetPosition;
             Vector2 dir = (_peakPos - rawTargetPos).normalized;
             return rawTargetPos + dir * _distanceFromTarget;
         }
