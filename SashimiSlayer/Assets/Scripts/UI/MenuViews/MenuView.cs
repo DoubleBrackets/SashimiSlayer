@@ -33,7 +33,7 @@ namespace UI.MenuViews
         /// <summary>
         ///     Awake replacement since view gameobjects can be set inactive
         /// </summary>
-        public virtual void ViewAwake()
+        public virtual void ViewInitialized()
         {
         }
 
@@ -56,6 +56,11 @@ namespace UI.MenuViews
         /// </summary>
         public void GrabFocus()
         {
+            if (EventSystem.current == null)
+            {
+                return;
+            }
+
             EventSystem.current.SetSelectedGameObject(_onShowSelect);
         }
     }

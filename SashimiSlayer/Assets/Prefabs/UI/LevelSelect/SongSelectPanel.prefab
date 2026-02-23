@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4434388203552063445}
   - component: {fileID: 7555741910710114041}
   - component: {fileID: 569242488919663163}
+  - component: {fileID: 5702749980720528491}
   m_Layer: 5
   m_Name: SongSelectPanel
   m_TagString: Untagged
@@ -176,21 +177,6 @@ MonoBehaviour:
   _levelNameText: {fileID: 5675602246769536667}
   _levelDescriptionText: {fileID: 4140569904124611235}
   _thumbnailImage: {fileID: 1051846563645260397}
-  _onHardLevelToggled:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3189415863830902417}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4434388203552063445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,12 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d418287a9354c4ba7efadb09e62094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _protagSliceEvent: {fileID: 11400000, guid: 1fc9d5635b7fb36408b893568c3ada1a, type: 2}
-  _protagSwordStateEvent: {fileID: 11400000, guid: f72d4c466ff2ec64ebb5ad85d39cdc47,
-    type: 2}
-  _buttonSlicedEvent: {fileID: 0}
-  _objectSlicedEvent: {fileID: 11400000, guid: a2c9117a5f6db464ebc4424eb172d481, type: 2}
-  _sliceResultEvent: {fileID: 11400000, guid: baaa71eb46fd87c48b8f565532be9613, type: 2}
+  _circularSliceableMono: {fileID: 5702749980720528491}
   _buttonSlicedUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -293,10 +274,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _radius: 1.4
-  _singleUse: 1
   _delay: 1.2
-  _isInCanvasSpace: 1
 --- !u!114 &7555741910710114041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +292,7 @@ MonoBehaviour:
   _playOnAwake: 0
 --- !u!95 &569242488919663163
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -328,11 +306,36 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5702749980720528491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3273246786107236515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d72c1b7fa654a239276499eaec368e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions.Components.CircularSliceableMono
+  _radius: 2
+  _spaceType: 1
+  _singleUse: 0
+  _onHoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onUnhoveredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _onSlicedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5146272054053712919
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +391,7 @@ MonoBehaviour:
   _expandDuration: 0.1
   _rotateTo: {x: 0, y: 0, z: 5}
   _defaultRotate: {x: 0, y: 0, z: 0}
+  _rotateOnSelected: 0
 --- !u!1 &5540578695663893524
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,20 +496,23 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -672,20 +679,23 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -5
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -807,20 +817,23 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0

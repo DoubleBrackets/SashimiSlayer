@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Feel.Notes;
+using GameJuice.Notes;
 using NaughtyAttributes;
 using UnityEngine;
 

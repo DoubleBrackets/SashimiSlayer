@@ -1,5 +1,5 @@
 using EditorUtils.BoldHeader;
-using Events;
+using Events.Basic;
 using GameInput.Interface;
 using UnityEngine;
 

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Core.Protag;
+using CommonTypes;
 using Events;
 using Framework;
 using GameInput.Haptics;
-using GameInput.Interface;
+using Protag.SharedData;
 using Saving;
 using UnityEngine;
 using UnityEngine.Events;
@@ -80,17 +80,15 @@ namespace GameInput.InputSources
         private UnityEvent _onExhibitionInvertAimEvent;
 
         [SerializeField]
-        private UnityEvent _onExhibitionSkipLoopEvent;
-
-        [SerializeField]
         private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
 
-        public event Action<BlockPoseStates> OnBlockPoseChanged;
+        public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
+        public event Action OnToggleSkipLooping;
 
         private Vector2 _mousePos;
-        private BlockPoseStates _blockPoseStates;
+        private BlockPoses _blockPoses;
         private SheathState _sheathState;
 
         private float _rawSwordAngle;
@@ -115,13 +113,13 @@ namespace GameInput.InputSources
         private float _currentLowFreqRumbleAmount;
         private float _currentHighFreqRumbleAmount;
 
-        private void Awake()
+        private void Start()
         {
-            _saveService = ServiceLocator.GetGameSaveService();
+            _saveService = ServiceLocator.GetService<SaveService>();
 
             LoadInputBindings();
 
-            _blockPoseStates = 0;
+            _blockPoses = 0;
             _inputActionAsset.Enable();
             SubscribeToInputActions();
 
@@ -248,20 +246,20 @@ namespace GameInput.InputSources
         {
             bool isPressed = context.ReadValueAsButton();
 
-            SheathState newState = isPressed
+            SheathState newSheathState = isPressed
                 ? SheathState.Unsheathed
                 : SheathState.Sheathed;
 
             // Toggle menu by pressing both buttons at the same time and slicing
-            if (_isLeftButtonDown && _isRightButtonDown && newState == SheathState.Unsheathed)
+            if (_isLeftButtonDown && _isRightButtonDown && newSheathState == SheathState.Unsheathed)
             {
                 OnToggleMenuInput?.Invoke();
                 return;
             }
 
-            if (_sheathState != newState)
+            if (_sheathState != newSheathState)
             {
-                _sheathState = newState;
+                _sheathState = newSheathState;
                 OnSheathStateChanged?.Invoke(_sheathState);
             }
         }
@@ -272,8 +270,8 @@ namespace GameInput.InputSources
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockLeft);
-                _blockPoseStates = BlockPoseStates.BlockLeft;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockLeft);
+                _blockPoses = BlockPoses.BlockLeft;
             }
         }
 
@@ -283,17 +281,18 @@ namespace GameInput.InputSources
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(BlockPoseStates.BlockRight);
-                _blockPoseStates = BlockPoseStates.BlockRight;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockRight);
+                _blockPoses = BlockPoses.BlockRight;
             }
         }
 
         public void OnMousePos(InputAction.CallbackContext context)
         {
             var newMousePos = context.ReadValue<Vector2>();
-            if (newMousePos != _mousePos && Protaganist.Instance != null && Camera.main != null)
+            if (newMousePos != _mousePos && Camera.main != null)
             {
-                Vector2 screenCenter = Camera.main.WorldToScreenPoint(Protaganist.Instance.SwordPosition);
+                Vector2 screenCenter =
+                    Camera.main.WorldToScreenPoint(ProtagGlobalData.ProtagSwordPivot);
                 Vector2 mouseDelta = newMousePos - screenCenter;
                 _rawSwordAngle = JoystickVectorToAngle(mouseDelta);
             }
@@ -346,7 +345,7 @@ namespace GameInput.InputSources
         {
             if (context.performed)
             {
-                _onExhibitionSkipLoopEvent?.Invoke();
+                OnToggleSkipLooping?.Invoke();
             }
         }
 
@@ -370,9 +369,9 @@ namespace GameInput.InputSources
             return _sheathState;
         }
 
-        public BlockPoseStates GetBlockPose()
+        public BlockPoses GetBlockPose()
         {
-            return _blockPoseStates;
+            return _blockPoses;
         }
 
         public void AddRumble(RumbleFeedbackSO rumbleFeedback)

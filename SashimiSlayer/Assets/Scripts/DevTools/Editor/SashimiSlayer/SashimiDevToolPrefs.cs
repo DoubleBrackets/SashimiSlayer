@@ -1,4 +1,4 @@
-using Menus.LevelSelect;
+using UI.Screens.LevelSelect;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,17 +10,77 @@ namespace DevTools.Editor.SashimiSlayer
     [FilePath("UserSettings/SashimiDevToolPrefs.asset", FilePathAttribute.Location.ProjectFolder)]
     public class SashimiDevToolPrefs : ScriptableSingleton<SashimiDevToolPrefs>
     {
-        [field: SerializeField]
-        public SongRosterSO SongRoster { get; set; }
+        [SerializeField]
+        private SongRosterSO _songRoster;
 
-        [field: SerializeField]
-        public bool AutoRefreshTimeline { get; set; }
+        public SongRosterSO SongRoster
+        {
+            get => _songRoster;
+            set
+            {
+                if (_songRoster == value)
+                {
+                    return;
+                }
 
-        [field: SerializeField]
-        public bool PlayFromEditedBeatmap { get; set; }
+                _songRoster = value;
+                Save(true);
+            }
+        }
 
-        [field: SerializeField]
-        public bool StartFromTimelinePlayhead { get; set; }
+        [SerializeField]
+        private bool _autoRefreshTimeline;
+
+        public bool AutoRefreshTimeline
+        {
+            get => _autoRefreshTimeline;
+            set
+            {
+                if (_autoRefreshTimeline == value)
+                {
+                    return;
+                }
+
+                _autoRefreshTimeline = value;
+                Save(true);
+            }
+        }
+
+        [SerializeField]
+        private bool _playFromEditedBeatmap;
+
+        public bool PlayFromEditedBeatmap
+        {
+            get => _playFromEditedBeatmap;
+            set
+            {
+                if (_playFromEditedBeatmap == value)
+                {
+                    return;
+                }
+
+                _playFromEditedBeatmap = value;
+                Save(true);
+            }
+        }
+
+        [SerializeField]
+        private bool _startFromTimelinePlayhead;
+
+        public bool StartFromTimelinePlayhead
+        {
+            get => _startFromTimelinePlayhead;
+            set
+            {
+                if (_startFromTimelinePlayhead == value)
+                {
+                    return;
+                }
+
+                _startFromTimelinePlayhead = value;
+                Save(true);
+            }
+        }
 
         public void SaveThis()
         {

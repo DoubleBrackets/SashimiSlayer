@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Events;
+using Events.Basic;
 using UnityEngine;
 
 namespace GameInput.SerialComm

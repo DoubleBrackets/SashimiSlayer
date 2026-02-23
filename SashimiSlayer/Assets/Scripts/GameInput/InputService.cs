@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
-using Events;
+using CommonTypes;
+using Events.Basic;
 using GameInput.Haptics;
 using GameInput.InputSources;
 using GameInput.Interface;
@@ -61,9 +62,10 @@ namespace GameInput
 
         public bool FlipParryDirection { get; private set; }
 
-        public event Action<BlockPoseStates> OnBlockPoseChanged;
+        public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
+        public event Action OnToggleSkipLooping;
 
         private float _angleMultiplier = 1f;
         private float _angleOffset;
@@ -190,6 +192,7 @@ namespace GameInput
             InputProvider.OnBlockPoseChanged += HandleBlockPoseChanged;
             InputProvider.OnSheathStateChanged += HandleSheatheStateChanged;
             InputProvider.OnToggleMenuInput += HandleOnToggleMenuInput;
+            InputProvider.OnToggleSkipLooping += HandleToggleSkipLooping;
         }
 
         private void EventPassthroughUnsub()
@@ -197,6 +200,7 @@ namespace GameInput
             InputProvider.OnBlockPoseChanged -= HandleBlockPoseChanged;
             InputProvider.OnSheathStateChanged -= HandleSheatheStateChanged;
             InputProvider.OnToggleMenuInput -= HandleOnToggleMenuInput;
+            InputProvider.OnToggleSkipLooping -= HandleToggleSkipLooping;
         }
 
         private void HandleOnToggleMenuInput()
@@ -204,7 +208,7 @@ namespace GameInput
             OnToggleMenuInput?.Invoke();
         }
 
-        private void HandleBlockPoseChanged(BlockPoseStates state)
+        private void HandleBlockPoseChanged(BlockPoses state)
         {
             if (IsInputBlocked)
             {
@@ -214,9 +218,9 @@ namespace GameInput
             OnBlockPoseChanged?.Invoke(state);
         }
 
-        private void HandleSheatheStateChanged(SheathState state)
+        private void HandleSheatheStateChanged(SheathState sheathState)
         {
-            if (state == SheathState.Unsheathed)
+            if (sheathState == SheathState.Unsheathed)
             {
                 if (Time.time < _lastSheathedTime + _sliceDebounce)
                 {
@@ -227,7 +231,7 @@ namespace GameInput
                 }
             }
 
-            if (state == SheathState.Sheathed)
+            if (sheathState == SheathState.Sheathed)
             {
                 _lastSheathedTime = Time.time;
             }
@@ -237,7 +241,12 @@ namespace GameInput
                 return;
             }
 
-            OnSheathStateChanged?.Invoke(state);
+            OnSheathStateChanged?.Invoke(sheathState);
+        }
+
+        private void HandleToggleSkipLooping()
+        {
+            OnToggleSkipLooping?.Invoke();
         }
 
         public float GetSwordAngle()
@@ -269,7 +278,7 @@ namespace GameInput
             return InputProvider.GetSheathState();
         }
 
-        public BlockPoseStates GetBlockPose()
+        public BlockPoses GetBlockPose()
         {
             return InputProvider.GetBlockPose();
         }

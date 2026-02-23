@@ -1,8 +1,9 @@
 using System;
 using Beatmapping;
 using Beatmapping.Notes;
+using Beatmapping.Service;
 using Beatmapping.Timing;
-using Beatmapping.Tooling;
+using Framework;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Serialization;
@@ -17,7 +18,7 @@ namespace Timeline.BeatNoteTrack.BeatNote
 
         public BeatNoteData NoteData;
 
-        private BeatNoteService _beatNoteService;
+        private BeatmapService _beatmapService;
 
         private Beatmapping.Notes.BeatNote _beatNote;
 
@@ -27,13 +28,13 @@ namespace Timeline.BeatNoteTrack.BeatNote
         public void ProcessFrameMixer(double beatmapTime,
             FrameData info,
             BeatmapConfigSo beatmap,
-            BeatNoteService service)
+            BeatmapService service)
         {
-            if (_beatNoteService == null)
+            if (_beatmapService == null)
             {
-                _beatNoteService = service;
+                _beatmapService = service;
 
-                if (_beatNoteService == null)
+                if (_beatmapService == null)
                 {
                     return;
                 }
@@ -43,7 +44,7 @@ namespace Timeline.BeatNoteTrack.BeatNote
 
             if (_beatNote == null)
             {
-                _beatNote = _beatNoteService.SpawnNote(
+                _beatNote = _beatmapService.SpawnNote(
                     NoteConfig,
                     NoteData,
                     beatmap,
@@ -68,7 +69,7 @@ namespace Timeline.BeatNoteTrack.BeatNote
             // Ticking from the mixer is only for previewing in the editor
             if (!Application.isPlaying && _beatNote != null)
             {
-                _beatNote.Tick(new BeatmapTimeManager.TickInfo
+                _beatNote.Tick(new BeatmapRunner.TickInfo
                 {
                     BeatmapTime = currentBeatmapTime,
                     CurrentBeatmap = BeatmappingEditingSettings.CurrentEditingBeatmapConfig
@@ -94,7 +95,7 @@ namespace Timeline.BeatNoteTrack.BeatNote
                 return;
             }
 
-            _beatNoteService.CleanupNote(_beatNote);
+            _beatmapService.CleanupNote(_beatNote);
             _beatNote = null;
         }
     }

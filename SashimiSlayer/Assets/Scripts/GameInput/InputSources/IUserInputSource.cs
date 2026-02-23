@@ -1,6 +1,6 @@
 using System;
+using CommonTypes;
 using GameInput.Haptics;
-using GameInput.Interface;
 
 namespace GameInput.InputSources
 {
@@ -9,9 +9,10 @@ namespace GameInput.InputSources
     /// </summary>
     public interface IUserInputSource
     {
-        public event Action<BlockPoseStates> OnBlockPoseChanged;
+        public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
+        public event Action OnToggleSkipLooping;
 
         /// <summary>
         ///     Get the current sword angle in degrees
@@ -29,7 +30,7 @@ namespace GameInput.InputSources
         ///     Get the current block pose
         /// </summary>
         /// <returns></returns>
-        public BlockPoseStates GetBlockPose();
+        public BlockPoses GetBlockPose();
 
         public void AddRumble(RumbleFeedbackSO rumbleFeedback);
     }

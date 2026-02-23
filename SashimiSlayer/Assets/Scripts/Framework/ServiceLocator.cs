@@ -1,7 +1,5 @@
 using System;
-using GameInput;
-using GameInput.Interface;
-using Saving;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Framework
@@ -9,47 +7,42 @@ namespace Framework
     /// <summary>
     ///     Single point of access to global services
     /// </summary>
-    [DefaultExecutionOrder(-100)]
-    public class ServiceLocator : MonoBehaviour
+    public class ServiceLocator
     {
-        [Header("Service References")]
-
-        [SerializeField]
-        private InputService _userInputProvider;
-
         private static ServiceLocator instance;
-        private static SaveService saveService;
 
-        public static IUserInput GetUserInput()
+        private Dictionary<Type, object> _services = new();
+
+        public ServiceLocator()
         {
-            InputService userInput = instance._userInputProvider;
-
-            if (userInput == null)
-            {
-                // No scenario where we expect a null
-                throw new Exception("Missing user input provider");
-            }
-
-            return userInput;
+            instance = this;
         }
 
-        public static SaveService GetGameSaveService()
+        public void RegisterService<T>(T service)
         {
-            return saveService ??= new SaveService();
-        }
-
-        private void Awake()
-        {
-            if (instance != null)
+            if (_services.ContainsKey(typeof(T)))
             {
-                Debug.LogError("Multiple instances of ServiceLocator found.");
-                Destroy(gameObject);
+                Debug.LogWarning($"Service of type {typeof(T)} already registered.");
                 return;
             }
 
-            saveService = new SaveService();
+            _services[typeof(T)] = service;
+        }
 
-            instance = this;
+        public static T GetService<T>()
+        {
+            if (instance == null)
+            {
+                Debug.LogError("ServiceLocator not initialized.");
+                return default;
+            }
+
+            if (!instance._services.TryGetValue(typeof(T), out object service))
+            {
+                throw new Exception($"Service of type {typeof(T)} not found.");
+            }
+
+            return (T)service;
         }
     }
 }

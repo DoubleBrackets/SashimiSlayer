@@ -93,20 +93,20 @@ MonoBehaviour:
   _targetTransform: {fileID: 8939316533694602398}
   _shakeTypes: 2
   _translationShakeConfig:
-    _duration: 0
-    _strength: {x: 0, y: 0, z: 0}
-    _vibrato: 0
-    _fadeOut: 0
+    Duration: 0
+    Strength: {x: 0, y: 0, z: 0}
+    Vibrato: 0
+    FadeOut: 0
   _rotationShakeConfig:
-    _duration: 0.15
-    _strength: {x: 0, y: 0, z: 25}
-    _vibrato: 5
-    _fadeOut: 0
+    Duration: 0.15
+    Strength: {x: 0, y: 0, z: 25}
+    Vibrato: 5
+    FadeOut: 0
   _scaleShakeConfig:
-    _duration: 0
-    _strength: {x: 0, y: 0, z: 0}
-    _vibrato: 0
-    _fadeOut: 0
+    Duration: 0
+    Strength: {x: 0, y: 0, z: 0}
+    Vibrato: 0
+    FadeOut: 0
 --- !u!114 &7997932034446462789
 MonoBehaviour:
   m_ObjectHideFlags: 0

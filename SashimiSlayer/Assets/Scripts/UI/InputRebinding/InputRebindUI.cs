@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
-using Events;
+using Events.Basic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;

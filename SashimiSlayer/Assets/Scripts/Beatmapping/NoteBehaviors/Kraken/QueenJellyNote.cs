@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -110,7 +110,7 @@ namespace Beatmapping.NoteBehaviors.Kraken
         }
 
         private void BeatNote_SlicedByProtag(int interactionIndex,
-            NoteInteraction.AttemptResult result)
+            NoteInteraction.NoteInteraction.AttemptResult result)
         {
             _visualIndex++;
 
@@ -137,11 +137,11 @@ namespace Beatmapping.NoteBehaviors.Kraken
             _onSliced.Invoke();
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
-            return new List<IInteractionUser.InteractionUsage>
+            return new List<INoteInteractionUser.InteractionUsage>
             {
-                new(NoteInteraction.InteractionType.Slice, 0, 1)
+                new(NoteInteractionType.Slice, 0, 1)
             };
         }
 

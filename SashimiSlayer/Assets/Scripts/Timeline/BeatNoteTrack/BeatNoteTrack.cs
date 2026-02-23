@@ -1,5 +1,5 @@
 using System.ComponentModel;
-using Beatmapping;
+using Beatmapping.Service;
 using Timeline.BeatNoteTrack.BeatNote;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -9,7 +9,7 @@ namespace Timeline.BeatNoteTrack
 {
     [TrackColor(1, 0, 0)]
     [TrackClipType(typeof(BeatNoteClip))]
-    [TrackBindingType(typeof(BeatNoteService))]
+    [TrackBindingType(typeof(BeatmapService))]
     [DisplayName("Beat Note Track")]
     public class BeatNoteTrack : TrackAsset
     {
@@ -25,7 +25,7 @@ namespace Timeline.BeatNoteTrack
         // If not done properly, the properties will NOT be reverted back to their true values when exiting edit/preview mode
         public override void GatherProperties(PlayableDirector director, IPropertyCollector driver)
         {
-            var trackBinding = director.GetGenericBinding(this) as Light;
+            var trackBinding = director.GetGenericBinding(this) as BeatmapService;
 
             if (trackBinding == null)
             {

@@ -1,7 +1,7 @@
 using System;
 using Beatmapping.Timing;
-using Core.Audio;
 using FMODUnity;
+using Framework.Audio;
 using UnityEngine;
 using UnityEngine.Timeline;
 

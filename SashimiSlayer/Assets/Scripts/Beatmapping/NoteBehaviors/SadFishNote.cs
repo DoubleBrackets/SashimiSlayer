@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -93,7 +93,7 @@ namespace Beatmapping.NoteBehaviors
         }
 
         private void BeatNote_SlicedByProtag(int interactionIndex,
-            NoteInteraction.AttemptResult result)
+            NoteInteraction.NoteInteraction.AttemptResult result)
         {
             _visual.SetVisible(false);
             foreach (ParticleSystem particle in _dieParticles)
@@ -102,11 +102,11 @@ namespace Beatmapping.NoteBehaviors
             }
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
-            return new List<IInteractionUser.InteractionUsage>
+            return new List<INoteInteractionUser.InteractionUsage>
             {
-                new(NoteInteraction.InteractionType.Slice, 0, 1)
+                new(NoteInteractionType.Slice, 0, 1)
             };
         }
 
