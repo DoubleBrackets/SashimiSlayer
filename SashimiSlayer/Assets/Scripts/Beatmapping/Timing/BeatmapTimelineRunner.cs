@@ -1,7 +1,9 @@
+using Beatmapping.Service;
 using EditorUtils.BoldHeader;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 namespace Beatmapping.Timing
 {
@@ -40,6 +42,33 @@ namespace Beatmapping.Timing
             _director.Play();
             _director.Evaluate();
             _inProgress = true;
+        }
+
+        private void OnValidate()
+        {
+            BindBeatmapService();
+        }
+
+        [Button("Bind tracks to BeatmapService")]
+        private void BindBeatmapService()
+        {
+            var asset = (TimelineAsset)_director.playableAsset;
+            var beatmapServiceInScene = FindFirstObjectByType<BeatmapService>();
+
+            foreach (PlayableBinding output in asset.outputs)
+            {
+                if (output.sourceObject == null)
+                {
+                    continue;
+                }
+
+                var track = (TrackAsset)output.sourceObject;
+
+                if (output.outputTargetType == typeof(BeatmapService))
+                {
+                    _director.SetGenericBinding(track, beatmapServiceInScene);
+                }
+            }
         }
     }
 }

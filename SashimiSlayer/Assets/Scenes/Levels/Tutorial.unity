@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -1021,7 +1018,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SceneBindings.Array.data[21].value
       value: 
-      objectReference: {fileID: 3092560596456903502}
+      objectReference: {fileID: 0}
     - target: {fileID: 6849324837600310558, guid: aa08b2ed03f82b1429418869623ebc9b,
         type: 3}
       propertyPath: m_Name
@@ -1092,16 +1089,16 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: aa08b2ed03f82b1429418869623ebc9b, type: 3}
 --- !u!114 &3092560596456903502 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2761162634390235980, guid: aa08b2ed03f82b1429418869623ebc9b,
+  m_CorrespondingSourceObject: {fileID: 8729527356022045980, guid: aa08b2ed03f82b1429418869623ebc9b,
     type: 3}
   m_PrefabInstance: {fileID: 3092560596456903501}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8c8f3a9a0274644baf99d8eca5c1e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 85439e9afdd14735a06d124083956f69, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Beatmapping.Service.BeatmapService
 --- !u!114 &3092560596456903504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7973889014936138893, guid: aa08b2ed03f82b1429418869623ebc9b,
@@ -1131,6 +1128,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703443750394226449, guid: 07cc0a138bc6a624eb540942b522b906,
+        type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860292612418611461, guid: 07cc0a138bc6a624eb540942b522b906,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5253906
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860292612418611461, guid: 07cc0a138bc6a624eb540942b522b906,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.5253906
       objectReference: {fileID: 0}
     - target: {fileID: 7309830885349167797, guid: 07cc0a138bc6a624eb540942b522b906,
         type: 3}

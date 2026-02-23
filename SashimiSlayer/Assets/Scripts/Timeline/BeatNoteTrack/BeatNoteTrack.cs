@@ -25,7 +25,7 @@ namespace Timeline.BeatNoteTrack
         // If not done properly, the properties will NOT be reverted back to their true values when exiting edit/preview mode
         public override void GatherProperties(PlayableDirector director, IPropertyCollector driver)
         {
-            var trackBinding = director.GetGenericBinding(this) as Light;
+            var trackBinding = director.GetGenericBinding(this) as BeatmapService;
 
             if (trackBinding == null)
             {
