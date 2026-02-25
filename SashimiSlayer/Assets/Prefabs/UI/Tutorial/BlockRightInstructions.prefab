@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5161087445688973136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 145241309722592227, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_text
+      value: 'D / [Keyboard]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 340514419410236979, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_text
+      value: 'Right Bumper [Xbox Controller]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017050029019237673, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: _actionRef
+      value: 
+      objectReference: {fileID: -5806313125893495292, guid: c86165f3c71e618458bb5c17310c302e,
+        type: 3}
+    - target: {fileID: 2108740622113323257, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: _actionRef
+      value: 
+      objectReference: {fileID: -5806313125893495292, guid: c86165f3c71e618458bb5c17310c302e,
+        type: 3}
+    - target: {fileID: 5234548230059720606, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.61960787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234548230059720606, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.23529413
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234548230059720606, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627557648321333838, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.61960787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627557648321333838, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.23137257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627557648321333838, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.2901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779107271646055098, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_Name
+      value: BlockRightInstructions
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.019999862
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32afc52443dfbc34db1283cf50b343f1, type: 3}

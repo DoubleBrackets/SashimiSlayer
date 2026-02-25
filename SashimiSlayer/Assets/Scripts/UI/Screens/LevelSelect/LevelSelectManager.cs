@@ -75,13 +75,13 @@ namespace UI.Screens.LevelSelect
 
             SetupLevelSelectUI();
 
-            UpdateBlockableEnabled();
             UpdatePromptOpacity();
 
             _leftBlockable =
                 new SingleDirBlockable(this, BlockPoses.BlockLeft, false);
             _rightBlockable =
                 new SingleDirBlockable(this, BlockPoses.BlockRight, false);
+            UpdateBlockableEnabled();
 
             _interactionService.Register(this);
 
