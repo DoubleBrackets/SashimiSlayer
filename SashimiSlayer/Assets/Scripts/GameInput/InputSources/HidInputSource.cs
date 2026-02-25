@@ -337,6 +337,7 @@ namespace GameInput.InputSources
 
         private void OnCustomSwordControllerIdentify(InputAction.CallbackContext context)
         {
+            Debug.Log(context.ReadValueAsButton());
             _customSwordControllerIdentify = context.ReadValueAsButton();
         }
 

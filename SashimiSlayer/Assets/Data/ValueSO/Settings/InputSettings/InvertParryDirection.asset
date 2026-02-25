@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: InvertParryDirection
   m_EditorClassIdentifier: Assembly-CSharp::ValueSO.Core.BoolValueSO
   _description: 
-  _value: 0
+  _value: 1
   <Log>k__BackingField: 0

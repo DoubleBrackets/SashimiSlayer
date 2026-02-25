@@ -1376,7 +1376,7 @@ MonoBehaviour:
   _aimMultiplierValueSO: {fileID: 11400000, guid: 6b962e87f828d2d4d89385e4d38be175,
     type: 2}
   _aimOffsetValueSO: {fileID: 11400000, guid: 5835ee1fb0fb5354e9666d049c21fb91, type: 2}
-  _invertParryDirectionValueSO: {fileID: 11400000, guid: 07eb956039480094ead3a78b1855d223,
+  _invertParryDirectionValueSO: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
     type: 2}
   _invertAimValueSO: {fileID: 11400000, guid: 07eb956039480094ead3a78b1855d223, type: 2}
   _controllerRumbleEnabledValueSO: {fileID: 11400000, guid: 5dea2a69fd8614d45aae81cccf2e1162,

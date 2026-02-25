@@ -75,6 +75,7 @@ namespace UI.Screens.LevelSelect
 
             SetupLevelSelectUI();
 
+            UpdateBlockableEnabled();
             UpdatePromptOpacity();
 
             _leftBlockable =
@@ -113,9 +114,7 @@ namespace UI.Screens.LevelSelect
 
             _currentPanelIndex = Mathf.Clamp(_currentPanelIndex, 0, _levelPanels.Count - 1);
 
-            _leftBlockable.Enabled = _currentPanelIndex > 0;
-            _rightBlockable.Enabled = _currentPanelIndex < _levelPanels.Count - 1;
-
+            UpdateBlockableEnabled();
             UpdatePromptOpacity();
 
             if (prevPanelIndex == _currentPanelIndex)
@@ -134,6 +133,12 @@ namespace UI.Screens.LevelSelect
 
             _levelPanels[prevPanelIndex].SetVisible(false);
             _levelPanels[_currentPanelIndex].SetVisible(true);
+        }
+
+        private void UpdateBlockableEnabled()
+        {
+            _leftBlockable.Enabled = _currentPanelIndex > 0;
+            _rightBlockable.Enabled = _currentPanelIndex < _levelPanels.Count - 1;
         }
 
         private void UpdatePromptOpacity()

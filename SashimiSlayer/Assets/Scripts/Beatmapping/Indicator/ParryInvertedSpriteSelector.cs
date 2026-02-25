@@ -26,6 +26,9 @@ namespace Beatmapping.Indicator
         [SerializeField]
         private Image _image;
 
+        [SerializeField]
+        private SpriteRenderer _spriteRenderer;
+
         private void Awake()
         {
             _invertParryDirections.AddListener(this, OnFlipParry, true);
@@ -38,17 +41,14 @@ namespace Beatmapping.Indicator
 
         private void OnFlipParry(bool flip)
         {
-            if (_image == null)
+            if (_image)
             {
-                Debug.LogWarning("Image component is not assigned");
-                return;
+                _image.sprite = flip ? _flippedSprite : _defaultSprite;
             }
 
-            _image.sprite = flip ? _flippedSprite : _defaultSprite;
-
-            if (_image.sprite == null)
+            if (_spriteRenderer)
             {
-                Debug.LogWarning("No sprite assigned");
+                _spriteRenderer.sprite = flip ? _flippedSprite : _defaultSprite;
             }
         }
     }
