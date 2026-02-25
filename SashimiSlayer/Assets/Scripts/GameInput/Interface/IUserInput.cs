@@ -7,7 +7,6 @@ namespace GameInput.Interface
     /// </summary>
     public interface IUserInput : IUserInputSource
     {
-        public bool FlipParryDirection { get; }
         ControlSchemes ControlScheme { get; }
 
         public void AddInputBlocker();

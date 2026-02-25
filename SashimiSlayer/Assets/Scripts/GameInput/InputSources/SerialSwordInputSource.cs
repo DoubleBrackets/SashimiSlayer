@@ -155,6 +155,16 @@ namespace GameInput.InputSources
             // Not supported
         }
 
+        public bool GetLeftHandleSwordIdentify()
+        {
+            return false;
+        }
+
+        public bool GetCustomSwordControllerIdentify()
+        {
+            return true;
+        }
+
         public void ConnectToPort(string portName)
         {
             _serialReader.TryConnectToPort(portName);
