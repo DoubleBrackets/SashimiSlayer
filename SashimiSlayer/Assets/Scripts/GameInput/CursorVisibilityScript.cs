@@ -1,20 +1,22 @@
 using EditorUtils.BoldHeader;
 using Events.Basic;
 using GameInput.Interface;
+using GameInput.ValueSO;
 using UnityEngine;
+using ValueSO;
 
 namespace GameInput
 {
     /// <summary>
     ///     Handles hiding/showing cursor
     /// </summary>
-    public class CursorVisibilityScript : MonoBehaviour
+    public class CursorVisibilityScript : MonoBehaviour, IValueSOObserver
     {
         [BoldHeader("Cursor Visibility")]
         [Header("Events (In)")]
 
         [SerializeField]
-        private IntEvent _controlSchemeChanged;
+        private ControlSchemeValueSO _currentControlScheme;
 
         [SerializeField]
         private BoolEvent _optionsMenuToggled;
@@ -24,7 +26,7 @@ namespace GameInput
 
         private void Awake()
         {
-            _controlSchemeChanged.AddListener(HandleControlSchemeChanged);
+            _currentControlScheme.AddListener(this, HandleControlSchemeChanged, true);
             _optionsMenuToggled.AddListener(HandleOptionsMenuToggled);
         }
 
@@ -35,13 +37,13 @@ namespace GameInput
 
         private void OnDestroy()
         {
-            _controlSchemeChanged.RemoveListener(HandleControlSchemeChanged);
+            _currentControlScheme.RemoveListener(this);
             _optionsMenuToggled.RemoveListener(HandleOptionsMenuToggled);
         }
 
-        private void HandleControlSchemeChanged(int controlScheme)
+        private void HandleControlSchemeChanged(ControlSchemes controlScheme)
         {
-            _cursorInput = controlScheme == (int)ControlSchemes.KeyboardMouse;
+            _cursorInput = controlScheme == ControlSchemes.KeyboardMouse;
         }
 
         private void HandleOptionsMenuToggled(bool isMenuOpen)

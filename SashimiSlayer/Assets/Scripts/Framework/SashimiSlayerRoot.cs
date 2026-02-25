@@ -81,6 +81,7 @@ namespace Framework
         {
             _studioBankLoader.Unload();
             _gameplayController?.Cleanup();
+            _startupConfigSO.SaveDataValueSOLoader?.Cleanup();
         }
 
         private async UniTaskVoid BeginGame()
@@ -114,6 +115,12 @@ namespace Framework
         {
             _serviceLocator = new ServiceLocator();
             _saveService = new SaveService();
+
+            // Load saved values into ValueSOs
+            SaveDataValueSOLoader saveDataValueSOLoader = _startupConfigSO.SaveDataValueSOLoader;
+            saveDataValueSOLoader.Load(_saveService.SaveModel);
+            saveDataValueSOLoader.InitializeSaveBack(_saveService);
+
             _interactionService = new InteractionService();
 
             _levelService.Initialize();

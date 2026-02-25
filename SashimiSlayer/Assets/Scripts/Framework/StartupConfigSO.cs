@@ -1,4 +1,5 @@
 using Framework.LevelLoading;
+using Saving;
 using UI.Screens.LevelSelect;
 using UI.Screens.PauseMenu;
 using UI.Screens.TransitionUI;
@@ -20,6 +21,9 @@ namespace Framework
 
         [field: SerializeField]
         public SongRosterSO SongRoster { get; private set; }
+
+        [field: SerializeField]
+        public SaveDataValueSOLoader SaveDataValueSOLoader { get; private set; }
 
         [field: Header("Global UI Prefabs")]
 

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b5258d923749c6a71f3127910ebb58, type: 3}
+  m_Name: SaveDataValueSOLoader
+  m_EditorClassIdentifier: Assembly-CSharp::Saving.SaveDataValueSOLoader
+  _sfxVolume: {fileID: 11400000, guid: 639fda290e1414d43bcb6c9a37f27124, type: 2}
+  _musicVolume: {fileID: 11400000, guid: f1eaa2255cd5e054eb617efa78ad108b, type: 2}
+  _masterVolume: {fileID: 11400000, guid: f8a08968b8e0df349a161b6808b5ebdf, type: 2}
+  _screenShakeRatioValueSO: {fileID: 11400000, guid: fffc605968520114f945ab02ea206868,
+    type: 2}
+  _aimMultiplierValueSO: {fileID: 11400000, guid: 6b962e87f828d2d4d89385e4d38be175,
+    type: 2}
+  _aimOffsetValueSO: {fileID: 11400000, guid: 5835ee1fb0fb5354e9666d049c21fb91, type: 2}
+  _controllerRumbleEnabledValueSO: {fileID: 11400000, guid: 5dea2a69fd8614d45aae81cccf2e1162,
+    type: 2}
+  _invertAimSO: {fileID: 11400000, guid: 07eb956039480094ead3a78b1855d223, type: 2}
+  _invertParryDirectionSO: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+    type: 2}

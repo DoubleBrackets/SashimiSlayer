@@ -17,6 +17,7 @@ namespace Saving
         private SaveModel _saveModel;
 
         private bool _isAboutToSave;
+        public SaveModel SaveModel => _saveModel;
 
         public float ScreenShakeRatio
         {
@@ -78,12 +79,12 @@ namespace Saving
             }
         }
 
-        public bool FlipSwordAim
+        public bool InvertSwordAim
         {
-            get => _saveModel.FlipSwordAim;
+            get => _saveModel.InvertSwordAim;
             set
             {
-                _saveModel.FlipSwordAim = value;
+                _saveModel.InvertSwordAim = value;
                 Save();
             }
         }
@@ -98,12 +99,12 @@ namespace Saving
             }
         }
 
-        public bool FlipParryDirection
+        public bool InvertParryDirection
         {
-            get => _saveModel.FlipParryDirection;
+            get => _saveModel.InvertParryDirection;
             set
             {
-                _saveModel.FlipParryDirection = value;
+                _saveModel.InvertParryDirection = value;
                 Save();
             }
         }

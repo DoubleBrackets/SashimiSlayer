@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 2}
   <SongRoster>k__BackingField: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2,
     type: 2}
+  <SaveDataValueSOLoader>k__BackingField: {fileID: 11400000, guid: d76cd28ee6c6e334798d503799c237d2,
+    type: 2}
   <PauseMenuPrefab>k__BackingField: {fileID: 8861204899379832006, guid: d1cb783db24fb0145bc54c35dff01db3,
     type: 3}
   <SceneTransitionVisualsPrefab>k__BackingField: {fileID: 4232234903238006421, guid: ff800d93eb30b794494ba7285f7daa22,
