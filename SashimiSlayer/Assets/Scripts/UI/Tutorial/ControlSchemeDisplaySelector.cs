@@ -10,16 +10,19 @@ namespace UI.Tutorial
     /// <summary>
     ///     Handled control scheme changes in the tutorial scene
     /// </summary>
-    public class TutorialInputSwitcher : MonoBehaviour, IValueSOObserver
+    public class ControlSchemeDisplaySelector : MonoBehaviour, IValueSOObserver
     {
         [Serializable]
-        private class SpriteRendererArray
+        private class ControlSchemeDisplay
         {
-            public SpriteRenderer[] sprites;
+            public ControlSchemes controlScheme;
+            public GameObject[] objects;
         }
 
         [SerializeField]
-        private List<SpriteRendererArray> _sprites;
+        private List<ControlSchemeDisplay> _controlSchemeDisplays;
+
+        [Header("ValueSO (Read)")]
 
         [SerializeField]
         private ControlSchemeValueSO _controlSchemeValueSO;
@@ -36,12 +39,12 @@ namespace UI.Tutorial
 
         private void HandleControlSchemeChanged(ControlSchemes controlScheme)
         {
-            for (var i = 0; i < _sprites.Count; i++)
+            for (var i = 0; i < _controlSchemeDisplays.Count; i++)
             {
-                bool isMatchingControlPrompt = i == (int)controlScheme;
-                foreach (SpriteRenderer sprite in _sprites[i].sprites)
+                bool isMatchingControlPrompt = _controlSchemeDisplays[i].controlScheme == controlScheme;
+                foreach (GameObject obj in _controlSchemeDisplays[i].objects)
                 {
-                    sprite.enabled = isMatchingControlPrompt;
+                    obj.SetActive(isMatchingControlPrompt);
                 }
             }
         }

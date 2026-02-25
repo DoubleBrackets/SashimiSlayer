@@ -7,11 +7,10 @@ using GameInput.Haptics;
 using Protag.SharedData;
 using Saving;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
-using UnityEngine.Serialization;
+using ValueSO.Core;
 
 namespace GameInput.InputSources
 {
@@ -21,6 +20,11 @@ namespace GameInput.InputSources
 
         [SerializeField]
         private SOEvent _onInputBindingOverride;
+
+        [Header("ValueSO (Write)")]
+
+        [SerializeField]
+        private BoolValueSO _leftHandleSwordIdentifyValueSO;
 
         [Header("Gameplay Input Action References")]
 
@@ -48,8 +52,13 @@ namespace GameInput.InputSources
         [SerializeField]
         private InputActionReference _toggleMenuAction;
 
+        [Header("Custom Sword Input Action References")]
+
         [SerializeField]
         private InputActionReference _leftHandSwordIdentifyAction;
+
+        [SerializeField]
+        private InputActionReference _customSwordControllerIdentifyAction;
 
         [Header("Exhibit Hotkey Input Action References")]
 
@@ -70,18 +79,6 @@ namespace GameInput.InputSources
         [SerializeField]
         private InputActionReference _uiNavigateActionInverted;
 
-        [Header("Exhibition Hotkey Events")]
-
-        [SerializeField]
-        private UnityEvent _onExhibitionResetEvent;
-
-        [FormerlySerializedAs("_OnExhibitionInvertAimEvent")]
-        [SerializeField]
-        private UnityEvent _onExhibitionInvertAimEvent;
-
-        [SerializeField]
-        private UnityEvent<bool> _onLeftHandSwordIdentifyEvent;
-
         public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
         public event Action OnToggleMenuInput;
@@ -99,6 +96,9 @@ namespace GameInput.InputSources
         private bool _isRightButtonDown;
 
         private SaveService _saveService;
+
+        private bool _leftHandleSwordIdentify;
+        private bool _customSwordControllerIdentify;
 
         private struct RumbleInstance
         {
@@ -184,7 +184,11 @@ namespace GameInput.InputSources
             _swordControllerAngleAction.action.performed += OnSwordControllerAngle;
 
             _toggleMenuAction.action.performed += OnToggleMenu;
+
             _leftHandSwordIdentifyAction.action.performed += OnLeftHandSwordIdentify;
+            _leftHandSwordIdentifyAction.action.canceled += OnLeftHandSwordIdentify;
+            _customSwordControllerIdentifyAction.action.performed += OnCustomSwordControllerIdentify;
+            _customSwordControllerIdentifyAction.action.canceled += OnCustomSwordControllerIdentify;
 
             // Exhibit Hotkey Input Actions
             _exhibitionResetAction.action.performed += OnExhibitionReset;
@@ -203,7 +207,12 @@ namespace GameInput.InputSources
             _swordControllerAngleAction.action.performed -= OnSwordControllerAngle;
 
             _toggleMenuAction.action.performed -= OnToggleMenu;
+
             _leftHandSwordIdentifyAction.action.performed -= OnLeftHandSwordIdentify;
+            _leftHandSwordIdentifyAction.action.canceled -= OnLeftHandSwordIdentify;
+
+            _customSwordControllerIdentifyAction.action.performed -= OnCustomSwordControllerIdentify;
+            _customSwordControllerIdentifyAction.action.canceled -= OnCustomSwordControllerIdentify;
 
             // Exhibit Hotkey Input Actions
             _exhibitionResetAction.action.performed -= OnExhibitionReset;
@@ -322,14 +331,21 @@ namespace GameInput.InputSources
 
         public void OnLeftHandSwordIdentify(InputAction.CallbackContext context)
         {
-            _onLeftHandSwordIdentifyEvent?.Invoke(context.ReadValueAsButton());
+            _leftHandleSwordIdentify = context.ReadValueAsButton();
+            _leftHandleSwordIdentifyValueSO.SetValue(_leftHandleSwordIdentify);
+        }
+
+        private void OnCustomSwordControllerIdentify(InputAction.CallbackContext context)
+        {
+            Debug.Log(context.ReadValueAsButton());
+            _customSwordControllerIdentify = context.ReadValueAsButton();
         }
 
         public void OnExhibitionReset(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                _onExhibitionResetEvent?.Invoke();
+                // TODO
             }
         }
 
@@ -337,7 +353,7 @@ namespace GameInput.InputSources
         {
             if (context.performed)
             {
-                _onExhibitionInvertAimEvent?.Invoke();
+                // TODO
             }
         }
 
@@ -392,6 +408,16 @@ namespace GameInput.InputSources
                 Profile = highFreqRumble,
                 StartTime = Time.time
             });
+        }
+
+        public bool GetLeftHandleSwordIdentify()
+        {
+            return _leftHandleSwordIdentify;
+        }
+
+        public bool GetCustomSwordControllerIdentify()
+        {
+            return _customSwordControllerIdentify;
         }
 
         /// <summary>

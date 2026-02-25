@@ -8,11 +8,12 @@ using GameInput.Interface;
 using GameInput.ValueSO;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ValueSO;
 using ValueSO.Core;
 
 namespace GameInput
 {
-    public class InputService : MonoBehaviour, IUserInput
+    public class InputService : MonoBehaviour, IUserInput, IValueSOObserver
     {
         [Header("Event (In)")]
 
@@ -41,6 +42,9 @@ namespace GameInput
         private BoolValueSO _invertParryDirectionValueSO;
 
         [SerializeField]
+        private BoolValueSO _invertAimValueSO;
+
+        [SerializeField]
         private BoolValueSO _controllerRumbleEnabledValueSO;
 
         [Header("Depends")]
@@ -62,9 +66,7 @@ namespace GameInput
 
         private IUserInputSource InputProvider => _useSerialController ? _serialInputSource : _hidInputSource;
 
-        public ControlSchemes ControlScheme { get; private set; }
-
-        public bool FlipParryDirection { get; private set; }
+        public ControlSchemes ControlScheme => _controlSchemeValueSO.Value;
 
         public event Action<BlockPoses> OnBlockPoseChanged;
         public event Action<SheathState> OnSheathStateChanged;
@@ -83,6 +85,8 @@ namespace GameInput
         {
             EventPassthroughSub();
 
+            _invertParryDirectionValueSO.AddListener(this, SetInvertDirectionalBlockInputs);
+
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
 
@@ -93,8 +97,15 @@ namespace GameInput
         {
             EventPassthroughUnsub();
 
+            _invertParryDirectionValueSO.RemoveListener(this);
+
             _onDrawDebugGUI.RemoveListener(HandleDrawDebugGUI);
             _setUseSerialInput.RemoveListener(HandleSetUseSerialInput);
+        }
+
+        private void Update()
+        {
+            UpdateControlScheme();
         }
 
         public void AddInputBlocker()
@@ -117,10 +128,18 @@ namespace GameInput
             InputProvider.AddRumble(rumbleFeedback);
         }
 
+        public bool GetLeftHandleSwordIdentify()
+        {
+            return InputProvider.GetLeftHandleSwordIdentify();
+        }
+
+        public bool GetCustomSwordControllerIdentify()
+        {
+            return InputProvider.GetCustomSwordControllerIdentify();
+        }
+
         private void SetInvertDirectionalBlockInputs(bool invert)
         {
-            FlipParryDirection = invert;
-
             _hidInputSource.SetInvertParryDirection(invert);
         }
 
@@ -131,36 +150,35 @@ namespace GameInput
 
             _useSerialController = useSerialInput;
 
-            UpdateControlScheme();
-
             EventPassthroughSub();
         }
 
         private void UpdateControlScheme()
         {
             ControlSchemes existingControlScheme = ControlScheme;
+            ControlSchemes newControlScheme;
 
             if (_useSerialController)
             {
-                ControlScheme = ControlSchemes.SwordSerial;
+                newControlScheme = ControlSchemes.SwordSerial;
             }
-            else if (InputSystem.devices.Count(device => device is Joystick) > 0)
+            else if (InputProvider.GetCustomSwordControllerIdentify())
             {
-                ControlScheme = ControlSchemes.SwordJoystick;
+                newControlScheme = ControlSchemes.SwordJoystick;
             }
             else if (InputSystem.devices.Count(device => device is Gamepad) > 0)
             {
-                ControlScheme = ControlSchemes.Gamepad;
+                newControlScheme = ControlSchemes.Gamepad;
             }
             else
             {
-                ControlScheme = ControlSchemes.KeyboardMouse;
+                newControlScheme = ControlSchemes.KeyboardMouse;
             }
 
-            if (existingControlScheme != ControlScheme)
+            if (existingControlScheme != newControlScheme)
             {
-                Debug.Log($"Control scheme changed from {existingControlScheme} to {ControlScheme}");
-                _controlSchemeValueSO.SetValue(ControlScheme);
+                Debug.Log($"Control scheme changed from {existingControlScheme} to {newControlScheme}");
+                _controlSchemeValueSO.SetValue(newControlScheme);
             }
         }
 
@@ -195,6 +213,13 @@ namespace GameInput
             if (IsInputBlocked)
             {
                 return;
+            }
+
+            bool invertDirections = _invertParryDirectionValueSO.Value ^ InputProvider.GetLeftHandleSwordIdentify();
+
+            if (invertDirections)
+            {
+                state = state == BlockPoses.BlockRight ? BlockPoses.BlockLeft : BlockPoses.BlockRight;
             }
 
             OnBlockPoseChanged?.Invoke(state);
@@ -252,7 +277,11 @@ namespace GameInput
             // We want to add multipler first so that the "horizontal" angle remains the same
             // i.e offset of -25 degrees means holding physical sword at 25 degrees hilt-up is horizontal
             // regardless of mult or flipping
-            return (rawSwordAngled + _aimOffsetValueSO.Value) * _aimMultiplierValueSO.Value;
+
+            int flipping = (_invertAimValueSO.Value ? -1 : 1)
+                           * (InputProvider.GetLeftHandleSwordIdentify() ? -1 : 1);
+
+            return (rawSwordAngled + _aimOffsetValueSO.Value) * _aimMultiplierValueSO.Value * flipping;
         }
 
         public SheathState GetSheathState()

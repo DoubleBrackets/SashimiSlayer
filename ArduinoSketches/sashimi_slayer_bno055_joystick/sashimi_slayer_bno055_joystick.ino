@@ -1,9 +1,11 @@
 /*
-v. 0.3.1
+v. 0.4.1
 This variation allows the sword to act as a generic joystick. 
 This is preferred over the serial comm variation.
 
 This version also identifies the handed-ness by holding down the appropriate button, which automatically inverts aiming + block directions in-game
+
+0.4.1 - Now holds down button 5 to indicate that this is a custom controller (distinguishing from other joysticks/gamepads)
 
 Notes
 - Handedness is based on which hand grips the sword handle
@@ -54,6 +56,7 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_JOYSTICK,
 #define BLOCK_BOT_GAMEPAD 2
 #define AXIS_RANGE 1024
 #define LEFTHAND_IDENTIFY 4
+#define CUSTOM_SWORDCONTROLLER_IDENTIFY 5
 
 char inputBuffer;
 
@@ -95,6 +98,7 @@ void setup() {
 
   // Identify as left-handed if relevant
   Joystick.setButton(LEFTHAND_IDENTIFY, leftHanded);
+  Joystick.setButton(CUSTOM_SWORDCONTROLLER_IDENTIFY, true);
 }
 
 void loop() {
