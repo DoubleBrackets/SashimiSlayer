@@ -5,6 +5,9 @@ namespace UI.MenuViews
 {
     public class MenuView : MonoBehaviour
     {
+        [field: SerializeField]
+        public bool ViewEnabled { get; set; } = true;
+
         /// <summary>
         ///     The gameobject to select with EventSystem when this view is shown
         /// </summary>

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: E_OnEnterMenu
   m_EditorClassIdentifier: Assembly-CSharp::Events.Basic.VoidEvent
   _description: 
-  _debug: 1
+  _debug: 0

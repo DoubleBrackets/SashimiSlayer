@@ -345,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8240173690092360554}
   - component: {fileID: 1608884538328433301}
+  - component: {fileID: 4959800685646679249}
   m_Layer: 5
   m_Name: LabeledToggle
   m_TagString: Untagged
@@ -387,6 +388,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.LayoutNavigation.LayoutNavElement
   <Selectable>k__BackingField: {fileID: 8445811483106696000}
+--- !u!114 &4959800685646679249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853806598473070391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4112045fc49244668ed75c4ba99870ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Components.BoundToggle
+  _valueSO: {fileID: 0}
+  _toggle: {fileID: 8445811483106696000}
 --- !u!1 &3957665377365017264
 GameObject:
   m_ObjectHideFlags: 0

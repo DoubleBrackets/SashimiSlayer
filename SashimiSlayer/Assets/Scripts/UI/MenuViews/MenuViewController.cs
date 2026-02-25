@@ -52,6 +52,8 @@ namespace UI.MenuViews
 
         public void Initialize()
         {
+            _menuViews = _menuViews.Where(a => a.ViewEnabled).ToList();
+
             foreach (MenuView view in _menuViews)
             {
                 view.Hide();
@@ -203,7 +205,7 @@ namespace UI.MenuViews
         [Button("Find Child Views")]
         public void FindChildViews()
         {
-            _menuViews = GetComponentsInChildren<MenuView>().ToList();
+            _menuViews = GetComponentsInChildren<MenuView>(true).Where(a => a.ViewEnabled).ToList();
         }
     }
 }

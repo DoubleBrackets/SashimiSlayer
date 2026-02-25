@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62be26e876d1fb4bbc76d2ae254a648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlSchemeChanged: {fileID: 11400000, guid: 1587be54aaec6e848b921a0c977ecaa4,
+  _currentControlScheme: {fileID: 11400000, guid: 2963d6f823cdc934b8c6588233690b9f,
     type: 2}
   _optionsMenuToggled: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
     type: 2}
@@ -251,6 +251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _impulseSource: {fileID: 162499279}
+  _screenShakeRatioValueSO: {fileID: 11400000, guid: fffc605968520114f945ab02ea206868,
+    type: 2}
 --- !u!4 &162499281
 Transform:
   m_ObjectHideFlags: 0
@@ -261,6 +263,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.96, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &202378063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 202378065}
+  - component: {fileID: 202378064}
+  m_Layer: 0
+  m_Name: FMODSettingsLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &202378064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202378063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0aebf5f27104f9fb4f2cd897f5253fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Framework.Audio.AudioSettingsLoader
+  _sfxVolume: {fileID: 11400000, guid: 639fda290e1414d43bcb6c9a37f27124, type: 2}
+  _musicVolume: {fileID: 11400000, guid: f1eaa2255cd5e054eb617efa78ad108b, type: 2}
+  _masterVolume: {fileID: 11400000, guid: f8a08968b8e0df349a161b6808b5ebdf, type: 2}
+--- !u!4 &202378065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202378063}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1362,17 +1411,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f13ff292d913448977e948bc1dc3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onControlSchemeChanged: {fileID: 11400000, guid: 1587be54aaec6e848b921a0c977ecaa4,
-    type: 2}
   _onDrawDebugGUI: {fileID: 11400000, guid: 8e51abf69e4694c41bf511b0e340f96d, type: 2}
   _setUseSerialInput: {fileID: 11400000, guid: ae2649dcf4fe32b4bb34667a4644dc28, type: 2}
-  _angleMultiplierEvent: {fileID: 11400000, guid: 084fa5ca422192449a31ac7d1393fa37,
+  _controlSchemeValueSO: {fileID: 11400000, guid: 2963d6f823cdc934b8c6588233690b9f,
     type: 2}
-  _swordAngleOffsetEvent: {fileID: 11400000, guid: 9074d0865eea37c479c2fedcdeae87d5,
+  _aimMultiplierValueSO: {fileID: 11400000, guid: 6b962e87f828d2d4d89385e4d38be175,
     type: 2}
-  _setFlipParryDirection: {fileID: 11400000, guid: 591f313a7a7dcaa4d805c503890604b9,
+  _aimOffsetValueSO: {fileID: 11400000, guid: 5835ee1fb0fb5354e9666d049c21fb91, type: 2}
+  _invertParryDirectionValueSO: {fileID: 11400000, guid: 07eb956039480094ead3a78b1855d223,
     type: 2}
-  _rumbleFeedbackEvent: {fileID: 11400000, guid: 610579aced60c2147a27f4e48ce0d9b5,
+  _controllerRumbleEnabledValueSO: {fileID: 11400000, guid: 5dea2a69fd8614d45aae81cccf2e1162,
     type: 2}
   _hidInputSource: {fileID: 1569467103}
   _serialInputSource: {fileID: 1477892480}
@@ -1830,6 +1878,7 @@ SceneRoots:
   - {fileID: 162499281}
   - {fileID: 1549907075}
   - {fileID: 1447541452}
+  - {fileID: 202378065}
   - {fileID: 1811963881377612007}
   - {fileID: 432079949}
   - {fileID: 2105647812}

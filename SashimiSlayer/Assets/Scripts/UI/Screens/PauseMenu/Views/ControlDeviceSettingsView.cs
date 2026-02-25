@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 namespace UI.Screens.PauseMenu.Views
 {
+    /// <summary>
+    ///     CURRENTLY UNUSED, SERIAL INPUT IS NOT EXPOSED
+    /// </summary>
     public class ControlDeviceSettingsView : PauseMenuView
     {
         [Header("Events (Out)")]

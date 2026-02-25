@@ -5,18 +5,15 @@ using Events.Basic;
 using GameInput.Haptics;
 using GameInput.InputSources;
 using GameInput.Interface;
+using GameInput.ValueSO;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using ValueSO.Core;
 
 namespace GameInput
 {
     public class InputService : MonoBehaviour, IUserInput
     {
-        [Header("Event (Out)")]
-
-        [SerializeField]
-        private IntEvent _onControlSchemeChanged;
-
         [Header("Event (In)")]
 
         [SerializeField]
@@ -27,17 +24,24 @@ namespace GameInput
         [SerializeField]
         private BoolEvent _setUseSerialInput;
 
-        [SerializeField]
-        private FloatEvent _angleMultiplierEvent;
+        [Header("ValueSO (Write)")]
 
         [SerializeField]
-        private FloatEvent _swordAngleOffsetEvent;
+        private ControlSchemeValueSO _controlSchemeValueSO;
+
+        [Header("ValueSO (Read)")]
 
         [SerializeField]
-        private BoolEvent _setFlipParryDirection;
+        private FloatValueSO _aimMultiplierValueSO;
 
         [SerializeField]
-        private BoolEvent _rumbleFeedbackEvent;
+        private FloatValueSO _aimOffsetValueSO;
+
+        [SerializeField]
+        private BoolValueSO _invertParryDirectionValueSO;
+
+        [SerializeField]
+        private BoolValueSO _controllerRumbleEnabledValueSO;
 
         [Header("Depends")]
 
@@ -67,9 +71,6 @@ namespace GameInput
         public event Action OnToggleMenuInput;
         public event Action OnToggleSkipLooping;
 
-        private float _angleMultiplier = 1f;
-        private float _angleOffset;
-
         private float _lastSheathedTime;
         private bool IsInputBlocked => _inputBlockerCount > 0;
 
@@ -78,18 +79,12 @@ namespace GameInput
         /// </summary>
         private int _inputBlockerCount;
 
-        private bool _rumbleFeedbackEnabled;
-
         private void Awake()
         {
             EventPassthroughSub();
 
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
-            _angleMultiplierEvent.AddListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.AddListener(SetAngleOffset);
-            _setFlipParryDirection.AddListener(SetInvertDirectionalBlockInputs);
-            _rumbleFeedbackEvent.AddListener(SetRumbleFeedback);
 
             InputSystem.onDeviceChange += (device, change) => { UpdateControlScheme(); };
         }
@@ -100,15 +95,6 @@ namespace GameInput
 
             _onDrawDebugGUI.RemoveListener(HandleDrawDebugGUI);
             _setUseSerialInput.RemoveListener(HandleSetUseSerialInput);
-            _angleMultiplierEvent.RemoveListener(SetAngleMultiplier);
-            _swordAngleOffsetEvent.RemoveListener(SetAngleOffset);
-            _setFlipParryDirection.RemoveListener(SetInvertDirectionalBlockInputs);
-            _rumbleFeedbackEvent.RemoveListener(SetRumbleFeedback);
-        }
-
-        private void SetRumbleFeedback(bool rumbleFeedbackEnabled)
-        {
-            _rumbleFeedbackEnabled = rumbleFeedbackEnabled;
         }
 
         public void AddInputBlocker()
@@ -123,7 +109,7 @@ namespace GameInput
 
         public void AddRumble(RumbleFeedbackSO rumbleFeedback)
         {
-            if (!_rumbleFeedbackEnabled)
+            if (!_controllerRumbleEnabledValueSO.Value)
             {
                 return;
             }
@@ -136,16 +122,6 @@ namespace GameInput
             FlipParryDirection = invert;
 
             _hidInputSource.SetInvertParryDirection(invert);
-        }
-
-        private void SetAngleMultiplier(float angleMultiplier)
-        {
-            _angleMultiplier = angleMultiplier;
-        }
-
-        private void SetAngleOffset(float angleOffset)
-        {
-            _angleOffset = angleOffset;
         }
 
         private void HandleSetUseSerialInput(bool useSerialInput)
@@ -162,6 +138,8 @@ namespace GameInput
 
         private void UpdateControlScheme()
         {
+            ControlSchemes existingControlScheme = ControlScheme;
+
             if (_useSerialController)
             {
                 ControlScheme = ControlSchemes.SwordSerial;
@@ -179,7 +157,11 @@ namespace GameInput
                 ControlScheme = ControlSchemes.KeyboardMouse;
             }
 
-            _onControlSchemeChanged.Raise((int)ControlScheme);
+            if (existingControlScheme != ControlScheme)
+            {
+                Debug.Log($"Control scheme changed from {existingControlScheme} to {ControlScheme}");
+                _controlSchemeValueSO.SetValue(ControlScheme);
+            }
         }
 
         private void HandleDrawDebugGUI()
@@ -270,7 +252,7 @@ namespace GameInput
             // We want to add multipler first so that the "horizontal" angle remains the same
             // i.e offset of -25 degrees means holding physical sword at 25 degrees hilt-up is horizontal
             // regardless of mult or flipping
-            return (rawSwordAngled + _angleOffset) * _angleMultiplier;
+            return (rawSwordAngled + _aimOffsetValueSO.Value) * _aimMultiplierValueSO.Value;
         }
 
         public SheathState GetSheathState()

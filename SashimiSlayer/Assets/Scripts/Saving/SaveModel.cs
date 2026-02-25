@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace Saving
 {
@@ -19,9 +20,15 @@ namespace Saving
         // Input
         public float SwordAimMultiplier = 1;
         public float SwordAngleOffset;
-        public bool FlipSwordAim;
+
+        [FormerlySerializedAs("FlipSwordAim")]
+        public bool InvertSwordAim;
+
         public int UpAxis;
-        public bool FlipParryDirection;
+
+        [FormerlySerializedAs("FlipParryDirection")]
+        public bool InvertParryDirection;
+
         public bool RumbleFeedbackEnabled = true;
 
         // Controller
