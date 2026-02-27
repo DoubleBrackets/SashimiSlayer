@@ -29,6 +29,8 @@ namespace Saving
         [FormerlySerializedAs("FlipParryDirection")]
         public bool InvertParryDirection;
 
+        public bool InvertParrySymbols;
+
         public bool RumbleFeedbackEnabled = true;
 
         // Controller

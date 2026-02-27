@@ -86,7 +86,7 @@ namespace UI.Screens.PauseMenu
 
             if (isOpen)
             {
-                _userInput.AddInputBlocker();
+                _userInput.SetMenuOpenFlag();
             }
             else
             {

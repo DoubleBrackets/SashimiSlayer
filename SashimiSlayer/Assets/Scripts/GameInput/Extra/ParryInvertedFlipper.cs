@@ -1,19 +1,26 @@
 using System.Collections.Generic;
+using GameInput.Interface;
+using GameInput.ValueSO;
 using UnityEngine;
+using UnityEngine.Serialization;
 using ValueSO;
 using ValueSO.Core;
 
-namespace Beatmapping.Indicator
+namespace GameInput.Extra
 {
     /// <summary>
     ///     Utility component that flips the direction of parry symbols based on input settings.
     /// </summary>
     public class ParryInvertedFlipper : MonoBehaviour, IValueSOObserver
     {
+        [FormerlySerializedAs("_invertParryDirections")]
         [Header("ValueSO (Read)")]
 
         [SerializeField]
-        private BoolValueSO _invertParryDirections;
+        private BoolValueSO _invertParrySymbols;
+
+        [SerializeField]
+        private SwordHandednessValueSO _currentHandednessValueSO;
 
         [Header("Depends")]
 
@@ -28,16 +35,31 @@ namespace Beatmapping.Indicator
 
         private void Awake()
         {
-            _invertParryDirections.AddListener(this, OnFlipParry, true);
+            _invertParrySymbols.AddListener(this, HandleInvertParry, true);
+            _currentHandednessValueSO.AddListener(this, HandleHandednessChange, true);
         }
 
         private void OnDestroy()
         {
-            _invertParryDirections.RemoveListener(this);
+            _invertParrySymbols.RemoveListener(this);
+            _currentHandednessValueSO.RemoveListener(this);
         }
 
-        private void OnFlipParry(bool flip)
+        private void HandleInvertParry(bool b)
         {
+            OnFlipParry();
+        }
+
+        private void HandleHandednessChange(SwordHandedness swordHandedness)
+        {
+            OnFlipParry();
+        }
+
+        private void OnFlipParry()
+        {
+            bool flip = _invertParrySymbols.Value ^
+                        (_currentHandednessValueSO.Value == SwordHandedness.LeftHandedSword);
+
             foreach (SpriteRenderer sprite in _sprites)
             {
                 if (sprite != null)

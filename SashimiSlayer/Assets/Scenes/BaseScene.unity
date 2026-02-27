@@ -1240,8 +1240,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onInputBindingOverride: {fileID: 11400000, guid: aac6db2ee2216f84a994f9ea0b06f58b,
     type: 2}
-  _leftHandleSwordIdentifyValueSO: {fileID: 11400000, guid: b2e6d48102acb8e47a403d008ed2005f,
-    type: 2}
   _inputActionAsset: {fileID: -944628639613478452, guid: c86165f3c71e618458bb5c17310c302e,
     type: 3}
   _blockButtonLeftAction: {fileID: -4559888493282927560, guid: c86165f3c71e618458bb5c17310c302e,
@@ -1257,8 +1255,6 @@ MonoBehaviour:
   _swordControllerAngleAction: {fileID: -8683865728608103639, guid: c86165f3c71e618458bb5c17310c302e,
     type: 3}
   _toggleMenuAction: {fileID: -6951183092310110941, guid: c86165f3c71e618458bb5c17310c302e,
-    type: 3}
-  _leftHandSwordIdentifyAction: {fileID: -9123670971270402821, guid: c86165f3c71e618458bb5c17310c302e,
     type: 3}
   _customSwordControllerIdentifyAction: {fileID: -5974610499640080656, guid: c86165f3c71e618458bb5c17310c302e,
     type: 3}
@@ -1373,10 +1369,12 @@ MonoBehaviour:
   _setUseSerialInput: {fileID: 11400000, guid: ae2649dcf4fe32b4bb34667a4644dc28, type: 2}
   _controlSchemeValueSO: {fileID: 11400000, guid: 2963d6f823cdc934b8c6588233690b9f,
     type: 2}
+  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
+    type: 2}
   _aimMultiplierValueSO: {fileID: 11400000, guid: 6b962e87f828d2d4d89385e4d38be175,
     type: 2}
   _aimOffsetValueSO: {fileID: 11400000, guid: 5835ee1fb0fb5354e9666d049c21fb91, type: 2}
-  _invertParryDirectionValueSO: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+  _invertParryInputValueSO: {fileID: 11400000, guid: e2b427ae26fe979468770ce80418464b,
     type: 2}
   _invertAimValueSO: {fileID: 11400000, guid: 07eb956039480094ead3a78b1855d223, type: 2}
   _controllerRumbleEnabledValueSO: {fileID: 11400000, guid: 5dea2a69fd8614d45aae81cccf2e1162,
@@ -1384,6 +1382,8 @@ MonoBehaviour:
   _hidInputSource: {fileID: 1569467103}
   _serialInputSource: {fileID: 1477892480}
   _useSerialController: 0
+  _swordCalibrationPopupPrefab: {fileID: 5711452796287483723, guid: 8b6729f5769e5074291def5fa5b0df08,
+    type: 3}
   _sliceDebounce: 0.1
 --- !u!1 &1973045991
 GameObject:

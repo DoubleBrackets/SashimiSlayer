@@ -43,7 +43,10 @@ namespace Saving
         private BoolValueSO _invertAimSO;
 
         [SerializeField]
-        private BoolValueSO _invertParryDirectionSO;
+        private BoolValueSO _invertParryInputSO;
+
+        [SerializeField]
+        private BoolValueSO _invertParrySymbolsSO;
 
         /// <summary>
         ///     Setup ValueSOs to write changes back to save model
@@ -61,7 +64,8 @@ namespace Saving
             _aimOffsetValueSO.AddListener(this, value => saveService.SwordAngleOffset = value);
             _controllerRumbleEnabledValueSO.AddListener(this, value => saveService.RumbleFeedbackEnabled = value);
             _invertAimSO.AddListener(this, value => saveService.InvertSwordAim = value);
-            _invertParryDirectionSO.AddListener(this, value => saveService.InvertParryDirection = value);
+            _invertParryInputSO.AddListener(this, value => saveService.InvertParryDirection = value);
+            _invertParrySymbolsSO.AddListener(this, value => saveService.InvertParrySymbols = value);
         }
 
         public void Cleanup()
@@ -76,7 +80,8 @@ namespace Saving
             _aimOffsetValueSO.RemoveListener(this);
             _controllerRumbleEnabledValueSO.RemoveListener(this);
             _invertAimSO.RemoveListener(this);
-            _invertParryDirectionSO.RemoveListener(this);
+            _invertParryInputSO.RemoveListener(this);
+            _invertParrySymbolsSO.RemoveListener(this);
         }
 
         public void Load(SaveModel saveModel)
@@ -91,7 +96,8 @@ namespace Saving
             _aimOffsetValueSO.SetValue(saveModel.SwordAngleOffset, this);
             _controllerRumbleEnabledValueSO.SetValue(saveModel.RumbleFeedbackEnabled, this);
             _invertAimSO.SetValue(saveModel.InvertSwordAim, this);
-            _invertParryDirectionSO.SetValue(saveModel.InvertParryDirection, this);
+            _invertParryInputSO.SetValue(saveModel.InvertParryDirection, this);
+            _invertParrySymbolsSO.SetValue(saveModel.InvertParrySymbols, this);
         }
     }
 }

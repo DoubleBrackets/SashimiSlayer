@@ -70,15 +70,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "LeftHandSwordIdentify",
-                    "type": "PassThrough",
-                    "id": "7d9a55c3-d599-40bd-b04b-9f50ec5f3ea0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "CustomControllerIdentify",
                     "type": "PassThrough",
                     "id": "43e9739e-d79b-48b3-8f7a-e98f50dcf28c",
@@ -267,17 +258,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "ExhibitionInvertAim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2c1df739-4ae8-459d-b1e5-8119ddbb6d0c",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Custom",
-                    "action": "LeftHandSwordIdentify",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

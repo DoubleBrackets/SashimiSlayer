@@ -131,7 +131,7 @@ namespace Beatmapping.Indicator
 
         public override void OnNoteCleanedUp(BeatNote beatNote)
         {
-            _beatNote.OnTick -= BeatNote_OnTick;
+             _beatNote.OnTick -= BeatNote_OnTick;
         }
     }
 }

@@ -10,7 +10,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
-using ValueSO.Core;
 
 namespace GameInput.InputSources
 {
@@ -20,11 +19,6 @@ namespace GameInput.InputSources
 
         [SerializeField]
         private SOEvent _onInputBindingOverride;
-
-        [Header("ValueSO (Write)")]
-
-        [SerializeField]
-        private BoolValueSO _leftHandleSwordIdentifyValueSO;
 
         [Header("Gameplay Input Action References")]
 
@@ -53,9 +47,6 @@ namespace GameInput.InputSources
         private InputActionReference _toggleMenuAction;
 
         [Header("Custom Sword Input Action References")]
-
-        [SerializeField]
-        private InputActionReference _leftHandSwordIdentifyAction;
 
         [SerializeField]
         private InputActionReference _customSwordControllerIdentifyAction;
@@ -185,8 +176,6 @@ namespace GameInput.InputSources
 
             _toggleMenuAction.action.performed += OnToggleMenu;
 
-            _leftHandSwordIdentifyAction.action.performed += OnLeftHandSwordIdentify;
-            _leftHandSwordIdentifyAction.action.canceled += OnLeftHandSwordIdentify;
             _customSwordControllerIdentifyAction.action.performed += OnCustomSwordControllerIdentify;
             _customSwordControllerIdentifyAction.action.canceled += OnCustomSwordControllerIdentify;
 
@@ -207,9 +196,6 @@ namespace GameInput.InputSources
             _swordControllerAngleAction.action.performed -= OnSwordControllerAngle;
 
             _toggleMenuAction.action.performed -= OnToggleMenu;
-
-            _leftHandSwordIdentifyAction.action.performed -= OnLeftHandSwordIdentify;
-            _leftHandSwordIdentifyAction.action.canceled -= OnLeftHandSwordIdentify;
 
             _customSwordControllerIdentifyAction.action.performed -= OnCustomSwordControllerIdentify;
             _customSwordControllerIdentifyAction.action.canceled -= OnCustomSwordControllerIdentify;
@@ -329,12 +315,6 @@ namespace GameInput.InputSources
             }
         }
 
-        public void OnLeftHandSwordIdentify(InputAction.CallbackContext context)
-        {
-            _leftHandleSwordIdentify = context.ReadValueAsButton();
-            _leftHandleSwordIdentifyValueSO.SetValue(_leftHandleSwordIdentify);
-        }
-
         private void OnCustomSwordControllerIdentify(InputAction.CallbackContext context)
         {
             Debug.Log(context.ReadValueAsButton());
@@ -408,11 +388,6 @@ namespace GameInput.InputSources
                 Profile = highFreqRumble,
                 StartTime = Time.time
             });
-        }
-
-        public bool GetLeftHandleSwordIdentify()
-        {
-            return _leftHandleSwordIdentify;
         }
 
         public bool GetCustomSwordControllerIdentify()

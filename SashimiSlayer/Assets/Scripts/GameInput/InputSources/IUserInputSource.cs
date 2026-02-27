@@ -34,7 +34,6 @@ namespace GameInput.InputSources
 
         public void AddRumble(RumbleFeedbackSO rumbleFeedback);
 
-        public bool GetLeftHandleSwordIdentify();
         public bool GetCustomSwordControllerIdentify();
     }
 }

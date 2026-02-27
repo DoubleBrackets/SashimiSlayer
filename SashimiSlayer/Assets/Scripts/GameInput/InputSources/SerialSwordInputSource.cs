@@ -155,11 +155,6 @@ namespace GameInput.InputSources
             // Not supported
         }
 
-        public bool GetLeftHandleSwordIdentify()
-        {
-            return false;
-        }
-
         public bool GetCustomSwordControllerIdentify()
         {
             return true;
