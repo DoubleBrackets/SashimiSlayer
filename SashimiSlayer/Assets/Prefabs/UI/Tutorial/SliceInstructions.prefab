@@ -284,6 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5795120399131491791}
   - component: {fileID: 3718104081095753636}
+  - component: {fileID: 1757421350698371128}
   m_Layer: 0
   m_Name: SliceInstructions
   m_TagString: Untagged
@@ -334,6 +335,35 @@ MonoBehaviour:
     - {fileID: 8065672041734216756}
   _controlSchemeValueSO: {fileID: 11400000, guid: 2963d6f823cdc934b8c6588233690b9f,
     type: 2}
+--- !u!114 &1757421350698371128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125921120835859394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc0a66f62c846788d1a9ed1b3537a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Components.BoolValueSOMono
+  _boolValueSO: {fileID: 11400000, guid: a53ef59f0a6e54e4da0fa627cee413a6, type: 2}
+  _invertValue: 0
+  _onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3125921120835859394}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6542845352775107583
 GameObject:
   m_ObjectHideFlags: 0
