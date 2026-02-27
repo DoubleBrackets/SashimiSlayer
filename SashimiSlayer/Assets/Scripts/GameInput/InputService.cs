@@ -98,7 +98,7 @@ namespace GameInput
         {
             EventPassthroughSub();
 
-            _invertParryInputValueSO.AddListener(this, SetInvertDirectionalBlockInputs);
+            _invertParryInputValueSO.AddListener(this, SetInvertUINavigation);
 
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
@@ -162,9 +162,9 @@ namespace GameInput
             return InputProvider.GetCustomSwordControllerIdentify();
         }
 
-        private void SetInvertDirectionalBlockInputs(bool invert)
+        private void SetInvertUINavigation(bool invert)
         {
-            _hidInputSource.SetInvertParryDirection(invert);
+            _hidInputSource.SetInvertUINavigation(invert);
         }
 
         private void HandleSetUseSerialInput(bool useSerialInput)
@@ -255,15 +255,6 @@ namespace GameInput
             if (BlockInput())
             {
                 return;
-            }
-
-            // invert If left handed
-            bool invertDirections =
-                _invertParryInputValueSO.Value ^ (_currentHandednessValueSO.Value == SwordHandedness.LeftHandedSword);
-
-            if (invertDirections)
-            {
-                state = state == BlockPoses.BlockRight ? BlockPoses.BlockLeft : BlockPoses.BlockRight;
             }
 
             OnBlockPoseChanged?.Invoke(state);

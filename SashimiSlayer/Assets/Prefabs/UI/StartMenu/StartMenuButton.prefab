@@ -556,8 +556,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8026839660033726894}
   - component: {fileID: 408449738606848641}
-  - component: {fileID: 7118744265536656777}
-  - component: {fileID: 2226726327872585112}
   m_Layer: 0
   m_Name: Scaler
   m_TagString: Untagged
@@ -603,43 +601,3 @@ MonoBehaviour:
   - {fileID: 8268202734957726281}
   _particles: []
   _transforms: []
---- !u!114 &7118744265536656777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950819131580167885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eda320fde2a0be49aa8c6efc874980e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Beatmapping.Indicator.ParryInvertedSpriteSelector
-  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
-    type: 2}
-  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
-    type: 2}
-  _defaultSprite: {fileID: 0}
-  _flippedSprite: {fileID: 0}
-  _image: {fileID: 0}
-  _spriteRenderer: {fileID: 8268202734957726281}
---- !u!114 &2226726327872585112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950819131580167885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eda320fde2a0be49aa8c6efc874980e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Beatmapping.Indicator.ParryInvertedSpriteSelector
-  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
-    type: 2}
-  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
-    type: 2}
-  _defaultSprite: {fileID: 0}
-  _flippedSprite: {fileID: 0}
-  _image: {fileID: 0}
-  _spriteRenderer: {fileID: 2931390341293962214}

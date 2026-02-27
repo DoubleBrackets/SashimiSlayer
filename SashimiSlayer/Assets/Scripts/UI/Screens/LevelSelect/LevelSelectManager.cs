@@ -3,12 +3,15 @@ using CommonTypes;
 using Cysharp.Threading.Tasks;
 using Framework;
 using Framework.LevelLoading;
+using GameInput.Interface;
+using GameInput.ValueSO;
 using Interactions.DataTypes;
 using Interactions.Framework;
 using Interactions.Interactables;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using ValueSO;
 using GameLevelSO = Framework.LevelLoading.GameLevelSO;
 
 namespace UI.Screens.LevelSelect
@@ -16,8 +19,13 @@ namespace UI.Screens.LevelSelect
     /// <summary>
     ///     Handles the UI for the level select menu.
     /// </summary>
-    public class LevelSelectManager : MonoBehaviour, IFindsDependencies, IInteractable
+    public class LevelSelectManager : MonoBehaviour, IFindsDependencies, IInteractable, IValueSOObserver
     {
+        [Header("ValuesSO (Read)")]
+
+        [SerializeField]
+        private SwordHandednessValueSO _handValueSO;
+
         [Header("Dependencies")]
 
         [SerializeField]
@@ -60,8 +68,8 @@ namespace UI.Screens.LevelSelect
         private LevelService _levelService;
         private IInteractionService _interactionService;
 
-        private SingleDirBlockable _leftBlockable;
-        private SingleDirBlockable _rightBlockable;
+        private SingleDirBlockable _starBlockable;
+        private SingleDirBlockable _shellBlockable;
 
         public void FindDependencies()
         {
@@ -77,31 +85,39 @@ namespace UI.Screens.LevelSelect
 
             UpdatePromptOpacity();
 
-            _leftBlockable =
-                new SingleDirBlockable(this, BlockPoses.BlockLeft, false);
-            _rightBlockable =
-                new SingleDirBlockable(this, BlockPoses.BlockRight, false);
+            _starBlockable =
+                new SingleDirBlockable(this, BlockPoses.BlockStar, false);
+            _shellBlockable =
+                new SingleDirBlockable(this, BlockPoses.BlockShell, false);
             UpdateBlockableEnabled();
 
             _interactionService.Register(this);
 
-            _leftBlockable.OnBlocked += FlipPrevious;
-            _rightBlockable.OnBlocked += FlipNext;
+            _starBlockable.OnBlocked += FlipPrevious;
+            _shellBlockable.OnBlocked += FlipNext;
+
+            _handValueSO.AddListener(this, HandleHandednessChanged);
         }
 
         private void OnDestroy()
         {
             _interactionService.Unregister(this);
+            _handValueSO.RemoveListener(this);
+        }
+
+        private void HandleHandednessChanged(SwordHandedness handedness)
+        {
+            UpdateBlockableEnabled();
         }
 
         public void FlipNext()
         {
-            ChangeSelection(1);
+            ChangeSelection(_handValueSO.Value == SwordHandedness.LeftHandedSword ? -1 : 1);
         }
 
         public void FlipPrevious()
         {
-            ChangeSelection(-1);
+            ChangeSelection(_handValueSO.Value == SwordHandedness.LeftHandedSword ? 1 : -1);
         }
 
         /// <summary>
@@ -137,8 +153,16 @@ namespace UI.Screens.LevelSelect
 
         private void UpdateBlockableEnabled()
         {
-            _leftBlockable.Enabled = _currentPanelIndex > 0;
-            _rightBlockable.Enabled = _currentPanelIndex < _levelPanels.Count - 1;
+            SingleDirBlockable leftSide = _handValueSO.Value == SwordHandedness.RightHandedSword
+                ? _starBlockable
+                : _shellBlockable;
+
+            SingleDirBlockable rightSide = _handValueSO.Value == SwordHandedness.RightHandedSword
+                ? _shellBlockable
+                : _starBlockable;
+
+            leftSide.Enabled = _currentPanelIndex > 0;
+            rightSide.Enabled = _currentPanelIndex < _levelPanels.Count - 1;
         }
 
         private void UpdatePromptOpacity()
@@ -198,8 +222,8 @@ namespace UI.Screens.LevelSelect
 
         public InteractionResult AttemptInteraction(InteractionAttempt attempt)
         {
-            InteractionResult left = _leftBlockable.AttemptInteraction(attempt);
-            InteractionResult right = _rightBlockable.AttemptInteraction(attempt);
+            InteractionResult left = _starBlockable.AttemptInteraction(attempt);
+            InteractionResult right = _shellBlockable.AttemptInteraction(attempt);
 
             if (left.Successful)
             {

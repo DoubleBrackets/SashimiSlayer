@@ -182,10 +182,10 @@ namespace Protag.Core
             {
                 switch (pose)
                 {
-                    case BlockPoses.BlockRight:
+                    case BlockPoses.BlockShell:
                         _blockedRight.Raise(_currentSwordState);
                         break;
-                    case BlockPoses.BlockLeft:
+                    case BlockPoses.BlockStar:
                         _blockedLeft.Raise(_currentSwordState);
                         break;
                 }

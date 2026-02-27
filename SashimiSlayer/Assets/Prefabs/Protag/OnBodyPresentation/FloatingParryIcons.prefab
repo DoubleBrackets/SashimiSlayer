@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 6221400272678886039}
   - component: {fileID: 2179962620386268396}
   - component: {fileID: 7755802685635282226}
-  - component: {fileID: 2469521128893143608}
   m_Layer: 0
-  m_Name: Left
+  m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,26 +71,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2469521128893143608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962971586931940058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eda320fde2a0be49aa8c6efc874980e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameInput.Extra.ParryInvertedSpriteSelector
-  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
-    type: 2}
-  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
-    type: 2}
-  _defaultSprite: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
-  _flippedSprite: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
-  _image: {fileID: 0}
-  _spriteRenderer: {fileID: 8472560805721047096}
 --- !u!1 &4707568961271529077
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,9 +338,8 @@ GameObject:
   - component: {fileID: 132352424863784088}
   - component: {fileID: 7886969704261315860}
   - component: {fileID: 579723334482543816}
-  - component: {fileID: 5079370107716715401}
   m_Layer: 0
-  m_Name: Right
+  m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,23 +398,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5079370107716715401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8703795146369503157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eda320fde2a0be49aa8c6efc874980e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameInput.Extra.ParryInvertedSpriteSelector
-  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
-    type: 2}
-  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
-    type: 2}
-  _defaultSprite: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
-  _flippedSprite: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
-  _image: {fileID: 0}
-  _spriteRenderer: {fileID: 7324996399311532899}

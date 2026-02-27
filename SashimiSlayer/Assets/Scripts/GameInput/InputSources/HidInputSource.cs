@@ -265,8 +265,8 @@ namespace GameInput.InputSources
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(BlockPoses.BlockLeft);
-                _blockPoses = BlockPoses.BlockLeft;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockStar);
+                _blockPoses = BlockPoses.BlockStar;
             }
         }
 
@@ -276,8 +276,8 @@ namespace GameInput.InputSources
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(BlockPoses.BlockRight);
-                _blockPoses = BlockPoses.BlockRight;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockShell);
+                _blockPoses = BlockPoses.BlockShell;
             }
         }
 
@@ -400,7 +400,7 @@ namespace GameInput.InputSources
         ///     since there's no layers between the action and the UI input module
         /// </summary>
         /// <param name="invert"></param>
-        public void SetInvertParryDirection(bool invert)
+        public void SetInvertUINavigation(bool invert)
         {
             var uiModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
 

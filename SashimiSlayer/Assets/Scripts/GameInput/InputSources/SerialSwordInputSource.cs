@@ -91,14 +91,14 @@ namespace GameInput.InputSources
 
             if (data.TopButton && !_wasTopButtonPressed)
             {
-                _currentBlockPose = BlockPoses.BlockRight;
-                OnBlockPoseChanged?.Invoke(BlockPoses.BlockRight);
+                _currentBlockPose = BlockPoses.BlockShell;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockShell);
             }
 
             if (data.MiddleButton && !_wasMiddleButtonPressed)
             {
-                _currentBlockPose = BlockPoses.BlockLeft;
-                OnBlockPoseChanged?.Invoke(BlockPoses.BlockLeft);
+                _currentBlockPose = BlockPoses.BlockStar;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockStar);
             }
 
             _wasTopButtonPressed = data.TopButton;

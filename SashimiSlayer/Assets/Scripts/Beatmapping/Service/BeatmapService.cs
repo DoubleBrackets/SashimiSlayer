@@ -10,9 +10,11 @@ using Beatmapping.Timing.LoopHandler;
 using FMOD.Studio;
 using FMODUnity;
 using Framework;
+using GameInput.ValueSO;
 using Interactions.Framework;
 using NaughtyAttributes;
 using UnityEngine;
+using ValueSO.Core;
 
 namespace Beatmapping.Service
 {
@@ -25,6 +27,14 @@ namespace Beatmapping.Service
         [InfoBox("Top level controller for beatmap gameplay")]
         [SerializeField]
         private BeatmapServiceContainerSO _beatmapServiceContainer;
+
+        [Header("ValueSO (Read)")]
+
+        [SerializeField]
+        private SwordHandednessValueSO _currentHandednessValueSO;
+
+        [SerializeField]
+        private BoolValueSO _invertParryInput;
 
         [Header("Dependencies")]
 
