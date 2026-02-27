@@ -1,12 +1,16 @@
 /*
-v. 0.5.1
 This variation allows the sword to act as a generic joystick. 
 This is preferred over the serial comm variation.
 
-This version also identifies the handed-ness by holding down the appropriate button, which automatically inverts aiming + block directions in-game
-
+Changelog
+0.1.0 - Initial generic joystick version based on the serial comm version
+0.1.1 - Minor cleanup/refactor for haptic feedback logic
+0.2.1 - Identifies the handed-ness by holding down the appropriate button, which automatically inverts aiming + block directions in-game
+0.3.0 - Comments (this version has an error where leftHand variable is set to true by default)
+0.3.1 - Comments, renaming variables, set leftHand back to false by default
 0.4.1 - Now holds down button 5 to indicate that this is a custom controller (distinguishing from other joysticks/gamepads)
-0.5.1 - Removed left handedness identifying button
+0.5.1 - Removed left handedness identifying button (now handled by in game calibration menu)
+0.5.2 - Added version changelog
 
 Notes
 - Handedness is based on which hand grips the sword handle
