@@ -273,6 +273,7 @@ namespace GameInput
                 _currentHandednessValueSO.SetValue(_swordCalibrationPopup.GetHandedness());
                 _swordCalibrationPopup.SetVisible(false);
                 _inputFlags &= ~InputFlags.CalibratingSword;
+                return;
             }
 
             if (BlockInput())
