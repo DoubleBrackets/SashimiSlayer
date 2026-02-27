@@ -10,8 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fd5a4c87ef44b9a997ead166bbd3944, type: 3}
-  m_Name: IsLeftHandSword
+  m_Name: InvertParrySymbols
   m_EditorClassIdentifier: Assembly-CSharp::ValueSO.Core.BoolValueSO
-  _description: 
-  _value: 0
+  _description: 'Invert the parry symbols displayed in game (but does not invert
+    which input maps to which one).
+
+
+    So while STAR would normally be left and
+    SHELL right, this would set STAR to right and SHELL to left'
+  _value: 1
   <Log>k__BackingField: 0

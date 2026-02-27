@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d5c12edc310464a8aace98ea0505ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _handValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa, type: 2}
   songRoster: {fileID: 11400000, guid: e3cbf2d063334b841b46feb0ed798cb2, type: 2}
   songPanelPrefab: {fileID: 116148503937992090, guid: 95e37dacc483c6344b04cacf7662d687,
     type: 3}

@@ -195,7 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72f4d8224802c84e9e24c4101efb21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invertParryDirections: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+    type: 2}
+  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
     type: 2}
   _sprites:
   - {fileID: 1201745700319042158}
@@ -433,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534011b23ca94ab48ad124977a283229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprites: []
+  _controlSchemeDisplays: []
   _controlSchemeValueSO: {fileID: 11400000, guid: 2963d6f823cdc934b8c6588233690b9f,
     type: 2}
 --- !u!114 &8246890954157284313

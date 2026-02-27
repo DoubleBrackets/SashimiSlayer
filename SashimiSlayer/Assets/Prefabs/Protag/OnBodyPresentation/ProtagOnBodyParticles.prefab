@@ -14769,7 +14769,7 @@ GameObject:
   - component: {fileID: 5105148132565294698}
   - component: {fileID: 1261001108546820195}
   m_Layer: 0
-  m_Name: Right
+  m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19757,8 +19757,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8407438974082111008}
-  - component: {fileID: 6010892773446809895}
-  - component: {fileID: 9024000604953421932}
+  - component: {fileID: 1444718040827871057}
+  - component: {fileID: 8667306306643620478}
   m_Layer: 0
   m_Name: BlockParticles
   m_TagString: Untagged
@@ -19783,7 +19783,7 @@ Transform:
   - {fileID: 7654888424037589202}
   m_Father: {fileID: 2724923580597487481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6010892773446809895
+--- !u!114 &1444718040827871057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19794,11 +19794,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71fe7f0b392a34b4ab5a5aa857f06d34, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameJuice.VFX.EventParticlePlayer
   _event: {fileID: 11400000, guid: bcd5a20fb77cb194c9fcc3958bac6571, type: 2}
   _particleSystems:
   - {fileID: 5105148132565294698}
---- !u!114 &9024000604953421932
+--- !u!114 &8667306306643620478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19809,7 +19809,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71fe7f0b392a34b4ab5a5aa857f06d34, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameJuice.VFX.EventParticlePlayer
   _event: {fileID: 11400000, guid: de90496f5929b02439b0d3907887baee, type: 2}
   _particleSystems:
   - {fileID: 1809333750637350462}
@@ -29631,7 +29631,7 @@ GameObject:
   - component: {fileID: 1809333750637350462}
   - component: {fileID: 671724105151366219}
   m_Layer: 0
-  m_Name: Left
+  m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

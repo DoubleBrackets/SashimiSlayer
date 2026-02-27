@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2179962620386268396}
   - component: {fileID: 7755802685635282226}
   m_Layer: 0
-  m_Name: Left
+  m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72f4d8224802c84e9e24c4101efb21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invertParryDirections: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+    type: 2}
+  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
     type: 2}
   _sprites:
   - {fileID: 7324996399311532899}
@@ -337,7 +339,7 @@ GameObject:
   - component: {fileID: 7886969704261315860}
   - component: {fileID: 579723334482543816}
   m_Layer: 0
-  m_Name: Right
+  m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

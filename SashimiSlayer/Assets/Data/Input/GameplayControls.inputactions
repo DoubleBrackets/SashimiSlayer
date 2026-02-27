@@ -25,7 +25,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "BlockButtonLeft",
+                    "name": "BlockButtonStar",
                     "type": "PassThrough",
                     "id": "ad2ed90e-bbbd-4e10-9b1d-da64921ae152",
                     "expectedControlType": "Button",
@@ -34,7 +34,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "BlockButtonRight",
+                    "name": "BlockButtonShell",
                     "type": "PassThrough",
                     "id": "f0f51208-706e-4519-ac55-3ea20dd7f47a",
                     "expectedControlType": "Button",
@@ -68,15 +68,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "LeftHandSwordIdentify",
-                    "type": "PassThrough",
-                    "id": "7d9a55c3-d599-40bd-b04b-9f50ec5f3ea0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 },
                 {
                     "name": "CustomControllerIdentify",
@@ -167,7 +158,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
-                    "action": "BlockButtonLeft",
+                    "action": "BlockButtonStar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -178,7 +169,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "BlockButtonLeft",
+                    "action": "BlockButtonStar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -189,7 +180,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "BlockButtonLeft",
+                    "action": "BlockButtonStar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -200,7 +191,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
-                    "action": "BlockButtonRight",
+                    "action": "BlockButtonShell",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -211,7 +202,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "BlockButtonRight",
+                    "action": "BlockButtonShell",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -222,7 +213,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Custom",
-                    "action": "BlockButtonRight",
+                    "action": "BlockButtonShell",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -267,17 +258,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "ExhibitionInvertAim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2c1df739-4ae8-459d-b1e5-8119ddbb6d0c",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Custom",
-                    "action": "LeftHandSwordIdentify",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

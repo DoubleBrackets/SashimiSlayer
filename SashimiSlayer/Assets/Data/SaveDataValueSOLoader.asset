@@ -23,5 +23,7 @@ MonoBehaviour:
   _controllerRumbleEnabledValueSO: {fileID: 11400000, guid: 5dea2a69fd8614d45aae81cccf2e1162,
     type: 2}
   _invertAimSO: {fileID: 11400000, guid: 07eb956039480094ead3a78b1855d223, type: 2}
-  _invertParryDirectionSO: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+  _invertParryInputSO: {fileID: 11400000, guid: e2b427ae26fe979468770ce80418464b,
+    type: 2}
+  _invertParrySymbolsSO: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
     type: 2}

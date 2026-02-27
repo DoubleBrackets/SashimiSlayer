@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using CommonTypes;
 using Events.Basic;
+using GameInput.Extra;
 using GameInput.Haptics;
 using GameInput.InputSources;
 using GameInput.Interface;
@@ -15,6 +16,14 @@ namespace GameInput
 {
     public class InputService : MonoBehaviour, IUserInput, IValueSOObserver
     {
+        [Flags]
+        private enum InputFlags
+        {
+            None = 0,
+            MenuOpen = 1 << 0,
+            CalibratingSword = 1 << 1
+        }
+
         [Header("Event (In)")]
 
         [SerializeField]
@@ -30,6 +39,9 @@ namespace GameInput
         [SerializeField]
         private ControlSchemeValueSO _controlSchemeValueSO;
 
+        [SerializeField]
+        private SwordHandednessValueSO _currentHandednessValueSO;
+
         [Header("ValueSO (Read)")]
 
         [SerializeField]
@@ -39,7 +51,7 @@ namespace GameInput
         private FloatValueSO _aimOffsetValueSO;
 
         [SerializeField]
-        private BoolValueSO _invertParryDirectionValueSO;
+        private BoolValueSO _invertParryInputValueSO;
 
         [SerializeField]
         private BoolValueSO _invertAimValueSO;
@@ -58,6 +70,9 @@ namespace GameInput
         [SerializeField]
         private bool _useSerialController;
 
+        [SerializeField]
+        private SwordCalibrationPopup _swordCalibrationPopupPrefab;
+
         [Header("Config")]
 
         [Tooltip("Debounce time between sheathing and unsheathing slice to prevent bouncing")]
@@ -74,48 +89,62 @@ namespace GameInput
         public event Action OnToggleSkipLooping;
 
         private float _lastSheathedTime;
-        private bool IsInputBlocked => _inputBlockerCount > 0;
 
-        /// <summary>
-        ///     Counter for input blockers
-        /// </summary>
-        private int _inputBlockerCount;
+        private InputFlags _inputFlags;
+
+        private SwordCalibrationPopup _swordCalibrationPopup;
 
         private void Awake()
         {
             EventPassthroughSub();
 
-            _invertParryDirectionValueSO.AddListener(this, SetInvertDirectionalBlockInputs);
+            _invertParryInputValueSO.AddListener(this, SetInvertUINavigation);
 
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
 
-            InputSystem.onDeviceChange += (device, change) => { UpdateControlScheme(); };
+            InputSystem.onDeviceChange += HandleDeviceChange;
+
+            InitSwordCalibrationPopup();
+
+            _currentHandednessValueSO.SetValue(SwordHandedness.RightHandedSword);
+        }
+
+        private void Update()
+        {
+            // Not efficient but
+            UpdateControlScheme();
         }
 
         private void OnDestroy()
         {
             EventPassthroughUnsub();
 
-            _invertParryDirectionValueSO.RemoveListener(this);
+            _invertParryInputValueSO.RemoveListener(this);
 
             _onDrawDebugGUI.RemoveListener(HandleDrawDebugGUI);
             _setUseSerialInput.RemoveListener(HandleSetUseSerialInput);
+
+            InputSystem.onDeviceChange -= HandleDeviceChange;
+
+            _controlSchemeValueSO.SetValue(ControlSchemes.KeyboardMouse);
+            _currentHandednessValueSO.SetValue(SwordHandedness.RightHandedSword);
         }
 
-        private void Update()
+        private void InitSwordCalibrationPopup()
         {
-            UpdateControlScheme();
+            _swordCalibrationPopup = Instantiate(_swordCalibrationPopupPrefab, transform);
+            _swordCalibrationPopup.SetVisible(false);
         }
 
-        public void AddInputBlocker()
+        public void SetMenuOpenFlag()
         {
-            _inputBlockerCount++;
+            _inputFlags |= InputFlags.MenuOpen;
         }
 
         public void RemoveInputBlocker()
         {
-            _inputBlockerCount = Math.Max(0, _inputBlockerCount - 1);
+            _inputFlags &= ~InputFlags.MenuOpen;
         }
 
         public void AddRumble(RumbleFeedbackSO rumbleFeedback)
@@ -128,19 +157,14 @@ namespace GameInput
             InputProvider.AddRumble(rumbleFeedback);
         }
 
-        public bool GetLeftHandleSwordIdentify()
-        {
-            return InputProvider.GetLeftHandleSwordIdentify();
-        }
-
         public bool GetCustomSwordControllerIdentify()
         {
             return InputProvider.GetCustomSwordControllerIdentify();
         }
 
-        private void SetInvertDirectionalBlockInputs(bool invert)
+        private void SetInvertUINavigation(bool invert)
         {
-            _hidInputSource.SetInvertParryDirection(invert);
+            _hidInputSource.SetInvertUINavigation(invert);
         }
 
         private void HandleSetUseSerialInput(bool useSerialInput)
@@ -151,6 +175,11 @@ namespace GameInput
             _useSerialController = useSerialInput;
 
             EventPassthroughSub();
+        }
+
+        private void HandleDeviceChange(InputDevice inputDevice, InputDeviceChange inputDeviceChange)
+        {
+            UpdateControlScheme();
         }
 
         private void UpdateControlScheme()
@@ -179,6 +208,19 @@ namespace GameInput
             {
                 Debug.Log($"Control scheme changed from {existingControlScheme} to {newControlScheme}");
                 _controlSchemeValueSO.SetValue(newControlScheme);
+
+                if (newControlScheme == ControlSchemes.SwordJoystick)
+                {
+                    // Begin sword calibration popup
+                    _swordCalibrationPopup.SetVisible(true);
+                    _inputFlags |= InputFlags.CalibratingSword;
+                }
+                else
+                {
+                    _swordCalibrationPopup.SetVisible(false);
+                    _inputFlags &= ~InputFlags.CalibratingSword;
+                    _currentHandednessValueSO.SetValue(SwordHandedness.RightHandedSword);
+                }
             }
         }
 
@@ -210,16 +252,9 @@ namespace GameInput
 
         private void HandleBlockPoseChanged(BlockPoses state)
         {
-            if (IsInputBlocked)
+            if (BlockInput())
             {
                 return;
-            }
-
-            bool invertDirections = _invertParryDirectionValueSO.Value ^ InputProvider.GetLeftHandleSwordIdentify();
-
-            if (invertDirections)
-            {
-                state = state == BlockPoses.BlockRight ? BlockPoses.BlockLeft : BlockPoses.BlockRight;
             }
 
             OnBlockPoseChanged?.Invoke(state);
@@ -227,6 +262,19 @@ namespace GameInput
 
         private void HandleSheatheStateChanged(SheathState sheathState)
         {
+            // Slice to confirm calibration results
+            if (_inputFlags.HasFlag(InputFlags.CalibratingSword) && sheathState != SheathState.Sheathed)
+            {
+                _currentHandednessValueSO.SetValue(_swordCalibrationPopup.GetHandedness());
+                _swordCalibrationPopup.SetVisible(false);
+                _inputFlags &= ~InputFlags.CalibratingSword;
+            }
+
+            if (BlockInput())
+            {
+                return;
+            }
+
             if (sheathState == SheathState.Unsheathed)
             {
                 if (Time.time < _lastSheathedTime + _sliceDebounce)
@@ -243,11 +291,6 @@ namespace GameInput
                 _lastSheathedTime = Time.time;
             }
 
-            if (IsInputBlocked)
-            {
-                return;
-            }
-
             OnSheathStateChanged?.Invoke(sheathState);
         }
 
@@ -258,7 +301,12 @@ namespace GameInput
 
         public float GetSwordAngle()
         {
-            if (IsInputBlocked)
+            if (_inputFlags.HasFlag(InputFlags.CalibratingSword))
+            {
+                _swordCalibrationPopup.SetCurrentRawAngle(InputProvider.GetSwordAngle());
+            }
+
+            if (BlockInput())
             {
                 // Ignore mouse aim when menus are open
                 return 0;
@@ -278,10 +326,12 @@ namespace GameInput
             // i.e offset of -25 degrees means holding physical sword at 25 degrees hilt-up is horizontal
             // regardless of mult or flipping
 
-            int flipping = (_invertAimValueSO.Value ? -1 : 1)
-                           * (InputProvider.GetLeftHandleSwordIdentify() ? -1 : 1);
+            int flippingFromInvertAim = _invertAimValueSO.Value ? -1 : 1;
+            int flippingFromHandedness = _currentHandednessValueSO.Value == SwordHandedness.LeftHandedSword ? -1 : 1;
 
-            return (rawSwordAngled + _aimOffsetValueSO.Value) * _aimMultiplierValueSO.Value * flipping;
+            return (rawSwordAngled + _aimOffsetValueSO.Value) * _aimMultiplierValueSO.Value *
+                   flippingFromInvertAim *
+                   flippingFromHandedness;
         }
 
         public SheathState GetSheathState()
@@ -292,6 +342,11 @@ namespace GameInput
         public BlockPoses GetBlockPose()
         {
             return InputProvider.GetBlockPose();
+        }
+
+        private bool BlockInput()
+        {
+            return _inputFlags != 0;
         }
     }
 }

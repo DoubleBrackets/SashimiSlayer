@@ -109,6 +109,16 @@ namespace Saving
             }
         }
 
+        public bool InvertParrySymbols
+        {
+            get => _saveModel.InvertParrySymbols;
+            set
+            {
+                _saveModel.InvertParrySymbols = value;
+                Save();
+            }
+        }
+
         public string LastSerialPortName
         {
             get => _saveModel.LastConnectedSerialPortName;

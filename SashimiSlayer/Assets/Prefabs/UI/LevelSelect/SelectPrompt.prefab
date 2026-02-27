@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72f4d8224802c84e9e24c4101efb21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invertParryDirections: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+    type: 2}
+  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
     type: 2}
   _sprites: []
   _particles: []
@@ -137,8 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eda320fde2a0be49aa8c6efc874980e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invertParryDirections: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+  _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+    type: 2}
+  _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
     type: 2}
   _defaultSprite: {fileID: 287091319, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
   _flippedSprite: {fileID: 1712797032, guid: 1db8affb5c84fb44c85250032995abff, type: 3}
   _image: {fileID: 6975623584651101274}
+  _spriteRenderer: {fileID: 0}

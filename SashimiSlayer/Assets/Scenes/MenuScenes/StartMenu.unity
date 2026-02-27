@@ -16476,12 +16476,12 @@ PrefabInstance:
     - target: {fileID: 4838587425353400675, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
       propertyPath: m_text
-      value: 'Right Bumper / [Xbox Controller]'
+      value: 'Right Shoulder / [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 4838587425353400675, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
       propertyPath: m_fontSize
-      value: 3.7
+      value: 4.45
       objectReference: {fileID: 0}
     - target: {fileID: 5015846273429714099, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
@@ -16502,10 +16502,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1727510402525348705, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 1244288387401316017, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
       insertIndex: -1

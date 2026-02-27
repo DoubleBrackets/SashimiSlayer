@@ -5,7 +5,7 @@ using GameInput.ValueSO;
 using UnityEngine;
 using ValueSO;
 
-namespace GameInput
+namespace GameInput.Extra
 {
     /// <summary>
     ///     Handles hiding/showing cursor

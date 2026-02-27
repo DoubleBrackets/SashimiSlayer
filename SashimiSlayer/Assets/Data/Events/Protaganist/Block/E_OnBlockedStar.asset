@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6a5fe83c4dd451c999d985ee0e7db5d, type: 3}
-  m_Name: E_OnBlockedRight
+  m_Name: E_OnBlockedStar
   m_EditorClassIdentifier: 
-  _description: Triggers when there is a successful right block
+  _description: Triggers when there is a successful left block
   _debug: 0

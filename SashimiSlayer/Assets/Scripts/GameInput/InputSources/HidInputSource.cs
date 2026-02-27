@@ -10,7 +10,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
-using ValueSO.Core;
 
 namespace GameInput.InputSources
 {
@@ -20,11 +19,6 @@ namespace GameInput.InputSources
 
         [SerializeField]
         private SOEvent _onInputBindingOverride;
-
-        [Header("ValueSO (Write)")]
-
-        [SerializeField]
-        private BoolValueSO _leftHandleSwordIdentifyValueSO;
 
         [Header("Gameplay Input Action References")]
 
@@ -53,9 +47,6 @@ namespace GameInput.InputSources
         private InputActionReference _toggleMenuAction;
 
         [Header("Custom Sword Input Action References")]
-
-        [SerializeField]
-        private InputActionReference _leftHandSwordIdentifyAction;
 
         [SerializeField]
         private InputActionReference _customSwordControllerIdentifyAction;
@@ -185,8 +176,6 @@ namespace GameInput.InputSources
 
             _toggleMenuAction.action.performed += OnToggleMenu;
 
-            _leftHandSwordIdentifyAction.action.performed += OnLeftHandSwordIdentify;
-            _leftHandSwordIdentifyAction.action.canceled += OnLeftHandSwordIdentify;
             _customSwordControllerIdentifyAction.action.performed += OnCustomSwordControllerIdentify;
             _customSwordControllerIdentifyAction.action.canceled += OnCustomSwordControllerIdentify;
 
@@ -207,9 +196,6 @@ namespace GameInput.InputSources
             _swordControllerAngleAction.action.performed -= OnSwordControllerAngle;
 
             _toggleMenuAction.action.performed -= OnToggleMenu;
-
-            _leftHandSwordIdentifyAction.action.performed -= OnLeftHandSwordIdentify;
-            _leftHandSwordIdentifyAction.action.canceled -= OnLeftHandSwordIdentify;
 
             _customSwordControllerIdentifyAction.action.performed -= OnCustomSwordControllerIdentify;
             _customSwordControllerIdentifyAction.action.canceled -= OnCustomSwordControllerIdentify;
@@ -279,8 +265,8 @@ namespace GameInput.InputSources
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(BlockPoses.BlockLeft);
-                _blockPoses = BlockPoses.BlockLeft;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockStar);
+                _blockPoses = BlockPoses.BlockStar;
             }
         }
 
@@ -290,8 +276,8 @@ namespace GameInput.InputSources
 
             if (context.ReadValueAsButton())
             {
-                OnBlockPoseChanged?.Invoke(BlockPoses.BlockRight);
-                _blockPoses = BlockPoses.BlockRight;
+                OnBlockPoseChanged?.Invoke(BlockPoses.BlockShell);
+                _blockPoses = BlockPoses.BlockShell;
             }
         }
 
@@ -327,12 +313,6 @@ namespace GameInput.InputSources
             {
                 OnToggleMenuInput?.Invoke();
             }
-        }
-
-        public void OnLeftHandSwordIdentify(InputAction.CallbackContext context)
-        {
-            _leftHandleSwordIdentify = context.ReadValueAsButton();
-            _leftHandleSwordIdentifyValueSO.SetValue(_leftHandleSwordIdentify);
         }
 
         private void OnCustomSwordControllerIdentify(InputAction.CallbackContext context)
@@ -410,11 +390,6 @@ namespace GameInput.InputSources
             });
         }
 
-        public bool GetLeftHandleSwordIdentify()
-        {
-            return _leftHandleSwordIdentify;
-        }
-
         public bool GetCustomSwordControllerIdentify()
         {
             return _customSwordControllerIdentify;
@@ -425,7 +400,7 @@ namespace GameInput.InputSources
         ///     since there's no layers between the action and the UI input module
         /// </summary>
         /// <param name="invert"></param>
-        public void SetInvertParryDirection(bool invert)
+        public void SetInvertUINavigation(bool invert)
         {
             var uiModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
 

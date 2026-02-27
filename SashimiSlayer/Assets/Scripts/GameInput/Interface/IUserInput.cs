@@ -9,7 +9,7 @@ namespace GameInput.Interface
     {
         ControlSchemes ControlScheme { get; }
 
-        public void AddInputBlocker();
+        public void SetMenuOpenFlag();
         public void RemoveInputBlocker();
     }
 }
