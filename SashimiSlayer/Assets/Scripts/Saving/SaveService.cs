@@ -29,6 +29,26 @@ namespace Saving
             }
         }
 
+        public FullScreenMode FullScreenMode
+        {
+            get => _saveModel.FullScreenMode;
+            set
+            {
+                _saveModel.FullScreenMode = value;
+                Save();
+            }
+        }
+
+        public bool ShowInputPrompt
+        {
+            get => _saveModel.ShowInputPrompt;
+            set
+            {
+                _saveModel.ShowInputPrompt = value;
+                Save();
+            }
+        }
+
         public float MasterVolume
         {
             get => _saveModel.MasterVolume;

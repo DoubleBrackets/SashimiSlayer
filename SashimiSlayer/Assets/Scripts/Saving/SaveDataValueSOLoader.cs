@@ -1,3 +1,4 @@
+using Saving.Values;
 using UnityEngine;
 using ValueSO;
 using ValueSO.Core;
@@ -27,6 +28,12 @@ namespace Saving
 
         [SerializeField]
         private FloatValueSO _screenShakeRatioValueSO;
+
+        [SerializeField]
+        private FullScreenModeValueSO _fullScreenModeValueSO;
+
+        [SerializeField]
+        private BoolValueSO _showInputPromptValueSO;
 
         [Header("Input Settings")]
 
@@ -59,6 +66,8 @@ namespace Saving
             _masterVolume.AddListener(this, value => saveService.MasterVolume = value);
 
             _screenShakeRatioValueSO.AddListener(this, value => saveService.ScreenShakeRatio = value);
+            _fullScreenModeValueSO.AddListener(this, value => saveService.FullScreenMode = value);
+            _showInputPromptValueSO.AddListener(this, value => saveService.ShowInputPrompt = value);
 
             _aimMultiplierValueSO.AddListener(this, value => saveService.SwordAimMultiplier = value);
             _aimOffsetValueSO.AddListener(this, value => saveService.SwordAngleOffset = value);
@@ -75,6 +84,8 @@ namespace Saving
             _masterVolume.RemoveListener(this);
 
             _screenShakeRatioValueSO.RemoveListener(this);
+            _fullScreenModeValueSO.RemoveListener(this);
+            _showInputPromptValueSO.RemoveListener(this);
 
             _aimMultiplierValueSO.RemoveListener(this);
             _aimOffsetValueSO.RemoveListener(this);
@@ -91,6 +102,8 @@ namespace Saving
             _masterVolume.SetValue(saveModel.MasterVolume, this);
 
             _screenShakeRatioValueSO.SetValue(saveModel.ScreenShakeRatio, this);
+            _fullScreenModeValueSO.SetValue(saveModel.FullScreenMode, this);
+            _showInputPromptValueSO.SetValue(saveModel.ShowInputPrompt, this);
 
             _aimMultiplierValueSO.SetValue(saveModel.SwordAimMultiplier, this);
             _aimOffsetValueSO.SetValue(saveModel.SwordAngleOffset, this);

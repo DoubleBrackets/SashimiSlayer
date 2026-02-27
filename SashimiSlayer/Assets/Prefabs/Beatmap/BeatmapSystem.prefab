@@ -348,6 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Beatmapping.Service.BeatmapService
   _beatmapServiceContainer: {fileID: 11400000, guid: c2f4b5d1526d99b4b88d411abd519962,
     type: 2}
+  _currentHandednessValueSO: {fileID: 0}
+  _invertParryInput: {fileID: 0}
   _beatmapRunner: {fileID: 2024484109156033776}
   _noteParentTransform: {fileID: 610212186903872423}
   _successStreakParam: SuccessStreak
