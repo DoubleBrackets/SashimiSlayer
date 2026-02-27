@@ -257,6 +257,11 @@ namespace GameInput
                 return;
             }
 
+            if (_invertParryInputValueSO.Value)
+            {
+                state = state == BlockPoses.BlockShell ? BlockPoses.BlockStar : BlockPoses.BlockShell;
+            }
+
             OnBlockPoseChanged?.Invoke(state);
         }
 

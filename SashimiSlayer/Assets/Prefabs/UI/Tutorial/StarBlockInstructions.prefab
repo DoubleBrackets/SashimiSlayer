@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7969815434631001247}
   - component: {fileID: 4514137543742842777}
+  - component: {fileID: 6697221910714412528}
   m_Layer: 0
-  m_Name: BlockLeftInstructions
+  m_Name: StarBlockInstructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +56,35 @@ MonoBehaviour:
     - {fileID: 2852361729928239294}
   _controlSchemeValueSO: {fileID: 11400000, guid: 2963d6f823cdc934b8c6588233690b9f,
     type: 2}
+--- !u!114 &6697221910714412528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779107271646055098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc0a66f62c846788d1a9ed1b3537a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Components.BoolValueSOMono
+  _boolValueSO: {fileID: 11400000, guid: a53ef59f0a6e54e4da0fa627cee413a6, type: 2}
+  _invertValue: 0
+  _onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7779107271646055098}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5299901288437876741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,7 +282,7 @@ PrefabInstance:
     - target: {fileID: 5442890523444759526, guid: f394196b9d2c6f64a9908a5f0353d762,
         type: 3}
       propertyPath: m_text
-      value: 'Left Bumper [Xbox Controller]'
+      value: 'Left Bumper / [Xbox Controller]'
       objectReference: {fileID: 0}
     - target: {fileID: 5442890523444759526, guid: f394196b9d2c6f64a9908a5f0353d762,
         type: 3}

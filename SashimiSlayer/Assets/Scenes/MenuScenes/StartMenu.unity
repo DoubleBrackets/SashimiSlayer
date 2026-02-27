@@ -5566,7 +5566,7 @@ PrefabInstance:
     - target: {fileID: 340514419410236979, guid: 32afc52443dfbc34db1283cf50b343f1,
         type: 3}
       propertyPath: m_text
-      value: 'Left Bumper [Xbox Controller]'
+      value: 'Left Bumper / [Xbox Controller]'
       objectReference: {fileID: 0}
     - target: {fileID: 2852361729928239294, guid: 32afc52443dfbc34db1283cf50b343f1,
         type: 3}
@@ -5911,22 +5911,22 @@ PrefabInstance:
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 0.34117648
+      value: 0.6117647
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 0.17254902
+      value: 0.22352943
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 0.18823531
+      value: 0.28627452
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4283903024
+      value: 4288428361
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -16476,7 +16476,7 @@ PrefabInstance:
     - target: {fileID: 4838587425353400675, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
       propertyPath: m_text
-      value: 'Right Shoulder / [Gamepad]'
+      value: 'Right Bumper / [Xbox Controller]'
       objectReference: {fileID: 0}
     - target: {fileID: 4838587425353400675, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
@@ -21512,17 +21512,17 @@ PrefabInstance:
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 0.34117648
+      value: 0.16862746
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 0.17254902
+      value: 0.5058824
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 0.18823531
+      value: 0.8117648
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
@@ -21532,7 +21532,7 @@ PrefabInstance:
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4283903024
+      value: 4281041359
       objectReference: {fileID: 0}
     - target: {fileID: 7291995301037936466, guid: b15670233d1b8444b9c10b47f5234913,
         type: 3}

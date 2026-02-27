@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Saving
@@ -11,6 +12,8 @@ namespace Saving
     public class SaveModel
     {
         public float ScreenShakeRatio = 1;
+        public FullScreenMode FullScreenMode = FullScreenMode.Windowed;
+        public bool ShowInputPrompt = true;
 
         // Audio
         public float MasterVolume = 1;

@@ -10,7 +10,7 @@ namespace Framework.Audio
     /// <summary>
     ///     Handles reading audio settings from ValueSOs and applying them to FMOD
     /// </summary>
-    public class AudioSettingsLoader : MonoBehaviour, IValueSOObserver
+    public class AudioSettingsApplier : MonoBehaviour, IValueSOObserver
     {
         [InfoBox("Handles reading audio settings from ValueSOs and applying them to FMOD")]
         [Header("ValueSO (Read)")]
