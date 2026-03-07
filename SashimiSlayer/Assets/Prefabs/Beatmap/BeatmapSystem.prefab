@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timelineRunner: {fileID: 8913546797851624770}
-  _optionsMenuOpenEvent: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
+  _optionsMenuOpenValueSO: {fileID: 11400000, guid: a5cf6b397edfde0438ec8c532b699eb6,
     type: 2}
   _beatPassedEvent: {fileID: 11400000, guid: 0e41b350d0df0f14ebecef06152b6404, type: 2}
   _subdivPassedEvent: {fileID: 11400000, guid: 445c41cbba60a1b4c991dd2746e5b858, type: 2}

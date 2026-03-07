@@ -60,6 +60,7 @@ namespace UI.Screens.LevelSelect
         private UnityEvent OnSongChosen;
 
         private bool _loaded;
+        private bool _levelSliced;
 
         private List<SongPanel> _levelPanels = new();
         private int _currentPanelIndex;
@@ -161,8 +162,8 @@ namespace UI.Screens.LevelSelect
                 ? _shellBlockable
                 : _starBlockable;
 
-            leftSide.Enabled = _currentPanelIndex > 0;
-            rightSide.Enabled = _currentPanelIndex < _levelPanels.Count - 1;
+            leftSide.Enabled = _currentPanelIndex > 0 && !_levelSliced;
+            rightSide.Enabled = _currentPanelIndex < _levelPanels.Count - 1 && !_levelSliced;
         }
 
         private void UpdatePromptOpacity()
@@ -206,6 +207,13 @@ namespace UI.Screens.LevelSelect
 
         private void OnLevelSliced()
         {
+            if (_levelSliced)
+            {
+                return;
+            }
+
+            _levelSliced = true;
+            UpdateBlockableEnabled();
             OnSongChosen?.Invoke();
         }
 

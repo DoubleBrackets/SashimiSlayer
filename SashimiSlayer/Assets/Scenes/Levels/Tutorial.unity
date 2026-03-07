@@ -221,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 4838587425353400675, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
       propertyPath: m_fontSize
-      value: 3.7
+      value: 4.45
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1976678329567976096, guid: 227ad0928c1ee514eb94b3e5e81c3c35, type: 3}
@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 7779107271646055098, guid: 32afc52443dfbc34db1283cf50b343f1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7969815434631001247, guid: 32afc52443dfbc34db1283cf50b343f1,
         type: 3}
@@ -326,7 +326,15 @@ PrefabInstance:
     - {fileID: 6697221910714412528, guid: 32afc52443dfbc34db1283cf50b343f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5793463248453121073, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6258671001965822433, guid: 32afc52443dfbc34db1283cf50b343f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 32afc52443dfbc34db1283cf50b343f1, type: 3}
 --- !u!4 &445727620 stripped
 Transform:
@@ -381,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 3125921120835859394, guid: 93909f1088913254c8b42b585fc2c2b3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3718104081095753636, guid: 93909f1088913254c8b42b585fc2c2b3,
         type: 3}
@@ -462,7 +470,19 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1085041851}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7978168790164916581, guid: 93909f1088913254c8b42b585fc2c2b3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 9022305827761852189, guid: 93909f1088913254c8b42b585fc2c2b3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5009171194060672669, guid: 93909f1088913254c8b42b585fc2c2b3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 93909f1088913254c8b42b585fc2c2b3, type: 3}
 --- !u!4 &610381717 stripped
 Transform:

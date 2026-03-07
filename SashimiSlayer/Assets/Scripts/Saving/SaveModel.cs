@@ -12,7 +12,7 @@ namespace Saving
     public class SaveModel
     {
         public float ScreenShakeRatio = 1;
-        public FullScreenMode FullScreenMode = FullScreenMode.Windowed;
+        public FullScreenMode FullScreenMode = FullScreenMode.FullScreenWindow;
         public bool ShowInputPrompt = true;
 
         // Audio

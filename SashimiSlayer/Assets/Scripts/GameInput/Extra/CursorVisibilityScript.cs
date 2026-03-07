@@ -1,9 +1,9 @@
 using EditorUtils.BoldHeader;
-using Events.Basic;
 using GameInput.Interface;
 using GameInput.ValueSO;
 using UnityEngine;
 using ValueSO;
+using ValueSO.Core;
 
 namespace GameInput.Extra
 {
@@ -18,37 +18,19 @@ namespace GameInput.Extra
         [SerializeField]
         private ControlSchemeValueSO _currentControlScheme;
 
+        [Header("ValueSO (In)")]
+
         [SerializeField]
-        private BoolEvent _optionsMenuToggled;
-
-        private bool _isMenuOpen;
-        private bool _cursorInput;
-
-        private void Awake()
-        {
-            _currentControlScheme.AddListener(this, HandleControlSchemeChanged, true);
-            _optionsMenuToggled.AddListener(HandleOptionsMenuToggled);
-        }
+        private BoolValueSO _isMenuOpenValueSO;
 
         private void Update()
         {
-            Cursor.visible = _isMenuOpen || _cursorInput;
+            Cursor.visible = !_isMenuOpenValueSO.Value && _currentControlScheme.Value == ControlSchemes.KeyboardMouse;
         }
 
         private void OnDestroy()
         {
             _currentControlScheme.RemoveListener(this);
-            _optionsMenuToggled.RemoveListener(HandleOptionsMenuToggled);
-        }
-
-        private void HandleControlSchemeChanged(ControlSchemes controlScheme)
-        {
-            _cursorInput = controlScheme == ControlSchemes.KeyboardMouse;
-        }
-
-        private void HandleOptionsMenuToggled(bool isMenuOpen)
-        {
-            _isMenuOpen = isMenuOpen;
         }
     }
 }
