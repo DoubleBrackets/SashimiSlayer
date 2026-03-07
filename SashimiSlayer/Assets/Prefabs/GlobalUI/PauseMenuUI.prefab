@@ -512,8 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Menus.PauseMenu.PauseMenuOpenClose
   _pauseMenu: {fileID: 8153651065052406918}
   _canvasGroup: {fileID: 6838561113936787926}
-  _pauseMenuOpenEvent: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
-    type: 2}
+  _pauseMenuOpen: {fileID: 11400000, guid: a5cf6b397edfde0438ec8c532b699eb6, type: 2}
 --- !u!1 &4207545658872451124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1361,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Right Bumper [Xbox Controller]'
+      value: 'Right Shoulder [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -8001,7 +8000,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'A [Xbox Controller]'
+      value: 'Button South [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -8575,7 +8574,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Left Stick [Xbox Controller]'
+      value: 'Left Stick [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -9015,7 +9014,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Left Bumper [Xbox Controller]'
+      value: 'Left Shoulder [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}

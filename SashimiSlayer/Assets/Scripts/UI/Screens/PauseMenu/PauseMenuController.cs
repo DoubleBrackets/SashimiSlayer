@@ -1,10 +1,10 @@
-using Events.Basic;
 using GameInput.Interface;
 using GameJuice.ScreenShake;
 using Saving;
 using UI.MenuViews;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using ValueSO.Core;
 
 namespace UI.Screens.PauseMenu
 {
@@ -21,10 +21,10 @@ namespace UI.Screens.PauseMenu
         [SerializeField]
         private CanvasGroup _canvasGroup;
 
-        [Header("Event (Out)")]
+        [Header("ValueSO (Write)")]
 
         [SerializeField]
-        private BoolEvent _pauseMenuOpenEvent;
+        private BoolValueSO _pauseMenuOpen;
 
         private bool _isMenuOpen = true;
 
@@ -82,7 +82,7 @@ namespace UI.Screens.PauseMenu
                 EventSystem.current.SetSelectedGameObject(null);
             }
 
-            _pauseMenuOpenEvent?.Raise(isOpen);
+            _pauseMenuOpen.SetValue(isOpen);
 
             if (isOpen)
             {

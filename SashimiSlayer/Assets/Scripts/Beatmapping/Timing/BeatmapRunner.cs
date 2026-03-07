@@ -6,6 +6,8 @@ using FMOD.Studio;
 using FMODUnity;
 using Framework;
 using UnityEngine;
+using ValueSO;
+using ValueSO.Core;
 using Debug = UnityEngine.Debug;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
@@ -14,7 +16,7 @@ namespace Beatmapping.Timing
     /// <summary>
     ///     Handles running the beatmap, the audio, and syncing timing
     /// </summary>
-    public class BeatmapRunner : MonoBehaviour
+    public class BeatmapRunner : MonoBehaviour, IValueSOObserver
     {
         private const double MinDeltaTime = 0.05f;
 
@@ -80,10 +82,10 @@ namespace Beatmapping.Timing
         [SerializeField]
         private BeatmapTimelineRunner _timelineRunner;
 
-        [Header("Events (In)")]
+        [Header("ValueSO (Read)")]
 
         [SerializeField]
-        private BoolEvent _optionsMenuOpenEvent;
+        private BoolValueSO _optionsMenuOpenValueSO;
 
         [Header("Events (Out)")]
 
@@ -125,12 +127,12 @@ namespace Beatmapping.Timing
         public void Initialize()
         {
             DOTween.KillAll();
-            _optionsMenuOpenEvent.AddListener(HandleOptionsMenuOpen);
+            _optionsMenuOpenValueSO.AddListener(this, HandleOptionsMenuOpen, true);
         }
 
         public void Cleanup()
         {
-            _optionsMenuOpenEvent.RemoveListener(HandleOptionsMenuOpen);
+            _optionsMenuOpenValueSO.RemoveListener(this);
 
             if (_beatmapSoundtrackInstance.isValid())
             {
@@ -163,6 +165,8 @@ namespace Beatmapping.Timing
             _beatmapState = BeatmapState.WaitingForSoundtrackEvent;
 
             _timelineRunner.StartRunningBeatmap(beatmap);
+
+            HandleOptionsMenuOpen(_optionsMenuOpenValueSO.Value);
         }
 
         /// <summary>
