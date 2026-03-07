@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d72f4d8224802c84e9e24c4101efb21f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _invertParrySymbols: {fileID: 11400000, guid: e4db234d3c696e74eb693ad8fc168dba,
+      type: 2}
+  - _currentHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

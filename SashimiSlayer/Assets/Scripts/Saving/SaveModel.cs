@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+namespace Saving
+{
+    /// <summary>
+    ///     Simple serializable class to hold all game persistent data
+    /// </summary>
+    [Serializable]
+    public class SaveModel
+    {
+        public float ScreenShakeRatio = 1;
+        public FullScreenMode FullScreenMode = FullScreenMode.Windowed;
+        public bool ShowInputPrompt = true;
+
+        // Audio
+        public float MasterVolume = 1;
+        public float SfxVolume = 1;
+        public float MusicVolume = 1;
+
+        // Input
+        public float SwordAimMultiplier = 1;
+        public float SwordAngleOffset;
+
+        [FormerlySerializedAs("FlipSwordAim")]
+        public bool InvertSwordAim;
+
+        public int UpAxis;
+
+        [FormerlySerializedAs("FlipParryDirection")]
+        public bool InvertParryDirection;
+
+        public bool InvertParrySymbols;
+
+        public bool RumbleFeedbackEnabled = true;
+
+        // Controller
+        public string LastConnectedSerialPortName;
+
+        // Highscore
+        public List<HighScoreSaveModel> HighScores;
+
+        public string InputBindingOverrides;
+    }
+
+    [Serializable]
+    public struct HighScoreSaveModel
+    {
+        public string NameKey;
+        public int FinalScore;
+        public int Perfects;
+        public int Earlies;
+        public int Late;
+        public int Miss;
+    }
+}

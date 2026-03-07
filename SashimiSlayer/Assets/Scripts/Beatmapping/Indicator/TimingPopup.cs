@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using UnityEngine;
@@ -26,7 +26,7 @@ namespace Beatmapping.Indicator
         [SerializeField]
         private ParticleSystem[] _perfectSliceParticles;
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }
@@ -42,7 +42,7 @@ namespace Beatmapping.Indicator
         }
 
         private void BeatNote_OnInteractionFinalResult(BeatNote.NoteTickInfo tickinfo,
-            NoteInteraction.FinalResult finalresult)
+            NoteInteractionFinalResult finalresult)
         {
             TimingWindow.Score timingResultScore = finalresult.TimingResult.Score;
             TimingWindow.Direction earlyOrLate = finalresult.TimingResult.Direction;
@@ -64,7 +64,7 @@ namespace Beatmapping.Indicator
                         break;
                     }
                     case TimingWindow.Score.Perfect
-                        when finalresult.InteractionType == NoteInteraction.InteractionType.Slice:
+                        when finalresult.NoteInteractionType == NoteInteractionType.Slice:
                     {
                         foreach (ParticleSystem perfectSliceParticle in _perfectSliceParticles)
                         {

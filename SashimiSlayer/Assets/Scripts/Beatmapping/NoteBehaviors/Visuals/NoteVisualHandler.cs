@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
+using CommonTypes;
 using NaughtyAttributes;
 
 namespace Beatmapping.NoteBehaviors.Visuals
@@ -19,7 +20,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
             [AllowNesting]
             [HideIf("IsForSlicing")]
-            public SharedTypes.BlockPoseStates Pose;
+            public BlockPoses Pose;
 
             public bool IsForSlicing;
         }
@@ -37,7 +38,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
             DisableAllVisuals();
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }
@@ -55,7 +56,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
         private void BeatNote_OnTick(BeatNote.NoteTickInfo tickinfo)
         {
-            NoteInteraction interaction = tickinfo.NoteSegment.Interaction;
+            NoteInteraction.NoteInteraction interaction = tickinfo.NoteSegment.Interaction;
             if (interaction == null)
             {
                 return;
@@ -71,7 +72,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
 
             int newVisual = _currentVisualIndex;
 
-            if (interaction.Type == NoteInteraction.InteractionType.Slice)
+            if (interaction.Type == NoteInteractionType.Slice)
             {
                 newVisual = GetSliceVisualIndex();
             }
@@ -180,7 +181,7 @@ namespace Beatmapping.NoteBehaviors.Visuals
             return Visuals.FindIndex(v => v.IsForSlicing);
         }
 
-        private int GetBlockVisualIndex(NoteInteraction interaction)
+        private int GetBlockVisualIndex(NoteInteraction.NoteInteraction interaction)
         {
             return Visuals.FindIndex(v => !v.IsForSlicing && v.Pose == interaction.BlockPose);
         }

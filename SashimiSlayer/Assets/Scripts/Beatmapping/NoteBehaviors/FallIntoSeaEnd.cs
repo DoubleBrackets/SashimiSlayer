@@ -31,7 +31,7 @@ namespace Beatmapping.NoteBehaviors
         private Vector2 _endPos;
         private float _expectedFallTime;
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }

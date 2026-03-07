@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Events
+namespace Events.Basic
 {
     [CreateAssetMenu(menuName = "Events/Basic/VoidEvent")]
     public class VoidEvent : SOEvent
@@ -8,6 +8,10 @@ namespace Events
         public void Raise()
         {
             _internalVoidEvent?.Invoke();
+            if (_debug)
+            {
+                Debug.Log($"Event {name} raised");
+            }
         }
     }
 }

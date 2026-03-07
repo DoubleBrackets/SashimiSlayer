@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -50,7 +50,7 @@ namespace Beatmapping.NoteBehaviors
         private bool _enteredDazed;
 
         private void BeatNote_OnSlicedByProtag(int interactionIndex,
-            NoteInteraction.AttemptResult result)
+            NoteInteraction.NoteInteraction.AttemptResult result)
         {
             if (interactionIndex != _interactionIndex)
             {
@@ -74,10 +74,10 @@ namespace Beatmapping.NoteBehaviors
                 return;
             }
 
-            NoteInteraction interaction = segment.Interaction;
+            NoteInteraction.NoteInteraction interaction = segment.Interaction;
             _visuals.SetSpriteAlpha(1f);
 
-            if (interaction.Type == NoteInteraction.InteractionType.Slice)
+            if (interaction.Type == NoteInteractionType.Slice)
             {
                 TargetToHitVisuals((float)tickinfo.NormalizedSegmentTime, (float)tickinfo.BeatmapTime);
             }
@@ -104,11 +104,11 @@ namespace Beatmapping.NoteBehaviors
             _visuals.SetRotation(360f * beatmapTime);
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
-            return new List<IInteractionUser.InteractionUsage>
+            return new List<INoteInteractionUser.InteractionUsage>
             {
-                new(NoteInteraction.InteractionType.Slice, _interactionIndex, 1)
+                new(NoteInteractionType.Slice, _interactionIndex, 1)
             };
         }
 

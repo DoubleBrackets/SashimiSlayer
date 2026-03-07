@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using UnityEngine;
@@ -43,7 +43,7 @@ namespace Beatmapping.NoteBehaviors.Kraken
         /// <summary>
         ///     Used to prevent the attack animation from playing multiple times
         /// </summary>
-        private NoteInteraction _attackAnimationPlayedInteraction;
+        private NoteInteraction.NoteInteraction _attackAnimationPlayedInteraction;
 
         private void BeatNote_OnTick(BeatNote.NoteTickInfo tickinfo)
         {
@@ -53,9 +53,9 @@ namespace Beatmapping.NoteBehaviors.Kraken
                 return;
             }
 
-            NoteInteraction interaction = segment.Interaction;
+            NoteInteraction.NoteInteraction interaction = segment.Interaction;
 
-            if (interaction.Type == NoteInteraction.InteractionType.Block)
+            if (interaction.Type == NoteInteractionType.Block)
             {
                 if (interaction != _attackAnimationPlayedInteraction)
                 {
@@ -75,7 +75,8 @@ namespace Beatmapping.NoteBehaviors.Kraken
         /// </summary>
         /// <param name="noteTickInfo"></param>
         /// <param name="noteInteraction"></param>
-        private void IncomingAttackVisuals(BeatNote.NoteTickInfo noteTickInfo, NoteInteraction noteInteraction)
+        private void IncomingAttackVisuals(BeatNote.NoteTickInfo noteTickInfo,
+            NoteInteraction.NoteInteraction noteInteraction)
         {
             int targetSubdivIndex = noteTickInfo.BeatmapTickInfo.GetClosestSubdivisionIndex(noteInteraction.TargetTime);
             int currentSubdiv = noteTickInfo.SubdivisionIndex;
@@ -89,7 +90,7 @@ namespace Beatmapping.NoteBehaviors.Kraken
             }
         }
 
-        private void HandleOnSliced(int interactionIndex, NoteInteraction.AttemptResult result)
+        private void HandleOnSliced(int interactionIndex, NoteInteraction.NoteInteraction.AttemptResult result)
         {
             foreach (ParticleSystem particle in _damagedParticles)
             {
@@ -105,7 +106,7 @@ namespace Beatmapping.NoteBehaviors.Kraken
             _visual.SetupAnimationTransitionOnEnd(_spawnAnimation, _idleAnimation);
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }

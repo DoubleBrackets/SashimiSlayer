@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Base;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Tooling;
-using Events.Core;
+using Interactions.Framework;
+using Interactions.Interactables;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,18 +16,18 @@ namespace Beatmapping.Notes
     ///     Represents a single sequenced note with some interactions.
     ///     Supports scrubbing (arbitrary tick timing)
     /// </summary>
-    public partial class BeatNote : DescMono, IInteractionUser
+    public partial class BeatNote : DescMono, INoteInteractionUser, IInteractable
     {
         public delegate void TickEventHandler(
             NoteTickInfo tickInfo);
 
         public delegate void InteractionAttemptEventHandler(
             int interactionIndex,
-            NoteInteraction.AttemptResult result);
+            NoteInteraction.NoteInteraction.AttemptResult result);
 
         public delegate void InteractionFinalResultEventHandler(
             NoteTickInfo tickInfo,
-            NoteInteraction.FinalResult finalResult);
+            NoteInteractionFinalResult noteInteractionFinalResult);
 
         /// <summary>
         ///     Fixed time between end and cleanup
@@ -36,14 +37,6 @@ namespace Beatmapping.Notes
         // Serialized fields
         [SerializeField]
         private Transform _hitboxTransform;
-
-        [Header("Events Invoking")]
-
-        [SerializeField]
-        private NoteInteractionFinalResultEvent _noteInteractionFinalResultEvent;
-
-        [SerializeField]
-        private ObjectSlicedEvent _objectSlicedEvent;
 
         [FormerlySerializedAs("_beatNoteListeners")]
         [SerializeField]
@@ -112,10 +105,9 @@ namespace Beatmapping.Notes
         private NoteTickInfo _noteTickInfo;
         private NoteTickInfo _prevTickInfo;
         private List<NoteTimeSegment> _noteTimeSegments;
-        private List<NoteInteraction> _allInteractions;
+        private List<NoteInteraction.NoteInteraction> _allInteractions;
 
         private float _hitboxRadius;
-        private int _damageDealtToPlayer;
 
         /// <summary>
         ///     When the note starts being "active". The note can be initialized before this time
@@ -130,12 +122,17 @@ namespace Beatmapping.Notes
         private bool _isFirstTick;
         private bool _isFirstInteraction;
 
+        private CircleSliceable _circleSliceable;
+        private IInteractionService _interactionService;
+
         public void OnDestroy()
         {
             foreach (BeatNoteModule listener in _beatNoteModules)
             {
                 listener.OnNoteCleanedUp(this);
             }
+
+            _interactionService.Unregister(this);
         }
 
         private void OnDrawGizmos()
@@ -143,13 +140,13 @@ namespace Beatmapping.Notes
             DrawDebug();
         }
 
-        public IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
-            var positionUsage = new List<IInteractionUser.InteractionUsage>();
+            var positionUsage = new List<INoteInteractionUser.InteractionUsage>();
 
             foreach (BeatNoteModule listener in _beatNoteModules)
             {
-                IEnumerable<IInteractionUser.InteractionUsage> usages = listener.GetInteractionUsages();
+                IEnumerable<INoteInteractionUser.InteractionUsage> usages = listener.GetInteractionUsages();
                 if (usages == null)
                 {
                     continue;
@@ -166,23 +163,23 @@ namespace Beatmapping.Notes
         ///     All time parameters are expected to be in beatmap timespace
         /// </summary>
         public void Initialize(
-            List<NoteInteraction> noteInteractions,
+            List<NoteInteraction.NoteInteraction> noteInteractions,
             Vector2 noteStartPos,
             Vector2 noteEndPos,
             double noteStartTime,
             double noteEndTime,
             double initializeTime,
             float hitboxRadius,
-            int damageDealtToPlayer
+            IInteractionService interactionService
         )
         {
-            _allInteractions = new List<NoteInteraction>(noteInteractions);
+            _allInteractions = new List<NoteInteraction.NoteInteraction>(noteInteractions);
             _noteStartTime = noteStartTime;
             _noteEndTime = noteEndTime;
             _hitboxRadius = hitboxRadius;
-            _damageDealtToPlayer = damageDealtToPlayer;
             StartPosition = noteStartPos;
             EndPosition = noteEndPos;
+            _interactionService = interactionService;
 
             // Default values
             _isFirstTick = true;
@@ -191,12 +188,23 @@ namespace Beatmapping.Notes
             // Build timing segments
             _noteTimeSegments = BuildNoteTimeSegments(noteInteractions, noteStartTime, noteEndTime, initializeTime);
 
+            // Slice interaction
+            _circleSliceable = new CircleSliceable(
+                this,
+                _hitboxRadius,
+                false,
+                SpaceType.Worldspace,
+                _hitboxTransform
+            );
+
             foreach (BeatNoteModule listener in _beatNoteModules)
             {
                 listener.OnNoteInitialized(this);
             }
 
             OnInitialize?.Invoke();
+
+            interactionService.Register(this);
         }
 
         /// <summary>
@@ -205,7 +213,7 @@ namespace Beatmapping.Notes
         public void ResetState()
         {
             // Currently the only state is the interaction state
-            foreach (NoteInteraction interaction in _allInteractions)
+            foreach (NoteInteraction.NoteInteraction interaction in _allInteractions)
             {
                 interaction.ResetState();
             }
@@ -219,7 +227,7 @@ namespace Beatmapping.Notes
             _isFirstInteraction = true;
         }
 
-        private List<NoteTimeSegment> BuildNoteTimeSegments(List<NoteInteraction> interactions,
+        private List<NoteTimeSegment> BuildNoteTimeSegments(List<NoteInteraction.NoteInteraction> interactions,
             double noteStartTime,
             double noteEndTime,
             double initializeTime)
@@ -243,7 +251,7 @@ namespace Beatmapping.Notes
 
             double nextTime = noteStartTime;
 
-            foreach (NoteInteraction interaction in interactions)
+            foreach (NoteInteraction.NoteInteraction interaction in interactions)
             {
                 timeSegments.Add(new NoteTimeSegment
                 {
@@ -318,7 +326,7 @@ namespace Beatmapping.Notes
                 return Vector2.zero;
             }
 
-            NoteInteraction prevSegment = _allInteractions[interactionIndex - 1];
+            NoteInteraction.NoteInteraction prevSegment = _allInteractions[interactionIndex - 1];
             List<Vector2> prevPositions = prevSegment.Positions;
 
             if (prevPositions.Count == 0)
@@ -337,7 +345,7 @@ namespace Beatmapping.Notes
                 return StartPosition;
             }
 
-            NoteInteraction finalInteraction = _allInteractions[^1];
+            NoteInteraction.NoteInteraction finalInteraction = _allInteractions[^1];
             List<Vector2> finalPositions = finalInteraction.Positions;
 
             if (finalPositions.Count == 0)
@@ -387,7 +395,7 @@ namespace Beatmapping.Notes
             return position;
         }
 
-        private int GetInteractionIndex(NoteInteraction interaction)
+        private int GetInteractionIndex(NoteInteraction.NoteInteraction interaction)
         {
             return _allInteractions.IndexOf(interaction);
         }
@@ -411,6 +419,11 @@ namespace Beatmapping.Notes
                     $"\nType: {CurrentInteraction.Type}" +
             }
 #endif*/
+        }
+
+        public object GetCustomData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Beatmapping.Editor;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
+using DevTools.Editor.SashimiSlayer;
 using UnityEditor;
 using UnityEditor.Timeline;
 using UnityEngine;
@@ -78,7 +78,7 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
                 {
                     Vector2 pos = interactionData.Positions[j];
                     Vector2 newPos =
-                        LabeledPositionHandle(pos, c, radius, $"{interactionData.InteractionType}_{i}-{j}");
+                        LabeledPositionHandle(pos, c, radius, $"{interactionData.NoteInteractionType}_{i}-{j}");
                     if (pos != newPos)
                     {
                         Undo.RecordObject(noteClip, "Edited Timeline Note Clip Position");
@@ -107,7 +107,7 @@ namespace Timeline.BeatNoteTrack.BeatNote.Editor
 
         private void OnPositionHandleChange()
         {
-            if (SashimiSlayerUtilWindow.AutoRefreshTimeline)
+            if (SashimiDevToolPrefs.instance.AutoRefreshTimeline)
             {
                 TimelineEditor.Refresh(RefreshReason.ContentsModified);
             }

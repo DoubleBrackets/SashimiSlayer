@@ -42,7 +42,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -73,7 +73,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -104,7 +104,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -156,7 +156,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -187,7 +187,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -218,7 +218,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -249,7 +249,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -280,7 +280,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -424,7 +424,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -454,7 +454,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -896,7 +896,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 75.34081395348836
+    m_Start: 75.33081395348837
     m_ClipIn: 0
     m_Asset: {fileID: 3262709407497999197}
     m_Duration: 2.0930232558139608
@@ -965,7 +965,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 82.31755813953488
+    m_Start: 82.30755813953489
     m_ClipIn: 0
     m_Asset: {fileID: 773994207883721909}
     m_Duration: 1.3953488372092977
@@ -1793,7 +1793,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: VulnerableJellyfish
   - m_Version: 1
-    m_Start: 70.10825581395348
+    m_Start: 70.09825581395349
     m_ClipIn: 0
     m_Asset: {fileID: 243077365047602367}
     m_Duration: 2.0930232558139608
@@ -2185,7 +2185,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2215,7 +2215,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2246,7 +2246,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2298,7 +2298,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2350,7 +2350,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2381,7 +2381,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2456,7 +2456,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2486,7 +2486,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2517,7 +2517,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2548,7 +2548,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2600,7 +2600,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2631,7 +2631,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2662,7 +2662,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2693,7 +2693,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2724,7 +2724,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2755,7 +2755,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2786,7 +2786,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2817,7 +2817,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2847,7 +2847,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2878,7 +2878,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2908,7 +2908,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2939,7 +2939,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -2970,7 +2970,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3001,7 +3001,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3011,7 +3011,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3041,7 +3041,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -1690829651577528410}
-    m_Duration: 143.41666666666666
+    m_Duration: 141.64166666666668
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4468069694051999095}
     m_EaseInDuration: 0
@@ -3135,7 +3135,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3165,7 +3165,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3196,7 +3196,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3226,7 +3226,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3257,7 +3257,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3287,7 +3287,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3297,7 +3297,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3327,7 +3327,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3358,7 +3358,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3389,7 +3389,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3512,7 +3512,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3560,7 +3560,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3591,7 +3591,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3622,7 +3622,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3653,7 +3653,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3683,7 +3683,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3735,7 +3735,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3766,7 +3766,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3796,7 +3796,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3942,7 +3942,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -3973,7 +3973,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -4004,7 +4004,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -4035,7 +4035,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -4066,7 +4066,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -4097,7 +4097,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -4698,7 +4698,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 74.29430232558138
+    m_Start: 74.2843023255814
     m_ClipIn: 0
     m_Asset: {fileID: -6867623466561597635}
     m_Duration: 2.0930232558139608
@@ -4767,7 +4767,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: HoldJellyfish
   - m_Version: 1
-    m_Start: 81.96872093023255
+    m_Start: 81.95872093023256
     m_ClipIn: 0
     m_Asset: {fileID: 2751597249354438755}
     m_Duration: 1.395348837209312
@@ -5457,7 +5457,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 72.20127906976744
+    m_Start: 72.19127906976745
     m_ClipIn: 0
     m_Asset: {fileID: -103109350677219110}
     m_Duration: 2.0930232558139465
@@ -5526,7 +5526,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 68.01523255813953
+    m_Start: 68.00523255813954
     m_ClipIn: 0
     m_Asset: {fileID: -389299012170661169}
     m_Duration: 2.0930232558139465
@@ -6035,7 +6035,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6066,7 +6066,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6117,7 +6117,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6127,7 +6127,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6157,7 +6157,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6208,7 +6208,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6238,7 +6238,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6268,7 +6268,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6278,7 +6278,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6308,7 +6308,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6318,7 +6318,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6348,7 +6348,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6379,7 +6379,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6410,7 +6410,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6441,7 +6441,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6472,7 +6472,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6502,7 +6502,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6512,7 +6512,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6542,7 +6542,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6572,7 +6572,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6633,7 +6633,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6664,7 +6664,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6695,7 +6695,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6705,7 +6705,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6735,7 +6735,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6766,7 +6766,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6797,7 +6797,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6828,7 +6828,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6858,7 +6858,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6889,7 +6889,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6960,7 +6960,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -6991,7 +6991,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7412,7 +7412,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7442,7 +7442,7 @@ MonoBehaviour:
     m_Start: 103.60362790697674
     m_ClipIn: 0
     m_Asset: {fileID: -6880226590536633376}
-    m_Duration: 39.81303875968992
+    m_Duration: 38.03803875968994
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2016438818000222022}
     m_EaseInDuration: 0
@@ -7567,7 +7567,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7619,7 +7619,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7650,7 +7650,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7680,7 +7680,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7732,7 +7732,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7763,7 +7763,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7793,7 +7793,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7803,7 +7803,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7833,7 +7833,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7863,7 +7863,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7911,7 +7911,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7941,7 +7941,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -7972,7 +7972,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -8003,7 +8003,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -8034,7 +8034,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -9303,7 +9303,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 76.38732558139534
+    m_Start: 76.37732558139535
     m_ClipIn: 0
     m_Asset: {fileID: 4619547702164736383}
     m_Duration: 1.3953488372092977
@@ -9372,7 +9372,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 78.48034883720929
+    m_Start: 78.4703488372093
     m_ClipIn: 0
     m_Asset: {fileID: -4758208503997492844}
     m_Duration: 1.395348837209312
@@ -9441,7 +9441,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 80.92220930232558
+    m_Start: 80.91220930232559
     m_ClipIn: 0
     m_Asset: {fileID: -6814100056674376918}
     m_Duration: 1.3953488372092977
@@ -10778,7 +10778,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -10809,7 +10809,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -10840,7 +10840,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -10871,7 +10871,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -10923,7 +10923,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -10971,7 +10971,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11002,7 +11002,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11033,7 +11033,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11064,7 +11064,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11095,7 +11095,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11147,7 +11147,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11178,7 +11178,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11209,7 +11209,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11218,7 +11218,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions: []
@@ -11226,7 +11226,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions: []
@@ -11234,7 +11234,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions: []
@@ -11263,7 +11263,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11315,7 +11315,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11345,7 +11345,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11413,7 +11413,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11443,7 +11443,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11473,7 +11473,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11503,7 +11503,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11534,7 +11534,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11581,7 +11581,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11612,7 +11612,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11643,7 +11643,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11674,7 +11674,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11704,7 +11704,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11714,7 +11714,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11744,7 +11744,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11774,7 +11774,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11804,7 +11804,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11858,7 +11858,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 0
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -11889,7 +11889,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -13021,7 +13021,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 77.43383720930233
+    m_Start: 77.42383720930233
     m_ClipIn: 0
     m_Asset: {fileID: -8686989644893056344}
     m_Duration: 1.3953488372092977
@@ -13090,7 +13090,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 79.52686046511627
+    m_Start: 79.51686046511628
     m_ClipIn: 0
     m_Asset: {fileID: 5622409611150673010}
     m_Duration: 1.395348837209312
@@ -13159,7 +13159,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: AttackingJellyfish
   - m_Version: 1
-    m_Start: 81.2710465116279
+    m_Start: 81.26104651162791
     m_ClipIn: 0
     m_Asset: {fileID: 237411411572202992}
     m_Duration: 1.3953488372092977
@@ -14703,7 +14703,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -14733,7 +14733,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -14763,7 +14763,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -14814,7 +14814,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -14845,7 +14845,7 @@ MonoBehaviour:
         _offsetFromEnd: 0
         InteractionData:
           BlockPose: 1
-          InteractionType: 0
+          NoteInteractionType: 0
           Flags: 0
           HideIndicator: 0
           Positions:
@@ -14876,7 +14876,7 @@ MonoBehaviour:
         _offsetFromEnd: 1
         InteractionData:
           BlockPose: 0
-          InteractionType: 1
+          NoteInteractionType: 1
           Flags: 0
           HideIndicator: 0
           Positions:

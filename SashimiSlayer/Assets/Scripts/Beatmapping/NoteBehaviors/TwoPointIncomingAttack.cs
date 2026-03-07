@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using Beatmapping.Interactions;
 using Beatmapping.NoteBehaviors.Visuals;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
-using Core.Protag;
 using EditorUtils.BoldHeader;
 using FMODUnity;
 using NaughtyAttributes;
+using Protag.SharedData;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -88,7 +88,7 @@ namespace Beatmapping.NoteBehaviors
         }
 
         private void BeatNote_ProtagFailBlock(BeatNote.NoteTickInfo tickInfo,
-            NoteInteraction.FinalResult finalResult)
+            NoteInteractionFinalResult noteInteractionFinalResult)
         {
             OnHitTarget.Invoke();
         }
@@ -138,11 +138,11 @@ namespace Beatmapping.NoteBehaviors
             noteVisualHandler.SetVisible(true);
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
-            return new List<IInteractionUser.InteractionUsage>
+            return new List<INoteInteractionUser.InteractionUsage>
             {
-                new(NoteInteraction.InteractionType.Block, _interactionIndex, 2)
+                new(NoteInteractionType.Block, _interactionIndex, 2)
             };
         }
 
@@ -168,20 +168,7 @@ namespace Beatmapping.NoteBehaviors
 
         private Vector2 GetTargetPositionFromProtag()
         {
-            Vector2 rawTargetPos = Vector2.zero;
-            if (Protaganist.Instance != null)
-            {
-                rawTargetPos = Protaganist.Instance.SwordPosition;
-            }
-            else
-            {
-                var body = FindObjectOfType<ProtagBody>();
-                if (body != null)
-                {
-                    rawTargetPos = body.TargetPosition;
-                }
-            }
-
+            Vector2 rawTargetPos = ProtagGlobalData.ProtagTargetPosition;
             Vector2 dir = (_peakPos - rawTargetPos).normalized;
             return rawTargetPos + dir * _distanceFromTarget;
         }

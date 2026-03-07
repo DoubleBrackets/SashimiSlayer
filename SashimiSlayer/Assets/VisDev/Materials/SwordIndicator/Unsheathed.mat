@@ -13,7 +13,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -129,6 +130,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - White: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 12.708289, g: 10.253178, b: 0.41961357, a: 1}
     - _Emission: {r: 11.984314, g: 0, b: 0.14526427, a: 1}
@@ -140,6 +142,7 @@ Material:
     - _Stretch: {r: 0.01, g: 1, b: 0, a: 0}
     - _Tile: {r: 12, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &8817997814311088398
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -152,4 +155,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 7
+  version: 10

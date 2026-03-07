@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Beatmapping.Interactions;
+using Beatmapping.NoteInteraction.DataTypes;
 using Beatmapping.Notes;
 using Beatmapping.Tooling;
 using EditorUtils.BoldHeader;
@@ -25,7 +25,7 @@ namespace Beatmapping.Indicator
 
         private BeatNote _beatNote;
 
-        private NoteInteraction _lastInteraction;
+        private NoteInteraction.NoteInteraction _lastInteraction;
         private PipTimingIndicator _currentActiveIndicator;
 
         private void BeatNote_OnTick(BeatNote.NoteTickInfo tickInfo)
@@ -34,7 +34,7 @@ namespace Beatmapping.Indicator
 
             if (segmentType == BeatNote.TimeSegmentType.Interaction)
             {
-                NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
+                NoteInteraction.NoteInteraction interaction = tickInfo.NoteSegment.Interaction;
 
                 bool isNewInteraction = _lastInteraction != interaction;
                 bool isFirstInteraction = _lastInteraction == null;
@@ -84,12 +84,12 @@ namespace Beatmapping.Indicator
         /// <summary>
         ///     Switch to the matching indicator and initialize it. This should be called on new interaction
         /// </summary>
-        private void SwitchIndicators(NoteInteraction interaction, BeatmapConfigSo currentBeatmap,
+        private void SwitchIndicators(NoteInteraction.NoteInteraction interaction, BeatmapConfigSo currentBeatmap,
             bool firstInteraction)
         {
             bool hideIndicator = interaction.HideIndicator;
 
-            if (interaction.Type == NoteInteraction.InteractionType.Block)
+            if (interaction.Type == NoteInteractionType.Block)
             {
                 // Select matching block indicator
                 var blockIndex = (int)interaction.BlockPose;
@@ -103,7 +103,7 @@ namespace Beatmapping.Indicator
 
                 _sliceTimingIndicators.SetVisible(false);
             }
-            else if (interaction.Type == NoteInteraction.InteractionType.Slice)
+            else if (interaction.Type == NoteInteractionType.Slice)
             {
                 _sliceTimingIndicators.SetupNewInteraction(currentBeatmap, firstInteraction);
                 _sliceTimingIndicators.SetVisible(!hideIndicator);
@@ -117,7 +117,7 @@ namespace Beatmapping.Indicator
             }
         }
 
-        public override IEnumerable<IInteractionUser.InteractionUsage> GetInteractionUsages()
+        public override IEnumerable<INoteInteractionUser.InteractionUsage> GetInteractionUsages()
         {
             return null;
         }
@@ -131,7 +131,7 @@ namespace Beatmapping.Indicator
 
         public override void OnNoteCleanedUp(BeatNote beatNote)
         {
-            _beatNote.OnTick -= BeatNote_OnTick;
+             _beatNote.OnTick -= BeatNote_OnTick;
         }
     }
 }
