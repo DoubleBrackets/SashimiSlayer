@@ -37,12 +37,12 @@ namespace Saving
         public bool RumbleFeedbackEnabled = true;
 
         // Controller
-        public string LastConnectedSerialPortName;
+        public string LastConnectedSerialPortName = "";
 
         // Highscore
-        public List<HighScoreSaveModel> HighScores;
+        public List<HighScoreSaveModel> HighScores = new();
 
-        public string InputBindingOverrides;
+        public string InputBindingOverrides = "";
     }
 
     [Serializable]
