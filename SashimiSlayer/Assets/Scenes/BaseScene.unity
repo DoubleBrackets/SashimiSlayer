@@ -165,8 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentControlScheme: {fileID: 11400000, guid: 2963d6f823cdc934b8c6588233690b9f,
     type: 2}
-  _optionsMenuToggled: {fileID: 11400000, guid: 93874285fecf2424383e9603c063784d,
-    type: 2}
+  _isMenuOpenValueSO: {fileID: 11400000, guid: a5cf6b397edfde0438ec8c532b699eb6, type: 2}
 --- !u!1 &162499278
 GameObject:
   m_ObjectHideFlags: 0

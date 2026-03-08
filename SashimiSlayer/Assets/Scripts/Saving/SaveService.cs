@@ -173,8 +173,12 @@ namespace Saving
         {
             string persistentDataPath = Application.persistentDataPath;
 
-            _saveFilePath = Path.Combine(persistentDataPath, SaveFileName);
-            _backupSaveFilePath = Path.Combine(persistentDataPath, SaveBackupFileName);
+            string disambig = Application.isEditor ? "-Editor" : "";
+            _saveFilePath = Path.Combine(persistentDataPath, SaveFileName + disambig);
+            _backupSaveFilePath = Path.Combine(persistentDataPath, SaveBackupFileName + disambig);
+
+            Debug.Log($"Save file path: {_saveFilePath}");
+            Debug.Log($"Backup save file path: {_backupSaveFilePath}");
 
             _saveModel = TryLoadSaveModel();
         }
