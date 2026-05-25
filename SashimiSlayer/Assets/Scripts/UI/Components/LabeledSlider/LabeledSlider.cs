@@ -1,3 +1,5 @@
+using GameInput.Interface;
+using GameInput.ValueSO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -54,6 +56,9 @@ namespace UI.Components.Slider
         [SerializeField]
         private FloatValueSO _valueSO;
 
+        [SerializeField]
+        private ControlSchemeValueSO _controlSchemeValueSO;
+
         private bool _locked;
         private Navigation _defaultNav;
 
@@ -108,10 +113,16 @@ namespace UI.Components.Slider
         }
 
         /// <summary>
-        ///     Lock the slider in on submission to allow editing with only two navigation keys
+        ///     Lock the slider in on submission to allow editing with only two navigation keys.
+        ///     This is only used for the custom sword control scheme, where we are limited to two navigation buttons
         /// </summary>
         public void ToggleFocused()
         {
+            if (_controlSchemeValueSO.Value is not ControlSchemes.SwordSerial or ControlSchemes.SwordJoystick)
+            {
+                return;
+            }
+
             if (!_locked)
             {
                 _defaultNav = _slider.navigation;
@@ -134,12 +145,23 @@ namespace UI.Components.Slider
             }
         }
 
+        /// <summary>
+        ///     Hijack the onMove (the slider component itself should not  be interactable)
+        ///     So we can control the increment size
+        /// </summary>
+        /// <param name="eventData"></param>
         public void OnMove(AxisEventData eventData)
         {
             if (_locked)
             {
                 float incrementValue = _slider.maxValue / _increments;
-                _slider.value += incrementValue * Mathf.Sign(eventData.moveVector.x);
+                _slider.value += incrementValue * eventData.moveVector.x;
+                _onValueMoved.Invoke();
+            }
+            else
+            {
+                float incrementValue = _slider.maxValue / _increments;
+                _slider.value += incrementValue * eventData.moveVector.x;
                 _onValueMoved.Invoke();
             }
         }
