@@ -2,6 +2,7 @@
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.dbrizov.naughtyattributes": "2.1.4",
+    "com.rlabrecque.steamworks.net": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net#2025.163.0",
     "com.unity.2d.aseprite": "3.0.1",
     "com.unity.cinemachine": "2.10.5",
     "com.unity.collab-proxy": "2.11.3",
