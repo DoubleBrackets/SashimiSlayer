@@ -54,6 +54,9 @@ namespace GameInput
         private BoolValueSO _invertParryInputValueSO;
 
         [SerializeField]
+        private SwordHandednessValueSO _swordHandednessValueSO;
+
+        [SerializeField]
         private BoolValueSO _invertAimValueSO;
 
         [SerializeField]
@@ -98,7 +101,8 @@ namespace GameInput
         {
             EventPassthroughSub();
 
-            _invertParryInputValueSO.AddListener(this, SetInvertUINavigation);
+            _invertParryInputValueSO.AddListener(this, _ => SetInvertUINavigation());
+            _swordHandednessValueSO.AddListener(this, _ => SetInvertUINavigation());
 
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
@@ -121,6 +125,7 @@ namespace GameInput
             EventPassthroughUnsub();
 
             _invertParryInputValueSO.RemoveListener(this);
+            _swordHandednessValueSO.RemoveListener(this);
 
             _onDrawDebugGUI.RemoveListener(HandleDrawDebugGUI);
             _setUseSerialInput.RemoveListener(HandleSetUseSerialInput);
@@ -162,8 +167,11 @@ namespace GameInput
             return InputProvider.GetCustomSwordControllerIdentify();
         }
 
-        private void SetInvertUINavigation(bool invert)
+        private void SetInvertUINavigation()
         {
+            // invert on exclusive or
+            bool invert = (_swordHandednessValueSO.Value == SwordHandedness.LeftHandedSword) ^
+                          _invertParryInputValueSO.Value;
             _hidInputSource.SetInvertUINavigation(invert);
         }
 

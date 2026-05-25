@@ -1421,6 +1421,8 @@ MonoBehaviour:
   _aimOffsetValueSO: {fileID: 11400000, guid: 5835ee1fb0fb5354e9666d049c21fb91, type: 2}
   _invertParryInputValueSO: {fileID: 11400000, guid: e2b427ae26fe979468770ce80418464b,
     type: 2}
+  _swordHandednessValueSO: {fileID: 11400000, guid: f867d0981d2d5154fb977763d207b7aa,
+    type: 2}
   _invertAimValueSO: {fileID: 11400000, guid: 07eb956039480094ead3a78b1855d223, type: 2}
   _controllerRumbleEnabledValueSO: {fileID: 11400000, guid: 5dea2a69fd8614d45aae81cccf2e1162,
     type: 2}

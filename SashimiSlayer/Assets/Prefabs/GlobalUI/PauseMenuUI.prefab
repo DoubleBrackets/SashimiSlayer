@@ -931,9 +931,6 @@ MonoBehaviour:
   - controlScheme: 2
     objects:
     - {fileID: 4361834094347482642}
-  - controlScheme: 3
-    objects:
-    - {fileID: 4361834094347482642}
   - controlScheme: 0
     objects:
     - {fileID: 25927789502268549}
@@ -1831,7 +1828,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Right Bumper [Xbox Controller]'
+      value: 'Right Shoulder [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -4982,7 +4979,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'button3 [HID::Arduino LLC Arduino Leonardo]'
+      value: 'Button 3 [Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -5282,7 +5279,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'stick [HID::Arduino LLC Arduino Leonardo]'
+      value: 'Stick [Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -7537,7 +7534,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'button4 [HID::Arduino LLC Arduino Leonardo]'
+      value: 'Button 4 [Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -8601,7 +8598,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'A [Xbox Controller]'
+      value: 'Button South [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1268957592934126572, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -8885,7 +8882,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'button2 [HID::Arduino LLC Arduino Leonardo]'
+      value: 'Button 2 [Arduino Leonardo]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -9175,7 +9172,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Left Stick [Xbox Controller]'
+      value: 'Left Stick [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
@@ -9615,7 +9612,7 @@ PrefabInstance:
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}
       propertyPath: m_text
-      value: 'Left Bumper [Xbox Controller]'
+      value: 'Left Shoulder [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 1075144137323755095, guid: 74f20b92bffab5440af5099cee747dc4,
         type: 3}

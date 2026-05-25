@@ -528,28 +528,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "0344ca72-7c59-4001-bb96-5ab17cf10e77",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Navigate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "9d603fd3-8e33-4ac9-b9fd-eb810b203f9b",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Navigate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "Sword",
                     "id": "ad46edb3-d5e5-4f28-b970-77cab7cfa52d",
                     "path": "2DVector",
@@ -574,28 +552,6 @@
                 {
                     "name": "down",
                     "id": "778cea2d-1262-4112-a767-3d60d1b9e9e8",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInverted",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "1b28490b-e7c9-4ada-b237-eced6bb94196",
-                    "path": "<HID::Arduino LLC Arduino Leonardo>/button3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NavigateInverted",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "7c63b87a-802e-451e-9ad7-39cdc672f686",
                     "path": "<HID::Arduino LLC Arduino Leonardo>/button4",
                     "interactions": "",
                     "processors": "",

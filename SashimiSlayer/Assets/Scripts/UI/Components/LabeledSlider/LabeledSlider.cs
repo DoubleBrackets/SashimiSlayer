@@ -118,7 +118,7 @@ namespace UI.Components.Slider
         /// </summary>
         public void ToggleFocused()
         {
-            if (_controlSchemeValueSO.Value is not ControlSchemes.SwordSerial or ControlSchemes.SwordJoystick)
+            if (_controlSchemeValueSO.Value is not (ControlSchemes.SwordSerial or ControlSchemes.SwordJoystick))
             {
                 return;
             }
@@ -155,7 +155,7 @@ namespace UI.Components.Slider
             if (_locked)
             {
                 float incrementValue = _slider.maxValue / _increments;
-                _slider.value += incrementValue * eventData.moveVector.x;
+                _slider.value -= incrementValue * eventData.moveVector.y;
                 _onValueMoved.Invoke();
             }
             else
