@@ -120,8 +120,7 @@ namespace UI.MenuViews
         public void ResetState()
         {
             _state = PauseMenuState.NavigatingSidebar;
-            _currentSelectedButton = _buttons.First();
-            SelectView(_menuViews.First());
+            HandleOnViewSelected(_buttons.First(), _menuViews.First());
             EnterCurrentView();
         }
 
@@ -206,6 +205,18 @@ namespace UI.MenuViews
         public void FindChildViews()
         {
             _menuViews = GetComponentsInChildren<MenuView>(true).Where(a => a.ViewEnabled).ToList();
+        }
+
+        /// <summary>
+        ///     Enter the current view when exiting so on re-enter the previously selected navigation button isn't visually
+        ///     selected
+        /// </summary>
+        public void Exit()
+        {
+            if (_currentSelectedButton)
+            {
+                _currentSelectedButton.IsSelected = false;
+            }
         }
     }
 }
