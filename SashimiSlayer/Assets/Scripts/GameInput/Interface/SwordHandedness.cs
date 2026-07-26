@@ -6,7 +6,8 @@ namespace GameInput.Interface
     public enum SwordHandedness
     {
         /// <summary>
-        ///     Right-handed sword controller, i.e right hand is on the sword handle
+        ///     Right-handed sword controller, i.e right hand is on the sword handle.
+        ///     This is considered "non-inverted"
         /// </summary>
         RightHandedSword,
 

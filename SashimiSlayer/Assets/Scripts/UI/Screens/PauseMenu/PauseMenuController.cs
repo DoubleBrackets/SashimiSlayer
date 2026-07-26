@@ -75,6 +75,10 @@ namespace UI.Screens.PauseMenu
             {
                 _pauseMenu.ResetState();
             }
+            else
+            {
+                _pauseMenu.Exit();
+            }
 
             if (!_isMenuOpen)
             {

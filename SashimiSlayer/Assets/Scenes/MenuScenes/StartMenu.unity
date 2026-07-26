@@ -16476,7 +16476,7 @@ PrefabInstance:
     - target: {fileID: 4838587425353400675, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
       propertyPath: m_text
-      value: 'Right Bumper / [Xbox Controller]'
+      value: 'Right Shoulder / [Gamepad]'
       objectReference: {fileID: 0}
     - target: {fileID: 4838587425353400675, guid: 227ad0928c1ee514eb94b3e5e81c3c35,
         type: 3}
@@ -21378,6 +21378,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7283628192495015580, guid: 93909f1088913254c8b42b585fc2c2b3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf,
+        type: 3}
+    - target: {fileID: 7957240566352300077, guid: 93909f1088913254c8b42b585fc2c2b3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065672041734216756, guid: 93909f1088913254c8b42b585fc2c2b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21391,6 +21407,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 5009171194060672669, guid: 93909f1088913254c8b42b585fc2c2b3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 1430334806452019498, guid: 93909f1088913254c8b42b585fc2c2b3,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

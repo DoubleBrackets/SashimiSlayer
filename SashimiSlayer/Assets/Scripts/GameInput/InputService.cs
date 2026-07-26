@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using CommonTypes;
 using Events.Basic;
 using GameInput.Extra;
@@ -14,7 +13,7 @@ using ValueSO.Core;
 
 namespace GameInput
 {
-    public class InputService : MonoBehaviour, IUserInput, IValueSOObserver
+    public class InputService : MonoBehaviour, IUserInput, IValueSOObserver, IObserver<InputControl>
     {
         [Flags]
         private enum InputFlags
@@ -52,6 +51,9 @@ namespace GameInput
 
         [SerializeField]
         private BoolValueSO _invertParryInputValueSO;
+
+        [SerializeField]
+        private SwordHandednessValueSO _swordHandednessValueSO;
 
         [SerializeField]
         private BoolValueSO _invertAimValueSO;
@@ -98,7 +100,8 @@ namespace GameInput
         {
             EventPassthroughSub();
 
-            _invertParryInputValueSO.AddListener(this, SetInvertUINavigation);
+            _invertParryInputValueSO.AddListener(this, _ => SetInvertUINavigation());
+            _swordHandednessValueSO.AddListener(this, _ => SetInvertUINavigation());
 
             _onDrawDebugGUI.AddListener(HandleDrawDebugGUI);
             _setUseSerialInput.AddListener(HandleSetUseSerialInput);
@@ -108,6 +111,8 @@ namespace GameInput
             InitSwordCalibrationPopup();
 
             _currentHandednessValueSO.SetValue(SwordHandedness.RightHandedSword);
+
+            InputSystem.onAnyButtonPress.Subscribe(this);
         }
 
         private void Update()
@@ -121,6 +126,7 @@ namespace GameInput
             EventPassthroughUnsub();
 
             _invertParryInputValueSO.RemoveListener(this);
+            _swordHandednessValueSO.RemoveListener(this);
 
             _onDrawDebugGUI.RemoveListener(HandleDrawDebugGUI);
             _setUseSerialInput.RemoveListener(HandleSetUseSerialInput);
@@ -162,8 +168,11 @@ namespace GameInput
             return InputProvider.GetCustomSwordControllerIdentify();
         }
 
-        private void SetInvertUINavigation(bool invert)
+        private void SetInvertUINavigation()
         {
+            // invert on exclusive or
+            bool invert = (_swordHandednessValueSO.Value == SwordHandedness.LeftHandedSword) ^
+                          _invertParryInputValueSO.Value;
             _hidInputSource.SetInvertUINavigation(invert);
         }
 
@@ -182,10 +191,10 @@ namespace GameInput
             UpdateControlScheme();
         }
 
-        private void UpdateControlScheme()
+        private void UpdateControlScheme(InputDevice pressedInputDevice = null)
         {
             ControlSchemes existingControlScheme = ControlScheme;
-            ControlSchemes newControlScheme;
+            ControlSchemes newControlScheme = existingControlScheme;
 
             if (_useSerialController)
             {
@@ -195,13 +204,16 @@ namespace GameInput
             {
                 newControlScheme = ControlSchemes.SwordJoystick;
             }
-            else if (InputSystem.devices.Count(device => device is Gamepad) > 0)
+            else if (pressedInputDevice != null)
             {
-                newControlScheme = ControlSchemes.Gamepad;
-            }
-            else
-            {
-                newControlScheme = ControlSchemes.KeyboardMouse;
+                if (pressedInputDevice is Gamepad)
+                {
+                    newControlScheme = ControlSchemes.Gamepad;
+                }
+                else if (pressedInputDevice is Keyboard or Mouse)
+                {
+                    newControlScheme = ControlSchemes.KeyboardMouse;
+                }
             }
 
             if (existingControlScheme != newControlScheme)
@@ -353,6 +365,23 @@ namespace GameInput
         private bool BlockInput()
         {
             return _inputFlags != 0;
+        }
+
+        public void OnCompleted()
+        {
+        }
+
+        public void OnError(Exception error)
+        {
+        }
+
+        /// <summary>
+        ///     Switch control schemes based on any pressed input's device
+        /// </summary>
+        /// <param name="value"></param>
+        public void OnNext(InputControl value)
+        {
+            UpdateControlScheme(value.device);
         }
     }
 }
