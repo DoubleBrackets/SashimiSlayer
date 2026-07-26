@@ -39,14 +39,20 @@ Packages
 ### Hardware
 
 (WIP)
+3D Models used
+- https://www.thingiverse.com/thing:6224041/files
 
 ### Connecting a Controller
 
+Serial Port version (Deprecated)
 1. Connect Sword Controller
 2. Press `esc` key to open options menu
 3. Select the correct Serial Port from the Input Device Settings dropdown
 4. Press the `Connect` button
 5. Change `Input Mode` dropdown from "Conventional" to "Alt Control Sword"
+
+Gamepad Input Version
+1. Should automatically detect when the sword is plugged in
 
 Exhibition Hotkeys
 - 1: Return to Start Menu
